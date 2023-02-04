@@ -1,7 +1,6 @@
 
 
 from filhantering_modul import *    
-import math
 import numpy as np
 
 
