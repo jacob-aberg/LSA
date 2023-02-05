@@ -17,8 +17,8 @@ def SVD(matris,engine,u=True,s=True,v=True):
     if s:   res.append(double_till_array(S))
     if v:   res.append(double_till_array(V))
 
-    if len(res) > 1:    return tuple(res)
-    else:               return res[0]
+    if len(res) == 1:    return res[0]
+    else:                return tuple(res)
 
 def double_till_array(A):
     """args:    matlab double
