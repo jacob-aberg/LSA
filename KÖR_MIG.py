@@ -65,8 +65,6 @@ def promt_int():
 
 def main():
 
-    print(os.getcwd())
-
     textfiler = välj_öppna_filväg(titel="Välj textfiler",flera=True,filtyp=('text-dokument','*.txt'))
 
     sparväg = None
