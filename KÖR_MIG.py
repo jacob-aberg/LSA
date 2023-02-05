@@ -52,7 +52,7 @@ def printa_tiden(tick):
     minuter, sekunder = divmod(tack-tick, 60)
     print(f"\t{int(minuter)} min {sekunder:.4f} sek",end='')
 
-def promt_bool():
+def prompt_bool():
     """returnerar bool som använder anger"""
     while True:
         ans = input( 'j/n >> ')
@@ -62,7 +62,7 @@ def promt_bool():
             return False
         print('Invalid.  ',end=' ')    
 
-def promt_int():
+def prompt_int():
     """returnerar det heltal användaren anger"""
     while True:
         try:    return int(input('>> '))
@@ -75,18 +75,18 @@ def main():
 
     sparväg = None
     print('\nVill du spara matrisen?',end=' ')
-    if promt_bool(): sparväg = välj_spara_väg(titel='Spara matris',filtyp=('text-dokument','*.txt'))
+    if prompt_bool(): sparväg = välj_spara_väg(titel='Spara matris',filtyp=('text-dokument','*.txt'))
 
     print('\nSka ord-matrisen TD-IDF viktas?',end=' ')
-    om_TDIDF = promt_bool()
+    om_TDIDF = prompt_bool()
     print('\nVill du rensa bort vanliga svenska ord? ',end=' ')
-    utan_vanliga_ord = promt_bool()
+    utan_vanliga_ord = prompt_bool()
     alfbetisk_ordning = True #promt_bool()
 
     print('\nAnge antal teman som ska extraheras:',end=' ')
-    antal_teman = promt_int()
+    antal_teman = prompt_int()
     print('\nAnge antal ord som ska definera varje tema:',end=' ')
-    antal_ord = promt_int()
+    antal_ord = prompt_int()
 
 
     print('\n\n...läser textfiler...')
