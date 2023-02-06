@@ -1,0 +1,451 @@
+Strömningsmekanik 5.1
+
+5. Strömningsmekanik
+av
+Fredrik Lundell, Arne Johansson och Dan Henningson
+KTH Mekanik
+
+5.1 Introduktion
+Hur kan ett flygplan flyga? Varför har skorstenar spiraler på sig? Varför regnar det på
+midsommar? För att kunna svara på dessa frågor behövs en god strömningsmekanisk
+kunskap och en av dem kommer att besvaras i detta kapitel. En av de två övriga
+frågorna kommer att besvaras under er utbildning på KTH. Den sista frågan är föremål
+för fortsatt forskning.
+Än idag finns utrymme för utvecklandet av nya farkoster baserade på avancerad
+strömningskunskap. I figur 5-1 visas två exempel: trampofoilen och paravanen, som
+används av “Swedish Speed Sailing Challenge”. Dessa båda koncept har utvecklats av
+bl.a. Alexander Sahlin och Jens Österlund, båda med anknytning till KTH Mekanik.
+Trampofoilen bygger på en bärplansprincip. En vinge under vattenytan ges en
+oscillerande rörelse i höjdled (delvis också en vridningsrörelse). Denna rörelse ger
+tillräcklig lyftkraft för att bära och framdriva en person som står ovanpå en plattform
+som är fästad vid vingen. Delar av gruppen som utvecklade trampofoilen försöker nu
+slå hastighetsrekordet i segling med ett innovativt koncept, se till höger i figur 5-1.
+Koncept kallas paravan och går ut på att den sidriktade kraft som vinden ger i seglet (i
+detta fall en stel vinge) balanseras med ett bärplan under vattnet. Tack vare paravanen
+är det möjligt att låta seglet ta ut en mycket stor kraft ur vinden utan att farkosten välter.
+På en traditionell segelbåt används istället en tung köl för att balansera momentet från
+sidkraften i seglet.
+
+vindriktning
+
+segel
+
+bärplan
+Figur 5-1 Trampofoilen (till vänster) och Swedish speed sailing challenge (till höger) är två exempel på
+att god strömningsmekanisk förståelse ger utrymme för att utveckla nya farkostkoncept. Farkosten till
+vänster färdas åt höger. Farkosten till höger färdas in i papperet. Båda dessa koncept har utvecklats av
+bl.a. Alexander Sahlin och Jens Österlund, tidigare vid KTH Mekanik. Bilderna kommer från
+www.trampofoil.com.
+
+Strömningsmekaniken är en gren av mekaniken, den grundläggande vetenskapen
+inom vilken man studerar krafter och rörelser samt hur dessa två hänger ihop.
+Mekaniken är ett gammalt vetenskapsområde inom den klassiska fysiken och har fått en
+blomstrande utveckling under de senaste decennierna. Begreppen “dynamiska system”
+och “kaos” har sitt ursprung i mekaniken men används idag ofta för att beskriva och
+förstå många olika fenomen i såväl den fysiska verkligheten som samhället.
+
+Strömningsmekanik 5.2
+
+Strömningsmekaniken är en del av mekaniken som utvecklats speciellt snabbt tack vare
+de ständigt snabbare datorerna. De ökade beräkningsmöjligheterna har öppnat helt nya
+områden både för forskning och för industriell tillämpning. Ett exempel är att en ny
+bilmodell nu kan konstrueras på mellan ett halvt och ett år istället för som tidigare fyra
+till fem. En nyckelfaktor bakom detta är att man numer kan få en uppfattning om bilars
+luftmotstånd efter en natts beräkningar istället för veckors modellbyggande och
+vindtunneltestande. Ett annat exempel är mikrosystem, vilka t. ex. upphov till helt nya
+strömnings och kylningsproblem. Ett tillämpningsexempel på detta är så kallade “labon-a-chip”, där man bygger hela analyslab för DNA-sekvensiering på en kiselskiva med
+tio centimeters diameter.
+
+5.2 Strömningsmekanik i flygtekniken
+
+Figur 5-2 ”Wright Flyer” flyger för första gången den 3 december 1903 till vänster. Farkosten till höger
+är ”Spaceship One” som vann Ansari X-prize som det första privatfinansierade rymdflygplanet den 4
+oktober 2004. Bilderna kommer från www.wrightflyer.org och Scaled Composites, LLC,
+www.scaled.com.
+
+I figur 5-2 ses “Wright Flyer” på sin första flygtur och “Spaceship One”, det första
+privatfinansierade rymdflygplanet. Under det sekel som passerat mellan bilderna har
+strömningsmekaniken utvecklats kraftigt. För att överhuvudtaget kunna bygga en
+maskin som lyfte var bröderna Wright tvungna att genomföra systematiska
+vindtunneltester av olika vingprofiler och konfigurationer i en egenbyggd vindtunnel, se
+figur 5-3.
+Till höger i figur 5-3 ses en beräkning av strömningen kring “Spaceship one”
+under fritt fall tillbaka mot jorden. Under “Spaceship One”-projektet gjordes inga som
+helst fysiska experiment före den första flygturen: all prestandaprediktering gjordes med
+hjälp av strömningsberäkningar, CFD (Computational Fluid Dynamics). Datorprogrammen som användes var standardprogram för strömningsberäkningar. Efter de
+inledande flygningarna blev det dock nödvändigt att genomföra diverse förändringar på
+stabilisatorn och fenan. Dessa förändringar utvärderades experimentellt genom att skjuta
+en modell framför en pick-up, ett tillvägagångssätt som påminner om bröderna Wright,
+som innan de byggde vintunneln testade olika profiler genom att fästa de fram på en
+cykel. Det är intressant att notera att bröderna Wright byggde sin “Flyer” på den tid de
+kunde tillåta sig att stänga sin cykelreparationsverkstad och ägna sig åt
+flygplansbyggande som hobby. Burt Rutan som konstruerat och lett “Space-ship One”
+projektet, däremot, är professionell flygplansbyggare sedan tjugo år.
+
+Strömningsmekanik 5.3
+
+Figur 5-3 Trälådan till vänster är en replika av bröderna Wrights första vindtunnel. Till höger visualiseras
+strömningsfältet kring ”Spaceship One”. Denna visualisering bygger helt på resultat från beräkningar.
+Bilderna kommer från www.wrightflyer.org och Scaled Composites, LLC, www.scaled.com.
+
+5.3 Strömningsmekaniken finns nästan överallt
+Geofysisk strömning
+Strömningsmekaniken är inte begränsad till flygplan, båtar, bilar och andra farkoster.
+Galaxers formering efter att de bildats samt om de kollapsar eller inte är
+frågeställningar som behandlas med metoder sprungna ur strömningsmekaniken. Tack
+vare moderna rymdsonders förmåga att förmedla detaljerade bilder till oss har vi dels
+kunnat se virvlande, turbulenta mönster på Jupiters yta, dels oväntade strömningsmekaniska fenomen i vår egen atmosfär, som den virvelgata som visas till vänster i
+figur 5-4.
+
+Figur 5-4 Till vänster ses en virvelgata i molnen bakom en vulkan på ön Jan Mayen 650 km norr om
+Island. Mönstret är fotgraferat 6 juni 2001 med satellit. Bilden till höger visar en virvelgata bakom en
+tunn cylinder i tvålfilm. Bilderna kommer från NASA Jet Propulsion Laboratory, www.nasa.gov.
+
+En fascinerande aspekt av strömningsmekaniken är att en del fenomen återkommer på
+helt olika längd- och tidsskalor. De två virvelgatorna i figur 5-4 är till förväxling lika.
+Den vänstra har observerats i molnen bakom en vulkan norr om Island medan den
+högra har fotograferats i en långsam strömning i en tvålfilm. Strömningar i atmosfären
+är naturligtvis viktiga inom meteorologin och meteorologi är idag ett område där det
+satsas mycket stora resurser. Förbättrade väderförutsägelser är viktiga för de flesta, från
+semesterfirare via glasstillverkare till lantbrukare. Beräkningarna baseras på data som
+kommer dels från ett stort antal satelliter kring jorden och dels från mätdata från otaliga
+trafikflygplan som ständigt befinner sig i luften. Europas största och kraftfullaste dator
+finns i England och används för väderförutsägelser.
+Havsströmmarnas rörelser är ett besläktat tillämpningsområde som brukar
+benämnas oceanografi. Inom oceanografin såväl som meteorologin spelar jord-
+
+Strömningsmekanik 5.4
+
+rotationen en nyckelroll i dynamiken. De lågtryck som alltsomoftast bildas och
+fördjupas väster om de Brittiska öarna för att sen (tyvärr) passera över Skandinavien
+snurrar t.e.x. alltid moturs. När lågtrycket närmar sig Sverige får vi därför först sydliga
+vindar (vilket på vintern ger milt väder) för att senare, efter att lågtrycket passerat, få
+nordliga vindar. Lågtryckens rotation gör också att man har en vertikal transport uppåt
+från havsytan i lågtryckssystemen, vilket för upp en mängd fuktig luft till de högre
+luftlagren. Högt där uppe kondenserar fukten och moln och regn, något vi ofta känner
+av under sommaren. Högtrycken snurrar åt andra hållet och i högtryckets centrum är
+luftströmmen riktad neråt, vilket ger torrare luft och bättre väder.
+
+Figur 5-5 En Volvo S80 i Volvos vindtunnel med ett beräknat tryckfält över bilens främre högra del. Att
+optimalt kombinera experiment och beräkningar är en utmaning i moderna strömningsmekaniska
+utvecklingsprojekt. Bilden kommer från Volvo Car, www.volvocars.com.
+
+Tekniska tillämpningar
+Fordon
+De tekniska tillämpningarna av strömningsmekanik är otaliga och vi har redan nämnt
+flygplan, bilar, trampofoiler och paravaner. För snabba tåg och bilar är
+strömningsmekaniken en viktig faktor genom hela designprocessen från definitionen av
+prestandakraven (bränsleförbrukning, buller m.m.) till den slutliga designen.
+Exempelvis har Volvo en stor vindtunnel där man kan testa bilar i fullskala och även
+variera klimatförhållandena. Man kan där testa bilens alla delsystem från motor till
+klimatanläggning i allt från torra och soliga bergs- och ökenklimat till fuktiga
+regnskogsmiljöer utan att lämna Hisingen. Parallellt med den avancerade vindtunneln
+har de datorbaserade beräkningarna utvecklats och har idag en allt viktigare del i
+designen av yttre form, strömning och kylning i motorutrymmet, klimatkomforten i
+kupén och naturligtvis bränsle-luftblandningens strömning i motorn. Som nämnts kan
+kraftfulla datorer göra de strömningsberäkningar som påverkar designen mycket
+snabbt. Detta gör det möjligt att en mängd olika koncept kan testas samtidigt som
+behovet av fysiska modeller har minskats drastiskt. Bilföretagen har därför blivit stora
+konsumenter av datorkraft och laserbaserade mätmetoder. Figur 5-5 visar att Volvo har
+integrerat vindtunnelresultaten och beräkningsresultaten i mycket hög grad.
+
+Strömningsmekanik 5.5
+
+Motorströmning
+Flyg- och raketmotorer, pumpar, centrifugalseparatorer och fläktar är andra områden
+där Sverige har starka industriföretag och grupper som arbetar med strömningsteknik.
+Man kan också se ett tydligt ökande intresse från icke-traditionella strömningsteknikföretag. Företag som tillverkar papper, gjuter halvledare, sysslar med svetsning m.m.
+anställer eller anlitar idag personer med avancerade strömningskunskaper. Även inom
+de idag heta områdena bioteknik och medicinsk teknik finns gott om strömningstekniska problem. Vid tillverkning av läkemedel används ofta biokemiska reaktorer.
+Eftersom alla tabletter ska ha samma mängd av den aktiva substansen är det av yttersta
+vikt att de aktiva substanserna fördelas jämnt och utsätts för samma omblandning i hela
+reaktorn. Liknande problem finns i tillverkningen av metalliska kompositer där
+omrörningen sker på magnetisk väg och där en noggrann strömningskontroll är nyckeln
+till den slutliga materialkvalitén.
+
+Figur 5-6 Principskiss för bränslecell. Att modellera de strömningsprocesser som sker i en bränslecell är
+en stor utmaning. I bränslecellen strömmar olika gas/vätkse blandningar samtidigt som de reagerar med
+varandra. Bilden är hämtad från Salzburgs Universitet, www.sbg.ac.at.
+
+På energiområdet är strömningstekniken ständigt närvarande i alla tänkbara
+former. Strömningsmekanisk förståelse är ofta nyckeln till förbättrade förbränningsprocesser i värmepannor och andra energiomvandlingssammanhang. I t.ex. kärnkraftsverk och bränsleceller förekommer ofta strömningar av en blandning av vatten och
+gasbubblor. I ett kärnkraftsverk hettas vatten upp till ånga som via ångturbiner och
+generatorer omvandlas till elektricitet; i bränsleceller reagerar väte med syre så att
+vatten bildas samtidigt som man kan utvinna elektrisk energi (se figur 5-6). De
+strömningar som uppkommer är svåra att beräkna dels för att de är av flerfas-typ
+(vätska och gas) och dels för att de strömmande medierna reagerar med varandra eller
+fasomvandlas.
+Liknande problem finns inom separeringsprocesser med vätske – partikelblandningar och utgör en stor utmaning för strömningsforskare. Mycken ny kunskap
+behövs för att noggrannt kunna beräkna flerfasströmningar i tekniska tillämpningar.
+Miljö
+Inom miljöteknik är beräkningen av spridningen av föroreningar ett viktigt område,
+men som utgör en något enklare form av flerfasströmning eftersom stoftet,
+föroreningarna ofta passivt transporteras med vatten/luftströmningen.
+
+Strömningsmekanik 5.6
+
+5.4 Turbulens
+Tillsammans med dynamiska system och kaos är turbulens ett ord som tagit steget från
+strömningsmekaniken till det övriga samhället. Det används inom områden som politik
+och ekonomi för att beteckna oordning, kaos och förvirring. En turbulent strömning
+karaktäriseras också den av oordning, i den mening att den innehåller virvlar av många
+olika storlekar och har ett strömningsfält som fluktuerar på ett till synes fullständigt
+slumpartat sätt (se figur 5-7). Turbulenta strömningar förekommer i samtliga
+tillämpningsområden som nämnts ovan: olika tekniska sammanhang, biologin,
+geofysiken och astrofysiken. Detaljrikedomen i turbulenta strömningar gör området till
+ett av den klassiska fysikens svåraste. Komplexiteten kan illustreras med strömningen
+vid 700 km/h utmed en typisk flygplanskropp. De minsta virvlarna är då några
+hundradels mm stora medan de största är c:a 10 000 gånger större, eller c:a 200 mm.
+Denna spännvidd gör problemet ytterst utmanande att modellera.
+
+Figur 5-7 Visualisering av strömningsstrukturer i en beräkning av turbulent strömning nära en vägg till
+vänster. Till höger ses en växande turbulent fläck visualiserad med laser inducerad flouresens.
+Strömningsriktningen är från vänster till höger i bägge figurerna. Bilderna är skapade av Thomas
+Bewley, UCSD och Mohamad Gad-el-Hak, Univ. Notre Dame och finns på www.efluids.com.
+
+En något populariserad definition av turbulens är att turbulens är det fenomen som
+inträffar då maten serveras i ett flygplan. De flesta av oss har säkert upplevt hur ett
+flygplan skakas om av luftvirvlarna utanför planet. Fenomenet kallas ofta (oegentligt)
+luftgropar. Vi har också turbulens i det så kallade gränsskiktet utmed flygplanet. Ett
+exempel på turbulens som är betydligt lättare att observera utgörs av röken från en
+cigarett (eller kanske hellre cigarr). Från denna kan vi se en rökpelare stiga upp där i
+början röken rör sig rätlinjigt uppåt för att tämligen plötsligt slå om till en virvlande
+turbulent rörelse. Strömningen i den första delen kallas laminär (efter det latinska ordet
+för skikt/skiva).
+Omslaget från laminär till turbulent strömning är ännu idag ett aktivt
+forskningsområde, som först studerades systematiskt av Osborne Reynolds på 18701880-talen. Det är efter honom vi har namnet på det mest betydelsefulla dimensionslösa
+talet inom strömningsmekaniken, det vi idag kallar för Reynolds tal, definierat som
+Re = UD /ν ,
+där U och D representerar karaktäristiska mått på hastighet respektive längd och ν är
+den kinematiska viskositeten vilken är ett mått på den inre friktionen, med andra ord
+hur trögflytande fluiden är.
+Reynolds själv studerade strömning i ett rakt rör, se figur 5-8. Han sprutade in
+bläck i centrum av röret och fann att bläcket bibehölls i ett tunt sammanhållet streck så
+länge som värdet på den dimensionslösa gruppen Re var lägre än c:a 2000. U och D i
+
+Strömningsmekanik 5.7
+
+hans fall ska ses som strömningshastighet på centrumlinjen respektive rördiameter. För
+högre värden spreds bläcket snabbt vilket Reynolds kunde koppla ihop med alstrandet
+av en stark virvelrörelse där turbulens eller virvlar av många olika storlekar ger en
+omblandning som är mycket mer kraftfull än den som bara åstadkoms av fluktuationer
+på molekylär skala hos den laminära strömningen. Just denna starka omblandning som
+turbulensen åstadkommer är en förutsättning för effektiv förbränning och önskvärd i
+många andra sammanhang där man vill ha en effektiv omblandning.
+
+Figur 5-8 Osborne Reynolds och apparaten i vilken han visualiserade omslaget mellan laminär och
+turbulent strömning till vänster . Till höger ses resultatet: en bläckstråle i mitten av det horisontella röret i
+tanken indikerar att strömningen är laminär vid låga hastigheter (högst upp) och turbulent vid höga
+hastigheter (längst ner). Bilder: Manchester University, www.eng.man.ac.uk.
+
+Virvelmönster kan också förekomma utan att vi därför karaktäriserar
+strömningen som turbulent, ett exempel är fallet med virvelgatan i tvålfilm till höger i
+figur 5-4. Skillnaden ligger just i om strömningen är kaotiskt med stor spännvidd
+mellan de största och minsta virvlarna. Virvelgatan till vänster i figur 5-4 är en
+virvelgata i en turbulent strömning. Virvelgator kan ge upphov till kraftiga oscillerande
+krafter på master, skorstenar och broar, som i extrema fall lett till kollap av hängbroar
+och skorstenar. På höga skorstenar kan man se en spiralformad list som har till uppgift
+att förhindra en lång sammanhållen virvelavlösning med tillhörande starka vibrationer.
+
+5.5 Strömningsmotstånd och vingar
+Rörelserna på molekylär nivå i en fluid som vatten och luft ger upphov till vad vi kallar
+viskositet. Viskositeten ger en friktion då fluiden strömmar över en kropp. Detta kan
+vara luftströmningen kring ett flygplan eller vattenströmningen kring en båt. I de flesta
+praktiska fall är strömningen turbulent vilket ger mycket större motstånd än om
+strömningen hade varit laminär. Friktionsmotståndet är inte den enda komponenten av
+motståndet då ett flygplan eller annan kropp rör sig genom en fluid. För en lång
+tankerbåt utgör friktionsmotståndet ungefär 80% av det totala framdrivningsmotståndet och för ett vanligt flygplan c:a hälften.
+Den andra stora komponenten är formmotstånd som starkt beror på den
+geometriska formen. Strömlinjeformning är ett välkänt och talande begrepp. Ju
+
+Strömningsmekanik 5.8
+
+trubbigare en kropp är desto större är i allmänhet formmotståndet. En cirkulär cylinder
+kan ha ett motstånd som är av storleksordningen 100 gånger större än en slank
+vingprofil med samma tjocklek som cylindern (jämför figur 5-9). Därav kan man inse
+vikten av bra strömningsoptimering av vingprofilers utseende för t ex flygplan, vilket
+bröderna Wright insåg när de byggde sin vindtunnel (figur 5-3).
+
+Figur 5-9 Om vikten av strömlinjeform: den lilla cylindern ger samma motståndskraft som den tjocka
+vingprofilen. Cylindern har stort formmotstånd medan den strömlinjeformade profilen har mycket lågt
+formmotstånd och nästan enbart friktionsmotstånd.
+
+Turbinprofiler och ledskenor i vindtunnlar är ett par andra exempel där
+noggrann optimering av vingprofiler gett effektivare utrustning. Profilerade ekrar på
+tävlingscyklar är ett annat exempel på en tillämpning där man velat undvika cylinderns
+höga strömningsmotstånd. På racingbilar, speciellt Formel 1, används vingar för att ge
+en negativ lyftkraft, dvs en kraft som trycker ned bilen mot vägbanan för att ge ett bra
+väggrepp. Detta är helt avgörande för möjligheten att styra bilen. Den nedtryckande
+kraften för en Formel 1-bil är av storleksordningen ton.
+Ett roligt exempel på ett avancerat studentprojekt som krävde optimerade
+profiler är designen av ett ‘muskeldrivet’ flygplan som skulle ‘cyklas’ i luften mellan
+Kreta och det grekiska fastlandet. Projektet som gick under namnet Daedalus utfördes
+vid MIT för några år sedan. Det hela lyckades med knapp marginal. Nyckeln till
+framgång var optimering av vingen tillsammans med vikt- och materialoptimering.
+Planet hade en vingspännvidd på c:a 35 m och vägde mindre än 35 kg.
+
+5.6 Strömningsmekanik i sportens värld
+Långa golfslag, snabbare kappseglingsbåtar och skruvade bollar. Inom sporten finns det
+massor av strömningsmekanik! Små marginaler är ofta avgörande och den sista tiondels
+procenten kan vara hela skillnaden mellan succé och fiasko.
+Den enklaste metoden att minska friktionsmotstånd är att hålla ytan (på båten,
+flygplanet, etc...) så slät som möjligt. Besättningar på segelbåtar har ofta kunnat ses
+noggrannt polera skrovet före en kappsegling. Ytråheter på en slät plan yta ger ökad
+turbulens, omblandning och därmed ökat motstånd, så i allmänhet bör sådant undvikas
+om motståndet skall hållas lågt. Vi har dock alla sett en golfboll, men alla har kanske
+inte reflekterat över varför dess yta är försedd med ett mönster av små gropar. Kan
+detta vara förenligt med strävan att kunna slå bollen så långt som möjligt? Jo, faktiskt.
+Om bollen hade varit helt slät hade visserligen friktionsmotståndet varit lägre eftersom
+man då hade fått en laminär strömning på den sida av bollen som vetter i
+färdriktningen. Laminär strömningen avlöser (‘släpper’) dock tidigare från ytan då man
+
+Strömningsmekanik 5.9
+
+passerar tjockaste delen, som illustreras i figur 5-10. Tidig avlösning ger en tjock ‘vak’
+bakom bollen med mycken turbulens vilket ger ett stort formmotstånd. I fallet med små
+gropar fås turbulens närmast ytan på framsidan som gör att strömningen följer ytan
+längre då tjockaste sektionen passerats. Diagrammet till höger i figur 5-10 visar att för
+samma hastighet (här omräknat till Reynolds tal) kan groparna i golfbollen leda till en
+halvering av totala luftmotståndet. Jämför gärna med figur 5-4, där strömningen ser
+likadan ut oavsett längdskala. I fallet med golfbollen räcker den lilla förändringen med
+gropar till för att fundamentalt förändra strömningen kring bollen.
+
+Figur 5-10 Strömingen kring en slät sfär och en golfboll med gropar. Bilden kommer från Scientific
+American, www.sciam.com.
+
+På liknande sätt förbättrades spjutresultaten drastiskt då man gjorde delar av spjuten
+knottriga. Sedan dess har det stiftats nya regler om spjutens tyngdpunktsläge med mera
+för att hålla nere kastlängderna så att sporten även i fortsättningen kan utövas på en
+normal arena.
+En fascinerande form av motståndsminskning som människan upptäckte under
+mitten av 1980-talet, men som funnits i naturen några miljoner år, kallas på engelska
+‘riblets’. Upptäckten gjordes på NASA och kan tyckas förvånande eftersom den
+innebär att det minsta motståndet för en yta inte åstadkoms då den är helt slät,
+blankpolerad. Istället fann man att motståndet kunde sänkas under denna, som man
+förut trodde, undre gräns om ytan förses med små minifåror. Jämfört med en helt slät
+yta har man i laboratorieförsök uppnått c:a 10% motståndsminskning under optimala
+förhållanden. Ytan kan exempelvis se ut som: VVVVVVVVVV om man tittar i
+strömningsriktningen. Höjd och bredd på fårorna måste vara mycket små. För en
+segelbåt med 10 knops fart är det optimala avståndet mellan fårorna ungefär en tiondels
+millimeter. Dessutom måste hörnen vara skarpa. Detta låter kanske svårt att utföra
+praktiskt, men företaget 3M tillverkar idag plastfilmsytor med sådana mått som kan
+klistras på en slät yta. Detta blev mycket omtalat då Americas Cup båten “Stars and
+Stripes” utrustad med sådana ytor finalslog den Australiska båten “Kookaburra III” i
+1987 års tävling om America Cup. Nyligen har även ett trafikflygplan testats med
+fårade ytor med positivt resultat (tyvärr visade det sig att rengöringen av flygplanet
+blev ett stort problem). På segelbåten och flygplanet var minskningen bara någon eller
+några procent, men i sportsammanhang ger en sådan prestandaökning naturligtvis helt
+
+Strömningsmekanik 5.10
+
+avgörande fördelar. För att undvika komplicerade ytor i sportsammanhang finns idag
+regler som förbjuder sådana ytor på tävlingskanoter och segelbåtar.
+Tekniken med fåror har anammats av simdräktstillverkare som hävdar att de s.k.
+hajdräkterna åstadkommer motståndsminskning på detta sätt. Huruvida så verkligen är
+fallet, eller om den prestandaökning som simmarna upplever beror på andra effekter,
+såsom luftsmörjning med luft som dras ner av dräkten vid startdyket eller fysiologiska
+effekter av den åtsittande dräkten låter vi dock vara osagt.
+I naturen används fårade ytor för motståndsminskning av hajar. Man har där
+kunnat observera, helt i enlighet med vad man borde förvänta sig, att långsamma hajar
+har ett grövre mönster än snabbare dito.
+En annan motståndsminskningsmetod som ger betydligt större effekter än fåror
+är tillsättning av vattenlösliga polymerer (med mycket höga molekylvikter) i vattnet.
+Även om det finns ofarliga, nedbrytbara polymerer har metoden uppenbara nackdelar
+för båttillämpningar, men används i viss utsträckning i en del andra tekniska sammanhang, såsom i oljepipelines, brandsprutor, avloppssystem m.m. I sportsammanhang har
+man förbjudit deras användning i kappsegling.
+En exakt slagen frispark i fotboll som från långt håll skruvar sig över en mur av
+spelare och in i mål är en njutning att se. Den krökta bollbanan fås genom att bollen
+sätts i rotation i vertikalplanet och/eller i horisontalplanet genom att välja
+tillslagspunkten på bollen. På motsvarande sätt fås skruvade bollar i tennis och andra
+sporter. Bollrotationen påverkar strömningen så att avlösningen hamnar längre bak på
+ena sidan. Vaken bakom bollen (jämför figur 5-10) blir då asymmetrisk. Detta ger
+upphov till en stor sidokraft som i sin tur ger den krökta bollbanan. Två sporter där
+detta gjorts till skön konst är baseboll och cricket. Genom att utnyttja baseboll-bollens
+kraftiga sömmar som turbulens- och avlösningsalstrare tillsammans med rotationen kan
+skickliga kastare få bollen att följa en s-formad bana. En cricketboll har en slät och en
+grov yta just för att göra det möjligt att utnyttja dessa effekter för att åstadkomma
+spektakulära bollbanor.
+
+5.7 Mikroelektromekaniska system och strömning
+Den moderna mikroelektroniken har öppnat nya möjligheter att konstruera sensorer och
+strukturer i kisel. Tekniken gör det också möjligt att enkelt producera många exemplar.
+
+Figur 5-11 Mikroturbin i kisel med diametern 4mm till vänster. Till höger visas ett filter som används i
+en DNA-detektor med mycket små dimensioner. Bilderna kommer från MIT och KTH Mikrosystemteknik.
+
+Figur 5-11 visar två framtidsprojekt. Vid MIT har man försökt att konstruera en
+mikroturbin med allt från förbränning till generator på ett chip. Turbinhjulet är 4 mm i
+
+Strömningsmekanik 5.11
+
+diameter och skall rotera i 3 000 000 varv per minut. Detta ger överljudshastighet i
+periferin. Strömningen kring och lagringen av turbinhjulet erbjuder stora utmaningar.
+Tanken är att ge en maxeffekt på 20-50 W från en totalvolym av 1-2 kubikcentimeter,
+vilket skulle kunna ge möjligeter att ersätta stora batterier i diverse avancerade
+tillämpningar.
+Strömningsmekaniska problem dyker även upp vid konstruktion av lab-on-achip. I figur 5-11 ses ett filter som används vid DNA-sekvensdetektering. Filterarmarna
+är byggda i kisel och har en tjocklek som är mindre än 10 µm. I dessa små system skall
+mycket små mängder substrat pumpas, blandas med reagenser, detekteras m.m.
+Fördelen jämfört med traditionella laboratorietekniker är att de små dimensionerna
+kräver mycket mindre testsubstrat (och reagenser).
+Mikromekaniska system har inte bara bidragit med nya strömningsmekaniska
+frågeställningar. Tekniken gör det även möjligt att tillverka mätutrustning som är
+mindre än vad som varit möjligt med traditionella tekniker. Ett exempel är en mätare
+för den lokala friktionskraften med 100 mätpunkter på en yta som är mindre än en
+kvadratcentimeter! Den är konstruerad bl a med tanke på att försöka kontrollera
+turbulenta strömningar genom att lokalt känna av strömningstillståndet och snabbt
+reagera med ett mikroelektromekaniskt element som kan dämpa turbulensen redan i
+stadiet då den ‘är på väg att uppstå’. De tekniska tillämpningarna skulle vara många
+men mycket forskning återstår innan det finns system som kan kontrollera turbulensen
+kring ett flygplan (den turbulens som skall kontrolleras är den som ger upphov till
+friktionsmotstånd, inte den som gör att man får grannens middag i knät).
+
+5.8 Beräkning av turbulenta strömningar
+De moderna stora datorerna har gjort det möjligt att exakt beräkna tidsberoende,
+turbulent strömning. Idag är detta möjligt, dock ännu för måttliga Reynolds tal (låga
+hastigheter och/eller små dimensioner) och enkla geometrier. Trots begränsningarna har
+dessa beräkningar gett mängder av ny kunskap om den komplexa dynamik som är
+förknippad med turbulenta strömningar. Sådana här direktsimuleringar, utan några som
+helst förenklingar, är en numerisk form av experiment och är idag ett viktigt verktyg i
+strömningsforskningen vid sidan av fysiska experiment. Ett exempel på de detaljerade
+resultat som kan fås från sådana beräkningar visades i figur 5-7. Antalet frihetsgrader i
+den turbulenta strömningen är mycket stort. De största virvlarna är så stora som
+geometrin tillåter (atmosfärens tjocklek eller vindtunnelns diameter). De minsta
+virvlarnas storlek bestäms å andra sidan av viskositeten som omvandlar energin i de
+minsta virvlarna till värme. Antalet frihetsgrader hos den turbulenta strömningen växer
+ungefär som Re9/4. Beräkningsarbetet ökar dock som Re3 eftersom också tidsupplösningen måste göras finare då Re ökar. Det betyder att en höjning av Reynolds tal
+med en faktor 10 sker till ett pris av 1000 gånger mer beräkningsarbete. Idag gör man
+standardmässigt simuleringar med 100 miljoner nätpunkter medan de allra största
+beräkningarna har över 10 miljarder nätpunkter. Sådana beräkningar tar månader på
+världens kraftfullaste datorer.
+För tekniska beräkningar behövs det följdaktligen fortfarande förenklade
+ingenjörsmässiga beräkningsmodeller för turbulenta strömningar. Sådana förenklade
+modeller användes vid beräkningarna av strömningen kring “Spaceship One” i figur 5-2
+och kring Volvon i figur 5-5. De modeller som används är under ständig utveckling för
+att kunna prediktera svåra strömningar (tex strömning med avlösning) korrekt.
+
+Strömningsmekanik 5.12
+
+Figur 5-12 Strömning i en asymmetrisk diffusor. Strömn ingen går från vänster till höger. Gråskalan
+mellan bilderna visar hastigheten. Notera att hastigheten är negativ, dvs går åt vänster, i
+avlösningsbubblan kring knäcken i övre väggen. Den övre bilden visar data från ett experiment, den
+undre data från en beräkning i vilken turbulensen modellerats. Bilderna kommer från KTH Mekanik,
+www.mech.kth.se.
+
+De nya simuleringsmöjligheterna och avancerad mätteknik (även den beroende av
+moderna datorer) har gett helt nya möjligheter att utveckla och verifiera de matematiska
+modellerna. Man kan nu göra experiment och räkna på likadana strömningsfall och
+jämföra resultaten, som i figur 5-12. Direkta jämförelser i allt mer komplicerade fall
+ökar möjligheten att utveckla nogranna beräkningsmodeller.
+Datorresursernas utveckling har gjort det möjligt att räkna på industriella
+problem som för bara några årtionden sedan löstes med erfarenhet och grova
+beräkningsmodeller. Utvecklingen av turbulensmodeller är därför av centralt intresse
+för att kunna få noggranna prediktioner av strömningen kring flygplan, rymdfärjor,
+bilar, båtar och tåg, i separatorer, pumpar, bioreaktorer och kraftverk samt i många
+andra sammanhang. De modeller som utvecklats har tidigare varit begränsade till att
+klara av relativt snävt avgränsade problemområden, medan den nuvarande utvecklingen
+syftar till att skapa modeller med en hög grad av generalitet. Detta leder oundvikligen
+till relativt komplexa matematiska modeller. Moderna beräkningsprogram gör det dock
+möjligt att hantera dessa.
+
+

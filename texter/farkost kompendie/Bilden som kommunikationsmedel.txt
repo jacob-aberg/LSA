@@ -1,0 +1,239 @@
+Bilden som kommunikationsmedel 19.1
+
+19. Bilden som kommunikationsmedel
+Av
+Anders Folkeson
+KTH Maskinkonstruktion
+
+19.1 Bildens egenskaper
+Bilden är en kraftfull informationsbärare vid kommunikation i form av presentationer,
+skrivna rapporter osv. Det finns många sätt att framställa bilder, inte minst elektroniskt,
+med hjälp av en persondator. Digitala kameror, skannrar (bildläsare) och mobiltelefoner
+är exempel på lättillgängliga hjälpmedel att framställa bilder i elektronisk form.
+Med CAD-program (Computer Aided Design) kan man till och med göra så
+kallade fotorealistiska bilder, färgfotografier, av objekt som inte finns i verkligheten.
+Man kan visa hur maskiner ser ut i sin rätta miljö, utan att ens en prototyp har byggts.
+Elektroniskt lagrade bilder kan enkelt monteras i skrivna dokument. I de flesta fall kan
+bilderna göras bättre i ett bildbehandlingsprogram. Det vanligaste sådant är Adobe
+Photoshop.
+Bilden utgör ett mycket effektivt komplement till det skrivna och talade ordet.
+Det kan inte nog understrykas att bilder ska utnyttjas så mycket som möjligt i rapporter
+och presentationer.
+Det finns många fördelar med bilder, bland annat:
+• bilder väcker intresse
+• bilder underlättar förståelse
+• bilder gör komplicerat material överskådligt
+• bilder lättar upp både text och tal
+• bilder stimulerar fantasin och främjar kreativiteten.
+Idéskisser
+Bilder är inte bara av värde vid kommunikation med andra. De kan även vara nyttiga
+när man kommunicerar med sig själv. Man kan rita skisser för att utveckla sina egna
+idéer och tankar. Man kan också skissa idéer som sparas för en senare bearbetning. På
+det viset arbetar ofta kreativa människor. Det finns skissböcker bevarade efter Leonardo
+da Vinci, Thomas A Edison och Gustav de Laval, som belyser hur dessa geniala
+personer arbetade och tänkte, se figur 19-1.
+Vad kan uttryckas i bild?
+Vad beträffar maskiner, kan du med enkla skisser beskriva form, dimensioner, yta och
+material för olika komponenter. Du kan också förklara funktion, arbetssätt och
+översiktligt klargöra maskiners uppbyggnad och struktur. Sådant kräver många och
+komplicerade ord i text, vilket blir svårläst.
+Olika metoder att rita
+Som sagts ovan finns det fina hjälpmedel att elektroniskt framställa bilder. Det betyder
+emellertid inte att handritade bilder har spelat ut sin roll.
+Förmågan att rita skisser är en färdighet som alltid kommer att vara av värde.
+Alla kan göra handskisser. Med lite träning kan alla bli bättre. Här ska vi ta upp några
+enkla metoder för skissritning.
+
+Bilden som kommunikationsmedel 19.2
+
+Figur 19-1 Skisser ur Gustav de Lavals dagbok från 1889. (Ingvar Jung: Gustav de Laval – the flexible
+shaft and the gas turbine. De Laval Memorial Lecture 1973)
+
+Bilden som kommunikationsmedel 19.3
+
+I figur 19-2 visas exempel på en
+perspektivskiss som utförts av teknologer i
+en nybörjarkurs på KTH. Deras uppgift var
+att konstruera om cyklar och ersätta
+drivkedjorna med kuggremmar. Principen
+framgår tydligt och man får ett bra begrepp
+om hur konstruktionen kan se ut.
+
+Figur 19-2 Kuggrem som ersätter drivkedjan på en
+cykel. Från ett teknologprojekt.
+
+19.2 Allmänna tips
+Rita på fri hand. Som regel räcker det bra med frihandsskisser. Gör bilden så enkel som
+möjligt. Ta bort allt oväsentligt. Se till att bilden stämmer överens med texten. Använd
+samma beteckningar och symboler. Gör en bildtext som sammanfattar det som bilden
+ska visa. Gör läsaren så intresserad att han går vidare och läser huvudtexten!
+Ritningar förekommer ofta i tekniska rapporter. De är oftast i format som är
+större än det vanliga kopieformatet A4. Helst bör man förminska ritningarna till A4 i en
+rapport. Om ritningar måste de vikas, blir rapporten besvärlig att hantera. Lösa ritningsrullar hör inte hemma i rapportsammanhang.
+Pennor. Det är oftast bäst att påbörja en skiss med blyerts. För att få väldefinierade svarta linjer kan du sedan använda "markers", fiberspetspennor. Illustrationer blir
+ofta tydligare och snyggare om de görs med två linjegrovlekar.
+
+19.3 Perspektivskisser
+Vid grafisk avbildning har man problemet att återge en tredimensionell verklighet på en
+tvådimensionell pappersyta. I maskinritningar används så kallad ortografisk projektion
+med flera, mot varandra vinkelräta, vyer. Föremålens former och dimensioner kan som,
+ligger i de olika bildplanen därigenom återges i exakt skala. Det sättet att rita är stelt och
+det krävs vana att förstå sådana ritningar. CAD-programmen ger enkel möjlighet att ta
+med en vy med perspektiv lite från sidan. Det underlättar i hög grad förståelsen av
+ritningen.
+Det finns flera enkla metoder för handritade perspektivskisser: dels
+axonometriska parallellperspektiv (parallella linjer ritas parallella), dels "äkta"
+perspektiv (parallella linjer går ihop mot en punkt på horisonten). Parallellperspektiven
+passar bäst för små föremål, som maskinelement, medan stora föremål kräver äkta
+perspektiv. Ett hus, till exempel, ser ganska töntigt ut i parallellperspektiv.
+Det finns enkla metoder för grafisk konstruktion av perspektiv som vi kan ha
+god nytta av.
+
+Bilden som kommunikationsmedel 19.4
+
+Parallellperspektiv
+Axonometrisk projektion kan vara isometrisk, dimetrisk eller trimetrisk. Axonometri
+innebär bilder som är mätbara genom att de har kända skalor längs axlarna.
+Figur 19-3 Isometrisk projektion innebär t.ex. att man
+har 120° vinkel mellan de
+tre axlarna. En kub vars
+kanter ligger längs axelriktningarna återges med alla
+kantlinjer i samma skala.
+Basvinklarna blir båda 30°,
+varför man brukar tala om
+30-30-metoden.
+
+Figur 19-4 Dimetrisk projektion innebär att endast två
+hörnvinklar är lika. Det medför att kantlinjer i två riktningar
+framställs i samma skala, medan kantlinjer i den tredje
+riktningen återges i en annan skala. 7-42-metoden med
+basvinklarna cirka 7° och 42° anses ge en verklighetstrogen
+återgivning. Mått i djupled (längs 42°-axeln) återges med halva
+den skala som används i sid- och höjdled. Observera alltså att vid
+7-42-metoden ritas verkliga mitt i sid- och höjdled, medan mått i
+djupled alltså halveras.
+
+Perspektiv med en eller två gränspunkter visas i figur 19-5 och 19-6 nedan.
+De viktigaste reglerna är:
+• horisonten ligger i ögonnivån
+• horisontella kantlinjer för parallella ytor kan förlängas till en gränspunkt,
+G i figur 19-4
+• alla linjer som är vinkelräta mot bildplanet konvergerar mot huvudpunkten
+• vertikala linjer förblir vertikala
+• alla former som ligger i plan som är parallella med bildplanet, behåller sina
+verkliga proportioner
+• mittpunkter på fyrkantiga ytor fås alltid i diagonalernas skärningspunkt.
+
+Bilden som kommunikationsmedel 19.5
+
+Figur 19-5 Exempel på perspektiv med en gränspunkt på horisonten.
+
+Figur 19-6 Exempel på tvåpunktsperspektiv.
+
+Figur 19-7 Man kan även använda perspektiv med tre gränspunkter. Kantlinjer för sneda
+ytor har gränspunkter som inte behöver ligga på horisonten. Som exempel visas ovan ett
+hus med snedtak. Det lutande taket har en egen gränspunkt, som inte ligger på horisonten.
+
+Bilden som kommunikationsmedel 19.6
+
+Figur 19-8 Skissövning.
+
+Figur 19-8 visar en enkel skissövning för perspektivskisser med två gränspunkter.
+Försök arbeta på fri hand. Gör dig oberoende av linjalen. Det går att dra även
+hjälplinjerna mot gränspunkterna på fri hand. Vid tvåpunktsperspektiv ska man hålla sig
+inom en cirkel genom gränspunkterna och med horisonten som diameter. Utanför
+cirkeln förvrids bilden på ett onaturligt sätt vilket illustreras i figuren. Perspektivskisser
+med en eller två gränspunkter är ofta mycket användbara när man ritar maskinelement
+och maskiner. De kan naturligtvis inte ge lika mycket information som ritningar i tre
+vyer, men de lämnar goda möjligheter till visualisering i många sammanhang. Till
+skillnad från parallellperspektiven får man ett "riktigt" perspektiv
+
+19.4 Några knep vid perspektivritning
+Cirklar antar ellipsform i sneda perspektiv. För att skissa en cirkel i perspektiv börjar
+du med att konstruera en kvadrat i vilken cirkeln ska inskrivas. Mittpunkten i denna
+kvadrat bestäms av diagonalernas skärningspunkt. Dra vertikala och horisontella linjer
+genom mittpunkten. Cirkeln, eller snarare ellipsen, går genom dessa linjers
+skärningspunkter med fyrkanten (A, B, C, D) och tangerar där fyrkanten. Detta ger oss
+stöd för att enkelt skissa en acceptabel cirkel i perspektiv.
+
+Figur 19-9 Skissning av en cirkel i snett perspektiv.
+
+Bilden som kommunikationsmedel 19.7
+
+Delning. Linjer som inte ligger parallellt med bildplanet är inte måttriktiga och
+proportionerna förändras av perspektivet. För att återge ett föremål med jämn delning
+görs på följande sätt. Figur 19-10 visar ett staket med jämn delning mellan spjälorna.
+•
+•
+•
+•
+•
+
+Anta att spjälan AB och delningen AC är givna
+Dela AB på mitten
+Dra en linje från mittpunkten på AB till gränspunkten G
+Denna linje delar alla spjälor på mitten
+Dra diagonalen från B genom mittpunkten på CD till E.
+Därmed kan EF ritas. Dra sedan diagonalen från D och så vidare.
+
+Figur 19-10 Jämn delning vid perspektivritning av ett staket. Till höger det renritade
+staketet med horisont och en gångväg framför staketet.
+
+Fria former. När en oregelbunden form ska ritas i perspektiv kan man utnyttja ett
+rutnät. Detta konstrueras med diagonaler som halverar bilden i ett lämpligt antal steg,
+till vänster i figuren nedan. Samma rutnät konstrueras i perspektivbilden. Därefter
+överförs den oregelbundna formen, punkt för punkt, med hjälp av rutorna. Ett exempel
+visas i figur 19-11.
+
+Figur 19-11 Fria former vid perspektivritning.
+
+Bilden som kommunikationsmedel 19.8
+
+Rita föremål. När man ska rita föremål med godtycklig form, börjar man med att rita
+omskrivna kuber eller rätblock. Därefter skissas det aktuella föremålet in i det skelett
+som ges av rätblocken. Figuren nedan visar förfarandet när en vals och en snäckväxel
+ritas på detta sätt.
+Förutom att några hjälplinjer ritas, konstrueras inte bilden, utan den skissas på
+fri hand. Prova dig fram till dess att du tycker dig ha fått vettiga proportioner. När du är
+nöjd, lägger du ett tunt vitt papper över och ritar rent. Ser inte resultatet bra ut, upprepar
+du proceduren. Lägg på ett nytt vitt papper, korrigera felen och upprepa tills du är nöjd!
+
+Figur 19-12 Föremål byggs upp av omskrivna rätblock.
+
+Skuggning och ytmarkering. Skuggning ger en förbättrad rymdverkan. Bilder i
+facklitteratur, tidskrifter och kataloger ger exempel på professionellt utförda
+perspektivbilder med skuggning. I figurerna nedan visas exempel på användning av
+skuggning och materialtextur.
+
+Figur 19-13 Skuggning förstärker objekten vid perspektivritning.
+
+Figur 19-14 Materialtextur förstärker objekten vid perspektivritning.
+
+Bilden som kommunikationsmedel 19.9
+
+Rendering innebär att geometriska bilder som skapats i ett CAD-program återges i
+korrekt perspektiv med bakgrund, belysning och skuggor samt att ytorna markerar
+material på ett realistiskt sätt. Man talar om fotorealism. Man kan komma mycket nära
+ett fotografi, särskilt när bilden är i färg. Figurerna 19-15 och 19-16 visar renderade
+bilder utförda av teknologer i en CAD-kurs. De ursprungligen bilderna är i färg.
+
+Figur 19-15 Renderad CAD-bild av en avskärare.
+
+Figur 19-16 Renderad bild av en modellmotor.
+
+19.5 Sprängskisser
+Sprängskisser kan användas för att visa alla delar i en maskin på ett tydligt sätt. Figur
+19-17 visar exempel på en sprängskiss av en Polaroidkamera och figur 19-18 en broms
+från Girling.
+
+Figur 19-17 Sprängskiss av en Polaroidkamera.
+
+Bilden som kommunikationsmedel 19.10
+
+Figur 19-18 Sprängskiss av en Girling trumbroms.
+
+Figur 19-19 Sprängskiss utförd med CAD. Lägg märke till att de olika delarna markerats med
+nummer som återfinns i en särskild stycklista, där deras namn och antal framgår liksom nummer på
+detaljritningar.
+
+

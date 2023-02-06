@@ -1,0 +1,395 @@
+Ljud och vibrationer 6.1
+
+6. Ljud och vibrationer
+av
+HP Wallin
+KTH Farkost och flyg
+
+6.1 Historik
+Akustik kan ses som vetenskapen om ljud och vibrationer. Med ljud avses idag inte bara
+den mekaniska vågrörelse i luft som ger hörselupplevelser, utan även lågfrekvent (infra)
+och högfrekvent (ultra) ljud som ej kan uppfattas av hörseln, samt vågutbredningen t ex
+i vatten, undervattensakustik. I fasta material talar man om vibrationer eller
+strukturburet ljud.
+Hörselfenomenet har fascinerat mänskligheten genom seklen. Den matematiska
+teorin för ljudutbredning kan sägas börja med Isaac Newton (1642-1727), vars verk
+Principia (1686) innehöll en mekanisk tolkning av ljudet som tryckpulser under
+utbredning i mediet. Teori på fastare matematisk och fysikalisk grund formulerades av
+Euler (1707-1783), Lagrange (1736-1813) och d'Alembert (1717-1783). Detta skedde
+samtidigt som kontinummekaniken och fältteorin började finna sin struktur och
+vågekvationen formulerades för funktioner av rum och tid. Den moderna teorin för ljud
+och vibrationer är frukten av dessa matematiska fysikers arbeten.
+
+Figur 6-1 Akustiken omfattar vida områden som biovetenskap, konst, naturvetenskap och teknik.
+Vidstående försök till indelning visar att ljud- och vibrationsområdet omspänner många aspekter och
+vetenskaper. Det oskuggade området beskriver verksamheten på Marcus Wallenberg Laboratoriet för
+Ljud- och Vibrationsforskning, MWL. (Källa: Efter R.B. Lindsay som publicerade sitt "akustiska hjul"
+i Journal of the Acoustical Society of America 1964, vol 36)
+
+Ljud och vibrationer 6.2
+
+6.2 Branschen
+I det utvecklade tekniska samhället ökar antalet system som alstrar buller och
+vibrationer starkt. Exempel är maskiner, fordon och processer av alla slag, där
+drivkrafter och motoreffekter hela tiden ökas parallellt med att man strävar efter att
+hålla vikter och materialåtgång nere. Detta medför att ett allt intensivare forsknings- och
+utvecklingsarbete måste utföras för att kartlägga och undertrycka ljud- och
+vibrationsprocesserna och klara de krav som ställs på en vettig miljö.
+Grunderna för ljud- och vibrationsläran är en del av den tekniska mekaniken
+med starka kopplingar till exempelvis grundläggande mekanik, hållfasthetslära och
+strömningslära.
+I ljud- och vibrationsläran ingår grundläggande kunskap om hur ljud och
+vibrationer genereras och hur vibrationer fortplantas och dämpas. Vidare hur ljud
+utbreds i ett fritt fält, hur det samverkar med ett slutet utrymme och hur det påverkar
+människa och mätinstrument.
+De tekniska tillämpningarna spänner över ett brett fält. Från tillämpad
+matematik och mekanik, över elektrisk mätteknik och analog- och digital signalteori till
+maskin-, fordons- och byggnadsteknologi.
+Bland några speciellt viktiga områden förtjänar följande att omnämnas: Maskinoch fordonsakustiken beskriver vilka åtgärder som kan vidtas för att få tystare och
+vibrationsfriare maskiner, fordon och processer. Härför fordras kunskap om hur ljud och
+vibrationer uppstår och hur detta sammanhänger med fysikaliska parametrar som
+exempelvis strömningshastigheter, massor, styvheter, förluster och geometrier. Den
+vanligaste orsaken till att ljud uppkommer i tekniska sammanhang är att en i tiden
+varierande kraft sätter en mekanisk struktur i vibrationer. Detta kan vi övertyga oss om
+genom att knacka i bordsskivan. Den omgivande luften påverkas av den vibrerande
+strukturen och reagerar med kompressioner och expansioner. Den mekaniska
+energiform vi kallar ljud har uppstått. Analys av ljudgenereringsmekanismerna hjälper
+oss att svara på frågan varför det låter annorlunda när vi slår mot en bordsskiva med
+pekfingrets mjukdelar jämfört med kulspetspennans stålspets och varför det låter mer
+när vi knackar med knogen mitt på bordskivan jämfört med när vi gör samma sak på
+bordsskivans sidokant.
+Det dova mullret från en Harley-Davidson cykel har blivit ett begrepp - så
+viktigt att företaget sökt patent på ljudet för att hindra konkurrenterna att plagiera det.
+Kassaskåpsklicket när en Mercedesdörr slår igen är något som andra biltillverkare
+eftersträvar. Begreppet Ljudkvalitét är på väg att etableras. Ljudet skall förmedla
+kvalitét och tillförlitlighet hos produkten. Bilindustrin är pionjärer på området. På både
+Volvo och Scania har ljudkvalitét en hög prioritet bland andra viktiga aspekter som
+köregenskaper, säkerhet och design. För att beskriva ljudet används subjektiva begrepp
+som “skärpa”, “råhet” och “burkighet”. Flera tillverkare har utvecklat programvaror
+som gör det möjligt att modifiera produkternas ljud som efterliknar olika
+konstruktionsförändringar. De modifierade ljuden bedöms sedan av “lyssningspaneler”.
+I framtiden kommer många konsument-, industri- och transportmedelsprodukter att
+vara “ljuddesignade”.
+
+Ljud och vibrationer 6.3
+
+Modell
+
+Teknik
+
+Kraft
+
+Vibrationer
+
+Kraft
+Ojämnhet
+Akustisk
+avstrålning
+
+Matematisk struktur
+Tre led:
+Svängare
+
+Svar
+
+Akustisk avstrålning
+
+Exempel:
+Ojämnhetskrafter
+Kuggkrafter
+Mekaniska obalanser
+Aerodynamiska krafter
+
+Geometrier
+Massor
+Styvheter
+Förluster
+
+Ytstorlek
+Svängningsformer
+Resonanser
+Kopplingen mellan struktur och luft
+
+N
+
+N
+
+L
+
+i =1
+
+i =1 k =1
+
+p j = ∑ Z ij vi Si = ∑∑ Z ijYki Fk S i
+
+Figur 6-2 Krafter som orsakar
+vibrationer uppträder i många
+sammanhang. Det kan t ex vara
+en kula i ett rullningslager som
+inte är tillräckligt rund eller små
+ytojämnheter vid kontakten
+mellan ett tåghjul och rälsen.
+Krafternas förmåga att alstra
+vibrationer beror på de mekaniska lagarna där parametrar
+som stukturens geometri, dess
+massfördelning, styvhet och
+förluster ingår. Hur effektiv den
+vibrerande strukturen är som
+akustisk strålare bestäms av
+ytans storlek, hur den svänger
+och kopplingen mellan strukturen och luften i skiljeytan.
+Ljudgenereringsmekanismer i
+samband med mekaniska strukturer kan beskrivasd i tre led:
+Svängare - Svar - Strålning.
+
+(6-1)
+
+Figur 6-3 I en så
+sammansatt maskin som
+en bil är de tre leden i
+ljudgenereringskedjan
+representerade i många
+parallella kedjor. Hastigheten i en bestämd
+punkt, som en kraft i en
+annan punkt orsakar,
+kan beskrivas med sk
+frekvenssvarsfunktioner.
+På samma sätt kan andra
+frekvenssvarsfunktioner
+beskriva relationen mellan hastigheten i den
+aktuella punkten och
+ljudtrycket i en punkt i
+kupén. Frekvenssvarsfunktionerna kan vidare
+kombineras för att beskriva de tre leden i utbredningskedjan. Genom att summera bidragen från alla
+kraftangrepp av betydelse, via de dominerande avstrålande ytorna, erhålls det totala ljudtrycket i de
+önskade områdena i kupén.
+Bullret inne i kupén kommer väsentligen från tre källor:
+•
+Drivlinan, dvs. motor, växellåda och drivaxlar.
+•
+Kontakt mellan däck och vägbana.
+•
+Strömning över karossen.
+Ljudet fortplantas från källan till kupén på två skilda sätt. Man talar om strukturburet ljud och luftburet
+ljud. Med strukturburet ljud avses det som väsentligen har transporterats som vibrationer från källa till
+mottagare medan det luftburna redan har uppstått som ljud, t ex i motorrummet i en bil innan det
+transmitteras in till kupén. (Bild: Volvo Technology Report, nr 1 1988)
+
+Ljud och vibrationer 6.4
+
+Inom strömningsakustiken studeras ljudgenerering direkt i ett elastiskt gaseller vätskeformigt medium. De vanligaste genereringsmekanismerna är volym-, kraftoch momentfluktuationer i mediet, som svarar med att elastisk energi utbredes.
+Fenomenen har stor betydelse för exempelvis buller från propellrar, jetmotorer, fläktar,
+fordon och ljudutbredning i kanaler.
+Figur 6-4 Volvos vindtunnel används för att reducera strömningsalstrat ljud. För att hålla nere det
+strömningsalstrade ljudet krävs en
+jämn strömning över karossen samt
+små toleranser och god passform,
+speciellt vid dörrar och andra tätningar. Avlösning kring utstickande
+detaljer kan skapa visseljud. Den
+småskaliga turbulensen kring karossen ger ett brusartat ljud och finns
+dessutom otäta partier kan en luftströmning ibland skapa nya visselljud. (Bild: Volvo Technology
+Report, nr 1 1988)
+
+Rums- eller byggnadsakustiken beskriver hur ljudfält utbreds och samverkar
+med lokaler av skilda slag samt hur ljud transmitteras genom olika typer av
+skiljekonstruktioner såsom väggar och bjälklag.
+Figur 6-5 Tunga skiljekonstruktioner begränsar effektivt ljudtransmissionen från ett utrymme till ett
+annat, exempelvis från motorrummet på en lastbil till förarkupén. För
+farkoster som fartyg, bilar, tåg och
+flygplan är låg egenvikt ett
+väsentligt krav. Stora ansträngningar görs därför inom transportmedelsindustrin för att utforma både
+lätta och effektivt ljudreducerande
+konstruktioner. Bilden visar det
+ljudhårda efterklangsrummet på
+MWL, KTH där ett tak till en
+personbil monterats i öppningen in
+mot det ljudabsorberande ekofria mätrummet. Med hjälp av mikrofoner och matematiska modeller för
+ljudets samverkan med mätrummen kan biltakets ljudreducerande förmåga bestämmas. (Foto: HP Wallin,
+MWL)
+
+Signalanalys är en viktig del av ljud- och vibrationsläran. Inom mättekniken
+används främst givare som mikrofoner och accelerometrar som omvandlar ljud och
+vibrationer till ekvivalenta elektriska signaler för vidare analys. Fram till 60-talet var de
+flesta akustiska mätinstrumenten analoga, därefter kom datortekniken på bred front. En
+numerisk algoritm FFT (Fast Fourier Transform), som överför signalerna från tidsplanet
+(signalstyrka som funktion av tiden) till frekvensplanet (signalstyrka som funktion av
+frekvensen) gav ett genombrott för mättekniken.
+
+Ljud och vibrationer 6.5
+
+Figur 6-6 För att åtgärda ett bullerproblem som misstänks uppstå på
+grund av vibrationer i taket körs
+bilen på en chassiedynamometer - en
+rullande väg. Rörelsen i taket
+registreras som funktion av tiden
+med hjälp av en rörelsegivare - en
+accelerometer. Om den i stället är
+överförd till frekvensplanet d v s dess
+styrka anges som funktion av
+frekvensen blir problemet ofta
+mycket lättare att tolka. I detta fallet
+var det en ogynnsamt utformad
+växellåda som var orsaken. Överföring från tids- till frekvensplanet
+görs mha. elektriska filter eller med
+datorer. Detta vida område kallas
+signalanalys. Den matematiska bakgrunden hämtas från den matematiska statistiken och Fouriermetoderna. Exemplet i bilden
+antyder att en axel i växellådan, som
+roterar med 1800 varv per minut, är
+böjd eller i obalans vilket ger upphov
+till en dominerande vibrationsstörning med frekvensen 30 Hz.
+(Bild: Brüel & Kjær, Structural
+Testing, Part 1)
+
+Ljud- och vibrationsläran erbjuder således rika utvecklingsmöjligheter både för
+den rent teoretiskt intresserade och för den mer praktiskt/experimentellt inriktade som
+önskar ägna sig åt förbättrade maskin- och fordonskonstruktioner eller medverka i
+utformningen av en tystare arbets- och samhällsmiljö.
+Figur 6-7 Ljudets styrka
+anges ofta i dB. En ändring
+på 1 dB är knappt uppfattbar. En ökning på ca 8
+dB uppfattas som en
+fördubbling av störintrycket. För att efterlikna
+örats varierande känslighet för olika frekvenser
+korrigeras ofta värdena.
+Resultatet kallas Ljudnivå
+och anges i dB(A). (Bild:
+asf,
+Bullerbekämpning,
+1977, Illustration: Anette
+Dünkelberg och Arne
+Karlsson)
+
+Ljud och vibrationer 6.6
+
+6.3 Principer, exempel och åtgärder
+På de följande sidorna ges några exempel på principer och tillämpningar inom området.
+Snabbheten i ett förlopp bestämmer mängden högfrekvent buller
+
+Figur 6-8 (Bild: asf, Bullerbekämpning, 1977. Illustration: Anette Dünkelberg och Arne Karlsson)
+
+Ljud och vibrationer 6.7
+
+Gör vibrerande ytor så små som möjligt
+
+Figur 6-9 (Bild: asf, Bullerbekämpning, 1977. Illustration: Anette Dünkelberg och Arne Karlsson)
+
+Ljud och vibrationer 6.8
+
+Tätperforerad skiva ger litet buller
+
+Figur 6-10 (Bild: asf, Bullerbekämpning, 1977. Illustration: Anette Dünkelberg och Arne Karlsson)
+
+Ljud och vibrationer 6.9
+
+Vindton tas bort med ändrad profil eller små störelement
+
+Figur 6-11 (Bild: asf, Bullerbekämpning, 1977. Illustration: Anette Dünkelberg och Arne Karlsson)
+
+Ljud och vibrationer 6.10
+
+Rena toner kan utsläckas med motriktat ljud
+
+Figur 6-12 (Bild: asf, Bullerbekämpning, 1977. Illustration: Anette Dünkelberg och Arne Karlsson)
+
+Ljud och vibrationer 6.11
+
+6.4 Utveckling
+Den klassiska akustiken sammanfattades av Lord Rayleigh i hans grundläggande verk
+"The theory of sound" 1894-96. Denna klassiska teori utgör grunden för den moderna
+ljud- och vibrationsläran. Lord Rayleigh belönades med Nobelpriset i fysik 1904, för
+sina upptäckter inom optiken.
+I Sverige påbörjades under
+1930-talet viss akustisk verksamhet.
+En stark utveckling inom maskinakustiken tog fart under 1950-talet i
+och med satsningen på att bygga
+tysta ubåtar. Kunnandet spreds till
+den civila industrin där Atlas Copco
+var en av pionjärerna. De utvecklade
+tysta tryckluftsmaskiner och kompressorer vilket hade stor inverkan på
+bullret på gator och torg.
+I dag ställs ljud- och
+vibrationstekniska krav på en stor
+del av de produkter som levereras av
+svensk industri. Svenskt inträde i
+EU har inneburit ytterligare krav på
+svenska produkter inom ljud- och
+vibrationsområdet. Kvalitetsinriktade tillverkare ser tysta och
+vibrationsfria produkter som en
+kraftfull
+kvalitetsegenskap
+att
+erbjuda marknaden, varför alla
+större verkstadsföretag har en
+avdelning för ljud- och vibrationer.
+I framtiden kommer vi att se
+förbättrade och mer lättanvända
+Figur 6-13 (Foto: HP Wallin, MWL)
+datorbaserade
+beräkningsverktyg
+och en fortsatt utveckling av billiga
+persondatorbaserade system för mätning och diagnostisering. Ett exempel på utveckling
+av ny teknik är den s k aktiva ljud - och vibrationskontrollen. Metoden går ut på att med
+exempelvis mikrofoner registrera ett störande ljudfält. Via reglerteknisk behandling
+sänds ett "motriktat" (el. fasvänt) ljudfält ut som under vissa förutsättningar kan
+eliminera det störande fältet på ett effektivt sätt. Kommersiella system av detta slag
+finns i dag tex inom ventilationstekniken och för bilkupéer och flygkabiner. I framtiden
+kan vi förvänta oss motsvarande system även på vibrationssidan. Idag används alltid
+vibrationsisolatorer, främst av gummi, för att förhindra vibrationerna från motorn i en
+bil att sprida sig till karossen. Genom att parallellt med dessa placera elektrodynamiska
+vibratorer som genererar krafter i motfas kan de krafter som trots allt passerar
+isolatorerna motverkas.
+
+Ljud och vibrationer 6.12
+
+Figur 6-14 Tvärsnitt av
+kabinen på turboproppflygplanet SAAB 340 med
+aktiv bullerkontroll. Mikrofonerna registrerar ljudet i
+ett antal punkter och vidarebefordrar de elektriska
+signalerna till kontrollenheten. Signalerna bearbetas
+och driver högtalarna på
+sådant sätt ("motfas") att
+bullret i kabinen reduceras.
+Varvtalssignalerna
+från
+motorerna hjälper till att
+effektivisera de reglertekniska processerna i
+kontrollenheten.
+(Källa: Ny Teknik)
+
+Mikrofon
+Högtalare
+
+Kontrollenhet
+
+Signal från motor
+
+Varvtalsgivare
+
+Signal från motor
+
+6.5 Verksamhetsfält/Framtida arbete
+Uppgiften att minimera ljud och vibrationer i mekaniska konstruktioner åligger främst
+de som är ansvariga för dessas konstruktion och beräkning, d v s främst civilingenjörer
+med mekanik, fordons- och maskinteknisk bakgrund.
+Dessa frågor har idag en mycket stor aktualitet och industrin arbetar
+följdaktligen mycket med dessa frågor. Högskolesystemet har dock tidigare erbjudit en
+mycket begränsad utbildning på området. I de organ där MWL möter näringslivet
+representerade av SAS (Svenska Akustiska Sällskapet) och SVIB (Svenska
+Vibrationsföreningen) samt industrin i sig möter vi ofta kraven på ökad utbildning. Det
+är den större verkstadsindustrin som vanligen söker flest ingenjörer på detta område.
+Stor här är transportmedelssektorn, där svensk industri är stark alltifrån ubåtar (där
+Sverige fått sin hittills största industriorder bl a på grund av lägsta ljudnivå) över
+markbundna fordon såsom bilar och tåg till flygplansindustrin. Även övriga sektorer av
+industrin som tillverkar produkter där någon typ av energiomvandling sker
+(kompressorer, separatorer, turbiner, fläktar hushållsmaskiner, osv, osv) har stort behov
+av denna typ av kunskap.
+Det finns vidare många konsultbolag inom området. Sverige anses ha en stor
+konsultmarknad inom ljud- och vibrationsområdet, i förhållande till sin storlek. Övriga
+som söker folk inom detta område är statliga och kommunala myndigheter som har att
+se till att lagar och förordningar på området efterlevs samt statliga forskningsorganisationer vars uppgift är att söka ny kunskap.
+
+Ljud och vibrationer 6.13
+
+Ljud och vibrationer 6.14
+
+

@@ -1,0 +1,717 @@
+Projektplanering och grupparbete 15.1
+
+15. Projektplanering och grupparbete
+av
+Johann Packendorff
+KTH Industriell ekonomi och organisation
+
+15.1 Vad är ett projekt?
+Den ursprungliga betydelsen av ordet projekt är ‘förslag’ eller ‘plan’. Denna betydelse
+ligger nära det latinska ursprungsordet projicere, vilket betyder ‘framkasta’. I
+substantivform är det latinska ordet projectum. I dagligt tal innebär avser ordet projekt
+dock inte bara själva planen eller förslaget, utan även själva genomförandet. Den fysiska
+process som planens genomförande innebär inbegrips sålunda också i de definitioner av
+projekt som projektledningslitteraturen erbjuder. Enligt dessa gängse definitioner kan
+projekt sägas ha följande egenskaper:
+•
+•
+
+•
+
+•
+
+Engångsuppgift – en byggnad, en utredning eller en produktutvecklingsprocess
+genomför man bara en gång, till skillnad mot vanliga produlter och rutiner, som ju
+upprepas hela tiden.
+Förutbestämt slutdatum/leveransdatum – de allra flesta projekt har en uttalad
+deadline. I en del projekt (t.ex. byggprojekt) är det viktigaste ändå att
+”projektprodukten” blir helt klar, eftersom ett hus utan tak inte är något värt för
+beställaren. I en del andra projekt är deadline absolut – komittén för firandet av
+Sveriges nationaldag måste helt enkelt vara färdiga med sitt arbete kvällen den 5
+juni...
+Ett eller flera prestationsmål, dvs målsättningar som reglerar projektets
+genomförande utöver tidsbegränsningen. Dels handlar det naturligtvis om
+projektets kravspecifikation, där det ju definieras vad som skall levereras.
+Dessutom finns det nästan alltid restriktioner avseende resursförbrukning (budget,
+mantimmar, råvaruförbrukning etc).
+Ett antal komplexa eller ömsesidigt beroende aktiviteter. För att det skall vara
+meningsfullt att använda sig av projektplaneringsmetoder krävs i regel att
+uppgiften är någorlunda komplicerad att lösa. Ett projekt är inte en rak sekvens av
+aktiviteter som en ensam person kan genomföra utan planering, utan en komplext
+flöde av aktiviteter som sker parallellt och ofta påverkar varandra.
+
+Som synes så är alltså ett projekt en tidsbegränsad aktivitet som är underkastad mycket
+specifika och konkreta målsättningar. De flesta projekt är också mer eller mindre unika,
+vilket innebär att de sällan kan lösas inom ramen för en vanlig organisation.
+Om vi tänker oss en massproducerande fabrik, där stora serier av standardiserade
+produkter tillverkas på löpande band, så är den effektiv på grund av att vi gör likadant
+med varje produkt. Vi har lagt ned ett stort arbete på att hitta optimala rutiner, och
+eftersom alla som arbetar i fabriken följer dessa rutiner så flyter produktionen jämnt och
+störningsfritt.
+Ibland kan vi dock inte hindra att produktionen störs. Konkurrenterna kanske
+presenterar nya produkter, och då måste vi svara med att vidareutveckla våra egna. Det
+kanske dyker upp nya datorprogram för produktionsstyrning, som innebär att
+produktionsorganisationen måste göras om. En storkund kanske ringer och vill beställa
+en särskild serie som är utformad helt enligt hennes egna instruktioner. Försäljningen
+kanske går så bra att vi måste investera i en ny fabrik. Kvalitetsnivån i fabriken kanske
+
+Projektplanering och grupparbete 15.2
+
+är så dålig att vi måste utbilda alla operatörer i kvalitetsteknik. Det säger sig självt att
+sådana tillfälliga ansträngningar inte kan hanteras med den organisation vi byggt upp
+för den löpande produktionen. Alltså måste vi organisera oss speciellt – och tillfälligt –
+för att lösa dessa problem. Vi skapar med andra ord projekt.
+Precis som det finns en omfattande teoribildning och metodapparat när det gäller
+att utforma effektiva industriella produktionssystem, så finns det också en omfattande
+kunskapsbas när det gäller hur man skapar, planerar, genomför och levererar projekt.
+Även om ansatser till en särskild lära om projektstyrning fanns redan under 1900-talets
+första hälft, så var det först i och med andra världskrigets rustningar som man började se
+tillfälliga engångsuppgifter som ett avgränsat kunskapsområde. Genombrottet för
+”projektledningsläran” kom i och med det s k Polaris-projektet under senare hälften av
+1950-talet, då den amerikanska flottan genom användande av modern operationsanalys
+lyckades förkorta utvecklingstiden för ett missilsystem med flera år. Efter detta blev
+metoderna för projektstyrning oerhört populära även inom civila samhällssektorer, och
+projektet som organisationsform blev allt vanligare i västvärlden. Förutom de
+ursprungliga tillämpningarna inom produktutveckling och byggnation har
+projektformen spridit sig till förändringsarbete, systemutveckling, strategisk ledning
+mm, och många företag bedriver stora delar av sin verksamhet inom ramen för olika
+projekt. De ansvariga för projektens genomförande, dvs projektledarna, har blivit en
+egen yrkeskår med egna organisationer, universitetsexamina, certifieringsinstitut,
+metodstandards och mötesfora. Forskning om projektledning bedrivs på många ledande
+universitet och tekniska högskolor världen runt (inklusive KTH), och det finns
+internationella forskarnätverk och akademiska specialtidskrifter på området (t.ex.
+International Journal of Project Management).
+Den tidiga metodutvecklingen inom projektledning rörde sig främst om
+planeringen av projekten, dvs hur att bryta ned projektuppgiften i hanterliga delar för att
+sedan inordna dessa i detaljerade tidplaner. Från 1910-talets enkla Gantt-schema (se
+avsnitt 15.6) har denna utveckling blivit alltmer matematiskt avancerad, och flertalet
+metoder finns tillgängliga i lätthanterade datorprogram.
+Redan i slutet av 1950-talet blev det även tydligt att projektledning inte bara
+handlade om effektiv aktivitetsplanering; projektet var en högst speciell ledarutmaning
+och förhållandet till omgivande organisatoriska strukturer ofta problematiskt. Med
+inspiration från teorier om ledarskap, gruppdynamik, beslutsfattande, organisationsdesign och pedagogik har det växt fram en omfattande kunskap kring hur
+projektorganisationer fungerar.
+Genom att projektformen används för speciella och komplexa uppgifter så
+passar den även mycket väl för undervisningsändamål. Vill man som lärare låta sina
+studenter få erfarenhet av självständig problemlösning organiserar man med fördel vissa
+moment i undervisningen i projektform. För att såväl lärare som studerande skall få ut
+så mycket som möjligt av projekten är det dock viktigt att man hanterar dem på ett både
+rationell och engagerat sätt, och där kan man lära sig en hel del från industrins
+projekthantering. I detta kapitel skall vi därför se närmare på vad projektplanering
+innebär, med tonvikten lagd på konkreta råd rörande hur man bör tänka när man
+planerar ett projekt. Samtidigt är ett varningens ord på sin plats: Hur väl man än
+planerar så kan händelser omkring en som man inte förutsett ändra förutsättningarna
+radikalt. Som projektledare måste man vara duktig på att planera, men man måste också
+vara duktig på att förutse risker och kunna hantera problem när de dyker upp.
+
+Projektplanering och grupparbete 15.3
+
+15.2 Varför projektplanering?
+Ett projekt är alltså en mer eller mindre unik ansträngning som genomförs under en
+begränsad tid utanför ramen för organisationens vardagsarbete. Det ger följande
+anledningar till att planeringsarbetet är så viktigt:
+•
+•
+•
+•
+•
+•
+
+•
+
+Skall vi göra något unikt och lära oss något vi inte tidigare visste så är våra
+tidigare erfarenheter av begränsat värde – vi måste helt enkelt tänka nytt från
+grunden
+Har vi en begränsad tid på oss så måste vi utnyttja den så effektivt som möjligt
+Människorna som berörs av projektet har ofta annat att göra utanför projektet –
+vi måste utnyttja dem så effektivt som möjligt utan att deras ordinarie arbete
+störs alltför mycket
+Även andra resurser vi kan behöva (t.ex. maskiner eller lokaler) är inte alltid
+lediga. Vi måste stämma av med andra nyttjare av resurserna så att det inte blir
+några ”krockar”
+Är uppgiften komplicerad så måste vi noga tänka igenom i vilken ordning vi gör
+olika saker – kommer vi på att vi måste backa processen eller göra om saker så
+kommer vi garanterat att dra över både tidsgränser och vår ekonomiska budget
+Är det många olika människor med olika kompetens inblandade så är en tydlig
+projektplan det bästa sättet att få dem att gå i samma takt och sträva mot samma
+mål – annars kommer de själva att hitta på saker som kanske är fiffiga men inte
+för projektet framåt
+En bra plan är dessutom en nödvändighet för att projektledaren skall ha något att
+följa upp den faktiska utvecklingen mot – vet man inte vad man borde ha gjort
+en vecka så vet man ju inte om det man faktiskt gjorde var bra eller dåligt
+
+Projektplanering är alltså en nödvändighet för att vi skall kunna styra projekten på ett
+bra sätt och se till att vi uppfyller våra mål. Naturligtvis finns det projekt som blivit
+framgångsrika utan att vara välplanerade, och det finns också massor av projekt som
+trots ambitiös planering gått fullständigt i stöpet (järnvägstunneln genom Hallandsåsen
+är bara ett exempel). Samtidigt som vi säger att projektplanering är viktigt så finns det
+alltså all anledning att komma ihåg följande:
+•
+•
+•
+•
+•
+
+En bra plan är ingen garanti för framgång – det kan hända saker som vi inte
+kunde förutse. Projektplanen kan t o m inge en falsk känsla av säkerhet och
+kontroll
+Projektets karaktär av att vara unikt innebär att vi inte alltid vet exakt vilka
+aktiviteter som krävs för att uppnå målet – som all framtidsplanering handlar det
+om kvalificerade gissningar och hyfsade estimat
+Planen görs utifrån en specifik målformulering, men det händer att de som
+”beställt” projektet ändrar sig eller lägger till saker i målformuleringen
+Planeringsarbete är ofta realistiskt, men om vi verkligen vill ha bra projekt
+kanske vi måste lyfta ambitionsnivån så att det närmar sig det orealistiska
+Projektplaneringen garanterar inte medarbetarnas kompetens, motivation, energi
+eller kreativitet
+
+I det följande skall vi steg för steg gå igenom en schematisk projektplaneringsprocess.
+Det som saknas jämfört med projektplaneringsprocesser i näringslivet är resonemang
+kring budget och ekonomistyrning, liksom rekrytering och ledarskap. Först skall vi
+
+Projektplanering och grupparbete 15.4
+
+resonera kring det vi kallat för ”projektets fundament”, dvs de grundläggande
+förutsättningar som krävs för en bra projektverksamhet. Därefter går vi över på själva
+planeringsprocessen, och följer den från målformulering fram till färdig tidplan. Sedan
+följer ett avsnitt om löpande uppföljning av planen samt om leverans och utvärdering.
+
+15.3 Projektets fundament
+En del projekt skapar man, planerar och leder på egen hand. Andra projekt får man
+färdiga i handen för att genomföra som anställd projektledare. Oavsett vilket så måste
+man ha en grundläggande förståelse för projektets fundament, dvs de grundläggande
+faktorer som måste finnas för handen för att man skall kunna gå vidare med
+projektplaneringen. Dessa faktorer är de följande:
+•
+
+•
+•
+
+•
+
+•
+
+•
+
+En tydlig problemformulering. Projektet bör baseras på ett formulerat problem,
+dvs en omständighet, behov eller företeelse som pockar på handling och lösning.
+Man bör dock akta sig för att på detta stadium börja diskutera hur problemet
+skall lösas – det räcker med en problemformulering.
+Strategisk relevans. Projektet bör ha tydliga kopplingar till långsiktiga skeenden
+i moderorganisationen. Projektet är inte ett mål i sig, utan ett medel att uppnå
+målsättningar på högre nivåer.
+Konsensus. Beslutsfattarna i organisationen måste vara överens om projektets
+genomförande och förbinda sig att stå fast vi detta. Det skall finnas en förståelse
+för projektets genomförande i organisationen så att inte projektledaren
+motarbetas.
+En tydlig projektägare. Någon instans eller beslutsfattare utanför projektet bör
+stå som ”ägare” till projektet och vara projektledarens konktaktperson i viktiga
+frågor. Projektägaren skall ha beslutsrätt när det gäller tidplan, resurser och
+målformulering, och skall också kunna tillsätta eller avsätta projektledaren. Det
+är också i första hand till projektägaren projektet skall levereras.
+En engagerad styrgrupp. Om man väljer att ha en styrgrupp, dvs ett slags
+styrelse för projektet, så skall den bestå av personer som har mandat att fatta
+viktiga beslut och som är engagerade för projektets framgång. Styrgruppen skall
+inte bestå av representanter för olika instanser som bara kommer på möten för
+att bli informerade av projektledaren.
+En rimlig ambitionsnivå. De som beställer projekt är inte annorlunda än alla
+andra – de vill ha högsta möjliga kvalitet så snabbt som möjligt till så liten
+resursförbrukning som möjligt. I praktiken är projektets ambitionsnivå en
+avvägning, en kompromiss. Den projektledare som tar på sig att leverera ett
+projekt med orimligt hög ambitionsnivå sätter sig själv i en svår position – både
+inför överordnade och inför sitt projektteam.
+
+Om dessa förutsättningar är för handen, så innebär det att projektledaren har en mycket
+bra uppbackning när projektet skall planeras och genomföras. Vad som än händer, så
+vet hon vilket stöd hon kan påräkna, vilka som fattar olika typer av beslut, och vilket
+åtagande hon har gjort gentemot projektägaren.
+Nästa steg är då att ur problemformuleringen formulera ett projektmål som dels
+löser problemet, dels kan användas för fortsatt detaljplanering. Eftersom projektmålet
+kommer att vara styrande för hela projektets genomförande måste det diskuteras med
+både projektägaren, styrgruppen och projektteamet. Egentligen skall projektteamet inte
+rekryteras förrän man lagt fast hur projektet skall se ut – det är ju inte förrän då man vet
+exakt vilka kompetenser man behöver. Men i praktiken är det oftast så att man får vara
+
+Projektplanering och grupparbete 15.5
+
+nöjd med de personer man har tillgängliga (mycket vanligt i undervisningsprojekt), och
+de kan ofta tillföra målformuleringsprocessen en del intressanta infallsvinklar.
+I de fall där medlemmarna i projektteamet är mer eller mindre givna – vilket inte
+sällan är fallet, så är det särskilt viktigt att alla involveras i planeringsarbetet så tidigt
+som möjligt. Ur projektledarens perspektiv vill man ju egentligen handplocka sina
+medarbetare, och då välja dem som är mest kompetenta och mest engagerade för
+uppdraget. Om man då istället får ett team vars sammansättning man inte kan påverka i
+någon större utsträckning så gäller det att kompensera för detta på olika sätt.
+När det gäller kompetens så är den i grunden svår att kompensera för, men oftast
+så finns det uppgifter som alla kan klara av. Projektarbete är kompetensmässigt inte
+alltid mer krävande än annat arbete, och det som snarare är viktigt att arbeta med är
+motivation och lojalitet.
+Motivation och lojalitet är något som uppkommer i mötet mellan
+projektledningens ambitioner och den individuella projektmedlemmens personliga mål.
+Ibland sammanfaller dessa så att individen till fullo kan känna sig tillfredsställd med att
+bidra till projektmålet med den arbetsinsats som projektledaren kräver, men inte alltid.
+Så snart individen känner att hon bidrar mer till projektet än vad hon får ut av det finns
+det alltid en risk för att hon helt eller delvis prioriterar andra saker. Dubbla
+prioriteringar är i sig inte av ondo – varenda heltidsarbetande småbarnsförälder försöker
+sig ju på det, och ibland kan detta faktiskt också berika projektarbetet.
+Det finns naturligtvis ingen patentlösning för hur man motiverar alla
+teammedlemmar så att de presterar optimalt i projektet – det man kan göra är att redan
+från början vara mycket noggrann med att alla förutsättningar och förväntningar
+klargörs. En sådan sak att klargöra är arbetsbelastningen. Om en individ vet att hon
+under en viss vecka kommer att behöva engagera sig mycket hårt i projektet, så kommer
+hon också att kunna göra detta utan större problem. Om perioder av hårt arbete däremot
+utlöses ad hoc (s k brandkårsutryckningar) så är risken att man hamnar i en ond cirkel.
+Dålig planering leder till ständiga brandkårsutryckningar, de som rycker ut på kort
+varsel blir antingen utslitna eller hjältar, och eftersom det är hjältarna man kommer ihåg
+så fortsätter man att planera dåligt eftersom ”saker och ting ju löser sig tack vare den
+engagerade personalen”.
+Omvänt så är det också viktigt att varje individ noga klargör sina egna
+bevekelsegrunder för att delta i projektet och också i god tid meddelar om hon kommer
+att behöva engagera sig på annat håll. Egentligen skall man som projektledare kräva att
+varje individ i teamet på förhand gör upp en lista med åtminstone tre saker som man
+skulle vilja lära sig eller uppleva under projektets gång. En sådan lista är inte bara av
+betydelse för projektledaren, som ju då kan ta hänsyn till dessa önskemål i görligaste
+mån, utan också för individen, som ju då inför sig själv har motiverat sitt deltagande i
+projektet utifrån personliga intressen. Utsagor som att ”jag gör det här för att jag måste”
+innebär att individen inte är intresserad av projektet i sig på något sätt, utan enbart ser
+fram emot dess avslutning.
+
+15.4 Projektmålet
+För många så framstår det som ett slöseri med tid att diskutera projektets
+målformulering fram och tillbaka, men det är i själva verket det vettigaste man kan göra
+för att få en bra start på projektarbetet. Ett välformulerat mål ger en ledning till alla
+inblandade vad man skall uppnå, medan ett dåligt formulerat mål innebär att man låter
+andra ta hand om målformuleringen i stället, vilket inte alltid blir bra. Eller för att
+travestera den gamle kinesiske diktatorn Mao; ”Ett projekt har alltid en målformulering
+– antingen ens egen eller någon annans.”
+
+Projektplanering och grupparbete 15.6
+
+Det första man skall tänka på är att det i regel inte finns enbart en
+målformulering. Projektet skall leda fram till något (resultatmål), men det skall också
+innebära någon form av förbättring i dess omgivning (nyttomål). Till det kommer att
+man kan ha andra avsikter med projektets genomförande (bimål). Vi skall kort utreda
+dessa begrepp:
+Resultatmål. Anger vad projektet skall leverera i slutändan, dvs vad slutprodukten skall
+vara. Det kan t.ex. vara att en utredning skall ha skett, och att den överlämnas till
+beställare i form av en rapport. Denna målformulering är i de flesta projekt den
+viktigaste, och det är den man i regel lägger mest kraft på att formulera. Resultatmålet
+uttrycker vad beställaren förväntar sig att projektet skall ha lett fram till när man når
+deadline. I grunden handlar denna målformulering – förutom om vad som konkret skall
+levereras – om en avvägning mellan tillgänglig tid, tillgängliga resurser och
+kvalitetsambitioner (se fig 15-1).
+Time
+
+(need to
+deliver
+(profitability)
+(quality concerns)
+
+resource
+constraint
+
+Task/product
+
+Figur 15-1. Den s k projekttriangeln, enligt vilken projektets resultatmål är en avvägning mellan
+begränsade resurser (resource constraint), kvalitetskraven på det som skall levereras (task/product), och
+den begränsade tid som står till förfogande (time). Det innebär att om man t.ex. av lönsamhetsskäl
+minskar projektets ekonomiska resurser, så får det konsekvenser dels för den kvalitet man kan leverera,
+dels den tid det tar att leverera. Syftet med triangeln är att medvetandegöra projektledare om
+nödvändigheten att noga analysera vilka åtaganden de gör gentemot projektägaren.
+
+Nyttomål. Många projekt utvärderas dock inte enbart utifrån om de kan leverera på
+slutdagen enligt resultatmålet, utan de bedöms också utifrån de långsiktiga effekter de
+får för om- och eftervärlden. De senaste årens byggskandaler i Stockholm är ett bra
+exempel på detta – trots att husen och broarna stod på plats enligt specifikation vid
+deadline, så fick byggföretagen utstå hård kritik för att de inte var byggda på ett
+långsiktigt hållbart sätt. Ett extremt exempel är det stora Manhattanprojektet under
+andra världskriget – resultatmålet att konstruera en fungerande atombomb uppnådde
+man med glans, medan den långsiktiga nyttan av atombomben är minst sagt
+omdiskuterad. Många projektledare måste därför vara noggranna med att formulera
+även ett nyttomål för projektet, och genomföra projektet på ett sådant sätt att både
+resultat- och nyttomålen kan uppnås.
+
+Projektplanering och grupparbete 15.7
+
+Bimål. Projekt är ofta intressanta tilldragelser, eftersom de är något utöver det vanliga.
+Genomför man ett stort, unikt projekt så innebär det också att man testar nya idéer,
+vinner ny kunskap och att ett antal människor får vara med om något de aldrig förut
+upplevt. Det innebär att projektet i praktiken kommer att avkasta andra ’nyttigheter’ än
+bara de som anges i resultat- och nyttomålen. Det kan handla om ny teknologisk
+kunskap, erfarenheter av själva projektarbetet, goodwill-effekter på befintliga eller
+potentiella kunder etc. Det är t.ex. inte ovanligt att stora företag driver förlustprojekt för
+att lyckas ta sig in på nya marknader. Men det kan också handla om att de inblandade
+människorna höjer sin kompetens, att de testar sina ledaregenskaper eller att de får sina
+personliga livs- och karriärmål uppfyllda genom projektarbetet. Ett sätt att se på dessa
+’nyttigheter’ är att betrakta dem som slumpmässiga bieffekter som man kan glädjas åt
+om och när de blir verklighet. Ett mer professionellt sätt är naturligtvis att i
+planeringsprocessen göra upp en lista med tänkbara bimål och sedan försöka att aktivt
+planera för att även dessa skall kunna uppnås. Man får dock vara försiktig så att inte
+bimålen tar över – det är resultat- och nyttomålen som motiverar projektets existens,
+inget annat.
+Målformuleringar i projekt är – om man lagt ned någorlunda möda på dem – inte alltför
+komplicerade skrivningar. Snarare är det så att enkla, slagkraftiga, otvetydiga
+formuleringar är de bästa. Samtidigt skall man akta sig för att i målformuleringen peka
+ut exakt vad som skall göras i projektet – gör man det så ’dödar’ man effektivt all
+kreativitet och nytänkande i projektteamet. Dessutom måste en trovärdig
+målformulering också vara möjlig att utvärdera i efterhand – har vi nått målet eller har
+vi det inte? Vi kan uttrycka detta som tre målformuleringsprinciper:
+•
+
+•
+
+•
+
+Principen om enkelhet. Målformuleringen skall vara så enkel och rakt på sak att
+den minst kunnige individen som har med projektet att göra direkt skall kunna
+förstå den. Kan man dessutom ge projektet ett slagkraftigt namn som ansluter till
+målformuleringen så är det ännu bättre.
+Principen om lösningsneutralitet. En målformulering skall ange vad som skall
+uppnås, inte hur detta skall gå till. Eller, annorlunda uttryckt, man får inte
+förväxla resultat med aktiviteter. Det finns alltid flera alternativa sätt att nå fram
+till ett och samma mål (ekvifinalitet), och det är inte säkert att det sätt man först
+kommer att tänka på är det bästa. Man skall besvara frågan om vad som skall
+göras, men överlåta frågan om hur till ett professionellt och kreativt samråd
+(brainstorming) med de inblandade i projektet. Det är först då man kan upptäcka
+helt nya och mer effektiva sätt att uppnå sina mål.
+Principen om utvärderingsbarhet. Ett problem med många mål är att det
+egentligen inte går att mäta huruvida de uppnåtts eller ej. Det beror dels på att de
+är luddigt formulerade, dels på att det inte finns några riktigt bra mätpunkter. I
+den politiska debatten förekommer det ofta att olika partier har helt olika bilder
+av hur ett samhällsproblem – t.ex. bostadsbrist – utvecklats, detta eftersom
+problemet dels är svårare att mäta än vad man kanske tror, och att debattörerna
+väljer att mäta det på det sätt som passar deras egna syften bäst. Inte sällan gör
+man som den överförfriskade mannen som tappat nyckelknippan i nattmörkret –
+man letar vid lyktstolpen, eftersom det ju är ljusast där. Man bör redan i det
+tidiga målformuleringsarbetet bestämma vilka framgångskriterierna för projektet
+är, hur de skall mätas och varifrån data till dessa mätningar skall hämtas.
+
+Projektplanering och grupparbete 15.8
+
+Ett bra exempel på ett – i och för sig stort – projekt där man lyckades med detta var
+ABB:s T50-projekt som genomfördes i hela koncernen under 1990-talets första hälft.
+Ledningen för den svenska delen av ABB hade insett att koncernen behövde genomgå
+en omfattande kapitalrationalisering (dvs en effektivare användning av det tillgängliga
+kapitalet), och man valde att utrycka det som att alla ledtider (dvs tiden det tog att
+producera någon vara, utföra någon tjänst eller utföra en administrativ rutin) skulle
+halveras. Projektet fick det slagkraftiga namnet T50, som står just för att ledtiden (T)
+skall nedbringas med 50%.
+Projektets resultatmål var därmed solklart. Man lade också ned tid på att förklara
+nyttan med halverade ledtider – genom att produktionen gick snabbare minskade
+behovet av kapital som låg låst i råvaror och produkter i arbete, och man kunde därmed
+också öka produktionen i befintliga fabriker. Sammantaget alltså en potential för
+dramatiska lönsamhetsförbättringar. Några egentliga bimål formulerade man inte, men
+man kom senare att förvånas över hur mycket kreativa idéer och förändringar som
+genomfördes ute i dotterbolagen i T50-projektets namn.
+När det gäller själva målformuleringen så var den kort och gott att ”halvera den
+genomsnittliga ledtiden i alla dotterbolag med 50%”. Förutom att det är en enkel och
+slagkraftig formulering så är den också lösningsneutral – det är upp till de enskilda
+dotterbolagen att lista ut hur detta skall gå till. För att mäta måluppfyllelsen skapade
+man en särskild oberoende T50-enhet, som åkte runt till dotterbolagen och utvärderade
+deras arbete enligt en standardiserad manual. De bolag som lyckades – och det var i
+princip samtliga – erhöll ett T50-certifikat. Många bolag överträffade målen; det var
+inte ovanligt med ledtidsreduceringar om 80-90%.
+Givet att man formulerat sina mål på ett ambitiöst sätt, så återstår det nu att
+planera för hur de praktiskt skall uppnås i själva genomförandet av projektet. Det första
+man behöver göra är att identifiera hur målen skall uppnås och vilka aktiviteter detta
+innebär.
+
+15.5 Work Breakdown Structure – från mål till aktiviteter
+Metoden för att konkretisera vad som skall göras i projektet kallas allmänt för Work
+Breakdown Structure (WBS). Det innebär helt enkelt en hierarkisk nedbrytning av
+projektet med syftet att identifiera samtliga de konkreta aktiviteter som behövs för att
+projektmålet skall uppnås. Man överger alltså här principen om lösningsneutralitet för
+att välja den väg mot målet som man bedömer som mest effektiv.
+Projektmål
+
+Delprojektmål
+
+Aktiviteter
+Figur 15-2. Principskiss för en Work Breakdown Structure, där det övergripande projektmålet successivt
+bryts ned till konkreta aktiviteter.
+
+Indelningen i delprojekt syftar till en första separering av större delar av projektet. Om
+det t.ex. är så att man i ett utredningsarbete skall undersöka ett antal delproblem eller
+arbeta mot ett antal olika externa instanser, så är det en naturlig bas för indelning i
+
+Projektplanering och grupparbete 15.9
+
+delprojekt. Delprojekten kan, men måste inte, förses med lösningsneutrala
+målformuleringar.
+Beroende på projektets komplexitet så blir antalet nivåer naturligtvis olika, men
+man bör inte ha fler än fyra nivåer. Man måste också se till att detaljeringsgraden på
+aktiviteterna blir för hög, så att man börjar detaljreglera vad människor skall göra där
+det inte är nödvändigt. En god tumregel är att en aktivitet inte skall ha en högre
+detaljeringsgrad än vad som minimalt krävs för att man utan oro skall kunna låta en av
+projektmedlemmarna sköta den på egen hand.
+När man har brutit ned samtliga delprojekt i aktiviteter har man alltså identifierat
+alla de konkreta uppgifter som behöver lösas för att projektmålet skall kunna uppnås.
+Tänk på att viktiga beslutspunkter och avrapporteringar bör ses som egna aktiviteter,
+även om de konsumerar obetydligt med tid och resurser. Anledningen till detta är att
+man i den kommande tidplaneringen måste kunna lägga in villkorspunkter, vars
+genomförande är en förutsättning för att kommande aktiviteter skall kunna sättas igång.
+Det man nu gör är att samla alla aktiviteter till en aktivitetstabell, vilket är ett
+tidsödande men nödvändigt arbete. För varje aktivitet behöver vi nu ange följande data:
+•
+•
+•
+•
+•
+•
+•
+•
+•
+•
+
+Aktivitetsnummer
+Närmast föregående aktivitet(er) som nödvändigt måste vara klara för att
+aktiviteten skall kunna starta.
+Efterföljande aktivitet(er) som inte kan starta utan att denna aktivitet
+färdigställts.
+Aktivitetens innebörd i korta ordalag.
+Beräknad tidsåtgång för aktivitetens utförande – en realistisk uppskattning, utan
+hänsyn till prestige eller önsketänkande.
+Utrustning/lokaler som behövs för aktivitetens utförande
+Nödvändiga individer som behövs för aktivitetens utförande.
+Ansvarig person för aktivitetens utförande.
+Vem avgör om aktiviteten är till 100% färdigställd.
+Huvudsakliga riskfaktorer som kan innebära allvarliga störningar för aktivitetens
+genomförande (om sådana finns).
+
+När denna tabell är färdig återstår ”bara” att ordna aktiviteterna i logisk följd på en
+tidsaxel. Detta kan ske i ett Gantt-schema och/eller med en nätverksplan. Kom ihåg att
+det kan finnas särskilda omständigheter i varje projekt som motiverar ytterligare
+faktorer i aktivitetstabellen.
+
+15.6 Gantt-scheman och nätverksplanering
+Dessa två metoder för tidplanering bygger båda på behovet av följande:
+•
+•
+
+Kronologi. Projektets aktiviteter måste ordnas på det kronologiskt mest effektiva
+sättet. Kronologin har vi redan lagt grunden för genom att identifiera föregående
+och efterföljande aktiviteter i aktivitetstabellen.
+Parallellitet. Man inser lätt att alla aktiviteter i ett projekt inte ligger på en lång
+rad. En hel del uppgifter kan lösas parallellt med varandra, de utgör helt enkelt
+parallella ’aktivitetsströmmar’ i projektet. Däremot startar naturligtvis projektet
+med en och samma aktivitet (projektstart), och alla kvarvarande parallella
+strömmar konvergerar ju naturligtvis till en och samma slutpunkt
+(projektleverans). Ju mer som kan göras parallellt, desto kortare tid tar projektet!
+
+Projektplanering och grupparbete 15.10
+
+•
+
+Visualisering. Ju mer komplext projektet är, desto större behov brukar
+projektmedlemmarna ha av att få en gemensam bild av projektet. Grafiska
+tidplaner som Gantt-scheman och nätverksplaner är ett ypperligt stöd för
+projektledaren när en gemensam bild av projektet skall uppnås.
+
+Gantt-schemat innebär att man ritar ut aktiviteterna längs en tidsaxel. På så vis kan man
+se när olika aktiviteter startar och slutar. Den sista aktiviteten skall sluta i projektets
+deadline – gör den inte det får man gå tillbaka och se vad det beror på. Visar det sig att
+projektet måste startas tidigare än tänkt får man se över planeringen och se var man kan
+spara tid, alternativt överväga en tidigare projektstart.
+Aktiviteter
+
+Tid
+Figur 15-3. Schematiskt exempel på ett Gantt-schema, där aktiviteterna i ett projekt fördelats över tiden
+med sina respektive start- och slutdatum. Schemat åskådliggör projektets flöde och utgör en god
+visualisering av vad som skall göras och när.
+
+Medan Gantt-schemat är det intuitivt enklaste sättet att visualisera en tidplan, så har
+nätverksplaneringen den fördelen att de logiska sambanden mellan aktiviteterna
+framstår tydligare. Nackdelen är att tidslinjen inte blir lika tydlig.
+
+Figur 15-4. Nätverksplan för ett projekt med flera parallella aktivitetsströmmar. Den kritiska linjen – dvs.
+den linje genom diagrammet som tar längst tid och där varje försening försenar hela projektet - är
+markerad med tjocka pilar. Aktiviteterna på den kritiska linjen måste ägnas särskild uppmärksamhet av
+projektledaren.
+
+Som synes kan man ”gå genom projektet” från start till mål på flera olika sätt, s k linjer.
+Om man adderar de uppskattade genomförandetiderna för alla aktiviteter på en linje så
+får man den totala genomförandetiden för den linjen. Den linje som enligt diagrammet
+tar längst tid är den s k kritiska linjen, och den tar naturligtvis lika lång tid som projektet
+i sin helhet. I diagrammet (fig 15-4) har den markerats med feta pilar. Aktiviteterna på
+
+Projektplanering och grupparbete 15.11
+
+den kritiska linjen är särskilt viktiga för projektledaren att övervaka, eftersom dessa
+aktiviteter, om de blir försenade, kommer att försena hela projektet!
+I en del fall vet man inte riktigt på förhand vilka aktiviteter som kommer att
+krävas för uppfyllelsen av projektmålet. Däremot kanske man känner till några viktiga
+beslutspunkter eller faser som inte kan undvikas. Man kan du arbeta med s k successiv
+milstolpeplanering, där man i projektets initialfas lägger fast vilka huvudsakliga
+milstolpar projektet kommer att passera. Milstolparna förses med omsorgsfullt
+utarbetade mål. Därefter detaljplanerar man aktiviteterna fram till den första milstolpen,
+och genomför dessa enligt plan. När den första milstolpen uppnåtts och beslut om
+fortsättning fattats, detaljplanerar man aktiviteterna fram till den andra milstolpen och
+genomför dessa. Proceduren upprepas tills dess att man når fram till den sista
+milstoplen, dvs projektleverans.
+
+15.7 Kartan och verkligheten – att arbeta utifrån planen
+När så projektet startar och tidplanen skall börja genomföras så är det viktigt att löpande
+följa upp tidplanen och jämföra med hur det faktiskt går. Projektledaren måste också
+hela tiden påminna projektmedlemmarna om vikten av att hålla tidplanen – små
+förseningar på varje aktivitet kan bli en ganska stor försening i slutändan. Och eftersom
+projektet är planerat för att större förseningar inte skall inträffa så kan det bli svårt att
+”ta igen” en försening senare under genomförandet. En vanlig praktisk erfarenhet är
+snarare att förseningen tenderar att öka successivt under projektets gång på grund av
+följdverkningar på senare aktiviteter.
+Projektledaren bör också påminna aktivitetsansvariga om att försöka förbereda
+så mycket som möjligt av sitt arbete innan aktiviteten egentligen skall starta. Främst
+gäller detta tidbokning med nyckelpersoner, men det kan också gälla beställningar av
+utrustning eller bokningar av lokaler. Det svåraste är alltid att lyckas samla alla
+människor som behövs för en aktivitet samtidigt på ett och samma ställe!
+Kommunikation är viktigt i projekt. Projektledaren bör arrangera regelbundna
+möten med teamet för att stämma av hur projektet framskrider – gärna en fast mötestid
+varje vecka eller så. Ingen får vara främmande för att berätta om misstag och
+förseningar – det värsta som finns för en projektledare är att inte bli informerad om
+problem i projektet. Individer som begår misstag måste få hjälp att reda upp dem, och
+de får inte känna rädsla för bestraffning. Vidare skall alla framgångar firas på ett eller
+annat sätt; projektarbete är ofta hårt och stressigt, och ju närmare en prestation individen
+blir belönad, desto större upplevs belöningen. En hel del gruppdynamisk forskning
+pekar mot att ”halvtid” är psyklogiskt viktig i projekt – när 50% av den tillgängliga
+tiden har förbrukats brukar människor ”haja till” och reflektera över på vilket sätt de vill
+fortsätta. Projektledaren kan naturligtvis utnyttja ett sådant beteendemönster till att
+samla teamet till ”halvtidsvila” och prata igenom det som har varit och det som skall
+komma med alla inblandade. Man kan då lämpligen också förhöra sig om medlemmarna
+fått sina personliga ambitioner tillfredsställda hittills, och vad de kan göra framöver. En
+del medlemmar kan naturligtvis ha börjat ”tappa sugen”, och ju tidigare man kan tala
+med dem om saken, desto lättare blir det för dem att åter hitta motivationen. En trött och
+oengagerad anställd i ett stort företag kanske inte påverkar företagets resultat nämnvärt,
+men en dito projektmedlem kan stjälpa ett helt projekt eftersom projektet ju är planerat
+utifrån antagandet att alla skall fullgöra sina åtaganden!
+När aktiviteter skall avrapporteras, var noga med att de skall vara till 100%
+klara. Aktiviteter som är ”nästan klara” är inte klara, och det kan återstå viktiga detaljer
+som är nödvändiga förutsättningar för kommande aktiviteter. Blir man klar tidigare med
+
+Projektplanering och grupparbete 15.12
+
+en aktivitet så har man naturligtvis vunnit tid, och kan man sätta igång den efterföljande
+aktivitetet i förtid så skall man naturligtvis utnyttja den möjligheten.
+Projektledaren måste också vara öppen för revideringar av planen, likaså
+projektmedlemmarna. Verkligheten kan förändras, men det är verkligheten som skall ta
+emot projektresultatet. Prestige och inflexibilitet får inte hindra nödvändiga förändringar
+i tidplanen under projektets gång! Projektledaren är den som har till uppgift att hålla
+skutan på rätt kurs medan teamet är fullt upptagna med sina dagliga sysslor, och det är
+projektledaren som måste påminna teamet om behovet av att tänka på den övergripande
+riktningen.
+När projektet närmar sig sitt slut gäller det också att förbereda för leverans och
+utvärdering. Alla kommer ställa frågan om resultat-, nytto- och bimålen uppnåtts som
+planerat, och det gäller att ha samlat data för att besvara dessa frågor. Om det blivit
+problem, kommer projektägaren också att fråga varför, och här finns det viktiga
+lärdomar att hämta för alla inblandade. Projektutvärdering handlar inte om att berätta
+hjältesagor och finna ursäkter, utan om att lära sig inför kommande projekt. Det är
+naturligtvis också bra om aktivitetsansvariga själva utvärderar sitt eget arbete.
+Om man kan och vill bör man en tid efter projektleverans, kanske 6-12 månader
+senare, återvända till projektägaren och diskutera projektets långsiktiga nytta. Det är
+ofta först då man får en uppfattning om projektets nyttomål och bimål verkligen
+uppnåddes.
+
+15.8 Något om gruppdynamik
+Tidigare i detta kapitel har vi diskuterat de olika problem en projektledare kan ställas
+inför när det gäller själva arbetet i projektgruppen. Ett problem är att gruppen ofta är
+given, och att projektledningen måste göra det bästa med de personer och kompetenser
+man har. Ett annat problem är att engagemanget från gruppmedlemmarnas sida kan
+variera betänkligt, och där är förslaget att väcka ansvarskänsla och lojalitet genom att få
+alla i gruppen att skriva ned vad de förväntar sig av projektet och vill ha ut av det.
+Frågan är då naturligtvis vad som händer med en grupp över tiden.
+Som universitetslärare kan man ibland få höra kommentarer från studenterna om
+att det kanske är lite väl mycket grupparbeten på kurserna. Jag brukar då svara att det
+bara är en återspegling av de arbetssätt som numera tillämpas överallt i moderna företag
+och organisationer. De arbetsuppgifter man ställs inför är nämligen ofta så komplexa
+och krävande att enskilda individer oftast inte behärskar alla de moment som ingår, och
+ibland krävs det t o m flera samverkande personer för att över huvud taget kunna
+överblicka ett projekt och bilda sig en enhetlig bild. Genom att sätta samman en grupp
+av engagerade och varandra kompletterande människor ökar man helt enkelt chansen att
+lyckas med svåra arbetsuppgifter. Flera av våra svenska storföretag har med åren blivit
+specialister på att organisera projektteam, och har tack vare detta kunnat ta på sig ordrar
+som de annars hade fått lämna till konkurrenterna. Utan att gå in på hur dessa företag
+arbetar i detalj så finns det ändå anledning att titta lite närmare på det som kallas
+gruppdynamik, dvs hur grupper utvecklas genom sin levnad. Även om varje grupp i
+någon mening är unik så menar socialpsykologerna att det i regel finns ett antal
+vanligen förekommande faser. En vanlig – och enkel – modell för hur grupper utvecklas
+över tiden är den amerikanska begreppssekvensen forming, storming, norming and
+performing:
+• Forming innebär den inledande fas där gruppen sätts samman. Det handlar om
+rekrytering, om förväntningar från både ledning och gruppmedlemmar, om att
+lära känna varandra. Inom industrin försöker man i regel komma igenom denna
+fas så snabbt som möjligt eftersom den inte för själva arbetet mot projektmålet
+
+Projektplanering och grupparbete 15.13
+
+•
+
+•
+
+•
+
+framåt ett dugg. Däremot är den nödvändig att gå igenom, och flertalet
+professionella projektledare brukar ta med sig de utsedda gruppmedlemmarna
+någonstans för att svetsa samman gruppen och ha trevligt tillsammans, en s k
+kick-off.
+Storming är den fas – den kan påbörjas redan under kick-off:en – där gruppen
+börjar ta i tu med själva projektmålet. Man diskuterar vad problemet egentligen
+är och olika sätt att lösa det. Skickliga projektledare går ofta igenom hela
+planeringsprocessen som den beskrivits ovan tillsammans med gruppen. På så
+vis kan man försäkra sig om att allas erfarenheter och synpunkter kommit med i
+projektplanen, och gruppmedlemmarnas lojalitet och acceptans för målen och
+tidplanen blir desto större.
+Norming handlar om att gruppen – allteftersom de olika individerna lär känna
+varandra – börjar hitta gemensamma normer och värderingar för den tid som
+projektet skall pågå. Genom att diskutera frågor kring tidsanvändning,
+resursförbrukning, arbetsmoral, beslutsfattande och annat gör gruppen ett antal
+osynliga ”överenskommelser” om hur gruppen skall fungera. Denna fas är
+ganska känslig, dels eftersom gruppen faktiskt kan skapa normer som skadar
+projektet (som t.ex. att man bara precis skall nå upp till gränsen för ett godkänt
+resultat), dels eftersom gruppen kan splittras i olika undergrupper med
+sinsemellan olika normer. Projektledaren måste därför vara med i denna fas och
+försöka påverka normbildningen om den verkar gå i fel riktning. Missar man
+detta kan man få problem med genomförandet. Det gäller för projektledaren
+också att försöka se vilka informella ledare det finns i gruppen, eftersom dessa
+ofta är de som avgör hur högt över ”godkänt-gränsen” gruppen kommer att sikta.
+Performing är den fas där den nu sammansvetsade projektgruppen ”betar av”
+aktiviteterna i projektplanen och lär sig saker genom dessa aktiviteter. Har de
+föregående faserna fungerat väl så är planen förhoppningsvis av god kvalitet,
+och om det ändå skulle uppstå avvikelser så hanterar gruppen dem ändå på ett
+bra sätt eftersom man har gemensamma normer och lojalitet till varandra. I en
+del uppmärksammade fall har det hänt att detta drivits för långt på så vis att
+gruppen isolerar sig från omvärlden på ett sätt som skadar projektet – på
+amerikanska talar man om NIH-syndromet och groupthink. NIH står för ”Not
+Invented Here”, och signalerar en attityd i gruppen där ingen idé eller impuls
+som kommer utifrån är värd att beakta eftersom gruppen ju är så briljant som
+den är. Med groupthink menas tendensen att överbetona den interna harmonin
+framför lösandet av projektuppgiften, vilket kan leda till att gruppen avstår ifrån
+interna konflikter trots att man får signaler utifrån om att projektet är på fel spår.
+Modern gruppdynamisk forskning har också visat att många grupper blir lite
+oroliga när ungefär halva tiden har gått, och att man då frågar sig hur man
+egentligen ligger till och om det behövs några förändringar. Är projektledaren
+medveten om detta kan ”halvtidsvilan” användas för att ytterligare förbättra
+projektets måluppfyllelse. När projektet sedan lider mot sitt slut bör man
+förbereda en trevlig avslutning på det hela, och projektledaren bör ge någon
+form av återkoppling till samtliga individer. Detta är viktigt för att alla skall
+känna sig nöjda med vad man gjort, men också för att man skall kunna arbeta
+tillsammans även i framtida projekt. Även om projektet tar slut finns
+människorna kvar, och ofta får de nya gemensamma projektuppgifter med tiden.
+
+Projektplanering och grupparbete 15.14
+
+15.9 Några slutord
+Projektplanering handlar i grunden om rationalitet och sunt förnuft. Projekt är ofta
+komplexa och svåröverskådliga, och genom att använda sig av planeringsmetoder kan
+man hantera denna komplexitet på ett bra sätt. Dessutom håller man huvudet kallt – hur
+roligt projektet än är så blir det inte roligt mot slutet om man inte tänkt igenom vad man
+skall göra, hur man skall göra och när man skall göra det. Förhoppningsvis faller man
+inte heller för - fullt mänskliga - känslor som prestige, önsketänkande och överdriven
+optimism/pessimism.
+Sedan är det naturligtvis så att planeringen är ett verktyg, inget annat. En
+hammare är bra att ha när man snickrar, men den hjälper dig inte göra jobbet, den
+garanterar inte att du tänkt rätt, och den garanterar definitivt inte att du lyckas med det
+du har föresatt dig. Det kan t o m visa sig att du valt fel hammare, kanske behöver ett
+helt annat verktyg, eller kanske rentav inte borde snickra över huvud taget. Det som
+presenterats i detta kapitel har varit användbara verktyg för många när komplexa och
+unika uppgifter har genomförts på begränsad tid. Men det är fortfarande du själv som
+bestämmer!
+
+

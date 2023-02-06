@@ -1,0 +1,596 @@
+Vägfordonsteknik 2.1
+
+2. Vägfordonsteknik
+av
+Annika Stensson Trigell
+KTH Farkost och flyg
+
+2.1 Introduktion
+Idag färdas varje svensk i genomsnitt
+fem mil per dag. Detta kan sättas i
+relation till 1900-talets början då varje
+person färdades 200-300 meter per
+dag. Ett flexibelt, personligt och
+bekvämt sätt att resa prioriteras.
+Utvecklingen av fordon har på hundra
+år förändrat samhället och våra
+livsmönster. Idag är fordonen något
+som de flesta använder dagligen både
+för transport och för nöjen, men de
+påverkar även miljön och hälsan. Det
+starka sambandet mellan ekonomisk
+tillväxt (mätt i utvecklingen av Figur 2-1 Illustration av sambandet mellan BNP
+bruttonationalprodukten, BNP) och och transportbehov.
+utvecklingen av transportbehoven är
+uppenbar, se exempelvis Figur 2-1. Detta påverkar allas vardag och livsvillkor och även
+utvecklingen av olika sektorer och geografiska regioner.
+På hundra år har bilen ändrats från en excentrisk produkt för ett fåtal till en
+högteknologisk massprodukt. Om man beaktar antalet delar och arbetet att få ihop dem
+till en väl fungerande produkt, så har bilen en bra relation mellan prestanda och pris.
+Med prestanda menas inte bara topphastighet,
+utan
+även
+vägegenskaper,
+bromsningsegenskaper, komfort, säkerhet samt inte minst
+tillförlitlighet.
+Fordonsindustrierna har varit och är
+drivande i många länders ekonomier. Man
+brukar säga att: “Om världens alla fordonstillverkare vore en stat, skulle de omsättningsmässigt vara det sjätte största landet i
+världen.”. Inte bara tillverkningen av fordon är
+viktig utan också reparationer och underhåll,
+bränsleproduktion, distribution och försäljning,
+vägbyggen och dess underhåll, turism,
+byggandet av fastigheter etc. Det finns idag inte
+någon tendens till att trafiken kommer att
+minska och den ökande transport-volymen
+innebär att nya lösningar på infrastruktur,
+Figur 2-2 Illustration av ökningen av
+fordon och transportsystem är viktig framöver.
+antalet personbilar i världen.
+Vid milleniumskiftet fanns det omkring
+800 miljoner bilar i världen. De flesta i i-länder
+
+Vägfordonsteknik 2.2
+
+med en densitet på cirka 500 bilar per 1000 invånare och en medelkörsträcka på 1500
+mil per bil och år. En del ekonomer tror att antalet bilar på vägarna kan dubbleras inom
+de närmaste 20 åren (mest i Kina, Afrika och Indien), se Figur 2-2. Samtidigt väntas
+medelkörsträckan öka på grund av förbättrad infrastruktur och effektivt utnyttjande av
+dessa. Den snabba ökningen av antalet fordon innebär naturligtvis problem. Dessa
+faktorer kan inte rankas efter viktighet eftersom de inte påverkas av samma variabler,
+det skulle bli som att jämföra äpplen och päron. Men säkerhet, bränsleförbrukning,
+miljö och ett effektivt utnyttjande av transportsystemet är några av de viktigaste
+faktorerna.
+
+2.2 Fordons uppbyggnad
+Ett fordon (se exempelvis Figur 2-3) är normalt uppbyggt av huvudkomponenterna chassi, kaross, hjul, däck, drivsystem, fjädringssystem, bromssystem
+samt styrsystem.
+
+Figur 2-3 Illustration av ett fordon och dess ingående komponenter.
+
+Chassi och kaross
+I lastbilar och bussar är det chassit (ramen) som är den bärande strukturen och karossen
+är överbyggnaden (påbyggnaden). Personbilar har oftast självbärande kaross. Den
+självbärande karossen utgör ett ramverk som delvis skall överföra bilens belastningar
+till hjulupphängningarna, dels ta upp vägexciteringens dynamiska effekter på karossens
+olika delmassor.
+Hjul och däck
+Hjul och däck är de delar som överför krafter mellan fordon och väg. Däckens kontakt
+med vägbanan är därför avgörande för flera funktioner och egenskaper i fordonet.
+Fordonet manövreras genom att föraren exciterar olika delsystem som i sin tur bygger
+upp krafter i däck/markkontakten, så att krafterna accelererar, bromsar eller styr
+fordonet. Omvänt exciterar vägförändringar fordonsrörelser.
+
+Vägfordonsteknik 2.3
+
+Hjulens funktioner är främst att:
+•
+Genom sin rullande rörelse minimera den nödvändiga framdrivningskraften.
+•
+Genom friktion i tangentiell riktning mot vägbanan möjliggöra uppbyggnad av
+accelerations- och bromskrafter mellan fordon och vägbana.
+•
+Genom friktion i sidled möjliggöra styrning och sidostabilitet hos fordonet.
+•
+Genom elasticitet isolera fordonet från (högfrekventa) vägstörningar.
+För att fordonet skall fungera måste dessa hjulegenskaper upprätthållas i alla väglag.
+Det är dock en omöjlighet att idag konstruera ett hjul som har samma
+friktionsegenskaper på torr asfalt som på is. De mycket varierande vägförhållandena, de
+olika funktionerna och deras ibland motstridiga krav har lett fram till att moderna
+pneumatiska däck är den fordonsdetalj som kräver mest utvecklingsarbete och därför
+blivit en specialitet för några få, mycket stora komponentföretag.
+Drivsystem
+Omvandlingen av fordonets tillförda energi till mekanisk energi sker i fordonets
+drivsystem. Drivsystemet, eller drivlinan, består av motor och transmission (växellåda,
+koppling, kardanaxlar etc.), se Figur 2-4. Motorn skapar den framdrivande kraften,
+transmissionen överför motorns effekt till de drivande hjulen som är i kontakt med
+vägbanan.
+Drivaxlar
+
+Växellåda
+Energi
+
+Mellanaxel
+
+Slutväxel
+
+Koppling
+Motor
+Figur 2-4 Beskrivning av komponenter ingående i fordonets drivsystem.
+
+På grund av sin höga energitäthet är kemiskt lagrad energi den dominerande formen.
+För omvandling till mekanisk framdrivningseffekt krävs därför en motor, exempelvis en
+förbränningsmotor. Förbränningsmotorn ger relativt konstant moment över
+varvtalsområdet, vilket gör att effektutvecklingen vid låga varvtal är liten och under ett
+lägsta varvtal kan överhuvudtaget ingen effekt levereras. Maximal effekt utvecklas i ett
+snävt varvtalsområde, medan framdrivningen av fordon skall ske med effekten
+tillgänglig på drivhjulen oberoende av fordonshastigheten. Därför är en transmission
+nödvändig mellan förbränningsmotorn och drivhjulen.
+Transmissionen skall överbrygga hastighetsskillnaden mellan stillastående hjul
+och motorns lägsta varvtal, dvs. möjliggöra start. Start av fordonet liksom växling
+kräver en eller flera kopplingar i transmissionssystemet. Dessutom krävs en utväxling
+mellan kopplingens utgående axel och drivhjulen så att det tröghetsmoment som
+fordonets massa och eventuell last belastar kopplingen med ger acceptabla
+energiförluster i kopplingen. Om ett fordon skall drivas på mer än en axel måste det
+också ha någon form av mellanaxeldifferential, som tar hand om hastighetsskillnaderna
+
+Vägfordonsteknik 2.4
+
+mellan de olika axlarna. Transmissionen skall dessutom optimera motorns
+medeldriftpunkt med avseende på kriterier för minskad bränsleförbrukning,
+avgasemissioner samt buller.
+Med startförmågan menas fordonets förmåga att kunna starta från stillastående,
+komma igång och påbörja en färd med en given last längs ett motlut. Stigningens
+lutning blir ett mått på startförmågan. Med accelerationsförmågan menas förmåga att
+accelerera från en begynnelsehastighet till en sluthastighet på horisontell väg. Den
+uttrycks som accelerationstid, varvid kopplingens slirtid vid eventuell start och
+erforderliga växlingstiden ingår.
+Accelerationsförmåga och startförmåga är egenskaper som inte kan maximeras
+samtidigt. De måste därför balanseras utifrån de driftsbetingelser som fordonet skall
+möta. För en bil med sportig image är naturligtvis accelerationsförmågan viktigare än
+dess prestanda framför en husvagn i uppförsbacke.
+Hjulupphängning
+Fjädringssystemet isolerar delvis fordonets chassi från störningar från vägen. Det skall
+tillgodose en mängd krav som delvis är i konflikt eftersom de gäller vid olika
+driftsvillkor såsom exempelvis lastad/olastad, acceleration/bromsning, jämn/ojämn väg,
+körning rakt fram/kurvkörning.
+Hjulupphängningens primära uppgifter är att:
+•
+Ge vertikal fjädring så att hjulen kan följa den ojämna vägen, så att chassit
+isoleras från vägojämnheterna.Säkerställa att hjulen har lämpliga hjulvinklar
+gentemot vägytan. Detta genom att förbinda hjulen med chassit/karossen så att
+hjulen följer den önskade fjäderkurvan. Fjäderkurvan bestäms i sin tur av den
+fordonsdynamiskt önskade hjulgeometrin.Reagera på kontrollkrafterna som
+skapas av däcken – longitudinella (accelerations och bromskrafter), laterala
+(kurvkörningskrafter), samt bromsande och drivande moment.
+•
+Motverka rollrörelser hos chassit.
+•
+Behålla vägkontakt med minimal lastvariation.
+Fjädringssystemets egenskaper är viktiga för hela fordonets dynamiska egenskaper,
+vilket ses i rörelsemönster samt kraftuppbyggnad mellan däck och chassi. Andra viktiga
+egenskaper hos fjädringssystemet är kostnad, vikt, packning, tillverkningsegenskaper,
+hur lätt den är att montera ihop etc.
+Hjulupphängningar indelas i stela axlar och individuella hjulupphängningar.
+Med stel axel menas att hjulen på ömse sidor om fordonet är lagrade på en gemensam
+axel. Längskrafterna tas upp av bladfjädrar som även fungerar som längslänkar. De
+motriktade däckssidkrafterna tas upp av framaxelbalken, medan de externa sidkrafterna
+tas upp och fördelas mellan bladfjädrarna, som pga. sin geometri är styva i tvärled. Det
+är en tillförlitlig konstruktion, men för att uppfylla ökande krav på komfort och
+förbättrad styrkontroll används mjukare fjädrar, vilket i sin tur ger interferens mellan
+hjulfjädring och styrgeometri. Detta problem har lösts genom övergång till individuell
+framhjulsupphängning. Tyngre fordon har behållit den stela framaxeln och stel bakaxel
+förekommer fortfarande på personbilar.
+
+Vägfordonsteknik 2.5
+
+Den individuella framhjulsupphängningen ger:
+•
+Sänkt ofjädrad massa.
+•
+Större frikoppling mellan styrning och fjädring.
+•
+Tillåter mjukare chassifjädring
+•
+Ger möjlighet att påverka rollaxelns placering, något som har stor betydelse för
+fordonets dynamiska egenskaper i asymmetriplanet.
+Ett exempel på en individuell framhjulsupphängning visas i Figur 2-5. Den har
+fjäderben av McPherson-typ. En krängningshämmare förbinder fjäderbenen. Det är
+egentligen en torsionsfjäder som på grund av sin speciella belastning har fått ett eget
+namn. Krängningshämmaren är obelastad vid fjädring i symmetriplanet, dvs. när hjulen
+på höger respektive vänster sida fjädrar lika mycket.
+
+Figur 2-5 Framhjulsupphängningen på en Porsche 911 (GT2).
+
+Bromssystemet
+Bromssystemet möjliggör för ett fordon i rörelse att sakta ner eller stanna. Liksom vid
+framdrivning är det friktionskrafter mellan mark och däck som accelererar fordonet
+(bromsning är negativ acceleration). Bromsarna ger ett bromsmoment mellan hjul och
+hjulaxel. För att detta bromsmoment i sin tur skall generera bromskraft på fordonet
+måste däck/mark friktionen vara tillräckligt stor – om inte, så låser hjulet på axeln. När
+ett bromsat hjul slutar att rulla mot markplanet utnyttjas all tillgänglig friktion i
+glidriktningen. Det blir därför meningslöst att genom en rattrörelse försöka skapa
+markkontaktkrafter vinkelräta mot glidhastigheten. Ett styrande hjul som slutat rulla har
+alltså också förlorat sin styrförmåga.
+För att kunna utnyttja tillgänglig friktion optimalt så måste bromsmomentet
+fördelas mellan hjulen. Denna fördelning beror av körförhållandena. ABS
+(Antiblockiersystem på tyska) är den del av bromssystemet som självständigt reglerar
+hjulens relativa glidhastighet mot vägbanan under en inbromsning. ABS-systemen finns
+med olika sorters logisk konfiguration, mer om detta beskrivs i kapitlet om
+Fordonsdynamik.
+
+Vägfordonsteknik 2.6
+
+Bromssystemet, se exempelvis Figur 2-6, är en del av fordonets
+säkerhet. Det är därför naturligt att
+samhället genom lagstiftning reglerar
+dess konstruktion. Tyvärr är lagstiftningen inte enhetlig i olika länder.
+Färdbromsen är fordonets normala
+bromsystem. Den skall kunna
+appliceras gradvis utan att någon
+hand lämnar ratten och skall klara
+olika krav. Parkeringsbromsen skall
+kunna hålla fordonet stationärt i uppeller nedförsbacke utan förarens
+närvaro med hjälp av en mekanisk
+låsning. Säkerhetsbromsen skall vara
+Figur 2-6 Exempel på bromssystem.
+applicerbar sedan ett fel uppstått i
+fordonets färdbromssystem. Den kan utnyttja delar av både färdbromssystemet och
+parkeringsbromssystemet och skall kunna appliceras gradvis med en hand på ratten.
+Säkerhetsbromsen skall kunna ge halva färdbromsens retardation. Säkerhetsbromskravet gör det praktiskt nödvändigt att dela upp bromssystemet i flera kretsar.
+Styrsystemet
+Styrsystemet möjliggör manövrering
+och påverkar kursstabiliteten hos
+fordonet. Systemet skall styra framhjulen efter förarens önskemål, så att
+han har kontroll på fordonets rörelseriktning. Men de verkliga styrvinklar
+som fås ändras av geometrin hos
+fjädringssystemet, geometrier och kraftoch momentöverföringar i styrsystemet,
+samt vid framhjulsdrift, geometrier och
+reaktioner från drivlinan.
+Det finns en mängd olika
+styrsystem, men funktionen är liknande.
+En ratt är kopplad via axlar, leder och
+vibrationsisolatorer, till styrväxeln.
+Styrväxelns funktion är att överföra
+rotationsrörelsen hos ratten till en
+translationsrörelse som är lämplig för
+att styra hjulen. Ett exempel på
+styrsystem med elektriskt styrservo ses i
+Figur 2-7.
+
+Figur 2-7 Styrsystem med elektriskt styrservo.
+
+Vägfordonsteknik 2.7
+
+Summering
+Utveckling av motordrivna fordon karaktäriseras av tekniska innovationer och förfining
+av tekniska lösningar, konstruktion, konfiguration och styling, produktions-metodik och
+tillverkningssystem. Beroende på transportuppgift, krav och önskemål så finns det en
+mängd olika konstruktionslösningar på dessa delsystem och de kan i sin tur kombineras
+till att ge en stor variation på lösningar. I ”Bosch Automotive Handbook” så har man
+försökt att systematisera beskrivningen av olika typer av fordon, se Figur 2-8.
+
+Figur 2-8 Systematisering av vägfordonstyper enligt Bosch Automotive Handbook.
+
+Vägfordonsteknik 2.8
+
+2.3 Framtida utmaningar
+Viktiga faktorer för framtida transportbehov är klimatförändringar , förändringar i
+ekonomi och handel, befolkningsprofil, livsstil, rörlighet samt tillgängliga och möjliga
+tekniska lösningar. Hur kommer då framtidens fordon att se ut? Ett flexibelt, billigt,
+miljövänligt, säkert, personligt och bekvämt sätt att resa kommer troligtvis vara
+egenskaper som kommer att prioriteras. Exempel på idéer på fordon för framtida
+transporter visas i Figur 2-9.
+
+Figur 2-9 Exempel på idéer på framtidens fordon.
+
+För att klara detta så återstår stora utmaningar inom bland annat energiförsörjning,
+framdrift och säkerhet.
+Säkerhet
+Bara i Europa förolyckas cirka 150 personer i bilolyckor varje dag – vilket motsvarar en
+flygplanskrasch om dagen. Nästan alla olyckor beror på något mänskligt fel och i de
+flesta fall är människan ensam orsak till olyckan. De direkta orsakerna är till exempel
+kopplade till missbedömningar, körningens dynamiska förlopp, väderleken och plats i
+
+Vägfordonsteknik 2.9
+
+körfältet eller ouppmärksamhet. Bakomliggande orsaker kan vara alkohol, liten
+erfarenhet eller trötthet. Som tur är så har säkerheten ökat de senaste årtiondena genom
+förbättringar både av fordonen och infrastrukturen. Bilen har en mycket bättre aktiv och
+passiv säkerhet. De passiva systemen är gjorda för att skydda de som åker i fordonet
+(säkerhetsbälten,
+airbags,
+sidokrockskydd, etc.) Detta testas
+utförligt både med datorsimuleringar
+samt vid krocktest i laboratoriemiljö,
+se Figur 2-10. Aktiva system har till
+funktion att helt undvika kollisioner.
+Genom att bygga bort många farliga
+korsningar och genom att bygga fler
+motorvägar så har vägen också blivit
+säkrare. Men, det verkar som om att
+man i många länder har nått en platå
+och att förbättrad säkerhet kräver
+mer drastiska steg, såsom reducerade Figur 2-10 Krockprov mellan personbil och lastbil.
+hastigheter och bättre kontroll av (Källa: Scania)
+förares förmåga.
+Modern elektronik, informations- och kommunikationsteknik kommer att
+möjliggöra nya sätt att förbättra säkerhetssystem för fordon och trafik. Nya funktioner
+för att hjälpa föraren att uppnå så bra säkerhet som möjligt är ständigt under utveckling.
+
+Figur 2-11 Anpassning till personlig körstil och egenskaper.
+
+Personliga egenskaper
+För förbättrad komfort och
+säkerhet så kommer lösningar
+som automatiskt anpassar egenskaper till förarens egenskaper
+och önskemål att utvecklas, se
+exempelvis Figur 2-11. Det kan
+gälla egenskaper som stolsinställning,
+pedalinställning,
+musikintresse, körstil, och körskicklighet. Detta kommer att
+ställa stora krav på att de
+tekniska lösningarna alltid skall
+vara säkra eftersom det kommer
+att bli en mycket större
+variationer på egenskaper.
+
+Billigare
+Stora utmaningar återstår inom tillverkningsteknik. Det betyder bland annat att man
+skall kunna använda samma komponenter till fler antal bilar. Detta kan ses som
+motsatsen till kraven för personligt utformade egenskaper. Ett allt tydligare inslag i
+processen att sänka kostnaderna är därför att fler av komponenterna i bilarna levereras
+av fristående tillverkare, s.k. underleverantörer. Ett sådant exempel är det svenska
+företaget Autoliv som levererar säkerhetsutrustning som säkerhetsbälten och
+krockkuddar till tillverkare över hela världen. Priset beror också av driftskostnaden, där
+drivmedlet är den enskilt viktigaste faktorn.
+
+Vägfordonsteknik 2.10
+
+Utsläpp
+En viktig fråga för miljön är lokala utsläpp, speciellt i städerna. Föroreningarna har
+minskat drastiskt de senaste 20 åren, ibland med en faktor 100. Men det återstår
+fortfarande äldre fordon som släpper ut föroreningar, så detta tar tid att förändra.
+Fordonens miljöeffekter kan delas in i olika delar; det som har med forskning,
+utveckling och produktion att göra, det som handlar om produktens miljöpåverkan
+under drift samt återvinningspotentialen, se Figur 2-12. Siffrorna är uppskattningar för
+yrkestrafik. Man kan se att inverkan i form av avgaser, slitage på infrastruktur, last,
+körstil och underhåll är viktig.
+Forskning
+Utveckling Målning
+Produktion Värmebehandling
+15%
+
+Utsläpp från
+förbrännings
+motorer
+
+Drift
+85%
+
+Infrastruktur
+Transport flöde
+
+Material
+Metoder
+
+Återvinningspotential
+85-100%
+
+Vikt
+
+Förarberoende
+Mekanik
+
+Figur 2-12 Miljöpåverkan under en lastbils livslängd. (Källa: Scania)
+
+Energieffektivitet
+Vägtransporter svarar för den
+
+dominerande energianvändningen i
+{
+världen, men vi kan samtidigt se
+{
+och förvänta oss en väsentlig
+{
+{
+förbättring av energieffektiviteten i
+{
+vägtransportarbetet. Som framgår
+
+av Figur 2-13 ökade energi
+{
+effektiviteten i godstransporter på
+
+väg snabbt mellan 1990 och 1995.
+Effektiviteten förväntas öka långsammare fram till 2030. Effektiviteten väntas öka ännu mer inom
+persontransportområdet.
+Trots denna effektivitets- Figur 2-13 Energieffektivitet inom vägtransporter.
+förbättring förväntas den totala
+drivmedelsförbrukningen öka fram till 2030 eftersom att mobiliteten väntas att öka
+snabbare än effektivitetsförbättringarna. Speciellt förbränningen av fossila bränslen är
+därför en viktig fråga framöver. I många länder ger vägtransporter det största bidraget
+till utsläppen av växthusgasen CO2. Lösningarna kan vara att göra bilarna lättare,
+förbättra rullmotstånd och luftmotstånd, att köra mindre (exempelvis att åka tåg istället)
+och mer effektivt (logistik), att använda alternativa bränslen, och eller alternativa
+
+Vägfordonsteknik 2.11
+
+drivsystem för fordonen. Detta har drivit fram en snabb utveckling inom alternativa
+lösningar för drivning, såsom exempelvis elbilar, elhybriddrift samt bränslecellsdrift.
+Utrymme
+En annan viktig fråga i storstäderna är att det inte finns plats för alla bilarna, varken på
+vägarna och eller vid parkering. Långa köer gör det otrevligt både för de som sitter i
+bilarna samt för de boende runtomkring. Det bullrar, blir dålig luft, svårigheter att
+planera transporttider och det blir liten plats för gångtrafikanter och cyklister. Följden
+blir en dålig livskvalitet både för de som bor där och för de som hälsar på. Detta leder
+till problem med samhällsplaneringen, var människor vill bosätta sig och arbeta.
+Exempel på idéer på hur man kan förbättra situationen är vägtullar, adaptiv
+hastighetsreglering, Stop&Go-funktioner och konvojkörning.
+
+2.4 Historik – världen
+Det första motordrivna fordonet byggdes 1769 av den franska militären Nicholas Joseph
+Cugnot. Det drevs av ånga och syftet var att dra artilleripjäser, se Figur 2-14. Efter
+några år hade en förbättrad modell utvecklats och den orsakade den första ”bilolyckan”
+när den körde in i en bergvägg.
+Figur 2-14 Världens första
+motordrivna fordon, byggt av
+den
+franska
+militären
+Nicholas Joseph Cugnot
+1769.
+(Källa:
+Gillespie,
+Fundam-entals of Vehicle
+Dynamics, 1992)
+
+1802 utvecklade engelsmannen Richard Trevithick ett ångdrivet fordon att
+transportera passagerare med. Det trafikerade sträckan Cornwall-London fram till cirka
+1865 när det konkurrerades ut av järnvägen.
+Problemet med vägtransporter på den tiden jämfört med järnvägen var
+kombinationen av den tunga och stora ångmotorn samt mycket dåliga vägar. På slutet
+av artonhundratalet så vidareutvecklades ångmotorn så att den kunde göras mindre,
+lättare och den kunde använda olja eller paraffin istället för kol som bränsle. Praktiska
+ångdrivna vägfordon började tas fram i litet antal. De ångdrivna fordonen var tysta och
+hade jämn gång men nackdelen var den långa starttiden samt den stora
+vattenkonsumtionen.
+Vändpunkten kom på 1870-talet
+med Ottomotorn (förbränningsmotor)
+som patenterades och producerades av
+Dr. Otto i Tyskland. Bensin var på den
+tiden en oanvändbar biprodukt vid
+framställning av lampparaffin. 1885
+modifierade Gottlieb Daimler en fyrcylindrig Otto förbränningsmotor så att
+den kunde drivas på petroleumånga och
+monterade den i ett cykelliknande
+fordon. Ett år senade modifierade han
+Figur 2-15 Benz trehjuling. (Källa: Happianen hästvagn och skapade därmed det
+Smith, Modern Vehicle Design, 2001)
+som man idag kallar upphovet till den
+moderna bilen.
+
+Vägfordonsteknik 2.12
+
+Utvecklingen av den bensindrivna bilen är ett klassiskt exempel på parallell
+utveckling och det är många rivaler om vem som var först. Den störste konkurrenten var
+Karl Benz som producerade en bensindriven trehjuling 1885, se Figur 2-15.
+Under följande 10-årsperiod utvecklades bilar av många andra, både i USA och i
+Europa. Det stora genombrottet som gjorden bilen till en massprodukt var snarare en
+följd av utvecklingen av massproduktionstekniker än nya tekniska innovationer. 1908
+tillverkade Henry Ford T-Forden, se Figur 2-16, och märken som General Motors,
+Daimler, Opel, Renault, Benz och Peugeot började att bli kända tillverkare. Variationen
+var stor, 1909 så fanns det över 600 biltillverkare bara i USA.
+
+Figur 2-16 Ford modell T (1908-1927). (Källa: Happian-Smith, Modern Vehicle Design, 2001)
+
+Utvecklingen gick fort när det gällde fordonens topphastighet. I själva verket kunde de
+köra fortare, men begränsningen låg i att det inte fanns några bra vägar att köra på.
+Första betongvägen gjordes 1909 och första trafiksignalen dök upp 1914.
+
+2.5 Fordonsindustri i Sverige
+År 2011 består den svenska fordonsindustrin av två tillverkare av personbilar i det
+segment som kallas ”premium”; Saab Automobile AB och Volvo Car Corporation,
+samt två tillverkare av kommersiella fordon (lastbilar och bussar); Volvo och Scania.
+Dessutom finns en av världens ledande tillverkare för säkerhetsutrustning för fordon
+(säten, säkerhetsbälten, airbag) i Sverige; Autoliv. Till dessa kan läggas ett stort antal
+specialiserade bolag inom exempelvis dämpare (Öhlins), fyrhjulsdrivning (Haldex
+Traction) och sidokrocksskydd (Plannja Hardtech) samt en stor mängd andra
+underleverantörer av exempelvis avgassystem, ljud- och vibrationsdämpare,
+instrumentpaneler, säten etc.
+Fordonsindustrin i Sverige sysselsätter i storleksordningen 125 000 personer.
+Exportvärdet motsvarar cirke 13 % av den totala svenska varuexporten. De svarar också
+för runt en 1/4 av hela tillverkningsindustrins satsningar i forskning och utveckling. De
+flesta av företagen har nu utländska ägare och cirka 85 % av personbilarna och drygt
+95 % av de tunga fordonen såldes på marknader utanför landet
+Fordonsindustrin i Sverige är av gammalt datum. År 1891 grundades
+vagnsfabrikaktiebolaget i Södertälje (Vabis) för tillverkning av järnvägsvagnar. År 1897
+provkörde Vabis den första i Sverige fabriksbyggda personbilen. År 1900 bildades
+Maskinfabriks AB Scania i Malmö för tillverkning av personbilar och lastbilar. Efter en
+hård konkurrens mellan Vabis och Scania gick företagen ihop 1911 och bildade AB
+Scania-Vabis med säte i Södertälje. Under åren efter första världskriget producerade
+
+Vägfordonsteknik 2.13
+
+företaget cirka 200 fordon per år, hälften personbilar och hälften lastbilar och bussar.
+Samtidigt hade Ford Motor Company i USA nått massproduktion med upp till 2
+miljoner bilar per år av modellen T-Ford. I en sådan jämförelse så är det inte svårt att
+förstå att ekonomi var ett problem.
+I det ljuset är det märkligt att Assar Gabrielsson och Gustaf Larssons ”Volvo”projekt, 1926-27, fick bankfinansiering. I samband med detta gjordes en nationell
+strukturplan som innebar att Scania-Vabis skulle koncentrera sig på lastvagnar, Volvo
+på personvagnar och Thulinverken i Landskrona skulle inriktas på flygplanstillverkning.
+Detta blev en mycket viktig struktur för den svenska fordonsindustrin, vars senare
+internationella framgångar till betydande del kan tillskrivas den stimulerande
+konkurrensen mellan Scania-Vabis och Volvo. Men även om exporten ökade stadigt
+hade Sverige en stor nettoimport av fordon under efterkrigstiden.
+14 april 1927 rullade den
+första Volvon, ÖV4, ut från
+fabriken i Lundby på Hisingen i
+Göteborg. Volvo myntade uttrycket ”bygga bilar på Volvo
+sätt”. Volvo konstruerade delarna men hade underleverantörer
+som tillverkade dem efter specifikation. Fokus var på kvalitet
+som också är viktigt idag.
+1945 återupptogs den
+civila tillverkningen av fordon i
+Sverige. Scania-Vabis hade då
+cirka 1500 anställda varav 380
+Figur 2-17 Volvo personbilar som tillverkades 1940-50.
+var tjänstemän. Första fredsåret
+1946 levererades 402 bussar och
+612 lastbilar, varav 127 resepektive 23 för export. På Volvo tillverkade 2850 anställda
+5150 lastbilar, 358 bussar och 905 personbilar.
+Volvo PV444, se Figur 2-17, symboliserar Volvos succé och blev en riktig
+folkbil i Sverige efter andra världskriget. Den blev Sveriges mest sålda bil 1953 och
+sedan dess har Volvo haft tätposition på den Svenska personbilsmarknaden och
+modellen levde kvar i form av PV544 till 1965. Motorerna utvecklades successivt och
+det ledde till att tillförlitliga motorer och trafiksäkra bilar blev ett kännetecken för
+Volvo på 60-talet.
+Svenska Aeroplane Aktie
+Bolaget’s (Saab) första bilprojekt
+startade sent 1945. Små, lätta och
+robusta bilar av typen som var
+populär just innan andra världskriget tillverkades. Ett foto på den
+första Saaben ses i Figur 2-18.
+Projektet döptes till 92 eftersom
+civila Saabprojekt gavs ett
+nummer som startade med 9.
+Konstruktören Gunnar Ljungström Figur 2-18 Första Saaben lanserades 1949.
+ledde arbetet. Sixten Sason
+designade utseendet, medan motor, växellåda och andra komponeneter togs från DKW
+och andra biltillverkare. Prototypen var klar sommaren 1946 och testades dygnet runt.
+
+Vägfordonsteknik 2.14
+
+Under tiden hade även Saab utvecklat en egen motor och växellåda. Innan modellen
+släpptes 1949 hade testerna omfattat cirka 280000 km. Årsproduktionen var planerad
+för 4500 bilar. Produktionen startade i Linköping, men verksamheten flyttades till
+Trollhättan 1947. Saabs satsning på aerodynamik och väghållningsförmåga har följt
+produkterna genom åren.
+1969 går Saab och Scania-Vabis ihop och bildar Saab-Scania AB. Detta innebar
+möjligheter att återuppta motorproduktionen. Detta ledde fram till satsningen på
+turbomotorn vilket var mycket framgångsrikt och gav Saab ”teknikimage”.
+På åttiotalet genomgick svensk bilindustri en ekonomiskt mycket svår, närmast
+krisartad period som resulterade i utländska ägare. 2009 kom en världsomfattande
+finanskris och personbilstillverkarna fick i samband med det nya utländska ägare.
+En del av AB Volvos omsättning omfattas av fordon för anläggningsarbeten
+såsom hjullastare, grävmaskiner och dumprar. Under den 165-åriga utveckling av det
+som idag omfattas av Volvo CE, träffar man på över 40 olika företagsnamn. Speciellt
+kan nämnas Bolinder-Munktell i Eskilstuna som var ett företag mest känt för att
+tillverka traktorer. Företaget köptes av Volvo och specialiserade sig på midjestyrda
+anläggningsfordon och blev Volvo BM. Genom en internationell strukturaffär
+fusionerades bolaget med de två amerikanska konkurrenterna Michigan och Euclid till
+en av tre stora aktörer internationellt, med namnet VME. De köpte även upp
+familjekontrollerade Åkermans verkstäder med grävmaskintillverkning som specialitet.
+Erfarenheterna från hårda och tunga skogstransporter har tekniskt gynnat de
+svenska lastbilsföretagen på exportmarknaderna och bidragit till att dessa företag idag
+tillhör de stora i världen. Ökande transportvolym och starkare bilar har successivt lett
+fram till större tillåtna bruttovikter och fordonslängder. Dagens specialiserade
+transporter kräver i princip en unik lastbil för varje transportuppgift, vilket i sin tur
+försvårar en rationell produktionsapparat. Detta löses genom att modulindela lastbilen i
+ett antal kombinerbara standardkomponenter (moduler), se Figur 2-19. Man kan
+konstatera att fordonsindustrin blivit en av Sveriges basnäringar och den har dessutom
+stor betydelse för utvecklingen av det tekniska kunnandet i landet.
+
+Figur 2-19 Exempel på modulindelningen av en Scanialastbil. (Källa: Scania)
+
+

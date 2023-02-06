@@ -1,0 +1,671 @@
+Systemteknik och optimeringslära 12.1
+
+12. Systemteknik och köteori
+av
+Ulf Brännlund
+Optimeringslära och systemteori
+KTH Matematik
+
+12.1 Systemteknik
+Dagens tekniska produkter är allt oftare system, d v s sammansatta av samverkande
+komponenter. Det är dessutom något av svensk industris speciella kompetens att
+konstruera, producera och driva komplexa tekniska system, till exempel flygplan,
+ubåtar, mobiltelesystem och kraftöverföringssystem. Vid utveckling och upphandling av
+sådana tekniska system finns det ett speciellt analysbehov för att på ett rimligt sätt
+kunna väga kostnader mot prestanda och/eller olika prestandan mot varandra. För att
+möta industrins behov av civilingenjörer som behärskar detta och som har en
+teknisk/ekonomisk helhetssyn, finns på KTH sedan 1969 en utbildning i systemteknik.
+Inledningsvis fanns denna vid flygteknikinstitutionen men sedan 1980 bedrivs
+utbildningen av avdelningen för optimeringslära och systemteori.
+Systemteknik (på engelska: Systems engineering) är en relativt ung vetenskaplig
+disciplin med rötter från andra världskriget, då man framgångsrikt lyckades tackla stora
+militära planeringsproblem med hjälp av matematiska metoder. Efter kriget fick ämnet
+en ordentlig skjuts i och med att samma liknande analys började användas i civila sammanhang och kanske då främst för industriella tillämpningar. Akademiskt utvecklades
+dessa metoder under 1950- och 1960-talen åt olika håll och ett antal besläktade ämnen
+såsom systemanalys, cybernetik, management science och operationsanalys uppstod.
+Gränsdragningen mellan dessa ämnen är idag långtifrån klar. Några kan närmast kategoriseras som filosofier eller metodologier, där man antingen försöker förklara fenomen
+i världen med ”systemtänkande” eller försöker beskriva hur man kan eller bör fatta
+beslut i svåra beslutsitutationer. För oss på KTH är systemteknik ett sammanfattande
+begrepp som innefattar en arsenal av matematiska verktyg för analys och optimering av
+komplexa system.
+System i den bemärkelse vi menar här har alltså inget speciellt att göra med
+datorsystem utan ett system är helt enkelt en samling komponenter som bildar en form
+av helhet och som samverkar för att tillfredställa något behov. Ett datorsystem kan med
+denna definition vara ett system medan en samling grejor som ligger på ett bord inte är
+det eftersom de inte vare sig bildar helhet eller samverkar för att uppnå något mål. Den
+tanke som genomsyrar systemtekniken är att om man vet hur komponenterna fungerar
+och man vet hur de interagerar så kan man ”räkna ut” hur de fungerar tillsammans och
+förhoppningsvis kan man dimensionera komponenterna på ett sådant sätt att systemet
+uppfyller behoven på bästa tänkbara sätt.
+Ett system kan vara en komponent i ett överordnat system och benämns då
+subsystem. Till exempel är bromssystemet ett subsystem i systemet lastbil, och lastbilen
+i sin tur ett subsystem i ett transportföretag, som i sin tur kan vara en komponent i en
+större koncerns logistiksystem. När man vill analysera ett specifikt system är det
+naturligtvis viktigt att man definierar vilket system man avser. Det vill säga att man
+talar om systemets begränsningar. Det som ligger utanför dessa begränsningar kan man
+kalla systemets miljö. Naturligtvis är få system helt isolerade från sin miljö. Sådant som
+
+Systemteknik och köteori 12.2
+
+Figur 12-1 Ett enkelt system.
+
+passerar från miljön till systemet (till exempel bränsle) kallas input och sådant som går
+andra vägen för output (till exempel avgaser eller produktionsvolymer).
+För att analysera ett system är det ofta fruktbart och i bland nödvändigt att bygga
+modeller av systemet för att kunna göra experiment med dessa i stället för på hela
+systemet. När systemet inte finns i verkligheten utan bara på ritbordet finns det
+naturligtvis inget annat alternativ, men oftast är det för dyrt eller tidskrävande att göra
+experiment även om systemet finns i verkligheten. Om man t ex skulle vilja experimentera med trafiksignalsystemet för Stockholm stad i syfte att öka trafikgenomströmningen genom att ändra på intervaller för grönt och rött ljus på centrala gator i innerstaden
+skull man lätt kunna skaffa sig fiender om experimentet misslyckas. I ett sådant fall
+skulle man kunna bygga en datorbaserad simuleringsmodell som simulerar trafikflöden,
+vägnät, och signalsystem. I denna datormodell kan man sedan experimentera med olika
+intervall och se var köer uppstår, beräkna genomsnittliga kötider, förväntade genomloppstider mellan olika platser i staden mm.
+Modellerna som används i systemteknik är ofta av matematisk karaktär, dvs.
+systemet beskrivs i termer av variabler, parametrar och ekvationer. Mycket förenklat
+kan man säga att man med hjälp av matematikens lagar sedan ”experimenterar” med
+modellen genom att ansätta värden på parametrar och variabler för att sedan använda
+ekvationerna för att beräkna de obekanta variablerna. Sådana modeller kallas
+kvantitativa till skillnad från kvalitativa modeller som beskriver systemets mjukare
+egenskaper (d v s utan siffror: planet kan flyga fort, eller fortare än en Mig 29, inte att
+flygplanet under speciella förhållanden kan flyga med farten Mach 2,1) .
+I avsnitt 12.2 ges en kort inblick i köteorin, en viktig teoripusselbit i
+systemtekniken. Vi skall dock först mycket kortfattat presentera några andra av de
+metoder som finns i systemteknikens arsenal. En av de viktigaste metoderna som
+utnyttjas inom systemtekniken är optimering. Att optimera är att göra något så ”bra”
+som möjligt. Detta är förstås något som många, exempelvis affärsmän, politiker,
+föräldrar eller fotbollstränare, försöker göra men det är inte sannolikt att de menar
+detsamma som en matematiker, vetenskapsman eller en civilingenjör utexaminerad från
+farkosttekniklinjen.
+I det vetenskapliga ämnet optimeringslära behandlas beslutsproblem som är
+formulerade i ett matematiskt språk. Ett sådant matematiskt beslutsproblem har typiskt
+följande mycket allmänna form. Man vill välja värden på några beslutsvariabler, som vi
+betecknar med vektorn x, ur en mängd X av tillåtna värden, så att något kriterium f(x)
+minimeras. Allmänt skrivs ett sådant optimeringsproblem som
+minimera f(x)
+då x ∈ X.
+
+Systemteknik och köteori 12.3
+
+Om det naturliga kriteriet i stället är att maximera f så kan detta lätt formuleras som ett
+minimeringsproblem genom att byta tecken på f. Om mängden X kan beskrivas med
+hjälp av funktioner t ex g j (x) ≥ 0 för j=1,…,m, så kallas dessa för bivillkor.
+Att föra över verklighetens beslutsproblem på denna form, d v s att specificera X
+och f(x), kallas för modellering. Detta är ofta ett synnerligen delikat problem som
+varken är uppenbart eller lätt. Det kräver oftast både god kunskap om det som skall
+modelleras (verkligheten) och om metoder för att lösa problemen.
+När man väl har en matematisk modell med en specificerad mängd X och ett
+konkret val av f(x) så kan man försöka lösa problemet. Ämnet optimeringslära handlar
+både om modellbyggnad och om att hitta generella metoder för att lösa dessa
+optimeringsproblem.
+I samband med teknikutveckling är alltid ekonomin i projektet viktig. I ämnet
+kostnads- och intäktsanalys (en del av företagsekonomin) behandlas sådana frågor
+som gör att man får en rättvisande bild av kostnader, skatter och intäkter i samband med
+investeringsbedömningar. Man tillhandahåller också metoder som gör det möjligt att
+välja mellan olika investeringar med olika betalningsutfall. Vilket är bäst, att betala 1
+Mkr nu och få 0,7 Mkr om 1 år och 0,8 Mkr om 2 år eller att betala 1 Mkr nu och få 1,7
+Mkr om 2 år?
+För stora tekniska system kan ofta kostnaderna för underhåll under systemets
+livslängd vida överstiga den initiala anskaffningskostnaden. Ett centralt verktyg för att
+kunna hålla dessa supportkostnader under kontroll under en upphandling eller under
+utveckling av ett stort tekniskt system är LCC-analys, eller life cycle cost. Sådan analys
+har t ex varit styrande vid upphandlingen av snabbtåget X2000 och stridsflygplanet
+JAS.
+En viktig och kostsam komponent i alla stora tekniska system är lager av
+förbrukningsenheter (sådant som kastas) och utbytesenheter (sådant som repareras).
+Lagerteorin innehåller modeller och lösningar för när man skall beställa nya varor för
+att undvika bristsituationer och för hur stora lagervolymer man bör ha av
+förbrukningsvaror respektive reservdelar.
+Vid utveckling av tekniska system är osäkerheten om framtiden stor och det kan
+därför vara intressant att kunna ”räkna” med slumpen. Det finns även många andra
+situationer då det är fruktbart att kunna räkna med osäkerheter. I t.ex. situationen med
+trafiksignaler så bör en rimlig matematisk modell ta hänsyn till att trafikanter kommer
+till systemet (staden) på ett slumpmässigt sätt. Om man skall dimensionera ett reservdelslager av till exempel flygmotorer till JAS, bör man bland annat ta hänsyn till att
+motorerna som flygs går sönder slumpmässigt för att kunna bedöma hur ofta man får
+brist. Brist innebär att ett flygplan står på backen i väntan på en hel flygmotor. Ämnet
+matematisk statistik ger grunderna för att kunna räkna med osäkerheter. I många
+system är det viktigt att bygga in redundanser för att minska risken för att systemet
+fallerar. I tillförlitlighetsläran lär man sig bland annat att räkna på system av komponenter som går sönder slumpmässigt. Man får också lära sig hur man med hjälp av
+(stress)-testning kan avgöra hur ofta ett fel uppkommer i snitt.
+Som tidigare nämnts kan osäkerheten om framtiden vara stor vid utvecklingen
+av tekniska system. Beslutsanalysen ger verktyg som gör att man på ett konsekvent och
+logiskt sätt kan välja mellan olika alternativ som har osäkra framtida konsekvenser.
+I många tekniska system uppkommer köer. Uppenbara exempel på det är ett
+trafiksystem eller en telefonväxel, men även i en verkstad eller fabrik uppkommer köer
+som ett resultat av begränsad produktionskapacitet. Många kösystem är dock för
+komplicerade för att på ett bra sätt behandlas analytiskt och man måste ta till andra
+metoder. En sådan metod är s k händelsestyrd simulering i vilken man bygger en
+
+Systemteknik och köteori 12.4
+
+datormodell av kunder, betjäningsstationer mm och simulerar de uppkomna köerna
+upprepade gånger med hjälp av s k datorgenererade pseudoslumptal. I nästa avsnitt tar
+vi upp den allra enklaste kömodellen och visar hur man med hjälp av MATLAB kan
+simulera denna.
+
+12.2 Introduktion till köteori
+Betrakta den grundläggande kö-processen som illustreras i Figur 12-2. Till ett kösystem
+ankommer kunder från någon källa av kunder. Kunderna ställs i kö och ur denna kö
+hämtas de enligt någon princip för betjäning. Denna princip är vanligen ”först till
+kvarn”, eller som man säger ”first-come-first-serve”. Man kan observera först att det är
+slumpmässigheten i hur kunderna ankommer till systemet och/eller slumpmässigheten i
+betjäningen som gör att det bildas en kö. Om kunderna kommer deterministiskt säg en
+kund per minut och om betjäningen alltid tar mindre än 1 minut så uppstår det aldrig
+någon kö. I studiet av kösystem är det därför viktigt att kunna ”räkna med slumpen”.
+
+Kösystem
+
+Källa
+
+Kunder
+
+Kö
+
+Betjäning
+
+Betjänade
+kunder
+
+Figur 12-2 Kö-processen.
+
+Intressanta frågeställningar i detta sammanhang är till exempel:
+•
+•
+•
+•
+
+Hur lång kö blir det i snitt?, eller som man säger i statistiken, hur lång blir den
+förväntade kön?
+Hur lång är den förväntade (genomsnittliga) kötiden?
+Vad är chansen att kön är tom när en kund kommer till systemet?
+Hur stor andel av tiden är det fler än 2 personer i kö?
+
+Vi skall nu ställa upp en väldigt enkel modell för hur slumpprocesserna vid ankomst
+och betjäning går till. Vi presenterar bara svaren på frågorna ovan och ger inte några
+(komplicerade) härledningar.
+Antag att vi har mätt upp hur många kunder som ankommer till systemet i snitt
+per tidsenhet, till exempel genom att vi betraktat systemet under en längre tid, till
+exempel en dag, och räknat samtliga kunder som kommit under denna dag. Låt λ
+beteckna denna ankomstintensitet som alltså har sorten: Antal kunder/tidsenhet. Antag
+också att vi på samma sätt mätt upp betjäningsintensiteten µ genom att ta antalet kunder
+delat med den tid som servaren varit upptagen. Observera alltså att vi från totaltiden
+räknar bort den tid då servaren inte varit upptagen, d v s då systemet varit tomt på
+kunder.
+Nu skall vi modellera hur kunderna kommer slumpvis till systemet. För detta
+delar vi in tiden i korta tidsögonblick av storleken ∆t, låt oss för enkelhets skull låta
+∆t = 1 sekund. Antag nu att varje sekund så görs, i tanken, en lottning om det skall
+komma en kund till systemet eller inte. Antag att sannolikheten för att det skall komma
+en kund under denna sekund är λ·∆t, och att sannolikheten för att det inte kommer
+
+Systemteknik och köteori 12.5
+
+någon kund under denna sekund är 1 - λ·∆t. Vi tänker oss alltså att vi varje sekund
+snurrar ett ”chokladhjul”, som har två färger, svart och vitt, där en liten andel (λ·∆t) av
+hjulet är svart och om den svarta delen kommer upp så svarar det mot att en kund
+kommer till systemet.
+
+Figur 12-3 Chokladhjul.
+
+Vi tänker oss alltså att ∆t är så kort att dels λ·∆t är mindre än 1 så att det är meningsfullt
+att prata om λ·∆t som en sannolikhet, men även så kort att chansen för att det skall
+komma två kunder under detta intervall kan försummas. Om λ = 1 kund/minut så kan
+det verka rimligt att diskretisera tiden i sekunder. Sannolikheten för att det skall komma
+en kund en given sekund blir då 1/60. Vi tänker oss vidare att denna slumpning av
+ankomster genomförs varje sekund och att den sker oberoende av hur många som hittills
+kommit till systemet, eller hur många som befinner sig i systemet, och också oberoende
+av om det kom eller inte kom någon förra sekunden.
+
+Ankomstprocessen
+9
+8
+7
+
+Antal ankomster
+
+6
+5
+4
+3
+2
+1
+0
+
+0
+
+0.5
+
+1
+
+1.5
+
+2
+
+2.5
+
+3
+
+3.5
+
+4
+
+4.5
+
+Tid
+
+Figur 12-4 Illustration av antal kunder som anlänt till systemet (tidsskalan är minuter).
+
+På liknande sätt antar vi att betjäningen kan modelleras. Om det en given sekund finns
+kunder i systemet så kommer med samma lottningsmekanism som ovan, en kund att bli
+färdigbetjänad med sannolikheten µ·∆t, och med sannolikheten 1 - µ·∆t så blir ingen
+kund färdigbetjänad.
+
+Systemteknik och köteori 12.6
+
+Vi inser att om kunder kommer och går till systemet enligt den enkla modell
+som beskrivits ovan så kommer systemet ibland att vara tomt och ibland kommer det att
+bildas kö. Låt pn(t) beteckna sannolikheten för att det vid tidpunkt t finns exakt n
+personer i systemet. Vi inser också att om vi betraktar systemet bara en kort tid efter att
+vi startat systemet (öppnat dörren till affären) så kommer sannolikheten för att det inte
+finns någon i systemet vara ganska stor, helt enkelt p g a att det inte hunnit komma så
+många kunder ännu. Efter ett tag så har emellertid systemet nått en situation som är
+sådan att sannolikheten pn(t) inte beror på tidpunkten t. Man säger att systemet nått
+steady-state. Det är då relevant att prata om de så kallade jämviktssannolikheterna för
+att det finns n kunder systemet, pn för n = 0, 1, 2, … . Man kan tolka pn som sannolikheten för att det vid en godtycklig tidpunkt finns exakt n kunder systemet men man kan
+också tolka pn som den andel av tiden som det är n kunder systemet.
+Man kan visa att för vår enkla modell så kan man beräkna dessa sannolikheter
+förutsatt att λ < µ. (Varför krävs detta?) Dessa sannolikheter blir
+p0 = 1 − λ / µ , och pn = ρ n p0 , där ρ = λ / µ .
+Hur detta går till visas i Appendix II. Kan du visa att sannolikheterna summerar till 1?
+Vad blir det genomsnittliga antalet kunder i detta system? Jo, när vi har
+sannolikheterna pn så kan detta tas fram på följande sätt:
+∞
+
+∞
+
+n =0
+
+n =0
+
+∞
+
+d
+d ∞ n
+( ρ n ) = (1 − ρ ) ρ
+(∑ ρ ) =
+dρ n = 0
+n = 0 dρ
+
+L = ∑ npn = (1 − ρ )∑ nρ n = (1 − ρ ) ρ ∑
+= (1 − ρ ) ρ
+
+1
+d
+ρ
+λ
+(
+)=
+.
+=
+dρ 1 − ρ 1 − ρ µ − λ
+
+Den genomsnittliga tiden i systemet (kötid + betjäningstid) W kan beräknas med hjälp
+av den så kallade Littles formel:
+L = λW .
+
+Denna formel gäller generellt för kösystem, nästan oberoende hur ankomst- och
+betjäningsprocesserna går till, och alltså inte enbart för den modell vi har ovan.
+I den enkla kösituation som vi studerat går det bra att göra en matematisk analys
+av kön, men i många fall är det omöjligt att ta fram analytisk uttryck för till exempel
+genomsnittlig kötid, p g a kösystemets komplexitet, prioriteringsregler, eller andra typer
+av ankomst- och betjäningsprocesser. I sådana situationer kan man ta till simulering för
+att studera köer. Vi skall i nästa avsnitt visa hur man kan simulera den enkla kön ovan
+genom en sådan simulering i programmeringsspråket MATLAB.
+
+Systemteknik och köteori 12.7
+
+12.3 Simulering av en kö med hjälp av MATLAB
+I Appendix I hittar du ett MATLAB-program1 för simulering av samma sorts kö som i
+föregående avsnitt. Det är en så kallad tidsstyrd simulering, eftersom vi stegar fram
+tiden med konstanta tidssteg (i detta fall en sekund i taget) och efter varje framstegning
+så uppdaterar vi systemet. Detta är i allmänhet inte det mest effektiva sätt att genomföra
+simuleringar på. Vid de allra flesta tidpunkterna händer det ju ingenting. Det är oftast
+betydligt bättre att använda s k händelsestyrd simulering varvid systemet bara
+uppdateras när det inträffar en händelse. För att kunna göra en sådan krävs det dock lite
+mer kunskaper i matematisk statistik.
+Vi har datorsimulerat en kö under 12 timmar där ankomstintensiteten var 1
+kund/minut och betjäningsintensiteten var 1,4 kunder per minut. I Figur 12-5 finner du
+en sammanfattning av resultatet av denna simulering. Till vänster finns en graf över hur
+kön utvecklades över tiden och till höger finns en plottning över andelen av totala tiden
+som systemet varit i de olika tillstånden. Medelantalet kunder i systemet blev 2,6206
+stycken och medeltiden i systemet blev 2,6213, vilket skall jämföras med de teoretiska
+värdena som är 1/(1,4-1) = 2,5, respektive 2,5/1 = 2,5. Jämför också estimaten av
+sannolikheterna med dess teoretiska värden. Det teoretiska värdet för
+p0 = 1 − λ / µ = 1 − 1 / 1,4 ≈ 0,287, vilket ju verkar ganska nära det experimentella
+resultatet.
+15
+
+0.35
+0.3
+0.25
+
+Kölängd
+
+Sannolikhet
+
+10
+
+5
+
+0.2
+0.15
+0.1
+0.05
+
+0
+
+0
+
+200
+
+400
+Tid (minuter)
+
+600
+
+800
+
+0
+-5
+
+0
+
+5
+10
+Antal i systemet
+
+15
+
+20
+
+Figur 12-5 Simulering av kösystemet i 12 timmar och tillhörande estimat av
+fördelningen av antal i systemet över tiden.
+
+I Figur 12-6 återfinns estimatet av sannolikhetsfördelningen vid en simulering över
+10000 timmar. Vid denna fick vi genomsnittligt antal i systemet till 2,5096 och
+genomsnittlig tid i systemet till 2,5103. Vi ser att vi kommer närmare de ”riktiga”
+värdena om vi simulerar systemet under längre tid. Detta är en av nackdelarna med att
+1
+
+Programmet innehåller en hel del tricks, som du kanske kan ha nytta av i dina studier på KTH.
+Programmet innehåller dessutom en ”dumhet” som bara används här av pedagogiska skäl, men som inte
+bör användas i program som måste vara effektiva. Konstruktionen A = [A t]; bör inte användas i
+loopar eftersom den orsakar ständig kopiering av stora datamängder. Det är mycket bättre att allokera en
+stor vektor först med kommandot A = zeros(1,bigN); där bigN är ett tal som är tillräckligt stort,
+initiera en räknare iA = 1; och sedan göra tilldelningarna A(iA) = t; iA = iA+1;. Detta gör koden
+mycket effektivare, om man till exempel skall göra långa simuleringar.
+
+Systemteknik och köteori 12.8
+
+använda simuleringsmetoder. För att få hög precision i resultaten måste man ofta
+använda stora datorresurser.
+Studera programmet nedan och fundera över hur man kan modifiera programmet
+för att hantera
+• fler än en servare,
+• andra ankomstprocesser, t ex att det ankommer en kund varje minut
+• andra betjäningstider, t ex att det tar exakt 40 sekunder att betjäna en kund,
+• att det kan komma två typer av kunder, där den ena typer får gå före kön, etc!
+Simulering över 10000 timmar
+0.35
+
+0.3
+
+Sannolikhet
+
+0.25
+
+0.2
+
+0.15
+
+0.1
+
+0.05
+
+0
+-5
+
+0
+
+5
+
+10
+
+15
+20
+Antal i systemet
+
+25
+
+30
+
+35
+
+40
+
+Figur 12-6 Estimat av fördelning från 10000 timmars simulering.
+
+Systemteknik och köteori 12.9
+
+Appendix I MATLAB program för tidsstyrd simulering av enkel kö
+% Tidsstyrd simulering av enkel kö
+ra = 1;
+rs = 1.4;
+pa = ra/60;
+ps = rs/60;
+T = 12*3600;
+A = [];
+D = [];
+
+%
+%
+%
+%
+%
+%
+%
+
+Ankomstintensitet (antal per minut)
+Serviceintensitet (antal per minut)
+Sannolikhet en kund kommer under en sek
+Sannolikhet en kund går under en sek
+Simuleringstid (12 timmar)
+Serie av ankomsttider
+Serie av avgångstider
+
+% Initialtillstånd
+n = 0;
+for t = 1:T
+if (n>0)
+y = rand(1);
+if (y < ps)
+D = [D t];
+n = n-1;
+end
+end
+y = rand(1);
+if (y < pa)
+A = [A t];
+n = n+1;
+end
+end
+
+% Antal i systemet
+% Om det finns kunder i systemet
+% Ett slumptal mellan 0 och 1
+% Det går en kund
+
+% Ett slumptal mellan 0 och 1
+% Det kommer en kund
+
+% Slutbehandling av folk i kö
+while n > 0
+t = t+1;
+y = rand(1); % Ett slumptal mellan 0 och 1
+if (y < ps)
+D = [D t]; % Det går en kund
+n = n-1;
+end
+end
+% Vi mäter i minuter i stället för sekunder
+A = A/60; D = D/60;
+% Lite efterbehandling
+tA = diff(A); % Tider mellan ankomster
+tQ = D-A;
+% Tider i systemet
+% Plottning av antalet i systemet
+tevent = [0 A D];
+% Alla tidpunkter
+updown = [0 ones(size(A)) -ones(size(D))];
+[tevent, indx] = sort(tevent); % Sortera dem
+updown = updown(indx);
+% Sortera updown pss
+N = cumsum(updown);
+% Kölängd
+subplot(1,2,1)
+plot(tevent, N)
+% Plotta
+xlabel('Tid (minuter)') % text på x-axel
+ylabel('Kölängd')
+% text på y-axel
+
+Systemteknik och köteori 12.10
+
+% Sannolikhetsfördelning för antalet i systemet
+Tend = tevent(end);
+% Tidpunkt för sista händelsen
+MaxQ = max(N);
+% Max antal i systemet
+P = zeros(1,MaxQ+1);
+% Sannolikheterna
+for n=1:MaxQ
+% För varje kölängd
+indx = find(N==n);
+% Alla tidpunkter med n i systemet
+if (indx(end) == tevent(end)); % Ej sista händelsen
+indx = indx(1:end-1);
+end
+Tn = sum(tevent(indx+1) - tevent(indx)); % Summera tiderna
+P(n+1) = Tn/Tend;
+% Estimera sannolikheten
+end
+P(1) = 1-sum(P(2:end));
+subplot(1,2,2)
+bar(0:MaxQ,P)
+xlabel('Antal i systemet')
+ylabel('Sannolikhet')
+Nmean = sum((0:MaxQ).*P)
+Qmean = mean(tQ)
+
+% Medelantal i systemet
+% Medeltid i system
+
+Systemteknik och köteori 12.11
+
+Appendix II Heuristisk härledning av jämviktssannolikheterna
+Figur 12-7 illustrerar ett så kallat övergångsdiagram för en allmän kö i diskret tid. Vi
+säger allmän kö eftersom sannolikheterna kan tänkas bero på hur många som befinner
+sig i systemet. Cirklarna betecknar systemets tillstånd, d v s hur många som är i
+systemet, och pilarna betecknar hur systemet kan hoppa mellan de olika tillstånden.
+Sannolikheterna med vilken dessa hopp sker är noterade på dessa bågar. För enkelhet
+skull är ∆t satt till 1. Vårt enkla kösystem fås som specialfall genom att λn = λ och
+
+µ n = µ lika för alla tillstånd.
+
+λ1
+
+λ0
+N=0
+
+N=1
+
+µ1
+
+N=2
+
+µ2
+
+λ3
+
+λ2
+N=3
+
+µ3
+
+λ4
+N=4
+
+µ4
+
+Figur 12-7 Intensitetsdiagram för en enkel kö.
+
+Vi är nu intresserade av att beräkna sannolikheten för att systemet vid en godtycklig
+tidpunkt befinner sig i tillstånd n. Låt pn beteckna denna sannolikhet, där
+
+∞
+
+∑p
+n =0
+
+n
+
+= 1.
+
+Principen
+Utflöde = Inflöde
+
+säger oss att om systemet är i jämvikt, så måste gälla att i alla tillstånd (n = 0, 1, 2, …)
+så är medelintensiteten av hopp ut från tillståndet lika med medelintensiteten av hopp in
+till tillståndet. Givet att vi befinner oss i tillstånd 1, så är intensiteten med vilken vi
+hoppar till tillstånd 0 lika med µ1 . Intensiteten som systemet hoppar till tillstånd 0 från
+alla andra tillstånd noll. Medelintensiteten med vilken system hoppar till tillstånd 0 är
+alltså p1 ⋅ µ1 . Medelintensiteten med vilken hopp från tillstånd 0 är p0 ⋅ λ0 och
+principen säger sålunda att
+p0 ⋅ λ0 = p1 ⋅ µ1 .
+
+På samma sätt kan vi resonera kring alla andra tillstånd och vi får
+pn ⋅ λn + pn µ n = pn −1λn −1 + pn +1µ n +1 för n ≥ 1 .
+
+Systemteknik och köteori 12.12
+
+Om vi nu utnyttjar att vi vårt enkla kösystem så ser vi att
+p1 = (λ / µ ) p0 = ρ p0 ,
+
+p2 = ( p1 (λ + µ ) − p0 λ ) / µ = ρ p1 + p1 − ρ p0 = ρ p1 = ρ 2 p0 ,
+och
+
+p3 = ( p2 (λ + µ ) − p1λ ) / µ = ρ p2 + p2 − ρ p1 = ρ p2 = ρ 3 p0 .
+Vi inser att allmänt så gäller att pn = ρ n p0. Eftersom sannolikheterna måste summera
+till 1 får vi
+∞
+
+∞
+
+∞
+
+n =0
+
+n =0
+
+n =0
+
+1 = ∑ pn = ∑ ρ n p0 = p0 ∑ ρ n =
+
+p0
+pµ
+= 0 ,
+1− ρ µ − λ
+
+förutsatt att ρ < 1 . Detta ger att
+p0 = 1 − ρ = 1 − λ / µ ,
+och vi kan få de andra sannolikheterna ur pn = ρ n p0 .
+
+

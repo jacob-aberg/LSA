@@ -1,0 +1,322 @@
+Lättkonstruktioner 8.1
+
+8. Lättkonstruktioner
+Materialval och konstruktionslösningar
+av
+Stefan Hallström
+KTH Farkost och flyg
+
+8.1 Inledning
+För att kunna flyga måste man övervinna gravitationen och därför har låg vikt alltid
+varit nödvändigt för flygande farkoster. Detta krav är ännu mer påtagligt för
+rymdfarkoster där man nästan hamnar i ett moment 22: För raketer är typiskt 1 % av
+totalvikten nyttolast, circa 9 % struktur och 90 % bränsle. Farkosten blir som tyngst vid
+starten då gravitationens påverkan är som störst och det gör att man inte kan skicka upp
+hur mycket som helst åt gången. Att bygga en rymdstation kräver till exempel fler än
+100 rymdfärjeuppskjutningar och varje kilo nyttolast kostar omkring 100 000 kr att
+transportera ut i rymden. I sådana tillämpningar kan man naturligtvis acceptera väldigt
+höga materialkostnader för att spara vikt.
+Konsten att bygga styva och starka konstruktioner till låg vikt har annars
+huvudsakligen utvecklats inom flygindustrin. De flesta flygplanskroppar och vingar
+utgörs av längs- och tvärförstyvade tunna skal där själva skalet bär stor del av de
+verkande lasterna. Detta kan jämföras med t.ex. personbilen vars kaross huvudsakligen
+fungerar som kläder. Den ger färg, form och ytfinish och bidrar med aerodynamiska
+egenskaper, krockskydd m.m. men är sällan strukturellt bärande.
+Låg vikt är alltså en nödvändighet för flygande farkoster men det ger naturligtvis
+fördelar även för andra fordonstyper. För godstransporter på vägar och järnvägar, där
+totalvikten är begränsad, kan ett sparat kilo i strukturen tas ut som betalande last istället
+och omedelbart ge ekonomiska vinster. Låg vikt för mer extrema farkoster kan höja
+prestanda såsom acceleration, hastighet, manövrerbarhet, et cetera. Om man till exempel
+vill utveckla en farkost för att gå snabbare kan man göra det på olika sätt. Om man
+väljer att öka effekten behöver man en starkare motor. För att klara påfrestningarna från
+denna behöver man sannolikt dimensionera upp motorinfästningar, transmission och
+bränsletankar och detta bidrar med extra vikt. Har man otur ökar påfrestningar på
+manöverdon och andra detaljer i sådan grad att de måste förstärkas och i slutändan kan
+en väsentlig del av prestandaökningen ha ätits upp av ökad vikt. Detta scenario brukar
+man kalla en negativ designspiral. Om man i stället kan göra stukturen lättare slipper
+man ovannämnda bieffekter och om man är riktigt framgångsrik kanske man till och
+med kan använda en mindre motor och dimensionera ner andra detaljer så att man spar
+ytterligare vikt. Det sistnämnda är vad man kallar en positiv designspiral.
+En annan fördel med låg vikt är driftsekonomin. För exempelvis trafikflygplan
+motsvarar en viktbesparing på bara ett kilogram mer än 100 liter bränsle per år. För
+godstransporter är själva drivmedlet en relativt stor del av omkostnaderna och för dessa
+kan därför redan en mycket liten förbättring av bränsleförbrukningen vara värdefull.
+Bränsleförbrukning är inte bara en ekonomisk fråga utan även en miljöfråga. Då
+man gör så kallade livscykelanalyser av farkoster räknar man samman hur stor
+miljöbelastning tillverkning, drift och återvinning ger. Ett praktiskt exempel är en
+jämförelse av en kustbevakningsbåt byggd antingen i svetsad aluminium eller som
+sandwichkonstruktion med täckskikt av kompositmaterial (fiberarmerad plast). Man
+kom fram till att en sandwichbåt skulle bli 15 % lättare än en aluminiumbåt men
+
+Lättkonstruktioner 8.2
+
+samtidigt något dyrare att tillverka. Det skulle också bli mycket mer kostsamt att
+återvinna den fiberarmerade plasten än motsvarande aluminium. Emellertid skulle den
+lägre vikten spara 200 m3 dieselolja under båtens beräknade livslängd på 25 år och då
+detta sattes i relation till nackdelarna i tillverkning och återvinning blev sandwich ett
+självklart val ur miljösynpunkt. Livscykelanalysen visade att 80 % av fartygets
+miljöbelastning uppkommer under drift.
+
+8.2 Hållfasthet kontra styvhet
+Då man dimensionerar konstruktioner tänker man i allmänhet i termer av hållfasthet.
+Håller det eller håller det ej? I farkosttillämpningar är dock ofta styvhet mer kritiskt än
+hållfasthet. Till exempel måste en flygplansvinge vara styv för att inte aerodynamiken
+ska förändras då vingen belastas. Chassit på en bil skall vara styvt för att ge goda
+köregenskaper. För fordonstillämpningar generellt vill man undvika låga egenfrekvenser eftersom de kan orsaka åksjuka och andra obehag och en parameter som
+höjer egenfrekvenserna är styvhet. För många strukturelement är hållfastheten inte ett
+problem efter att styvhetskraven uppfyllts och man brukar benämna sådana detaljer
+”styvhetsdimensionerade” i motsats till ”hållfasthetsdimensionerade”.
+Styvhetsdimensionering har lett till utveckling av speciella konstruktionslösningar och en sådan är sandwichprincipen. Låt oss betrakta en balk som vi utsätter
+för ett böjande moment M, se Fig. 8-1.
+
+z
+M
+
+M
+
+Figur 8-1 Balk utsatt för böjande moment.
+
+Böjstyvheten, eller motståndet mot böjning per breddenhet ges av uttrycket
+2
+
+D = ∫ Ez dz
+
+(8.1)
+
+där elasticitetsmodulen, E, beskriver materialets styvhet och z är avståndet till
+neutrallagret, d.v.s. den linje i tvärsnittet som inte töjs av böjdeformationen. Som synes
+uppnås böjstyvhet genom att använda styva material men framför allt genom att flytta ut
+så mycket som möjligt av materialet i tjockleksriktningen. Detta är anledningen till att
+exempelvis I- och H-balkar ser ut som de gör. Om man tillåter sig att blanda material
+kan man spara vikt genom att låta ett väldigt lätt material bygga tjockleken och placera
+det styva materialet uteslutande längst ut där det har som störst verkan. För att
+kompensera för att det lättare materialet har lite sämre egenskaper kan man låta det fylla
+ut hela spalten mellan flänsarna och få ett tvärsnitt med konstant bredd. Vi har då byggt
+oss en sandwichbalk med en lätt kärna och styva täckskikt, se Fig 8-2.
+
+Lättkonstruktioner 8.3
+
+tf
+tc
+tf
+Figur 8-2 Sandwichbalkens tvärsnitt.
+
+Böjstyvheten per breddenhet för en sandwichbalk kan beräknas enligt (8.1) till
+D=
+
+2E f t 3f
+3
+
++ E f t 2f tc +
+
+E f t f t 2c
+
+(8.2)
+
+2
+
+där index f står för täckskikt (face) och c för kärna (core). Vi har i (8.2) antagit att
+kärnmaterialets bidrag till böjstyvheten är försumbart. Hållfastheten kan också beskrivas
+som maximalt böjmoment per breddenhet som kan upptas av balken, enligt
+
+ 2t 3f
+t f tc2 
+2
+
+σˆ f 
++ t f tc +
+2 
+ 3
+Mmax =
+t
+tf + c
+2
+
+(8.3)
+
+där σˆ f är kritisk dragspänning (last/tvärsnittsarea) för täckskikten. Om vi nu utgår ifrån
+ett massivt tvärsnitt som vi sedan delar för att fylla mellanrummet med ett lätt
+kärnmaterial kan vi se att styvhet och hållfasthet ökar dramatiskt med tjockleken på
+kärmaterialet. Vikten påverkas bara marginellt eftersom kärnmaterialets densitet ofta är
+en bråkdel av täckskiktens. Normerade resultat presenteras i tabell 8-1.
+Tabell 8-1 Böjstyvhet och böjhållfasthet och vikt som funktion av kärntjocklek
+
+tc
+
+Styvhet
+
+Hållfasthet
+
+Vikt
+
+0
+
+1
+
+1
+
+1
+
+tf
+2 tf
+4 tf
+
+3
+7
+19
+
+2
+3.5
+6
+
+~1
+~1
+~1
+
+8.3 Materialval
+Lättkonstruktion är inte bara en fråga om struktur utan även materialval. I stället för att
+uteslutande se till mekaniska egenskaper är man intresserad av material som har goda
+egenskaper i förhållande till sin densitet, så kallade specifika egenskaper. Aluminium
+har länge varit dominerande i flygindustrin och främst då i form av Dural, en legering
+med koppar och magnesium som har bättre brottseghet och utmattningsegenskaper än
+ren aluminium. Aluminium är också vanligt i båtindustrin och har på senare år även
+börjat introduceras på allvar i bilindustrin. På flygsidan har till exempel titan också
+förekommit men huvudsakligen i mer extrema flygplanstyper eftersom materialet är
+dyrt och mycket svårt att bearbeta. Under andra världskriget tvingade materialbrist
+
+Lättkonstruktioner 8.4
+
+engelsmännen att börja bygga flygplan i trä. Trä har mycket goda specifika egenskaper i
+sin fiberriktning medan egenskaperna tvärs fiberriktningen som bekant är sämre.
+Mosquitoplanen utnyttjade sandwichprincipen med täckskikt av plywood på en kärna av
+balsaträ. Eftersom träets fibrer är orienterade olika i plywoodens olika lager krävdes
+viss utveckling av analysmetoder för att dimensionera dessa plan och dessa kom senare
+att ligga till grund för dagens dimensionering av laminat i fiberarmerad plast.
+Kompositmaterial är ett vitt begrepp men här avses konsekvent fiberarmerade
+polymerer. Fibrerna är oftast av glas, kol eller aramid (Kevlar är ett känt produktnamn)
+och matrisen av härd- eller termoplast. Tack vare fibrernas goda specifika egenskaper
+kan man erhålla material som är väldigt konkurenskraftiga för lätta konstruktioner. I
+Fig. 8-3 visas schematiskt specifik styvhet och hållfasthet för några olika material.
+^
+σ/ρ
+350
+Glass/UD-0
+300
+
+Carbon/QI
+
+250
+200
+150
+Titanium
+
+Bone
+
+100
+
+Pine
+
+Aluminium
+Balsa
+
+Glass/CSM
+50
+0
+
+Steel
+Plywood
+
+Carbon/UD-90
+Glass/UD-90
+0
+
+5
+
+10
+
+15
+
+20
+
+25
+
+E /ρ
+30
+
+35
+
+40
+
+45
+
+50
+
+Figur 8-3 Specifik styvhet och hållfasthet för olika material.
+
+8.4 Kompositers mekaniska egenskaper
+Liksom trä har kompositer en fiberriktning som gör att materialet har olika mekaniska
+egenskaper i olika riktningar. Man säger att materialen är anisotropa till skillnad från till
+exempel metaller som är isotropa. Anisotropin kan designas bort, helt eller delvis,
+genom att styra fiberriktningen i kompositen på olika sätt, men i många tillämpningar
+vill man ha riktade egenskaper. Ofta utgörs kompositer likt plywood av ett antal
+enkelriktade lager som staplats i en vald sekvens för att ge önskade egenskaper. I
+flygsammanhang använder man oftast kolfiberarmerad epoxy och då man tillverkar
+isotropa laminat av denna komposit når man nästan samma styvhet som för aluminium,
+fast till hälften så hög vikt. Denna typ av flygkomposit har därför fått öknamnet "black
+aluminium".
+En intressant och mycket speciell egenskap för kompositer är att de kan designas
+för att deformeras väldigt okonventionellt under belastning. Om man bygger upp ett
+laminat på ett osymmetriskt sätt kan man få en komposit som till exempel vrider sig då
+den utsätts för böjning eller förlängs när man vrider den. I Fig. 8-4 visas ett exempel på
+
+Lättkonstruktioner 8.5
+
+vad man kan åstadkomma med böj/vrid-koppling i material. Ett flygplan med
+framåtsvepta vingar blir mycket manövrerbart men tyvärr också instabilt om det byggs
+med konventionell teknik. Instabiliteten kommer från kopplingen mellan aerodynamik
+och mekanik: Då luftlaster böjer vingen ökas anfallsvinkeln och luftlasterna ökar
+ytterligare, och så vidare. För att bibehålla stabilitet med konventionell teknik måste
+vingen göras så styv att den i princip förblir odeformerad och en sådan lösning blir för
+tung för att vara flygduglig. Med kompositmaterial kan man emellertid styra
+deformationen så att vingen vrider i motsatt riktning (minskande anfallsvinkel) då den
+böjs och framåtsvepta vingar blir plötsligt möjligt utan väsentlig viktökning.
+
+Figur 8-4 Flygplan X29 (Källa: NASA).
+
+8.5 Tillämpningar
+Många av våra exempel ovan har hämtats från flygande farkoster eftersom ämnet
+lättkonstruktioner historiskt sett varit starkt kopplat till flygindustrin. Nedan presenteras
+därför ett antal tillämpningar inom andra farkostgrenar.
+Småbåtsindustrin har länge varit flitiga användare av kompositmaterial men
+målfunktionen har sällan varit låg vikt utan oftare rationell, formflexibel och billig
+produktion i små till måttliga serier. Att "plastbåtar" är stryktåliga och kräver relativt
+lite underhåll har naturligtvis också bidragit till framgången.
+De sistnämnda argumenten bidrog till att glasfiberarmerad plast i början av 70talet ersatte trä som konstruktionsmaterial för svenska minsvepare. Dessa måste som
+bekant vara ickemagnetiska för att fylla sin funktion. För att få strukturen tålig mot
+mekanisk chock valde man att bygga skrovet som en sandwichkonstruktion.
+Erfarenheterna från dessa fartyg blev så goda att man fortsatte utvecklingen av
+sandwichfartyg. Utvecklingen av produktionsmetoder, återigen låga underhållskostnader men framförallt låg vikt har på senare år bidragit till att fartyg med andra
+uppgifter än minjakt konstruerats av sandwichmaterial. Ett exempel är kustkorvetten
+Visby för vilken bland annat smygteknik utnyttjats för att minimera radarsignatur, se
+
+Lättkonstruktioner 8.6
+
+Fig. 8-5. Även i civila marina tillämpningar har kompositmaterial vunnit mycket mark
+på senare år.
+
+Figur 8-5 Kustkorvett Visby (Källa: Kockums AB Karlskronavarvet).
+
+För godstransport på väg har försök med självbärande trailers gjorts. Genom att bygga
+ett trailerskal i sandwich kunde man eliminera stora delar av chassit och öka den
+betalande lasten, se Fig. 8-6.
+
+Figur 8-6 Självbärande lastbilstrailer i sandwich.
+
+Lättkonstruktioner 8.7
+
+På personbilsidan börjar också fler och fler detaljer konstrueras i lätta kompositmaterial
+och som ett exempel visas en motorhuv (Fig8-7).
+
+Figur 8-7 Motorhuv i kompositmaterial (Källa: Daimler-Benz Forschung und Technik AG).
+
+

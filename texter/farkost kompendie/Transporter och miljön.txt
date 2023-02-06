@@ -1,0 +1,902 @@
+Transporter och miljön 11.1
+
+11. Transporter och miljön
+av
+Jonas Åkerman
+Avdelningen för Miljöstrategisk analys/ fms
+KTH Arkitektur och samhällsbyggnad
+
+11.1 Inledning
+Detta kapitel bygger till stor del på en rapport som skrivits på Avdelningen för
+Miljöstrategisk analys på uppdrag av Naturvårdsverket. Titeln är ”Tvågradersmålet i
+sikte? – Scenarier för det svenska energi- och transportsystemet till år 2050” och
+rapporten går att ladda ner från Naturvårdsverkets hemsida.
+Den mängd transporter som människor världen över utnyttjar varierar kraftigt. I
+det svenska transportsystemet (person- och godstransporter) förbrukas ca 1 ton olja per
+person och år. Detta är mindre än hälften av vad den genomsnittlige amerikanen
+förbrukar men långt över det globala genomsnittet. Med ett globalt snitt på Sveriges
+nivå skulle enbart världens transportsektor behöva dubbelt så mycket olja som idag
+totalt produceras i världen. Ett enskilt lands transportsystem kan avgränsas på ett flertal
+olika sätt. Ibland redovisas t.ex. enbart inrikes transporter. Eftersom transporter över
+nationsgränserna är de som ökar snabbast både vad gäller person- och godstransporter
+kan denna avgränsning leda till relativt stora underskattningar. Att de ändå ofta används
+beror på att statistiken för internationella transporter oftast är sämre. I figur 11-1 visas
+svenskars resande 2005 uttryckt i miljarder personkm. I volymerna ingår allt resande av
+svenskar oavsett var resorna skett. Bilen står för den klart största delen av resandet, men
+om utrikesresor på detta sätt inkluderas ser man att flygresandet utgör en relativt stor
+post. Av 32 miljarder personkm med flyg utgör rena inrikesflygningar endast drygt 3
+miljarder personkm. Flyget är också det transportslag som ökar snabbast. Med dagens
+ökningstakt fördubblas flygresandet på ca 15 år.
+
+(mdr person-km)
+
+Svenskars resande 2005
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+0
+Bil
+
+Flyg
+
+Spår
+
+Buss
+
+Färja
+
+Figur 11-1 Svenskarnas personresor 2005.
+
+Cykel
+
+Transporter och miljön 11.2
+
+Godstransporter 2005
+140
+
+(mdr ton-km)
+
+120
+100
+80
+60
+40
+20
+0
+Sjöfart
+
+Lastbil
+
+Järnväg
+
+Flygfrakt
+
+Figur 11-2 Godstransporterna 2005. För lastbil och järnväg har räknats transporter på
+svenskt territorium. För sjöfart och flyg inkluderas inrikes transporter och import.
+Uppskattningarna av sjöfartens och flygets transportarbete är dock mycket osäkra.
+
+I figur 11-2 visas en uppskattning av godstransportarbetet för Sverige. Osäkerheten i
+siffrorna för sjöfart och flygfrakt är emellertid stor på grund av bristfällig statistik. Ca 90
+% av sjötransporterna är import till Sverige, resten är inrikes transporter (Sveriges
+export räknas enligt denna systemavgränsning på mottagarlandet).
+Teknisk utveckling av farkoster och infrastruktur har historiskt sett varit en viktig
+orsak till de ökande transportvolymerna. Det finns i dagens läge också många faktorer i
+vår omvärld som verkar mot ökande godstransporter. Den rena frihandeln har vunnit allt
+fler anhängare. Handelshinder i form av tullar och kvoter har minskat i omfattning. Ett
+grundläggande syfte med en organisation som EU är en utökad handel, vilket innebär
+mer transporter.
+
+11.2 Transporternas miljö och hälsoproblem
+Samtidigt som transporter är nödvändiga för att dagens samhälle ska fungera, så utgör
+de snabbt ökande transportvolymerna ett alltmer påtagligt hot mot miljön och
+människors hälsa. Transportsektorns utsläpp av växthusgaser är sannolikt det största
+problemet och kommer att ägnas stort utrymme i hela detta kapitel. Transportsystemens
+miljö- och hälsoeffekter kan grovt delas in efter om effekterna uppträder lokalt,
+regionalt eller globalt.
+Lokala effekter
+Trots att Sverige hör till de absolut säkraste länderna i världen skadas ca 17 000
+personer varje år i vägtrafiken i Sverige. År 2014 avled 270 personer till följd av
+trafikolyckor. Avgasernas direkta hälsoeffekter är mest påtagliga i städer där både
+många människor och fordon trängs på en liten yta. Bilavgaser och andra utsläpp
+orsakar en rad allvarliga sjukdomar som astma och cancer. Årligen uppskattas ungefär
+500 cancerfall i tätorter bero på luftföroreningar. Hälften av dessa avlider. Osäkerheten i
+dessa uppskattningar är dock stor. En indirekt effekt av befolkningens ökande bilåkande
+är att vi rör oss för lite och får nedsatt hälsa, t.ex. i form av benskörhet och övervikt.
+
+Transporter och miljön 11.3
+
+Regionala effekter
+Utsläpp av svavel- och kväveoxider orsakar fortfarande allvarliga skador i form av
+försurning och övergödning. Sjöfarten står för drygt 20 % av svavelutsläppen medan
+vägtrafiken endast står för ett par procent. När det gäller kväveutsläppen till luft står
+transportsektorn för ca 80 %. Kväveoxiderna leder också till bildandet av marknära
+ozon och andra s.k. fotokemiska oxidanter. Dessa oxidanter skadar grödor som potatis
+och vete. Produktionsbortfallet uppskattas i storleksordning till en miljard kronor
+årligen. Infrastrukturen i form av vägar och järnvägar fragmenterar landskapet, vilket
+anses vara ett hot mot den biologiska mångfalden. Infrastrukturen konkurrerar också om
+mark som kan användas för andra ändamål, t.ex. jordbruk eller friluftsområden.
+Globala effekter - Klimatförändringar
+Koldioxidutsläpp från förbränning av fossila bränslen utgör transportsektorns största
+miljöproblem. Att ökade utsläpp av koldioxid kan påverka klimatet är känt sedan länge,
+men frågan fick ökad uppmärksamhet globalt i och med att Sternrapporten publicerades
+hösten 2006 samt i takt med de nya rapporterna från FN:s klimatpanel under våren 2007.
+Dessa visar på att världen står inför en klimatförändring som är i huvudsak orsakad av
+mänskliga aktiviteter, och som riskerar att få dramatiska konsekvenser. En aspekt som
+sannolikt bidragit till att klimatförändringarna nu tas på allvar inom de allra flesta delar
+av samhället är att den tidigare ofta hävdade motsättningen mellan å ena sidan ekologisk
+hållbarhet och å andra sidan ekonomisk och social hållbarhet nu ser ut att lösas upp.
+Enligt IPCC (2007) och Stern (2006) så är det nu tydligt att kraftigt minskade utsläpp av
+växthusgaser (en viktig komponent i ekologisk hållbarhet) i själva verket är en
+nödvändig förutsättning för att inte den långsiktiga ekonomiska utvecklingen ska
+drabbas. Det är betydligt mindre kostsamt att minska utsläppen idag än att försöka
+reparera skadorna i efterhand (många klimateffekter riskerar dessutom att vara
+irreversibla). Enligt Stern (2006) skulle det kosta i storleksordningen ett par procent per
+år av den globala BNP för att minska utsläppen till acceptabla nivåer, medan skadorna,
+om inget görs idag, skulle kunna uppgå till motsvarande 15-20 % av den globala BNP år
+2050.
+En global klimatförändring kommer att påverka olika områden på jorden mycket
+olika. Tyvärr så pekar klimatmodellerna på att redan torra områden i världen kommer att
+bli ännu torrare, medan risken för översvämningar ökar i andra delar av världen. I
+tempererade områden som norra Europa, Ryssland och Kanada kan skördarna öka något
+om uppvärmningen inte blir större än 1-2 grader. Blir den större kommer skördarna
+dock att minska även i dessa områden. I varmare delar av världen kommer skördarna att
+minska även vid en liten global temperaturhöjning. Vi en temperaturhöjning på över 2
+grader ökar riskerna för svält markant. Detta kan i sin tur leda till sociala konflikter,
+stora flyktingsströmmar och i vissa fall krig. Andra effekter är t.ex. att världshavens
+nivå beräknas stiga med 0,5-2 meter fram till år 2100, samt att förekomsten av orkaner
+kommer att öka.
+Bland andra EU och Sverige har satt upp som målsättning att jordens
+medeltemperatur inte bör öka med mer än 2 grader, för att de värsta konsekvenserna av
+ett förändrat klimat ska kunna undvikas. För att nå detta krävs att de globala utsläppen
+snabbt börjar minska och att de industrialiserade länderna minskar sina utsläpp av
+växthusgaser med 80-95 % fram till 2050.
+Transportsektorn står idag för mer än 40 % av Sveriges samlade utsläpp av
+växthusgaser. Det är också den sektor i samhället vars utsläpp ökar snabbast.
+Personbilar står för ca 17 %, lastbilar för ca 7 % och svenskars flygresande står idag för
+ca 10 % av de totala svenska utsläppen från alla sektorer.
+
+Transporter och miljön 11.4
+
+11.3 Jämförelse av olika transportslags miljöpåverkan
+I tabell 11-1 visas energianvändning samt utsläpp av växthusgaser per rest kilometer för
+olika transportslag. Koldioxid är den viktigaste växthusgasen men för flyget bidrar
+utsläpp av vattenånga och kväveoxider med en ungefär lika stor klimatpåverkan som
+koldoxiden. Variationerna kring dessa genomsnittsvärden kan dock vara stora. Hur
+många personer som utnyttjar varje fordon spelar också en stor roll. Detta är en orsak till
+att långväga bilresor (i genomsnitt ca 2 personer per fordon) är avsevärt mer energisnåla
+per person-km än korta bilresor (ca 1,2 personer per fordon). För flygresande är energiåtgången ungefär dubbelt så stor som för bilresor. Mest energi per rest km åtgår dock för
+höghastighetsfärjor.
+Tabell 11-1 Specifik energianvändning och utsläpp av växthusgaser för olika
+persontransportslag 2005.
+kWh/personkm
+Utsläpp som
+CO2-ekvivalenter
+(g/personkm)
+Bil, (kortväga)
+0,65
+170
+Bil, (långväga)
+0,30
+78
+Buss (kortväga)
+0,30
+78
+Buss (långväga)
+0,13
+34
+Färja, 75% (ca 20 knop)
+0,60
+160
+Höghastighetsfärja (28-40 knop)
+1,80
+490
+Spår (kortväga)
+0,12
+19
+Spår, 200 km/h (långväga)
+0,10
+16
+Flyg
+0,44
+205
+
+I tabell 11-2 visas motsvarande siffror för godstransporter. Som synes är godstransporter
+till sjöss i allmänhet synnerligen energieffektiva (detta gäller i mindre utsträckning för
+små och/eller snabbgående fartyg). När det gäller markåtgång och barriäreffekter så har
+sjöfart och flyg fördelar jämfört med väg- och spårtrafik. Sjöfarten utgör dessutom ett
+mycket litet bullerproblem.
+Tabell 11-2 Specifik energianvändning och emissioner för olika godstransportslag 2005.
+kWh/tonkm
+Utsläpp som
+CO2-ekvivalenter
+(g/tonkm)
+Lastbil (kortväga)
+0,90
+235
+Lastbil (långväga)
+0,25
+65
+Spår
+0,05
+8
+Färja, 25%
+0,30
+78
+Lastfartyg
+0,05
+13
+Flygfrakt
+ca 3
+1 400
+
+Transporter och miljön 11.5
+
+11.4 Hur minska transportsektorns klimatpåverkan?
+Teknisk utveckling av farkosterna är ett av flera sätt att minska transportsektorns
+klimatpåverkan. I figur 11-3 visas några olika sätt att minska transportsektorns miljöpåverkan.
+Tät bebyggelse
+1. Minska
+
+Decentraliserade affärer, skolor, dagis mm
+
+volymen
+
+Distansarbete/ Videokonferenser
+
+transporter
+
+Lokalt producerade varor
+Mer närbelägna resmål
+
+2. Minska
+energianvändning
+
+Bränslesnålare fordon
+
+per personkm
+
+Lägre hastigheter/Ecodriving
+
+(tonkm)
+
+Högre beläggning
+Byte av transportslag, t ex från flyg till tåg
+
+3. Minska
+
+Naturgas
+
+bränslenas
+CO2-intensitet
+
+Bränslen producerade från förnybar (icke-fossil)
+primärenergi
+
+Figur 11-3 Olika sätt att minska transporternas klimatpåverkan.
+
+11.5 Potential för energieffektivare farkoster och förnybara bränslen
+I detta avsnitt redovisas en uppskattning av hur stor den teknisk-ekonomiska potentialen
+för minskad specifik energianvändning hos fordon och farkoster. De värden som anges
+gäller för genomsnittliga farkoster i drift år 2050. Om dessa potentialer ska kunna
+realiseras krävs betydligt kraftfullare styrmedel än de som finns idag. Dessutom görs en
+översiktlig bedömning av möjligheterna för olika transportslag att byta till förnybara
+drivmedel.
+För personbilar kan hybridlösningar ge ca 20-30 % lägre bränsleförbrukning.
+Lägre framdrivningsmotstånd genom bättre aerodynamik, lättrullande däck och lägre
+fordonsvikt har också en stor potential. När det gäller fordonens vikt går dock dagens
+utveckling i motsatt riktning, en utveckling som det är nödvändigt att bryta. En större
+användning av dieselmotorer skulle ge en ca 20 % lägre energianvändning. En
+förutsättning för att detta inte ska ge negativa hälsoeffekter är att utsläppen av partiklar
+och kväveoxider kan lösas på ett tillfredställande sätt. Ett sätt att lösa dessa problem är
+att använda laddhybrider (se nästa stycke) som enbart använder el laddad från nätet vid
+körning i tätorter. Den totala potentialen för att minska energianvändningen per
+fordonskm (för bilar med förbränningsmotor påkopplad) fram till 2050 bedömer vi vara
+mellan 60 och 70 % för kortväga resande och mellan 50 och 60 % för långväga resande,
+vilket motsvarar en bränsleförbrukning som i energitermer motsvarar 2,4-4,0 liter bensin
+per 100 fordonskm. Det bör noteras att detta gäller förbrukning i verklig trafik, som i
+allmänhet ligger 20-30% högre än den som anges enligt den standardiserade EUkörcykeln. Vi antar en oförändrad beläggning för personbilar fram till år 2050. Det
+
+Transporter och miljön 11.6
+
+betyder att dagens svaga trend mot allt färre personer per bil har brutits men också att
+inga förbättringar skett.
+En batterielbil har en energiverkningsgrad i fordonet som är mer än dubbelt så hög
+som för en dieselhybrid eller en bränslecellsbil som använder väte (Åhman, 2001). Den
+stora nackdelen med elbilar är den begränsade räckvidden. Genom att förse en hybrid
+med förbränningsmotor med ökad batterikapacitet kan man få det bästa av två världar,
+lika lång räckvidd som konventionella bilar och en oöverträffad verkningsgrad när den
+körs på el laddad från nätet. Nackdelen är att de blir ännu något dyrare och tyngre än en
+vanlig hybrid (typ Toyota Prius), men energikostnaden blir å andra sidan lägre. Om
+räckvidden på nätel för en laddhybrid är 5 mil så kan teoretiskt 74 % av alla personbilskm köras på nätel. I praktiken begränsas denna potential av ett antal faktorer. Det är inte
+alltid möjligt att ladda batterierna mellan två körningar, beroende på antingen att tiden
+är begränsad eller på att lämplig elanslutning saknas. I kallt klimat kan behovet av extra
+kupévärme vid eldrift göra att det kan vara närapå lika effektivt att utnyttja en snål
+förbränningsmotor. En nackdel med laddhybrider – delvis också för vanliga hybrider –
+är att bilarna blir tyngre och mer komplexa, vilket tenderar att öka resursanvändning och
+utsläpp vid produktionen av bilarna.
+För lastbilar är effektiviseringspotentialen betydligt lägre än för personbilar. Detta
+beror på att det i lastbilar nästan enbart används effektiva dieselmotorer och att
+nyttolastens andel av fordonets totalvikt är hög. Ytterligare en orsak är att kontinuerligt
+strängare utsläppskrav för partiklar och kväveoxider minskar möjligheterna att optimera
+motorerna för låg bränsleförbrukning. Trots detta finns det vissa möjligheter att
+åstadkomma effektivitetsförbättringar genom bättre aerodynamik, lättare material, ännu
+effektivare motorer och hybridlösningar för distributionsbilar. Enligt Interlaboratory
+Working Group (1997) citerad i IPCC (2001 b) så kan den sammantagna potentialen
+uppgå till 37 % minskad specifik bränsleförbrukning. Med hänsyn tagen till konflikten
+mellan låg bränsleförbrukning och låga utsläpp av partiklar och kväveoxider kan energianvändningen per tonkm minskas med 30 % för långväga godstransporter och med 40 %
+för distribution fram till 2050. När det gäller genomsnittlig lastfaktor så har vi inte
+antagit någon förändring i framtidsbilderna år 2050 jämfört med dagens läge.
+Under de senaste decennierna har flygplanen blivit betydligt bränslesnålare. Även
+om de största förbättringarna är gjorda så finns det betydande potential kvar. Vi
+uppskattar att bränsleförbrukningen för den genomsnittliga globala flygplansflottan
+(bara drygt 10 % av svenskars flygresande, mätt i personkm, utgörs av inrikesflygningar) skulle kunna minska med 35-45 % mellan år 2005 och år 2050. Utöver detta
+finns det en potential att förbättra organisationen av flygtrafiken, ett arbete som redan
+pågår. Det innefattar bland annat genare flygvägar, optimalare val av flyghöjd och
+”gröna inflygningar” som minskar bränsleförbrukningen. Dessa typer av åtgärder kan
+sammantaget minska bränsleförbrukningen med 6-12 %. Beläggningen för flyget var år
+2005 ca 75 % och trenden går mot ännu högre beläggning, en utveckling som inte minst
+möjliggjorts av att internetbokning med mycket flexibla priser har slagit igenom. Denna
+utveckling kommer sannolikt att fortsätta, en ökning från 75 % till 80 % beläggning till
+år 2050 förefaller realistisk.
+Alla dessa faktorer sammantagna gör att vi uppskattar möjligheten att reducera
+den specifika energianvändningen för flygresande (kWh/personkm) till mellan 45 och
+54 % fram till år 2050 jämfört med år 2005. Samma potential har fraktflyget.
+Flygplan som från ritbordet utformas för en lägre marschhastighet kan ge en ytterligare ca 25 % lägre bränsleförbrukning (Åkerman, 2005; Dings m.fl., 2000). Sådana
+avancerade propellerflygplan skulle kunna ha en hastighet på 640-700 km/h jämfört med
+dagens turbojetflygplan som har en hastighet på 820-920 km/h. Den specifika
+
+Transporter och miljön 11.7
+
+energianvändningen för dessa flygplan kan bli 62 % lägre än för dagens genomsnitt.
+Med vissa undantag så är godstransporter med renodlade fraktfartyg mycket
+energieffektiva, medan persontransporter med färjor ofta är förhållandevis energikrävande. En orsak till detta är att nyttolastens andel av hela fartygets vikt är stor för ett
+fraktfartyg (i storleksordningen 50 %), medan motsvarande andel är mycket liten för en
+passagerarfärja (oftast under 1 %). Till sjöss ökar energianvändningen ungefär med
+kvadraten på hastigheten. Färjor har ofta högre hastighet än renodlade fraktfartyg, och
+detta gäller i synnerhet för snabbfärjor som går med mellan 28 och drygt 40 knop. Om
+lägre hastigheter skulle kunna accepteras finns således betydande energibesparingar att
+hämta.
+Slankare och på andra sätt optimerade skrov tillsammans med utvecklade drivlinor
+bedömer vi kan ge en minskad energianvändning på ca 30 % för de flesta fartygstyper
+(Steen m.fl, 1997). Utnyttjande av vindens energi genom att använda vingprofiler på
+vissa lastfartyg, kan också minska bränsleåtgången något. Sammantaget gör vi
+bedömningen att den specifika energianvändningen kan minska med 35 % för lastfartyg
+och färjor i 20 knop, medan den kan minska med 50 % för snabbfärjor om hastigheten
+samtidigt reduceras med 10-15 %.
+För persontåg finns det en potential att minska energianvändningen per personkm
+med 45 % samtidigt som maximal hastighet höjs från 200 till 250 km/h (Andersson och
+Lukaszewicz, 2006). För godståg är potentialen något lägre, ca 30 %.
+I tabellerna 11-3 och 11-4 sammanfattas vår uppskattning av potentialen för
+teknikeffektiviseringar till år 2050. Det finns stora möjligheter att minska den specifika
+energianvändningen för de flesta transportslag, men av tabellen framgår också att det
+finns stora energibesparingar och utsläppsminskningar att göra genom byte av
+transportslag. Detta är en viktig beståndsdel i alla scenarier.
+Tabell 11-3 Potential för att effektivisera den specifika energianvändningen för persontransporter
+till år 2050.
+Kortväga resande (<100 km)
+Bil, förbr. motor
+Plug-in-hybrid, nätel
+Buss
+Spår
+Långväga resande (>100 km)
+Bil, förbr. motor
+Buss
+Färja, 75% (ca 20 knop)
+Snabbfärja (>25 knop)
+Spår, 250 km/h
+Flyg
+Långsammare flyg (640-700 km/h)
+
+kWh/personkm
+år 2005
+
+Potential
+till ca år 2050
+
+kWh/personkm
+ca år 2050
+
+0,65
+
+- 60-70%
+- 85%
+- 60%
+- 50%
+
+0,20-0,26
+0,10
+0,12
+0,06
+
+- 50-60%
+- 40%
+- 35%
+- 50%
+- 45%
+- 45-54%
+- 62%
+
+0,12-0,15
+0,07
+0,39
+0,9
+0,055
+0,20-0,24
+0,17
+
+0,30
+0,12
+0,30
+0,13
+0,60
+1,80
+0,10
+0,44
+
+Tabell 11-4 Potential för att effektivisera den specifika energianvändningen för godstransporter till
+år 2050.
+Lastbil (<100 km)
+Lastbil (>100 km)
+Lätt lastbil (<3.5 ton)
+Spår
+Färja (ca 20 knop)
+Lastfartyg
+Flyg
+
+kWh/tonkm
+år 2005
+0,70
+0,25
+0,05
+0,30
+0,05
+3,00
+
+Potential
+till ca år 2050
+- 40%
+- 30%
+- 45%
+- 30%
+- 35%
+- 35%
+- 45-54%
+
+kWh/tonkm
+ca år 2050
+0,42
+0,17
+0,03
+0,19
+0,03
+1,38-1,65
+
+Transporter och miljön 11.8
+
+När det gäller förnybara drivmedel för transportsektorn så är det svårt att utse en
+entydig vinnare. För biobaserade drivmedel är transportarbete per odlad markyta det
+viktigaste kriteriet, inte minst eftersom världens produktiva mark i första hand måste
+användas till att producera mat till en växande världsbefolkning. Det gäller således att
+man har en hög avkastning biomassa per ytenhet, att energiinnehållet i det färdiga
+drivmedlet är stort i förhållande till den energi som satts in i hela drivmedlets
+produktionsprocess och att verkningsgraden i fordonet är hög. Det är vidare fördelaktigt
+om drivmedel kan produceras från flera olika typer av biomassa. Dagens dominerande
+biodrivmedel, etanol och biobaserade bränslen för dieselmotorer, har i många fall en
+tveksam klimatnytta. En mer lovande teknik som i framtiden kan komma att användas
+för att producera ett flertal olika drivmedel är förgasning. Tillverkning av flytande
+bränslen genom förgasning av kol förekommer idag i kommersiell skala, t.ex. i
+Sydafrika. För förgasning av biobränslen återstår det visst utvecklingsarbete. De
+bränslen som beräknas ge högst energiutbyte vid förgasning av biomassa är väte, metan,
+metanol och DME (Börjesson, 2007). Väte ligger dock långt bort i tiden på grund av
+problem med utvecklingen av bränsleceller samt distribution och lagring av vätet. På
+grund av konkurrens om produktiv mark i ett globalt perspektiv är det inte sannolikt att
+biodrivmedel kommer att kunna ersätta mer än en mindre del av de fossila bränslen som
+idag används i transportsektorn.
+
+11.6 Räcker det med bättre teknik och nya bränslen?
+För att analysera hur långt det är möjligt att komma med enbart tekniklösningar så
+har vi tagit fram ett teknikscenario för energi- och transportsystemet år 2050. I teknikscenariot har vi antagit att väsentliga teknikeffektiviseringar har fått fullt genomslag år
+2050 samtidigt som inga försök gjorts för att påverka trenderna för volymutvecklingen
+(t.ex. volymen uppvärmd yta, resandet eller mängden godstransporter) i respektive
+sektor. Detta innebär t.ex. att bilresandet antas öka med 50 % och flygresandet med 320
+% till år 2050.
+De teknikförbättringar som antas vara genomförda till år 2050 i teknikscenariot är
+i nivå med de potentialer som visas i tabellerna 11-3 och 11-4. Dessutom förutsätts en
+kraftig ökning av nya bränslen med låga utsläpp av koldioxid.
+Tillsammans ger dessa antaganden en utsläppsnivå för Teknikscenariot som visas
+i figur 11-4. I figuren syns också målnivån att minska utsläppen med 85 % till år 2050.
+Trots den kraftiga teknikeffektiviseringen och den förhållandevis höga tillförseln av
+bränslen med låga koldioxidutsläpp (mest förnybara bränslen) så ligger utsläppsnivån
+190 % över målnivån för år 2050. Orsaken är att volymerna av resande, godstransporter,
+boendeyta och industriproduktion spås öka kraftigt om inga nya åtgärder för att minska
+utsläppen – utöver tekniska förbättringar och nya bränslen – vidtas. I Teknikscenariot
+kan man också notera att biomassan inte räcker till några biobaserade drivmedel
+överhuvudtaget. Detta beror på att tillgänglig mängd bioenergi bara räcker till
+uppvärmning, elproduktion samt industrins behov. Om vi istället hypotetiskt antar att
+volymerna skulle frysas på dagens nivå samtidigt som teknikeffektiviseringar och
+tillskott av förnybar energi sker på samma sätt som i det tidigare scenariot, så
+underskrids målnivån för 2050 (se figur 11-4).
+Även beaktat osäkerheter i antagandena, så är det tydligt att bättre teknik och
+koldioxidneutral energi inte räcker i sig. Det krävs således också att åtminstone
+ökningstakten för inte minst resande, godstransporter och varuproduktion bryts.
+
+Transporter och miljön 11.9
+
+(milj ton CO2-e)
+
+90
+80
+70
+60
+50
+40
+30
+20
+10
+0
+2005
+
+Teknikscenario
+2050
+
+Teknik 2050
++Volym 2005
+
+Målnivå 2050
+
+Figur 11-4 Utsläpp av växthusgaser i ett Teknikscenario för år 2050 där kraftiga teknikeffektiviseringar genomförts och där man har en väsentligt ökad tillförsel av förnybar
+energi. Volymerna varuproduktion, resande, boendeyta etc., antas utvecklas enligt dagens
+”låt gå prognoser” I figuren visas också ett hypotetiskt scenario där volymerna antas frysta
+på dagens nivå samtidigt som teknikeffektiviseringar och tillskott av förnybar energi sker på
+samma sätt som i Teknikscenario 2050. I detta fall så underskrids målnivån för 2050.
+
+11.7 Scenarier för Sveriges energi- och transport system till år 2050
+I detta kapitel presenteras kort fem stycken scenarier för Sveriges energi- och
+transportsystem fram till år 2050. De är tagna från den tidigare nämnda rapporten
+”Tvågradersmålet i sikte? – Scenarier för det svenska energi- och transportsystemet till
+år 2050”. Alla scenarier är utformade för att nå målnivån som innebär 85 % minskning
+av de svenska utsläppen jämfört med år 2005. De är också utformade för att nå de mål
+för energianvändning, 224 respektive 280 TWh, som härletts utifrån utsläppsmålet och
+en uppskattning av tillgång på koldioxidneutral energi globalt och i Sverige.
+De karaktäristiska egenskaper som särskiljer scenarierna är dels en dimension som
+handlar om människors sätt att leva, dels tillgången på bioenergi. I den första
+dimensionen ingår exempelvis tidsanvändning, val av boende, resvanor och konsumtionsbeteenden. Detta kan kallas beteendemönster. Eftersom människors beteendemönster genererar en efterfrågan på olika energitjänster, t.ex. resande och godstransporter, spelar det stor roll hur detta ser ut i framtidens samhälle.
+Den andra dimensionen handlar om tillgång på koldioxidneutral energi i allmänhet
+och tillgång på bioenergi i synnerhet. Hur mycket bioenergi som finns att tillgå i
+framtiden påverkar den totala mängden koldioxidneutral energi som kan användas.
+Dessutom påverkas fördelningen mellan förnybara bränslen och förnybar direkt
+elproduktion (i form av främst sol-, vind-, våg- och vattenkraft).
+I tabell 11-5 nedan visas hur dimensionerna beteendemönster respektive tillgång
+på bioenergi kombineras i de fem olika scenarierna. I scenario 1 och 2 arbetar
+människor relativt mycket och prioriterar bilinnehav samt en hög materiell
+konsumtionsnivå när det gäller boendestandard och andra konsumtionsvaror. Långväga
+flygresande är däremot relativt sett nedprioriterat. I scenario 3 och 4 däremot, prioriteras
+långväga resor och upplevelser högre än ren varukonsumtion. Konsumtion av tjänster
+som hantverkshjälp, filmer, dataspel, kultur- och idrottsevenemang är hög. Beteendemönstren i de fyra första scenarierna har vissa gemensamma drag med dem som
+dominerar i dagens samhälle, men alla förutsätter ändå stora förändringar i minst ett
+avseende.
+
+Transporter och miljön 11.10
+
+Tabell 11-5 Scenariernas dimensioner.
+Högt tempo och materiell Högt tempo och
+konsumtion
+upplevelseinriktad
+konsumtion
+
+Lägre tempo och
+upplevelseinriktad
+konsumtion
+
+Stor global tillgång på
+bioenergi (80 PWh)
+
+Scenario 2
+
+Scenario 4
+
+Behandlas ej. Minst
+utmaning att nå målen i
+detta fall.
+
+Liten global tillgång på
+bioenergi (25 PWh)
+
+Scenario 1
+
+Scenario 3
+
+Scenario 5
+
+Scenario 5 har vissa likheter med 3 och 4 såtillvida att upplevelser prioriteras högre än
+materiell konsumtion. Dock skiljer detta scenario ut sig från de övriga i det att
+arbetstiden är lägre. Detta är kopplat till ett lägre tempo i samhället i stort, och faller
+tillbaka på ett värderingsskifte där fri tid kommit att uppvärderas i förhållande till
+materiellt konsumtionsutrymme. I tabell 11-6 visas några av de mest karaktäristiska
+förändringarna i scenarierna jämfört med dagens läge.
+Scenarierna illustrerar olika prioriteringar mellan energikrävande aktiviteter. En
+nödvändig förutsättning i alla scenarier är dock att människor stödjer en politik som gör
+att de totala utsläppen inte överstiger målnivån. Detta innebär att vissa aktiviteter får
+väljas bort (detta är förstås fallet även idag, men blir här mer accentuerat beroende på
+resurs- och miljöskäl).
+I figur 11-5 visas resandevolymerna i scenarierna uppdelat på bil-, flyg-, cykelrespektive kollektivresande jämfört med år 2005 och den trend för ”spontan” volymutveckling till år 2050 som antogs för Teknikscenariot. Både bilresandet och
+flygresandet ligger i alla scenarier långt under trendalternativet för 2050. Det är tydligt
+att dagens ökningstakt av bil- och flygresandet behöver brytas om målet ska nås. Om
+flyget minskar som i scenario 1 och 2 behöver bilresandet bara minska med ca 15 %
+jämfört med år 2005. Dock indikerar skillnaden mellan dessa scenarier och trendscenariot att det är ett synnerligen kraftigt trendbrott som då krävs för flygresandet. Om
+å andra sidan flyget ökar som i scenarierna 3-5 så krävs att bilresandet per person
+minskar med ca 30 %. Man kan också se att cykel och kollektivtrafik ökar kraftigt i alla
+scenarier.
+
+Figur 11-5 Resandevolymerna i scenarierna uppdelat på bil-, flyg-, kollektiv- respektive
+cykelresande jämfört med år 2005 och ett trendscenario för 2050 som innebär samma
+volymökning som i Teknikscenariot.
+
+Tabell 11-6 Mest karaktäristiska drag vid en jämförelse av scenarierna år 2050 med läget år 2005.
+1. Materiell konsumtion i 2. Materiell konsumtion i 3. Tjänstekonsumtion i
+högt tempo /Bio-Låg
+högt tempo /Bio-Hög
+högt tempo /Bio-Låg
+
+4. Tjänstekonsumtion i
+högt tempo /Bio-Hög
+
+Ökad hälsomedvetenhet
+
+Ökad hälsomedvetenhet
+
+Värderingar
+
+5. Utökad fritid och lägre
+konsumtion /Bio-låg
+
+Arbetstid
+
+Som år 2005
+
+Som år 2005
+
+Som år 2005
+
+Som år 2005
+
+25% lägre än år 2005
+
+Resande
+
+Kraftigt minskat
+flygresande
+
+Kraftigt minskat
+flygresande
+
+Minskat bilägande och
+bilresande
+
+Minskat bilägande och
+bilresande.
+Ökat cykelresande.
+
+Minskat bilägande och
+bilresande
+
+Typisk
+konsumtion
+
+Bilar, stor bostadsyta,
+hemelektronik, båtar,
+kött&fisk
+
+Bilar, stor bostadsyta,
+hemelektronik, båtar, mat
+med stor vegetarisk andel
+
+Flygresor, hämtmat (köttoch fiskrätter), spabesök,
+bio, hantverkshjälp
+
+Flygresor, hämtmat
+(vegetariska rätter),
+spabesök, bio,
+hantverkshjälp
+
+Tågresor, lokala
+matråvaror, gör-det-själv
+verktyg och begagnat
+
+”Systemskiften”
+
+- Plug-in-hybrider
+- Passivhus
+- Virtuella möten ersätter
+flyg
+
+- Biodrivmedel för
+personbilar
+- Plug-in-hybrider
+- Virtuella möten ersätter
+flyg
+
+- Stadsplanering för
+gång, cykel och
+kollektivtrafik.
+- Elektrifierat resande
+- IT för funktionell
+tillgänglighet
+- Delat bilägande
+
+- Stadsplanering för
+gång, cykel och
+kollektivtrafik.
+- Delat bilägande
+- Biodrivmedel för flyget
+och personbilar
+
+- Lägre arbetstid och
+konsumtion
+- Delat bilägande
+- Stadsplanering för
+gång, cykel och
+cykeltrafik.
+- Långsammare flyg
+
+Transporter och miljön 11.12
+
+11.8 Exempel på en framtidsbild av transportsystemet 2050 som skulle
+vara förenlig med klimatmålen
+I detta stycke ges en kort beskrivning av hur ett samhälle (med fokus på transportsystemet) som minskat utsläppen av växthusgaser med 85 % skulle kunna se ut år 2050.
+Detta är ett av de fem scenarier som beskrivs i rapporten ”Tvågradersmålet i sikte? –
+Scenarier för det svenska energi- och transportsystemet till år 2050”. Det är viktigt att
+notera att detta scenario inte är ett försök att peka ut den mest sannolika utvecklingen,
+utan visar på en möjlig utveckling om man vill uppnå klimatmålen och därmed undvika
+de värsta effekterna av en klimatförändring. Detta är också bara ett av flera sådana
+scenarier (se avsnitt 11.7).
+Ett scenario för år 2050
+Jämfört med framtidsbild 1 och 2 präglas samhället 2050 av mindre fokus på att själv
+äga saker och ett större fokus på tjänster och upplevelser. En antydan till denna
+utveckling fanns redan i början av det tjugoförsta seklet men nu har den blivit
+dominerande i samhället. De flesta vill inte låsa upp sig med egna ägodelar som bara
+används sällan, men som ändå kostar pengar och tar tid att ta hand om. Att hyra vid
+behov eller dela ägodelar med andra (t.ex. båtar, bilar, tvättmaskiner, surfingbrädor,
+barnvagnar etc.) är vanligt. Eftersom arbetstiden är lika hög som vid sekelskiftet så är
+konsumtionsutrymmet relativt stort. Konsumtionen av personliga tjänster, restaurangbesök, kultur- och idrottsevenemang, spabesök, hemstädning etc., är hög. Även det
+långväga resandet med flyg och tåg är högt prioriterat.
+Tillgången på bioenergi är globalt sett låg. Detta beror till stor del på att
+utvecklingsländer, inte minst Indien och Kina, kraftigt ökat andelen kött i sin kost,
+vilket orsakat ett ökat behov av mark för matproduktion. En stor del av Sveriges
+produktion av biobränsle exporteras till kraftvärmeverk i Danmark och på kontinenten.
+Vindkraftverk producerar i Sverige 40 TWh och vågkraft 5 TWh. Mängden el från
+solceller är marginell.
+Flygresandet har ökat med 90 % per person i förhållande sekelskiftet, vilket ändå
+innebär en avsevärt lägre nivå än vad som då prognostiserades för år 2050 (ca 265 %
+ökning). Klimatskatter och moms betalas nu även av flyget. Fritidsresorna har ökat mer
+än affärsresorna på grund av att allt fler utnyttjar virtuella arbetsmöten (videokonferenser etc.) istället för att resa fysiskt. Ett annat alternativ till flygresande är
+snabbtåg som har förbättrats, bland annat genom banutbyggnader i södra halvan av
+Sverige. Standarden på sovtåg både till Norrland och kontinenten har också ökat
+betydligt, samtidigt som direkttågen ökat i antal. På grund av den låga tillgången på
+biobränsle globalt sett drivs flyget fortfarande nästan enbart med fossilt bränsle. Detta
+gör att flygets utsläpp av växthusgaser (inklusive kväveoxider och vattenånga) står för
+hälften av de totala utsläppen från energirelaterade verksamheter.
+Det totala svenska bilresandet är nu år 2050 20 % lägre än det var år 2005 samt i
+framtidsbilderna 1 och 2. I större städer är minskningen ännu större, medan den är
+marginell på landsbygden. En orsak till det låga bilresandet är att nybyggnation i tätorter
+alltsedan år 2010 konsekvent lokaliserats tätt kring noder i kollektivtrafiknätet eller som
+utvidgningar av städernas täta innerstäder (speciellt i Stockholm). Detta har nu 40 år
+senare givit ett påtagligt resultat, både i kortare resavstånd och en sjunkande andel
+bilresor. Även betydande utbyggnader av spårtrafiken i större tätorter samt en generellt
+stark prioritering av framkomligheten för gång-, cykel- och kollektivtrafik har bidragit
+till detta.
+
+Transporter och miljön 11.13
+
+Att fokus i samhällsplaneringen nu fokuserar på funktionell tillgänglighet i första
+hand – och ser mobilitet som ett av flera sätt att nå dit – tar sig också uttryck i att en stor
+del av resandet har kunnat ersättas med virtuella möten. En stor del av arbetskraften
+arbetar på distans 1-3 dagar i veckan och tjänsteresandet med flyg har minskat i
+väsentlig grad. Bieffekter av denna utveckling är att hushållen sparat restid och att
+företagen sparat pengar genom att de anställdas arbetstid i mindre utsträckning går åt till
+onödigt resande.
+Då de flesta bryr sig mindre om eget ägande har bilpooler (kommersiella och
+ideella) och biluthyrning blivit populärt. Detta faktum har också påverkat bilparkens
+sammansättning. Även i denna framtid finns det en stor andel laddhybrider. Men det
+finns här till skillnad från i scenario 1 och 2 relativt många små tvåsitsiga elbilar som
+främst är anpassade för resor i städernas ytterområden. Bland de bilar som disponeras av
+bilpooler och biluthyrningsföretag finns en hel del bränslesnåla långfärdsbilar.
+Laddhybrider i eldriftsläge eller små batterielbilar står för 45 % av allt bilresande. För
+detta åtgår ca 4 TWh el. Resterande bilresor sker med biobränslen, främst DME och
+metanol. Lokala bussflottor, sopbilar etc., använder i stor utsträckning biogas. Det
+minskade intresset för bilägande innebär att hushållens totala bilkostnader minskat men
+samtidigt att de rörliga kostnaderna för bilåkande är högre. Detta har i sin tur lett till
+bättre konkurrenskraft för kollektivtrafiken som har mer än fördubblats. Dock är
+bilresandet i landet som helhet fortfarande något större än kollektivresandet, vilket beror
+på att bilen inte kan ersättas av kollektivtrafik i mindre orter och i glesbygd. Spårbilar
+har ersatt bussar i flera större städer och bidragit till att kollektivtrafikens attraktivitet
+och andel ökat.
+
+11.9 Slutsatser om vad som krävs för att nå målet att minska utsläppen av
+växthusgaser med 85% till år 2050
+
+
+Betydande teknikeffektivisering krävs i alla sektorer (bebyggelse, industri,
+transporter) om en minskning av utsläppen med 85 % ska kunna uppnås.
+
+
+
+Det krävs också trendbrott vad gäller det idag ökande flygresandet, bilresandet,
+godstransporterna och konsumtionen av resursintensiva varor.
+
+
+
+Vindkraft är viktigt i alla scenarier och medför förhållandevis få konflikter med
+andra miljömål (i huvudsak buller och estetiska problem), även i jämförelse med
+bioenergi.
+
+
+
+Stor osäkerhet råder om framtida tillgång på biobränsle främst globalt men även i
+Sverige. Biobränslen bör i första hand användas för processvärme och mottrycksel
+i industrin och i andra hand i kraftvärmeverk. I scenarierna står biodrivmedel för
+mellan 0 och 50 % av transportsektorns energianvändning år 2050.
+
+
+
+Sverige har stora möjligheter att bli en betydande nettoexportör av både
+biobränslen och el.
+
+
+
+Laddhybrider som använder el från nätet och t.ex. diesel eller metanol kan utgöra
+ett intressant alternativ på sikt, men problem med höga kostnader och batteriernas
+livslängd utgör frågetecken. På längre sikt, speciellt om koldioxidlagring i större
+skala blir acceptabel, kan vätets roll bli större.
+
+
+
+Det behövs ett perspektivskifte i planeringen från mobilitet till tillgänglighet.
+Detta innebär bl.a. en stadsplanering som ökar cykel- och kollektivtrafikens
+konkurrenskraft och bidrar till korta avstånd till service (livsmedel, dagis mm)
+
+Transporter och miljön 11.14
+
+samt ersättande av en viss del arbets- och tjänsteresor (upp till ca 20 %) med
+högkvalitativ IT-kommunikation.
+
+
+Vid planering av ny infrastruktur behöver man noga beakta vilka transportvolymer
+som år 2050 är förenliga med att målen nås. Investeringar i IT (virtuella möten
+mm) och spårinfrastruktur bör prioriteras. Stor restriktivitet bör iakttas för
+investeringar i ökad vägkapacitet i städer som leder till ökat bilresande och ökade
+utsläpp. Bilresandet per person minskar i alla scenarierna om än olika mycket.
+
+Referenser
+Andersson, E och Lukaszewicz, P (2006) Energy consumption and related air pollution
+for Scandinavian electric passenger trains. Report KTH/AVE 2006:46.
+Börjesson, Pål (2007) Förädling och avsättning av jordbruksbaserade biobränslen,
+Rapport nr 62, Lunds Tekniska Högskola.
+Dings, Jos M. W., Peeters, Paul M., van der Heijden, Joost R., Wijnen, Roland A.A.
+(2000) ESCAPE - Economic Screening of Aircraft Preventing Emissions. Main report,
+CE, Delft.
+Interlaboratory Working Group (1997) Scenarios of U.S. Carbon Reductions: Potential
+Impacts of Energy Technologies by 2010 and Beyond. Lawrence Berkeley National
+Laboratory, Berkeley and Oak Ridge National Laboratory, Oak Ridge.
+IPCC (2007) Mitigation of Climate Change, IPCC Fourth Assessment Report, Working
+Group III.
+Steen, Peter, Dreborg, Karl-Henrik, Henriksson, Greger, Hunhammar, Sven, Höjer,
+Mattias, Rignér, Johan & Åkerman, Jonas (1997) Färder i framtiden – Transporter i ett
+bärkraftigt samhälle, KFB-Rapport 1997:7, Stockholm.
+Stern, Nicholas (2006) STERN REVIEW: The Economics of Climate Change
+Åhman, Max (2001) Primary energy efficiency of alternative powertrains in vehicles.
+Energy 26, 973-989.
+Åkerman, Jonas (2005) Sustainable Air Transport – On Track in 2050, Transportation
+Research Part D: Transport and Environment 10, 111-126.
+Åkerman, J, Isaksson, K, Johansson, J, Hedberg, L (2007) Tvågradersmålet i sikte? –
+Scenarier för det svenska energi- och transportsystemet till år 2050. Naturvårdsverket
+Rapport 5754.
+
+

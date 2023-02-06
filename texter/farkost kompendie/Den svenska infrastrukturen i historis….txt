@@ -1,0 +1,420 @@
+Den svenska infrastrukturen i historisk belysning 13.1
+
+13. Den svenska infrastrukturen i historisk belysning
+av
+Arne Kaijser
+KTH Teknik- och vetenskapshistoria
+
+13.1 Den svenska modellen
+På 1850-talet var järnvägsfrågan en av de centrala frågorna i svensk politik. I riksdagen fördes
+långa debatter om alla viktiga aspekter av det framtida järnvägssystemet: Skulle järnvägarna
+byggas i statlig eller privat regi? Hur skulle de finansieras – var det försvarbart att ta stora
+utländska lån? Var skulle järnvägsspåren dras fram – hur påverkade olika sträckningar
+näringslivets utveckling respektive landets försvarsförmåga? Vilken teknik skulle man välja –
+skulle man bygga bredspåriga och dyra järnvägar med hög kapacitet eller smalspåriga och
+billiga?
+De beslut som riksdagen fattade i dessa olika delfrågor fick avgörande betydelse för
+det svenska järnvägssystemets utveckling. Det hårda, fysiska arvet efter dessa beslut är högst
+påtagligt än idag. Stambanorna går i stort sett längs samma sträckningar som när de byggdes.
+Stationssamhällena finns kvar trots att stationen inte sällan lagts ned. Järnvägarnas spårvidd är
+oförändrad, medan själva tågen helt naturligt ser väsentligt annorlunda ut.
+Det finns också ett mjukt, institutionellt arv efter de stora järnvägsbesluten – i form av
+lagar, förordningar och organisationsformer – som har varit minst lika livskraftigt som det
+hårda. Grundprincipen för järnvägarnas organisering var att staten skulle ha ett övergripande
+ansvar för järnvägssystemets utbyggnad, men att det samtidigt skulle lämnas utrymme för
+regionala, lokala och privata intressen att medverka. Konkret innebar det att staten i egen regi
+byggde ut ett enhetligt stambanenät som finansierades med statliga lån i utlandet. Vid sidan
+av stambanorna fick enskilda bolag och kommuner anlägga regionala och lokala järnvägar.
+Ideologen bakom denna organisationsstruktur var den dåvarande finansministern
+Johan August Gripenstedt. Han insåg att det i ett fattigt land som Sverige krävdes en aktiv
+statlig medverkan för att åstadkomma en snabb utbyggnad av ett nationellt järnvägsnät. Han
+framhöll att "staten icke behöver i främsta rummet tänka på sin egen vinning, utan från en
+högre synpunkt kan taga hänsyn till det allmännas gagn såsom huvudändamålet." Men
+samtidigt ville han undvika ett totalt statligt monopol. Att SJ idag har ett sådant monopol i
+praktiken beror på att staten på 1930- och 40-talen övertog en rad konkurshotade privata
+järnvägsbolag.
+Den institutionella utformningen av järnvägssystemet blev en förebild vid
+uppbyggnaden av andra rikstäckande infrastruktursystem såsom telefon och elektricitet. (I
+fortsättningen använder jag för enkelhets skull ordet infrasystem.) Även för dessa infrasystem
+tog staten ett övergripande ansvar för det nationella "stamnätet" och byggde upp särskilda
+statliga affärsverk. Men man var noga med att lämna utrymme för det privata näringslivet och
+kommunerna att bygga upp regionala och lokala system. En liknande ansvarsfördelning kom
+även att tillämpas inom vägväsendet, sjöfarten och luftfarten.
+Den ovan beskrivna organisationsstrukturen har varit karakteristisk för Sverige, och
+det har varit befogat att tala om "den svenska modellen" för infrasystemens organisering.
+Modellen har byggt på en nära samverkan mellan olika parter, oftast med ett statligt verk som
+samordnande och drivande kraft.
+Efter nära 150 år tycks dock tiden nu vara ute för den svenska modellen. Den
+institutionella utformningen av svenska infrasystem är för närvarande i omvandling. Nu står
+
+Den svenska infrastrukturen i historisk belysning 13.2
+
+inte längre samordning och samverkan i förgrunden. Istället framhålls vikten av att
+åstadkomma ett större mått av konkurrens och en ökad effektivitet inom infrasystemen. För
+att åstadkomma det ändras affärsverkens status och uppgifter och ny lagstiftning införs för att
+främja konkurrens.
+Den institutionella omvandling av infrasystem som nu pågår i Sverige är både snabb
+och genomgripande; den kommer med all sannolikhet att få en avgörande inverkan på
+infrasystemens framtida utveckling. I en tid av snabba förändringar är det nödvändigt att inte
+bara blicka framåt utan även bakåt. I detta konkreta fall är det viktigt att försöka förstå dels
+vilken betydelse infrasystemen har för samhällsutvecklingen i stort, dels vilken typ av faktorer
+som påverkar infrasystemens utveckling – vad som kännetecknar deras dynamik. Syftet med
+denna uppsats är att bidra till en sådan förståelse. I slutet av uppsatsen diskuteras också helt
+kort den nu pågående omvandlingen av infrasystemen.
+
+13.2 Infrasystem och samhällsutveckling
+Den snabba utbyggnaden av infrasystem sedan 1800-talets början har haft en enorm betydelse
+för samhällsutvecklingen i stort. Den har bland annat påverkat ekonomin, den rumsliga
+strukturen, den politiska strukturen och miljön.
+1800-talet brukar betecknas som industrialismens århundrade och symboliseras ofta
+med en fabrik. Men en nödvändig förutsättning för fabriksproduktion i stor skala var radikalt
+förbättrade transportsystem som kunde leverera insatsvaror till fabrikerna och transportera de
+färdiga produkterna till avlägsna marknader. För att styra dessa godsflöden och hantera alla
+finansiella transaktioner krävdes vidare snabba kommunikationssystem. Och för att driva
+fabrikernas maskiner och de nya transportsystemen krävdes stora mängder kol. Kanalen,
+kolgruvan, järnvägen och telegrafen är därför lika relevanta symboler som fabriken för denna
+tidsepok. Kanske skulle vi börja tala om den infrastrukturella revolutionen istället för den
+industriella revolutionen.
+Infrasystemen har haft en väldig betydelse för den ekonomiska utvecklingen inte bara
+genom att erbjuda bättre och billigare transporter, kommunikationer och energiförsörjning
+utan också genom att själva uppbyggnaden av infrasystemen skapat väldiga marknader för
+industrin. I Sverige är ASEA och LM Ericsson tydliga exempel på företag som nästan enbart
+har haft infrasystem som sin marknad.
+Infrasystemens expansion under 1800-talet gick hand i hand med städernas tillväxt
+och påverkade därmed samhällets rumsliga struktur. Det var inom och mellan städer som det
+var mest lönsamt att bygga ut gasverk, vattenverk, järnvägar och telegrafer. Och anhopningen
+av infrasystem bidrog till att göra städerna attraktiva för lokalisering av industrier och andra
+näringar. Man kan säga att ekonomin i Europa och USA under 1800-talets lopp gradvis
+övergick från att vara "naturbestämd" till att vara "kulturbestämd": Före industrialismen var
+det de naturliga förutsättningarna som främst bestämde lokaliseringen av olika näringar.
+Sedermera har tillgången till människoskapade infrasystem blivit allt viktigare.
+Det finns en stark koppling mellan infrasystem och politisk struktur. Det kan
+illustreras med Romarrikets imponerande vägsystem, som tydligt avspeglade rikets politiska
+struktur – alla vägar bar till Rom. På dessa vägar kunde kurirer förmedla information med hög
+hastighet och legioner kunde snabbt förflyttas för att slå ned lokala uppror.
+1800-talet brukar betecknas som de moderna nationalstaternas århundrade, och det är
+knappast en tillfällighet att nya nationer som Tyskland, Italien, USA och Canada uppstod
+under den epok då järnvägar, kanaler och telegrafsystembyggdes upp. För att kunna etablera
+vidsträckta infrasystem krävdes politisk stabilitet och enhetliga lagar och regelverk. Omvänt
+var infrasystemen av stor betydelse inte bara för att bygga upp en ekonomisk bas för
+nationalstaterna, utan också för att försvara dem militärt.
+
+Den svenska infrastrukturen i historisk belysning 13.3
+
+Samma typ av koppling mellan infrasystem och politisk struktur krävs idag på
+europeisk nivå. En reell europeisk ekonomisk och politisk integration förutsätter nämligen en
+motsvarande integration av infrasystemen. En sådan systemintegration kräver inte i första
+hand nya fysiska länkar, som t.ex. tunneln under Engelska kanalen. Rent tekniskt finns redan
+en betydande integration. Istället är det en harmonisering av de institutionella ramarna för
+infrasystemen i olika länder som är mest angelägen. Det är därför Europeiska kommissionen
+för närvarande med så stor energi driver frågan om att åstadkomma en avreglering och ökad
+konkurrens inom och mellan medlemsländernas transport-, kommunikations- och
+energisystem.
+Om de romerska vägarna är en symbol för infrasystemens politiska och militära
+betydelse, är de romerska akvedukterna en symbol för infrasystemens miljö- och
+hälsoeffekter. Till synes var akvedukterna mycket gynnsamma för stadsbornas hälsa, eftersom
+de förde friskt källvatten till städerna. Men det har även spekulerats om att
+vattenledningssystemen medförde en gradvis blyförgiftning av stadsbefolkningen.
+En motsvarande tveeggad karaktär har energisystemen idag. Å ena sidan innebär
+tillgången till elektricitet och olja att man i bostäder och på arbetsplatser slipper sot och rök
+och får en betydligt hälsosammare lokal miljö. Men å andra sidan innebär som bekant den
+väldiga ökningen av energianvändningen det kanske allvarligaste miljöhotet på global nivå.
+
+13.3 Infrasystemens dynamik
+Ofta betraktas järnvägssystem, elsystem, telekommunikationssystem och andra infrasystem
+som rent tekniska system. Men som framgått av ovanstående har systemen inte bara en hård
+utan också en mjuk sida. Det rent tekniska systemet fungerar givetvis inte av sig själv. Det
+krävs människor och organisationer som bygger, driver och utnyttjar anläggningarna och det
+krävs rättsliga och ekonomiska villkor som reglerar systemen. Ett infrasystem i en sådan
+bredare bemärkelse utgör vad som kan kallas ett sociotekniskt system.
+Ett sådant sociotekniskt system utgör resultatet av ett möte mellan teknik och
+samhälle. Det tekniska systemet ställer vissa krav på t.ex. graden av samordning och kontroll,
+men dessa krav kan uppfyllas inom ett mer eller mindre brett spektrum av organisatoriska och
+rättsliga ramar. Vilka av dessa möjliga ramar som väljs beror då på den dominerande
+ideologin eller "politiska kulturen" i varje land.
+Det finns tydliga nationella skillnader i den sociotekniska utformningen av
+infrasystem. En viktig aspekt är formerna för offentlig kontroll. I ett land som Frankrike har
+statliga verk i flera fall ett totalt monopol över ett infrasystem. I USA är det i huvudsak
+privata bolag som bygger och driver systemen, men dessa kontrolleras noga av delstatliga och
+federala kontrollorgan. Och Sverige har enligt ovan valt en mellanväg med en blandning av
+offentligt och privat ägande.
+Ett infrasystem är inte något som skapas en gång för alla och sedan är stabilt över
+tiden. Tvärtom förändras det ständigt; nya tekniska komponenter införs, det sker en
+geografisk utbredning, nya marknader uppstår och gamla försvinner, de ingående
+organisationerna växer eller krymper och nya tillkommer, de legala regelverken förändras och
+så vidare.
+Ett infrasystem har en livscykel som grovt kan delas in i de tre faserna etablering,
+expansion och stagnation. Därmed är naturligtvis inte sagt att alla infrasystem genomgår en
+likadan och förutbestämd utveckling. Däremot finns gemensamma drag i de kritiska problem
+som aktörerna inom skilda infrasystem ställs inför, och dessa problem skiftar karaktär i de tre
+faserna.
+
+Den svenska infrastrukturen i historisk belysning 13.4
+
+Etablering
+Etableringsfasen präglas framförallt av osäkerhet, och grundproblemet i denna fas handlar om
+att finna mekanismer för att försöka upphäva en del av denna osäkerhet.
+Det krävs för det mesta mycket stora initialinvesteringar för att bygga upp ett nytt
+infrasystem, och dessa investeringar är ofta geografiskt bundna, har lång livslängd och saknar
+alternativvärde utanför systemet. Därtill kommer att det nästan alltid är svårt att i en tidig fas
+bedöma den framtida efterfrågan av systemets tjänster. När det gällde de svenska järnvägarna
+(och även telegrafen) har vi ovan sett att den initiala osäkerheten upphävdes av staten, som
+vid 1800-talets mitt tog på sig ansvaret för uppbyggnaden och driften av ett nationellt
+stambanenät. Men för övriga infrasystem har staten inte tagit denna aktiva roll i själva
+etableringsskedet.
+Vad som komplicerar etableringsprocessen är att den oftast innefattar flera parter.
+Först måste det finnas utrustningstillverkande industrier som skaffar utrustning och
+kompetens för att kunna tillverka de nödvändiga komponenterna. Vidare måste det bildas
+bolag, offentligt ägda affärsverk eller andra organisationer som är villiga att bygga och de
+anläggningar som behövs och ta på sig rollen som systemoperatörer. Och slutligen måste ofta
+även brukarna göra investeringar i apparater och installationer. Eftersom var och en av
+parterna är beroende av de övrigas agerande uppstår det lätt osäkerhet och vankelmod inför en
+sådan etablering.
+Ett sätt att upphäva en sådan ömsesidig osäkerhet kan var skapandet av en första säker
+marknad av någorlunda storlek. När garantier finns för en sådan vågar de olika parterna göra
+de erforderliga investeringarna. För de tidiga svenska gasbolagen vid mitten av 1800-talet
+utgjorde gatubelysning en sådan första säker marknad. I städerna fanns ett starkt behov av
+förbättrad gatubelysning och många städer slöt kontrakt med ett gasbolag om gatubelysning
+av viss omfattning och till ett fastställt pris under en 30-årsperiod. Gatubelysningen blev inte
+bara en första säker marknad utan också ett lysande demonstrationsobjekt som kunde
+övertyga tvehågsna stadsbor att ansluta sig till det nya systemet.
+Ett annat – eller kompletterande – sätt att upphäva den initiala osäkerheten kan vara en
+direkt samordning mellan några av parterna. Den tidiga utvecklingen av det svenska
+elsystemet är ett tydligt exempel på detta, där Stockholms Enskilda Bank fyllde en viktig
+samordnande roll. Banken hade stora ägarintressen i den energiintensiva basindustrin och
+bankens ledning insåg vid sekelskiftet att det fanns stora möjligheter att minska
+produktionskostnaderna genom elektrifiering av olika processer. Banken köpte därför en
+betydande aktiepost i ASEA strax efter sekelskiftet. Därefter drev den på en snabb
+elektrifiering av den energiintensiva industrin och skapade därmed en stor marknad för
+ASEAs produkter. Dessutom bildades genom bankens försorg kraftbolagen Skandinaviska
+elektricitetsverk och Yngeredsfors kraftaktiebolag som också köpte sin utrustning från ASEA.
+Banken skapade därmed ett utvecklingsblock av ömsesidigt beroende och koordinerade
+industrigrenar, för att använda ett begrepp som myntats av den svenske nationalekonomen
+Erik Dahmén.
+Expansion
+När ett infrasystem väl har blivit etablerat på en första större marknad uppstår en helt ny
+situation. Intäkterna ger en ekonomisk bas, och drifterfarenheterna leder till en
+vidareutveckling av tekniken. När den initiala osäkerheten har övervunnits utvecklar de olika
+parterna - utvecklingstillverkarna, systemoperatörerna och användarna - en gemensam tilltro
+till systemets fortsatta expansion. Denna tilltro har sin grund i att det i allmänhet finns starka
+ekonomiska drivkrafter för en expansion. Vanligtvis sjunker kostnaden för systemets tjänster i
+ett expanderande system på grund av såväl storskalefördelar som mångfaldsfördelar.
+
+Den svenska infrastrukturen i historisk belysning 13.5
+
+Storskalefördelar (Economies of Scale) återfinns på "produktionssidan" och består i att
+kostnaden per levererad enhet eller tjänst minskar när skalan ökar. Till exempel kräver ett
+stort kraftverk i regel lägre investering per installerad kW än en mindre anläggning och kan
+utnyttja driftpersonalen effektivare. Mångfaldsfördelar (Economies of Scope) återfinns på
+"konsumtionssidan" och består i ett förbättrat kapacitetsutnyttjande till följd av en ökad
+diversitet bland avnämarna. T ex har företag och hushåll ofta väsentligt olika tidsmönster för
+sitt systemutnyttjande och skilda krav på pris och prestanda. Om sådana olikheter utnyttjas
+systematiskt kan ett väsentligt bättre kapacitetsutnyttjande åstadkommas.
+Systemexpansionen kan vara av två slag: en expansion i rummet eller en expansion till
+nya användningsområden.
+En rumslig expansion av ett infrasystem innebär ofta att lokala, isolerade system knyts
+samman till först regionala och senare nationella och till och med internationella system. Det
+kan ge upphov till genomgripande institutionella förändringar. Vid flera tillfällen har det
+uppstått en konkurrenssituation mellan olika parter inom ett infrasystem om kontrollen över
+centrala komponenter. T.ex. förekom det en hård strid under 1880- och 90-talen mellan
+privata telefonbolag och den statliga Telegrafstyrelsen om vem som skulle få bygga upp ett
+interurbant telefonnät. En motsvarande strid utspelades på 1930- och 40-talen mellan den
+privata kraftindustrin och Vattenfallsstyrelsen om vem som skulle få bygga nationella
+högspänningsledningar. I båda fallen var det till sist staten som fällde utslaget till de statliga
+verkens fördel.
+En expansion av infrasystem kan också innebära en utvidgning till nya
+användningsområden. Ett nytt högpresterande infrasystem etableras i allmänhet på exklusiva
+delmarknader med god betalningsförmåga. När t.ex gas, olja och elektricitet infördes under
+1800-talet inriktades de först på belysning och mekanisk kraft och först långt senare på
+husuppvärmning, för vilken betalningsviljan per kWh är betydligt lägre. Och när nya snabba
+transportsystem som flyg eller höghastighetståg infördes, inriktades de först på
+betalningsstarka affärsresenärer och högvärdigt gods.
+När ett nytt infrasystem försöker slå sig in på en delmarknad, som domineras av äldre
+system, uppstår ofta en hård konkurrens. De olika systemens företrädare använder då något
+eller några av följande konkurrensmedel: prestanda, prissättning, propaganda och politiska
+påtryckningar. Det kan illustreras med exempel från energissystemens utveckling.
+Att en konkurrenssituation leder till tekniskt utvecklingsarbete för att förbättra
+respektive systems prestanda torde vara välkänt. Konkurrensen på belysningsmarknaden
+kring sekelskiftet mellan gas, el och fotogen är ett typiskt exempel. Den gav upphov till en
+dramatisk teknikutveckling där verkningsgraden (ljusmängden per energienhet) för alla tre
+lamptyperna ökade tiofalt under en tjugoårsperiod.
+Prissättning är ett konkurrensmedel som kan användas av företrädare för ett
+infrasystem som redan är väl etablerat på någon eller några marknader och vill slå sig in på en
+ny. När de svenska elverken ville etablera sig på spismarknaden under mellankrigstiden
+erbjöds de hushåll som ville använda el för kokning väsentligt lägre elpris än de som endast
+använde el för belysning. Genom denna s.k. korssubsidiering kunde elverken utnyttja
+"övervinsterna" från belysningsmarknaden till att dumpa elpriset på spismarknaden. Detta
+påskyndade elspisarnas segertåg.
+Propaganda var också ett konkurrensmedel som användes med stor konsekvens av
+elintressena i slaget om spismarknaden. Mängder av affischer framställdes med fräscha,
+moderna kvinnor som lekande lätt lagade sin mat på skinande vita elspisar. Idag kan vi
+bevittna hur SJ och Linjeflyg bedriver något av ett propagandakrig om affärsresenärerna.
+Politiska påtryckningar kan användas av ett etablerat infrasystem med en stark
+institutionell förankring för att motverka ett nytt konkurrerande system. Så lyckades
+
+Den svenska infrastrukturen i historisk belysning 13.6
+
+intressenterna bakom en rad svenska gasverk förhindra att tillstånd gavs för att bygga
+konkurrerande elverk kring sekelskiftet.
+Den amerikanske teknikhistorikern Thomas P Hughes har skrivit boken "Networks of
+Power" (1983) om framväxten och expansionen av stora elsystem. Boken har redan blivit
+klassisk. Hughes framhåller att expanderande infrasystem efterhand får en allt större "tröghet"
+(momentum). Trögheten (egentligen rörelsemomentet) bestäms av systemets massa, hastighet
+och rörelseriktning. Massan utgörs av alla maskiner, ledningar, byggnader och andra
+artefakter i vilka ett stort kapital investerats. Hastigheten i systemexpansionen härrör från
+finansiärernas krav på avkastning från kapitalet. Systemets rörelseriktning har sin grund i att
+de personer och organisationer som har ett dominerande inflytande över systemet gradvis
+utvecklar en gemensam systemkultur, d v s ett gemensamt synsätt på vad som är rationellt och
+önskvärt ur systemets synvinkel. Om många aktörer agerar utifrån föreställningen att systemet
+kommer att utvecklas i en bestämd riktning så blir denna föreställning en självuppfyllande
+prognos och bidrar väsentligt till systemets tröghet.
+I ett litet land som Sverige blir en sådan systemkultur särskilt stark och enhetlig. Det
+beror på att de ledande personerna inom ett infrasystem utgör en förhållandevis liten och väl
+sammansvetsad krets. De har en likartad utbildningsbakgrund ofta från samma skola (KTH
+har spelat en central roll i detta sammanhang), och deras karriär består ofta av en vandring
+mellan olika organisationer inom systemet. Det ger upphov till en stark kåranda och ett
+gemensamt synsätt, som i hög grad underlättar samarbete mellan olika parter.
+Stagnation
+Expansionen av ett infrasystem till nya geografiska områden och nya marknader har en gräns,
+som bland annat bestäms av konkurrerande system. När expansionen upphör inträder en fas
+av stagnation. Övergången från en expansionsfas till en stagnationsfas reser nya typer av
+problem. Hur de olika aktörerna inom systemet lyckas hantera dessa problem kan vara
+avgörande för huruvida systemet konsolideras på en stabil nivå eller om det hamnar i en
+nedåtgående spiral.
+Det framhölls ovan att etableringen av ett nytt infrasystem kräver ett samtidigt
+agerande av olika parter: utrustningstillverkare, systemoperatörer och brukare. För att
+åstadkomma detta krävs ofta någon form av samordning. När systemet väl etablerats krävs
+mindre av formell samordning. Om alla de olika parterna delar en optimistisk syn på
+systemets framtida utveckling och agerar därefter, så hamnar systemet i en god –
+expanderande – spiral.
+Även omvändningen till detta gäller. Om tilltron till systemets framtid börjar svikta
+hos någon eller några av parterna, så kan systemet hamna i en ond – kontrakterande – spiral.
+Detta kan illustreras med de svenska stadsgasverkens utveckling. Redan på 1920-talet
+fruktade gassystemets företrädare att hamna i en ond spiral till följd av att elspisar började
+introduceras och hotade gasverkens viktigaste marknad. Vid Gasverksföreningens årsmöte
+1924 framhöll gasverkschefen i Malmö:
+"Tanken att man nu vore färdig med gasen och tiden mogen för en allmän övergång
+till elektricitet, måste kraftigt motarbetas och allmänhetens förtroende för gasen med
+alla medel stärkas."
+Gassystemets företrädare lyckades bibehålla förtroendet för gasen den gången. Men efter
+andra världskriget hamnade gassystemet i än större svårigheter. Elspisen blev en allt svårare
+konkurrent till gasspisen och oljan var en ny svår konkurrent till koks på
+uppvärmningsmarknaden. Detta ledde till en betydligt djupare förtroendekris än på 20-talet.
+Denna gång gick den inte att häva: spistillverkarna upphörde med utvecklingsarbete,
+gasverken vågade inte nyinvestera och byggmästarna slutade installera gasledningar i nya hus.
+
+Den svenska infrastrukturen i historisk belysning 13.7
+
+Denna onda spiral resulterade i att nästan alla gasverk lades ned under de följande
+decennierna. Bara en handfull verk återstår idag. Och dessa har överlevt endast på grund av
+naturgasintroduktionen vid mitten av 1980-talet.
+Ett likartat exempel på ett infrasystem i en stagnationsfas är järnvägarna vid mitten av
+1900-talet. Järnvägssystemet byggdes ut under en tid då häst och vagn utgjorde det lokala
+komplementet. Järnvägsnätet och stationsnätet byggdes därför ut mycket finmaskigt,
+åtminstone i södra Sverige. Efter andra världskriget förändrades förutsättningarna för
+järnvägstrafiken radikalt, på grund av en mycket snabb ökning av antalet personbilar, lastbilar
+och bussar. Det innebar att underlaget för den lokala järnvägstrafiken sjönk drastiskt, och
+kostnaderna för att upprätthålla trafiken på det glesa nätet hotade att bli en kvarnsten runt
+halsen för SJ i dess helhet.
+SJ inriktade sig i detta nya läge på den långväga trafiken. Man genomförde, ofta mot
+starka lokala protester, en hel eller partiell nedläggning av ca 40 % av järnvägsnätet mellan
+1950 och 1985. Samtidigt reducerades antalet bemannade stationer från drygt 1 500 till
+knappt 400. Istället koncenterades resurserna i huvudsak på stambanetrafiken mellan de större
+städerna. Genom denna omstrukturerering lyckades SJ konsolidera järnvägssystemet, och idag
+tycks det åter finnas förutsättningar för en expansion.
+Det är särskilt svårt för spår- och ledningsbundna system att hantera en stagnationsfas
+eftersom en stor del av anläggningarna och ledningssystemen är lokalt bundna och utan
+alternativvärde. För andra typer av infrasystem kan omställningen till en stagnationsfas vara
+lättare att hantera. Oljesystemet i Sverige är här ett belysande exempel. Det har fått uppleva
+en drastisk minskning av sin efterfrågan; sedan år 1975 har oljeanvändningen reducerats med
+drygt 40 %. Men oljeindustrin har klarat denna nedgång utan att drabbas av ekonomisk
+kollaps. Delvis beror detta på att det rör sig om en ovanligt resursstark bransch. Men det har
+också att göra med att systemet är tämligen flexibelt och föränderligt; raffinaderier kan ändra
+sina produktstrukturer och sina geografiska avsättningsområden och tankbilar och tankbåtar
+kan byggas om eller överföras till andra marknader.
+Huruvida en stagnation av ett infrasystem resulterar i en stabil mättnadsnivå eller leder
+till en tillbakagång och kanske till och med undergång beror inte bara på hur systemets
+företrädare förmår hantera den nya situationen. En avgörande faktor är om systemet
+tillhandahåller unika tjänster eller ej. Gasverken tillhandahöll inte några unika tjänster som
+andra energisystem inte kunde tillgodose. Detta var en av anledningarna till stadsgasens
+undergång. Elsystemet skiljer sig här från gassystemet. I många industriländer har elsystemet
+under de senaste åren hamnat i en stagnationsfas efter hundra år av tillväxt. Men många av
+elsystemets tjänster kan i dagsläget inte ersättas av andra energisystem. Det gäller t.ex. för
+belysning samt drift av elektronik och många typer av motorer. Elsystemet behöver därför
+knappast befara någon undergång.
+Hittills har stagnationen av infrasystem främst orsakats av konkurrens från nya system
+och i vissa fall en absolut mättnad av viktiga marknader. I framtiden kommer sannolikt en ny
+faktor att ha en stor betydelse för stagnationsförlopp inom transport- och energisystem,
+nämligen miljöhänsyn. Det börjar växa fram en insikt att en fortsatt expansion av transportoch energisystemen utgör ett allvarligt hot mot de långsiktiga livsbetingelserna på jorden. I
+många industriländer införs därför miljöavgifter och andra styrmedel som syftar till att
+begränsa systemens fortsatta tillväxt.
+
+13.4 Infrasystemens pågående omvandling
+De svenska infrasystemen har genomgått genomgripande institutionella förändringar under de
+senaste tio åren. Tydligast är förändringarna inom de spår- och ledningsbundna infrasystemen,
+där de statliga verkens ställning förändras i grunden. SJ har spjälkats upp i ett banverk och ett
+
+Den svenska infrastrukturen i historisk belysning 13.8
+
+trafikverk. På liknande sätt har Vattenfall delats upp i en del som har hand om stamnätet och
+en del som svarar för elproduktion m.m. En rad affärsverk har omvandlats till statliga bolag
+(SJ, Vattenfall, Telia, Posten). Syftet har varit att ge organisationerna större möjligheter att
+agera snabbt och affärsmässigt på allt mer internationaliserade marknader.
+Utöver en förändring av affärsverkens ställning har också lagstiftningen som rör
+konkurrensförhållanden inom olika infrasystem förändrats. Ambitionen har varit att en ökad
+konkurrens skall leda till ett effektivare utnyttjande av infrasystemen. Det som pågår är inget
+mindre än en övergång från en institutionell ordning präglad av samordning och samverkan på
+nationell nivå med ett starkt inslag av offentligt ägande till en ordning präglad av "rå"
+konkurrens inom och mellan länder.
+Varför sker dessa genomgripande institutionella förändringar just nu? Det finns flera
+samverkande processer som har skapat ett tryck för förändring. För det första har det skett en
+ideologisk omsvängning med början under 1980-talet. Tilltron till marknadskrafternas
+förmåga att åstadkomma effektivitet och ekonomisk utveckling har ökat, medan många
+former av statlig verksamhet har börjat ifrågasättas. Samtidigt har tekniska förändringar
+delvis undergrävt de monopol som många infrasystemoperatörer traditionellt har åtnjutit.
+Detta är särskilt markant inom telekommunikationsområdet. Vidare har en del infrasystem
+hamnat i en stagnationsfas, och för aktörerna inom dessa har det gällt att utnyttja befintliga
+anläggningar så effektivt som möjligt. Sist men inte minst har det funnits ett tydligt samband
+med en tilltagande internationalisering av många infrasystem.
+Vad kommer då förändringarna att innebära? Hur kommer infrasystemen att fungera i
+framtiden? Det är för tidigt att svara på det. Men övergången från en institutionell ordning
+präglad av samordning och samverkan på nationell nivå med ett starkt inslag av offentligt
+ägande till en ordning präglad av konkurrens inom och mellan länder kommer att resa nya
+typer av frågor och problem. Till exempel följande:
+-
+
+Vem tar ett övergripande ansvar för infrasystemen som helhet, så att de ges en rimlig
+robusthet för att klara olika typer av störningar på ett acceptabelt sätt?
+
+-
+
+Hur kan man undvika att det uppstår en långt gående regional och social
+snedfördelning vad gäller tillgången till infrasystemens tjänster?
+
+-
+
+Hur kan satsningar på långsiktig teknikutveckling och i investeringar med lång
+återbetalningstid åstadkommas på en allt mer konkurrensutsatt infrasystemmarknad?
+
+-
+
+Vem vågar och kan etablera helt nya infrasystem?
+
+-
+
+Hur kan en internationell harmonisering av miljökrav och miljöavgifter åstadkommas,
+utan att det innebär att de nuvarande svenska kraven sänks?
+
+Det är viktigt också för teknologer och ingenjörer att diskutera denna typ av frågor
+beträffande infrasystemens framtida utveckling. Ofta intresserar de sig enbart för rent tekniska
+frågor, men som jag har velat visa i detta kapitel är utformningen av de institutionella ramarna
+minst lika viktig som utvecklingen av nya tekniska komponenter.
+
+Litteratur
+Detta kapitel baseras på min bok ”I fädrens spår. Den svenska infrastrukturens historiska
+utveckling och framtida utmaningar” (Carlssons förlag, 1994). I den finns utförliga
+litteraturreferenser. Den historiska utvecklingen av olika tekniska system behandlas också i
+antologin ”Den konstruerade världen. Tekniska system i historiskt perspektiv”, red. Pär
+Blomkvist och Arne Kaijser (Symposion, 1998).
+
+

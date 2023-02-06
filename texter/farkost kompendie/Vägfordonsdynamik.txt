@@ -1,0 +1,869 @@
+Vägfordonsdynamik 9.1
+
+9. Vägfordonsdynamik
+av
+Annika Stensson Trigell och Jenny Jerrelind
+KTH Farkost och flyg
+
+9.1 Introduktion
+Fordonsdynamik handlar om rörelser hos fordon, såväl fordon med däck som tåg och
+bandfordon. I detta kapitel fokuserar vi på fordon med däck såsom bilar, lastbilar och
+bussar.
+Ökande krav kommer exempelvis från förare som kräver god kvalitet, prestanda,
+ekonomi och komfort för att vilja köpa bilarna. För att få effektivare transporter vill
+man dessutom lasta mer i varje lastbil, samtidigt som man vill kunna köra fortare och
+billigare, dvs. med låg bränsleförbrukning, lågt vägslitage samt lite underhåll och
+reparationer. Man transporterar också allt mer ömtåligt gods, som exempelvis elektronik
+och ägg, som inte får skaka sönder på vägarna. Detta kan bara ske om fordonen är
+anpassade för varje trafikuppgift och det ställer tuffare krav på säkerhet och
+tillförlitlighet. Optimering av prestanda, vikt och kostnad resulterar ofta i motstridiga
+krav och det gör det ännu viktigare att studera fordonets beteende i olika situationer.
+Sammantaget är det viktigt att analysera fordonets dynamiska beteende så att det alltid
+är säkert att framföra.
+Fundamentala egenskaper hos ett fordon är acceleration, bromsning, kurvkörning
+och komfort. För att få acceptabla egenskaper i alla dessa situationer blir ofta en teknisk
+lösning en kompromiss. Exempelvis ger bra kurvkörningsegenskaper krav på parametrar
+som i sin tur påverkar fordonets övriga egenskaper.
+De fordonsdynamiska egenskaperna
+z
+kan relateras till rörelser i sex olika
+ψ
+riktningar, så kallade frihetsgrader;
+longitudinell, x, lateral, y, vertikal, z,
+nick, θ, gir, ψ, och roll, ϕ, se
+figur 9-1.
+Fordonets beteende är en
+reaktion på de krafter som påverkar
+fordonet från t.ex. vägojämnheter,
+ϕ
+styrmanövrar, bromsning, acceleration
+samt aerodynamiska krafter. De
+y
+x
+θ
+dominerade krafterna som kontrollerar
+en bil utvecklas i kontakten mellan
+δ
+däcken och vägbanan, där varje
+Figur 9-1 Beskrivning av ett fordons olika rörelsekontaktyta har storleksordningen av
+riktningar [1].
+en mans handflata. Acceleration och
+bromsning avser främst longitudinell
+rörelse (se avsnitt 9.3), komfort avser främst vertikal- och nickrörelser (se avsnitt 9.4)
+och handlingegenskaperna relateras främst till lateral, gir- och rollrörelser (se avsnitt
+9.5).
+
+Vägfordonsdynamik 9.2
+
+9.2 Modellering
+En förståelse för fordonens dynamiska beteende kan fås på olika sätt – empiriskt eller
+analytiskt. Empirisk förståelse kommer från erfarenhet av olika situationer och
+konstruktionslösningar som man har provat. Men detta kan leda till felaktiga slutsatser
+då man bara analyserar ”fordonsindivider” i ett begränsat antal situationer. Matematiska
+analyser av nya konstruktionsförslag är därför ett viktigt verktyg för att exempelvis
+sortera ut dåliga konstruktionslösningar tidigt i produktutvecklingsarbetet.
+Tre kraftfulla kompletterande metoder att använda vid produktutveckling av
+fordon är en kombination av fullskaletestning, matematisk modellering och simulering
+samt test under kontrollerade förhållanden i en simulator för att få med människans
+beteende, se figur 9-2.
+
+Figur 9-2 Tre kraftfulla kompletterande metoder att använda vid produktutveckling av fordon är en
+kombination av fullskaletestning, matematisk modellering och simulering samt test under kontrollerade
+förhållanden i en simulator för att få med människans beteende.
+
+En människa kan intuitivt hantera inverkan av ungefär fem variabler. Ett typiskt
+fordon kan innehålla hundratals till tusentals variabler. Ingen individ kan hantera detta
+utan att ta fram en modell av systemet. Dessutom är det billigare och enklare att prova
+en mängd olika idéer eftersom man kan ändra i modellen utan att behöva bygga en
+verklig prototyp som man ska testa. Detta ökar chansen att hitta bra lösningar.
+Det är också lätt att prova vad som händer vid orealistiska eller farliga situationer.
+Om man exempelvis funderar på att höja den tillåtna lasten på en bil och vill studera
+vilken effekt det får vid körning på olika typer av vägar vid olika hastigheter, kan man
+göra det i sin modell utan att riskera någon bilkrasch med personskada.
+Av dessa anledningar föredrar ingenjörer oftast den analytiska metoden. Man
+försöker då att beskriva mekaniken hos den intressanta frågeställningen baserat på
+kända fysiska lagar, så att en analytisk modell (ett ekvationssystem) kan tas fram. I
+enkla situationer kan dessa analytiska modeller representeras av ekvationer som
+relaterar de intressanta krafterna eller rörelserna för att kontrollera excitationen samt
+fordons- och däcksdata. Ekvationerna tillåter oss att utvärdera rollen av varje
+fordonsegenskap för det studerade fenomenet. Modellen ger oss därmed möjlighet att
+identifiera viktiga faktorer, att studera under vilka förhållanden de uppkommer och hur
+de förändras.
+Modeller ger även en möjlighet att förutsäga beteenden, så att man kan bestämma
+vad som är nödvändigt att ändra på för att kunna uppfylla ett specifikt krav. Men
+naturligtvis fungerar detta enbart om modellerna beskriver det man är ute efter, dvs. om
+antagandena är rimliga. Det är därför viktigt för en ingenjör att förstå vilka antaganden
+som har gjorts när man har tagit fram en matematisk modell, så att sådana misstag kan
+undvikas.
+
+Vägfordonsdynamik 9.3
+
+Tidigare var nackdelarna med analytiska metoder att verkliga problem oftast var
+omöjliga att lösa med de matematiska metoder som var kända. Fordon är uppbyggda av
+ett stort antal komponenter och de har ofta olinjära egenskaper vilket gjorde analytiskt
+lösbara ekvationssystem i praktiken omöjliga. Idag har de snabba datorerna samt
+effektiva numeriska metoder möjliggjort att man kan sätta ihop modellerna (ekvationssystemen) för specifika komponenter i fordonet, exempelvis en hjulupphängning, som
+sedan kan inkluderas i en större modell av hela fordonet. Detta möjliggör simulering
+och utvärdering av dess beteende före tillverkning.
+I situationer när ingenjören är osäker på om en egenskap är viktig för beteendet,
+så kan dessa egenskaper inkluderas i modellen, och dess betydelse kan utvärderas
+genom att studera dess inverkan på det simulerade beteendet. Detta ger ingenjören ett
+kraftfullt verktyg för att testa förståelsen av ett komplext system och undersöka olika
+tillvägagångssätt att förbättra prestanda.
+
+9.3 Acceleration och bromsning
+Det dynamiska beteendet hos fordonet bestäms av de krafter som påverkar det från t.ex.
+däcken, gravitationen och den omgivande luften (aerodynamiska krafter). Ett fordon
+består av en mängd olika komponenter. Det betyder att för grundläggande analyser av
+beteenden kan modeller av olika detaljeringsgrad användas beroende på vilken fråga
+som skall besvaras. Till exempel vid bromsning, bromsas hela fordonet som en enhet;
+alltså kan det i sin enklaste beskrivning representeras av en massa placerad i sitt
+masscentrum med relevanta mass- och tröghetsegenskaper, se figur 9-3. Axellasterna
+bestämmer den bromsande eller accelererande kraften som man kan ta ut för varje axel.
+Modellen visar ett fordon sett från sidan där axellasterna och de viktigaste krafterna som
+påverkar broms- och accelerationsbeteendet markerats. De viktigaste av dem beskrivs
+nedan.
+
+Masscentrum
+
+max
+mg
+
+Figur 9-3 Modell av ett fordon sett från sidan [2].
+
+•
+
+•
+•
+
+Fordonets vikt läggs i dess masscentrum med en storlek som är lika med
+fordonets massa, m, gånger tyngdaccelerationen, g. På en sluttning kan den ha
+två komponenter, en komponent som är vinkelrät mot vägens yta samt en
+komponent parallell mot ytan.
+Om fordonet accelererar längs vägen, är det lämpligt att representera detta med
+en ekvivalent tröghetskraft i masscentrum motriktad accelerationsriktningen,
+max.
+Däcken kommer att få reaktionskrafter vinkelrät mot vägytan, Wf och Wr, som
+representerar de dynamiska laster som bärs upp av fram- respektive bakhjulen.
+
+Vägfordonsdynamik 9.4
+
+•
+•
+
+•
+
+Traktionskrafterna (drivkrafter och bromskrafter), Fxf och Fxr, agerar i däckens
+kontaktyta i markplanet. Det gör även rullningsmotståndskrafterna, Rxf och Rxr.
+DA är den aerodynamiska kraft som påverkar fordonet. Den orsakas av luftmotståndet pga. fordonets hastighet, men även av vind. Den kan representeras av en
+kraft som angriper i en punkt ovanför marken vid höjden ha, eller alternativt av
+en lika stor longitudinell kraft i markplanet med ett associerat moment lika med
+DA gånger ha.
+Rhz och Rhx är vertikala och longitudinella krafter som påverkar dragkulan på
+bilen då man drar ett släp.
+
+Lasten på varje axel består av en statisk komponent plus lastöverföringen orsakad av de
+andra krafterna på fordonet. Genom att utnyttja Newtons lagar kan ekvationer för
+fordonets beteende tas fram och man kan exempelvis få fram att då fordonet accelererar
+överförs last från framaxeln till bakaxeln.
+
+9.4 Vibrationer och komfort
+Frågor relaterade till vibrationer och komfort är allt mer viktiga. Det gäller inte bara
+förarens välbefinnande utan även transport av ömtåligt gods och krav på minskat
+vägslitage. Vibrationerna påverkar föraren antingen genom rörelse, synvariation eller
+ljud. Den engelska termen ride avser rörelse- och synvariation, medan ljudvariation
+brukar benämnas buller. Gränsen mellan ride och buller går för fordon ungefär vid
+25 Hz. Det motsvarar ungefär den lägre gränsen för vad man kan höra samt den övre
+gränsen av de vanligaste svängningarna i fordonen. De olika typerna av vibrationer är
+ofta kopplade så det kan vara svårt att analysera dem separat.
+Vibrationsintrycket är ett av de viktigaste kriterierna som kunden utvärderar vid
+en kvalitetsbedömning. Det varierar med tycke och person vilket medför att det är svårt
+att ta fram korrekta ingenjörsmässiga metoder för att analysera detta.
+Fordonet är ett dynamiskt system som reagerar på störningar. De viktigaste
+störningarna är vägojämnheter, däck/hjulobalanser och orundheter, drivlinevibrationer
+och motorvibrationer, se figur 9-4. Hur fordonet reagerar beror på störningens storlek
+och riktning, se exempelvis rörelsen för fram- och bakhjulsupphängningen när en bil
+passerar ett väggupp i figur 9-5.
+
+Figur 9-4 Beskrivning av vad som påverkar den upplevda vibrationsstörningen.
+
+Vägfordonsdynamik 9.5
+Rörelse
+Framhjulsupphängning
+Bakhjulsupphängning
+
+Tid
+
+Figur 9-5 Rörelser hos ett fordon som passerar ett väggupp [2]. Sträckan A-B utgör skillnaden i vertikal
+rörelse mellan bilens framhjuls-upphängning och bakhjulsupphängning vid tiden t. Sträckan A-B är alltså
+ett mått på bilens nickning vid tiden t.
+
+9.4.1 Matematiska modeller för vibrationsstudier
+Vid design och konstruktion av nya bilmodeller är datorsimuleringar av olika
+egenskaper ett viktigt verktyg, se avsnitt 9.2 ovan. Själva grunden för allt simuleringsarbete är den matematiska modell som används för simuleringen. Den matematiska
+modellen beskriver de egenskaper hos bilen vi vill studera uttryckt i matematiska
+formler som i sin tur kodats i ett lämpligt programspråk. Ingenjörens uppgift är att
+formulera modellen så att den med tillräcklig precision och noggrannhet beskriver de
+egenskaper hos bilen vi vill studera. Det är mycket viktigt att tänka igenom modellens
+syfte och först därefter påbörja modelleringsarbetet. Har man inte gjort detta är risken
+stor att olämpliga metoder används som innebär onödigt arbete och irrelevanta eller
+rentav felaktiga resultat.
+Ett enkelt men illustrativt exempel på hur man går tillväga vid modelleringsarbete
+vid komfort studier ges i avsnitten 9.4.2 - 9.4.5 nedan.
+9.4.2 Stelkroppsmodeller
+Ett fordons komfort påverkas, enligt avsnitt 9.1 ovan, främst av relativt långsamma
+vertikal- och nickningsrörelser med frekvenser under 25 Hz, dvs. 25 upprepningar per
+sekund. Vid datorsimulering av ett fordons komfort gäller det därför att den
+matematiska modellen som skall representera bilen klarar att beskriva bilens rörelser
+framförallt längs den vertikala z-axeln och nickning, dvs. dess rotation kring den
+laterala y-axeln. Vid formuleringen av modellen bör all annan oväsentlig information
+skalas bort.
+En första kraftig förenkling är möjlig genom att utnyttja att endast långsamma
+svängningar under 25 Hz behöver beskrivas av modellen. Erfarenheten visar nämligen
+att vid dessa låga frekvenser är det bara fjädringssystemet i hjulupphängningen som
+deformeras i nämnvärd utsträckning. Bilens övriga delar deformeras mycket litet och
+kan därför med god noggrannhet sägas bete sig som en stel, dvs. icke deformerbar,
+kropp. I mekanikkurser i årskurs 1 och 2 kommer du att lära dig att en stel kropps
+rörelse beskrivs av sex oberoende tal, dvs. koordinater eller frihetsgrader. Dessa sex
+riktningar är de som infördes i avsnitt 9.1 ovan. Hjulupphängningens fjädrande
+egenskaper kan i sin tur beskrivas med ett fjäder-dämparsystem. Bilen i sin helhet kan
+alltså beskrivas som en stel kropp (karossen) i kontakt med vägbanan via fjäderdämparsystem (hjulupphängningen), se figur 9-6.
+Ytterligare förenklingar är möjliga eftersom endast vertikalrörelser och nickning
+är av intresse. Detta betyder att av den stela kroppens sex riktningar behöver hänsyn tas
+endast till två, z och θ, se figurerna 9-1 och 9-6.
+
+Vägfordonsdynamik 9.6
+
+θ
+
+Kaross
+
+z
+
+k2, c2
+
+m, J
+
+k1, c1
+
+Hjulupphängning
+
+Figur 9-6 Stelkroppsmodell för analys av bilars vertikal- och nickningsrörelser.
+
+I praktiken är förarplatsen belägen så nära masscentrum att nickningens bidrag till
+förarens rörelser är försumbart. Problemet är nu reducerat till endast en rörelseriktning
+– vertikalrörelser längs z-axeln.
+9.4.3 Punktmassemodeller
+Eftersom nickningens bidrag till förarens rörelser kan försummas behöver modellen
+bara beskriva masscentrums rörelse längs z-axeln. Bilens hela massa ovanför
+hjulupphängningen kan då föras samman, klumpas, till en punktmassa, med massan m,
+belägen i masscentrum. På samma sätt kan hjulupphängningens totala fjädrande
+egenskaper sammanföras till en vertikal fjäder som vid frekvenser under 25 Hz kan
+beskrivas som en ideal masslös fjäder med fjäderkonstanten k. Utöver fjädringen är
+stötdämparnas dämpning en väsentlig designparameter som måste inkluderas i
+modellen. Dämparnas dämpning behandlas på samma sätt som fjädringen dvs. de läggs
+ihop till en total dämpare med dämpningen c. Slutligen antas att vägbanan ej deformeras
+under inverkan av kontaktkrafterna mot hjulen. En mekanisk modell som beskriver
+detta system är det mekaniska enfrihetsgradssystemet, se figur 9-7, som är den enklaste
+formen av en punktmassemodell.
+Enfrihetsgradsmodell
+Stelkroppsmodell
+
+Fyttre
+
+z
+k1 , c1
+
+m
+
+Kaross:
+
+z
+
+m
+
+k2 , c2
+Hjulupphängning: k, c
+Vägbana
+
+Figur 9-7 Det mekaniska enfrihetsgradssystemet beskrivs av tre parametrar, massan m, fjäderkonstanten
+eller styvheten k och dämpningen c.
+
+9.4.4 Enfrihetsgradssystemet
+Innan det valda enfrihetsgradssystemet kan användas för simuleringar måste dess
+egenskaper formuleras matematiskt. Metoder för detta möter du i grundläggande
+mekanikkurser i årskurs 1 och 2. I detta fall skall vi studera massans rörelse, vilket
+innebär att dess rörelseekvation skall formuleras. Rörelseekvationer formuleras genom
+att använda Newtons berömda 2:a lag formulerad år 1687 i verket ”Philosophiae
+Naturalis Principia Mathematica”,
+F = ma ,
+
+(9-1)
+
+där F i detta fall är z-komponenten av den kraft som verkar på massan och a i detta fall
+är z-komponenten av den acceleration kraften F orsakar. Eftersom massans vertikala
+läge betecknas z kan accelerationen matematiskt skrivas,
+
+Vägfordonsdynamik 9.7
+
+a=
+
+d 2z
+.
+dt 2
+
+(9-2)
+
+Med kännedom om vilken kraft F som verkar på massan kan således massans läge z
+bestämmas. I detta fall består kraften av tre bidrag – en fjäderkraft som orsakas av att
+punktmassan sitter ihop med fjäderns ena ände, – en dämpkraft som orsakas av
+dämparen och slutligen – en yttre kraft Fyttre som påläggs massan utifrån. Den kraft som
+orsakas av en person som med handen trycker ned massan är ett exempel på en sådan
+yttre kraft. Genom att frilägga systemets delar och införa snittkrafter, se figur 9-8, kan
+man underlätta en korrekt formulering av rörelseekvationerna.
+Enfrihetsgradsmodell
+Fyttre
+
+z
+
+m
+
+Kaross:
+
+z
+
+Fyttre
+
+z
+m
+
+Ffjäder + Fdämp
+
+Hjulupphängning: k, c
+
+Ffjäder + Fdämp
+k, c
+
+Vägbana
+
+Figur 9-8 Vid friläggningen av enfrihetsgradssystemets delar införs i varje snitt lika stora och motsatt
+riktade snittkrafter. Snittkrafterna är således s.k. inre krafter vars vektorsumma är noll.
+
+För att kunna formulera krafternas egenskaper matematiskt måste man ha mer
+information om hur de uppstår. Fjäder- och dämpkrafterna kan bestämmas ur de
+samband som definierar deras egenskaper. För den ideala masslösa fjädern gäller att
+fjäderkraften är direkt proportionell mot den längdändring ∆L fjädern undergår då
+kraften påläggs, dvs.,
+
+F fjäder = k∆L = kz ,
+
+(9-3)
+
+där proportionalitetskonstanten är den ovan nämnda fjäderkonstanten k. I detta fall
+måste längdförändringen vara lika med massans läge z eftersom fjäderns undre ände
+sitter fast i det orörliga underlaget (vägbanan) och den övre änden följer med massan i
+dess rörelse. På samma sätt kan dämpkraften skrivas,
+
+Fdämp = c∆v = c
+
+dz
+,
+dt
+
+(9-4)
+
+dvs. dämpkraften är definierad såsom direkt proportionell mot hastighetsskillnaden ∆v
+mellan dämparens båda ändar. En sammanställning av de krafter som kan påverka
+massan ger efter insättning i rörelsekvationen (9-1),
+m
+
+d 2z
+dz
+= Fyttre − ( F fjäder + Fdämp ) = Fyttre − kz − c ,
+2
+dt
+dt
+
+(9-5)
+
+där minustecknet framför fjäder-dämparkraften orsakas av att denna kraft vill dra
+tillbaka massan mot vägbanan då massan rör sig uppåt längs z-axeln, se figur 9-8. Efter
+att de termer som innehåller den okända rörelsen z samlats i vänsterledet fås,
+m
+
+d 2z
+dz
++ c + kz = Fyttre .
+2
+dt
+dt
+
+(9-6)
+
+Vägfordonsdynamik 9.8
+
+Detta är rörelseekvationen för det mekaniska enfrihetsgradssystemet. Inom matematiken sägs ekvationen vara en inhomogen (högerledet skiljt från 0) ordinär, linjär
+differentialekvation av 2:a ordningen med konstanta koefficienter. Kända systemparametrar m, k och c tillsammans med en känd yttre kraft Fyttre ger möjlighet att beräkna
+massans rörelse eller förskjutning z som funktion av tiden t. Skall denna modell användas till att simulera en bils vertikala rörelser vid låga frekvenser måste konstruktören
+som indata till modellen ge siffervärden på system- eller konstruktionsparametrarna m,
+k och c. Genom att studera hur vertikalrörelsen påverkas av olika parameterkombinationer kan konstruktören göra ett lämpligt val till den prototyp som skall tillverkas och
+utvärderas experimentellt.
+Metoder att lösa denna typ av ekvationer kommer du att möta i flera kurser under
+din studietid. Analytiska och numeriska lösningsmetoder möter du i matematik- och
+mekanikkurser i årskurs 1 och 2 samt i tillämpningskurser som SD2225 Fordonsdynamik. Du kommer också lära dig att räkna ut dynamiska systems egenfrekvenser.
+Om frekvensen hos excitationen (t.ex. en yttre kraft) av ett system sammanfaller med en
+egenfrekvens fås förstärkning av systemets rörelse vilket kallas resonans.
+Den viktigaste källan till vibrationer som sänker komforten är de kontaktkrafter
+som uppstår då bilens körs över en ojämn vägbana. Av erfarenhet vet man att rörelseamplituden beror, eller påverkas, av ojämnheternas storlek och utsträckning samt av
+bilens fart.
+9.4.5 Kvartsbilsmodellen
+Enfrihetsgradssystemet är som nämndes ovan användbart vid studier av relativt
+långsamma förlopp dvs. vid låga frekvenser. Om man har behov av att studera hur bilen
+beter sig under inverkan av krafter med snabbare förlopp måste modellen göras mer
+generell. Ett alternativ kan vara att använda en punktmassemodell med två eller flera
+massor sammankopplade med fjädrar och dämpare. Vid komfortanalyser kan det vara
+viktigt att ha möjlighet att studera inverkan av flera av de fjädrande komponenterna.
+Exempelvis är det ofta betydelsefullt att kunna studera de relativa rörelserna mellan
+däck och chassi. Om vi utgår från stelkroppsmodellen av bilen i figur 9-6 kan detta
+lösas genom att för vart och ett av hjulen införa en massa mt, en däcksfjädring kt och en
+däcksdämpning ct, se figur 9-12.
+
+θ
+k, c
+
+zt2
+
+z
+m, J
+
+zt1
+
+mt
+kt, ct
+
+k, c
+mt
+
+kt, ct
+
+Figur 9-12 Stelkroppsmodell för analys av bilars vertikal- och nickningsrörelser.
+
+Om nickningen bortses ifrån kan bilens masscentrums vertikalrörelse beskrivas med en
+så kallad kvartsbilsmodell. Kvartsbilsmodellen fås helt enkelt genom att fördela en
+fjärdedel av karossens massa på vart och ett av de fyra hjulen, se figur 9-13.
+
+Vägfordonsdynamik 9.9
+
+z
+¼ Kaross
+
+m
+
+Hjulupphängning
+
+k, c
+
+Hjul
+Däck
+
+zt
+
+mt
+kt, ct
+
+Vägbana
+
+Figur 9-13 Kvartsbilsmodell för analys av bilars vertikalrörelser.
+
+Eftersom kvartsbilsmodellens rörelse kan beskrivas genom att ange värden på två
+stycken koordinater, z och zt, är det en tvåfrihetsgradsmodell. Rörelsekvationerna för
+systemet då karossmassan utsätts för en yttre kraft Fyttre är enligt följande:
+
+m1/ 4
+
+mt
+
+d 2z
+ dz dz
+= Fyttre − k ( z − zt ) − c − t
+2
+dt
+ dt dt
+
+
+,
+
+
+d 2 zt
+dz
+ dz dz 
+= k ( z − zt ) + c − t  − kt zt − ct t .
+2
+dt
+dt
+ dt dt 
+
+(9-7)
+
+(9-8)
+
+För att beskriva en typisk personbil kan följande värden på modellparametrarna
+användas,
+¼ Karossmassa,
+Hjulupphängning styvhet,
+Hjulupphängning dämpning,
+Hjulmassa,
+Däck styvhet,
+Däck dämpning
+
+m1/4 = 350 kg
+k = 20 kN/m
+c = 1,5 kNs/m
+mt = 20 kg
+kt = 200 kN/m
+ct = 0,1 kNs/m
+
+Ekvationssystemet (ekvationerna 9-7 och 9-8) kan skrivas om på matrisform och då fås:
+
+m1/ 4
+ 0
+
+
+ d 2z 
+ dz 
+0   dt 2   c
+− c   dt   k
+
++
+ +
+mt   d 2 zt  − c c + ct   dzt  − k
+ dt 2 
+ dt 
+
+− k   z   Fyttre 
+.
+=
+k + kt   zt   0 
+
+(9-9)
+
+Metoder användbara till att studera denna typ av system kommer du att möta i ett flertal
+kurser under dina kommande studier. I matematikkurser behandlas analytiska och
+numeriska metoder för att lösa dessa ekvationssystem. Mekanikkurser behandlar såväl
+härledning, lösning som tolkningar av lösningarnas innebörd. I tillämpningskurser som
+SD2225 Fordonsdynamik kommer du att möta tillämpningar där dessa ekvationer dyker
+upp.
+
+Vägfordonsdynamik 9.10
+
+9.5 Handlingegenskaper
+Handlingegenskaperna beskriver på vilket sätt ett fordon reagerar vid ett rattutslag eller
+då det utsätts för yttre störningar såsom sidvind. De indikerar även hur lätt en förare kan
+kontrollera fordonet, d.v.s. prestandan hos kombinationen förare/fordon. De kan delas
+upp i termer som väghållning, styrkänsla och kursstabilitet. Begreppet ”handling” är ett
+engelskt ord, men det finns inte någon bra motsvarighet på svenska, närmast är
+hantering av fordonet.
+Om fordonet körs vid en mycket låg hastighet och bara har två axlar, är det ett
+rent geometriskt samband mellan styrvinkeln och den resulterade rörelsen hos fordonet.
+Vid högre hastigheter bestäms beteendet av de olika krafterna som påverkar fordonet,
+där kraftgenereringen mellan däck och vägbana är den viktigaste. Ett av däckens
+viktigaste uppgifter är att utveckla de sidkrafter (lateralkrafter) som krävs för att kunna
+kontrollera fordonets riktning, för att skapa lateralacceleration vid exempelvis
+omkörning samt för att fordonet skall klara av externa krafter från sidvind eller en
+lutande vägbana.
+Vid körning med hög fart en i kurva kommer centrifugalkraften att vilja få bilen
+att köra i en allt större cirkel. Då måste sidkrafter byggas upp mellan däck och vägbana
+för att man skall kunna hålla bilen i den önskade banan.
+För att beskriva detta så betraktar vi ett frirullande (ej bromsat) hjul vid kurvkörning, se figurerna 9-15 och 9-16. Hjulets axelcentrum har hastigheten v, δ är
+styrvinkeln och färdriktningen bildar vinkeln α med hjulplanet. På grund av friktion
+bildas en sidkraft Fy vars storlek kan antas bero på den så kallade avdriftsvinkeln α. För
+ett givet däck är lasten och däckstrycket de viktigaste parametrarna för sambandet
+mellan Fy och α.
+Centrifugalkraft
+
+v
+α
+
+Fy
+Figur 9-15 Definition av avdriftsvinkeln, α
+och sidkraften Fy.
+
+Lateralkraftsjämvikt
+
+Figur 9-16 Beskrivning av
+kraftgenerering vid kurvkörning [3].
+
+Vägfordonsdynamik 9.11
+
+Ett sätt att beskriva kurvkörningsbeteendet hos ett specifikt fordon ges här. Om ett
+fordon är neutralstyrt kommer rattutslaget att vara konstant för olika hastigheter vid
+körning i en cirkel med konstant radie. För ett överstyrt fordon kommer för ökande
+hastighet mindre och mindre rattutslag att behövas för att hålla fordonet i cirkelbanan.
+Till slut kommer det att behövas negativa styrvinklar för denna bankörning. Kör man
+fortare, så kommer det överstyrda fordonet att bli instabilt och kräva ständiga
+korrektioner på ratten för att hålla rak kurs. Detta är ett oacceptabelt beteende hos
+fordonet ur säkerhetssynpunkt. Man säger att man har passerat fordonets kritiska
+hastighet.
+Om fordonet istället är understyrt så kommer ett större och större rattutslag att
+krävas med ökande hastighet. Fordonet strävar att gå rakt fram istället för att följa
+rattutslaget. Fordonet kommer dock att vara stabilt i alla hastigheter vilket är orsaken till
+att alla bilar idag i grunden är understyrda, åtminstone vid frirullning (varken driv- eller
+bromskrafter).
+Det under/överstyrda beteendet hos fordon påverkas av många parametrar som
+måste optimeras vid konstruktion av fordonet. De viktigaste är kurvkörningsprestandan
+hos däcken, lastfördelningen, höjd till masscentrum, styrgeometrin och rollstyvheten.
+Fordonet kan göras mer understyrt genom att flytta tyngdpunkten framåt eller genom att
+höja lufttrycket i däcken bak och/eller sänka fram. Gör man tvärtom kommer förstås
+fordonet att gå mot överstyrning. Det är orsaken att man skall vara noga med lufttrycket
+i däcken och följa fabrikanternas rekommendationer då man har mycket last i
+bagageutrymmet.
+9.5.1. Stabilitet
+Föraren kontrollerar normalt fordonets rörelse med rattutslag, gaspådrag och broms. I
+vissa situationer kan förarens reaktionstid och bristande erfarenhet från liknande
+situationer leda till instabilitet i systemet.
+En viktig egenskap hos däcken är toppfriktionens minskning med ökande
+vertikallast. Det innebär att den axel som har högst vertikallast kommer att släppa först
+eftersom den tillgängliga toppfriktionen är lägst på denna axel. Dagens bilar har i
+allmänhet tyngdpunkten framför mitten och kan förväntas släppa först på framaxeln,
+vilket är gynnsamt. För högprestandabilar försöker man åstadkomma en 50-50%
+viktfördelning för att maximalt kunna utnyttja tillgänglig friktion. Detta visar att det är
+betydligt gynnsammare ur stabilitetssynpunkt med framhjulsdrivna bilar med
+tyngdpunkten framför mitten än bilar med svansmotor och drivning bak. Detta bekräftas
+också av den historiska utvecklingen. Det illustrerar även att valet av däck är viktigt
+samt vikten av att sätta de bästa däcken bak för att undvika sladd under olyckliga
+omständigheter.
+Lastbilar och personbilar beter sig olika i dessa situationer.
+Lastbilar kännetecknas av en hög tyngdpunkt relaterat till
+hjulbasen, se figur 9-17. Medan en personbil under normala
+förhållanden förlorar greppet när sidoaccelerationen blir för
+stor, så tenderar en tungt lastad lastbil att välta istället. Det
+beror på att lastbilen ofta välter innan sidokrafterna på
+däcken blir tillräckligt stora för att däcken skall börja glida.
+Det är viktigt att observera att vältgränsen för ett verkligt
+fordon är väsentligt lägre än vid enkla överslagsberäkningar
+där man behandlar fordonet som en stel kropp. De
+Figur 9-17 Hög tyngdpunkt
+viktigaste orsakerna till detta är att tyngdpunkten flyttas i
+relaterat till hjulbasen gör att
+sidled på grund av krängningen och däckens understödsyta
+en lastbil kan välta [4].
+flyttas in under bilen på grund av däcksidornas elasticitet.
+
+Vägfordonsdynamik 9.12
+
+9.6 Aktiv säkerhet
+Olyckor kostar liv och skada för förare och medtrafikanter, men även kostnad för
+reparation av väg och fordon samt kostnad för förstörd last. Det blir också indirekta
+kostnader såsom sjukhuskostnader, rehabilitering och förlorad arbetsinkomst för de
+skadade. Miljöproblem kan också orsakas om fordonet transporterade miljöfarlig last.
+Detta innebär att det är viktigt att kunna konstruera ännu säkrare fordon. För att
+göra detta krävs en detaljerad kännedom om fordonets beteende i en mängd olika
+förhållanden (exempelvis olika laster, underhållsintervall och väder) under en mängd
+olika driftsvillkor (olika vägar, hastigheter och förarmönster).
+Man brukar prata om passiv och aktiv säkerhet relaterat till den tidpunkt när ett
+specifikt system är triggat för att aktiveras, se figur 9-18. I princip är de passiva
+systemen gjorda för att skydda de som åker i fordonet (traditionella system som
+säkerhetsbälten, airbags, sidokrockskydd). Aktiva system har oftast till funktion att
+undvika kollisioner. Det finns även identifierade säkerhetssystem efter krasch med
+avsikten att förbättra möjligheterna för räddningsaktioner.
+Principen för några aktiva system som är tänkta att hjälpa till genom att modifiera
+de dynamiska rörelserna hos fordonet då det finns risk för att föraren kommer att tappa
+kontrollen, beskrivs kortfattat nedan.
+Passive Safety
+
+Examples for ADASE
+
+Level of critical
+safety situations
+
+Active Safety
+
+6.
+
+Crash Probability
+
+5.
+
+Crash
+
+1.
+
+2.
+Automatic
+-
+
+Normal
+Driving
+
+Warning
+Systems
+
+Assistance
+Systems
+
+Safety
+Systems
+
+7.
+
+4.
+
+3.
+
+Safety
+Systems
+for minimal
+crash
+
+Safety
+Systems
+soft level
+
+Safety
+Systems
+hard level
+
+Collision Avoidance
+
+Safety
+Systems
+after Crash
+
+Rescue
+
+Pre-Crash Phase
+
+Basic Vehicle Safety
+ACC
+S&G
+etc
+
+Lane
+departure
+warning
+
+Occupant Protection
+Brake
+assistant
+
+Emergency
+braking
+system,
+Collision
+avoidance
+
+Pedestrian
+airbag
+
+crash
+severity sensing
+for ignition levels
+and belt tension
+
+Emergency/
+Mayday
+Systems
+
+Figur 9-18 Beskrivning av olika möjliga säkerhetssystem relaterat till aktiv och passiv säkerhet,
+framtagen inom EU-projektet ADASE ”Advanced Driver Assistance Systems” [5].
+
+9.6.1. Antispinnsystem
+Trycker man oförsiktigt på gasen i halka är det lätt att drivhjulen börjar att spinna och
+detta innebär att sidkraften, Fy (se figur 9-16) blir mycket liten. För en framhjulsdriven
+bil innebär det att den blir extremt understyrd och tenderar att plöja rakt fram. För den
+bakhjulsdrivna bilen däremot kommer bilen att gå mot kraftig överstyrning och låg
+kritisk hastighet (bakvagnssladd). Dessa tendenser försöker bilfabrikanterna eliminera
+genom så kallade antispinnsystem (traction control) som genom att strypa motorn helt
+eller delvis hindrar att hjulen spinner loss vid gaspådrag.
+
+Vägfordonsdynamik 9.13
+
+9.6.2. Antilåssystem
+Motsvarande fenomen dyker även upp vid bromsning. Då hjulen går emot låsning så
+kommer motsvarande sidkraft, Fy att bli mycket liten. För att undvika bakvagnssladd
+vid en hård inbromsning är det således viktigt att framhjulen låser före bakhjulen.
+Vid en hård inbromsning kommer till slut alla hjulen att låsa sig med ett
+konventionellt bromssystem och har tillverkaren sett till att framhjulen låser först så
+kommer bilen att kana rakt fram med nosen först. Så länge föraren fortsätter att bromsa
+hårt går inte bilen att styra. Antilåssystem (även kallad ABS) har till uppgift att hindra
+att hjulen går till låsning. Varje hjuls bromsning kan då kontrolleras av elektronik
+genom snabba ansättningar och frisläppanden av bromsen, mycket snabbare än vad en
+förare kan göra.
+I och med att hjulen aldrig går till låsning kommer varje axel att fortfarande ha en
+stor del av sidkraften kvar vilket medför att bilen fortfarande går att styra under
+panikbromsning. Detta förbättrar stabiliteten, ger styrmöjlighet samt förkortar bromssträckan.
+9.6.3. Antisladdsystem
+Den utrustning som kan reglera hjulbromsen vid ABS kan även användas för att
+undvika sladd. Man kan nämligen bromsa ena sidans hjul så att bromskraften hjälper till
+att rikta upp fordonet vid en begynnande sladd. En förutsättning är förstås att
+elektroniken rätt kan tolka att en sladd håller på att inträffa.
+I princip sitter en dator i bilen som hela tiden räknar ut hur mycket bilen ska gira
+(rotera runt vertikalaxeln, ψ – se figur 9-1) med tanke på aktuellt rattutslag och
+hastighet. Avviker detta för mycket från den uppmätta rotationen tolkar elektroniken att
+en sladd är på gång och bromsar på ena sidan. I figurerna 9-19 och 9-20 visas exempel
+på en överstyrd och en understyrd bil med och utan antisladdsystem.
+
+Figur 9-19 Till vänster, en bild som beskriver en
+typisk rörelse hos en överstyrd bil som passerat
+gränsen för adhesion mellan däck och väg. Till
+höger visas samma fordon utrustad med
+antisladdsystem [6].
+
+Figur 9-20 Till vänster, en bild som beskriver en
+typisk rörelse hos en understyrd bil som passerat
+gränsen för adhesion mellan däck och väg. Till
+höger visas samma fordon utrustad med
+antisladdsystem [6].
+
+Vägfordonsdynamik 9.14
+
+9.6.4. Aktiv fyrhjulsstyrning
+Fyrhjulsstyrning har fördelar när det gäller stabilitet
+och kan underlätta vid exempelvis parkering, se figur
+9-21. Vid aktiv fyrhjulsstyrning kan systemet korrigera vinkeln på bakhjulen för att kompensera för
+kraftstörningar från sidan, såsom en plötslig sidvind
+eller någon annan effekt som skapar över- eller
+understyrning. Systemet hjälper även föraren att hålla
+kursen.
+
+Figur 9-21 Aktiv fyrhjulsstyrning kan
+underlätta vid fickparkering.
+
+9.6.5 Intelligenta stabilitets- och handlingsystem
+De flesta stabilitetssystem arbetar med den grundläggande principen att ha sensorer som
+mäter fordonets rörelse och hur du styr. När systemet ser en avvikelse mellan din
+önskade väg och riktningen som fordonet faktiskt har, så kommer systemet ingripa för
+att hjälpa till att få fordonet tillbaka till den önskade riktningen. Det kan exempelvis
+vara antisladdsystem, antivältsystem eller kollisionsundvikande system.
+Sådana system har som samlingsnamn ”intelligenta stabilitets- och handlingsystem”. De som idag finns på marknaden är uppbyggda på lite olika sätt, innehåller
+olika funktioner och anpassas till olika bilmärken; exempel är ESP (Electronic
+Stabilization Program, Audi, Mercedes-Benz), DSC (Dynamic Stability Control, BMW,
+Jaguar), VSC (Vehicle Stability Control, Lexus), PSM (Porsche Stability Management,
+Porsche) samt DSTC (Dynamic Stability and Traction Control System, Volvo). Nya
+funktioner är ständigt under utveckling.
+9.6.6. Viktiga aspekter för aktiv säkerhet
+Aktiv säkerhet handlar både om ergonomisk design av fordonet så att föraren enkelt
+skall ha kontroll över fordonet utan att bli trött, såväl som en harmonisering av styrning,
+bromsning, däcksfjädring och handlingskarakteristik för att minska sannolikheten för att
+föraren skall tappa kontrollen.
+Olika förare beter sig också olika i en akut situation. Några kommer att ställa sig
+på bromsarna, andra kommer att styra förbi, några gör bägge delarna, medan några
+försöker accelerera för att undvika olyckan. Det finns också de som blir helt
+paralyserade och inte gör någonting alls. Dessutom verkar det som om att de flesta
+förarna vill känna att de har kontrollen själv för sitt välbefinnande. En ytterligare risk är
+att föraren litar så mycket på systemen att han blir oförsiktig och därför tänjer ut
+gränserna för vad systemet klarar och därför, ändå, kan orsaka en olycka.
+När man arbetar med aktiv säkerhet är det därför viktigt att de utvärderingsmetoder man använder för att avgöra när fordonet skall ta över kontrollen är robusta och
+mycket väl uttänkta. Annars finns risken att systemen kan orsaka olyckor istället för att
+rädda situationen.
+
+Referenser
+[1] E. Wennerström et. al, Kompendium i Fordonsdynamik, KTH, 2011.
+[2] T. D. Gillespie, Fundamentals of Vehicle Dynamics, 1992.
+[3] J. Aurell och S. Edlund. Vehicle dynamics of commercial vehicles. Volvo
+Technology Report, page 20-35, 1990.
+[4] E. Dahlberg, Commercial Vehicle Stability, PhD thesis, KTH, 2001.
+[5] Adase II, EU-project, 2000.
+[6] T.K. Garrett, The Motor Vehicle, 2001.
+
+

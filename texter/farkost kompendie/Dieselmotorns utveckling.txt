@@ -1,0 +1,883 @@
+Dieselmotorns utveckling 10.1
+
+10. Dieselmotorns utveckling
+Materialet är med SCANIAs tillstånd, hämtat ur skriften ”Dieselmotorn”©
+Inramade texter om historiska motorer är skrivna av
+Per Gillbrand, tidigare chef för SAABs motorlaboratorium
+Materialet är redigerat av Anna Dahlin och Ulf Carlsson
+KTH Farkost och flyg
+
+10.1 Inledning
+Motorer av olika slag utgör en av det moderna tekniska samhällets hörnstenar. Grunden
+till motorns stora betydelse är dess användbarhet som omvandlare av olika former av
+upplagrad energi till arbete. Förbränningsmotorn, varav Dieselmotorn är en typ, omvandlar kemisk energi bunden i olika brännbara bränslen till arbete som vi via olika
+mekanismer och maskiner kopplade till motorns utgående axel kan utnyttja för olika
+ändamål. I följande avsnitt presenteras huvuddragen i Dieselmotorns utveckling ur de
+tidiga förbränningsmotorerna till den moderna Dieselmotorn i början av 2000-talet. Med
+denna framställning vill vi ge ett exempel på hur ett tekniskt system är uppbyggt av ett
+flertal delsystem med olika uppgifter och funktioner. Avsikten är också att, vid utvecklingen av dessa system, påvisa behovet av grundläggande kunskaper från ett flertal olika
+teknikområden såsom stelkroppsmekanik, hållfasthetslära, förbränningsteknik, ljud och
+vibrationer, maskinelement m m.
+
+10.2 Dieselmotorn
+Antagligen började den utveckling vi i korthet skall beskriva i samma stund som
+människan kom underfund med att det var bekvämare att åka än att gå och tillverkade
+den första kärran på hjul. Men vi går raskt framåt till 1700-talet. Då började intresset
+vakna, främst på det militära området, för fordon som kunde ta sig fram med egen kraft.
+Vad som stod till buds var ångmaskinen, som var den drivkälla som hunnit längst i
+utvecklingen. År 1771 byggde den franske artilleriingenjören Cugnot tre ångdrivna
+kanonvagnar åt franska armén. Någon större succé blev de aldrig på grund av sin korta
+aktionsradie.
+Den man som skapade de verkliga förutsättningarna för bilens utveckling blev
+istället belgaren Lenoir. År 1860 konstruerade han den första användbara motorn med
+inre förbränning. Tre år senare lyckades han få den att fungera som drivkälla i en vagn
+– historiens första bil med förbränningsmotor!
+Figur 10-1 Till vänster yttre förbränning och till höger inre
+förbränning. Vid yttre förbränning sker förbränningen
+utanför cylinder som innehåller den gas vars expansion
+sätter kolven i rörelse. Vid inre förbränning sker
+förbränningen av bränsleblandningen inne i cylindern.
+
+Lenoirs motor som hade cylinder, kolv och vevmekanism och var byggd efter samma
+principer som ångmaskinen. Skillnaden var att Lenoir lät bränsleförbränningen ske inne
+i cylindern istället för utanför den, sedan dess skiljer man på motorer med yttre och inre
+förbränning. Vi kommer fortsättningsvis bara att ägna oss åt motorer med inre
+förbränning, eftersom de haft störst betydelse för bilens utveckling. Möjligen kan det
+utvecklingsarbete som på senare år bedrivits på den s.k. Sterlingmotorn, som bygger på
+
+Dieselmotorns utveckling 10.2
+
+en gammal idé och arbetar med yttre förbränning,
+Inloppslid
+Avloppslid
+medföra att sådana motorer får förnyad aktualitet.
+För att få en koncentrerad skildring nämner vi i
+fortsättningen bara de namn och årtal som haft
+väsentlig betydelse för utvecklingen.
+Lenoirs motor var en dubbelverkande
+kolvmaskin med en slid för inlopp och en slid för
+utlopp. Drivmedlet var en blandning av lysgas
+och luft som tändes av en elektrisk gnista från en
+induktionsspole, vilken hade ett batteri som
+strömkälla. Under första delen av arbetsslaget
+insögs blandningen av luft och lysgas, varefter
+insugningssliden stängde tilloppet. Därefter
+antändes gasen vilket medförde en kraftig
+expansion som drev kolven resten av slaget.
+Figur 10-2 Principskiss av Lenoirs motor.
+Samma sak upprepades på kolvens andra sida
+samtidigt som avgaserna drevs ut genom avloppssliden. Motorn arbetade alltså utan att
+komprimera gas-luftblandningen. Motoreffekten var ca 1 hk och den totala
+verkningsgraden 2-4 %.
+Lenoirs framgångar sporrade naturligtvis andra konstruktörer, bland annat tyskarna Otto och Langen, som haft stor
+betydelse för den fortsatta utvecklingen. År 1867 konstruerade
+de en maskin som arbetade med hjälp av atmosfärstrycket. En
+gasblandning sögs in i cylindern när kolven med svänghjulets
+hjälp lyfte från sitt nedersta läge. En öppen gaslåga tände gasen
+efter ungefär 1/12 av slaget och kolven, som frigjorts från svänghjulet, slungades uppåt till sitt översta läge. Avkylning i förening
+med kolvens rörelseenergi skapade undertryck i cylindern, så att
+atmosfärstrycket drev ned kolven igen och det egentliga arbetet
+utfördes. Samtidigt drev kolven ut avgaserna. Motorn förbrukade
+vid samma effekt endast ca fjärdedelen så mycket gas som
+Lenoirs, men i övrigt var den underlägsen sin föregångare.
+Otto och Langen arbetade emellertid målmedvetet
+Figur 10-3 Otto och Langens
+vidare på att förbättra sin maskin. De började experimentera
+frikolvsmotor med kuggstång.
+fram en motor, där bränsle-luftblandningen komprimerades
+före antändningen – något som man menade skulle ge bättre verkningsgrad.
+Förutsättningen var dock att motorn arbetade med fyra olika takter, insugningstakt,
+kompressionstakt, arbetstakt och avloppstakt.
+Figur 10-4 4-taktsystemets fyra takter.
+1 Insugningstakten. Bränsle och luft sugs
+in i cylindern av kolvens nedåtgående
+rörelse.
+2 Kompressionstakten. Kolvens uppåtgående rörelse komprimerar bränsle-luftblandningen. Vevaxeln fullbordar ett helt
+varv.
+1
+2
+3
+4
+3 Arbetstakten. Vid kolvens övre vändläge antänds bränsle-luftblandningen och den utvecklade värmeenergin överförs till mekaniskt arbete
+genom att volymen ökar och kolven trycks nedåt.
+4 Avloppstakten. Då kolven åter rör sig upp i cylindern trycks förbränningsresterna, avgaserna, ut genom
+den öppna avloppsventilen. Vevaxeln har nu fullbordat 2 hela varv.
+
+Dieselmotorns utveckling 10.3
+
+NEWCOMENS ÅNGPUMP (1717)
+Ångtekniken hör egentligen inte
+hemma i en beskrivning av
+förbränningsmotorns utveckling, men
+det är ändå viktigt att i sammanhanget
+beskriva hur det hela började.
+Thomas Newcomen (16631729) var den förste som på ett
+praktiskt sätt visade hur värme kan
+omvandlas till nyttigt arbete. År 1717
+var världens första energikris ett
+faktum. Man hade grävt så djupt efter
+kol till Londons växande befolkning
+att det i Dudley Castles kolgruva inte
+fanns kraft nog att pumpa upp
+grundvatten. Inför häpna och bestörta
+myndigheter och allmänhet byggde
+Newcomen sin ångpump och visade
+att man genom att elda och koka
+vatten kunde ersätta många mäns och
+hästars slitsamma arbete. Detta var
+Newcomens ångpump vid Dudley Castle 1717. (Bild: Lyle
+dramatik på gränsen till häxkonst,
+Cummins, Internal Fire)
+men grunden var nu lagd för det
+välstånd som vi idag tar för givet,
+detta att våra förbränningsmotorer gör
+att vi kan förflytta oss och ha kraft över när
+arbetsdagen är slut.
+Newcomens ångpump var i våra
+ögon en skäligen enkel apparat. Ångventilen
+öppnas och ånga skjuter upp kolven till övre
+läget. Därefter stängs ångventilen och
+kallvatten släpps in i cylindern. Ångan
+kondenserar, undertryck uppstår i cylindern
+och atmosfärstrycket skjuter ner kolven.
+Den stora överliggande hävarmen gör att
+pumpkolven lyfts upp sexton gånger i
+minuten, 40 liter vatten i varje slag.
+Verkningsgraden var ca 0,5% men
+arbetsbesparingen enorm.
+Redan 1727 arbetade en licensbyggd
+Newcomenpump i Dannemoragruvan i
+Uppland.
+
+Per Gillbrands modell av Newcomens ångpump.
+(Foto: HP Wallin)
+
+Dieselmotorns utveckling 10.4
+
+Otto och Langen lyckades och blev de första som tillämpade den principen. Ottos
+fyrtaktssystem patenterades 1876 och motortypen kallas ottomotor. Två år senare kunde
+Otto och Langen visa den första fyrtaktsmotorn på Parisutställningen. Gasförbrukningen
+var visserligen något större än för den atmosfäriska motorn, men fyrtaktsmotorn hade
+lugnare gång och den krävde dessutom mindre utrymme. Ottomotorn fick stor spridning
+och ganska snart byggde man motorer med effekter på upp till 10-12 hk.
+Amerikanen Brayton konstruerade den första
+Arbetscylinder
+Spolrum
+tvåtaktsmotorn med kompression. Den första tvåtaktsmotor
+som fick kommersiell betydelse kom år 1879 och hade
+engelsmannen Clerk som upphovsman.
+Clerks motor hade ett separat spolrum som försåg
+motorn med förkomprimerad färskgas. De båda ventilerna
+reglerades av det över- och undertryck som uppstod genom
+kolvarnas rörelse. Tack vare att spolpumpens vevsläng låg
+ca 90° före arbetscylinderns, pressades gasblandningen in i
+arbetscylindern i något komprimerat tillstånd och spolade
+samtidigt bort avgaserna. När spolkolven passerat sin övre
+vändpunkt hade arbetskolven halva slaget kvar. Den stängde
+inloppsventilen och den slutliga komprimeringen erhölls då
+arbetskolven nått sin övre vändpunkt.
+Figur 10-5 Clerks tidiga 2De bägge grundmotorerna kom att förbättras i hög
+taktsmotor.
+grad av den tyska trion Maybach, Daimler och Benz. Alla var –
+eller hade varit – verksamma vid motorfabriken Deutz,
+som grundades av Otto och Langen. Maybachs framsta
+Bränsletank
+bidrag till efterlevnaden var en förgasare för flytande
+bränsle, avsedd att användas på platser som saknade
+Flottör
+gasverk. Maybachs bensinförgasare, som användes första
+gången 1883, var en flottörreglerad munstycksförgasare. I
+princip var den av samma typ som de som används idag.
+Daimler kom med en konstruktion, där den öppna
+lågan ersattes av en tändanordning. Den bestod av ett rör
+som stod i förbindelse med förbränningsrummet. Röret
+Förgasarmunstycke
+upphettades av en gaslåga och var därmed en föregångare
+till tändkulan. Med tändanordningen lyckades Daimler
+Figur 10-6 Maybachs
+höja ottomotorns varvtal från 200 till 800 varv per
+flottörreglerade munstycksförgasare.
+minut och tändningstypen användes av flertalet
+motortillverkare fram till sekelskiftet, då den så
+småningom ersattes av elektrisk tändning. Daimler
+konstruerade också den första fyrtaktsmotorn med
+slutet vevhus, vilket gjorde den särskilt lämplig som
+bilmotor. År 1886 använde Daimler en sådan motor
+– den var på ca 1,5 hk – i sin första bil. Tidigare
+samma år hade han monterat en mindre motor, ca
+0,5 hk, på en tvåhjuling, världens första motorcykel.
+Daimler konstruerade också år 1895 den första Vmotorn.
+Vevhus
+
+Figur 10-7 Daimlers
+tändsystem och slutna vevhus.
+
+Dieselmotorns utveckling 10.5
+
+OTTO OCH LANGEN
+Nicolaus Otto (1832-1891), den moderna
+fyrtaktsmotorns fader, och Eugen Langen
+(1833-1895) byggde världens första serietillverkade förbränningsmotor. En mycket
+annorlunda motor mot fyrtaktsmotorn som
+skulle utvecklas senare.
+Ursprungsmotorn (1863) var en
+”frikolvsmotor” med kuggstång istället för
+vevaxel. Konsten att göra noggranna
+cylindrar och att smörja kolven var så
+primitiv att Otto-Langen inte tordes
+använda en vevstake där kolven trycks
+mot cylinderväggen. ”Fluchtkolben”motorn innehåller en mängd komplicerade
+detaljer och den senare övergången till
+fyrtaktsmotorn innebar stora förenklingar.
+Under åren 1864 till 1882 tillverkades 2649 frikolvsmotorer vilka
+sammanlagt utvecklade 2828 hästkrafter.
+Termiska verkningsgraden för frikolvsmotorn var ca 8% och varvtalet 80 varv
+per minut. Motorerna användes huvudsakligen till att driva vattenpumpar.
+Frikolvsmotorn visar att den
+fyrtaktsmotor som idag har konkurrerat ut
+den mångfald av alternativ som utvecklades i början, inte kom till av en slump.
+Nicolaus Otto hade svårt att acceptera att
+fyrtaktsmotorn endast arbetade vartannat
+varv men var klok nog att inse att fördelen
+var större än nackdelen. Detta är kanske
+det svåraste i allt utvecklingsarbete: ”Att
+inte låta det bästa bli det godas fiende utan
+att inse att det är slutresultatet som räknas,
+även om det åstadkoms med en
+kompromiss!”
+
+Otto och Langens frikolvsmotor från 1867.
+(Bild: Lyle Cummins, Internal Fire)
+
+Per Gillbrands modell av Otto och Langens
+frikolvsmotor.
+(Foto: HP Wallin)
+
+Dieselmotorns utveckling 10.6
+
+Utan att ha en aning om vad Daimler sysslade med
+Kompressions- tändtakt
+Arbetstakt
+arbetade Benz samtidigt med att förbättra tvåtaktsmotorn. Han lyckades förenkla den genom att slopa
+Avgasutlopp
+spolpumpen på Clerks motor och i stället använda
+arbetskolvens baksida till kompressor. Den motorn
+presenterade Benz år 1884. Den hade en liggande
+Lufttillförsel
+cylinder, tvångsstyrda ventiler och gav vid 800 varv
+per minut en effekt av 0,75 hk. I motsats till Daimler
+gick Benz redan från början in för ett elektriskt tändsystem på sin motor. Detta var baserat på en vibrator,
+som fick ström från en remdriven generator. Benz
+kunde samma år som Daimler, 1886, köra en egen
+Figur 10-8 Benz förbättrade 2trehjulig bil. Benz motor utvecklades några år senare av
+taktsmotor.
+den engelska firman Day & Son till den ventilfria typ
+med slutet vevhus, som i princip består än idag.
+Under 1890-talet, som präglades av ett intensivt utvecklingsarbete, var det många
+industrier i Europa som tog upp motor- och biltillverkning på sitt program. Den viktigaste nyheten då det gällde motorkonstruktioner stod tysken Rudolf Diesel för. Till
+skillnad från tidigare konstruktörer var han en utpräglad teoretiker och i en avhandling
+år 1893 beskrev han hur man skulle uppnå största möjliga verkningsgrad hos en motor.
+Arbetsgången hos Diesels motor var i flera avseenden lika ottomotorns, men på några
+väsentliga punkter var den helt annorlunda.
+1. Under 4-taktsmotorns första takt suger kolven in ren luft i cylindern.
+2. Luften komprimeras under andra takten till så högt tryck att den värme som alstras
+överstiger bränslets antändningstemperatur. Diesel ansåg att tryck på upp till 90 atö
+(atmosfärer övertryck) inte var orealistiska.
+3. När kolven når sin övre vändpunkt (övre dödläget ÖD) förs bränslet in i cylindern
+och antänds av den höga temperaturen. Förloppet är anpassat så att förbränningen i
+möjligaste mån sker vid konstant tryck, d.v.s. så att gasens expansion motsvarar
+volymökningen genom kolvens rörelse nedåt. Temperaturstegringen motverkas
+också av den avkylning expansionen medför. Bränslet förbränns härigenom effektivt
+och energin överförs till kolven som via vevstaken överför energin till motorns
+vevaxel.
+4. Fjärde takten används, som hos förgasarmotorn, till att blåsa ut de förbrända
+gaserna.
+Insugning
+
+Figur 10-9
+Diesels
+modifierade 4taktsprocess.
+Under de fyra
+takterna roterar
+vevstaken två
+hela varv.
+Arbetet utvinns
+under den tredje
+takten.
+
+1
+
+Kompression
+
+2
+
+Utblåsning
+
+Antändning
+
+3
+
+4
+
+Dieselmotorns utveckling 10.7
+
+”BRAYTON AND HIS READY MOTOR”
+George Brayton (1838-1892) får representera en av de många uppfinnare
+som inte fått se det fulla resultatet av
+sitt arbete under sin livstid.
+Brayton tyckte inte om ångmaskiner, de tog för lång tid att starta.
+Han tyckte inte om varmluftsmotorer
+typ Stirling, de var för stora och
+tunga. Framför allt gillade han inte
+vad man då kallade ”explosionsmotorer”, typ ottomotorn. Brayton
+ansåg att den hastiga förbränningen
+och tryckökningen i fyrtaktsmotorn
+begränsade dess tillförlitlighet och
+möjlighet till vidareutveckling.
+I Braytons motor sker ingen
+Per Gillbrands modell av Braytonmotorn.
+nämnvärd tryckökning. Kraften erhålls
+(Foto: HP Wallin)
+genom att förbränningen i arbetscylindern sker kontinuerligt under hela
+arbetsslaget. Luft-bränsleblandningen
+expanderar och driver arbetskolven med
+ett relativt konstant tryck. Förutom
+arbetskolven har motorn en andra kolv,
+vars enda uppgift är att pumpa luften
+genom anordningen för bränsledosering
+och in i arbetscylindern. De båda
+kolvarna arbetar via den underliggande
+vipparmen och denna i sin tur via vevstaken kopplad till vevaxeln.
+Den avbildade Braytonmotorn
+(1876) tillverkades i ca 15000 exemplar
+och hade följande data:
+Pumpcylinder diameter: 203 mm
+slaglängd: 150 mm
+Arbetscylinder diameter: 203 mm
+slaglängd: 305 mm
+Varvtal: 200 varv per minut
+Effekt: 9,5 hästkrafter
+Termisk verkningsgrad: 4,75%
+Ritning på Braytonmotorn från Scientific American 1876.
+Vad Brayton inte visste var att hans
+(Bild: Lyle Cummins, Internal Fire)
+uppfinning, den så kallade Braytonarbetscykeln, lade grunden för alla dagens kommersiella och militära flygplansmotorer,
+jetmotorn! Braytons Readymotor är helt enkelt en gasturbin. Brayton hade dock inte
+tillgång till roterande kompressorhjul eller avgasturbin utan använde istället kolvar, men
+i princip drivs alla våra jetflygplan med Braytonmotorn.
+
+Dieselmotorns utveckling 10.8
+
+Åren 1893-1897 arbetade Diesel med att omsätta sina teorier i praktiken, men med den
+tidens teknik visade det sig vara mycket svårt att tillverka en motor som fungerade
+tillfredsställande. Hans avsikt att använda kolpulver som drivmedel fick överges till
+förmån för flytande bränsle och vidare fick kompressionstrycket sänkas långt under de
+beräknade 90 atö. Den första dieselmotorn som var praktiskt användbar tillverkades år
+1897. Den var encylindrig och gick på råolja som sprutades in med tryckluft. Inget
+hindrade att det arbetsförloppet även kunde användas för tvåtaktsmotorer och två år
+senare, 1899, konstruerades den första tvåtaktsdieselmotorn.
+Under slutet av 1800-talet var bensin ett relativt dyrt motorbränsle. Därför
+försökte flera konstruktörer använda billigare
+Yttre värmekälla
+bränslen, t.ex. fotogen och brännolja. Svårigheten
+Tändkula
+med dessa bränslen låg i att de inte förångas lika
+Bränslestråle
+lätt som bensin. Engelsmannen Akroyd Stuart
+presenterade 1890 en motor där man istället
+sprutade in bränslet i finfördelat skick i cylindern
+under kompressionstakten. Bränslestrålen var riktad
+så att den träffade en del av kompressionsrummet
+som var okylt och därför hade hög temperatur. Vid
+Kolv
+start uppvärmdes den delen, en kula, av en yttre
+värmekälla. Kulan hade så hög temperatur att det
+bränsle som användes – fotogen eller brännolja –
+antändes. Därav namnet tändkulemotor. Till
+skillnad från dieselmotorn arbetar den med ett
+relativt lågt kompressionstryck. Tändkulemotorn är
+Figur 10-10 Stuarts tändsystem –
+av tvåtaktstyp, och används numera mest på båtar.
+Tändkulan.
+Under 1890-talet började biltillverkningen få
+allt större omfattning, speciellt i Frankrike, där det
+byggdes flera bilfabriker. Den första fabrikstillverkade svenska bilen konstruerades av
+Gustav Eriksson och tillverkades år 1897 vid Vagnsfabriksaktiebolaget i Södertälje
+(VABIS). Det var samma år som den första dieselmotorn tillverkades. Vabisbilen hade
+en 2-cylindrig fotogenmotor som man startade genom att upphetta ett tändrör av eldfast
+tegel med blåslampa. Redan efter ett år ersattes den motorn av en 15 hk 2-cylindrig Vmotor för bensindrift. Denna motor, konstruerad av Gustav Eriksson, satt även i den
+första lastbil som Vabis tillverkade år 1903.
+Tack vare forskning, förbättrad tillverkningsteknik, nya material och bättre
+bränslen har förgasarmotorn utvecklats till den driftsäkra motor den är idag. Även
+Bränsleinsprutare
+Dieselmotorn har förbättrats avsevärt sedan Rudolf Diesel
+Tändstift
+fick sin första motor att fungera. Då det gäller utvecklingen av Dieselmotorer för bilar är vi inne på ett komplicerat
+kapitel. Med sekelskiftets teknik kunde man nämligen
+bara klara tillverkningen av tunga, lågvarviga motorer,
+avsedda för stationärt bruk. Senare användes dieslarna i
+Kolv
+fartyg och järnvägslok och gav då största effekt vid ett
+varvtal på 200-1000 varv per minut. Då man inte lyckades
+klara förbränningsförloppet vid högre varvtal, som t.ex.
+2000 varv per minut, kunde man inte få fram en Dieselmotor som var lämplig för bilar. Svensken Jonas
+Figur 10-11 Hesselmans
+Hesselman lyckades dock i början av 1930-talet konstruera
+system för direktinsprutning
+en råoljemotor med direktinsprutning och elektrisk tändning,
+med elektronisk tändning.
+som kunde användas som bilmotor. Att den utrustades med
+
+Dieselmotorns utveckling 10.9
+
+elektrisk tändning berodde på att kompressionsförhållandet i Hesselmans motor, ca 6:1,
+inte var tillräckligt för att bränslet skulle självantända. Hesselmanmotorn räknas till
+gruppen lågtrycksmotorer.
+Nästa steg i utvecklingen mot dagens Dieselmotorer var
+motorer med uppdelat förbränningsrum, som gjorde det möjligt att
+förbränna bränslet etappvis. Bränslet sprutades först in i ett mindre Förkammare
+rum, förkammaren, där det antänds av kompressionsvärmen. På
+Tändstift
+grund av syrebrist förbränns det dock inte helt. Den höjda temperaturen gör att det oförbrända bränslet förgasas. Från förkammaren
+trycks det ut i cylindern, där den större tillgången på syre åstadKolv
+kommer slutlig förbränning. Bränsleantändningen underlättas av
+att förkammaren inte kyls lika mycket som det övriga förbränningsrummet. När en kall motor startas måste bränslets tändning ske
+med hjälp av elektrisk glödtråd. Så snart förkammaren nått
+ordinarie arbetstemperatur kopplas den elektriska uppvärmningen
+Figur 10-12 Cylinder med
+bort. Förkammarmotorn har 25-30 % lägre bränsleförbrukning
+förkammarförbränning.
+än en bensinmotor med motsvarande effekt.
+Förkammarmotorn var bara en etapp i en lång utvecklingsInsprutare
+kedja. Forskarna fortsatte att lägga ned ett digert experimentarbete för att nå fram till den ”äkta” Dieselmotorn med direkt
+bränsleinsprutning i cylindern. Först då skulle man få den
+Ringformat
+förbränningsrum
+bränslebesparing som Dieselprincipen kunde erbjuda. ScaniaVabis lanserade 1949 en motor med direktinsprutning av
+bränslet. Det betydde att man kunde sänka bränsleförbrukningen med omkring 20 % jämfört med förkammarmotorn.
+Direktinsprutningsmotorn, D-dieseln, hade förbränningsrummet
+Kolv
+till största delen förlagt till en ringformad försänkning i kolvtoppen, vilket betydde att bränslet blandades effektivare med
+den komprimerade luften vid insprutningen. Motorns största
+Figur 10-13 Scania Vabis
+effekt låg vid ett varvtal på ca 2000 varv per minut.
+system för direktinsprutKompressionsförhållandet var ca 16:1. Motorn, som var av
+ning och självantändning.
+fyrtaktstyp, räknas till gruppen högtrycksmotorer. De fyra
+takterna är samma som Diesel beskrev 1893 nämligen:
+1. Insugning av luft.
+2. Kompression av luften till högt tryck och därmed hög temperatur.
+3. Bränslet insprutas finfördelat och antänds av den varma luften varvid
+bränsleluftblandningen expanderar.
+4. Utblåsning av förbränningsgaserna.
+Figur 10-14 4-taktsystemet från 1949 i
+Scania Vabis
+tappning. Bränsleinsprutningen med
+följande självantändning sker i den tredje
+takten.
+
+Insugning
+
+Kompression
+
+Insprutning
+och tändning
+
+Utblåsning
+
+Dieselmotorns utveckling 10.10
+
+Turbin
+Istället för att låta kolven suga in
+luft i cylindern under första takten
+kan en kompressor tillföra motorn
+mer luft med högre tryck än
+atmosfärstrycket. Därmed kan
+motsvarande mera bränsle tillföras,
+Mekanisk
+man får en avsevärd effektökning
+kompressor
+utan att öka cylindervolymen.
+Metoden kallas överladdning.
+Figur 10-15 Två varianter av kompressorer för överladdKompressorn drivs antingen av
+ning av motorer, mekanisk kompressor och turbin.
+motorns vevaxel eller av en turbin,
+driven av motorns avgaser.
+Jämsides med bilmotorerna har det också utvecklats motorer för andra ändamål,
+t.ex. marinmotorer, flygplansmotorer, motorer för motorcyklar och vägmaskiner etc.
+Alla har det gemensamt med bilmotorn att de konstruerats efter någon av de principer
+som vi beskrivit. Frånsett användningsområde kan motorerna indelas på följande sätt:
+1. Det använda bränslet; bensin, gas, fotogen, råolja, dieselbrännolja
+2. Det sätt på vilket bränslet blandas med luften och antänds; förgasar-, tändkule- och
+Dieselmotor.
+3. Antalet slag eller takter som fullbordar arbetsförloppet; tvåtakt och fyrtakt.
+4. Antalet cylindrar.
+5. Cylindrarnas inbördes placering.
+6. Arbetstrycket; låg- mellan- och högtrycksmotorer.
+7. Det sätt på vilket luften införs i cylindern; utan övertryck, sugmotor, eller med
+övertryck, överladdad motor.
+
+En vanlig indelning är också motorns slagvolym, dvs. volymen mellan kolvens översta
+och nedersta läge, multiplicerat med antalet cylindrar. Denna volym anges vanligen i
+cm3, in3 eller liter (dm3). Kompressionsförhållandet anger förhållandet mellan cylindervolymen ovanför kolven i dess översta och nedersta läge. Om t.ex. cylindern har en
+volym på 1000 cm3 då kolven är i sitt nedre läge och 100 cm3 vid kolvens övre läge är
+kompressionsförhållandet 10:1. På senare år har det konstruerats motorer som inte är av
+kolvtyp, men av olika anledningar har de inte använts i någon större omfattning. Den
+tyske konstruktören Wankel har konstruerat en vridkolvmotor som också bär hans
+namn, Wankelmotorn. Den har mycket få rörliga delar och betydligt mindre
+dimensioner än motsvarande ottomotor.
+En annan motortyp som provas av framförallt vissa tyngre fordonstillverkare är
+turbinmotorn. I likhet med Wankelmotorn har den dock inte hunnit så långt i
+utvecklingen med tanke på att den kan anses vara ett ekonomiskt alternativ till motorer
+av traditionell typ.
+
+Dieselmotorns utveckling 10.11
+
+ROLLS ROYCE MERLIN FLYGPLANSMOTOR
+Rolls Royce Merlin-motor visar
+på en mycket viktig sak inom all
+industriell utveckling: ”Den
+dagen då en ny bättre teknik har
+utvecklats dör det gamla!”.
+Oavsett investeringar och
+tradition kan man inte överleva
+om man inte ansluter sig till den
+nya tekniken. Merlinmotorn, den
+sista av de stora kolvmotorerna,
+dog praktiskt taget över en natt
+då jetmotorn kom. Merlinmotorn
+är en värdig representant för vad
+som kan åstadkommas när endast
+det bästa är gott nog. Man kan
+säga att Merlinmotorn var den
+motor som vann andra
+världskriget, den satt i flygplan
+som Spitfire, Mustang P51,
+Lancaster-bombare, Mosquito,
+Wellington och i stridsvagnar typ
+Centurion. Ingen annan motor
+har satt så många
+hastighetsrekord till lands, till
+sjöss och i luften.
+Motorn är en V12-motor
+byggd i aluminium på 22-27
+Per Gillbrand med Rolls Royce Merlinmotor.
+liters slagvolym och vikten är
+(Foto: HP Wallin)
+enbart ca 600 kg. Den är en
+tvåstegscentrifugalkompressor
+och kan uppnå en effekt på 2200
+hästkrafter vid varvtal 2500 varv
+per minut. Under åren 1939 till
+1950 byggdes över 100.000
+Merlinmotorer, men sedan kom
+jetmotorn. Jetmotorns
+överlägsenhet inom flyget kan
+kanske bäst beskrivas med att en
+jumbojet, Boeing 747, vid takeoff utvecklar mer effekt än alla de
+flygplan som var i luften
+samtidigt under ”Battle of
+Britain”. Dock är ljudet från den
+gamla kolvmotorn oslagbart!
+Per Gillbrands modell av Rolls Royce Merlinmotor.
+(Foto: HP Wallin)
+
+Dieselmotorns utveckling 10.12
+
+10.3 Den moderna Dieselmotorn
+Dieselmotorn såsom den gestaltas i början på 2000-talet är i huvudsak identisk med den
+Dieselmotor med direktinsprutning som utvecklades vid SCANIA VABIS i slutet av
+1940-talet. Utvecklingen har dock ingalunda stått still utan löpt vidare mot en allt längre
+gående fulländning av motorns delsystem.
+I princip är en förbränningsmotor uppbyggd kring fyra grundkomponenter
+förbränningskammaren, dvs. cylindern, vari förbränningscykeln påtvingar kolven en
+fram och återgående rörelse, vevmekanismen vilken överför kolvens rörelse till en
+rotation i motorns utgående axel vevaxeln. I praktiken behövs behöver motorn förses
+med en mängd andra delsystem för att kunna arbeta effektivt och driftsäkert. I figur 1016 visas en principiell skiss av en modern Dieselmotor och dess delsystem.
+Insprutningspump
+
+Ventilmekanism
+Insprutare
+
+Överladdningskompressor
+
+Bränslefilter
+Termostat
+
+Kompressor
+
+Cylinderfoder
+Vevstake
+Kolv
+
+Vevaxel
+
+Svänghjul
+Kamaxel
+
+Oljerenare
+
+Kugghjulstransmission
+
+Oljepump
+
+Växelströmsgenerator
+
+Svängningsdämpare
+
+Figur 10-16 En modern Dieselmotor består av ett stort antal delsystem som tillsammans skapar en motor
+som arbetar så effektivt som möjligt.
+
+Dieselmotorn har sedan första hälften av 1900-talet varit uppbyggd kring tre stycken
+basblock – motorblocket, – vevhuset och – cylinderhuvudet som utgör fundament för
+dess olika delsystem, se figur 10-17. Motorblocket innehåller cylindrarna med kolvarna
+som i sin tur via vevstakarna är kopplade till den i vevhuset inneslutna vevaxeln.
+
+Dieselmotorns utveckling 10.13
+
+Cylinderhuvudet slutligen innehåller bränsleinsprutningssystemet med insprutare och
+ventiler för lufttillförsel och avgasutlopp.
+Cylinderhuvud
+Motorblock
+
+Figur 10-17 Dieselmotorn är liksom
+flertalet förbränningsmotorer uppbyggd
+kring motorblocket, vevhuset och
+cylinderhuvudet.
+
+Vevhus
+
+10.3.1 Cylindern
+En lastbils Dieselmotor innehåller typiskt 6, 8 eller 12 cylindrar monterade i
+motorblocket antingen i rad eller i V-form,se figur 10-18.
+
+Cylinder
+
+Cylinder
+
+Figur 10-18 Cylindrarna kan i motorblocket monteras i rad, rak 6:a etc, eller i V-form, V-6:a etc. Till
+vänster visas en rak motor och till höger en V-motor.
+
+Cylindrarna är de kammare där omvandlingen av kemisk energi till arbete sker genom
+förbränningsprocessen. Det speciella för Dieselprocessen är att förbränningen av det
+insprutade bränslet startas genom självantändning. Självantändningen förutsätter ett
+mycket högt cylindertryck och ställer därför tillsammans med höga temperaturer och det
+mekaniska slitaget från kolvarnas rörelse särskilda krav på cylinderns utförande. Ett
+vanligt cylindermaterial är gjutjärn som specialbehandlats för att få en tät struktur och
+en inneryta med lång livslängd.
+Ytterligare en konsekvens av det höga cylindertrycket i kombination med den
+hastiga förbränningen är att Dieselmotorn alstrar betydligt mer buller än den vanliga
+
+Dieselmotorns utveckling 10.14
+
+bensinmotorn, Ottomotorn. Stor möda har därför lagts ned på att finna åtgärder som
+minskar Dieselmotorns bulleralstring.
+Cylindarna kan antingen borras direkt i motorblocket eller tillverkas separat och
+därefter monteras i blocket som foder, cylinderfoder. Två grundtyper av cylinderfoder
+förekommer våta och torra. De torra fodren pressas in i de i motorblocket uppborrade
+cylinderloppen och kyls indirekt av det direkt vattenkylda motorblocket. De våta fodren
+å andra sidan monteras i blocket endast i sina övre och undre ändar och kan därför kylas
+direkt av den omströmmande kylvätskan.
+10.3.2 Kolven, vevstaken och vevaxeln
+Den kemiska energi som i förbränningsutrymmet via förbränningsprocessen överförs till
+värme och därmed en ökad gasvolym, överförs med hjälp av en kolv och en vevstake till
+en rotation i vevaxeln. Förbränningsrummet, beläget mellan kolvtoppen, cylindern och
+cylinderlocket, har genom en ringformad fördjupning i kolvtoppen utformats så att
+bränslet och luften blandas så väl som möjligt, se figur 10-19.
+Förbränningsrum
+
+Kolvringar
+Kompressionsringar
+
+Figur 10-19
+Förbränningsutrymmet
+utformas som en ringformad
+fördjupning i kolvtoppen.
+Kolvringarnas uppgift är att
+förhindra gasläckage ut från
+förbränningsrummet och
+oljeläckage in från vevhuset.
+
+Skrapringar
+
+Förstoring
+
+Liksom cylindern utsätts kolven för höga temperaturer och stora mekaniska
+påfrestningar. Dessutom måste kolven ha låg massa och kunna löpa så smidigt som
+möjligt i cylinderloppet utan friktion och onödigt slitage. Kolven utformas och tillverkas
+därför med höga toleranser i material med låg densitet, god värmeledningsförmåga och
+låg temperaturutvidgning.
+Eftersom förbränningen i Dieselprocessen sker under mycket högt tryck ställs å
+ena sidan höga krav på att kolvsidorna tätar mot cylinderloppet. Å andra sidan måste
+kolven kunna löpa så lätt som möjligt i cylindern. För att jämka samman dessa
+motstridiga krav förses kolven med kolvringar, se figur 10-19. En typ av ringar,
+kompressionsringarna, skall fjädra mot cylinderloppet och därmed förhindra gasläckage
+från förbränningsrummet. En andra typ, skrapringarna, skall förhindra olja att tränga
+upp från det intilliggande vevhuset.
+Kolvens fram och återgående, linjära (längs en linje), rörelse överförs med en
+vevmekanism till en cirkulär rotationsrörelse i motorns utgående axel. Vevmekanismen,
+se figur 10.20 består av en vevstake och en för alla kolvar gemensam vevaxel.
+Vevstaken som utsätts för stora dynamiska (i tiden varierande) krafter måste göras såväl
+lätt som stark. Varje vevstake kontrolleras noggrant vid tillverkningen så att defekter, i
+form av sprickor, blåsor och slaggbildningar, som kan leda till utmattningshaverier
+undviks. Genom att göra den ände av vevstaken som kopplas till kolven så liten som
+möjligt kan den rörliga massan och därmed den energi som förbrukas för att accelerera
+och bromsa in denna massa göras så liten som möjligt. Det ställs även höga toleranser
+
+Dieselmotorns utveckling 10.15
+
+på vevstakarnas massa och massfördelning så att vibrationer på grund av obalanser kan
+undvikas.
+Vevstake
+Vevarm
+
+Vevtapp
+
+Figur 10-20 Kolvens linjära
+rörelse överförs med en
+vevmekanism till en roterande
+rörelse i utgående axel. Från
+vänster vevstake samt vevaxel
+med vevtappar.
+
+Vevaxel
+
+Motvikt
+
+Vevstakens övre ände, den s k lilländen, kopplas till kolven i den s k kolvtappen medan
+den undre, storänden, monteras på vevaxeln. Omformningen av kolvens linjära rörelse
+till en rotation av veaxeln möjliggörs genom att montera vevstakens storände på en
+excentriskt placerad vevtapp, se figur 10-20. Vevtapparna kopplas till vevaxeln med
+vevarmar som även förses med motvikter så att obalansvibrationer undviks.
+Till vevaxelns båda ändar monteras dels ett svänghjul och dels en
+torsionsvängningsdämpare. Svänghjulets funktion är att åstadkomma en jämnare gång
+genom att öka vevaxelns rotationströghet. Avsikten med torsionssvängningsdämparen
+är att minska storleken av de torsionssvängningar, dvs. vridsvängningar, som orsakas av
+det tidsvarierande vridande moment som vevaxeln utsätts för.
+Den del av motorn där vevaxeln är belägen kallas vevhus och sitter normalt
+under motorblocket. Vevhuset är delvis fyllt av olja som dels smörjer dels kyler
+vevmekanismerna. För att hålla vevaxeln på plats i vevhuset lagras den i ramlager vars
+antal och placering är av stor betydelse för att undvika slitage och motorvibrationer.
+10.3.3 Cylinderhuvudet – ventilmekanismen
+Cylinderhuvudet har i huvudsak två uppgifter, det skall dels vara cylinderns avslutande
+lock och dels vara en plattform för montage av ventiler och
+bränsleinsprutningssystemet, se figur 10-21. Ventilernas uppgift är att öppna och stänga
+tillförseln av luft och avloppet av avgaser till och från förbränningsrummet.
+Vipparm
+Stötstång
+Ventil
+
+Figur 10-21 Cylinderhuvudet
+som fungerar som cylinderlock
+och plattform för
+insprutningssystem och ventiler
+sitter på motorblockets
+ovansida.
+Kolv
+
+Kylvätska
+
+De ventilmekanismer som öppnar och stänger ventilerna består av fjäderbelastade
+länkarmsystem som mekaniskt styrs av en s k kamaxel. Ventilmekanismen, se figur 1022,är i princip uppbyggd av själva ventilen monterad i en ventilfjäder, en vipparm, en
+
+Dieselmotorns utveckling 10.16
+
+stötstång och en ventillyftare som kopplas till kamaxeln. Kamaxelns funktion är att ge
+ventillyftaren en med vevaxeln synkroniserad fram och återgående rörelse längs
+stötstångens axelriktning. Detta åstadkoms med hjälp av en på axeln monterad kam.
+Vipparm
+
+Ventilfjäder
+
+Ventil
+Stötstång
+
+Kolv
+
+Figur 10-22 Ventilmekanismen som
+öppnar och stänger in- och
+utloppsventilerna enligt ett visst
+schema styrs av kammar som
+monterats på en kamaxel.
+
+Ventillyftare
+Kam
+
+Kamaxel
+
+En jämn och vibrationsfri gång kräver att cylindrarna arbetar med en viss inbördes
+tidsförskjutning. Detta innebär att ventilerna måste öppna och stänga efter ett noggrant
+styrt schema. I praktiken åstadkoms detta genom att kammarna monteras på kamaxeln i
+olika inbördes vinkellägen. Vidare måste kamaxelns rotation synkroniseras med
+vevaxelns. I fyrtaktsmotorer sker förbränningen i en cylinder endast vartannat
+vevaxelvarv. Detta innebär att kamaxelns varvtal måste vara exakt hälften av vevaxelns
+varvtal. Denna synkronisering åstadkoms genom att driva kamaxeln från vevaxeln med
+en kuggväxel, den s k transmissionen, med utväxlingen 2:1, dvs. då vevarmen roterar
+två varv roterar kamaxeln ett.
+Kamaxeln lagras ofta i motorblocket strax ovanför vevaxeln men under
+cylindrarna. Ett alternativ till detta är den s k överliggande kamaxeln som är placerad
+ovanför cylinderhuvudet. I detta system är kammarna direkt kopplade till ventilerna
+varigenom länkarmsystemet undviks.
+10.3.4 Bränslesystemet
+En viktig del av en Dieselmotor är bränslesystemet som skall se till att cylindrarna vid
+rätt tidpunkt förses med bränsle under högt tryck i rätt mängd. Bränslesystemet består
+av ett antal komponenter som var och en har en viktig funktion, se figur 10-23. Från
+bränsletanken, där bränslet lagras, sugs bränslet med en matarpump genom ett antal
+
+Dieselmotorns utveckling 10.17
+
+reningsfilter till insprutningspumpen. Insprutningspumpen levererar vid bestämda tider,
+under högt tryck en viss mängd bränsle till var och en av cylindrarna. Själva
+insprutningen i cylindrarna ombesörjs av insprutare vars munstycke innehåller små hål.
+Då bränslet under högt tryck passerar munstyckets hål bildas i förbränningsrummet en
+bränsledimma som efter blandning med den luft som tillförts genom inloppsventilen
+självantänds och förbränns.
+Figur 10-23 Bränslesystemet
+skall vid exakt rätt tidpunkt och
+under högt tryck förse
+cylindrarna med bränsle i en väl
+avvägd mängd.
+1. Bränsletank.
+2. Matarpump med filter.
+3. Huvudfilter.
+4. Insprutningspump.
+5. Regulator.
+6. Rökgasbegränsare.
+7. Insprutare.
+
+10.3.5 Överladdningsaggregatet
+Om den luft som blandas med bränslet i cylindern tillförs under högt tryck kan den
+tillförda mängden luft och därmed motorns effekt ökas väsentligt. Motorer med denna
+möjlighet sägs vara överladdade. I turbomotorer sker överladdningen med hjälp av ett
+kompressoraggregat i form av en enkel enstegsturbin, se figur 10-15. Turbinen drivs av
+avgaserna som leds förbi dess utloppsida och tar därmed tillvara på en del av den energi
+som finns i avgasflödet. Rotationen i turbinhjulet på inloppssidan används till att suga
+in, komprimera och trycka luft från luftfiltret genom inloppsventilerna in till
+cylindrarnas förbränningsrum.
+10.3.6 Motorns effekt
+Den mekaniska effekt Dieselmotorn levererar bestäms av den utgående axelns varvtal
+och den mängd bränsle som förbränns vid varje arbetstakt. För att få ut maximal effekt
+vid ett visst varvtal gäller det således att förbränna så mycket bränsle som möjligt. Detta
+kan påverkas genom att dels tillföra mer bränsle och dels förbränna en så stor andel som
+möjligt av det tillförda bränslet. Den tillförda bränslemängden kan regleras av föraren
+med gasreglaget medan andelen oförbrännt bränsle kan minskas genom att öka
+syremängden i förbränningsrummet. Detta är således förklaringen till att ett
+överladdningsaggegat som höjer den tillförda luftmängden kan öka motorns effekt. För
+att fungera pålitligt måste Dieselmotorns varvtal hållas inom vissa gränser. I praktiken
+regleras därför bränsletillförseln av en regulator som styrs av gasreglagets läge, motorns
+belastning, dess varvtal och mängden tillförd luft.
+10.3.7 Motorns övriga hjälpsystem
+Utöver de delsystem som beskrivits ovan innehåller Dieselmotorn andra delsystem
+såsom kylsystem, luftfilter, smörjoljesystem, startmotor och generator. Motorn kyls
+vanligen av ett vätskeburet kylsystem drivet av en pump som för kylvätskan ut till
+
+Dieselmotorns utveckling 10.18
+
+motorns olika delar i ett nätverk av kanaler. Speciellt viktigt är det att kyla cylindrarna
+och cylinderhuvudena som utsätts för mycket höga temperaturer. Smörjoljesystemet
+skall förse de olika rörliga delarna av motorns med tillräcklig smörjning. Med en
+oljepump, t.ex. en kugghjulspump, cirkuleras oljan i kanaler som leder ut till de olika
+smörjställena. Genom att kontinuerligt rena oljan från de ofrånkomliga
+slitageprodukterna kan motorns livslängd höjas väsentligt.
+
+

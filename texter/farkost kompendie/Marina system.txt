@@ -1,0 +1,629 @@
+Marina system 3.1
+
+3. Marina system
+av
+Anders Rosén
+KTH Farkost och flyg
+
+3.1 Introduktion
+Med begreppet marina system menas tekniska system med marina funktioner. Varje
+fartyg byggs för en eller flera specifika funktioner under ett antal bivillkor. Funktionerna
+och bivillkoren skapar mycket olika konstruktions- och driftsförutsättningar för olika
+fartygstyper. Här ges ett axplock av ett antal marina system, de flesta med anknytning till
+Sverige, och en diskussion om deras utformning i förhållande till respektive funktion.
+Figur 3-1 är en segelkatamaran, en
+Tornado som byggs av företaget Marströms
+i Västervik. Tornadons funktion är att segla
+snabbt och vinna seglingstävlingar. Ett av
+bivillkoren som påverkar utformningen är
+att den ska kunna segla snabb i alla
+riktningar mot vinden. Om den skulle
+optimeras mot funktionen att endast nå
+maximala toppfarter på en enda bog skulle
+den utformas på ett annat sätt. Andra
+bivillkor ges av ett 34-sidigt dokument där
+Internationella Tornadoförbundet i detalj
+specificerar Tornadoklassen, och som gör
+Figur 3-1
+att olika Tornados kan tävla mot varandra
+på samma tekniska villkor.
+Figur 3-2 är supertankern Nanny som
+byggdes i Uddevalla 1978. Med sin längd
+på 365 m är hon det största fartyg som
+någonsin byggts i Sverige och en av de
+största mobila konstruktioner som någonsin
+byggts i världen. Funktionen är att
+transportera råolja. Olja är en relativt billig
+produkt i förhållande till sin vikt. Därför
+Figur 3-2
+byggs tankfartyg med fylliga former och
+låga farter. Fartyg med dyrare last, till
+exempel människor som resonerar att tid är
+pengar, utformas ofta för betydligt högre
+hastigheter. Snabbfärjorna till Gotland har
+till exempel mer än dubbelt så hög
+marschfart som tankfartyg.
+Passagerarna på finlandsfärjorna
+(Figur 3-3) har inte fullt så bråttom. Här är
+en av funktionerna partykryssningar, vilket
+gör att fartyget är försett med barer,
+diskotek, biografer, mer eller mindre
+Figur 3-3
+
+Marina system 3.2
+
+exklusiva hytter, swimmingpools, mm. De här fartygen har dock flera funktioner, till
+exempel utför de ett betydande transportarbete genom att ha stora lastdäck för trailers och
+personbilar. Fartygstypen kallas RO-PAX, där PAX står för passagerare och RO kommer
+från Roll-on/Roll-off (RO/RO) vilket syftar på sättet som lasten hanteras.
+I Figur 3-3 syns även en havskajak. Här är funktionen motion och rekreation i
+havsbanden. Kajaken har därför täta lastutrymmen och god sjövärdighet.
+Figur 3-4 är ett av Svenska sjöräddningssällskapets fartyg med primär funktion
+att undsätta människor i sjönöd och rädda
+liv. I sjöräddningsoperationer kan det vara
+helt avgörande att man snabbt kommer till
+undsättning. Skrovet är därför utformat för
+att kunna plana, det vill säga i hög fart röra
+sig ovanpå vattnet istället för i vattnet som
+fartygen i Figur 3-2 och 3-3.
+Figur 3-5 är det svenska örlogsfartyget Visby som är byggt av Kockums i
+Karlskrona. Fartyget är byggt i kolfiber och
+Figur 3-4
+utformat för en mängd olika funktioner, till
+exempel attack mot ubåtar och andra
+ytfartyg, minläggning och minröjning,
+luftförsvar, mm. En delfunktion är att
+fartyget är byggt med så kallad stealthteknik (smygteknik), vilket innebär att det
+ska synas så lite som möjligt till exempel på
+radar. Alla dessa funktioner och tillämpning
+av nya material mm har gjort att
+utvecklingsarbetet inbegripit en mängd
+forskning bland annat på KTH Marina
+Figur 3-5
+system.
+Figur 3-6 är ett annat marint system
+som utvecklats på KTH. I kursen 4E1402
+Marin design utvecklade studenter 2004
+subskimmern Infernus, som är en hybridfarkost som både fungerar som snabbgående
+ytfartyg och ubåt.
+Figur 3-7 är det svensk-norska
+rederiet Wallenius-Wilhelmsens konceptfartyg E/S Orcelle. Detta är en pentamaran,
+med ett huvudskrov och fyra små sidoskrov.
+Funktionen är som för alla WalleniusFigur 3-6
+Wilhelmsens fartyg att transportera bilar.
+E/S står för Environmentally Sound
+Operations. Fartyget är utrustat med ett
+flertal miljövänliga framdrivningssystem,
+till exempel segel, solceller och fenor som
+kan ta vara på vågenergi, och är en idé om
+hur ett framtida fartyg kan tänkas se ut.
+Figur 3-7
+
+Marina system 3.3
+
+Förutom fartyg finns en mängd andra
+sorters marintekniska system, som till
+exempel oljeplattformen i Figur 3-8. Ett
+annat exempel på detta är sjökranen
+Lodbrok i Figur 3-9. Pontonen som bär
+kranen är utformad för att kunna bära
+kranlyft på upp till 260 ton. Den 50 år
+gamla kranen har bland annat deltagit i
+bärgandet av regalskeppet Vasa samt vid
+olika brobyggen. Mest känd är den dock
+förmodligen för påseglingen av Essingeleden i Stockholm hösten 2005.
+I följande två avsnitt ges exempel på
+och en kort introduktion till några
+problemområden
+inom
+ämnesområdet
+marina system – hydrostatik och stabilitet
+samt fartygs framdrivningsmotstånd. Denna
+lilla skrift avslutas sedan med en kort
+beskrivning av naval architecture eller
+skeppsbyggnad som det heter på svenska
+om det handlar om fartyg, det vill säga
+designprocessen för fartyg och andra marina
+system.
+
+Figur 3-8
+
+Figur 3-9
+
+3.2 Hydrostatik och stabilitet
+Trots de stora olikheterna mellan olika
+marina system som illustrerats ovan, är
+många grundläggande tekniska principer
+desamma. Den mest fundamentala principen
+är väl den som på 200-talet fKr
+formulerades av den grekiska matematikern
+Arkimedes, enligt myten då han låg i
+badkaret.
+Den första mänskliga farkosten var
+förmodligen en stock som man satt gränsle
+på (Figur 3-10). Som illustreras för ett
+tvärsnitt av stocken i Figur 3-11, utsätts den
+våta ytan hos en kropp nedsänkt i vatten för
+ett hydrostatiskt tryck som verkar vinkelrätt
+mot kroppens yta. Det hydrostatiska trycket
+ökar med avståndet under ytan, så att
+kroppens lägsta delar utsätts för störst tryck.
+Precis som att massfördelning för en kropp i
+vila kan sammanfattas som en tyngdkraft
+(FG =mg i Figur 3-11, där m är totala massan
+och g är gravitationskonstanten) verkandes
+lodrätt nedåt i kroppens masscentrum, kan
+det hydrostatiska trycket på en kropp
+sammanfattas som en hydrostatisk lyftkraft
+
+Figur 3-10
+
+FG
+vattenyta
+
+∇
+
+FB
+
+hydrostatiskt tryck
+
+Figur 3-11
+
+Marina system 3.4
+
+(FB i Figur 3-11) verkandes lodrätt uppåt genom undervattenskroppens volymcentrum (G
+står för engelskans gravity medan B står för engelskans buoyancy vilket ungefär kan
+översättas med bojighet). Det är storleken av denna sistnämnda kraft som formulerades
+av Arkimedes vars princip säger att ”en kropp nedsänkt i en vätska påverkas av en
+uppåtriktad kraft som är lika stor som vikten av den undanträngda vätskan”. Den
+undanträngda volymen kallas kroppens volymdeplacement och betecknas som i Figur 311 ofta med symbolen ∇. Ordet deplacement kommer från engelskans displace som
+betyder just undantränga. Den hydrostatiska lyftkraften kan alltså uttryckas som FB =
+ρg∇, där ρ är vattnets densitet och g är gravitationskonstanten.
+Ett fartyg flyter i jämvikt i ett läge där dess deplacementsmassa motsvarar dess
+totala massa, eller uttryck i krafter där FG=mg=FB=ρg∇, och där tyngdkraften verkar
+vertikalt genom deplacementcentrum och den hydrostatiska lyftkraften verkar vertikalt
+genom masscentrum som i Figur 3-11.
+Ekipaget stock och människa har ett
+ganska högt tyngdpunktsläge. För fartyget i
+Figur 3-11 ligger masscentrum en bit
+ovanför vattenytan. I Figur 3-13 har stocken
+och dess passagerare påtvingats en störning
+genom en krängningsvinkel η. Detta ger en
+situation där tyngdkraften FG och den
+hydrostatiska lyftkraften FB bildar ett
+kraftpar som ger ett moment som strävar
+efter att öka krängningsvinkeln. Fartyget är
+Figur 3-12
+instabilt! Precis som för en cykel är det
+dock ändå möjligt för en människa att
+behålla balansen på stocken, genom att
+aktivt motverka krängning med förskjutning
+av tyngdpunktsläget, och genom att paddla
+FG
+med händerna på stocken eller vrida på
+styret på cykeln.
+FB
+För de flesta fartyg saknas dock
+möjligheten att aktivt motverka krängning
+och därigenom kompensera instabilitet.
+Fartyget måste istället vara stabilt i sig själv.
+GZ<0
+Eventuellt var det därför som människan
+någon gång i historien började urholka sina
+Figur 3-13
+stockfartyg. På detta sätt minskade man
+ekipagets massan samtidigt som den
+vattenundanträngande volymen bibehölls.
+Resultatet blev en kanot. Besättningen
+kunde nu färdas torrskodda i fartyget.
+Dessutom erhölls en drastisk förändring av
+massfördelningen. Tyngdpunkten för hela
+systemet – skrovet, lasten och besättningen
+– sänktes. Resultatet illustreras schematiskt
+i Figur 3-14, som motsvarar Figur 3-13 fast
+med en avsevärt lägre tyngdpunkt. Den
+stora vinsten är att kraftparet FG-FB istället
+för ett krängande moment här skapar ett
+rätande moment som motverkar krängFigur 3-14
+ningen. Farkosten är stabil och återgår efter
+
+Marina system 3.5
+
+en störning till sitt ursprungsläge istället för att kapsejsa.
+Enligt Figur 3-14 kan det rätande (eller krängande i Figur 3-13) momentet uttryckas
+som GZ·FB, där FB = ρg∇ är den hydrostatiska lyftkraften enligt ovan, och GZ är den
+rätande hävarmen som är lika med det horisontella avståndet mellan den hydrostatiska
+lyftkraftens och tyngdkraftens respektive verkningslinjer. GZ är definierad så att GZ>0
+om kraftparet FG-FB ger ett rätande moment (stabilt fartyg, Figur 3-14), och GZ<0 om
+kraftparet FG-FB ger ett krängande moment (instabilt fartyg, Figur 3-13).
+Vid något senare tillfälle i historien kom människan på att fartyg kunde drivas
+framåt med hjälp av vinden genom användande av segel. Problemet är bara att vinden i
+seglen förutom kraften framåt även skapar ett stort krängande moment. Ett sätt att hantera
+detta är att förse fartyget med en tung köl (Figur 3-15). Härigenom sänker man tyngdpunkten ytterligare, ökar GZ, och skapar därigenom ett ökat rätande moment som motverkar krängningen. På en del segelbåtar,
+som Volvo Ocean Race båten Ericsson i
+Figur 3-16, har man dessutom infört en
+konstruktionslösning där kölen kan vinklas i
+sidled. Härigenom separerar man tyngdkraftens och den hydrostatiska lyftkraftens
+verkningslinjer ytterligare och skapar
+därigenom en större hävarm (GZ) och ett
+större rätande moment. (Notera att kölar
+även har funktionen av fena för att skapa
+sidkrafter som motverkar sidkrafterna från
+seglen och därigenom gör så att segelbåten
+inte driver iväg i sidled).
+Figur 3-15
+Utriggare, katamaraner och trimaraner
+är andra konstruktionslösningar som också
+ökar det rätande momentet genom att
+separera tyngdpunkt och hydrostatisk
+lyftkraft (öka GZ). Principen illustreras i
+Figur 3-17. Denna princip tillämpas för
+segelkatamaraner, som Tornadon i Figur 31, men även för stora färjor som den i Figur
+3-18. Flerskrovsprincipen gör att man kan
+erhålla god stabilitet trots att respektive
+skrovdel är mycket slank. Som beskrivs i
+Figur 3-16
+nästa avsnitt har slanka skrov stora fördelar
+vad gäller framdrivning i hög fart.
+För skrov med cirkulära tvärsnittsgeometrier krävs att tyngdpunkten är lägre
+än deplacementcentrum för att erhålla
+stabilitet (som visades i Figur 3-13 - Figur
+3-15). Figur 3-17 visar dock att stabilitet
+kan uppnås med ett flerskrovsfartyg trots att
+tyngdpunkten ligger långt över vattenytan.
+För Tornadon i Figur 3-1 och HSS-färjan i
+Figur 3-18 är det ganska uppenbart att
+tyngdpunkten ligger ovanför vattenytan.
+Figur 3-17
+
+Marina system 3.6
+
+Figur 3-19 visar ett av världens största
+containerfartyg – OOCL Shenzhen – som
+kan transportera över 9000 containrar. Figur
+3-20 visar förmodligen världens minsta
+containerfartyg, som nätt och jämt får plats
+med en container. Var ligger tyngdpunkten
+för dessa fartyg? Svaret på den första frågan
+är ganska uppenbar från figurerna –
+tyngdpunkten ligger helt klart över
+deplacementcentrum och troligtvis även
+över vattenytan. Men hur klarar de då
+stabiliteten? Lösningen på stabilitetsproblemet för enkelskrovsfartyg med hög
+tyngdpunkt ligger i skrovformen. Tvärsnitten för fartygens i Figur 3-19 och Figur
+3-20 skrov är snarare rektangulära än
+cirkulära. Stabilitetsegenskaperna hos ett
+rektangulärt tvärsnitt illustreras i Figur 3-21.
+Vad som här händer vid krängning är inte
+bara att tyngdpunkten förskjuts som i de
+tidigare exemplen. Även deplacementcentrum förskjuts genom att deplacementet
+omfördelas och undervattenskroppen ändrar
+form. I Figur 3-21 visas denna omfördelning
+av deplacementet som att en volym dV har
+flyttats från fartygets ena sida till den andra.
+Resultatet är ett GZ>0, det vill säga ett
+stabilt fartyg, trots att tyngdpunkten ligger
+klart över deplacementcentrum och till och
+med över vattenytan. Ju bredare fartyget är
+desto större blir deplacementsförskjutningen
+och därmed även stabiliteten.
+När man utvecklar ett nytt fartyg
+måste man se till att fartyget får ett
+deplacement som är tillräckligt stort för att
+bära den tänkta vikten i form av fartygets
+egenvikt, last, passagerare mm. Man måste
+givetvis även se till att fartyget har en
+tyngdpunkt och skrovform som gör fartyget
+stabilt, så att det automatiskt rätar upp sig
+efter störningar till exempel från vind och
+vågor. För ett befintligt fartyg är det till
+exempel viktigt att hålla koll på stabiliteten
+vid lastning och lossning.
+
+Figur 3-18
+
+Figur 3-19
+
+Figur 3-20
+
+Figur 3-21
+
+Marina system 3.7
+
+3.3 Framdrivningsmotstånd
+En annan central aspekt för fartygs
+prestanda är framdrivningsmotståndet.
+Givetvis är det eftersträvansvärt att ha ett så
+lågt framdrivningsmotstånd som möjligt.
+För ett handelsfartyg gör ett lågt motstånd
+att man klara sig med en mindre motor och
+därmed mindre bränsleförbrukning, mindre
+bränslekostnader och mindre miljöbelastning. För ett tävlingsfartyg gör istället ett
+lågt motstånd att man når högre farter med
+befintlig framdrivningseffekt.
+Figur 3-22
+Framdrivningsmotståndet för en ubåt,
+som till exempel ubåtsräddningsfarkosten i
+Figur 3-22, är helt och hållet förknippat
+med vattnets viskositet. Som illustreras för
+en halvkropp i Figur 3-23 kan det viskösa
+motståndet delas upp i olika komponenter;
+Figur 3-23
+dels tangentiella friktionskrafter i gränsskiktet mellan vattnet och skrovet; dels
+energiförluster i avlösningsvirvlar; och
+slutligen tryckkrafterna på främre delen av
+farkosten, som i en ideal vätska skulle
+återvinnas i aktern enligt d’Alemberts
+paradox, men som på grund av vaken ger
+ett nettomotstånd. Summan av dessa
+komponenter refereras till som visköst
+motstånd.
+För ett ytgående fartyg tillkommer en
+effekt genom bildandet av svallvågor.
+Figur 3-24
+Bildandet av svallvågorna medför att en del
+av den energi som skulle kunna användas för att driva fartyget framåt istället går åt till att
+bilda svallvågorna. Till det viskösa motståndet läggs ytterligare en komponent,
+vågbildningsmotståndet. Vågbildningen kring ett ytgående fartyg illustreras i Figur 3-24.
+Det man mest lägger märke till när ett fartyg kör förbi är de divergerande vågorna som
+propagerar bort från fartyget. Faktum är dock att den största energiförlusten går till
+bildandet av de transversella vågorna som propagerar med fartyget. Vattenvågor har
+egenheten av en konstant relation, Vw/√Lw=1.25 m1/2s-1, mellan deras propageringshastighet Vw och deras längd Lw. Långa vågor har alltså högre propageringshastighet än
+korta. De transversella fartygsgenererade vågorna rör sig med samma hastighet som
+fartyget, Vw=V där V är fartygets fart. Således är deras längd Lw=(V/1.25)2 m. Som synes
+är de transversella vågorna i Figur 3-24 ungefär en fjärdedel så långa som fartyget, det
+vill säga L/Lw=4 där L är fartygets vattenlinjelängd. Tillståndet kan beskrivas i termer av
+en fart-längd-relation, V/√L≈0.6.
+Vågbildningen kring ett ytgående fartyg är relaterat till tryckvariationerna utmed
+skrovet, principiellt övertryck i vågtopparna och undertryck i vågdalarna. För låga farter,
+eller egentligen för låga fart-längd-relationer V/√L , så är fartyget flera gånger längre än
+svallvågslängden. Här tar tryckvariationerna ut varandra utmed skrovlängden, fartyget
+har samma trim och djupgående som i stillaliggande, och fartyget bärs helt och hållet av
+de hydrostatiska lyftkrafterna. Motståndet domineras här av de viskösa effekterna (se
+
+Marina system 3.8
+
+motstånd
+
+vågbildningsFigur 3-25). Det viskösa motståndet är
+motstånd
+proportionellt mot fartygets våta yta. För att
+minimera motståndet i låga farter gäller det
+alltså att minimera fartygets våta yta. Den
+visköst
+form som har minst yta i förhållande till sin
+motstånd
+volym är klotet. Av flera skäl är dock
+klotformen opraktisk för fartyg, till exempel
+vad gäller stabiliteten, både tvärskeppsstabiliteten enligt föregående avsnitt, och
+kursstabiliteten, det vill säga fartygets
+V/ L
+förmåga att hålla en given kurs. För att ha
+Figur 3-25
+en låg fart-längd-relation krävs ju också en
+viss längd på fartyget. Långsamtgående
+fartyg ges dock normalt en så fyllig form
+som möjligt som till exempel tankfartyget i
+Figur 3-26.
+Om fartyget i Figur 3-24 skulle öka
+farten, så ökar även längden av de
+fartygsgenererade transversella vågorna.
+Med farten ökar även vågbildningsmotståndet. Vid en fart-längd-relation
+V/√L>0.9 så är våglängden mer än halva
+fartygslängden. Här börjar vågbildningsFigur 3-26
+motståndet bli den dominerande motståndskomponenten (se Figur 3-25). Åtgärden för
+att minimera motståndet i dessa farter är att
+ge skrovet en slankare form. Intuitivt inser
+man nog att ett slankt skrov bygger mindre
+svall än ett trubbigt och fylligt skrov.
+Kajaker är exempel på fartyg som framförs i
+höga fart-längd-relationer V/√L, och därför
+utformas med mycket slanka skrov (se Figur
+3-27). Notera att ett slankt skrov även ger
+lägre avlösning (jämför Figur 3-23). Ett
+Figur 3-27
+slankt skrov ger därför även lägre
+friktionsmotstånd i hög fart än ett fylligt
+skrov.
+Ett mått som används för att
+karaktärisera ett skrovs fyllighet och
+slankhet är blockkoefficienten, CB. Denna
+definieras som CB=∇/LBT, där ∇ är
+fartygets volymdeplacement, L är vattenlinjelängden, B är största vattenlinjebredden, och T är djupgåendet (se Figur 312). Stort CB motsvarar alltså ett fylligt
+Figur 3-28
+skrov, medan litet CB motsvarar ett slankt
+skrov. Enligt resonemanget ovan är det följaktligen lämpligt med stort CB för
+långsamtgående fartyg (fartyg med låga V/√L), och litet CB för snabba fartyg. Figur 3-28
+visar en ungefärlig relation mellan lämplig blockkoefficient och fart. Farten är här
+uttryckt i termer av Froudes tal Fn=V/√(gL), som alltså är en dimensionslös variant av
+fart-längd-relationen ovan. Notera att kanoten i Figur 3-27 har en vattenlinjelängd på
+
+Marina system 3.9
+
+Figur 3-29
+
+V
+
+hydrodynamisk
+tryck
+
+Figur 3-30
+
+Figur 3-31
+
+V
+
+hydrodynamisk
+tryck
+
+Figur 3-32
+
+motstånd
+
+deplacerande
+skrovform
+
+planande
+skrovform
+
+V/ L
+
+Figur 3-33
+100
+
+andel av totala
+lyftkraften [%]
+
+cirka 4 m och en marschfart på cirka 4 knop
+(ca 2 m/s) vilket motsvarar Fn=0.33, medan
+supertankern i Figur 3-2 har en betydligt
+högre marschfart, 16 knop (ca 8 m/s) men
+som på grund av sin längd 365 m har en
+betydligt lägre dimensionslös hastighet
+Fn=0.14.
+Antag att fartyget i Figur 3-24 ökar
+farten ytterligare. Vid en fart-längd-relation
+V/√L=1.25 genereras vågor som är lika
+långa som fartygets vattenlinjelängd.
+Situationen illustreras i Figur 3-30. Vid
+dessa farter är det inte bara de hydrostatiska
+trycken som har betydelse. Den relativa
+rörelsen mellan skrovet och vattnet
+genererar även betydande hydrodynamiska
+tryck. Som illustreras i Figur 3-30 så bildas
+på en konkav kropp (som skroven i Figur 326 och Figur 3-27) ett övertryck i förskeppet
+och ett sug i aktern. Fören reser sig och
+aktern sugs ner. Djupgåendet och den våta
+ytan ökar, och därmed ökar även det viskösa
+motståndet. Mest betydande blir dock
+ökningen
+av
+vågbildningsmotståndet.
+Fartyget drar här upp stora svall och klättrar
+i uppförsbacke på sin egen bogvåg.
+För
+att
+minimera
+avlösningsmotståndet
+utformas
+långsamtgående
+(V/√L<1.25) fartyg med fördel med mjuka
+konvexa linjer. Ett exempel på detta är
+fiskebåten vars spantruta visas i Figur 3-29
+(en spantruta visar ett antal tvärsnitt av
+skrovet, normalt med den förliga hälften till
+höger och den aktre hälften till vänster). För
+högre farter (V/√L>1.25) vänds dock alltså
+denna skrovform till en nackdel. Vill man
+öka farten ytterligare spelar det ingen roll
+hur stark motor man har. För en konkav
+skrovform är det som att köra in i en
+vågbildningsmotståndsvägg för fart-längdrelationer V/√L>1.25.
+För att framföra ett fartyg i högre
+farter krävs helt andra skrovformer. Några
+extrema varianter för att ta sig igenom
+vågbildningsmotståndsväggen är svävare
+och bärplansbåtar. Den vanligaste lösningen
+för snabba fartyg är dock planande skrov.
+Figur 3-31 är Stridsbåt 90’s spantruta. Detta
+är ett typiskt planande skrov. För det
+långsamtgående skrovet ville man undvika
+avlösning. För det planande skrovet
+
+hydrostatisk
+lyftandel
+
+hydrodynamisk
+lyftandel
+
+deplac.
+
+semi-plan.
+
+V/ L
+
+Figur 3-34
+
+planande
+
+Marina system 3.10
+
+försöker man istället initiera avlösning genom den skarpa avslutningen i en tvär
+akterspegel och skarpa slag (gräns mellan botten och sida). Härigenom eliminerar man
+det hydrodynamiska undertrycket och skapar istället ett hydrodynamiskt övertryck över
+hela fartygsbotten (se Figur 3-32). Istället för att sugas ner lyfts skrovet ur vattnet.
+Härigenom minskas den våta ytan och tillhörande visköst motstånd. Med mindre kropp i
+vattnet åstadkoms även en drastisk minskning av vågbildningsmotståndet. I Figur 3-33
+visas schematiskt motståndet som funktion av farten för deplacerande skrov (skrov som i
+huvudsak bärs av deplacementskrafter) och planande skrov som i högre hastigheter bärs
+av hydrodynamiska krafter. Figur 3-34 illustrerar schematiskt hur stor andel av den totala
+lyftkraften som utgörs av hydrostatiska respektive hydrodynamiska krafter, som funktion
+av farten. Normalt brukar man kategorisera V/√L<1.25 som deplacerande fart,
+1.25<V/√L<2.8 som semi-planande fart och V/√L>2.8 som planande fart. Motsvarande
+intervall uttryckt i Froudes tal, Fn=V/√(gL), är Fn<0.4 för deplacerande, 0.4<Fn<0.9 för
+semi-planande, och Fn>0.9 för planande.
+
+3.4 Naval Architecture
+Vid utveckling av ett marintekniskt system, till exempel ett fartyg, måste man beakta en
+mängd olika faktorer. Några av de mest centrala faktorerna har berörts i de två
+föregående avsnitten. Fartygets skrov måste ha tillräckliga dimensioner, måste ha
+tillräckligt stort deplacement, för att kunna bära den tänkta lasten. Det ska hålla sig på rätt
+köl, det vill säga vara stabilt, oberoende av om det är tomt eller fullastat med
+hundratusentals ton last, och oberoende av om det är stiltje eller går höga vågor. Skrovet
+ska ha en form som minimerar motståndet i de tänkta fartområdena, så att det drar så lite
+bränsle som möjligt och därmed belastar miljön så lite som möjligt och är effektivt till
+exempel ur ekonomisk synvinkel. Vidare måste fartyget vara försett med ett
+propulsionsarrangemang (motor och propeller, segel eller paddel och paddlare) som kan
+övervinna motståndet, samt roder eller andra manövreringssystem. Skrovstrukturen måste
+ges tillräcklig hållfasthet och vara säkert och funktionell trots att det utsätts för extrema
+belastningar och slitage från väder, vågor, vind, hantering av last, mm.
+Många av dessa aspekter står i
+motsatsförhållande till varandra, till
+exempel så kan ett slankt skrov ha lågt
+framdrivningsmotstånd men samtidigt
+dålig stabilitet. Utvecklingsarbetet är
+därför en iterativt process där fartygets
+geometri och dimensioner, lastkapacitet
+och fart vägs mot kravspecifikationen
+som specificerar fartygets funktion och
+prestanda och olika bivillkor. Processen
+kan symboliskt beskrivas av en
+designspiral (se Figur 3-35). Man utgår
+från någon form av kravspecifikation som
+Figur 3-35
+definierar fartygets funktioner och
+prestanda. Inledningsvis genomför man ett första varv i designspiralen där man mer
+överslagsmässigt analyserar
+- huvuddimensioner, kapaciteter och fribord,
+- skrovgeometri (linjer) och hydrostatiska data,
+- skissartade arrangemangsritningar,
+- grov uppskattning av dödvikt (lastvikt, bunker, eventuell ballast mm), lättvikt (vikten
+av skrovstrukturen, maskineri mm), samt tyngdpunktslägen,
+
+Marina system 3.11
+
+- trim (flytläge) och stabilitet,
+- inledande analyser av säkerhet, miljö och ekonomi.
+I nästa varv i designspiralen förfinar man analysen, uppdaterar resultaten från det
+första varvet, och utökar analysen med motstånds- och effektberäkning, typ av maskineri
+och propulsor I ett tredje varv förfinar man analysen ytterligare, gör nya uppdateringar av
+tidigare resultat, och lägger till analys av läckstabilitet. Här definierar man fartygets
+indelning i olika vattentäta sektioner som säkerställer fartygets säkerhet även efter att det
+sprungit läck till exempel på grund av grundstötning eller av att man tappat bogvisiret.
+Efter detta har man kommit så långt att man kan ge sig på skrovkonstruktionen. Efter en
+preliminär skrovdimensionering kan man förfina analysen av lättvikten, vilket kan leda
+till uppdatering av deplacementet och så vidare varv efter varv i designspiralen.
+Utöver de tekniska frågorna måste man i utvecklingsarbetet även beakta att fartyget
+ingår som en del i ett större system av andra fartyg och farkostslag, hamnar, vägar och
+annan infrastruktur, nationell och internationell lagstiftning, klassnings- och
+tävlingsregler om det handlar om en tävlingsbåt, och ett stort antal olika aktörer som till
+exempel besättning, passagerare, fartygsägare, lastägare, varv, konstruktörer,
+myndigheter och tävlings eller marknadskonkurrenter.
+Allt detta sammantaget gör utveckling av marinatekniska system, naval
+architecture som det heter på engelska, till ett mycket sammansatt och krävande, men
+samtidigt spännande och stimulerande, ingenjörsarbete.
+Utbildningen på Marina system på KTH leder till att man blir en Naval Architect
+(Skeppsbyggare). Se exempel på ”definition” av naval architecture/architect på
+http://www.rina.org.uk/page389.html.
+
+

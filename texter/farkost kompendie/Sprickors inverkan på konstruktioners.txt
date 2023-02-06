@@ -1,0 +1,607 @@
+Sprickors inverkan på konstruktioners livslängd 7.1
+
+7. Sprickors inverkan på konstruktioners livslängd
+av
+Sören Östlund och Mårten Olsson
+KTH Hållfasthetslära
+
+7.1
+
+Inledning
+
+Alla konstruktioner kan haverera. Naturligtvis vill man reducera risken för haverier så
+mycket som möjligt. Speciellt viktigt är detta i konstruktioner som vid haveri kan
+orsaka dödsfall, mänskligt lidande eller stora ekonomiska kostnader. Till denna typ hör
+bl.a. farkoster såsom flygplan, båtar, bilar och tåg samt även t.ex. kärnkraftverk,
+pipelines och tryckkärl.
+Kravet på att undvika haverier har medfört att såväl industri som myndigheter
+efterfrågar allt bättre och tillförlitligare dimensioneringsmetoder. Utveckling och
+verifiering av sådana metoder sker inom ämnesområdet hållfasthetslära genom
+modellering, numeriska beräkningar och experiment.
+
+7.2
+
+Beskrivning av fenomenet
+
+En viktig observation vid dimensionering är att alla typer av konstruktioner innehåller
+olika sorters defekter. Om vanliga konstruktionsmaterial vore helt defektfria skulle
+deras hållfasthet avsevärt förbättras. Typiska defekter är materialdefekter från
+tillverkning eller skador som orsakas av ovarsam hantering. Materialdefekter kan t.ex.
+vara slagginneslutningar i gjutjärn och stål. Andra exempel är sprickor och håligheter
+som kan uppkomma i kompositmaterial under tillverkningsprocessen t.ex. vid härdning
+och maskinbearbetning. Ovarsam hantering kan t.ex. vara att någon tappar ett tryckkärl
+av kompositmaterial i golvet eller att en mekaniker tappar ett tungt verktyg på en
+flygplansvinge tillverkad av kolfiberförstärkt plast. Andra typer av defekter kan t.ex.
+uppkomma om ett flygplan kolliderar med en fågel.
+En viktig typ av defekter är s.k. utmattningssprickor. Dessa uppkommer i de
+flesta material vid upprepade belastningar även om lastnivån ligger långt under den nivå
+som skulle ge brott vid en enda pålastning. Vanligt är också att utmattningssprickor
+utgår från en befintlig skada. Ökad kännedom om utmattningssprickors beteende
+utnyttjas både för säkrare konstruktioner och för uppskattning av livslängden hos
+konstruktioner. I framrutan på en bil kan man tyvärr närmare studera spricktillväxt. Ett
+stenskott skapar en liten skada som sedan genom utmattning växer lite vid varje
+belastning (fartvind, gupp m.m.). I genomskinligt glas är det ganska lätt att upptäcka
+sprickorna, men i andra material måste man leta efter dem med t.ex. röntgen eller
+ultraljud. Utmattningssprickor fås inte bara i metaller utan även i t.ex. polymera
+kompositmaterial. Detta illustreras i figurerna 7-1 och 7-2.
+
+Sprickors inverkan på konstruktioners livslängd 7.2
+
+Figur 7-1
+
+Figur 7-2
+
+Utmattningsspricka i flygplansaluminium.
+
+Utmattningssprickor i glasfiberförstärkt epoxilaminat. Sprickorna ligger ett skikt där
+fibrerna är riktade ut ur papperets plan.
+
+Typiskt för de defekter som diskuteras ovan är att de ibland är omöjliga eller
+mycket svåra att upptäcka innan de genom utmattningstillväxt vuxit till en sådan storlek
+att de kan orsaka haveri. Detta medför att dimensionering många gånger måste baseras
+på antagandet att det redan finns olika typer av defekter i en konstruktion. Därefter
+beräknas antalet belastningar som krävs för att dessa antagna defekter skall växa till en
+kritisk storlek. Vid drift av konstruktionen tillåts sedan färre belastningar. På så sätt är
+man på den säkra sidan och konstruktionen blir skadetålig.
+Det mekaniska beteendet hos konstruktioner med sprickor studeras inom en del
+av hållfasthetsläran som kallas brottmekanik. I detta seminarium ska beskrivas hur
+kunskap om t.ex. sprickors beteende utnyttjas för att erhålla säkrare och mer optimala
+konstruktioner.
+
+Sprickors inverkan på konstruktioners livslängd 7.3
+
+Att saker och ting lättare går sönder om så kallade anvisningar (skarpa hörn,
+sprickor eller liknande) finns är ett fenomen som vi observerar och utnyttjar nästan
+dagligen. På många typer av förpackningar, t.ex. påsar för jordnötter, finns en
+perforering med tillhörande text “öppnas här”. En chokladkaka är inte helt slät vilket
+gör det lättare att dela upp den i mindre stycken. I en kakelplatta gör man först en rits
+längs den linje där plattan ska delas. Fördelarna med sprickor kan tyckas mycket stora,
+men vi vet också att oönskade sprickor kan få mycket tråkiga följder, t.ex. om det finns i
+bärkassen från matvarubutiken. Vi vet också att en spricka i en papperskasse är farligare
+än en i en plastkasse. Slutsatsen är att olika material har olika brottkänslighet, ett
+resultat som används flitigt vid konstruktion och materialval. Olika typer av vardagliga
+fenomen där den s.k. anvisningsverkan utnyttjas illustreras i figur 7-3.
+
+Figur 7-3
+
+7.3
+
+Exempel där anvisningar och sprickor utnyttjas för att underlätta hanteringen.
+
+Analysmetod
+
+Vid hållfasthetsanalys används framför allt två mått för att karaktärisera påkänningen i
+olika positioner i en struktur. Dessa två storheter är spänning och töjning. Storheterna
+illustreras enklast genom att betrakta en stång som utsätts för en kraft enligt figur 7-4.
+P
+
+∆
+A
+
+L
+
+P
+Figur 7-4
+
+Stång med tvärsnittsarean A och längden L.
+
+Stången har längden L och tvärsnittsarean A, och kraften P verkar vinkelrätt mot
+tvärsnittsarean. I detta fall definieras spänningen σ som kraften P dividerat med den
+yta på vilken kraften verkar, i det här fallet A, och töjningen ε som stångens
+förlängning ∆ dividerat med ursprunglig längd L. På matematisk form blir detta
+
+Sprickors inverkan på konstruktioners livslängd 7.4
+
+P
+A 
+
+∆
+ε= 
+L 
+
+σ=
+
+(7-1)
+
+Vid analys av strukturer används olika modeller för att beskriva egenskaperna hos materialet den är tillverkad av. Den vanligaste modellen är att anta att det råder ett linjärt
+samband mellan spänning och töjning. Detta kallas Hookes lag, som skrivs
+
+σ = Eε
+
+(7-2)
+
+där E, elasticitetsmodulen, är ett mått på materialets styvhet (diamant t.ex. har högt
+värde på E och gummi lågt).
+Ekvation (7-2) kan ses som en mer allmän formulering av det samband som
+gäller för en vanlig linjär fjäder. Betraktas stången i figur 7-4 kan med hjälp av
+ekvationerna (7-1) och (7-2) ekvationen för en fjäder skrivas som
+
+P = k∆ =
+
+EA
+∆
+L
+
+(7-3)
+
+där k är den från mekaniken kända fjäderkonstanten.
+Målet med hållfasthetsanalys av olika strukturer är att kunna beräkna
+spänningen och töjningen i alla delar av en struktur, för att därefter kunna jämföra de
+beräknade värdena med experimentellt uppmätta gränsvärden för tillåten spänning och
+töjning. Dessa beräkningar kan vara mer eller mindre komplicerade och ofta måste
+numeriska metoder tillgripas. Beräkning av spänningstillståndet vid en sprickspets
+kräver till skillnad mot det enkla exemplet i figur 7-4 att en flerdimensionell analys
+genomförs. Detta innebär att spänningen beräknas för alla tänkbara snittytor i en
+struktur.
+En sprickspets belastas i princip som en kombination av tre huvudbelastningsfall
+(modus). Dessa tre fall illustreras i figur 7-5. Av dessa är modus I det i praktiken vanligast förekommande och denna framställning ska begränsas till detta fall. Noteras skall
+dock att modus II belastning vanligen uppkommer vid sprickor i gränsskikt mellan
+material med olika egenskaper varför intresset för detta fall har fått en större betydelse i
+samband med den ökande användningen av kompositmaterial t.ex. i flygplan.
+Modus
+P
+
+I
+
+II
+
+III
+
+y
+
+y
+
+y
+
+x
+z
+
+P
+
+P
+
+x
+z
+
+x
+
+P
+
+z
+P
+
+P
+
+Vidgande i
+xy-planet
+Figur 7-5
+
+Glidande i
+xy-planet
+
+Glidande tvärs
+xy-planet
+
+De tre huvudbelastningsfallen (modus) för en sprickspets.
+
+Sprickors inverkan på konstruktioners livslängd 7.5
+
+Den matematiska analysen baseras på en uppsättning differentialekvationer, som
+beskriver beteendet inuti den belastade elastiska kroppen, i kombination med
+randvillkor som beskriver belastningen på strukturens ränder. Sprickproblem
+karaktäriseras vanligtvis av att sprickytorna är obelastade, d.v.s. spänningen är då noll
+för x < 0 . Då den matematiska analysen genomförts har man fått fram lösningen;
+spänningarna vid sprickan som funktion av x och y. En intressant egenskap hos denna
+lösning är att det funktionella beroendet av x och y är det samma för alla sprickor,
+oavsett hur konstruktionen som de finns i ser ut. Med hjälp av koordinatsystemet enligt
+figur 7-6 erhålles längs x-axeln följande uttryck för den spänning som öppnar
+sprickspetsen (verkar i y-riktningen)
+
+σ=
+
+KI
+2π x
+
+(7-4)
+
+Parametern K I kallas spänningsintensitetsfaktor och storleken på den är det enda som
+skiljer olika sprickor åt. Den är en amplitudfaktor som beror av belastning, sprickans
+längd a och strukturens dimensioner i övrigt. Med undantag för relativt idealiserade
+strukturer krävs i allmänhet en numerisk analys, t.ex. med finita element metoden FEM,
+för att bestämma K I . Vanligen skrivs spänningsintensitetsfaktorn på formen
+K I = Q π a f ( a , h, w )
+
+(7-5)
+
+där Q är en parameter som beskriver den aktuella lastnivån och f ( a, h, w ) är en
+dimensionslös funktion som beror av den momentana spricklängden a och strukturens
+geometri, här illustrerade med strukturens längd och höjd enligt figur 7-6. Från
+ekvationerna (7-4) och (7-5) fås med dimensionsanalys att Q har samma dimension som
+spänning, d.v.s. kraft/ytenhet. Denna spänning behöver dock inte nödvändigtvis
+genereras av krafter utan kan t.ex. även orsakas av temperaturändringar eller pålagda
+förskjutningar.
+P
+
+w
+y
+
+σ
+
+y
+a
+
+x
+
+h
+
+x
+
+σ
+P
+Figur 7-6
+
+Illustration av spänningen framför en belastad struktur innehållande en spricka med längden
+a.
+
+En närmare inspektion av ekvation (7-4) avslöjar att då vi närmar oss
+sprickspetsen, d.v.s. då x → 0 , blir spänningen oändligt stor. Detta är ett fenomen som
+uppträder vid alla linjärt elastiska analyser av inåtgående skarpa hörn. I verkligheten
+blir naturligtvis inte spänningen oändlig utan materialet precis framför sprickspetsen
+
+Sprickors inverkan på konstruktioners livslängd 7.6
+
+kommer att ändra beteende. I ett litet område runt sprickspetsen kommer Hookes lag
+(ekv. (7-2)) inte längre att vara giltig och vår analys är inte helt fullständig. I metalliska
+material kommer i närheten av sprickspetsen s.k. plastisk deformation att förekomma.
+Oavsett hur materialet modelleras kommer dock mycket höga spänningar att uppträda
+vid sprickspetsen eller hörnet och detta är orsaken till att man i allmänhet undviker att
+utforma konstruktioner så att de har skarpa anvisningar. Dessa höga spänningar gör att
+små mikroskopiska defekter kan börja växa till och slutligen blir sprickor stora nog att
+orsaka haveri. Ska t.ex. ett fyrkantigt hål tas upp i en vägg sker detta bäst genom att
+först borra ett hål med relativt stor diameter i varje hörn i kvadraten innan sidorna sågas
+upp. Detta illustreras i figur 7-7 där även ett mindre lyckat sätt visas. Under 1950-talet
+orsakade bristfälliga kunskaper om detta fenomen en serie haverier på det första
+jetdrivna passagerarflygplanet Comet. I detta fall började utmattningssprickor att efter
+relativt kort flygtid växa till från nithål kring planets fyrkantiga fönster. I dagens
+flygplan har detta problem bl.a. åtgärdats genom att alla fönster har avrundad form.
+borrhål
+sågsnitt
+
+Figur 7-7
+
+sågsnitt
+
+Dåligt och bra sätt att ta upp ett fyrsidigt hål i en plåt.
+
+Eftersom spänningen vid en sprickspets teoretiskt blir oändligt stor är
+spänningen inget bra mått att använda för dimensionering av strukturer som kan
+innehålla sprickor. Oändligheten är alltid större än alla tänkbara uppmätta värden! Vad
+som gäller för spänningen är också sant för töjningen och därför måste något bättre mått
+användas. Den parameter som härvid visat sig mycket användbar är K I . Att så är fallet
+kan man förstå från ekvation (7-4) och följande resonemang. Den enda information som
+sprickspetsen har om den omgivande strukturen är storleken på K I , vilket innebär att
+om K I är stor är påkänningen vid sprickspetsen stor. Omfattande experimentella
+undersökningar har visat att spricktillväxt inträffar om villkoret
+
+K I = K Ic
+
+(7-6)
+
+är uppfyllt. Ekvation (7-6) säger alltså att sprickan börjar växa om spänningsintensitetsfaktorn K I når ett kritiskt värde K Ic . Detta kritiska värde kallas materialets
+brottseghet, och är en materialparameter som är oberoende av konstruktionens geometri
+och hur belastningen appliceras. Värdet på brottsegheten varierar mycket mellan olika
+typer av material. Exempel på material som har låga värden på brottsegheten är glas,
+keramiska material och vissa polymerbaserade kompositmaterial. Ett segare
+brottbeteende uppvisar däremot t.ex. många metalliska material. Ofta är ett brottsegare
+material dyrare. Pipelines t.ex. byggs av billigt stål med låg brottseghet. Vid en
+explosion kan sprickor riva upp rören flera kilometer. Därför lägger man in rörbitar av
+segare (och dyrare) stål med jämna mellanrum.
+
+Sprickors inverkan på konstruktioners livslängd 7.7
+
+Brottsegheten är även beroende av temperaturen. Konstruktionsstål t.ex.
+uppvisar ett beteende som kallas omslag. Detta visar sig på så sätt att vid temperaturer
+högre än en viss s.k. omslagstemperatur kan brottet beskrivas som segt, medan vid
+temperaturer under omslagstemperaturen är brottet sprött. Skillnaden i K Ic på ömse
+sidor om omslagstemperaturen kan många gånger vara betydande. Detta fenomen var
+den främsta orsaken till att de s.k. Libertyfartygen, som under andra världskriget
+transporterade förnödenheter mellan U.S.A. och Europa, havererade vid kallt väder.
+Ibland skedde detta när båtarna låg olastade vid kaj. Totalt byggdes cirka 3000 fartyg av
+denna typ med början 1941. Tolv år senare, 1953, hade 233 båtar totalhavererat och
+över tusen båtar hade delvis spruckit. Detta var den första serie stora båtar som
+svetsades. Orsaken till brotten var skarpa hörn och slarvigt utförda svetsar, med
+krympsprickor, i kombination med låg brottseghet vid låg temperatur.
+
+7.4
+
+Brottmekanisk analys
+
+En brottmekanisk analys är vanligen en del av en teknisk beslutsprocess där någon form
+av acceptansbeslut måste fattas. Det kan t.ex. gälla om flygtiden för en flygplanstyp kan
+förlängas eller om ett kärnkraftverk kan tas i drift efter att sprickor har upptäckts i
+någon komponent. Alternativen kan i många beslutsprocesser vara fortsatt drift eller
+kostsamma reparationer. Den brottmekaniska analysen innehåller ett antal element som
+alla måste ingå. I figur 7-8 visas en schematisk bild med de olika beståndsdelarna.
+Oförstörande provning:
+Ultraljud, röntgen
+inspektion
+
+Komponentens
+geometri och last
+
+Material, omgivningens
+egenskaper, temperatur m.m.
+
+Defektens geometri:
+Form, storlek
+
+Spänningsanalys
+
+Materialegenskaper:
+Brottseghet, K Ic
+Sträckgräns, σ s
+
+Brottmekanisk
+modell
+
+BESLUT
+
+Figur 7-8
+
+7.5
+
+Andra faktorer:
+Ekonomi
+Miljöpåverkan
+Planerade driftstopp
+Politiska faktorer
+
+Den brottmekaniska analysens beståndsdelar.
+
+Experimentell bestämning av brottsegheten
+
+Brottsegheten K Ic bestäms experimentellt med standardiserade provstavar. De två
+vanligaste typerna är CT-provstav för dragprov respektive SEN(B)-provstav för
+böjprov. I figur 7-9 visas hur dessa provstavstyper används. För att giltiga resultat ska
+erhållas måste ett antal villkor vara uppfyllda. Det viktigaste är att det område kring
+
+Sprickors inverkan på konstruktioners livslängd 7.8
+
+sprickspetsen där Hookes lag inte gäller måste vara mycket mindre än konstruktionens
+storlek i övrigt.
+P
+P
+spricka
+
+CT-provstav
+Figur 7-9
+
+7.6
+
+P
+
+SEN(B)-provstav
+
+Standardprovstavar för brottseghetsprovning.
+
+Spricktillväxt under växlande belastning
+
+Vid beslut som ska fattas beträffande en konstruktions tillförlitlighet, baserat på
+förekommande eller misstänkta defekter, kan beslutet antingen vara att konstruktionen
+kan fortsätta att användas i drift eller att konstruktionen måste skrotas eller repareras.
+Det sista alternativet är ofta ekonomiskt ofördelaktigt, efterson driftstillestånd är dyrt,
+varför företagsledningar gärna ser att fortsatt drift ska kunna motiveras på något sätt.
+Reparationer kan dock i vissa fall vara billiga. Ibland räcker det med att slipa bort
+sprickorna eller att borra ett hål genom sprickspetsen.
+För att kunna fatta sådana beslut är kunskap om tillväxt av defekter nödvändig.
+En vanlig situation kan vara att en spricka med känd storlek och form har upptäckts i en
+konstruktion. En rent statisk brottmekanisk analys visar att ekvation (7-6) inte är
+uppfylld varför det inte nödvändigtvis är någon akut fara för haveri, dock kan långsam
+tillväxt av sprickan förväntas om belastningen är växlande. Frågan är då hur mycket
+sprickan växer till under fortsatt belastning och hur lång tid det tar för sprickan att nå
+kritisk storlek. Kunskap om defekters tillväxt kan också användas för att bestämma
+serviceintervall och när noggranna inspektioner måste göras.
+Intresset för långsam tillväxt av sprickor ökade efter haverierna med Comet
+flygplanet. Tiden från det att en spricka upptäcks med blotta ögat till dess att den når
+kritisk storlek kan ibland vara mycket kort och motsvara endast ett fåtal flygningar.
+Detta har lett till förbättrade inspektionsmetoder och en enorm utveckling av förståelsen
+för spricktillväxt. I detta sammanhang kan nämnas att aluminium som länge har varit
+det dominerande materialet i flygplansstrukturer är speciellt känsligt för tillväxt av
+utmattningssprickor. Det sägs ibland att om dagens kunskap om spricktillväxt i
+aluminium varit känd för ett antal decennier sedan, så hade detta material kanske inte
+accepterats i flygplan.
+Bestämning av en sprickas tillväxt under olika typer av växlande laster kräver
+omfattande experimentella undersökningar. Provstavar med olika geometrier måste
+prövas under olika typer av lastkombinationer. I laboratoriet belastar man provstavarna
+med en cyklisk last, vanligen beskriven med funktioner av typen Q = Qm + Qa sin ω t , se
+figur 7-10.
+
+Sprickors inverkan på konstruktioners livslängd 7.9
+
+verklig last
+
+laboratorieförsök
+
+Qmax
+
+lastnivå Q
+
+Qa
+Qm
+
+tid
+
+Qmin
+
+lastcykel
+
+Figur 7-10 Exempel på hur lastnivån kan variera med tiden vid laboratorieförsök och i verkligheten.
+
+Undersökningar av utmattningssprickors tillväxt uppvisar en ganska stor
+spridning i de experimentella resultaten. Därför måste relativt många försök utföras för
+att man ska kunna göra säkra bedömningar. Den tillväxt av en sprickas längd som sker
+vid en lastcykel, se figur 7-10, är vanligen mycket liten varför mätning av spricktillväxt
+kräver avancerade och noggranna metoder. I allmänhet kan tillväxten redovisas som ett
+medelvärde baserat på mätningar efter ett stort antal lastcykler. Ett genombrott i
+utvecklingen av beräkningsmetoder för spricktillväxt var upptäckten att
+spänningsintensitetsfaktorn kunde användas för att beskriva spricktillväxt/lastcykel vid
+cyklisk belastning. Det visade sig dock att det inte var K I i sig som var den viktiga
+parametern utan skillnaden mellan K Imax och K Imin , d.v.s. spänningsintensitetsfaktorn
+vid högsta respektive lägsta lastnivå under lastcykeln. Denna parameter betecknas ∆K I
+och är alltså ∆K I = K Imax − K Imin . Matematiskt kan sprickans tillväxt/lastcykel skrivas på
+formen
+
+ ∆K I 
+da
+= C6 
+
+dN
+ ∆K I6 
+
+n
+
+(7-7)
+
+där a är spricklängden, N är antalet belastningscykler samt
+
+C6
+
+och n
+
+materialparametrar. Parametern ∆K I6 är det värde på ∆K I som ger da dN = C6 där
+
+C6 = 10−6 m/lastcykel, d.v.s. sprickan växer en mikrometer per lastcykel. Enligt
+ekvation (7-5) kan spänningsintensitetsfaktorn skrivas K I = P π a f (a, h, w) . Ekvation
+(7-7) blir då en s.k. separabel differentialekvation,
+
+da
+
+( a ) ( f ( a , h, w ) )
+n
+
+n
+
+ ∆P π
+= C6 
+ ∆K I6
+
+n
+
+
+ dN
+
+
+(7-8)
+
+Differentialekvationen kallas separabel eftersom faktorer som beror av spricklängden
+respektive antalet belastningscykler kan separeras. I ekvation (7-8) är vänsterledet en
+funktion av spricklängden a och högerledet en funktion av antalet belastningscykler N.
+Ekvation (7-8) kan integreras enligt
+
+Sprickors inverkan på konstruktioners livslängd 7.10
+
+a
+
+∫
+
+a0
+
+( a ) ( f ( a , h, w ) )
+n
+
+ ∆P π
+= ∫ C6 
+0
+ ∆K I6
+N
+
+da
+
+n
+
+n
+
+
+ dN
+
+
+(7-9)
+
+och ett samband mellan sprickans längd a och antalet lastväxlingar N erhålls. I ekvation
+(7-9) är a0 sprickans ursprungliga längd. Funktionen f är vanligtvis inte given på en
+form som medger enkel analytisk integration, så i regel måste numeriska metoder tillgripas.
+Om a ( N ) räknas ut med hjälp av ekvation (7-9) erhålls resultat enligt figur 711. Sprickan växer väldigt långsamt för varje belastningscykel utom på slutet strax
+innan brottet inträffar. Vid inspektioner gäller alltså att i) upptäcka små sprickor samt
+att ii) inspektera tillräckligt ofta.
+
+brott
+
+a(N)
+
+brott
+
+litet Q
+
+stort Q
+
+a0
+Nbrott
+
+Nbrott
+
+N
+
+Figur 7-11 Exempel på samband mellan spricklängd a och antalet lastcykler N som erhålles från
+ekvation (7-9).
+
+Under drift utsätts de flesta konstruktioner för olika typer av lastväxlingar som
+både kan ändra form och amplitud. I dessa fall kan, så länge de olika lastväxlingarna är
+kända, ekvation (7-9) användas för varje lasttyp och slutresultaten adderas.
+Ett större problem dyker upp när de explicita lastväxlingarna och deras inbördes
+ordning inte är kända. Detta är mycket vanligt i olika typer av farkoster. Påkänningarna
+i en bil beror till stor del på hur jämnt underlaget är på de vägar där bilen körs och
+belastningarna på ett flygplan beror t.ex. på väderförhållanden, underlaget på
+landningsbanorna, flygsätt (t.ex. civilflyg eller jaktflyg) m.m. Den bästa beskrivningen
+av sådana belastningshistorier fås med hjälp av någon stokastisk (slumpmässig)
+beskrivning. Att uppskatta spricktillväxt under stokastisk belastning är ett svårt problem
+och inom t.ex. flygindustrin kompletteras vanligen beräkningar med olika typer av
+fullskaleprovning. Antalet dyrbara försök kan dock avsevärt reduceras tack vare
+möjligheten att redan på konstruktionsstadiet kunna uppskatta livslängden.
+Utvecklingen har nått så långt att sprickor i konstruktioner numera i många fall kan
+tillåtas.
+Inom flygindustrin används den beskrivna metodiken bland annat för att kunna
+godkänna flygplan för olika livslängder. När flygtiden för ett flygplan börjar närma sig
+den tillåtna vill ägarna vanligen fortsätta att flyga eftersom införskaffandet av nya
+flygplan i allmänhet är mycket dyrt. För att tillåta fortsatt drift måste då nya mer
+
+Sprickors inverkan på konstruktioners livslängd 7.11
+
+detaljerade inspektioner och beräkningar genomföras. Baserat på sådan information kan
+planets flygtid förlängas, eventuellt med krav på tätare inspektion och service.
+Om inspektionerna utförs noggrant och med avancerad mätteknik, men framför
+allt ofta, kan antalet haverier orsakade av utmattning reduceras väsentligt. Att man
+lyckats med detta framgår av statistiken. Att flyga är ett av de säkraste sätten att resa.
+Idag är olyckor med trafikflyg så ovanliga att de blir globala nyheter när de inträffar.
+Förfinade metoder vid inspektion och mer avancerade analysmetoder inom hållfasthetsläran kommer i framtiden att förbättra flygsäkerheten ytterligare.
+
+

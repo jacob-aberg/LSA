@@ -1,0 +1,1121 @@
+Tåg och spårtrafiksystem 4.1
+
+4. Tåg och spårtrafiksystem
+av
+Evert Andersson, Sebastian Stichel och Mats Berg
+KTH Farkost och flyg
+
+4.1
+
+Tekniska samband och definitioner
+
+4.1.1 Grundläggande begrepp och definitioner
+Vi ska här kortfattat beskriva spårburna trafiksystem - eller kortare spårtrafiksystem där farkosterna (fordonen, tågen) på något sätt styrs i sidled av ett spår. Till
+spårtrafiksystemen räknas naturligtvis först och främst den "vanliga" järnvägen.
+Dessutom finns tunnelbanor och spårvägar. Tunnelbanor är egentligen järnvägar som
+används för persontransporter i stora städer. Som framgår av namnet går ofta
+tunnelbanan - av utrymmes- och framkomlighetsskäl - under jord.
+Tågen på järnvägar och tunnelbanor behöver inte kunna stanna på siktsträckan.
+Tågens framfart regleras med ett signalsystem, som anger om tågen får köra eller inte
+och som ofta även anger den tillåtna hastigheten. Då kan man tillåta att tågen kör med
+hög fart genom kurvor med skymd sikt (t ex i tunnlar), eller i dimma. Detta är
+naturligtvis bra för framkomligheten. Genom signalsystemet garanteras att tågen kan
+bromsa i tid och att tågen inte krockar med varandra eller med andra hinder. Tågen
+framförs enligt särskilda säkerhetsregler. Trafiken sker på en särskild avskild bana,
+utan att blanda sig med t ex vägtrafiken.
+Spårvägar trafikeras med spårvagnar, helt eller delvis på samma utrymme som
+vägtrafiken. Här gäller vägtrafikförordningen och fordonen måste kunna stanna på den
+sträcka som föraren kan överblicka framåt.
+Vi kommer här mest att behandla spårburna trafiksystem där järnhjul rullar på
+järnräls eller - på fackspråk - stålhjul rullar på räler av stål (se Figur 4-1). Denna enkla
+grundläggande teknik "uppfanns" på 1820-talet och används fortfarande för mer än 99%
+av världens spårtrafikarbete. Andra varianter - magnetsvävare, hängbanor m m - har
+hittills mest varit enstaka anläggningar, som ibland fungerat någorlunda bra
+kommersiellt, ibland inte. Därmed inte sagt att det kommer att vara så för all framtid.
+
+• Stålhjul
+med en s k fläns på de hjulsidor
+som vetter mot spårmitt.
+• Stålräler
+utlagda i längsled, på konstant inbördes
+avstånd, och som bildar ett spår.
+• Tåg
+d v s sammankopplade fordon med
+ett eller flera dragfordon.
+Figur 4-1 Den vanliga järnvägens tre grundläggande tekniska komponenter: hjul med fläns, rälerna samt
+det sammankopplade tåget.
+
+Tåg och spårtrafiksystem 4.2
+
+Tågets fordon kan indelas i dragfordon och vagnar. Dragfordon har framdivningsutrustning - d v s någon form av motorer med tillhörande styr- och kylutrustning m m för att ge dragkraft åt tåget. Det kan vara förbränningsmotorer eller elmotorer.
+Dragfordon med utrymme för resande eller gods kallas motorvagn. Dragfordon
+utan sådant utrymme kallas lok. Fordon utan framdrivning kallas rätt och slätt vagn.
+Ett spårfordon sägs bestå av två huvuddelar: korg och löpverk; se Figur 4-2.
+Korgen är den fordonsdel som bär upp den nyttiga lasten och/eller huvuddelen av
+dragfordons framdrivningsutrustning. Korgen kan vara mycket enkel, som på en öppen
+godsvagn, eller innehålla ganska mycket utrustning (sittmöbler, toalettsystem och
+duschar, köksutrustning, informationssystem, ventilation och luftkonditionering, system
+för styrning av broms m m). Det som kallas korg på ett spårfordon har sina
+motsvarigheter på övriga farkoster: t ex kaross på bilar och flygplanskropp.
+Med löpverk menas hjul, axlar och fjädring samt de bärande konstruktioner som
+håller ihop dessa delar. Det motsvarar ungefär vingar och roder på flygplan och vad
+man på bilar brukar kalla hjulupphängning.
+Hjulaxlarna lagras i lagerboxar (axelboxar) som via fjädringssystem avfjädrar
+korgen, antingen direkt eller indirekt genom något form av mellanramverk, som utgör
+vridbara hjulställ, s k boggier. Boggier ger fördelen av att lättare anpassa sig till kurvor
+och till spårets ojämnheter; vagnens skakningar brukar bli mindre och fordonet spårar
+inte ur lika lätt om spåret är krokigt och ojämnt. Boggier började användas i stor skala i
+Nordamerika redan i mitten av 1800-talet (bl a för att klara av de dåliga spåren som man
+ofta kan se på västern-filmer).
+För att koppla ihop fordon i tåg används antingen manuella koppel eller
+automatkoppel som kopplar automatiskt när fordonen stöter ihop. Kopplen är nästan
+alltid kombinerade med någon form av stötupptagning som ska mildra stötarna när
+fordon möts för att kopplas ihop.
+En annan viktigt del är bromssystemet. Bromsningen kan ske med skivbromsar
+eller med s k blockbromsar, där särskilda bromsblock trycks direkt mot hjulens periferi.
+På snabba tåg och på spårvagnar finns dessutom ofta magnetbromsar, som trycks och
+sugs mot rälerna. Att få stopp på ett framrusande tåg är många gånger viktigare än att få
+fart på det!
+
+Figur 4-2 Olika delar i ett spårfordon.
+
+Tåg och spårtrafiksystem 4.3
+
+4.1.2 Vilka för- och nackdelar har spårtrafiken ?
+Varje typ av farkost eller trafiksystem har sina fördelar och sina nackdelar. Varken
+flyget eller spårtrafiken når överallt, men flyget är överlägset i snabbhet på riktigt långa
+avstånd medan spårtrafiken genom sitt ganska begränsade utrymmesbehov bl a passar
+bra i trånga städer. Spårtrafikens grundläggande tekniska komponenter - se Figur 4-1 blir bestämmande för systemets egenskaper och funktionssätt.
+− Det krävs en särskilt anlagd väg eller bana för tåget, i likhet med vägtrafiken men till
+skillnad från sjö- och flygtrafiken. Detta ger relativt höga fasta kostnader.
+− Tåget styrs av spåret. Något behov av aktiv styrning i varje fordon finns inte. Långa
+tåg kan kopplas ihop och köras av en enda person. Det långa tåget följer banan t ex i
+långa tunnlar.
+− Tåget är bundet till spåret och kan bara växlas in på ett annat spår vid vissa ställen
+där det finns spårväxlar. Tåget kan inte väja för hinder i tågets väg. Detta gör
+systemet relativt oflexibelt och ganska känsligt för störningar. Det ställs stora krav
+på tillförlitlighet för systemets olika komponenter.
+− Friktionen mellan tågets hjul och spåret är ofta ganska låg (µ = 0.1 - 0.2). Tåg måste
+därför räkna med ganska långa bromssträckor. Ett persontåg bromsar från 140 km/h
+till stopp på ca 1000 m, medan ett snabbtåg behöver ca 2000 m från 200 km/h.
+− Eftersom bromssträckan kan vara längre än siktsträckan och tåget inte kan väja för
+hinder, krävs ett särskilt (manuellt eller automatiskt) tågstyrnings- och säkerhetssystem - ofta kallat signalsystem - som styr tågens framfart och styr spårväxlarna.
+Systemet garanterar att bara ett tåg samtidigt kan befinna sig på samma del av spåret
+- en s k blocksträcka. Tåg krockar sällan och trafiken får en mycket hög säkerhet.
+− Ett tåg rullar mycket lätt, sedan det fått upp farten. Det beror dels på de jämna hjulen
+och rälerna, dels på att fordon som kör inne i det sammankopplade tåget i regel får
+ett lågt luftmotstånd (jämför med tävlingscyklisten som helst kör "i lä" bakom en
+annan cyklist). Exempel: Snabbtåg X2000 rullar över 4 mil på plant spår (i vindstilla)
+innan det stannar av sig själv, sedan det först fått upp farten till 200 km/h. Det låga
+motståndet mot tågets rörelse gör tåget i regel mycket energisnålt.
+− Genom att tågets rörelsebana är given, kan elektriska ledningar monteras över spåret,
+vilket medger elektrisk framdrivning. Elektricitet kan produceras med små
+luftföroreningar. Moderna elektriska drivsystemen erbjuder också möjlighet att
+återmata och återvinna stora delar av tågens rörelseenergi vid bromsning, genom att
+tågens elektriska motorer körs som generatorer. Då blir tågen ännu mer energisnåla.
+
+− Ett långt tåg kan ta relativt stora mängder personer eller gods. Man kan få en mycket
+hög transportkapacitet i förhållande till det utrymme som tas i anspråk för spåren.
+Spårtrafik är utrymmessnål och kan dessutom läggas i tunnlar under jord.
+− Tillgång till tåget finns endast vid vissa terminaler eller stationer. Tåget är inte
+yttäckande i samma utsträckning som vägtrafiken. Oftast behövs kompletterande
+transporter till och från terminalerna. Tåget får inte lika hög direkt tillgänglighet som
+vägtrafiken, men täcker oftast bra i förhållande till flygtrafiken.
+Genom de relativt höga fasta kostnaderna och beroendet av terminaler blir spårtrafiken
+mest konkurrenskraftig i trafikstarka relationer, särskilt på medellånga och långa
+avstånd. Genom sitt ringa utrymmesbehov blir den effektiv där det är trångt om
+utrymme. Den är i regel säker och energisnål. Elektrisk tågtrafik alstrar inga
+luftföroreningar.
+
+Tåg och spårtrafiksystem 4.4
+
+Spårtrafik med elektrisk tågdrift uppfyller redan idag flera av de huvudkrav som i
+framtiden måste ställas på samhällets transportsystem: låg energiförbrukning,
+obetydliga luftföroreningar, hög säkerhet, hög kapacitet samt litet utrymmesbehov.
+Spårtrafiken tillfredsställer inte alla transportbehov, men är en viktig del av det totala
+transportsystemet i ett modernt samhälle.
+4.1.3 Finns andra möjliga system för spårtrafik ?
+Det finns naturligtvis många tekniskt möjliga system för spårtrafik, inte bara det
+konventionella systemet som visas i Figur 4-1. Problemet är bara att det hittills varit
+svårt att konstruera och bygga ett system som är billigare och mera robust och effektivt
+än det konventionella. Men i princip finns många alternativ.
+En grundläggande fråga är hur många räler systemet bör ha. Detta har under
+spårtrafikens historia diskuterats och prövats ett stort antal gånger. Vid varje tillfälle hittills - har svaret så småningom blivit att två räler är den bästa tekniska och
+ekonomiska lösningen på problemet. Figur 4-3 diskuterar och förklarar varför t ex olika
+s k monorailsystem hittills nästan bara utmynnat i drömmar eller ekonomiska
+misslyckanden, möjligen lyckade som attraktion på ett tivoli. Ett möjligt system, som
+har flera fördelar, bl a beträffande utrymme, är hängbanor i mitten av Figur 4-3. Det
+finns ett berömt sådant system i Wuppertal i västra Tyskland.
+Ett system som sedan 1970-talet låtit tala om sig är s k magnetsvävare. Olika
+system har utvecklats i Japan och Tyskland. Det japanska systemet har repellerande
+magneter i banan och i fordonet. Det tyska systemet, se Figur 4-4, har attraherande
+magneter (d v s med olika poler), där de fasta magneterna i banan lyfter upp magneterna
+i fordonet. Lyft och framdrivning sker med samma magneter. Framdrivningen sker
+genom att magnetfältet i banan flyttas framåt, varvid fordonsmagneterna "dras med".
+Magnetsvävarsystemens egenskaper, för- och nackdelar m m kommer i Avsnitt 4.5.
+
+Figur 4-3 Olika systems för- och nackdelar (Källa J H Armstrong: The Railroad ...., 1987).
+
+Tåg och spårtrafiksystem 4.5
+
+Figur 4-4 Tyskt magnetsvävtåg "Transrapid".
+
+4.2
+
+Fordonstyper och användning
+
+Vi kommer att beskriva lok, motorvagnar, höghastighetståg, och ge exempel på
+personvagnar och godsvagnar. Fordon för tunnelbanor och spårvägar behandlas också.
+Större delen av tågtrafiken i utvecklade länder som Sverige, Europa och Japan
+sker med elektrisk drift. Däremot har Nordamerika och de flesta utvecklingsländer
+nästan bara dieseldrift. Eldrift är effektiv, särskilt för snabb persontrafik, men kräver
+omfattande merinvesteringar i elektrisk kraftförsörjning och elledningar.
+4.2.1 Lok
+På järnvägar med blandad person- och godstrafik är det vanligt att använda lok som kan
+användas både i person- och godståg, s k universallok. Exempel på detta är de eldrivna
+s k Rc-loken som används av SJ och Green Cargo (f d SJ godstransporter); se Figur 4-5.
+De kan köras i hastigheter upp till 160 km/h. Rc-loken har en ganska hög dragkraft för
+att kunna dra godståg med tågvikter upp till ca 1500 ton (det motsvarar 35 - 40
+fullastade tvåaxliga godsvagnar, eller 25 - 40 lastbilsekipage med släp).
+
+Figur 4-5 SJ universallok, eldrivet typ Rc6 för person- och godstrafik.
+Max hastighet
+160 km/h (liknande versioner finns för 135 km/h)
+Max startdragkraft
+245 kN
+Kontinuerligt uttagbar effekt vid hjulen 3600 kW
+Max uttagbar effekt (kort tid) vid hjulen 4800 kW
+Vikt
+78 ton
+
+Tåg och spårtrafiksystem 4.6
+
+Loket tar spänning (15 000 V, 16 2/3 Hz växelström, i utlandet finns även annan
+spänning och frekvens) högst upp i strömavtagaren. Därefter transformeras spänningen
+ner till ca 1000 V i loket. Strömmen likriktas och regleras med tyristorströmriktare. Fyra
+likströmsmotorer, med en maximal effekt av totalt 4800 kW, driver loket. På nyare lok
+har likströmsmotorerna ersatts av växelströmsmotorer, s k asynkronmotorer, som är
+robustare och billigare. Då krävs istället en mera komplicerad elektrisk omriktare som
+kan alstra en trefas växelspänning med rätt frekvens.
+Många järnvägar har också specialiserade lok, antingen för mycket tung
+godstrafik eller för snabbtågstrafik (hastighet ≥ 200 km/h). Lok för att dra tunga godståg
+måste kunna ge hög dragkraft och måste då själva vara tunga för att inte slira med
+hjulen. Särskilt i Nordamerika är sexaxliga lok, med en axellast på 300 kN (ca 30 ton)
+och en total vikt på ca 180 ton, vanliga för att dra tunga godståg. Ofta används upp till 4
+eller 5 sådana lok i tunga tåg.
+4.2.2 Motorvagnar
+Med motorvagnar menas vagnar med både framdrivningsutrustning och plats för
+resande. En typ av elektrisk motorvagn visas i Figur 4-6. Denna är byggd för snabb
+persontrafik och har därför både hög topphastighet och snabb acceleration. Vagnarna är
+sammankopplade i tågsätt med två till tre vagnar i varje. Flera tågsätt kan bilda längre
+tåg. Alla eller de flesta vagnar har framdrivning i ett sådant tåg. Förarplatser finns i båda
+ändarna av tåget. Det går därför snabbt att vända tågets färdriktning. Det visade tåget
+har extra stor bredd: 3.45 m, vilket är 0.4 - 0.6 m bredare än "normala tåg". Det kallas
+ofta "wide-body train". Tåget rymmer därför 20 - 25 % flera sittplatser än vad som är
+normalt. En av dubbeldörrarna har lågt insteg så man kan kliva direkt in från de
+vanligaste plattformarna. Innanför finns en särskild hiss där man kan hissa upp
+barnvagnar och rullstolar till normal golvnivå, som i detta fall är 1.15 m över
+rälsöverkant. Denna och liknande typer av elektriska motorvagnar har energiåtermatande elbroms. Ett annat sätt att öka antalet sittplatser (per vagn eller per meter tåg)
+är att göra tvåvåningståg. Att rymma många resande per vagn eller per meter tåg har
+stor betydelse för ekonomin.
+
+Figur 4-6 Eldriven motorvagn, typ X50 / X52 för snabb regional trafik.
+I trafik sedan 2001.
+Max hastighet
+200 km/h (finns även för 180 km/h)
+Max uttagbar effekt (kort tid) vid hjulen
+1750 kW (ca 2400 hk)
+Antal sittplatser i regionaltågsutförande
+190 - 200 st (2 vagnar, endast 2. klass)
+Antal sittplatser i utförande för meedeldisatans
+165 - 170 st (2 vagnar, 1. och 2. klass)
+Tjänstevikt
+116 ton
+Längd
+54 m
+Yttre/inre bredd
+3.45/3.19 m
+
+Tåg och spårtrafiksystem 4.7
+
+Dessa tåg används både i regionaltrafik och i medeldistanstrafik (100 - 300 km) i flera
+regioner i Sverige (Mälardalen, Bergslagen, Västra Götaland, längs Norrlandskusten
+etc). Tåg med liknande prestanda används i Öresundstrafiken mellan Sverige och
+Danmark samt i Arlanda Express mellan Stockholm och Arlanda, dock med normal
+bredd på 2.9 à 3.0 m. Tågen finns i olika komfortklasser, med olika stolar, med och utan
+severingsutrymme etc. Alla tåg har luftkonditionering.
+Tåg för tung lokaltrafik i stora städer kallas ofta för pendeltåg. De består nästan
+alltid av motorvagnar med hög acceleration, stora breda dörrar och mycket ståplatsutrymmen. Kraven på transportkapacitet är stora. Topphastigheten är typiskt 120 - 140
+km/h. Höga topphastigheter lönar sig sällan p g a de täta stoppen för denna typ av tåg.
+Banor med mindre trafikvolymer är i regel inte elektrifierade. Där kör tågen med
+dieseldrift. Figur 4-7 visar ett modernt dieseldrivet tågsätt, som består av tre permanent
+sammankopplade vagnar. En speciell egenskap hos detta tåg är att det snabbt och enkelt
+kan kopplas samman och isär (på 1 - 2 minuter) med tåg av samma typ, genom snabba
+automatkoppel. Folk kan sedan förflytta sig mellan de sammankopplade tågdelarna,
+inne i tåget.
+
+Figur 4-7 Dieseldrivet medeldistanståg typ Y2 (i Danmark IC/3) i modernt utförande. Varje tågsätt
+består av 3 vagnar. Flera tågsätt kan enkelt och snabbt kopplas samman till längre tåg, eller omvänt.
+Därför kan tågen "grena ut sig" så att så många resenärer som möjligt får direkta tågförbindelser utan
+tågbyte.
+Tågsätt (minsta enhet) består av
+Motorvagn + Mellanvagn + Motorvagn
+Max hastighet:
+180 km/h
+Effekt vid utgående motoraxel
+4*294 kW
+Antal sittplatser
+14 + 126 st
+(1. och 2. klass)
+Tjänstevikt
+97 ton
+Längd
+59 m
+
+Observera att effekt i dieseldrivna tåg räknas som effekt på utgående motoraxel, medan
+effekt hos eldrivna fordon räknas vid hjulen. För dieseldrivna fordon brukar 15 - 25 %
+gå bort i förluster (hjälpmaskiner, förluster i transmission m m) på väg till hjulen.
+
+Tåg och spårtrafiksystem 4.8
+
+4.2.3 Höghastighetståg
+Ju högre hastigheten är, desto större blir de dynamiska krafterna (d v s slag och stötar)
+på spåret (för ett och samma tåg). För att inte krafterna totalt sett ska bli otillåtet stora,
+och därigenom förstöra spåret, måste snabba tåg göras relativt lätta (egentligen ha låg
+axellast) och ha bra fjädring.
+Det svenska snabbtåget X 2000, se Figur 4-8, är en särskild typ av
+motorvagnståg specialbyggt för att kunna köra i höga hastigheter på befintliga, äldre
+järnvägar. På befintliga järnvägar är det ofta kurvorna som begränsar hastigheten. För
+att inte behöva bromsa in och accelerera tåget vid varje kurva kan X 2000 köra betydligt
+snabbare i kurvorna (20 - 30 %) än konventionella loktåg. Härigenom kan X 2000 köra
+med en hög medelhastighet, även om topphastigheten inte är extremt hög (f n körs max
+200 à 210 km/h). Tåg med liknande prestanda och egenskaper finns även i Italien,
+England, Schweiz och Tyskland.
+
+Figur 4-8 SJ snabbtåg X 2000 .
+Normal tågsammansättning
+Max hastighet
+Max uttagbar effekt (kort tid) vid hjulen
+Antal sittplatser i normalt utförande
+Tjänstevikt
+Längd
+
+Drivenhet + 5 mellanvagnar + Ändvagn m förarplats
+210 km/h (276 km/h i prov)
+4000 kW (ca 5400 hk)
+98 + 222 st (1. och 2. klass, 1/2 bistrovagn)
+366 ton
+165 m
+
+Tåget kör med betydligt högre sidoacceleration (centrifugalkraft) i kurvorna än vanliga
+tåg. För att kunna göra detta, utan att passagerarna känner obehag, lutas vagnskorgarna
+inåt med hjälp av hydraulik och datorstyrning, s k aktiv korglutning. Dessutom används
+s k mjuka boggier med särskilt mjuk horisontell fjädring för att inte ge alltför stora
+totala krafter i sidled på spåret (inkl de dynamiska tillskotten). X 2000 har lågt
+luftmotstånd och även återmatande broms vilket sparar energi. Energiförbrukningen per
+vagn-km blir därför inte högre än för vanliga lokdragna persontåg i lägre hastigheter
+(140 - 160 km/h).
+Figur 4-9 visar det franska höghastighetståget TGV (Train à Grand Vitesse) i sin
+version "Atlantique", som kör från Paris till Atlantkusten i sydväst. Det finns flera andra
+
+Tåg och spårtrafiksystem 4.9
+
+versioner, bl a de tåg som kör genom tågtunneln under Engelska kanalen. Det finns
+också tvåvåningståg "TGV Duplex". TGV är världens snabbaste tåg räknat både som
+rekordhastighet i enstaka prov (515 km/h) och som topphastighet i kommersiell trafik
+(300 km/h). Medelhastigheten i kommersiell trafik är upp till ca 240 km/h, en tätplats
+som Frankrike delar med Japan. Dessa höga hastigheter gäller så länge tåget kör på
+"superbanor" med hög standard. Bl a måste kurvradierna vara stora (ca 4000 m i
+horisontal-planet). Liknande tåg (max hastighet 270 - 300 km/h) finns även i Spanien,
+Japan, Tyskland och Italien.
+På vanliga banor, med mera normala kurvradier (600 - 1200 m är vanligt i
+Sverige), är dessa tåg långsammare än svenska X 2000. Franska TGV, "Världens
+snabbaste tåg", skulle ta nästan en halv timme längre tid mellan Stockholm och
+Göteborg än X 2000 !
+Snabba tåg måste ha en hög motoreffekt för att kunna ge dragkraft i höga
+hastigheter (effekt = dragkraft x hastighet). Samtidigt bör de inte vara alltför tunga
+(axellast) för att inte belasta spåret alltför mycket. Hög effekt och låg vikt står dock i
+motsatsförhållande till varandra. De senaste åren har tekniken för eldrift snabbt
+utvecklats mot kompakta och lätta drivpaket. Utvecklingen går mot rena motorvagnar
+med s k distribuerad dragkraft, istället för att ha separata drivenheter (lättviktslok).
+
+Figur 4-9 Det franska höghastighetståget TGV är världens snabbaste tåg och är avsett för de nya
+europeiska "superbanorna" av hög standard. Bilden visar version "Atlantique".
+Normal tågsammansättning
+Drivenhet + 10 mellanvagnar + Drivenhet
+Max hastighet
+300 km/h
+(515 km/h vid prov)
+Kontinuerligt uttagbar effekt vid hjulen
+8800 kW
+Antal sittplatser
+485 st, med 3 st 1: klass, 6 st 2. klass, 1 barvagn
+Tjänstevikt
+484 ton
+Längd
+238 m
+
+4.2.4 Personvagnar
+För att kunna kopplas in i vilket lokdraget tåg som helst, tillsammans med andra vagnar,
+måste lokdragna personvagnar ha standardiserade system för sammankoppling,
+bromsens styrning, elförsörjning, högtalarkommunikation m m. Ett exempel visas i
+Figur 4-10.
+Förutom sittvagnar finns serveringsvagnar, sovvagnar med hotellstandard,
+liggvagnar (med enklare britsar), familjevagnar (med lekrum, handikapputrymmen)
+med flera vagnstyper.
+
+Tåg och spårtrafiksystem 4.10
+
+Figur 4-10 Personvagn från Mellaneuropa (Österrike).
+Max hastighet
+200 km/h
+Antal sittplatser
+78 st, (2. klass)
+Tjänstevikt
+52 ton
+Längd
+26.4 m
+
+4.2.5 Godsvagnar
+Det finns godsvagnar av en mängd olika typer beroende på att det finns många olika
+slags gods att transportera. Det finns slutna vagnar (exempel i Figur 4-11), det finns
+öppna vagnar för gods som inte behöver skydd (containers, malm, stålämnen, kol,
+osågat timmer m m).
+Det finns cisternvagnar för flytande varor (oljor, kemikalier, cement m m). Det
+finns olika specialvagnar, bl a för tunga transporter. ABB i Ludvika äger t ex en vagn
+som har 32 axlar och en totalvikt på 640 ton! Den används för att frakta tunga
+transformatorer och liknande utrustning.
+Det är fortfarande vanligt med tvåaxliga vagnar i Europa; se t ex Figur 4-11.
+Trenden går dock mot större vagnar, av ekonomiska skäl. De mindre sändningarna tas
+alltmer över av lastbilar och av containers i kombitrafik (kombinerad trafik: tåg, lastbil,
+båt). Vagnen i Figur 4-11 har skjutbara väggar för att lätt kunna lastas från sidan. En
+fullastad vagn väger 45 ton (ungefär samma som ett normalt lastbildekipage med släp).
+Axellasten är alltså 22.5 ton, vilket är vanligt i Europa.
+
+Figur 4-11 Tvåaxlig sluten godsvagn med skjutbara väggar.
+Max hastighet, lastad
+100 km/h
+Egenvikt
+15 ton
+Maximal last
+30 ton
+Maximal volym
+108 m3
+Golvarea
+41 m2
+
+Tåg och spårtrafiksystem 4.11
+
+En modern europeisk fyraxlig vagn, har en egenvikt på 25 - 30 ton och lastar 60 - 65
+ton. I Nordamerika finns nästan bara fyraxliga vagnar. Där tillåts i regel 30 tons
+axellast. Varje vagn har då en totalvikt på 120 ton och kan lasta 90 - 100 ton. Vagnar
+med ungefär samma totalvikt och lastförmåga införs även på svensk-norska Malmbanan
+(Luleå - Kiruna - Narvik). En sådan vagn visas i Figur 4-12.
+
+Figur 4-12 Malmvagn för tung last.
+Egenvikt
+Maximal last
+Maximal lastvolym
+
+20 ton
+100 ton
+45 m3
+
+4.2.6 Tunnelbanevagnar
+Tunnelbanevagnar är tekniskt sett motorvagnar med eldrift. Oftast är alla axlar drivna,
+för att få bra acceleration. Detta är viktigt eftersom tunnelbanorna har stopp inlagda
+med täta mellanrum (storleksordningen 1 km). Även bromssystemen måste vara
+effektiva för att ge en säker bromsning med hög retardation. Moderna system har
+återmatande elbroms. En annan viktig egensakp är att ha flera breda dörrar för att
+snabbt kunna få ut och in resenärerna. Figur 4-13 visar en tunnelbanevagn för
+Storstockholms Lokaltrafik (SL).
+
+Figur 4-13 Tunnelbanevagn (typ C20) från Storstockholms Lokaltrafik. Vagnarna består av tre delar
+som sinsemellan är förenade med leder. Vagnens inre uppträder som ett "böjligt rör". Upp till tre vagnar
+kan kopplas samman i trafiken.
+Max hastighet
+90 km/h
+Max uttagbar effekt (kort tid) vid hjulen
+1590 kW
+Antal sittplatser
+128 st
+Antal ståplatser
+286 st (beräknat som 5 st per m2)
+Tjänstevikt
+71 ton
+Längd
+46.5 m
+
+Tåg och spårtrafiksystem 4.12
+
+Tunnelbanesystem finns internationellt i de flesta större städer (över ca 1 miljon
+invånare). Kraven på transportkapacitet är stora; se vidare Avsnitt 4.3.4. Stora
+tunnelbanessystem finns i bl a London, Paris, New York, Singapore och Tokyo.
+Stockholms tunnelbana är medelstor både vad gäller utbredning (linjelängd) och
+transportkapacitet.
+Tunnelbanorna har ofta byggts med relativt trånga tunnelsektioner, vilket
+begränsar vagnarnas storlek. Särskilt är det så i de stora gamla tunnelbanesystemen i
+London och Paris, delvis även för städer som Stockholm. Modernare system, t ex i
+Singapore, Hongkong och San Francisco, har storlek och prestanda ungefär som vanliga
+järnvägar.
+Trafikföretagen kan välja mellan att göra vagnar med en stor andel ståplatser
+och en liten andel sittplatser, eller tvärtom. Transportkapaciteten blir större med mycket
+ståplatser, men komforten för resenärerna blir sämre.
+4.2.7 Spårvagnar
+Spårvagnar måste kunna följa trafikrytmen på gatorna. Detta ställer stora krav på
+accelerations- och bromsförmåga. Spårvagnar har nästan alltid magnetbromsar som
+trycks ner på spåret, för att snabbt få stopp på vagnen i ett nödläge.
+Ett annat krav är att spårvagnar ska kunna köra genom kurvor runt gathörnen.
+Vagnskorgarna kan därför inte göras alltför långa och ledade spårvagnar är vanliga.
+Alltfler moderna spårvagnar byggs med låg golvnivå, nästan i trottoarnivå, för att göra
+det bekvämt att stiga i och ur.
+Spårvagnar är tekniskt sett motorvagnar. Figur 4-14 visar en vagn med 6 axlar.
+Flera vagnar kan kopplas samman till längre spårvagnståg. Det är en av spårvägstrafikens fördelar, jämfört med bussar, att kunna köra ganska långa tåg med liten
+personalinsats. En annan fördel är att spårvägar är eldrivna och därför inte ger upphov
+till direkta luftföroreningar. Trafikanterna upplever också spårvägar som tydliga,
+synliga och stabila, eftersom spåret ligger fast i gatan.
+Spårvägar har sin största utbredning i Mellaneuropa, speciellt i Tyskland,
+Österrike och Schweiz. I Sverige finns f n mer eller mindre utvecklade spårvägsnät i
+Göteborg, Norrköping och Storstockholm (Lidingö, Nockeby, Tvärbanan). Spårvägsnät
+är under återuppbyggnad i många länder, t ex i USA.
+
+Figur 4-14 Ledad spårvagn med 6 axlar. Tvärbanan i Stockholm.
+Max hastighet
+80 km/h
+Antal platser
+78 sittande + 133 stående
+Längd
+29.7 m
+Tjänstevikt
+37.5 ton
+
+Tåg och spårtrafiksystem 4.13
+
+4.3
+
+Prestanda, kapacitet och miljöegenskaper
+
+Spårtrafikens prestanda (transportkapacitet, restider m m) avgörs av ett antal faktorer,
+som i stor utsträckning har med den s k infrastrukturen (de fasta anläggningarna) att
+göra. Men prestanda beror naturligtvis också på fordonen. Framför allt måste
+infrastruktur och fordon vara anpassade till varandra. Vi ska här beskriva de viktigaste
+faktorerna för att få goda prestanda. Vi ska också säga något om spårtrafikens
+miljöegenskaper, framför allt dess energiförbrukning.
+4.3.1 Kapacitet och trafikflöde
+Kapaciteten definieras som det möjliga trafikflödet F. Flödet bestäms av produkten
+F = NT . G = antal trafikenheter/tim
+där
+
+NT = antal tåg/tim
+G = antal trafikenheter/tåg (antal resande eller ton gods per tåg).
+
+Kapaciteten kan alltså ökas på två sätt: antingen genom att öka mängden resande eller
+gods per tåg (d v s lastkapaciteten), eller genom att öka antal tåg per timme. Tågens
+lastkapacitet kommer senare att beskrivas i Avsnitt 4.3.2 - 4.3.4.
+Vi ska här först diskutera hur många tåg per timme som kan köras, utgående från
+den spårburna trafikens funktionssätt och grundläggande egenskaper. Vi tänker oss för
+det första att vi har s k dubbelspår, d v s de två spåren används för var sin körriktning.
+− Tågtrafiken styrs av ett signalsystem, med en inbyggd säkerhetslogik, så att två tåg
+aldrig ska kunna stöta samman under körning.
+− Banan är indelad i s k blocksträckor. På varje blocksträcka får endast ett tåg i taget
+befinna sig. I början av varje blocksträcka finns en signal som visar kör eller stopp.
+När ett tåg närmar sig ett annat tåg bakifrån, måste det börja bromsa senast när det
+befinner sig på minimalt bromsavstånd från infarten till den blocksträcka där det
+andra tåget, eller en del av detta, befinner sig.
+Detta gör att det måste finnas ett visst avstånd mellan tågen, särskilt om tågen ska kunna
+köra störningsfritt utan att "vara i vägen" för varandra. Ju högre hastighet eller ju sämre
+bromsförmåga tåget har, desto längre blir bromssträckan och det nödvändiga avståndet
+mellan tågen.
+Exempel: Om tågen kör i 200 km/h är bromsträckan drygt 2 km, inkl viss marginal.
+Som riktvärde behöver tidsintervallet mellan tågen då vara ca 2 minuter med de enkla
+grundprinciperna ovan och med antagandet att alla blocksträckor är lika långa som
+bromssträckorna. I lägre hastigheter kan det nödvändiga tidsintervallet minskas.
+I praktiken behövs ytterligare avstånd (i medeltal) mellan tågen för att ha marginal för
+skillnader i tågens hastighet och för att ge utrymme för tågstopp vid stationer.
+Om tågen stannar vid mellanstationer, måste tidsintervallet förlängas med den
+tidsfördröjning som tåget får genom uppehållet. För ett snabbtåg i 200 - 250 km/h kan
+det röra sig om 3 - 4 minuter. Totalt behövs då ett tidsintervall på 5 till 6 minuter mellan
+tågen. Antalet snabba tåg per timme blir då 10 - 12 st. Med maximalt ca 1200 resande
+per tåg kan då en maximal kapacitet på 12000 - 15000 resande per timme och riktning
+erhållas. Ungefär så här kör man snabbtåg i Frankrike och Japan.
+
+Tåg och spårtrafiksystem 4.14
+
+Om hastigheten är väsentligt lägre, blir broms- och blocksträckorna kortare och då
+kommer tidsintervallen mellan tågen att kunna minskas. I tunnelbanesystem, med
+snabba av- och påstigningar genom breda dörrar, snabba stopp och topphastigheter på
+70 - 100 km/h, är det möjligt att med korta blocksträckor köra med tidsintervall på 90 120 sekunder. Upp till 30 - 40 tåg per timme är realistiskt. Med upp till 2500 resande
+per tåg (fördelade i 10 - 12 stora vagnar med mycket ståplatser) blir den maximala
+kapaciteten 75000 - 100000 resande per timme och riktning. Sådant förekommer i
+Fjärran Östern.
+I Sverige är den teoretiska kapaciteten på Stockholms tunnelbana 30 - 36 tåg per
+timme. Med 1200 resande per tåg blir den teoretiska max-kapaciteten 36000 - 42000
+resande per timme. Vad som begränsar kapaciteten, d v s tidsintervallet mellan tågen, är
+i stor utsträckning uppehållstiden på mest belastad station (i Stockholm är det TCentralen) för resandes av- och påstigning.
+Vad vi nu har studerat är dubbelspårstrafik (alltså att trafiken i olika riktningar
+går på olika spår). En stor del av det svenska järnvägsnätet är enkelspår. Det innebär att
+trafik i båda riktningarna ska gå på samma spår. Då måste tågen mötas på särskilda
+mötesstationer, som brukar placeras på 4 - 15 km avstånd. Tågtätheten och kapaciteten
+blir då betydligt lägre.
+4.3.2 Axellast och linjelast
+I Europa finns en standard som tillåter upp till 22.5 tons axellast (221 kN). Det finns
+också en begränsning av tågens s k linjelast (tågets massa per meter i medeltal). Denna
+är i Europa i regel 8 ton per meter, dock med åtskilliga undantag.
+Axellasten begränsas framför allt med hänsyn till spårets hållbarhet och underhållskostnader, i huvudsak för den s k banöverbyggnaden (räler, sliprar, ballast m m).
+Linjelasten begränsas av broars och markens bärighet eller av markens bärighet (den
+geotekniska bärigheten) under banan.
+I Nordamerika är den tillåtna axellasten i regel 30 ton, generellt ofta 32.5 ton.
+Det ger naturligtvis större möjligheter än i Europa att köra tung godstrafik med mycket
+tungt gods i varje vagn.
+4.3.3 Tågvikt
+Det finns begränsningar för hur tunga tåg som kan dras. Persontågen är i regel relativt
+lätta (100 - 600 ton). De tunga tågen förekommer i godstrafiken.
+En sådan viktig begränsning beror på lokens dragförmåga, särskilt om banan har
+stigningar. Ett vanligt svenskt universallok kan dra ca 1500 ton på horisontellt spår. Vid
+16 ‰ stigning måste tågvikten begränsas till ca 900 ton. För att inte onödigtvis
+begränsa tågvikterna brukar de flesta moderna järnvägar, där tung godstrafik ska kunna
+köras, byggas med maximala stigningar på 10 à 12 ‰. För att öka lokens dragförmåga
+kan större och tyngre lok användas, t ex lok med 6 axlar i stället för 4.
+I Sverige och Europa körs i praktiken sällan tåg med mer än 2000 à 2500 tons
+tågvikt. Det är i regel styrkan i kopplen (mellan vagnarna) som begränsar tågvikterna.
+Ett undantag är Malmbanan mellan Luleå - Kiruna - Narvik, där tågvikter på ca 5000
+ton hittills tillåtits. Tågvikterna ska nu ökas till ca 8500 ton. Ett sådant tåg lastar ca 6800
+ton malm, ungefär lika mycket som 170 lastbilar med släp av största modellen. Detta är
+ungefär lika stora tågvikter som körs i Nordamerika, där normal vikt i godstågen är
+8000 - 10 000 ton. För dessa höga tågvikter används särskilda kraftigt dimensionerade
+koppel.
+
+Tåg och spårtrafiksystem 4.15
+
+4.3.4 Kapacitetsutnyttjande och utrymmesbehov
+Allmänt gäller att den maximala kapaciteten i tung godstrafik är så stor att den oftast
+inte utnyttjas. I framför allt persontrafiken, men ibland även i godstrafiken, gäller det att
+skapa snabba transporter med regelbundna, täta avgångar, vilket tenderar att göra
+tågen kortare, lättare och hanterligare än vad som ger maximal kapacitet.
+Tunnelbanor och pendeltåg har, jämfört med andra trafikslag, en mycket hög
+kapacitet jämfört med det utrymme som behöver tas i anspråk. Det gäller särskilt i
+förhållande till biltrafik med i genomsnitt 1 - 2 personer per bil. Detta är mycket viktigt
+i stora tätbebyggda områden. Se exempel i Figur 4-15. I persontrafiken utnyttjas den
+erbjudna kapaciteten bara i rusningstrafik på en del av sträckan. Utrymmesfördelarna
+gäller även för snabb långväga persontrafik, fastän i något mindre utsräckning.
+
+Figur 4-15 Exempel på utrymmesbehov för olika trafikmedel i storstadstrafik.
+Kapacitetsbehov: 50 - 100 0000 passagerare per timme och riktning.
+Förutsättningar: 1250 - 2500 resande per tåg (jämför Avsnitt 4.3.1), 1 - 2 personer per bil.
+
+4.3.5 Transporthastighet
+Moderna järnvägar är i grunden snabba landtransportmedel. Resandetåg framförs idag i
+topphastigheter på 200 km/h i Sverige och 270 - 300 km/h i de ledande järnvägsländerna i utlandet. Det är dock egentligen inte topphastigheterna som är mest
+intressanta, utan den totala restiden från dörr till dörr. För persontransporter har
+järnvägen långa terminaltider (d v s tid att ta sig till och från stationen) jämfört med
+bilen, men relativt korta tider jämfört med flyget. Figur 4-16 visar typiska totala restider
+för bil, flyg och tåg.
+Mycket av den spårburna trafik som finns idag är långsammare än vad som är
+motiverat med hänsyn till transportmarknadens krav eller till den tekniska utvecklingen.
+Det beror på bristande investeringar i spårburen trafik under 1950 - 1980-talen. Vi
+kommer fortsättningsvis att uppehålla oss vid modern spårtrafik, särskilt den trafik som
+väntas bli resultat av den pågående upprustningen av järnvägssystemet i Europa.
+För godstransporterna är tidsåtgången i regel ett mindre problem. För vissa typer
+av gods, t ex post och färskvaror, kan dock transporttiderna ha stor betydelse. Det gäller
+särskilt att hinna så långt som möjligt över natten, för att undvika dyra flygtransporter.
+Flyget passar utmärkt för brev och andra lätta försändelser, men är dyrt för tyngre gods.
+Svenska Posten är tillsammans med Green Cargo en av de världsledande på
+snabba posttransporter över natt. Man kör ett ganska stort antal posttåg i 160 km/h, med
+snabba stopp för att sätta av eller på vagnar under vägen.
+
+Tåg och spårtrafiksystem 4.16
+
+Restid dörr till dörr
+(tim)
+
+Tåg, medel 1988
+
+Bil
+
+Tåg, som bäst 1988
+Tåg, medel 2005
+
+6
+
+Tåg, storstäder 2005
+
+5
+
+4
+
+Flyg, storstäder
+
+Flyg, ej storstäder
+
+3
+
+2
+
+1
+
+0
+0
+
+100
+
+200
+
+300
+
+400
+
+500
+
+600
+
+700
+
+Avstånd (km)
+
+Figur 4-16 Typisk total restid från dörr till dörr, som funktion av resavståndet.
+
+4.3.6 Energiförbrukning och miljöegenskaper
+Det är idag nästan ett talesätt att järnvägen är "energisnål och miljövänlig". I stora
+stycken är detta sant, jämfört med andra transportmedel, men det beror naturligtvis på
+förutsättningarna i varje enskilt fall. Vi tar nedanstående tabell som utgångspunkt för en
+diskussion.
+Tabell 4-1 Typisk energiförbrukning i långväga person- och godstrafik.
+Energiförbrukning
+(kWh / person-km)
+• Lokdraget persontåg med 7 vagnar, max hast 130 km/h
+beläggning 44 %
+
+0.10 (1)
+
+el
+
+• Snabbtåg X 2000 med 5 vagnar, max hast 200 km/h
+beläggning 44 %
+• Buss i långväga trafik, 90 km/h, beläggning 50 %
+• Personbil, bensindriven 5-sitsig, beläggning 2 personer
+• Flygplan, turboprop SAAB 340, 400 km, beläggning 60 %
+-------------------------------------------------
+
+0.10 (1)
+
+el
+
+0.13 (2)
+0.32 (2)
+0.6 (3)
+
+olja
+olja
+olja
+
+• Godståg, 1000 ton, beläggning 46 %
+• Lastbil m släp, 50 ton, beläggning 60 %
+• Kustsjöfart
+
+(kWh / ton-km)
+0.05 (1)
+el
+(2)
+0.20
+olja
+(4)
+0.05 - 0.08
+olja
+
+(1) Andersson E: Energiförbrukning och luftföroreningar av svensk eldriven järnvägstrafik,
+KTH 1994. Beläggningen är faktisk medelbeläggning.
+(2) Lenner M: Energiförbrukning och avgasemission, VTI Nr 718, 1993.
+(3) Hammarström U: Ekvivalent energiförbrukning och avgasemission, VTI Nr 567, 1988.
+(4) Mariterm resp Sv Redarförening.
+
+Tåg och spårtrafiksystem 4.17
+
+För tågtrafik avses den elenergi som tas ut från allmänna elnätet. För övriga färdmedel
+avses energiinnehållet i det bränsle som tas från tanken. Energiförluster i "de bakre
+leden", d v s vid elenergins produktion och överföring, vid oljeutvinning, oljetransporter
+etc, har inte beaktats.
+Av ovanstående sammanställning framgår att järnvägen i allmänhet har låga
+energi-förbrukningsvärden jämfört med andra färdmedel. Det är egentligen bara
+sjöfarten som är någorlunda likvärdig. Värdena är dock inte fullt jämförbara, eftersom
+den spårburna trafiken förbrukar elenergi och den övriga trafiken olika oljeprodukter.
+Det finns andra viktiga aspekter på vilken energikälla som används. Väg-, sjöoch flygtrafik har hittills i huvudsak använt fossila bränslen (olja), medan alltså
+spårburen trafik kan använda elektricitet som "förmedlare" av energi. I Västeuropa och
+Japan utförs mer än 90 % av järnvägens trafikarbete med elektricitet (i Nordamerika
+däremot finns nästan bara dieseldrift). Vid eldrift är man inte bunden till flytande fossila
+energikällor (olja). Man kan vid varje tidpunkt bygga ut och använda de energikällor
+som anses vara mest fördelaktiga med hänsyn till kostnader, luftföroreningar, uthållig
+försörjning eller av något annat skäl.
+
+4.4
+
+Lite teknik - tågs styrning i spåret
+
+De "vanliga" spårtrafiksystemen, som kör med stålhjul mot räler av stål, har - som
+tidigare nämnts i Avsnitt 4.1 - en för dessa trafiksystem karaktäristisk teknik för hjulens
+styrning i spåret. Denna teknik kan verka enkel och "självklar", men rymmer många
+tekniskt intresanta aspekter. Fastän dessa system "uppfanns" redan på 1820-talet är hjulräls-kontakten och hjulens styrning i spåret fortfarande föremål för ingående studier,
+matematisk modellering och forskning. Om man vill öka systements prestanda - genom
+högre hastigheter och/eller högre axellaster, samtidigt som man vill öka livslängden och
+minska underhållskostnaderna, måste detta i grunden enkla system ständigt förbättras,
+vilket kräver en ingående kännedom om systemets funktion och utvecklingsmöjligheter.
+Låt oss börja med själva kontakten mellan hjul och räl. Vi har tidigare sagt att en
+av spårtrafikens fördelar är att man kan ta mycket last per vagn eller per axel. Det är
+vanligt att hjulet belastas vertikalt (statiskt) med 50 - 150 kN, motsvarande en axellast
+av ca 10 - 30 ton. För en typisk hjul-räl kontaktarea om endast 1 à 1.5 cm2 fås då ett
+typiskt kontakttryck på hela ca 1000 MPa. Dynamiskt sett blir trycket ännu större så att
+viss formändring (plasticering) fås av hjul och räl. För att överföra drag- och
+bromskrafter, samt generellt också "styrkrafter", mellan hjul och räl krävs viss glidning
+i hjul-räls-kontakten. Denna glidning, som brukar kallas kryp, medför att vi inte har en
+ren rullning av hjulet på rälen och att friktionskrafter, eller krypkrafter, överförs i
+kontakten. Glidningen och tillhörande krafter ger dock upphov till nötning och buller,
+speciellt i kurvor (jämför s k "kurvskrik" i t ex tunnelbanekurvor).
+4.4.1 Viktiga egenskaper hos hjulpar, konicitet
+Ett hjulpar består oftast av två hjul stelt förbundna med en hjulaxel så att de båda hjulen
+roterar med samma hastighet. Detta är en första förutsättning för att hjulparen ska kunna
+ge tåget en inneboende styrförmåga, både i kurvspår och på rakspår. En andra
+förutsättning är att hjulen har löpbanor som är koniska (svagt lutade), ej cylindriska
+(olutade). I Figur 4-17 illusteras denna konlutning, γ, som ofta är ungefär 3°
+(=0.05=1/20 rad). Lutningen gör att hjulets s k rullradie, r, inte är konstant utan beror
+av var kontaktpunkten på hjulet finns. Hjulets nominella hjulradie, ro, kan ses som en
+genomsnittlig rullradie för hjulet under färd. I praktiken behöver hjulen också utrustas
+
+Tåg och spårtrafiksystem 4.18
+
+ro
+
+γ
+Konlutning γ
+Fläns
+
+Löpbana
+
+Figur 4-17 Hjulpar med koniska löpbanor. Konlutning γ och nomiell rullradie ro.
+
+med en fläns för att påtvinga en hjulparsstyrning när den inneboende styrförmågan inte
+räcker till. Då hjulparet ovan förskjuts i sidled, från ett centrerat läge i spåret, kommer
+rullradien att öka för ena hjulet (kontaktpunkten kommer närmre flänsen) och minska
+lika mycket för det andra hjulet (kontaktpunkten kommer längre ifrån flänsen). Med
+rullradie-ändringen ∆r och sidoförskjutningen ∆y, fås det viktiga begreppet konicitet, λ,
+som
+∆r
+λ=
+(4.1)
+∆y
+För löpbanekontakt och konstant konlutning (rak kona) som ovan är λ = γ. Begreppet
+konicitet kommer att användas nedan.
+4.4.2 Styrförmåga i kurvspår
+När vi talar om tågs styrning i spåret, tänker vi nog i första hand på hur tåg tar sig
+igenom kurvspår. Den inneboende styrförmågan hos ett hjulpar enligt ovan kan här
+utnyttjas. Låt oss studera ett fritt (ensamt) hjulpar vid gång genom en kurva med radie
+R, se Figur 4-18. Ytterrälen har då radien R+bo och innerrälen radien R-bo; således är
+avståndet mellan rälerna 2bo (=1.5 m för de flesta spår).
+Hjulparets ytterhjul måste således färdas en längre sträcka än dess innerhjul.
+Detta åstadkoms genom att hjulparet förskjuts utåt i kurvan, från ett centrerat läge i
+spåret, så att rullradien ökar till ro+∆r för ytterhjulet och minskar till ro-∆r för
+innerhjulet. För en radial styrning pekar hjulaxeln in mot kurvans origo, se Figur 4-18.
+ro+∆r
+R
+b
+ro-∆r
+
+b
+
+Figur 4-18 Hjulparets kurvtagningsförmåga. Kurvradie R och rullradieändring ∆r.
+
+Tåg och spårtrafiksystem 4.19
+
+Med hjälp av geometrisk likformighet i figuren kan man då visa att följande relation
+måste gälla:
+ro + ∆r R + bo
+=
+ro − ∆r R − bo
+
+(4.2)
+
+Från denna ekvation fås, efter lite arbete, rullradieändringen ∆r för att hjulparet ska ta
+sig genom kurvan med radien R utan flänskontakt till:
+∆r = ro
+
+bo
+R
+
+(4.3)
+
+En allt snävare kurva (mindre R) kräver således en allt större rullradieändring. Med
+ekvation (4.1) och (4.3) kan vi också teckna ett uttryck för den sidoförskjutning av
+hjulparet, ∆y, utåt i kurvan som behövs för radial styrning:
+∆y =
+
+ro bo
+⋅
+λ R
+
+(4.4)
+
+Således ju lägre konicitet λ, desto större sidoförskjutning behövs.
+Exempel: För ro = 0.5 m, λ = 0.05, bo = 0.75 m och R = 500 m fås:
+
+∆y =
+
+0.5 0.75
+⋅
+= 0.015 m
+0.05 500
+
+I detta fall måste alltså hjulparet förskjutas 15 mm utåt i förhållande till spårmitt för att
+rullradieskillnaden mellan ytter- och innerhjul (2∆r) ska bli så stor att den motsvarar
+den längre väg som ytterhjulet måste rulla i kurvan. Om koniciteten istället varit λ =
+0.15 hade ∆y = 5 mm varit tillräckligt, alternativt hade kurvradien R = 167 m klarats
+med bibehållen sidoförskjutning.
+Således ger en högre konicitet en bättre kurvtagningsförmåga, d v s hjulparet
+kan styra genom snävare kurvor utan att lita till styrning med ytterhjulets fläns. För ett
+radialstyrande fritt hjulpar behövs i princip inga friktionskrafter i hjul-räls-kontakten.
+I praktiken är dock inte hjulparen "fria", utan mer eller mindre inspända i
+vagnskorg eller boggiramverk. Inspänningen i horisontalplanet sätter därför en gräns för
+hur snäva kurvor ett tåg kan klara utan flänsstyrning, samt förorsakar friktionskrafter i
+hjul-räls-kontakten. Erforderlig rullradieskillnad kan heller inte alltid uppbådas. En
+ytterligare begränsning är att en alltför hög konicitet skapar stabilitetsproblem vid färd
+på rakspår, se nedan.
+4.4.3 Styrförmåga på rakspår, sinusgång
+Låt oss nu studera hjulparet ovan då det rullar utmed ett rakspår, se Figur 4-19.
+Hjulparet har här en startposition (a) och rullar åt höger i figuren. Hjulparet är i läge (a)
+ej centrerat i spåret med följd att vi får en rullradieskillnad: det vänstra hjulet har en
+större rullradie än det högra. Det vänstra hjulet förflyttar sig därför en längre sträcka än
+högerhjulet, jfr kurvfallet ovan. Följden blir att hjulparet snedställs, girar, i spåret och
+rullar in mot ett centrerat läge i spåret (b). Hjulparets styrförmåga på rakspår att från ett
+ocentrerat sidoläge "hitta tillbaka" till ett centrerat läge i spåret är ännu en positiv
+egenskap.
+
+Tåg och spårtrafiksystem 4.20
+
+Färdriktning
+
+a
+
+b
+
+c
+
+d
+
+e
+
+2bo
+
+L
+Figur 4-19 Hjulparets styrning på rakspår, sinusgång med våglängd L.
+
+Men som vi ser i Figur 4-19 (c) rullar hjulparet "förbi" det centrerade läget, nu med
+större rullradie för högerhjulet, och vi får ett sinusformat förlopp. Ofta dämpas
+sinusrörelsen, men i Figur 4-19 visas fallet då storleken på hjulparets sidoutslag förblir
+oförändrat och vi får en odämpad sinusrörelse från (a) till (e), s k sinusgång. Denna
+oönskade effekt karakteriseras primärt av sinusrörelsens våglängd L.
+För det fria hjulparet ovan kan man, med vissa förenklingar, visa att våglängden
+ges av Klingels formel
+L = 2π
+
+bo ⋅ ro
+
+λ
+
+(4.5)
+
+där som tidigare λ är hjuparets (effektiva) konicitet, bo halva rälsavståndet och ro
+hjulens nominella rullradie. En högre konicitet λ ger således en kortare våglängd L.
+Exempel: För ro = 0.5 m, λ = 0.05 och bo = 0.75 m (samma som i exemplet ovan) fås:
+L = 2π
+
+0.75 ⋅ 0.5
+= 17.2 m
+0.05
+
+För koniciteten λ = 0.2 fås L = 8.6 m och för λ = 0.5 fås endast L = 5.4 m.
+Sinusrörelsens frekvens beror, förutom av våglängden L, också av färdhastigheten, v, enligt följande enkla samband:
+
+f =
+
+v
+L
+
+(4.6)
+
+Denna frekvens ökar således med ökad hastighet och med minskad våglängd (ökad
+konicitet).
+Exempel: För L = 17.2 m, jfr ovan, och hastigheten v = 50 m/s (180 km/h) fås:
+
+50
+= 2.9 Hz
+17.2
+För L = 8.6 och 5.4 m fås f = 5.8 respektive 9.3 Hz, jfr ovan.
+f =
+
+Tåg och spårtrafiksystem 4.21
+
+En högre frekvens för sinusgången skapar normalt allt större stabilitetsproblem
+för fordonet p g a allt större tröghetskrafter (massa x acceleration) för hjulparet.
+Hjulflänsarna förhindrar dock normalt instabila hjulpar från att spåra ur, men
+åkkomforten blir dålig.
+Med allt högre topphastigheter, t ex 300 km/h, riskerar också sinusgångfrekvensen bli väldigt hög. Genom att sänka den tillåtna koniciteten, d v s öka
+våglängden, kan dock frekvensen hållas nere. Koniciteten ovan beror i praktiken inte
+bara på hjulens konlutning utan också på rälernas geometri och på hur hjul och räler
+nöts (formändras) över tiden. Att ha snäva toleranser för rälsavståndet är också viktigt i
+sammanhanget. Det ska också påpekas att mycket låga koniciteter, säg λ < 0.02, ger en
+annan typ av stabilitetsproblem där hela fordonet rör sig med en låg dominerande
+frekvens ("svajig gång").
+Hjulparens inspänning i boggiramverken är också central: med högre
+inspänningsstyvheter i horisontalplanet ökar sinusgångens våglängd och dess frekvens
+minskar. Alltför höga styvheter ger dock sämre styrförmåga i kurvor. En kompromiss är
+således nödvändig för att få en god styrförmåga på både kurvspår och rakspår.
+4.4.4 Dynamisk samverkan fordon-bana
+Spårfordons, eller tågs, styrning i spåret har en central betydelse för hur den dynamiska
+samverkan mellan fordon och bana (spår). Hjulens och rälernas geometri samt
+kontakytornas läge och storlek har väldigt stort inverkan på den fordonsdynamiska
+prestandan, trots att vi rör oss med så små längdmått som cm och mm.
+En väl utformad lösning för systemet fordon-bana ger bl a följande fördelar:
+− God kurvtagningsförmåga (jfr ovan).
+− Inga tendenser till instabil gång (jfr ovan).
+− Mycket liten risk för urspårning.
+− Måttliga krafter mellan hjul och räler.
+− Liten nötning och sprickrisk för hjul och räler.
+− God åkkomfort (passagerarvagnar). Hög lastkapacitet (godsvagnar).
+− Små sättningar m m hos spåret.
+
+Möjligheten att i framtiden öka hastigheter och axellaster, med bibehållen säkerhet och
+ekonomi, är att förbättra den dynamiska samverkan mellan fordon och bana. För detta
+krävs ökade insikter om vad som egentligen händer och varför det händer. Bra
+beräkningshjälpmedel och beräkningsmetoder är nödvändiga, liksom motsvarande
+mätteknik. Genom omfattande dynamiska simuleringar kan man redan på konstruktionsstadiet förutse ett fordons dynamiska beteende på ett visst spår och under
+vissa driftsförhållanden. Bra matematiska modeller och tillhörande indata för systemet
+fordon-bana är dock en nödvändighet för att få tillförlitlighet i simuleringsresultaten.
+Utmaningar inom modelleringen är bl a att beskriva hjul-räls-kontakten, fordonets
+fjädringssystem samt spårets eftergivlighet då fordonet passerar.
+Spårfordons dynamik och samverkan fordon-bana är ett av de absolut viktigaste
+områdena inom järnvägstekniken.
+
+Tåg och spårtrafiksystem 4.22
+
+4.5
+
+Framtidens spårtrafik
+
+4.5.1 Nu byggs nya järnvägar och trafiken ökar
+Modern tågtrafik har förutsättningar att vara både snabb, kapacitetsstark och resurssnål:
+− Ett modernt höghastighetståg kan bekvämt, säkert och med låg energiförbrukning
+transportera upp till ca 1000 resande i medelhastigheter på 200 - 250 km/h från
+stadscentra till stadscentra.
+− Ett godsexpresståg kan över en natt transportera minst 1000 ton gods över 1000 km
+på ett mycket energisnålt sätt.
+− Pendel- eller tunnelbanetåg kan på dubbelspår (8 - 10 m bredd) transportera 30 000 100 000 resande per timme, i varje riktning.
+
+Järnvägen har en rad önskvärda egenskaper som man vill utnyttja. Offensiva satsningar
+och investeringar genomförs under 1990-talet i Europa. Ett helt nytt nät av höghastighetsjärnvägar håller på att byggas upp, se Figur 4-20. I Tyskland satsas nu mer på
+järnvägar än på riksvägar. Även i Sverige satsas sedan mitten av 1990-talet ungefär lika
+mycket på nya järnvägar (och spårvagnar) som på vägar. Detta väntas ge en betydande
+förbättring av spårtrafikens konkurrenskraft i framtiden.
+De nya satsningarna har t ex redan haft en viss inverkan. Under perioden 1992 2002 har t ex den svenska järnvägens persontrafik ökat med ca 50 %, räknat i personkm (mer om man räknar i antalet resenärer). Restiderna har i vissa fall nästan halverats,
+t ex genom nya snabba regionala tågförbindelser i Mälardalen.
+
+Figur 4-20 Planerat nät av höghastighetsjärnvägar (250 - 350 km/h) i Europa (enl EU 1994).
+
+4.5.2 Järnvägens teknik utvecklas
+Informationstekniken, med mikroelektronik och datorstyrning, kommer i hög grad att
+påverka även den spårburna trafiken.
+Spårburna trafiksystem är komplicerade med en mängd olika beroenden mellan
+de olika delsystemen. Det kommer att bli lättare att med datorstöd optimera och styra
+systemet.
+
+Tåg och spårtrafiksystem 4.23
+
+Nya avancerade signal- och trafikstyrningssystem är under utveckling. Datorer kommer
+att kunna räkna ut vad som är optimala hastigheter och tågvägar för att trafiken ska flyta
+så smidigt som möjligt. De nya systemen kommer att i ökad grad lita till radiokommunikation istället för, som hittills, elsignaler i nedgrävda kablar. Det ökar generellt
+möjligheterna att förbättra kommunikation och styrning till låga kostnader.
+Det kommer överlag att bli lättare att övervaka och styra storskaliga spårburna
+trafiksystem. Storskaligheten har hittills varit ett visst problem ur styrnings- och
+övervakningssynpunkt. Det gäller bl a information om var lok och vagnar exakt
+befinner sig, när tågen går, om det finns platser, var godset befinner sig, och en mängd
+andra behov.
+Tågen kommer att utvecklas både vad gäller topphastighet och medelhastighet.
+Idag kör man 270 - 300 km/h i Frankrike och några länder till. Troligen gör man det
+även i Sverige om 15 - 20 år. I Japan, Spanien, Frankrike och Tyskland utvecklas tåg för
+350 km/h.
+Energiförbrukningen kommer knappast att öka, åtminstone inte mycket. Tågen
+kommer istället att förbättras på en rad punkter: aerodynamisk utformning, högre grad
+av energiåtermatning (särskilt viktigt för tåg som gör täta uppehåll), lättare material
+(kolfiber eller liknande). Drivsystemen kommer att ge ökad dragkraft och effekt, men
+blir samtidigt kompaktare, lättare, billigare och får högre energiverkningsgrad.
+
+4.5.3 Magnetsvävare eller järnväg?
+Det är inte helt säkert att framtidens "järnväg" verkligen är en järnväg. Däremot
+kommer med stor säkerhet spårtrafik att finnas kvar i någon form. Magnetsvävartekniken kan i framtiden komma att delvis ta över den traditionella järnvägens roll. Den
+har vissa möjliga fördelar jämfört med den vanliga järnvägstekniken:
+1) Hastigheter upp till 400 à 500 km/h är möjliga.
+2) Drag- och bromskrafterna mellan fordonet och banan är inte beroende av friktionen
+mellan hjulen och banan. Drag- och bromskrafterna alstras ju med magneter. Det
+skulle kunna ge fördelar genom att man kan köra i brantare stigningar eller utförslut.
+Banan skulle därigenom bättre kunna anpassas till bebyggelse och andra hinder.
+3) Banorna byggs i regel på broar och viadukter och tar därigenom lite plats på marken.
+Det ger ständig planskildhet från vägar m m.
+4) Genom den beröringsfria kontakten mellan fordon och bana bör ljud och vibrationer
+kunna bli lägre.
+Det pågår en debatt mellan anhängarna för magnetsvävartekniken och den konventionella järnvägstekniken. Från järnvägssidan framförs ett antal argument mot
+magnetsvävarna:
+1) Hastigheten kan bli lika hög på den "vanliga" järnvägen (i Frankrike har man i
+provkört 515 km/h med ett vanligt tåg).
+2) I höga hastigheter är det knappast troligt att större lutningar kan användas än vad
+som är möjligt med vanliga järnvägar (ca 40 ‰). Det är ofta den möjliga
+framdrivningseffekten - d v s dragkraft gånger hastighet, för drivning eller broms som är begränsande. Man kan heller inte ha alltför snabba lutningsförändringar upp
+och ner i höga hastigheter - då skulle resenärerna bli åksjuka.
+3) Om det verkligen finns behov av att spara markutrymme, eller att göra banan
+planskild från vägar m m, kan naturligtvis även vanliga järnvägar (eller tunnelbanor)
+byggas på viadukter; detta blir dock för det mesta betydligt dyrare än att lägga
+
+Tåg och spårtrafiksystem 4.24
+
+banorna direkt på marken.
+4) Fördelarna av mindre buller och vibrationer är inte heller självklart, åtminstone inte i
+högre hastigheter. I hastigheter över 300 km/h brukar det aerodynamiska bullret
+dominera, inte bullret från rullkontakt vid hjulen.
+Magnetsvävarna har åtminstone två nackdelar jämfört med vanliga järnvägar:
+1) Anläggningarna är mera komplicerade och därför dyrare än vanliga järnvägar. Det
+är betydligt dyrare att lägga banan på viadukter än att lägga den på marken. Man
+måste också lägga ut elektriska lindningar längs hela banan och förse dessa
+lindningar med elektrisk matning med hög effekt. Det är också komplicerat och dyrt
+att anordna spårväxlar (vilket tenderar att minska flexibiliteten).
+2) Magnetsvävarna är inte kompatibla med existerande spårsystem. Det betyder att
+vanliga tåg inte kan köra på samma banor som magnetsvävarna eller tvärtom.
+Magnetbanorna blir "isolerade öar" i trafiksystemet, åtminstone till en början.
+Hur magnetsvävarna klarar av att köra i t ex svenskt vinterklimat är ännu en öppen
+fråga.
+Det är för tidigt att här och nu kunna avgöra magnetsvävarnas framtid. Frågan är
+om de eventuella fördelarna kan väga upp de högre kostnaderna? Eller om den vanliga
+järnvägen kan göra ungefär samma jobb till lägre kostnader.
+Det förefaller som om magnetsvävarnas fördelar bäst kan komma till sin rätt i
+mycket tätbebygda områden, för måttligt stora avstånd och hastigheter. Svävteknikens
+påstådda lägre buller och vibrationer vid lägre hastigheter (upp till kanske 200 - 250
+km/h) kan här vara en fördel. Om banorna av utrymmesskäl ändå måste byggas på broar
+och i tunnlar, så blir fördyringen genom magnettekniken troligen inte så stor. Det
+kanske i stället går att vinna en del på att tillåta något större lutningar i banan.
+Klart är att det satsas mycket på att vidareutveckla magnetsvävarna. I Japan
+satsas mycket stora belopp på att alstra starka magnetfält med hjälp av supraledning vid
+låga temperaturer, för att härigenom öka effektiviteten. Det tyska magnetsvävarkonceptet Transrapid invigdes vid årsskiftet 2002/2003 i Shanghai, som en förbindelse
+mellan stadskärna och flygplats.
+Klart är också att den vanliga järnvägstekniken kommer att utvecklas. I sista
+hand är det fråga om vilket system som kan ge önskade egenskaper till lägsta kostnad.
+Men det är också fråga om industri- och forskningspolitik, d v s vilket område som ges
+mest stöd.
+
+4.5.4 Transportmedel i samverkan
+De olika trafikslagen kompletterar och drar nytta av varandra. Varje trafikslag har sin
+"nisch" där det är bäst. Järnvägstransporten ingår ofta som en del i "den totala resan"
+eller "den totala transporten".
+Ett exempel på detta är den järnväg som byggts till Arlanda, för att resande från
+stora delar av Mellansverige (Stockholm, Gävle, Borlänge, Nyköping, Norrköping,
+Eskilstuna o s v) på ett snabbt och bekvämt sätt ska kunna ta tåget direkt till
+långdistansflyget. På sträckor 10 - 50 mil är ofta moderna persontåg mycket bra vad
+gäller bekvämlighet, snabbhet, energiförbrukning och kostnader. Bilen är oftast
+oslagbar tidsmässigt på korta sträckor och flyget på längre sträckor.
+Ett annat exempel är kombitrafiken, där godset körs på tåg eller båt de långa
+sträckorna och på lastbil för de korta anslutningstransporterna.
+
+
