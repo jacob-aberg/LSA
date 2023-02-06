@@ -54,6 +54,10 @@ disp(TOPICS)
 
 % STEG 1 (Skapa ny matris B=A-Aavg)
 
+Aavg = mean(A, 2)
+
+B = A - Aavg * ones(1, )
+
 
 % STEG 2 (Hitta SVD av B)
 
