@@ -65,16 +65,9 @@ B = A - Aavg * ones(1, cLen);
 
 [U, S, V] = svd(B/sqrt(cLen), 'econ');
 
-
 % STEG 3 (Skapa
 
-subplot(1, 2, 1)
-plot(A(1, :), A(2, :), 'k.', 'LineWidth', 2)
-hold on, box on, grid on
-axis([-2 15 -2 15])
-
-subplot(1, 2, 2)
-semilogy(diag(S), 'k-o', 'LineWidth', 2.5)
+scatter(A(1, :), A(2, :), 'k')
 
 
 
