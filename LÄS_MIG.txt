@@ -2,8 +2,6 @@
 
 Följande krävs för att programmet ska köras
 
-    - matlab licens installerad på enheten
-
     - python-packeten som finns listade i requirements.txt
         för att insallera dem kör följande i terminalen:
 

@@ -125,11 +125,11 @@ def main():
 
     print('\n\n...beräknar SVD...')
     tick = timeit.default_timer()
-    #U, S, V = SVD(matris)
     V = SVD(matris)[2]
-
-    #V = SVD(matris,eng,u=False,s=False,v=True)
     printa_tiden(tick)
+
+    #U, S, V = SVD(matris)
+    #V = SVD(matris,eng,u=False,s=False,v=True)
 
     #print('\n\n...stänger matlab...')
     #tick = timeit.default_timer()
