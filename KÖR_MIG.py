@@ -1,15 +1,16 @@
 
 import numpy as np
-import matlab.engine
+#import matlab.engine
 import timeit
 
 from filhantering_modul import *
 from text_till_matris import *
 from ordmoln import skapa_ordmoln
 
+"""
 def SVD(matris,engine,u=True,s=True,v=True):
-    """args;    matris; numpy array
-        returnerar--> U,S,V;  numpy arrays"""
+    #args;    matris; numpy array
+        #returnerar--> U,S,V;  numpy arrays
     matris = matlab.double(matris.tolist())
     U, S, V = engine.svd(matris,nargout=3)
     res = []
@@ -19,6 +20,12 @@ def SVD(matris,engine,u=True,s=True,v=True):
 
     if len(res) == 1:    return res[0]
     else:                return tuple(res)
+"""
+
+def svd(matris):
+    U, S, V = np.linalg.svd(matris)
+    return U,S,V
+
 
 def double_till_array(A):
     """args:    matlab double
@@ -112,20 +119,22 @@ def main():
         skriv_till_textfil(sparväg, matris)
         skriv_till_textfil(karta_filväg, skapa_karta(textfiler, ordbok))
 
-    print('\n\n...startar matlab...')
-    tick = timeit.default_timer()
-    eng = matlab.engine.start_matlab()
-    printa_tiden(tick)
+    #print('\n\n...startar matlab...')
+    #tick = timeit.default_timer()
+    #eng = matlab.engine.start_matlab()
+    #printa_tiden(tick)
 
     print('\n\n...beräknar SVD...')
     tick = timeit.default_timer()
-    V = SVD(matris,eng,u=False,s=False,v=True)
+    U, S, V = svd(matris)
+
+    #V = SVD(matris,eng,u=False,s=False,v=True)
     printa_tiden(tick)
 
-    print('\n\n...stänger matlab...')
-    tick = timeit.default_timer()
-    eng.quit()
-    printa_tiden(tick)
+    #print('\n\n...stänger matlab...')
+    #tick = timeit.default_timer()
+    #eng.quit()
+    #printa_tiden(tick)
     
     print('\n\n...tolkar singulärvektorer...')
     tick = timeit.default_timer()
