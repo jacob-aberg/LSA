@@ -7,22 +7,21 @@ from filhantering_modul import *
 from text_till_matris import *
 from ordmoln import skapa_ordmoln
 
-"""
-def SVD(matris,engine,u=True,s=True,v=True):
-    #args;    matris; numpy array
-        #returnerar--> U,S,V;  numpy arrays
-    matris = matlab.double(matris.tolist())
-    U, S, V = engine.svd(matris,nargout=3)
-    res = []
-    if u:   res.append(double_till_array(U))
-    if s:   res.append(double_till_array(S))
-    if v:   res.append(double_till_array(V))
 
-    if len(res) == 1:    return res[0]
-    else:                return tuple(res)
-"""
+#def SVD(matris,engine,u=True,s=True,v=True):
+#    """args;    matris; numpy array
+#        #returnerar--> U,S,V;  numpy arrays"""
+#    matris = matlab.double(matris.tolist())
+#    U, S, V = engine.svd(matris,nargout=3)
+#    res = []
+#    if u:   res.append(double_till_array(U))
+#    if s:   res.append(double_till_array(S))
+#    if v:   res.append(double_till_array(V))
+#
+#    if len(res) == 1:    return res[0]
+#    else:                return tuple(res)
 
-def svd(matris):
+def SVD(matris):
     U, S, V = np.linalg.svd(matris)
     return U,S,V
 
@@ -126,7 +125,8 @@ def main():
 
     print('\n\n...beräknar SVD...')
     tick = timeit.default_timer()
-    U, S, V = svd(matris)
+    #U, S, V = SVD(matris)
+    V = SVD(matris)[2]
 
     #V = SVD(matris,eng,u=False,s=False,v=True)
     printa_tiden(tick)
