@@ -1,5 +1,4 @@
 
-
 from filhantering_modul import *    
 import numpy as np
 
@@ -104,15 +103,21 @@ def rensa_vanliga_ord(ordbok):
 
 def skriv_till_textfil(filväg, data):
     """args:    filväg; filsökväg till ny textfil, (str)
-                data; lista med data, list eller list med list
+                data; lista med data
         --> sparar fil  (returnerar ingenting) """
 
     if not filväg.endswith('.txt'): filväg += '.txt'
     ny_fil = open(filväg,'w',encoding='UTF-8')
 
-    for rad in data:
-        ny_fil.writelines([str(element)+' ' for element in rad])
-        ny_fil.write('\n')
+    if isinstance(data[0], list) or isinstance(data[0], tuple) or isinstance(data[0], type(np.array(0))):
+        for rad in data:
+            ny_fil.writelines([str(element)+' ' for element in rad])
+            ny_fil.write('\n')
+        return
+    else:
+        for elem in data:
+            ny_fil.write(str(elem) +'\n')
+
 
 def skapa_matris2(ordbok, texter, IDF_viktad=False):
     """args:    ordbok; (list); lista med alla unika ord
@@ -167,6 +172,14 @@ def skapa_karta(filer,ordbok):
     for kol, ord in enumerate(ordbok):
         matris.append(['kol '+str(kol+1)+':\t '+ ord])
     return matris
+
+def spara_ordbok(filväg, ordbok):
+    if not filväg.endswith('.txt'): filväg += '.txt'
+    ny_fil = open(filväg,'w',encoding='UTF-8')
+
+    for ord in ordbok:
+        ny_fil.write(ord+'\n')
+
 
 def main():
     filer = välj_öppna_filväg(titel="Välj textfiler",flera=True,filtyp=('text-dokument','*.txt'))
