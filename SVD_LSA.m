@@ -4,7 +4,8 @@ format short g
 
 %jättefult skrivet oså, också ineffektiv, men det funkar
 
-filnamn = input("Ange filnamn ('*.txt') >>");
+%filnamn = input("Ange filnamn ('*.txt') >>");
+filnamn = 'C:\Users\anton\OneDrive\Dokument\GitHub\LSA\Matriser\Kmatris.txt';
 
 A = readmatrix(filnamn);
 
@@ -58,24 +59,31 @@ disp(TOPICS)
 Aavg = mean(A, 2);
 
 cLen = size(A, 2);
-B = A - Aavg * ones(1, cLen);
+B = A - Aavg * ones(1, cLen); % Subtraherar varje kolonnvektor i A (ordvektor) med alla radvektorer i A:s medelvärden.
 
 
 % STEG 2 (Hitta SVD av B)
 
-[U, S, V] = svd(B/sqrt(cLen), 'econ');
+[U, S, V] = svd(B, 'econ');
 
 
-% STEG 3 (Skapa
+% STEG 3 (Skapa plot)
+
+x = V(:, 1)' * B';
+y = V(:, 2)' * B';
+z = V(:, 3)' * B';
+
+% Vill försöka skapa en plot i en for loop så att kompendiumens data
+% markeras med olika färger så man kan urskilja dem i plotten sen göra en
+% legend
 
 subplot(1, 2, 1)
-plot(A(1, :), A(2, :), 'k.', 'LineWidth', 2)
-hold on, box on, grid on
-axis([-2 15 -2 15])
+plot3(x, y, z, 'rx', 'LineWidth', 3)
+grid on, xlabel('Ämne 1'), ylabel('Ämne 2'), zlabel('Ämne 3')
+%axis([-2 15 -2 15])
 
-subplot(1, 2, 2)
-semilogy(diag(S), 'k-o', 'LineWidth', 2.5)
-
+semiplot(1, 2, 2)
+semilogy(diag(S), 'k-o', 'LineWidth', 2.5) % Visar hur viktiga singulärvärdena är
 
 
 function T = topic(VT,kolumn,num_words) 
