@@ -2,10 +2,9 @@ clear all
 clc
 format short g
 
-%jättefult skrivet oså, också ineffektiv, men det funkar
 
 %filnamn = input("Ange filnamn ('*.txt') >>");
-filnamn = 'C:\Users\anton\OneDrive\Dokument\GitHub\LSA\Matriser\Kmatris.txt';
+filnamn = 'Matriser\Kmatris.txt';
 
 A = readmatrix(filnamn);
 
@@ -22,10 +21,13 @@ VT = V';
 num_topics = 4;
 num_words = 10;
 
-topic1 = topic(VT,1,num_words);
-topic2 = topic(VT,2,num_words);
-topic3 = topic(VT,3,num_words);
-topic4 = topic(VT,4,num_words);
+ordbok_namn = 'Matriser\Kmatris_ordbok.txt';%input('ordbok >>');
+Ord = ordbok( ordbok_namn);
+
+topic1 = topic(VT,1,num_words, Ord);
+topic2 = topic(VT,2,num_words, Ord);
+topic3 = topic(VT,3,num_words, Ord);
+topic4 = topic(VT,4,num_words, Ord);
 
 M = size(topic1);
 if size(topic2) > M
@@ -39,7 +41,7 @@ if size(topic4) > M
 end
 num_words = M(1,1); 
 
-TOPICS = zeros(  num_words,2*num_topics)  ;
+TOPICS = cell(  num_words,2*num_topics)  ;
 [n,m] = size(topic1);
 TOPICS(1:1:n,1:1:2) = topic1;
 [n,m] = size(topic2);
@@ -48,10 +50,14 @@ TOPICS(1:1:n,3:1:4) = topic2;
 TOPICS(1:1:n,5:1:6) = topic3;
 [n,m] = size(topic4);
 TOPICS(1:1:n,7:1:8) = topic4;
-disp('-------------TOPIC 1-------------------TOPIC 2---------------------TOPIC 3-------------------TOPIC 4--------')
-disp('-------ord-index---styrka----------ord-index---styrka-------ord-index---styrka--------ord-index---styrka--------')
-%disp(           31     -0.25324         2508        0.122           50      0.45002           43      0.10303
+disp('-------------TOPIC 1----------------------------------TOPIC 2-----------------------------------TOPIC 3---------------------------------TOPIC 4-----------------')
+disp('-------ord---------------styrka-------------ord---------------------styrka-----------ord--------------------styrka----------ord----------------------styrka-----')
+    %    {'ar'         }    {["-0.74645"]}    {'hjulparet'       }    {["-0.10953"]}    {'drosnin'        }    {["0.10878"]}    {'2050'            }    {["0.12612"]}
 disp(TOPICS)
+% for i=1:1:num_words
+% disp('    '+ string(Ord( topic1(i,1) ))+' '+string(topic1(i,2))+'           '+string(Ord( topic2(i,1) ))+' '+string(topic2(i,2))+ ...
+%      '    '+ string(Ord( topic3(i,1) ))+' '+string(topic3(i,2))+'           '+string(Ord( topic4(i,1) ))+' '+string(topic4(i,2))+'    ') 
+% end
 
 
 % STEG 1 (Skapa ny matris B=A-Aavg)
@@ -86,22 +92,24 @@ semiplot(1, 2, 2)
 semilogy(diag(S), 'k-o', 'LineWidth', 2.5) % Visar hur viktiga singulärvärdena är
 
 
-function T = topic(VT,kolumn,num_words) 
+function T = topic(VT,kolumn,num_words,ord) 
 %num_words gör inget just nu, du får nu istället
 % alla ord som är värt mer än 0.1,  take it or leave it
-T = zeros(1,2);
+%T = zeros(1,2);
+T = cell(1,2);
 
 [N,M] = size(VT);
 j = 1;
 for i=1:1:M 
     if abs( VT(kolumn,i)  ) > 0.1 % denna tolerans kan man ändra om man vill
-        T(j,1:1:2) = [ i, VT(kolumn,i) ];
+%        T(j,1:1:2) = [ i, VT(kolumn,i) ];
+        T(j,1) = ord(i);
+        T(j,2) = {string(VT(kolumn,i))} ; 
         j = j + 1;
     end
 end
 
 end
-
 
 
 function A = nolla(A)
@@ -125,4 +133,14 @@ function norm_matrix = normalizeRows(matrix)
     end
 end
 
+function ordvektor = ordbok(filnamn)
+
+delimiter = '';
+formatSpec = '%s';
+fileID = fopen(filnamn);
+ordvektor = textscan(fileID, formatSpec, 'Delimiter', delimiter,  'ReturnOnError', false);
+fclose(fileID);
+ordvektor = ordvektor{1};
+
+end
 

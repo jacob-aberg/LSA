@@ -3,6 +3,7 @@ import numpy as np
 #import matlab.engine
 import timeit
 
+
 from filhantering_modul import *
 from text_till_matris import *
 from ordmoln import skapa_ordmoln
@@ -114,9 +115,19 @@ def main():
     print('\t ( matris-storlek:\t',matris.shape,' )',end='')
 
     if sparväg:
-        karta_filväg = sparväg.strip('.txt') + '_karta.txt'
+        #karta_filväg = sparväg.strip('.txt') + '_karta.txt'
+        #skriv_till_textfil(karta_filväg, skapa_karta(textfiler, ordbok))
+        ordbok_sparväg = sparväg.strip('.txt') + '_ordbok.txt'
+        dokindex_sparväg = sparväg.strip('.txt') + '_dokindex.txt'
+        
+        titlar = []
+        for filnamn in textfiler:
+            titlar.append(os.path.basename(filnamn)[0:-4])
+
         skriv_till_textfil(sparväg, matris)
-        skriv_till_textfil(karta_filväg, skapa_karta(textfiler, ordbok))
+        skriv_till_textfil(ordbok_sparväg, ordbok)
+        skriv_till_textfil(dokindex_sparväg, titlar)
+
 
     #print('\n\n...startar matlab...')
     #tick = timeit.default_timer()
