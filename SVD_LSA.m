@@ -5,7 +5,7 @@ format short g
 %jättefult skrivet oså, också ineffektiv, men det funkar
 
 %filnamn = input("Ange filnamn ('*.txt') >>");
-filnamn = 'C:\Users\anton\OneDrive\Dokument\GitHub\LSA\Matriser\Kmatris.txt';
+filnamn = 'C:\Users\anton\OneDrive\Dokument\GitHub\LSA\Matriser\BIBELMATRISEN.txt';
 
 A = readmatrix(filnamn);
 
@@ -77,13 +77,21 @@ z = V(:, 3)' * B';
 % markeras med olika färger så man kan urskilja dem i plotten sen göra en
 % legend
 
-subplot(1, 2, 1)
-plot3(x, y, z, 'rx', 'LineWidth', 3)
-grid on, xlabel('Ämne 1'), ylabel('Ämne 2'), zlabel('Ämne 3')
+subplot(1, 3, 1)
+plot(x, y, 'ko', 'LineWidth', 3)
+hold on, grid on, xlabel('Ämne 1'), ylabel('Ämne 2'), title('PCA 2D')
 %axis([-2 15 -2 15])
 
-semiplot(1, 2, 2)
+
+subplot(1, 3, 2)
+plot3(x, y, z, 'ko', 'LineWidth', 3)
+hold on, grid on, xlabel('Ämne 1'), ylabel('Ämne 2'), zlabel('Ämne 3'), title('PCA 3D')
+%axis([-2 15 -2 15])
+
+subplot(1, 3, 3)
 semilogy(diag(S), 'k-o', 'LineWidth', 2.5) % Visar hur viktiga singulärvärdena är
+axis tight, xlabel('Singulärvärdets "ranking"'), ylabel('Singulärvärde'), title('Singulärvärdesrelevans')
+
 
 
 function T = topic(VT,kolumn,num_words) 
