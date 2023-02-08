@@ -15,6 +15,7 @@ jacobabe@kth.se
  
  
 Teori / Bakgrund 
+
 Singulärvärdesfaktorisering (SVD) är en metod inom linjär algebra som har många tillämpningsområden.
 Bland annat används SVD för bildkomprimering där man förvarar bildens pixlar i en stor matris som man sedan delar upp i tre andra matriser som består av vänster- samt högersingulära vektorer och dess motsvarande singulära värden. 
 Om matrisen bestående av bildens pixlar kallas A kan matrisen representeras av A=UΣVT där U:s kolonnvektorer består av vänstersingulära vektorer till A och V:s kolonnvektorer består av högersingulära vektorer till A samt U och V är ortonormala.
@@ -25,7 +26,8 @@ Detta gör att man kan ta bort de svagaste dragen (de vektorer med minst singul�
 Med hjälp av de reducerade U och VT kan man skapa en reducerad A-matris och sedan ”projicera” en ny bild på delrummet som skapas av A och på så sätt approximera den nya bilden utifrån de starkaste dragen i bilderna i A.
 Då kan man gå från bilder med 106 pixlar till att beskriva en bild utifrån ett par hundra drag (kombinationer av pixlar) med olika styrka.   
  
-Sammanfattning  
+Sammanfattning
+
 I detta projekt ska fokuseras på Latent Semantisk Analys (LSA) som är metod inom Natual-Language-Processing som använder SVD.
 LSA används för att analysera relationer mellan dokument utifrån de förekommande orden.
 Dokumenten görs till vektorer i ett högdimensionellt vektorrum där dimensionerna är ord. 
@@ -38,6 +40,7 @@ Man kan med större texter få reda på vad ett dokument innehåller för inform
 Det kan användas för att hitta teman och genrer hos skönlitterärara verk. LSA skulle mycket möjligt även kunna användas för exempelvis plagiatkontroll.  
  
 Frågeställningar 
+
 Kan singulärvärdesuppdelning användas för att extrahera värdefull information ur en textsamling? 
 Vilka är de huvudsakliga teman en artist sjunger om i ett av deras album? 
 Vad brukar Svenska Dagbladets ledar- och kultursidor handla om? 
