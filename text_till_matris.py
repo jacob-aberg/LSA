@@ -3,7 +3,7 @@ from filhantering_modul import *
 import numpy as np
 
 
-def text_till_ordlista(textfil):
+def text_till_ordlista(textfil,siffror=True):
     """args: filsökväg till textfil (str)
         --> returnerar lista med alla ord (list)
             (ord görs till gemener och rensas på skiljetecken)
@@ -14,35 +14,41 @@ def text_till_ordlista(textfil):
     alla_ord = []
     for rad in text:    alla_ord.extend( rad.lower().split(' ') )
     
-    alla_ord = rensa_skiljetecken(alla_ord)
+    alla_ord = rensa_skiljetecken(alla_ord,siffror=siffror)
 
     
     return alla_ord
 
-def texter_till_textlista(textfiler):
+def texter_till_textlista(textfiler,siffror=True):
     """args: filsökväg till textfiler (list med str)
         --> returnerar lista med texter, (list med lists med strs)
             (ord görs till gemener och rensas på skiljetecken)
         """
     texter = []
     for fil in textfiler:    
-        texter.append( text_till_ordlista(fil) ) 
+        texter.append( text_till_ordlista(fil,siffror=siffror) ) 
     return texter
 
-def rensa_skiljetecken(ordlista):
+def rensa_skiljetecken(ordlista,siffror=True):
     """args:    lista med str
-            --> returnerar lista med endast alfanumeriska str"""
+        param; siffror; om False kastas siffror
+            --> returnerar lista med endast alfanumeriska/alfa str"""
     for i, ord in enumerate(ordlista):
         a = ''
         for c in ord:
-            if c.isalnum(): a += c
+            if siffror:     
+                if c.isalnum(): a += c
+            else:   
+                if c.isalpha(): a+=c
         ordlista[i] = a
     
     while '' in ordlista:  ordlista.remove('')
 
     return ordlista
 
-def skapa_ordbok(texter,utan_vanliga_ord=True,alf=False):
+
+
+def skapa_ordbok(texter,utan_vanliga_ord=True,alf=False,siffror=True):
     """args:    texter; (list med lists) en lista med listor med ord; [ ['ord','ord'],['ord','ord'] ]
                 alf; (bool); om True --> alfabetisk ordning
         --> returnerar ordbok; lista med unika ord"""
@@ -55,7 +61,7 @@ def skapa_ordbok(texter,utan_vanliga_ord=True,alf=False):
             ordbok.append(ord)
 
     if alf: ordbok = sorted(ordbok)
-    if utan_vanliga_ord: return rensa_vanliga_ord(ordbok)
+    if utan_vanliga_ord: return rensa_vanliga_ord(ordbok,siffror=siffror)
     else:   return ordbok
 
 def ord_frekvens(ord, text):
@@ -88,12 +94,12 @@ def invers_dok_frekvens(ord,texter):
         ---> (float); returnerar värde på hur "unikt" ett ord är i textsamlingen """     
     return np.log10(len(texter) / np.sum([1 for text in texter if ord in text]))
 
-def rensa_vanliga_ord(ordbok):
+def rensa_vanliga_ord(ordbok,siffror=True):
     """args:    lista med ord (list)
             --> returnerar ordlista utan "vanliga ord (list)" """
 
     fil = os.path.join( os.getcwd(),'vanliga_ord.txt')
-    vanliga_ord = text_till_ordlista( fil )
+    vanliga_ord = text_till_ordlista( fil, siffror=siffror )
 
     unika_ord = []
     for ord in ordbok:

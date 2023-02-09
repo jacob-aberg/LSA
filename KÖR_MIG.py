@@ -90,6 +90,10 @@ def main():
     utan_vanliga_ord = prompt_bool()
     alfbetisk_ordning = True #promt_bool()
 
+    print('\nVill du rensa bort siffror i texten? ',end=' ')
+    siffror = not prompt_bool()
+
+
     print('\nAnge antal teman som ska extraheras:',end=' ')
     antal_teman = prompt_int()
     print('\nAnge antal ord som ska definera varje tema:',end=' ')
@@ -98,13 +102,13 @@ def main():
 
     print('\n\n...läser textfiler...')
     tick = timeit.default_timer()
-    texter = texter_till_textlista(textfiler)
+    texter = texter_till_textlista(textfiler,siffror=siffror)
     printa_tiden(tick)
 
 
     print('\n\n...skapar ordbok...')
     tick = timeit.default_timer()
-    ordbok = skapa_ordbok(texter,utan_vanliga_ord=utan_vanliga_ord,alf=alfbetisk_ordning)  # skapa ordbok
+    ordbok = skapa_ordbok(texter,utan_vanliga_ord=utan_vanliga_ord,alf=alfbetisk_ordning,siffror=siffror)  # skapa ordbok
     printa_tiden(tick)
     print('\t ( antal unika ord:\t',len(ordbok),' )',end='')
 

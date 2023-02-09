@@ -82,7 +82,7 @@ z = V(:, 3)' * B';
 
 % Vill försöka skapa en plot i en for loop så att kompendiumens data
 % markeras med olika färger så man kan urskilja dem i plotten sen göra en
-% legend ---- %legend kan skapas m.h.a vektorn 'Doks'
+% legend
 
 subplot(1, 2, 1)
 plot3(x, y, z, 'rx', 'LineWidth', 3)
