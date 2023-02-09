@@ -4,7 +4,7 @@ format short g
 
 %filnamn = input("Ange filnamn ('*.txt') >>");
 %<<<<<<< HEAD
-filnamn = 'C:\Users\anton\OneDrive\Dokument\GitHub\LSA\Matriser\Kmatris.txt';
+filnamn = 'C:\Users\anton\OneDrive\Dokument\GitHub\LSA\Matriser\BIBELMATRISEN_V2.txt';
 %=======
 %filnamn = 'Matriser\Kmatris.txt';
 %>>>>>>> 45e77d6f0d06d35f0e4a1a7adcff30e6d836fc1e
@@ -19,20 +19,20 @@ AAT = normalizeRows(AAT);
 
 A = nolla(A);
 
-VT = V';
+%VT = V';
 
 num_topics = 4;
 num_words = 10;
 
-ordbok_fil = 'Matriser\Kmatris_ordbok.txt';%input('ordbok >>');
-dok_fil = 'Matriser\Kmatris_dokindex.txt';
+ordbok_fil = 'Matriser\BIBELMATRISEN_V2_ordbok.txt';%input('ordbok >>');
+dok_fil = 'Matriser\BIBELMATRISEN_V2_dokindex.txt';
 Ord = ordbok( ordbok_fil);
 Doks = ordbok( dok_fil );
 
-topic1 = topic(VT,1,num_words, Ord);
-topic2 = topic(VT,2,num_words, Ord);
-topic3 = topic(VT,3,num_words, Ord);
-topic4 = topic(VT,4,num_words, Ord);
+topic1 = topic(V',1,num_words, Ord);
+topic2 = topic(V',2,num_words, Ord);
+topic3 = topic(V',3,num_words, Ord);
+topic4 = topic(V',4,num_words, Ord);
 
 M = size(topic1);
 if size(topic2) > M
