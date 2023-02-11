@@ -269,29 +269,29 @@ skattechock?
 
 Halverat RUT-avdrag
 
-+ 3 000 kr/år
++ 3 000 kr / år
 
 Höjd bolåneskatt
 
-+ 1 000 kr/år
++ 1 000 kr / år
 
 Halverade ränteavdrag
 
-+ 15 000 kr/år
++ 15 000 kr / år
 
 Återinförd fastighetsskatt
 
-+ 21 000 kr/år
++ 21 000 kr / år
 
 Höjd bränsleskatt
 
-+ 1 000 kr/år
++ 1 000 kr / år
 
 Höjd skatt på arbete
 
-+ 5 000 kr/år
++ 5 000 kr / år
 
-= 46 000 kr/år*
+= 46 000 kr / år*
 
 Valmanifest 2022
 
