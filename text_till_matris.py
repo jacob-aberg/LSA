@@ -33,6 +33,9 @@ def rensa_skiljetecken(ordlista,siffror=True):
     """args:    lista med str
         param; siffror; om False kastas siffror
             --> returnerar lista med endast alfanumeriska/alfa str"""
+
+    #ordlista = [''.join(c for c in ord if (siffror and c.isalnum()) or (not siffror and c.isalpha())) for ord in ordlista]
+
     for i, ord in enumerate(ordlista):
         a = ''
         for c in ord:
@@ -43,6 +46,7 @@ def rensa_skiljetecken(ordlista,siffror=True):
         ordlista[i] = a
     
     while '' in ordlista:  ordlista.remove('')
+    #ordlista = [ord for ord in ordlista if ord]
 
     return ordlista
 

@@ -26,7 +26,6 @@ def SVD(matris):
     U, S, V = np.linalg.svd(matris)
     return U,S,V
 
-
 def double_till_array(A):
     """args:    matlab double
      returns --->  numpy array"""

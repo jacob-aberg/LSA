@@ -4,65 +4,45 @@ format short g
 
 %filnamn = input("Ange filnamn ('*.txt') >>");
 %<<<<<<< HEAD
-filnamn = 'C:\Users\anton\OneDrive\Dokument\GitHub\LSA\Matriser\BIBELMATRISEN_V2.txt';
+filnamn = 'Matriser\Farkost_matris.txt';%'Matriser\BIBELMATRISEN_V2.txt';
 %=======
 %filnamn = 'Matriser\Kmatris.txt';
 %>>>>>>> 45e77d6f0d06d35f0e4a1a7adcff30e6d836fc1e
 
+
+ordbok_fil = strcat(strrep(filnamn,'.txt',''),'_ordbok.txt');
+dok_fil = strcat(strrep(filnamn,'.txt',''),'_dokindex.txt');
+
 A = readmatrix(filnamn);
-
-AAT = A*A';
-
-AAT = normalizeRows(AAT);
-
-[U, S, V] = svd(A);
-
-A = nolla(A);
-
-%VT = V';
-
-num_topics = 4;
-num_words = 10;
-
-ordbok_fil = 'Matriser\BIBELMATRISEN_V2_ordbok.txt';%input('ordbok >>');
-dok_fil = 'Matriser\BIBELMATRISEN_V2_dokindex.txt';
 Ord = ordbok( ordbok_fil);
 Doks = ordbok( dok_fil );
 
-topic1 = topic(V',1,num_words, Ord);
-topic2 = topic(V',2,num_words, Ord);
-topic3 = topic(V',3,num_words, Ord);
-topic4 = topic(V',4,num_words, Ord);
 
-M = size(topic1);
-if size(topic2) > M
-    M = size(topic2);
-end
-if size(topic3) > M
-    M = size(topic3);
-end
-if size(topic4) > M
-    M = size(topic4);
-end
-num_words = M(1,1); 
+%---HITTAR OCH VISAR ÄMNEN---------------------------------------
+[~, ~, V] = svd(A);
 
-TOPICS = cell(  num_words,2*num_topics)  ;
-[n,m] = size(topic1);
-TOPICS(1:1:n,1:1:2) = topic1;
-[n,m] = size(topic2);
-TOPICS(1:1:n,3:1:4) = topic2;
-[n,m] = size(topic3);
-TOPICS(1:1:n,5:1:6) = topic3;
-[n,m] = size(topic4);
-TOPICS(1:1:n,7:1:8) = topic4;
-disp('-------------Ämne 1----------------------------------Ämne 2-----------------------------------Ämne 3---------------------------------Ämne 4-----------------')
-disp('-------ord---------------styrka-------------ord---------------------styrka-----------ord--------------------styrka----------ord----------------------styrka-----')
-    %    {'ar'         }    {["-0.74645"]}    {'hjulparet'       }    {["-0.10953"]}    {'drosnin'        }    {["0.10878"]}    {'2050'            }    {["0.12612"]}
+num_topics = 3;
+num_words = 10;
+
+TOPICS = cell(num_words,2*num_topics);
+header = cell(1,num_topics*2);
+j=1;
+for i = 1:num_topics
+    TOPICS(:,j:1:j+1) = topic(V',i,num_words, Ord);
+     header{1,j}   =   char( strcat('Ämne_',' ',string(i),':'));
+     header{1,j+1} =   char( strcat(string(i),', Ordstyrka:') ) ; 
+    j = j + 2;
+end, clear j;
+
+TOPICS = cell2table(TOPICS,"VariableNames",header);
+
+%disp('|            Ämne 1              |             Ämne 2               |             Ämne 3              |             Ämne 4              |')
+disp('Ämnen:')
 disp(TOPICS)
-% for i=1:1:num_words
-% disp('    '+ string(Ord( topic1(i,1) ))+' '+string(topic1(i,2))+'           '+string(Ord( topic2(i,1) ))+' '+string(topic2(i,2))+ ...
-%      '    '+ string(Ord( topic3(i,1) ))+' '+string(topic3(i,2))+'           '+string(Ord( topic4(i,1) ))+' '+string(topic4(i,2))+'    ') 
-% end
+
+tema123 = [ string(table2cell(TOPICS(5,1))), string(table2cell(TOPICS(1,3))), string(table2cell(TOPICS(1,5)))] ;
+
+%----------------------------------------------------
 
 
 % STEG 1 (Skapa ny matris B=A-Aavg)
@@ -89,14 +69,19 @@ z = V(:, 3)' * B';
 % legend ---- %legend kan skapas m.h.a vektorn 'Doks'
 
 subplot(1, 3, 1)
-plot(x, y, 'ko', 'LineWidth', 3)
-grid on, xlabel('Ämne 1'), ylabel('Ämne 2'), title('PCA 2D')
+plotta_med_legend(abs(x),abs(y),Doks,3)
+%plot(x, y, 'ko', 'LineWidth', 3)
+grid on, xlabel( ['Ämne 1: ', tema123(1)] ), ylabel( ['Ämne 2: ', tema123(2)] ), title('PCA 2D')
 %axis([-2 15 -2 15])
 
 
 subplot(1, 3, 2)
-plot3(x, y, z, 'ko', 'LineWidth', 3)
-grid on, xlabel('Ämne 1'), ylabel('Ämne 2'), zlabel('Ämne 3'), title('PCA 3D')
+%plot3(x, y, z, 'ko', 'LineWidth', 3)
+plotta_med_legend(abs(x),abs(y),Doks,3,abs(z))
+grid on, xlabel( ['Ämne 1: ', tema123(1)] )
+         ylabel( ['Ämne 2: ', tema123(2)] )
+         zlabel( ['Ämne 3: ', tema123(3)] )
+title('PCA 3D')
 %axis([-2 15 -2 15])
 
 subplot(1, 3, 3)
@@ -104,26 +89,25 @@ semilogy(diag(S), 'k-o', 'LineWidth', 2.5) % Visar hur viktiga singulärvärdena
 axis tight, xlabel('Singulärvärdets "ranking"'), ylabel('Singulärvärde'), title('Singulärvärdesrelevans')
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function T = topic(VT,kolumn,num_words,ord) 
-%num_words gör inget just nu, du får nu istället
-% alla ord som är värt mer än 0.1,  take it or leave it
-%T = zeros(1,2);
-T = cell(1,2);
 
-[N,M] = size(VT);
-j = 1;
-for i=1:1:M 
-    if abs( VT(kolumn,i)  ) > 0.1 % denna tolerans kan man ändra om man vill
-%        T(j,1:1:2) = [ i, VT(kolumn,i) ];
-        T(j,1) = ord(i);
-        T(j,2) = {string(VT(kolumn,i))} ; 
-        j = j + 1;
-    end
-end
+% Lägger till rad-(*ord*-)index före vektorns element
+Tn = [ [1:1:length( VT(kolumn,:) )]' , VT(kolumn,:)'];
+
+% sorterar efter absolutbelopp
+[~, idx] = sort(abs(Tn(:,2)));  % hämtar indexvektor för vektorn i storleksordning (minst-->störst)
+idx = fliplr(idx');             % vänder; störst --> minst
+Tn = Tn(idx, :);               %sorterar utefter index-vektorn
+Tn = Tn(1:num_words,:);         % hämtar de *antal* största elementen i vektorn
+
+T = [ ord( Tn(:,1)) , num2cell( Tn(:,2) )] ; % hämtar motsvarande ord från ordvektorn och skapar cell-array; [ord,värde]
 
 end
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function A = nolla(A)
 [n,m] = size(A);
 for rad=1:1:n
@@ -136,6 +120,7 @@ for rad=1:1:n
 end
 end
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function norm_matrix = normalizeRows(matrix)
     norm_matrix = zeros(size(matrix));
     for i = 1:size(matrix, 1)
@@ -145,6 +130,7 @@ function norm_matrix = normalizeRows(matrix)
     end
 end
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function ordvektor = ordbok(filnamn)
 
 delimiter = '';
@@ -156,3 +142,28 @@ ordvektor = ordvektor{1};
 
 end
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+function  NaN = plotta_med_legend(x,y,namn,linewidth,z);
+
+%----om 2D--------------------------------------------
+if nargin == 4 % om 4 argument angavs (inget z)
+
+    for i=1:length(x)
+        plot(x(i), y(i),'o','LineWidth', linewidth,'DisplayName',namn{i})
+        hold on
+    end
+    legend
+    hold off
+
+%---om 3D--------------------------------------------
+elseif nargin == 5 % om ett z-argument angavs
+
+    for i=1:length(x)
+        plot3(x(i), y(i), z(i), 'o', 'LineWidth', linewidth,'DisplayName',namn{i})
+        hold on
+    end
+    legend
+    hold off
+end
+
+end
