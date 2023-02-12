@@ -1,733 +1,152 @@
-Flygteknik 1.1
-
 1. Flygteknik
 David Eller, Arne Karlsson och Dan Borglund
 KTH Farkost & Flyg
-
-1.1
-
-Inledning
-
-Människan har alltid drömt om att kunna flyga. Först överhuvudtaget, sedan längre,
-högre och fortare, och nu billigare och miljövänligare. Till en början studerades
-fåglarnas teknik, som vid en närmare granskning är oerhört sofistikerad. Betrakta
-till exempel örnen i figur 1.1. Den har en förmåga att kontinuerligt kunna anpassa
-sin geometri på bästa sätt för olika flygfall. Framdrivning, generering av lyftkraft och
-manövrering sker på ett aerodynamiskt integrerat och mycket komplext sätt, och i
-det närmaste ljudlöst. Genom sina fjädrar har den ett mycket stort antal roderytor
-som styrs av ett avancerat elektriskt styrsystem. Ett optiskt målinmätningssystem
-liksom en kombinerad tröghets- och optisk navigering används. Dessutom är alla
-system hårt integrerade och styrs av en central “dator”.
-
-Figur 1.1: En örn i glidflykt.
-
-Tidiga konstruktioner av flygande maskiner försökte helt enkelt efterlikna fåglarnas beteende - så kallade ornitopter. Den främsta svårigheten med en sådan konstruktion är den så kallade skaleffekten. Emedan vikten, och därmed lyftkraften
-som krävs, är proportionell mot längdskalan i kubik så är vingarean proportionell
-mot längdskalan i kvadrat. Detta innebär att om en fågel förstoras upp 10 gånger så
-kommer den att behöva generera 103 /102 = 10 gånger mer lyftkraft per vingareaenhet för att kunna flyga. Hittills har ingen lyckats konstruera en fungerande ornitopter
-framdriven av en människa - antar du utmaningen?
-
-Flygteknik 1.2
-Inte förrän människan skaffat sig större kunskaper om aerodynamik, löst problemet med stabilitet och styrning och lyckats utveckla en kraftkälla med tillräckligt
-hög effekt och låg vikt lyckades man flyga en farkost av typen “tyngre än luft”
-(människans första flygning skedde med ballong i slutet av 1700-talet). Den första
-motoriserade flygningen genomfördes som bekant av bröderna Wright år 1903. Under de drygt 100 år som gått sedan dess har flygtekniken utvecklats i en rasande fart,
-och redan 1947 flög människan för första gången fortare än ljudet i ett raketdrivet
-flygplan. De militära tillämpningarna drev på utvecklingen under världskrigen, men
-alla tekniska genombrott i form av ny motorteknik, förbättrad aerodynamik, nya
-material, radarteknik, elektronik etc. kom successivt det civila flyget tillgodo. Idag
-sker utvecklingen mer parallellt, eftersom de ständigt ökande kraven på flygplanens
-prestanda kräver skräddarsydda lösningar inom respektive område.
-Den svenska flygindustrins historia är alltför omfattande för att ens i korta drag
-redogöras för här, men kan i stor omfattning tillägnas Saab [1]. Svensk flygteknik
-har alltid varit i utvecklingens absoluta framkant, vilket är speciellt anmärkningsvärt
-om man beaktar att det endast är ett fåtal nationer i världen som har utvecklat
-eller utvecklar sina egna stridsflygplan. Saab har utvecklat 15 olika flygplanstyper,
-militära såväl som civila, och tillverkat mer än 4300 flygplan under åren 1940-2003.
-Det senaste stridsflygplanet i ordningen, Saab 39 Gripen i figur 1.2, är det första
-så kallade “multi-role/swing-role” flygplanet i världen i aktiv tjänst. Detta innebär
-
+1.1	Inledning
+Människan har alltid drömt om att kunna flyga. Först överhuvudtaget,¨ sedan längre, högre och fortare, och nu billigare och miljöv¨anligare. Till en början studerades fåglarnas teknik, som vid en närmare granskning är oerhört sofistikerad. Betrakta till exempel ornen¨ i figur 1.1. Den har en förmåga att kontinuerligt kunna anpassa sin geometri på bästa sätt för olika flygfall. Framdrivning, generering av lyftkraft och manövrering sker på ett aerodynamiskt integrerat och mycket komplext sätt, och i det närmaste ljudlöst. Genom sina fjädrar har den ett mycket stort antal roderytor som styrs av ett avancerat elektriskt styrsystem. Ett optiskt målinm¨atningssystem liksom en kombinerad tröghets- och optisk navigering används. Dessutom är alla system hårt integrerade och styrs av en central “dator”.
+ 
+	Figur 1.1: En örn	i glidflykt.
+Tidiga konstruktioner av flygande maskiner försökte helt enkelt efterlikna fåglarnas beteende - så kallade ornitopter. Den främsta svårigheten med en sådan konstruktion är den så kallade skaleffekten. Emedan vikten, och därmed lyftkraften som krävs, är proportionell mot längdskalan i kubik så är vingarean proportionell mot längdskalan i kvadrat. Detta innebär att om en fågel förstoras upp 10 gånger så kommer den att behöva generera 103/102 = 10 gånger mer lyftkraft per vingareaenhet för att kunna flyga. Hittills har ingen lyckats konstruera en fungerande ornitopter framdriven av en människa - antar du utmaningen?
+Inte förrän människan skaffat sig större kunskaper om aerodynamik, löst problemet med stabilitet och styrning och lyckats utveckla en kraftkälla med tillräckligt hög effekt och låg vikt lyckades man flyga en farkost av typen “tyngre än luft” (människans första flygning skedde med ballong i slutet av 1700-talet). Den första motoriserade flygningen genomfördes som bekant av bröderna Wright år 1903. Under de drygt 100 år som gått sedan dess har flygtekniken utvecklats i en rasande fart, och redan 1947 flög människan för första gången fortare än ljudet i ett raketdrivet flygplan. De militära tillämpningarna drev på utvecklingen under världskrigen, men alla tekniska genombrott i form av ny motorteknik, förb¨attrad aerodynamik, nya material, radarteknik, elektronik etc. kom successivt det civila flyget tillgodo. Idag sker utvecklingen mer parallellt, eftersom de ständigt ökande¨ kraven på flygplanens prestanda kräver skräddarsydda lösningar inom respektive område.
+Den svenska flygindustrins historia är alltför omfattande för att ens i korta drag redogöras för här, men kan i stor omfattning tillägnas Saab [1]. Svensk flygteknik har alltid varit i utvecklingens absoluta framkant, vilket är speciellt anmärkningsv¨art om man beaktar att det endast är ett fåtal nationer i världen som har utvecklat eller utvecklar sina egna stridsflygplan. Saab har utvecklat 15 olika flygplanstyper, militära såv¨al som civila, och tillverkat mer än 4300 flygplan under åren 1940-2003. Det senaste stridsflygplanet i ordningen, Saab 39 Gripen i figur 1.2, är det första så kallade “multi-role/swing-role” flygplanet i världen i aktiv tjänst. Detta innebär
+ 
 Figur 1.2: Svenska Saab 39 Gripen (www.gripen.com).
-
-att ett och samma flygplan kan konfigureras om för att lösa olika typer av uppdrag
-(Jakt, Attack och Spaning) och att detta kan ske under flygning. Gripen har en
-avancerad aerodynamisk utformning, en lätt konstruktion baserad på kompositmaterial, ett stort antal roderytor som styrs av ett elektriskt styrsystem, mycket avancerade radar- och kommunikationssystem, och hårt integrerade delsystem. Gripen kan
-även tankas under flygning och start och landning kan ske från enkla vägbaser (se
-www.gripen.com). Jämför med beskrivningen av en fågel!
-Behovet av persontransporter förutspås att öka dramatiskt i framtiden. Passagerartrafiken har ökat med 5% per år fram till helt nyligen, och redan idag är flygplatserna
-hårt belastade. Detta problem kan bemötas med större flygplan, snabbare flygplan
-eller tätare trafik, vilket ställer nya krav på såväl utvecklingen av flygplan som trafik-
-
-Flygteknik 1.3
-ledningssystem och driften av flygplatser. Europeiska Airbus har valt att utveckla ett
-stort trafikflygplan av konventionell typ, Airbus A380 i figur 1.3. De första version-
-
+att ett och samma flygplan kan konfigureras om för att lösa olika typer av uppdrag (Jakt, Attack och Spaning) och att detta kan ske under flygning. Gripen har en avancerad aerodynamisk utformning, en lätt konstruktion baserad på kompositmaterial, ett stort antal roderytor som styrs av ett elektriskt styrsystem, mycket avancerade radar- och kommunikationssystem, och hårt integrerade delsystem. Gripen kan även tankas under flygning och start och landning kan ske från enkla vägbaser (se www.gripen.com). jämför¨ med beskrivningen av en fågel!
+Behovet av persontransporter förutspås att öka dramatiskt i framtiden. Passagerartrafiken har ökat¨ med 5% per år fram till helt nyligen, och redan idag är flygplatserna hårt belastade. Detta problem kan bemötas med större flygplan, snabbare flygplan eller tätare trafik, vilket ställer nya krav på såv¨al utvecklingen av flygplan som trafikledningssystem och driften av flygplatser. Europeiska Airbus har valt att utveckla ett stort trafikflygplan av konventionell typ, Airbus A380 i figur 1.3. De första version-
+ 
 Figur 1.3: Airbus superjumbo A380 (www.airbus.com).
-
-erna av A380 tar 555 passagerare i vanlig konfiguration (eller upp till 853 när stolarna placeras tätt), vilket är 140 (329) fler än dess närmaste konkurrent. Projektet
-lanserades år 2000, premiärflygningen skedde i april 2005 (se www.airbus.com), och
-den kommersiella driften började under hösten 2007. Amerikanska Boeing lanserade istället samtidigt det mindre och snabbare flygplanet “Sonic Cruiser”. Detta
-projekt skrinlades dock och istället utvecklas nu Boeing 787 (för omkring 250 passagerare), som är tänkt att ge en betydligt bättre driftsekonomi. Intressant nog
-präglas båda utvecklingsprojekten av påtagliga förseningar jämfört med den officiella tidsplanen. Medan Airbus i ett sent skede har löst svårigheter att montera in
-flygplanets avancerade elektriska system i tillräckligt hög takt, brottas Boeing med
-underleverantörer som inte lyckas uppfylla stränga kvalitetskrav för nyutvecklade
-komponenter i kolfiberkomposit. Som en konsekvens av detta har Boeing köpt upp
-stora delar av en amerikansk leverantör (Vought) i juli 2009, vilket antyder att konceptet att lägga ut mycket utvecklingsansvar på externa partners kanske inte var helt
-lyckat.
-Efter denna inledning följer ett avsnitt som introducerar några viktiga flygtekniska
-begrepp och definitioner, ett avsnitt om aktuell teknik och forskning och några tips
-för vidare läsning. Målet är att du efter att ha studerat materialet ska
-• kunna redogöra för de flygtekniska begrepp och definitioner som introduceras,
-• kunna förklara hur lyftkraft och motstånd beror av parametrar som fart och
-vingarea,
-• kunna motivera den kraftbalans som råder då ett flygplan flyger,
-• förstå varför flygplansvingar ser ut som dom gör, samt
-• vilja lära dig mer om flygteknik!
-
-Flygteknik 1.4
-
-1.2
-
-Viktiga begrepp och definitioner
-
-Varje farkost som befinner sig i lufthavet måste på något sätt, aktivt eller passivt,
-generera en vertikal lyftkraft som balanserar farkostens egen tyngd. Ballonger och
-luftskepp har stor volym och relativt liten massa. Medeltätheten för dessa farkosttyper är lägre eller lika stor som tätheten i den omgivande atmosfären. Om farkostens
-medeltäthet är lägre än den omgivande atmosfärens så stiger den och om den är lika
-stor så ”flyter” farkosten på en kostant höjd. Dessa farkostslag utnyttjar Arkimedes
-princip för att med en passiv metod skapa den erforderliga lyftkraften.
-Flygplan och helikoptrar har en medeltäthet som är betydligt större än den omgivande atmosfärens. De måste därför generera huvuddelen av sin lyftkraft på något
-annat sätt. Genom en kombination av farkostens utformning och rörelse fås luften
-att accelereras nedåt. Farkosten påverkar alltså luften i den omgivande atmosfären
-med en nedåtriktad kraft (Newtons andra lag) och luften påverkar därmed flygplanet med en lika stor men motriktad lyftkraft (Newtons tredje lag). För vanliga
-flygplan är det vingarnas utformning som medför att luft accelereras nedåt då flygplanet rör sig genom luften. För en helikopter är det rotorbladens rörelse som ger
-denna acceleration, vilket gör att helikoptern i sig själv kan ligga still i lufthavet och
-“hovra” (eng. hover). Detta fungerar inte med ett vanligt flygplan. Eftersom vingens
-geometri är fix måste hela flygplanet röra sig genom atmosfären.
-Ett tredje sätt att skapa lyftkraft är med en tillräckligt kraftig jet- eller raketmotor. Det är t.ex. den metod som, än så länge, utnyttjas om man vill komma ut
-i rymden. Farkoster som genererar sin lyftkraft på samma sätt som ballonger och
-luftskepp kallas aerostater och man säger att de flyger enligt principen ”lättare än
-luft”. Flygplan och helikoptrar, liksom segel- och andra slags glidflygplan och autogyros, kallas aerodyner och flyger enligt principen ”tyngre än luft”. I det följande
-kommer flygplanet att behandlas i lite mer detalj.
-
-1.2.1
-
-Flygplanets utformning
-
-I figur 1.4 visas ett konventionellt utformat flygplan. I figuren är de viktigaste delarna på flygplanet markerade. På ett konventionellt flygplan är det vingarna som ge-
-
-fena
-
-sidroder
-
-vinge
-höjdroder
-
-klaff
-motor
-
-stabilisator
-
-skevroder
-kropp
-propeller
-
-Figur 1.4: De viktigaste delarna på ett konventionellt utformat flygplan, Saab 2000.
-
-nererar huvuddelen av lyftkraften. Klaffarna vid vingarnas bakkant används främst
-
-Flygteknik 1.5
-vid start och landning för att upprätthålla den nödvändiga lyftkraften vid låg fart.
-De ökar emellertid samtidigt luftmotståndet varför de inte används vid marschflygning. Kroppen härbärgerar nyttolasten och binder samman övriga delar. Flygplanet
-måste även vara så utformat att luftmotståndet blir så lågt som möjligt. Motorerna
-är nödvändiga dels för att övervinna det motstånd som inte går att bli kvitt och dels
-för att möjliggöra att flygplanet kan accelerera och/eller stiga.
-Den viktigaste aerodynamiska komponenten på ett flygplan är vingarna. Det
-finns tre huvudtyper av vingar, eller snarare vingplanformer. Dessa grundformer,
-som visas i figur 1.5, är den raka vingen, pilvingen respektive deltavingen. Flygplansexemplen i figuren är valda så att vingarnas planform är så renodlade som
-möjligt. Det finns sedan en stor mängd variationer av dessa.
-
-
-
- 
-
-
-
- 
-
-
-Figur 1.5: De tre huvudtyperna av vingplanformer. a) Socata TB21 Trinidad TC och b) Saab
-340B med en raka vingar (rektangulär respektive trapetsvinge), c) Saab 105 och d) Boeing
-777 med pilvingar samt e) Saab JAS39 Gripen och f) Concorde med deltavingar. Notera att
-flygplanen visas i olika skalor!
-
-Två viktiga geometriska parametrar för en flygplansvinge är vingarean S och
-spännvidden b. Vingarean är i princip den area som visas i figur 1.5 om vingens
-fram- och bakkant förlängs till flygplanets centrumlinje. Spännvidden är avståndet
-mellan höger och vänster vingspets. En viktig geometrisk parameter för vingen är
-det s.k. sidoförhållandet, AR (eng. aspect ratio). Detta definieras
-AR =
-
-b2
-S
-
-(1.1)
-
-En vinge med högt sidoförhållande är alltså mer långslank än en vinge med lågt
-sidoförhållande.
-Det som är avgörande för flygplanskonstruktören vid valet av vingplanform är
-för vilken maximal fart flygplanet är utformat och den parameter som styr valet av
-
-Flygteknik 1.6
-vingplanform är storleken på vingens bidrag till flygplanets luftmotstånd. Vid låga
-och måttligt höga farter är den raka vingen överlägsen. Som vi ska se i nästa avsnitt
-avgörs om flygplanets fart är ”låg” eller ”hög” av hur stor denna är jämfört med
-ljudhastigheten i den omgivande atmosfären.
-Flygplan som ska flyga med en hög underljudsfart, som de flesta stora civila
-transportflygplan av den typ som tillverkas av Airbus och Boeing, har en pilvinge
-för att minska motståndet i detta fartområde. En orsak till att man inte vill ha en
-pilvinge även för flygplan som är avsedda för en lägre fart är att pilvingen kan ha
-mycket otrevliga flygegenskaper vid låg fart. Detta är speciellt farligt då flygplanet
-ska landa (mer om detta lite senare). En annan orsak är att det vid en given vingarea
-och då man flyger med låg fart är att föredra att ha en så stor spännvidd som möjligt
-på vingen om man vill minimera vingens bidrag till motståndet. Sveper man vingen
-bakåt så minskar spännvidden om vingarean bibehålls.
-Återstår då bara deltavingen. Denna vingplanform används bara för flygplan
-utformade för att flyga med överljudsfart. För att minimera motståndet i detta fartområde måste man utforma flygplanet så att detta är så slankt som möjligt. Med
-”slankt” avses i detta sammanhang kvoten mellan flygplanets längd och vingens
-spännvidd. Som en enkel tumregel kan man säga att om flygplanet är utformat
-så att det ryms inom en kon vars spets sammanfaller med flygplanets främsta del
-och som har halva öppningsvinkeln 30◦ , så är flygplanet utformat för att kunna flyga
-med dubbla ljudhastigheten men inte mycket fortare.
-
-1.2.2
-
-Flygplans fart - flygmachtalet
-
-Utformningen av ett flygplan styrs helt av den tilltänkta användningen. Denna
-bestämmer hur mycket last flygplanet ska kunna bära, hur stor bränslevolym som
-måste tas med, vilken typ av motorer som är lämpliga etc. Storleken och ytbeläggningen på de flygfält som flygplanet ska kunna använda bestämmer vilken typ av
-flygplan man ska välja eller om t.ex. en helikopter är lämpligare. Som vi sett
-ovan bestämmer den fart flygplanet är utformat för vilken vingplanform som är
-lämpligast. Egentligen är det inte flygplanets fart i sig som är den relevanta parametern utan kvoten mellan flygplanets fart V och ljudhastigheten a i den omgivande
-atmosfären,
-V
-M=
-(1.2)
-a
-Denna kvot kallas Mach-talet. Som diskuterats ovan har kombinationen av flygmachtal och vingarnas utformning en stor betydelse för√storleken på motståndet.
-Man kan visa att ljudhastigheten är proportionell mot T där T är den absoluta
-temperaturen. Denna sjunker i stort sett linjärt med ökande höjd i atmosfären upp
-till en höjd av ca 11 km. Detta innebär att om flygplanets fart relativt den omgivande
-atmosfären är fix så ökar machtalet med ökande flyghöjd.
-Machtalet har stor betydelse eftersom luftströmningen runt flygplanet ändras
-drastiskt vid övergången från flygning med underljudsmachtal (M < 1) till överljudsmachtal (M > 1). Framförallt börjar motståndet öka kraftigt. Detta kallas
-transsonisk motståndsökning och den börjar egentligen vid ett flygmachtal M < 1.
-Detta machtal kallas ”drag divergence Mach number” och betecknas Md.d. . Exakt
-
-Flygteknik 1.7
-hur stort detta machtal är beror på flygplanets, framförallt vingarnas, utformning.
-Genom att svepa vingarna, dvs. välja en pilvinge i stället för en rak vinge, kan man
-öka Md.d. . För moderna flygplan konstruerade att flyga vid höga underljudsmachtal
-startar denna motståndsökning någonstans i intervallet 0.8 ∼ 0.9. Moderna trafikflygplan avsedda för långdistansflygning marschflyger (eng. cruise) vid ett machtal
-strax under Md.d. .
-
-1.2.3
-
-Lyftkraft och motstånd
-
-För att kunna flyga måste alltså flygplanet aktivt generera en lyftkraft som balanserar dess tyngd. Men kraften från den omgivande atmosfären på flygplanet
-är egentligen en vektorstorhet som kan delas upp i två komponenter, en parallellt med och en vinkelrätt mot flygplanets rörelseriktning. Komponenten vinkelrätt
-mot rörelseriktningen definieras som lyftkraften och komponenten parallellt med
-rörelseriktningen definieras som motståndet. Dessa kraftkomponenter betecknas L
-respektive D (av engelskans “lift” för lyftkraften respektive “drag” för motståndet).
-Om flygplanet flyger horisontellt så är det lyftkraften som balanserar flygplanets
-tyngd W medan motståndet balanseras av dragkraften T från motorerna. Denna
-kraftbalans illustreras i figur 1.6 a).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-Figur 1.6: Kraftbalansen på ett flygplan a) i planflykt och b) vid glidflygning. Här är L
-lyftkraften, W tyngden, D motståndet och T dragkraften samt R resultanten till L och D.
-Vinkeln γ kallas glidvinkeln.
-
-Lyftkraften L, som verkar på flygplanet, beror av flera parametrar. De viktigaste är flygplanets fart V genom den omgivande atmosfären, densiteten ρ i denna
-atmosfär och flygplanets orientering relativt dess rörelseriktning. Flygplanets orientering mäts i allmänhet som vinkeln mellan en längdaxel genom flygplanet och
-rörelseriktningen. Denna vinkel kallas anfallsvinkeln (eng. angle of attack) och
-
-Flygteknik 1.8
-
-1.2
-
-1.2
-
-1
-
-1
-
-0.8
-
-0.8
-
-0.6
-
-0.6
-
-0.4
-
-0.4
-
-CL
-
-C
-
-L
-
-betecknas α. Lyftkraften växer då var och en av dessa parametrar ökar. Notera
-att atmosfärens täthet sjunker då flyghöjden ökar. Om någon av dessa parametrar
-varieras så måste man alltså kompensera detta genom att även ändra minst en till
-för att bibehålla storleken på lyftkraften.
-Normalt presenteras data för lyftkraften på dimensionslös form med den s.k. lyftkraftskoefficienten
-L
-L
-=
-CL =
-(1.3)
-1 2
-qS
-ρV S
-2
-Uttrycket 12 ρV 2 kallas det dynamiska trycket och brukar betecknas q. Det dynamiska
-trycket q är ett mått på rörelseenergi per volymsenhet i den omgivande strömningen,
-och lyftkraften är alltså direkt proportionell mot denna parameter. Vidare så är S en
-aerodynamisk referensarea (t.ex. vingarean).
-Lyftkraftskoefficienten CL är en funktion av flygplanets anfallsvinkel. Ett karaktäristiskt utseende på denna relation visas i den vänstra delen av figur 1.7. Typiskt är
-att denna kurva är i stort sett linjär vid små anfallsvinklar. Det är denna linjära del
-som man utnyttjar då man flyger. Man ser också att det finns ett maximalt värde
-på CL . För konventionellt utformade flygplan med raka vingar så har man normalt
-detta maximala värde vid ett värde då α är mellan 10 och 15 grader. Om piloten
-ökar anfallsvinkeln över detta värde så minskar lyftkraften i stället för att öka. Man
-säger att flygplanet överstegras eller stallar (eng. stall).
-
-0.2
-
-0.2
-
-0
-
-0
-
-−0.2
-
-−0.2
-
-−0.4
-
-−0.4
-
-−0.6
-
-−0.6
-
-−0.8
-−10
-
-−5
-
-0
-
-5
-
-α (degrees)
-
-10
-
-15
-
-−0.8
-
-0
-
-0.02
-
-0.04
-
-0.06
-
-0.08
-
-C
-
-D
-
-Figur 1.7: Lyftkraftskurvan (CL -α kurvan) och motståndspolaren.
-
-Då luften strömmar förbi flygplanets vinge uppkommer ett kraftigt undertryck på
-vingens översida och ett betydligt mindre övertryck på undersidan. Tryckdifferensen
-mellan vingens under- och översida ger lyftkraften. Notera att det stora bidraget
-till lyftkraften är undertrycket på vingens översida. Flygplanet sugs alltså uppåt
-av detta! Då anfallsvinkeln är ”liten” följer luften vingens kontur. Till en början
-sjunker trycket längs vingens kontur och luften accelererar för att därefter retardera
-då trycket åter växer mot vingens bakkant. Då anfallsvinkeln ökas växer undertrycket och retardationen blir kraftigare. Till slut blir retardationen så kraftig att
-
-Flygteknik 1.9
-luften inte längre klarar att följa vingens kontur utan släpper från denna. Flygplanet
-överstegrar och man säger att strömningen över vingen avlöser (eng. separation).
-Även motståndet D presenteras normalt i dimensionslös form med den s.k. motståndskoefficienten CD . Denna definieras på samma sätt som lyftkraftskoefficienten (1.3). Motståndskoefficienten presenteras normalt som funktion av lyftkraftskoefficienten i den s.k. motståndspolaren, se den högra delen av figur 1.7. En god
-approximation till motståndspolaren är, i den linjära delen av CL -α kurvan, ett andragradspolynom i CL . Ofta försummar man förstagradstermen i detta polynom som
-då blir
-CD = CD0 + k CL2
-(1.4)
-där CD0 och k är konstanter (eller egentligen funktioner av flygmachtalet M ). Notera
-att så länge CL varierar linjärt med α så innebär detta att CD är en andragradsfunktion i α. Notera också från den högra delen av figur 1.7 att då flygplanet stallat så
-växer CD mycket snabbt med ökad anfallsvinkel.
-Kvoten CL /CD kallas glidtalet och är en viktig prestandaparameter för flygplanet.
-Eftersom både CL och CD är funktioner av α så är även denna kvot det. Man kan
-visa att glidtalet har ett maximum för ett värde på α som normalt ligger i den linjära
-delen av CL -α kurvan. Från figur 1.6 b) framgår att glidvinkeln
-tan γ =
-
-D
-1
-=
-L
-CL /CD
-
-(1.5)
-
-Man glidflyger alltså med minsta möjliga glidvinkel γ (dvs. man kan glidflyga så
-långt som möjligt) om man väljer flygplanets anfallsvinkel sådan att glidtalet har sitt
-maximum.
-
-1.2.4
-
-Framdrivning
-
-Vid all flygning utom den rena glidflygningen måste man på något sätt generera en
-dragkraft T . Vid planflykt (horisontell flygning) med konstant fart ska dragkraften
-precis balansera motståndet D. Då man vill stiga relativt den omgivande luftmassan
-måste dragkraften även balansera en del av flygplanets tyngd W och om man vill
-accelerera måste dragkraften även balansera tröghetskraften.
-Dragkraften genereras i princip på samma sätt som lyftkraften. En del av luften
-i den omgivande atmosfären, alternativt någon annan gas, accelereras bakåt. För
-att åstadkomma detta måste luften/gasen påverkas av en bakåtriktad kraft från flygplanet. Luften/gasen påverkar då flygplanet med en lika stor och motriktad, dvs.
-framåtriktad, kraft. Denna är dragkraften T .
-Följande tekniska lösningar finns för generering av dragkraften:
-• en kolvmotor (eller liknande motortyp) som driver en propeller,
-• en turbinmotor som driver en propeller (turboprop),
-• en turbinmotor som genererar en bakåtriktad gasstråle (turbojet och -fläkt),
-• en rammotor eller
-• en raketmotor.
-
-Flygteknik 1.10
-I de två första framdrivningstyperna har man en propeller som accelererar en del av
-den omgivande luften bakåt. I turbojet-, turbofläkt- och rammoterer är det en blandning av luft, som passerat genom och värmts upp i motorn, och heta förbränningsgaser som accelereras. I en raketmotor accelereras enbart heta förbränningsgaser.
-Alla motortyperna baseras på att värme frigörs i en förbränningsprocess i motorn.
-I alla motortyper utom raketmotorn kräver denna förbränning syre från den omgivande atmosfären. Dessa motortyper har därför en begränsning i hur högt upp i
-atmosfären de kan fungera. En raketmotor ”tankas” även med ett oxidationsmedel
-och är därför oberoende av flyghöjden för sin funktion. Det är därför den enda av
-dessa motortyper som kan fungera utanför jordens atmosfär.
-Motorprestanda anges i form av maximal effekt P för motorer som driver en
-propeller och i form av maximal dragkraft för de övriga motortyperna ovan. Notera
-följande relation mellan dragkraften T och den effekt som erfordras från motorn
-P =TV
-
-(1.6)
-
-där V är flygplanets fart.
-
-1.2.5
-
-Högsta respektive lägsta möjliga fart
-
-Det finns minst två kandidater vardera till flygplanets högsta respektive lägsta möjliga fart. Betrakta ett flygplan i planflykt med konstant fart. De krafter som påverkar
-flygplanet, se figur 1.6 a), måste då balansera varandra. Då gäller t.ex. att
-1
-W = L = CL ρV 2 S
-2
-
-(1.7)
-
-Flygplanets tyngd W och vingarea S är konstanta och flyghöjden (atmosfärens densitet ρ) förutsätts också vara konstanta. Piloten kan då variera farten V och lyftkraftskoefficienten CL . Om piloten sänker farten V måste CL därför ökas för att bibehålla
-den vertikala kraftbalansen. Men i figur 1.7 såg vi att det finns ett maximalt värde
-på CL . Ökas anfallsvinkeln mer så överstegras flygplanet och CL sjunker drastiskt
-samtidigt som motståndet snabbt ökar. En kandidat till den lägsta möjliga farten för
-flygplanet är alltså den s.k. stallfarten
-Vstall =
-
-s
-
-2W
-ρCL,max S
-
-(1.8)
-
-Notera att eftersom ρ sjunker med ökande flyghöjd så växer stallfarten med höjden.
-Normalt är detta den verkliga lägsta farten i större delen av det för flygplanet flygbara höjdintervallet i atmosfären.
-En annan möjlig begränsning får man från motorns prestanda. Vid planflykt med
-konstant fart måste även gälla att krafterna horisontellt balanserar varandra, dvs.
-att T = D eller att P = T V = DV beroende på vilken typ av motor man har.
-Om T respektive P sätts lika med maximal dragkraft respektive maximal effekt från
-framdrivningssystemet och om motståndet D uttrycks med motståndskoefficienten
-CD , t.ex. enligt ekvation (1.4) ovan, får man en ekvation med två rötter, en som ger
-maximal och en som ger minimal fart. Denna kandidat till lägsta möjliga fart kan
-
-Flygteknik 1.11
-vara den verkliga då man ligger nära flygplanets maximala flyghöjd. Motsvarande
-kandidat till högsta möjliga fart är normalt den som gäller i den övre delen av möjliga
-flyghöjder. Vidare gäller att denna kandidat till den högsta möjliga farten är störst
-vid havsnivån och avtar med ökande flyghöjd.
-Tidigare har vi sett att både lyftkraften och motståndet är proportionella mot
-det dynamiska trycket q = 21 ρV 2 . Detsamma gäller för alla aerodynamiska krafter
-som verkar på flygplanet. Flyger man med samma fart V på olika höjder i atmosfären framgår att det dynamiska trycket växer med minskad flyghöjd. Flygplanets hållfasthet är normalt dimensionerad för ett maximalt tillåtet dynamiskt tryck
-och ofta väljer man detta värde så att man får högsta möjliga fart på någon viss
-höjd över marken. Detta innebär att maximalt tillåten fart sjunker med minskande
-flyghöjd under denna höjd. Normalt gäller alltså att flygplanets högsta fart begränsas
-av maximalt tillåtet dynamiskt tryck på låga flyghöjder och motorprestanda på höga
-flyghöjder.
-Det finns ytterligare minst ett fenomen som kan vara avgörande för den högsta
-tillåtna farten för ett visst flygplan. Om man flyger tillräckligt fort kan det hända
-att vingarna börjar självsvänga, s.k. vingfladder. Detta är ett aeroelastiskt fenomen
-som beror på att de aerodynamiska krafterna deformerar flygplanet elastiskt (främst
-vingarna) vilket i sin tur förändar de aerodynamiska krafterna. Fladder kan resultera i vingbrott och haveri (inträffade bland annat för Saab J21R) och en flygplanstillverkare måste säkerställa att fladder inte uppträder inom flygplanets tänkta
-fartområde.
-
-1.3
-
-Aktuell teknik och forskning
-
-Sammanfattningsvis är flygteknik ett mycket brett ämnesområde som karaktäriseras av komplexa fenomen (framförallt inom aerodynamiken) och svåra avvägningar mellan olika tekniska discipliner. Om du vill arbeta med flygteknik behöver du
-därför tillgodogöra dig en gedigen teoretisk utbildning baserad på matematik, numerisk metodik, optimeringsmetodik, stelkroppsmekanik, strömningsmekanik,
-termodynamik, hållfasthetslära och reglerteknik. Samtidigt är experimentell
-provning ett viktigt inslag i en flygteknisk utbildning. Detta för att du skall få en
-grundläggande förståelse för sambandet mellan teori och praktik, och vad dagens
-avancerade beräkningsmetoder har för möjligheter och begränsningar. Flygtekniken
-erbjuder många spännande utmaningar i framtiden, vilket det här avsnittet skall
-försöka belysa med några exempel på aktuell teknik och forskning.
-
-1.3.1
-
-Teknik: Trafikflygplan
-
-Trots att den yttre utformningen av kommersiella trafikflygplan inte har ändrats på
-ett omvälvande sätt sedan sent 1960-tal, så har många framsteg gjorts inom detta
-område. Påtagligt mer effektiva turbofläktmotorer, elektroniska system för styrning
-och övervakning av flygplanets tillstånd och kraftigt ökad tillförlitlighet har bidragit
-till att flygningar över mycket stora avstånd (upp till 16 000 km) är vanliga, och
-priserna för flygbiljetter har minskat kraftigt.
-
-Flygteknik 1.12
-Flygplantillverkarens kunder är flygbolagen. Deras ekonomiska villkor spelar
-en avgörande roll när nya flygplantyper ska utvecklas. Därför är det intressant
-att undersöka, som ett exempel, det omstridda om än ekonomiskt framgångsrika
-lågprisbolaget Ryanairs redovisning av kostnader omräknat per biljett i tabell 1. Av
-Biljettpris
-39.20 Euro
-Övriga intäkter
-11.12 Euro
-Flygbränsle
--17.02 Euro
-Avgifter och skatter -12.69 Euro
-Personalkostnader
--5.22 Euro
-Kapitalkostnader
--5.20 Euro
-Marknadsföring
--2.14 Euro
-Underhållsarbete
--1.30 Euro
-Vinst per biljett
-6.75 Euro
-Tabell 1: Ryanairs intäkter och kostnader per biljett, redovisade i kvartalsrapport Juli 2011.
-
-detta framgår att flygplanets bränsleåtgång är den viktigaste tekniska faktorn som
-påverkar flygbolagets lönsamhet. Sambandet gäller kanske i något mindre omfattning för flygbolag som har högre biljettpriser, men även där påverkar bränslekostnaden vinsten mycket kraftigt.
-Medan många inom flygbranschen idag räknar med att oljepriserna på sikt kommer att hamna vid $150-$200/fat [2] behöver man vara medveten om att långsiktiga
-priser över $30/fat betraktades som osannolikt när den grundläggande utformningen av till exempel Boeings nya 787 spikades. Med hänsyn till hur kostnaderna för
-flygbolagen ändras med bränslepriserna (se Tabell 1) är det tydligt att det finns
-mycket starka ekonomiska argument att spendera mer pengar på nya flygplan om
-bränsleåtgången kan minskas avsevärt (se rad Kapitalkostnader i Tabell 1).
-Tabell 2 visar bränsleförbrukningen för några flygplan i liter per passagerare och
-100 kilometer vid en utlastning av 78%, vilket är globalt genomsnitt för helåret
-2009. Som jämförelse anges samma förbrukning för två vanliga personbilar (vilka i
-Sverige transporterar i snitt 1.4 personer).
-Farkost
-Boeing 707
-MD-82
-Airbus 321
-Boeing 787
-Volvo 240
-Ford Focus
-
-Tillverkning
-1959 - 1990
-1983 - 1999
-sedan 1994
-från 2011
-1974-1993
-sedan 2004
-
-Förbrukning
-8.1 L
-3.9 L
-2.8 L
-2.1 L
-7.1 L
-5.5 L
-
-Tabell 2: Jämförelse av bränsleåtgång. Förbrukningen anges i liter per passagerare och 100
-km vid genomsnittlig faktiskt utlastning av respektive farkost.
-
-Även om trafikflygplanens konfiguration inte har ändrats avsevärt sedan 1960,
-visar Tabell 2 att väsentliga framsteg har gjorts. Betydligt större besparingar är
-
-Flygteknik 1.13
-möjliga om farten kan sänkas något (till högst Mach 0.7). Genom att använda raka
-vingar med högt sidoförhållande kan den aerodynamiska effektiviteten förbättras,
-vilket dock medför att påfrestningarna på den bärande strukturen ökar kraftigt.
-Samtidigt får naturligtvis inte strukturvikten öka mycket, vilket ställer höga krav
-på material och konstruktion.
-
-1.3.2
-
-Teknik: Obemannade flygfarkoster
-
-Tack vare framsteg inom styrsystem, satellitbaserad navigation och kommunikations- och sensorteknik blir obemannade flygfarkoster (unmanned aerial vehicles,
-UAV) alltmer intressanta för användningsområden som förut krävde kostsamma bemannade insatser eller inte var möjliga överhuvudtaget (av säkerhetsskäl). Medan
-militära tillämpningar av UAV:er är mest uppenbara finns även intressanta civila
-möjligheter. Den kommersiella UAV:n Aerosonde (figur 1.8) används till exem-
-
-Figur 1.8: Aerosonde UAV för meteorologiska mätningar och polarforskning. Vikt 14 kg,
-räckvidd 3300 km, flygtid över 38 timmar (www.aerosonde.com).
-
-pel för meteorologiska flygningar som är för riskabla att genomföra med bemannade farkoster, eller för mycket långvariga undersökningar i polartrakterna, där
-användningen av små UAV medför stora logistiska besparingar.
-Ett villkor för mer omfattande civila tillämpningar är certifieringen av ombemannade farkoster för flygning över bebodda områden, som i nuläget bara är tillåtet i
-undantagsfall. Den amerikanska myndigheten FAA har nyligen börjat utarbeta ett
-regelverk för detta. Bland annat diskuteras krav som innebär att farkosten måste
-självständigt och utan inblandning av fjärrstyrning kunna upptäcka och undvika
-både stationära och rörliga hinder som t.ex. byggnader, elkablar eller helikoptrar
-(eng. sense and avoid).
-Om nuvarande tekniska svårigheter kan lösas kan obemannade farkoster både
-leda till reducerade kostnader och minskade emissioner för till exempel övervakningsflygningar (som nu ofta utförs med helikoptrar) och dessutom möjliggöra insatser
-som idag knappt går att genomföra.
-
-Flygteknik 1.14
-
-1.3.3
-
-Teknik: Rymdtransport till reapris
-
-Den amerikanska rymdfärjan ”Space Shuttle” som flög 1980 till 2011 är fortfarande
-ett högutvecklat rymdtransportsystem. Tyvärr blev transportkostnader till omloppsbana med detta system inte lägre än med de dyra engångsraketer som dominerar den
-kommersiella satellitmarknaden. Sedan sent 80-tal undersöks därför ett stort antal
-alternativa rymdtransportsystem (eng. launch systems), framför allt för att täcka
-det stora behovet att skjuta upp både mer kraftfulla och mer avancerade satelliter
-för TV, tal- och datakommunikation.
-De flesta projekt för innovativa transportsystem, till exempel enstegsraketplanet
-X-33 eller det tvåstegade hypersoniska Sänger-planet, har lags på is då utvecklingskostnaderna blev alltför höga. Däremot har man lyckats reducera kostnaderna
-för vanliga raketuppskjutningar något med raketer såsom Lockheed Atlas-EELV (med
-ryska raketmotorer) och Ariane 5. Förutom mycket stora och halvstatliga företag
-har även mindre privata bolag börjat utveckla betydligt mindre farkoster avsedda
-för speciella ändamål. Till exempel för uppskjutning av mikrosatelliter (mindre
-än 50 kg) i låga omloppsbanor eller ballistiska flygningar för vetenskapliga experiment i mikrogravitation. Även dessa projekt har kostnadsbesparingar som främsta
-mål - inte särskilt förvånansvärt då priset för rymdfrakt fortfarande överskrider
-$20 000/kg.
-Efter att ha vunnit den amerikanska tävlingen ”Ansari X-Prize” för privata rymdflygningar med ”SpaceShipOne” har Burt Rutans företag Scaled Composites tillsammans med entreprenören Richard Branson lanserat ett företag för rymdturism i kommersiell skala – Virgin Galactic. Bärflygplanet för ”rymdbussen” SpaceShipTwo (se
-Figur 1.9) började flygutprovas våren 2009 och företaget har redan sålt reserveringar
-för biljetter värda 600 miljoner kronor. Priset för de första resorna är bestämt till
-$200 000, vilket i sammanhanget faktiskt inte är särskilt mycket (jämför med kilopriset ovan).
-
-Figur 1.9: Burt Rutans bärflygplan med raketfarkost (virgingalactic.com).
-
-Flygteknik 1.15
-
-1.3.4
-
-Forskning: Aeroelastiskt aktiva vingar
-
-Som ett exempel på aktuella forskningsaktiviteter både i Europa och USA kan aktiva aeroelastiska vingar nämnas. Aeroelastiska effekter är sådana där den elastiska
-bärstrukturen deformeras av luftlasterna så mycket att detta i sin tur även påverkar
-luftlasterna själv (på grund av den förändrade formen). I figur 1.10 visas ett modernt segelflygplan vid en landning. Den statiska utböjningen av vingspetsarna syns
-tydligt. Aeroelasticitet måste alltså tas hänsyn till i utvecklingen av ett flygplan eftersom sådana effekter påverkar flygplanets prestanda och kan leda till instabiliteter
-såsom vingfladder.
-
+erna av A380 tar 555 passagerare i vanlig konfiguration (eller upp till 853 när stolarna placeras tätt), vilket är 140 (329) fler än dess närmaste konkurrent. Projektet lanserades år 2000, premiärflygningen skedde i april 2005 (se www.airbus.com), och den kommersiella driften började under hösten 2007. Amerikanska Boeing lanserade istället samtidigt det mindre och snabbare flygplanet “Sonic Cruiser”. Detta projekt skrinlades dock och istället utvecklas nu Boeing 787 (för omkring 250 passagerare), som är tänkt att ge en betydligt bättre driftsekonomi. Intressant nog präglas båda utvecklingsprojekten av påtagliga förseningar jämfört¨ med den officiella tidsplanen. Medan Airbus i ett sent skede har löst svårigheter att montera in flygplanets avancerade elektriska system i tillräckligt hög takt, brottas Boeing med underleverantörer som inte lyckas uppfylla stränga kvalitetskrav för nyutvecklade komponenter i kolfiberkomposit. Som en konsekvens av detta har Boeing köpt upp stora delar av en amerikansk leverantör (Vought) i juli 2009, vilket antyder att konceptet att lägga ut mycket utvecklingsansvar på externa partners kanske inte var helt lyckat.
+Efter denna inledning följer ett avsnitt som introducerar några viktiga flygtekniska begrepp och definitioner, ett avsnitt om aktuell teknik och forskning och några tips för vidare läsning. Målet är att du efter att ha studerat materialet ska
+•	kunna redogöra för de flygtekniska begrepp och definitioner som introduceras,
+•	kunnavingarea,förklara hur lyftkraft och motstånd beror av parametrar som fart och
+•	kunna motivera den kraftbalans som råder då ett flygplan flyger,
+•	förstå varför flygplansvingar ser ut som dom gör, samt
+•	vilja lära dig mer om flygteknik!
+1.2	Viktiga begrepp och definitioner
+Varje farkost som befinner sig i lufthavet måste på något sätt, aktivt eller passivt, generera en vertikal lyftkraft som balanserar farkostens egen tyngd. Ballonger och luftskepp har stor volym och relativt liten massa. Medeltätheten för dessa farkosttyper är lägre eller lika stor som tätheten i den omgivande atmosfären. Om farkostens medeltäthet är lägre än den omgivande atmosfärens så stiger den och om den är lika stor så ”flyter” farkosten på en kostant höjd. Dessa farkostslag utnyttjar Arkimedes princip för att med en passiv metod skapa den erforderliga lyftkraften.
+Flygplan och helikoptrar har en medeltäthet som är betydligt större än den omgivande atmosfärens. De måste därför generera huvuddelen av sin lyftkraft på något annat sätt. Genom en kombination av farkostens utformning och rörelse fås luften att accelereras nedåt. Farkosten påverkar alltså luften i den omgivande atmosfären med en nedåtriktad kraft (Newtons andra lag) och luften påverkar därmed flygplanet med en lika stor men motriktad lyftkraft (Newtons tredje lag). För vanliga flygplan är det vingarnas utformning som medför att luft accelereras nedåt då flygplanet rör sig genom luften. För en helikopter är det rotorbladens rörelse som ger denna acceleration, vilket gör att helikoptern i sig själv kan ligga still i lufthavet och “hovra” (eng. hover). Detta fungerar inte med ett vanligt flygplan. Eftersom vingens geometri är fix måste hela flygplanet röra sig genom atmosfären.
+Ett tredje sätt att skapa lyftkraft är med en tillräckligt kraftig jet- eller raketmotor. Det är t.ex. den metod som, än så länge, utnyttjas om man vill komma ut i rymden. Farkoster som genererar sin lyftkraft på samma sätt som ballonger och luftskepp kallas aerostater och man säger att de flyger enligt principen ”lättare än luft”. Flygplan och helikoptrar, liksom segel- och andra slags glidflygplan och autogyros, kallas aerodyner och flyger enligt principen ”tyngre än luft”. I det följande kommer flygplanet att behandlas i lite mer detalj.
+1.2.1	Flygplanets utformning
+I figur 1.4 visas ett konventionellt utformat flygplan. I figuren är de viktigaste delarna på flygplanet markerade. På ett konventionellt flygplan är det vingarna som ge-
+ 
+Figur 1.4: De viktigaste delarna på ett konventionellt utformat flygplan, Saab 2000. nererar huvuddelen av lyftkraften. Klaffarna vid vingarnas bakkant används främst
+vid start och landning för att upprätthålla den nödvändiga lyftkraften vid låg fart. De ökar emellertid samtidigt luftmotståndet varför de inte används vid marschflygning. Kroppen härb¨argerar nyttolasten och binder samman övriga delar. Flygplanet måste även vara så utformat att luftmotståndet blir så lågt som möjligt. Motorerna är nödvändiga dels för att övervinna det motstånd som inte går att bli kvitt och dels för att möjliggorä att flygplanet kan accelerera och/eller stiga.
+Den viktigaste aerodynamiska komponenten på ett flygplan är vingarna. Det finns tre huvudtyper av vingar, eller snarare vingplanformer. Dessa grundformer, som visas i figur 1.5, är den raka vingen, pilvingen respektive deltavingen. Flygplansexemplen i figuren är valda så att vingarnas planform är så renodlade som möjligt. Det finns sedan en stor mängd variationer av dessa.
+ 
+Figur 1.5: De tre huvudtyperna av vingplanformer. a) Socata TB21 Trinidad TC och b) Saab 340B med en raka vingar (rektangulär respektive trapetsvinge), c) Saab 105 och d) Boeing 777 med pilvingar samt e) Saab JAS39 Gripen och f) Concorde med deltavingar. Notera att flygplanen visas i olika skalor!
+Två viktiga geometriska parametrar för en flygplansvinge är vingarean S och spännvidden b. Vingarean är i princip den area som visas i figur 1.5 om vingens fram- och bakkant förl¨angs till flygplanets centrumlinje. Spännvidden är avståndet mellan höger och vänster vingspets. En viktig geometrisk parameter för vingen är det s.k. sidoförhållandet , AR (eng. aspect ratio). Detta definieras
+	 	(1.1)
+En vinge med högt sidoförhållande är alltså mer långslank än	en vinge med lågt sidoförhållande.
+Det som är avgörande för flygplanskonstruktören vid valet av vingplanform är för vilken maximal fart flygplanet är utformat och den parameter som styr valet av vingplanform är storleken på vingens bidrag till flygplanets luftmotstånd. Vid låga och måttligt höga farter är den raka vingen överlägsen.¨ Som vi ska se i nästa avsnitt avgörs om flygplanets fart är ”låg” eller ”hög” av hur stor denna är jämfört¨ med ljudhastigheten i den omgivande atmosfären.
+Flygplan som ska flyga med en hög underljudsfart, som de flesta stora civila transportflygplan av den typ som tillverkas av Airbus och Boeing, har en pilvinge för att minska motståndet i detta fartområde. En orsak till att man inte vill ha en pilvinge även för flygplan som är avsedda för en lägre fart är att pilvingen kan ha mycket otrevliga flygegenskaper vid låg fart. Detta är speciellt farligt då flygplanet ska landa (mer om detta lite senare). En annan orsak är att det vid en given vingarea och då man flyger med låg fart är att föredra att ha en så stor spännvidd som möjligt på vingen om man vill minimera vingens bidrag till motståndet. Sveper man vingen bakåt så minskar spännvidden om vingarean bibehålls.
+Aterstår˚ då bara deltavingen. Denna vingplanform används bara för flygplan utformade för att flyga med överljudsfart.¨ För att minimera motståndet i detta fartområde måste man utforma flygplanet så att detta är så slankt som möjligt. Med ”slankt” avses i detta sammanhang kvoten mellan flygplanets längd och vingens spännvidd. Som en enkel tumregel kan man säga att om flygplanet är utformat så att det ryms inom en kon vars spets sammanfaller med flygplanets främsta del och som har halva oppningsvinkeln¨ 30◦, så är flygplanet utformat för att kunna flyga med dubbla ljudhastigheten men inte mycket fortare.
+1.2.2	Flygplans fart - flygmachtalet
+Utformningen av ett flygplan styrs helt av den tilltänkta användningen. Denna bestämmer hur mycket last flygplanet ska kunna bära, hur stor bränslevolym som måste tas med, vilken typ av motorer som är lämpliga etc. Storleken och ytbeläggningen på de flygfält som flygplanet ska kunna använda bestämmer vilken typ av flygplan man ska välja eller om t.ex. en helikopter är lämpligare. Som vi sett ovan bestämmer den fart flygplanet är utformat för vilken vingplanform som är lämpligast. Egentligen är det inte flygplanets fart i sig som är den relevanta parametern utan kvoten mellan flygplanets fart V och ljudhastigheten a i den omgivande atmosfären,
+	 	(1.2)
+Denna kvot kallas Mach-talet. Som diskuterats ovan har kombinationen av flygmachtal och vingarnas utformning en stor betydelse för storleken på motståndet. Man kan visa att ljudhastigheten är proportionell mot √T där T är den absoluta temperaturen. Denna sjunker i stort sett linjärt med ökande¨ höjd i atmosfären upp till en höjd av ca 11 km. Detta innebär att om flygplanets fart relativt den omgivande atmosfären är fix så ökar machtalet med ökande¨ flyghöjd.
+Machtalet har stor betydelse eftersom luftströmningen runt flygplanet andras¨ drastiskt vid övergången¨ från flygning med underljudsmachtal (M < 1) till över-¨ ljudsmachtal (M > 1). Framförallt börjar motståndet öka kraftigt. Detta kallas transsonisk motståndsokning¨ och den börjar egentligen vid ett flygmachtal M < 1. Detta machtal kallas ”drag divergence Mach number” och betecknas Md.d.. Exakt hur stort detta machtal är beror på flygplanets, framförallt vingarnas, utformning. Genom att svepa vingarna, dvs. välja en pilvinge i stället för en rak vinge, kan man öka Md.d.. För moderna flygplan konstruerade att flyga vid höga underljudsmachtal startar denna motståndsokning¨ någonstans i intervallet 0.8 0.9. Moderna trafik-
+∼
+flygplan avsedda för långdistansflygning marschflyger (eng. cruise) vid ett machtal strax under Md.d..
+1.2.3	Lyftkraft och motstånd
+För att kunna flyga måste alltså flygplanet aktivt generera en lyftkraft som balanserar dess tyngd. Men kraften från den omgivande atmosfären på flygplanet är egentligen en vektorstorhet som kan delas upp i två komponenter, en parallellt med och en vinkelrätt mot flygplanets rörelseriktning. Komponenten vinkelrätt mot rörelseriktningen definieras som lyftkraften och komponenten parallellt med rörelseriktningen definieras som motståndet. Dessa kraftkomponenter betecknas L respektive D (av engelskans “lift” för lyftkraften respektive “drag” för motståndet). Om flygplanet flyger horisontellt så är det lyftkraften som balanserar flygplanets tyngd W medan motståndet balanseras av dragkraften T från motorerna. Denna kraftbalans illustreras i figur 1.6 a).
+ 
+Figur 1.6: Kraftbalansen på ett flygplan a) i planflykt och b) vid glidflygning. Här är L lyftkraften, W tyngden, D motståndet och T dragkraften samt R resultanten till L och D. Vinkeln γ kallas glidvinkeln.
+Lyftkraften L, som verkar på flygplanet, beror av flera parametrar. De viktigaste är flygplanets fart V genom den omgivande atmosfären, densiteten ρ i denna atmosfär och flygplanets orientering relativt dess rörelseriktning. Flygplanets orientering mäts i allmänhet som vinkeln mellan en längdaxel genom flygplanet och rörelseriktningen. Denna vinkel kallas anfallsvinkeln (eng. angle of attack) och betecknas α. Lyftkraften växer då var och en av dessa parametrar ökar.¨ Notera att atmosfärens täthet sjunker då flyghöjden ökar.¨ Om någon av dessa parametrar varieras så måste man alltså kompensera detta genom att även andrä minst en till för att bibehålla storleken på lyftkraften.
+Normalt presenteras data för lyftkraften på dimensionslös form med den s.k. lyftkraftskoefficienten
+	 	(1.3)
+Uttrycket   kallas det dynamiska trycket och brukar betecknas q. Det dynamiska trycket q är ett mått på rörelseenergi per volymsenhet i den omgivande strömningen, och lyftkraften är alltså direkt proportionell mot denna parameter. Vidare så är S en aerodynamisk referensarea (t.ex. vingarean).
+Lyftkraftskoefficienten CL är en funktion av flygplanets anfallsvinkel. Ett karaktäristiskt utseende på denna relation visas i den vänstra delen av figur 1.7. Typiskt är att denna kurva är i stort sett linjär vid små anfallsvinklar. Det är denna linjära del som man utnyttjar då man flyger. Man ser också att det finns ett maximalt värde på CL. För konventionellt utformade flygplan med raka vingar så har man normalt detta maximala värde vid ett värde då α är mellan 10 och 15 grader. Om piloten ökar anfallsvinkeln över¨ detta värde så minskar lyftkraften i stället för att öka.¨ Man säger att flygplanet överstegras¨ eller stallar (eng. stall).
+ 
+Figur 1.7: Lyftkraftskurvan (CL-α kurvan) och motståndspolaren.
+Då luften strömmar förbi flygplanets vinge uppkommer ett kraftigt undertryck på vingens översida och ett betydligt mindre övertryck¨ på undersidan. Tryckdifferensen mellan vingens under- och översida ger lyftkraften. Notera att det stora bidraget till lyftkraften är undertrycket på vingens översida.¨ Flygplanet sugs alltså uppåt av detta! Då anfallsvinkeln är ”liten” följer luften vingens kontur. Till en början sjunker trycket längs vingens kontur och luften accelererar för att därefter retardera då trycket ater˚ växer mot vingens bakkant. Då anfallsvinkeln ökas¨ växer undertrycket och retardationen blir kraftigare. Till slut blir retardationen så kraftig att luften inte längre klarar att följa vingens kontur utan släpper från denna. Flygplanet överstegrär och man säger att strömningen över¨ vingen avlöser (eng. separation).
+även motståndet D presenteras normalt i dimensionslös form med den s.k. motståndskoefficienten CD. Denna definieras på samma sätt som lyftkraftskoefficienten (1.3). Motståndskoefficienten presenteras normalt som funktion av lyftkraftskoefficienten i den s.k. motståndspolaren, se den högra delen av figur 1.7. En god approximation till motståndspolaren ar,¨ i den linjära delen av CL-α kurvan, ett andragradspolynom i CL. Ofta försummar man förstagradstermen i detta polynom som då blir
+	CD = CD0 + k CL2	(1.4)
+där CD0 och k är konstanter (eller egentligen funktioner av flygmachtalet M). Notera att så länge CL varierar linjärt med α så innebär detta att CD är en andragradsfunktion i α. Notera också från den högra delen av figur 1.7 att då flygplanet stallat så växer CD mycket snabbt med ökad¨ anfallsvinkel.
+Kvoten CL / CD kallas glidtalet och är en viktig prestandaparameter för flygplanet. Eftersom både CL och CD är funktioner av α så är även denna kvot det. Man kan visa att glidtalet har ett maximum för ett värde på α som normalt ligger i den linjära delen av CL-α kurvan. Från figur 1.6 b) framgår att glidvinkeln
+D	1 tan γ =	 =	(1.5)
+	L	CL/CD
+Man glidflyger alltså med minsta möjliga glidvinkel γ (dvs. man kan glidflyga så långt som möjligt) om man väljer flygplanets anfallsvinkel sådan att glidtalet har sitt maximum.
+1.2.4	Framdrivning
+Vid all flygning utom den rena glidflygningen måste man på något sätt generera en dragkraft T. Vid planflykt (horisontell flygning) med konstant fart ska dragkraften precis balansera motståndet D. Då man vill stiga relativt den omgivande luftmassan måste dragkraften även balansera en del av flygplanets tyngd W och om man vill accelerera måste dragkraften även balansera tröghetskraften.
+Dragkraften genereras i princip på samma sätt som lyftkraften. En del av luften i den omgivande atmosfären, alternativt någon annan gas, accelereras bakåt. För att åstadkomma detta måste luften/gasen påverkas av en bakåtriktad kraft från flygplanet. Luften/gasen påverkar då flygplanet med en lika stor och motriktad, dvs.
+framåtriktad, kraft. Denna är dragkraften T.
+Följande tekniska lösningar finns för generering av dragkraften:
+•	en kolvmotor (eller liknande motortyp) som driver en propeller,
+•	en turbinmotor som driver en propeller (turboprop),
+•	en turbinmotor som genererar en bakåtriktad gasstråle (turbojet och -fläkt),
+•	en rammotor eller
+•	en raketmotor.
+I de två första framdrivningstyperna har man en propeller som accelererar en del av den omgivande luften bakåt. I turbojet-, turbofläkt- och rammoterer är det en blandning av luft, som passerat genom och värmts upp i motorn, och heta förbr¨anningsgaser som accelereras. I en raketmotor accelereras enbart heta förbr¨anningsgaser. Alla motortyperna baseras på att värme frigörs i en förbr¨anningsprocess i motorn. I alla motortyper utom raketmotorn kräver denna förbr¨anning syre från den omgivande atmosfären. Dessa motortyper har därför en begränsning i hur högt upp i atmosfären de kan fungera. En raketmotor ”tankas” även med ett oxidationsmedel och är därför oberoende av flyghöjden för sin funktion. Det är därför den enda av dessa motortyper som kan fungera utanför jordens atmosfär.
+Motorprestanda anges i form av maximal effekt P för motorer som driver en propeller och i form av maximal dragkraft för de övriga motortyperna ovan. Notera följande relation mellan dragkraften T och den effekt som erfordras från motorn
+	P = T V	(1.6)
+där V är flygplanets fart.
+1.2.5	högsta	respektive lägsta	möjliga	fart
+Det finns minst två kandidater vardera till flygplanets högsta respektive lägsta möjliga fart. Betrakta ett flygplan i planflykt med konstant fart. De krafter som påverkar flygplanet, se figur 1.6 a), måste då balansera varandra. Då gäller t.ex. att
+	 	(1.7)
+Flygplanets tyngd W och vingarea S är konstanta och flyghöjden (atmosfärens densitet ρ) föruts¨atts också vara konstanta. Piloten kan då variera farten V och lyftkraftskoefficienten CL. Om piloten sänker farten V måste CL därför ökas¨ för att bibehålla den vertikala kraftbalansen. Men i figur 1.7 såg vi att det finns ett maximalt värde på CL. ökas¨ anfallsvinkeln mer så överstegras¨ flygplanet och CL sjunker drastiskt samtidigt som motståndet snabbt ökar.¨ En kandidat till den lägsta möjliga farten för flygplanet är alltså den s.k. stallfarten
+	 	(1.8)
+Notera att eftersom ρ sjunker med ökande¨ flyghöjd så växer stallfarten med höjden. Normalt är detta den verkliga lägsta farten i större delen av det för flygplanet flygbara höjdintervallet i atmosfären.
+En annan möjlig begränsning får man från motorns prestanda. Vid planflykt med konstant fart måste även gälla att krafterna horisontellt balanserar varandra, dvs. att T = D eller att P = TV = DV beroende på vilken typ av motor man har.
+Om T respektive P sätts lika med maximal dragkraft respektive maximal effekt från framdrivningssystemet och om motståndet D uttrycks med motståndskoefficienten CD, t.ex. enligt ekvation (1.4) ovan, får man en ekvation med två rötter, en som ger maximal och en som ger minimal fart. Denna kandidat till lägsta möjliga fart kan vara den verkliga då man ligger nära flygplanets maximala flyghöjd. Motsvarande kandidat till högsta möjliga fart är normalt den som gäller i den ovre¨ delen av möjliga flyghöjder. Vidare gäller att denna kandidat till den högsta möjliga farten är störst vid havsnivån och avtar med ökande¨ flyghöjd.
+Tidigare har vi sett att både lyftkraften och motståndet är proportionella mot det dynamiska trycket . Detsamma gäller för alla aerodynamiska krafter som verkar på flygplanet. Flyger man med samma fart V på olika höjder i atmosfären framgår att det dynamiska trycket växer med minskad flyghöjd. Flygplanets hållfasthet är normalt dimensionerad för ett maximalt tillåtet dynamiskt tryck och ofta väljer man detta värde så att man får högsta möjliga fart på någon viss höjd över¨ marken. Detta innebär att maximalt tillåten fart sjunker med minskande flyghöjd under denna höjd. Normalt gäller alltså att flygplanets högsta fart begränsas av maximalt tillåtet dynamiskt tryck på låga flyghöjder och motorprestanda på höga flyghöjder.
+Det finns ytterligare minst ett fenomen som kan vara avgörande för den högsta tillåtna farten för ett visst flygplan. Om man flyger tillräckligt fort kan det hända att vingarna börjar självsv¨anga, s.k. vingfladder. Detta är ett aeroelastiskt fenomen som beror på att de aerodynamiska krafterna deformerar flygplanet elastiskt (främst vingarna) vilket i sin tur för¨andar de aerodynamiska krafterna. Fladder kan resultera i vingbrott och haveri (inträffade bland annat för Saab J21R) och en flygplanstillverkare måste säkerst¨alla att fladder inte uppträder inom flygplanets tänkta fartområde.
+1.3	Aktuell teknik och forskning
+Sammanfattningsvis är flygteknik ett mycket brett ämnesområde som karaktäriseras av komplexa fenomen (framförallt inom aerodynamiken) och svåra avvägningar mellan olika tekniska discipliner. Om du vill arbeta med flygteknik behöver du därför tillgodogöra dig en gedigen teoretisk utbildning baserad på matematik, numerisk metodik, optimeringsmetodik, stelkroppsmekanik, strömningsmekanik¨ , termodynamik, hållfasthetslära och reglerteknik. Samtidigt är experimentell provning ett viktigt inslag i en flygteknisk utbildning. Detta för att du skall få en grundläggande förståelse för sambandet mellan teori och praktik, och vad dagens avancerade beräkningsmetoder har för möjligheter och begränsningar. Flygtekniken erbjuder många spännande utmaningar i framtiden, vilket det här avsnittet skall försöka belysa med några exempel på aktuell teknik och forskning.
+1.3.1	Teknik: Trafikflygplan
+Trots att den yttre utformningen av kommersiella trafikflygplan inte har ändrats på ett omvälvande sätt sedan sent 1960-tal, så har många framsteg gjorts inom detta område. Påtagligt mer effektiva turbofläktmotorer, elektroniska system för styrning och övervakning¨ av flygplanets tillstånd och kraftigt ökad¨ tillförlitlighet har bidragit till att flygningar över¨ mycket stora avstånd (upp till 16 000 km) är vanliga, och priserna för flygbiljetter har minskat kraftigt.
+Flygplantillverkarens kunder är flygbolagen. Deras ekonomiska villkor spelar en avgörande roll när nya flygplantyper ska utvecklas. därför är det intressant att undersöka, som ett exempel, det omstridda om än ekonomiskt framgångsrika lågprisbolaget Ryanairs redovisning av kostnader omräknat per biljett i tabell 1. Av
+Biljettpris	39.20 Euro
+övriga	intäkter	11.12 Euro
+Flygbränsle	-17.02 Euro
+Avgifter och skatter	-12.69 Euro
+Personalkostnader	-5.22 Euro
+Kapitalkostnader	-5.20 Euro
+Marknadsföring	-2.14 Euro
+Underhållsarbete	-1.30 Euro
+Vinst per biljett	6.75 Euro
+Tabell 1: Ryanairs intäkter och kostnader per biljett, redovisade i kvartalsrapport Juli 2011.
+detta framgår att flygplanets bränsleåtgång är den viktigaste tekniska faktorn som påverkar flygbolagets lönsamhet. Sambandet gäller kanske i något mindre omfattning för flygbolag som har högre biljettpriser, men även där påverkar bränslekostnaden vinsten mycket kraftigt.
+Medan många inom flygbranschen idag räknar med att oljepriserna på sikt kommer att hamna vid $150-$200/fat [2] behöver man vara medveten om att långsiktiga priser över¨ $30/fat betraktades som osannolikt när den grundläggande utformningen av till exempel Boeings nya 787 spikades. Med hänsyn till hur kostnaderna för flygbolagen andras¨ med bränslepriserna (se Tabell 1) är det tydligt att det finns mycket starka ekonomiska argument att spendera mer pengar på nya flygplan om bränsleåtgången kan minskas avsevärt (se rad Kapitalkostnader i Tabell 1).
+Tabell 2 visar bränsleforbrukningen¨ för några flygplan i liter per passagerare och 100 kilometer vid en utlastning av 78%, vilket är globalt genomsnitt för helåret 2009. Som jämförelse¨ anges samma förbrukning för två vanliga personbilar (vilka i Sverige transporterar i snitt 1.4 personer).
+Farkost	Tillverkning	Förbrukning
+Boeing 707	1959 - 1990	8.1 L
+MD-82	1983 - 1999	3.9 L
+Airbus 321	sedan 1994	2.8 L
+Boeing 787	från 2011	2.1 L
+Volvo 240	1974-1993	7.1 L
+Ford Focus	sedan 2004	5.5 L
+Tabell 2: jämförelse¨	av bränsleåtgång. Förbrukningen anges i liter per passagerare och 100 km vid genomsnittlig faktiskt utlastning av respektive farkost.
+även om trafikflygplanens konfiguration inte har ändrats avsevärt sedan 1960, visar Tabell 2 att väsentliga framsteg har gjorts. Betydligt större besparingar är möjliga om farten kan sänkas något (till högst Mach 0.7). Genom att använda raka vingar med högt sidoförhållande kan den aerodynamiska effektiviteten förb¨attras, vilket dock medför att påfrestningarna på den bärande strukturen ökar kraftigt. Samtidigt får naturligtvis inte strukturvikten öka mycket, vilket ställer höga krav på material och konstruktion.
+1.3.2	Teknik: Obemannade flygfarkoster
+Tack vare framsteg inom styrsystem, satellitbaserad navigation och kommunikations- och sensorteknik blir obemannade flygfarkoster (unmanned aerial vehicles, UAV) alltmer intressanta för användningsområden som förut krävde kostsamma bemannade insatser eller inte var möjliga överhuvudtaget¨ (av säkerhetssk¨al). Medan militära tillämpningar av UAV:er är mest uppenbara finns även intressanta civila möjligheter. Den kommersiella UAV:n Aerosonde (figur 1.8) används till exem-
+ 
+Figur 1.8: Aerosonde UAV för meteorologiska mätningar och polarforskning. Vikt 14 kg, räckvidd 3300 km, flygtid över¨ 38 timmar (www.aerosonde.com).
+pel för meteorologiska flygningar som är för riskabla att genomföra med bemannade farkoster, eller för mycket långvariga undersökningar i polartrakterna, där användningen av små UAV medför stora logistiska besparingar.
+Ett villkor för mer omfattande civila tillämpningar är certifieringen av ombemannade farkoster för flygning över¨ bebodda områden, som i nuläget bara är tillåtet i undantagsfall. Den amerikanska myndigheten FAA har nyligen börjat utarbeta ett regelverk för detta. Bland annat diskuteras krav som innebär att farkosten måste självst¨andigt och utan inblandning av fjärrstyrning kunna upptäcka och undvika både stationära och rörliga hinder som t.ex. byggnader, elkablar eller helikoptrar (eng. sense and avoid).
+Om nuvarande tekniska svårigheter kan lösas kan obemannade farkoster både leda till reducerade kostnader och minskade emissioner för till exempel övervaknings-¨ flygningar (som nu ofta utförs med helikoptrar) och dessutom möjliggorä insatser som idag knappt går att genomföra.
+1.3.3	Teknik: Rymdtransport till reapris
+Den amerikanska rymdfärjan ”Space Shuttle” som flög 1980 till 2011 är fortfarande ett högutvecklat rymdtransportsystem. Tyvärr blev transportkostnader till omloppsbana med detta system inte lägre än med de dyra engångsraketer som dominerar den kommersiella satellitmarknaden. Sedan sent 80-tal undersöks därför ett stort antal alternativa rymdtransportsystem (eng. launch systems), framför allt för att täcka det stora behovet att skjuta upp både mer kraftfulla och mer avancerade satelliter för TV, tal- och datakommunikation.
+De flesta projekt för innovativa transportsystem, till exempel enstegsraketplanet X-33 eller det tvåstegade hypersoniska Sänger-planet, har lags på is då utvecklingskostnaderna blev alltför höga. Däremot har man lyckats reducera kostnaderna för vanliga raketuppskjutningar något med raketer såsom Lockheed Atlas-EELV (med ryska raketmotorer) och Ariane 5. Förutom mycket stora och halvstatliga företag har även mindre privata bolag börjat utveckla betydligt mindre farkoster avsedda för speciella andamål.¨ Till exempel för uppskjutning av mikrosatelliter (mindre än 50 kg) i låga omloppsbanor eller ballistiska flygningar för vetenskapliga experiment i mikrogravitation. även dessa projekt har kostnadsbesparingar som främsta mål - inte särskilt förvånansvärt då priset för rymdfrakt fortfarande överskrider¨ $20 000/kg.
+Efter att ha vunnit den amerikanska tävlingen ”Ansari X-Prize” för privata rymdflygningar med ”SpaceShipOne” har Burt Rutans företag Scaled Composites tillsammans med entreprenören Richard Branson lanserat ett företag för rymdturism i kommersiell skala – Virgin Galactic. Bärflygplanet för ”rymdbussen” SpaceShipTwo (se Figur 1.9) började flygutprovas våren 2009 och företaget har redan sålt reserveringar för biljetter värda 600 miljoner kronor. Priset för de första resorna är bestämt till $200 000, vilket i sammanhanget faktiskt inte är särskilt mycket (jämför¨ med kilopriset ovan).
+ 
+Figur 1.9: Burt Rutans bärflygplan med raketfarkost (virgingalactic.com).
+1.3.4	Forskning: Aeroelastiskt aktiva vingar
+Som ett exempel på aktuella forskningsaktiviteter både i Europa och USA kan aktiva aeroelastiska vingar nämnas. Aeroelastiska effekter är sådana där den elastiska bärstrukturen deformeras av luftlasterna så mycket att detta i sin tur även påverkar luftlasterna själv (på grund av den förändrade formen). I figur 1.10 visas ett modernt segelflygplan vid en landning. Den statiska utböjningen av vingspetsarna syns tydligt. Aeroelasticitet måste alltså tas hänsyn till i utvecklingen av ett flygplan eftersom sådana effekter påverkar flygplanets prestanda och kan leda till instabiliteter såsom vingfladder.
+ 
 Figur 1.10: Segelflygplanet eta vid landning.
-
-I konventionella konstruktioner försöker man undvika allvarliga aeroelastiska effekter genom att antingen förstyva strukturen, förändra viktfördelningen eller begränsa flygplanets maximala tillåtna hastighet. Syftet med detta forskningsområde
-är att undersöka om aeroelastiska effekter istället kan utnyttjas till fördel, t.ex. för
-att minska motståndet eller förbättra manöveregenskaper för mycket elastiska flygplansvingar. Med hjälp av avancerade styrsystem kan flygplanets egenskaper anpassas beroende av strukturdeformationer, t.ex. genom att ställa ut en klaff längs
-vingens framkant. Lägre laster medger att vingarna kan göras mer flexibla och att
-vikten kan reduceras samtidigt som förbättrade aerodynamiska egenskaper uppnås.
-Aeroelastiska fenomen är svåra att analysera, och för att konstruera en sådan
-aktiv vinge måste man inte bara förstå den underliggande fysiken, utan också kunna
-beräkna effekterna med god noggrannhet. Även om de inblandade disciplinerna
-aerodynamik, strukturdynamik och reglersystem är väl utvecklade, betyder inte det
-att kopplade problem där alla tre är inblandade behärskas lika bra.
-
-1.3.5
-
-Forskning: Klimatpåverkan
-
-Flygtrafikens effekt på klimatet beror väsentligen på utsläpp av CO 2 samt vattenånga
-på hög höjd. Ny forskning visar att just vattenånga, som under vissa meteorologiska
-förhållanden leder till bildning av nya cirrusmoln, sannolikt är en betydligt viktigare
-faktor än vad som tidigare antagits [3]. Medan forskningen visar att flygtrafikens
-nettoklimatpåverkan på grund av cirrusmolnen i ett kortare tidsperspektiv är avsevärt större än vad som enbart orsakas av CO2 -utsläpp, påvisar dessa resultat också
-
-Flygteknik 1.16
-nya möjligheter att minska flygets klimatpåverkan. Intressant nog kan vattenångan
-ha både en värmande (en. positive radiative forcing) och kylande effekt på klimatet,
-beroende främst på flyghöjd, temperatur och luftfuktighet.
-De meteorologiska förutsättningarna som leder till molnbildning på hög höjd är
-välkända. Till exempel omfattar militärens flygväderrapporter sedan länge prognoser för förekomsten av kondensstrimmor på olika flyghöjder. Denna information
-skulle därmed kunna användas för att dagligen optimera flygrutterna för att minimera klimatpåverkan som funktion av total bränsleåtgång samt molnbildningen.
-Flygbaneoptimeringarna skulle inte ens kräva dyra modifikationer på befintliga flygplan, men däremot ställa mycket höga krav på flygledningens kapacitet.
-Samtidigt är minskningen av bränsleförbrukningen naturligtvis ett mycket högt
-prioriterat tema inom forskningen, speciellt då det idag till skillnad från 1990 också
-finns mycket viktiga ekonomiska incitament. Det stora europeiska forskningsprojektet CleanSky syftar bland annat på att uppnå väsentliga besparingar genom att
-minska flygplanens motstånd. Ett sätt är att avsevärt mindra ytfriktion på vingarna genom att säkerställa att strömningen närmast vingytan (i gränsskiktet) förblir
-laminärt. Medan moderna mindre, långsammare flygplan byggda i kompositmaterial redan flygar med ”laminärvingar” är det betydligt svårare att åstådkomma för
-större trafikflygplan med kryssningsmachtal runt 0.8.
-Utmaningen är till exempel att bygga åtminstone den främre delen av vingen
-med tillräckligt hög ytkvalitet och utan skarvar eller nithuvuden som kan störa
-strömningen i gränsskiktet. För detta ändamål utvecklar bl.a. svenska Saab Aerostructures nya tillverkningsmetoder som tillåter att bygga stora vingkomponenter med
-integrerade förstyvninger i kolfiberkomposit helt utan fästelement.
-
-1.4
-
-Om du vill lära dig mer om flygteknik
-
-Om du är intresserad av att läsa mer om flygteknikens utveckling, speciellt i Sverige,
-så är referens [1] att rekommendera. Vill du läsa mer om flygteknik så är Introduction to Flight [4] lite mer avancerad medans Aircraft Flight [5], Mechanics of
-Flight [6] och Understanding Flight [7] erbjuder en lite lättsammare läsning. Och vill
-du veta mer om utbildningen i flyg- och rymdteknik på KTH är du alltid välkommen
-att hälsa på oss uppe på Farkost & Flyg!
-
+I konventionella konstruktioner försöker¨ man undvika allvarliga aeroelastiska effekter genom att antingen förstyva strukturen, för¨andra viktfördelningen eller begränsa flygplanets maximala tillåtna hastighet. Syftet med detta forskningsområde är att undersöka om aeroelastiska effekter istället kan utnyttjas till fördel, t.ex. för att minska motståndet eller förb¨attra manöveregenskaper för mycket elastiska flygplansvingar. Med hjälp av avancerade styrsystem kan flygplanets egenskaper anpassas beroende av strukturdeformationer, t.ex. genom att ställa ut en klaff längs vingens framkant. Lägre laster medger att vingarna kan göras mer flexibla och att vikten kan reduceras samtidigt som förb¨attrade aerodynamiska egenskaper uppnås.
+Aeroelastiska fenomen är svåra att analysera, och för att konstruera en sådan aktiv vinge måste man inte bara förstå den underliggande fysiken, utan också kunna beräkna effekterna med god noggrannhet. även om de inblandade disciplinerna aerodynamik, strukturdynamik och reglersystem är väl utvecklade, betyder inte det att kopplade problem där alla tre är inblandade behärskas lika bra.
+1.3.5	Forskning: Klimatpåverkan
+Flygtrafikens effekt på klimatet beror väsentligen på utsläpp av CO2 samt vattenånga på hög höjd. Ny forskning visar att just vattenånga, som under vissa meteorologiska förhållanden leder till bildning av nya cirrusmoln, sannolikt är en betydligt viktigare faktor än vad som tidigare antagits [3]. Medan forskningen visar att flygtrafikens nettoklimatpåverkan på grund av cirrusmolnen i ett kortare tidsperspektiv är avsevärt större än vad som enbart orsakas av CO2-utsläpp, påvisar dessa resultat också nya möjligheter att minska flygets klimatpåverkan. Intressant nog kan vattenångan ha både en värmande (en. positive radiative forcing) och kylande effekt på klimatet, beroende främst på flyghöjd, temperatur och luftfuktighet.
+De meteorologiska förutsättningarna som leder till molnbildning på hög höjd är välkända. Till exempel omfattar militärens flygväderrapporter sedan länge prognoser för förekomsten av kondensstrimmor på olika flyghöjder. Denna information skulle därmed kunna användas för att dagligen optimera flygrutterna för att minimera klimatpåverkan som funktion av total bränsleåtgång samt molnbildningen. Flygbaneoptimeringarna skulle inte ens kräva dyra modifikationer på befintliga flygplan, men däremot ställa mycket höga krav på flygledningens kapacitet.
+Samtidigt är minskningen av bränsleforbrukningen¨ naturligtvis ett mycket högt prioriterat tema inom forskningen, speciellt då det idag till skillnad från 1990 också finns mycket viktiga ekonomiska incitament. Det stora europeiska forskningsprojektet CleanSky syftar bland annat på att uppnå väsentliga besparingar genom att minska flygplanens motstånd. Ett sätt är att avsevärt mindra ytfriktion på vingarna genom att säkerst¨alla att strömningen närmast vingytan (i gränsskiktet) förblir laminärt. Medan moderna mindre, långsammare flygplan byggda i kompositmaterial redan flygar med ”laminärvingar” är det betydligt svårare att åstadkomma för större trafikflygplan med kryssningsmachtal runt 0.8.
+Utmaningen är till exempel att bygga atminstone˚ den främre delen av vingen med tillräckligt hög ytkvalitet och utan skarvar eller nithuvuden som kan störa strömningen i gränsskiktet. För detta andamål¨ utvecklar bl.a. svenska Saab Aerostructures nya tillverkningsmetoder som tillåter att bygga stora vingkomponenter med integrerade förstyvninger i kolfiberkomposit helt utan fästelement.
+1.4	Om du vill lära	dig mer om flygteknik
+Om du är intresserad av att läsa mer om flygteknikens utveckling, speciellt i Sverige, så är referens [1] att rekommendera. Vill du läsa mer om flygteknik så är Introduction to Flight [4] lite mer avancerad medans Aircraft Flight [5], Mechanics of Flight [6] och Understanding Flight [7] erbjuder en lite lättsammare läsning. Och vill du veta mer om utbildningen i flyg- och rymdteknik på KTH är du alltid välkommen att hälsa på oss uppe på Farkost & Flyg!
 Referenser
-[1] Flygteknik under 100 år, Svenska Mekanisters Riksförening (SMR), AB Trycksaker Norrköping, 2003.
-[2] E UROCONTROL , Long Term Forecast – Flight Movements 2010-2030, December
-2010, available at http://www.eurocontrol.int
-[3] Burkhardt, U. and Kärcher, B., Global radiative forcing from contrail cirrus, Nature Climate Change, 1, 54–58, April 2011.
-[4] Anderson Jr., J. D., Introduction to Flight, 4th Ed., McGraw-Hill, 2000.
-
-Flygteknik 1.17
-[5] Barnard, R. H. and Philpott, D. R., Aircraft Flight, 2nd Ed., Longman, 1995.
-[6] Kermode, A. C., Mechanics of Flight, 9th Ed., Longman, 1987.
-[7] Anderson, D. F. and Eberhardt S., Understanding Flight, McGraw-Hill, 2001.
-
-
+[1]	Flygteknik under 100 år , Svenska Mekanisters Riksförening (SMR), AB Trycksaker Norrköping, 2003.
+[2]	EUROCONTROL, Long Term Forecast – Flight Movements 2010-2030, December 2010, available at http://www.eurocontrol.int
+[3]	Burkhardt, U. and Kärcher, B., Global radiative forcing from contrail cirrus, Nature Climate Change, 1, 54–58, April 2011.
+[4]	Anderson Jr., J. D., Introduction to Flight, 4th Ed., McGraw-Hill, 2000.
+[5]	Barnard, R. H. and Philpott, D. R., Aircraft Flight, 2nd Ed., Longman, 1995.
+[6]	Kermode, A. C., Mechanics of Flight, 9th Ed., Longman, 1987.
+[7]	Anderson, D. F. and Eberhardt S., Understanding Flight, McGraw-Hill, 2001.
