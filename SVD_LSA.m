@@ -4,7 +4,7 @@ format short g
 
 %filnamn = input("Ange filnamn ('*.txt') >>");
 %<<<<<<< HEAD
-filnamn = 'Matriser\Farkost_matris.txt';%partier.txt%'Matriser\BIBELMATRISEN_V2.txt';
+filnamn = 'Matriser\BIBELMATRISEN_V2.txt';%partier.txt%'Matriser\BIBELMATRISEN_V2.txt';
 %=======
 %filnamn = 'Matriser\Kmatris.txt';
 %>>>>>>> 45e77d6f0d06d35f0e4a1a7adcff30e6d836fc1e
@@ -81,7 +81,8 @@ z = V(:, 3)' * B';
 % markeras med olika färger så man kan urskilja dem i plotten sen göra en
 % legend ---- %legend kan skapas m.h.a vektorn 'Doks'
 
-subplot(1, 3, 1)
+figure(1)
+subplot(1, 2, 1)
 plotta_med_legend(abs(x),abs(y),Doks,3)
 %plot(x, y, 'ko', 'LineWidth', 3)
 grid on, xlabel( ['Ämne 1: ', tema123(1)] ), ylabel( ['Ämne 2: ', tema123(2)] ), title('PCA 2D')
@@ -89,22 +90,23 @@ axis equal
 %axis([-2 15 -2 15])
 
 
-subplot(1, 3, 2)
+subplot(1, 2, 2)
+semilogy(diag(S), 'k-o', 'LineWidth', 2.5) % Visar hur viktiga singulärvärdena är
+axis tight, xlabel('Singulärvärdets "ranking"'), ylabel('Singulärvärde'), title('Singulärvärdesrelevans')
+
+set(gcf, 'Name', 'PCA');
+
+figure(2)
 %plot3(x, y, z, 'ko', 'LineWidth', 3)
 plotta_med_legend(abs(x),abs(y),Doks,3,abs(z))
 grid on, xlabel( ['Ämne 1: ', tema123(1)] )
          ylabel( ['Ämne 2: ', tema123(2)] )
          zlabel( ['Ämne 3: ', tema123(3)] )
 title('PCA 3D')
-%axis equal
-%axis([-2 15 -2 15])
-
-subplot(1, 3, 3)
-semilogy(diag(S), 'k-o', 'LineWidth', 2.5) % Visar hur viktiga singulärvärdena är
-axis tight, xlabel('Singulärvärdets "ranking"'), ylabel('Singulärvärde'), title('Singulärvärdesrelevans')
 
 set(gcf, 'Name', 'PCA');
-
+%axis equal
+%axis([-2 15 -2 15])
 %FUNKTIONER:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function T = topic(VT,kolumn,num_words,ord) 
