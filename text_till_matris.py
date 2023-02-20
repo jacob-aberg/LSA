@@ -52,7 +52,7 @@ def rensa_skiljetecken(ordlista,siffror=True):
 
 
 
-def skapa_ordbok(texter,utan_vanliga_ord=True,alf=False,siffror=True):
+def skapa_ordbok(texter,utan_vanliga_ord=False,alf=False,siffror=True):
     """args:    texter; (list med lists) en lista med listor med ord; [ ['ord','ord'],['ord','ord'] ]
                 alf; (bool); om True --> alfabetisk ordning
         --> returnerar ordbok; lista med unika ord"""
@@ -65,7 +65,7 @@ def skapa_ordbok(texter,utan_vanliga_ord=True,alf=False,siffror=True):
             ordbok.append(ord)
 
     if alf: ordbok = sorted(ordbok)
-    if utan_vanliga_ord: return rensa_vanliga_ord(ordbok,siffror=siffror)
+    if utan_vanliga_ord: return rensa_vanliga_ord(ordbok,språk = utan_vanliga_ord,siffror=siffror)
     else:   return ordbok
 
 def ord_frekvens(ord, text):
@@ -98,11 +98,14 @@ def invers_dok_frekvens(ord,texter):
         ---> (float); returnerar värde på hur "unikt" ett ord är i textsamlingen """     
     return np.log10(len(texter) / np.sum([1 for text in texter if ord in text]))
 
-def rensa_vanliga_ord(ordbok,siffror=True):
+def rensa_vanliga_ord(ordbok, språk ='sv',siffror=True):
     """args:    lista med ord (list)
             --> returnerar ordlista utan "vanliga ord (list)" """
 
-    fil = os.path.join( os.getcwd(),'vanliga_ord.txt')
+    if språk == 'sv': fil = 'vanliga_ord.txt'
+    elif språk == 'eng': fil = 'common_words.txt'
+
+    fil = os.path.join( os.getcwd(),fil)
     vanliga_ord = text_till_ordlista( fil, siffror=siffror )
 
     unika_ord = []

@@ -4,7 +4,7 @@ format short g
 
 %filnamn = input("Ange filnamn ('*.txt') >>");
 %<<<<<<< HEAD
-filnamn = 'Matriser\BIBELMATRISEN_V2.txt';%partier.txt%'Matriser\BIBELMATRISEN_V2.txt';
+filnamn = 'Matriser\farkost2';
 %=======
 %filnamn = 'Matriser\Kmatris.txt';
 %>>>>>>> 45e77d6f0d06d35f0e4a1a7adcff30e6d836fc1e
@@ -22,7 +22,7 @@ Doks = ordbok( dok_fil );
 %%%%%%%%%%%%-HITTAR OCH VISAR ÄMNEN-%%%%%%%%%%%%%%%%%%%%%%%%%%5
 [~, ~, V] = svd(A);
 
-num_topics = 3;
+num_topics = 5;
 num_words = 10;
 
 V = V(:,1:1:num_topics);
@@ -53,7 +53,7 @@ for i =1:1:num_topics
 end,clear fig, clear pos, clear Tabell;
 
 
-tema123 = [ TOPICS(1,1),TOPICS(1,3),TOPICS(1,5)];
+tema123 = [ TOPICS(1,1),TOPICS(2,3),TOPICS(1,5)];
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

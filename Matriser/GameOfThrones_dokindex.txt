@@ -1,0 +1,8 @@
+GoT_säsong 1
+GoT_säsong 2
+GoT_säsong 3
+GoT_säsong 4
+GoT_säsong 5
+GoT_säsong 6
+GoT_säsong 7
+GoT_säsong 8

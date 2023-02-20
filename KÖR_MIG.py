@@ -85,13 +85,17 @@ def main():
 
     print('\nSka ord-matrisen TD-IDF viktas?',end=' ')
     om_TDIDF = prompt_bool()
+
+    utan_vanliga_ord = False
     print('\nVill du rensa bort vanliga svenska ord? ',end=' ')
-    utan_vanliga_ord = prompt_bool()
-    alfbetisk_ordning = True #promt_bool()
+    if prompt_bool(): utan_vanliga_ord = 'sv'
+
+    print('\nVill du rensa bort vanliga engelska ord? ',end=' ')
+    if prompt_bool(): utan_vanliga_ord = 'eng'
 
     print('\nVill du rensa bort siffror i texten? ',end=' ')
     siffror = not prompt_bool()
-
+    alfbetisk_ordning = True
 
     print('\nAnge antal teman som ska extraheras:',end=' ')
     antal_teman = prompt_int()
