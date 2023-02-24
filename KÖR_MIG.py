@@ -83,8 +83,8 @@ def main():
     print('\nVill du spara matrisen?',end=' ')
     if prompt_bool(): sparväg = välj_spara_väg(titel='Spara matris',filtyp=('text-dokument','*.txt'))
 
-    print('\nSka ord-matrisen TD-IDF viktas?',end=' ')
-    om_TDIDF = prompt_bool()
+    #print('\nSka ord-matrisen TD-IDF viktas?',end=' ')
+    om_TDIDF = False#prompt_bool()
 
     utan_vanliga_ord = False
     print('\nVill du rensa bort vanliga svenska ord? ',end=' ')

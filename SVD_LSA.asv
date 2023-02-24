@@ -140,6 +140,31 @@ set(gcf, 'Name', 'PCA');
 
 
 
+[U, S, V] = svd(A);
+V2 = V(:, 1:2);
+Y = A * V2;
+
+
+% Find the indices of the non-zero entries in A
+[i, j, ~] = find(A);
+
+num_docs = length(unique(Doks));
+doc_colors = rand(num_docs,3);
+
+% Extract the vocabulary words that are present in A
+Ord_present = Ord(unique(j));
+
+scatter(Y(:,1), Y(:,2), [], colors);
+
+% Find the indices of the points corresponding to each document
+idxs = accumarray(doc_ids, 1:numel(doc_ids), [], @(x){x});
+
+% Create a separate text label for each document
+for i = 1:length(idxs)
+    text(Y(idxs{i},1), Y(idxs{i},2), Ord_present, 'HorizontalAlignment', 'center');
+end
+
+
 
 
 %---------FUNKTIONER-----------------------------------
