@@ -160,6 +160,26 @@ ordvektor = ordvektor{1};
 
 end
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+function A = IDF(A)
+% IDF - Inverse Document Frequency
+% denna funktion skrev jag med gpt på mobilen i sängen kl.0157 :)
+
+[n, m] = size(A);
+
+for j = 1:m
+    frek = sum(A(:,j) ~= 0);
+    if frek ~= 0
+        A(:,j) = A(:,j) * log(n / frek);
+    end
+end
+
+
+end
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function  NaN = plotta_med_legend(x,y,namn,linewidth,z)
 
