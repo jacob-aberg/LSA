@@ -1,0 +1,690 @@
+System architectural interfaces for
+autonomous trucks
+
+Georg Zetterberg Wallin
+
+May 21, 2014
+Examensarbete inom farkostteknik, grundnivå SA105X
+
+Abstract
+This thesis evaluates a proprietary interface developed by Scania that connects a third
+party developed autonomy solution to the electrical system of a Scania truck. The
+autonomy solution is developed for a mining application. While evaluating the interface the focus of the thesis narrows down to how to make the interface scalable and
+future proof. The content of this thesis is mainly based upon interviews and internal
+Scania documentation. In summary, the two main conclusions that could be drawn
+from this evaluation study are, that the interface needs to support a larger amount of
+requests from a external control to support that the interface is applicable in many areas. Secondly the idea of a modular electrical system must be carried on to autonomous
+applications as well and interface logic must be separated from core functionality of the
+electrical system.
+
+Sammanfattning
+Denna rapport utvärderar ett gränssnitt utvecklat av Scania som kopplar en tredjepartsutvecklad autonomilösning till elsystemet på en Scanialastbil. Autonomilösningen är
+utvecklad för en gruvtillämpning. Medan gränssnittet har utvärderas så har fokusen i
+rapporten varit att bestämma hur gränssnittet kan göras skalbart och framtidssäkert.
+Innehållet i rapporten kommer mestadels från intervjuer och intern dokumentation
+från Scania. De två huvudsakliga slutsatserna kan sammanfattas i att gränssnittet
+behöver stödja en större mängd av begärans från en extern styrning. För det andra så
+måste tanken om ett modulärt elsystem föras vidare till autonoma tillämpningar och
+gränssnittslogik måste skiljas från grundfunktinaliteten i elsystemet.
+
+Contents
+1 Introduction
+1.1 Background . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+1.2 Project definition and limitations . . . . . . . . . . . . . . . . . . . . .
+
+1
+1
+2
+
+2 Method
+
+4
+
+3 The Scania trucks
+3.1 Vehicle configuration . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+
+5
+5
+
+4 A brief introduction to SESAMM
+
+6
+
+5 The
+5.1
+5.2
+5.3
+5.4
+
+interface
+Introduction . .
+Architecture . .
+Communication
+Logic . . . . . .
+
+.
+.
+.
+.
+
+8
+8
+8
+10
+11
+
+6 Analysis
+6.1 The improved interface . . . . . . . . . . . . . . . . . . . . . . . . . . .
+6.2 Suggested changes to future version of SESAMM . . . . . . . . . . . .
+
+13
+13
+15
+
+7 Conclusions
+
+16
+
+8 References
+
+17
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+Chapter 1
+Introduction
+1.1
+
+Background
+
+According to the 2013 Continental Mobility Study, motorists world wide welcome the
+entrance of automated driving on public roads[1]. The entrance of autonomous cars
+would enable the human driver to occupy the time in the car with other tasks rather
+than driving. One can easily imagine reading the newspaper or watching a movie while
+the car drives you safely to work.
+But its not only the general public who welcomes automated vehicles in a near future.
+Companies in the mining industry predicts that big savings can be achieved by introducing autonomous vehicles in their mining work flow. Mines are usually located far
+away from populated areas with developed infrastructure. Since the mines are so far
+away from civilization the drivers of the mining trucks and equipment need to move
+their lives closer to the mine. This means building homes and schools for the their
+families and other very expensive infrastructure. If these companies could replace their
+drivers of mining trucks with autonomous trucks, a lot of the expensive infrastructure
+can be left unbuilt and costs can be reduced.
+In this case a natural resource company here denoted as the Mining company, has
+reached the conclusion that costs can be reduced and the safety in the mines can be
+increased if the introduction of autonomous trucks is made. In order to evaluate the
+cost efficiency of autonomous trucks in their mining operations, they contact a company
+that in this report is called the Automation company. The Automation company got
+the mission to automate two trucks for research purposes. Together they turn to Scania
+and the three parts decide that the autonomous study is feasible. The plan is that the
+automation company develops an autonomous solution that incorporates an array of
+sensors connected to an ECU that is responsible for all the decision making. This
+ECU is from here denoted as the External ECU. The truck is then controlled by this
+solution.
+
+1
+
+To enable the trucks to drive autonomously a choice of approach had to be made. One
+way to go is using mechanical actuators mounted to the vehicles steering wheel, pedals,
+etc. This solution might be simple but is far away from how a autonomous truck would
+work from Scanias point of view. Instead a more integrated solution is chosen where
+the electrical system of the truck is used to a greater extent. In this solution one could
+demand for example braking and vehicle speed electronically and without the need
+to interact with the physical pedals. Due to the current properties of the electrical
+system in the Scania trucks the project is limited to only enabling control over the
+powertrain. This means that a solution for controlling the steering of the trucks is left
+to the automation company to find.
+At Scania senior engineer Linus Bredberg from the group for Driver Assistance Controls
+gets the task to develop the interface that connects the autonomous solution to the
+ordinary electrical system of the Scania trucks. This report is mainly based on Bredbergs
+documentation and the statements he provided in interviews.
+
+1.2
+
+Project definition and limitations
+
+The purpose of this project is to get a greater understanding of the interface that
+connects the autonomous solution to the ordinary electrical system of the Scania trucks.
+This includes identification of the limitations embedded in the current solution and
+recommendations on how it should change to become scalable and secured for future
+development.
+The assignment in this project is to evaluate the custom made interface that connects
+the electrical system of the truck to the autonomous solution. The work that has been
+done can be concretized in to the following tasks.
+1. Find out what has been done
+2. Determine why one has chosen a specific solution
+3. Investigate what can be improved
+4. Discover the limitations in the current solution
+5. Summarize the affected CAN signals
+6. If necessary define new CAN signals
+
+2
+
+The main part of this project is about the evaluation that is described above. Another
+important contribution is the analysis, where the information collected is analyzed and
+the following question is answered:
+Which changes needs to be done in SESAMM electrical system to get a
+scalable and future proof interface towards an arbitrary supplier of sensor
+equipment?
+Under the condition that SESAMM electrical system neither increases in complexity
+or in cost. By SESAMM electrical system one is referring to the systems, CAN segments, sensors/actuators, wires and more that is implemented in all trucks that Scania
+delivers.
+In this project the scope is limited down from the trucks electrical system and the
+autonomous solution to the interface that connects them both.
+My supervisors in this thesis project were Per Roos from Scania and Annika Stensson
+Trigell from KTH.
+
+3
+
+Chapter 2
+Method
+The content of this report is based on two different types of sources to be able to get the
+full picture. When it comes to literature, a minor part is coming from publicly available
+literature and a significantly larger part is coming from internal documentation. The
+public literature gives a large field of view of what has been done previously in the
+field or information about something general. In contradiction to the public literature,
+the internal documentation gives the narrower perspective, what has been done in this
+specific project and down to the important details. Everything that has been done in
+this project is not covered in any documentation, therefore the second large source of
+information are interviews. From the interviews information about both details and
+the broader perspective could be retrieved.
+If one wants to define this thesis in a scientific perspective it is not based strictly on
+a quantitative nor a qualitative point of view. The describing parts of this thesis is
+leaning more towards a quantitative perspective, being based on the facts of what have
+been done.
+The other part of the thesis is the evaluation,i.e., an analysis of what could have been
+done if the circumstances were different. In the information retrieval of that part a
+more qualitative point of view is used to be able to get opinions and thoughts from the
+person that has been interviewed.
+The interviews were of the type semi structured interview [3] and followed a predefined
+interview guide that contained prepared questions. The strength of the semi structured
+interview form is that there is room for changing the order of the questions and the
+possibility to focus on a specific area during the interview.
+To be able to get the most out of all the interviews they were recorded on a digital
+media. Afterwards, notes of the interviews were made based in the recordings. The
+writing of this report begun early in the thesis project time frame, and information has
+been written continuously along interviews and other information retrieval.
+
+4
+
+Chapter 3
+The Scania trucks
+3.1
+
+Vehicle configuration
+
+The trucks that was provided by Scania for this study were 8x4 trucks with drum
+brakes and ABS braking system. It’s not unlikely that customers configure their trucks
+from old habit. Drum brakes were chosen because the mining company thought that
+they were more robust in the dusty environment of the mine. The transmission is an
+Opticruise system.
+
+3.1.1
+
+Modifications needed
+
+Braking system
+To enable the external control over the vehicle a number of modifications of the vehicles
+had to be done. The first major problem with the current configuration is the ABS
+braking system. ABS has no support for network control, therefor it is highly inappropriate for the autonomous application. To enable over network control the ABS needs
+to be switched to an EBS (electronic braking system), a functionality that supports
+over network control.
+Gearbox
+One risk with the external control is increased wear on gearbox components, due to for
+example pressing down the clutch and requesting acceleration for a too long period of
+time. To avoid such risk the gearbox is switched to an fully automatic Allison gearbox.
+Instead of a regular clutch Allison is equipped with a fluid drive that transfers the power
+from the engine to the gearbox. This gives an increased robustness to the system.
+
+5
+
+Chapter 4
+A brief introduction to SESAMM
+Every Scania truck is equipped with a common electrical system, shared by all trucks
+delivered by Scania. This electrical system is called SESAMM. SESAMM stands for
+Scania Electrical System Architecture Made for Modularization and Maintenance.
+As mentioned before SESAMM is made up by all the CAN segments, ECUs, sensors,
+actuators and wires in the truck.
+The Scania product flora is built upon a modular product system as seen in Figure 4.1.
+When ordering a truck one can choose from a number of engines, cabs, gearboxes, axels
+and so on, which all fit together. SESAMM is a part of this modular product system
+and carries on the thought of using modules. SESAMM is constructed with modules
+and scalability in mind to be able to support the customers choices in the configuration
+of their trucks. SESAMM is not visible to the customer in the same way as the different
+cabs or engines, but is a hidden layer to enable all types of truck configurations.
+
+Figure 4.1: The modular product system [4]
+
+6
+
+The foundation of SESAMM is a CAN network that connects all electrical components
+in the truck. The CAN network is based upon several CAN segments that group different functionality together. An example of this can be viewed in Figure 4.2. Between
+all the CAN segments there is an ECU that gates useful information from one CAN
+segment to another. How this is benefited in the interface discussed in this report can
+be read in Chapter 5.
+
+Figure 4.2: Example of CAN network
+
+7
+
+Chapter 5
+The interface
+5.1
+
+Introduction
+
+The interface that connects the autonomous solution with SESAMM electrical system
+is a proprietary interface that allows control over the trucks engine, gearbox and brakes.
+There are tree main inputs to the interface
+1. Speed
+2. Deceleration
+3. Maximum allowed gear
+When the vehicle is under the control of the autonomous solution it will be denoted as
+under external control. The requests from a human driver will always have the priority
+over the external control and when the truck in not under external control the truck
+can be driven as a standard vehicle.
+To prevent misuse of the interface a safety logic is implemented and is here denoted
+as the safe stop. The safe stop functionality analyses how the truck is handled by the
+external control and can command the truck to a stop if it notices signs of misuse.
+Scania want as far as possible prevent accidents that could have been avoided by using
+the interface in the right way. More about the safe stop logic can be read about in
+Section 5.4.
+
+5.2
+
+Architecture
+
+As said in Section 5.1 the External ECU can communicate and do three types of requests to control the truck. There are two different communication ways for the External ECU, it is connected to two different CAN segments. In Figure 5.2 one can see
+that the External ECU is connected to the regular body builder interface and a Scania
+ECU via a separate CAN segment. The reason for using a new CAN segment for the
+communication between the Scania ECU and the External ECU is to be able to get the
+fastest network response possible. In other words one wants to minimize the risk for
+delays. The bodybuilder interface is an interface that is usually used by truck bodybuilders to get some functionality from the electrical system of the truck. In this case
+the bodybuilder interface is used to control lights and other peripheral functions.
+8
+
+Figure 5.1: Interface architecture
+One of the main goals in the development of the interface was to leave the SESAMM
+electrical system as untouched as possible, therefore only the Scania ECU has been
+altered with and the rest of the electric system has been left untouched.
+All of the autonomy is implemented in the External ECU, i.e. sensor information is
+collected and fused to get the world perception. With the sensor data and the world
+perception as input the External ECU calculates a route. To execute the calculated
+route the External ECU sends speed and deceleration requests to the trucks electrical
+system via the interface. The Scania ECU receives the requests from the External
+ECU, repacks and gates the messages to the correct part of the SESAMM electrical
+system. In this case the CAN messages are gated to the power train that executes the
+requests from the External ECU. A modern truck is from the start equipped with a lot
+of sensors and large bulk of information is available. Some of this information is useful
+for the External ECU to get a precise control of the truck. An example of this would be
+the trucks speed sensor. This useful information is repacked and gated to the External
+ECU by the Scania ECU.
+
+9
+
+5.3
+5.3.1
+
+Communication
+Scania ECU
+
+In addition to the standard tasks of the Scania ECU additional tasks and logics have
+been added. Looking at this specific case the Scania ECU’s main tasks are to
+1. Collect control requests from the External ECU, repack those and gate to the
+driveline
+2. Send feedback from the implemented logic to the External ECU
+3. Repack and gate useful CAN signals to External ECU, for example vehicle speed,
+engine speed etc.
+
+5.3.2
+
+Messages and signals
+
+This section will provide a brief overview over the CAN communication in the interface.
+In the interface there are two specialized CAN messages which are used to deliver
+information back and fourth.
+When the External ECU wants to send requests to the truck it uses CAN message that
+can be called the External control message. The information contained by the message
+is:
+• Vehicle speed request
+• Vehicle acceleration request
+• Vehicle gear request
+For the External ECU to gain feedback from the Scania ECU there is a CAN message
+called the Feedback message. The feedback message contains the following information:
+• State
+• Control active
+The content of the above described CAN message is not as self explanatory as the
+content of the external control message. The state informs the External ECU the
+current state of the state machine that decides when the External ECU can take control
+and when for example the safe stop is activated. The control active is merely an
+indication whether the External ECU is in control over the truck or not.
+
+10
+
+5.4
+
+Logic
+
+To enable the autonomous driving with the External ECU there are a number of conditions that needs to be fulfilled for the external control interface to function properly.
+There is also built in safety features to prevent the vehicle from moving uncontrolled
+or to prevent requests that could damage the truck. An example would be if the engine
+stops when the vehicle is rolling or if acceleration and braking has been requested for
+too long period of time during standstill. To clarify which conditions that needs to be
+fulfilled at what time the state diagram of the built in logic can be viewed in Figure 5.4.
+All of the logic that is described in this section is implemented in the Scania ECU.
+
+Figure 5.2: External control states
+
+5.4.1
+
+Description of states
+
+Manual Driving
+The vehicle always start in manual driving mode, since in this research study it’s
+important to have control of the situation. If External ECU wants to request external
+control a number of conditions must be fulfilled to allow for the state to switch. For
+example the vehicle speed must be equal to zero and driver controls must be functional.
+When all of the conditions are fulfilled the vehicle goes to next state.
+
+11
+
+Under external control
+When the vehicle enters the Under external control state it will start to follow the
+requests from the External ECU. As said before the External ECU utilizes speed and
+deceleration requests to make the truck move as intended. In this state the Scania ECU
+analysis the requests made by the External ECU to determine if the interface is used
+according to the rules. If the Scania ECU finds signs of misuse the Safe stop will be
+activated.
+Driver override
+As said in Section 5.1 a driver is always prioritized over the external control. When
+under external control and the vehicle detects that a driver wants to taker over, the
+vehicle goes to the Driver override state. There are a number of ways for a driver to
+take control of the truck, for example stepping on the acceleration pedal or engaging
+the brakes.
+Safe stop
+The most important safety feature in the interface is the Safe stop. When the external
+control is active the Scania ECU analyse the communication with the External ECU to
+determine if the interface is used in the right way. Scania wants to be absolutely certain
+that no accidents occur due to a misunderstanding in the communication or misuse of
+the interface. If a deviation is found in the CAN communication or if the External
+ECU goes silent during active control the safe stop will immediately be initiated. The
+safe stop will also be activated if the engine stops while the truck is still rolling. For
+the vehicle to be able to return to external control a driver must take control over the
+vehicle and go through a safety procedure to proceed to the next state.
+
+12
+
+Chapter 6
+Analysis
+Up to here this report has been a description of what the interface is and how it works,
+from here on the report will move towards a qualitative perspective where improvements
+and changes will be discussed. This chapter will also carefully breach the scope of the
+thesis to answer the question stated in Section 1.2 and discuss if and then how SESAMM
+must change to support the functionality of the improved interface.
+
+6.1
+
+The improved interface
+
+Today the interface can handle simple requests of goal speed and deceleration, this
+might be enough to get the truck driving autonomously but from the external controls
+perspective this might be a bit sparse. One can easily understand that neither the
+acceleration or the deceleration will be instant, but the external control has no idea
+how large the delay will be or how the driveline responds in different situations. I
+think Scania needs to take a larger responsibility of how the driveline is controlled
+towards the interface. In other words more logic must be implemented further down in
+the hierarchy. A future interface would need to supply a better ability to control the
+driveline in a more precise way. Also the number of available control request might also
+need to be enlarged, The speed request of today might be suitable when the truck is
+driving longer distances where its more appropriate to request a goal speed. In tight
+spaces a more thorough control is needed, therefore a better type of acceleration request
+is needed. It’s hard to say what would be the ultimate solution in the general case,
+but the availability of a speed request as a ramp or perhaps as a parabolic function
+would give a better starting point for the external control. An other solution would be
+to utilize a distance dependent speed request, where the external control could require
+a speed for a limited distance. An example of this would be “drive 10 m in 5 km/h”.
+If one wants the interface to be truly general and be applicable in many areas I think
+the interface need to provide several different types of requests for example controlling
+the vehicle speed.
+In Chapter 3 the vehicle configuration is described along with the modifications needed
+and one can see that the amount of compatible hardware is limited. In a commercially
+viable interface the ability for the customer to choose a configuration that fulfills their
+needs must be preserved. For example in some autonomous applications an Opticruise
+gearbox might be more suitable than the now supported Allison. The thought of a truly
+modular product system must be continued on to autonomous trucks as well.
+13
+
+In the present interface the previously described safe stop functionality demands a
+driver to physically get to the truck and go through a safety procedure if the safe stop
+is activated. In this project Scania wanted to make sure that no accidents happened
+because of the interface and the handling of it. At this early state it is the right way to
+go, but in a future version of the interface I think that a two part procedure must come
+before human interaction is needed on site. Firstly, an automatic diagnosis procedure
+should evaluate why the safe stop was initiated and decide if the vehicle can continue to
+drive autonomously. If the automatic diagnosis decides that the vehicle can not directly
+go back to external control it would be beneficiary if a driver or technician remotely
+connects to the truck to do additional checks. If both of these steps fail the vehicle
+should demand for physical human interaction.
+
+14
+
+6.2
+
+Suggested changes to future version of SESAMM
+
+In Section 6.1 the improved interface has been defined, but which changes needs to be
+made to SESAMM in order to achieve compability? As I see it there are two types
+of problems when it comes to implementing this future interface. Firstly, the future
+interface requires functionality which are not supported by the different systems in the
+driveline at this specific time. The second problem or more correctly requirement is
+that new logic needs to be created to enable the new features.
+To enable more and new types of requests one must determine that the affected systems support the requested functionality. For example the engine ECU must have the
+ability to control the engine with enough accuracy to make linear or quadratic speeds
+requests possible. When it comes to distance dependent speed requests it’s possible
+that the sensors become the limiting factor. If one imagines when a distance dependent
+speed request would be used, one can come to the conclusion that accuracy might be
+important. If a mining truck example is considered, imagine the truck close to the edge
+of the dumping site where the load is to be unloaded. Then the request could be “Drive
+0.55 m in 1 km/h”, if the accuracy in the response to this request fails catastrophic
+consequences could be the result. To make sure that the needed accuracy is achieved
+both hardware and software changes might be needed. Enough accurate sensors might
+do the trick on it’s own but combining two or more sensors in a sensor fusion manner
+could be a solution.
+Let’s look back to the question stated in Section 1.2 and pay some attention to the
+constraints supplied with the problem definition. They stated that SESAMM could
+neither change in complexity nor in cost, so how do we add functionality while under
+these constraints? I think the key is to separate what is needed for autonomy purposes
+and what is used by every other truck. In other words continue to think in modules.
+First let’s define what parts of SESAMM the constraints are valid for. The part of
+SESAMM that’s implemented in every truck in other words the core functionality can
+not increase in cost and complexity, but a truck equipped with the interface could be
+both more expensive and have a more complex electrical system than the regular truck.
+But the core system must be the same, there should only be an interface add on. The
+problem then comes down to how to add enough functionality in the core electrical
+system to enable the advance functions of the interface without the core electrical
+system increases in complexity and cost. Some of the functionality needed might be
+useful for other implementations apart from the interface and may be implemented as
+a part of the core functionality, otherwise they belong to the interface add on.
+
+15
+
+Chapter 7
+Conclusions
+A discussion about what changes that would be relevant in a future version of the
+interface and SESAMM has been presented above. Now is the time to decide what conclusions could be drawn from that discussion. If one look upon the interface and what
+is discussed in Section 6.1 it can be concluded that the interface needs to provide more
+types of requests to support the use of the interface in many applications. Furthermore, the amount of supported systems/hardware needs to be increased to support the
+customers ability to configure their truck for their specific need. As a final conclusion
+for the interface I think that the safe stop functionality presented in Section 5.4 and
+discussed in Section 6.1 needs to be further developed to make it more flexible and less
+driver dependent.
+I’s hard to make specific conclusions when it comes to SESAMM since that lies beyond the scope of this thesis. Nevertheless I can make some more general conclusions.
+The thought of using modules must continue and the logic that is exclusive to trucks
+equipped with the interface needs to be separated from the logic that is implemented in
+every other truck. Also the implementation of the interface and more advanced requests
+will require further development of the systems the interface is depending upon. It’s
+also hard to determine if this kind of development would affect the core functionality
+of SESAMM or if it could be exclusive to the interface add on.
+
+16
+
+Chapter 8
+References
+[1] Klaus Sommer, Continental Mobility Study 2013. 2013-12-12, Continental AG
+[2] Linus Bredberg, Driver Assistance Controls, Scania CV AB
+[3] Alan Bryman, Emma Bell, Företags ekonomiska forskningsmetoder uppl. 2:1
+Stockholm: Liber 2013.
+[4] Scania software development and testing presentation, slide 10
+http://www.ida.liu.se/~snt/teaching/REAP/HT13/Scania.pdf
+
+17
+
+

@@ -1,0 +1,954 @@
+EXAMENSARBETE INOM TEKNIK,
+GRUNDNIVÅ, 15 HP
+STOCKHOLM, SVERIGE 2016
+
+Analysis of Link Forces on a
+Formula Student Suspension
+System
+KATE ASARAR
+
+KTH
+SKOLAN FÖR TEKNIKVETENSKAP
+
+www.kth.se
+
+Acknowledgements
+I would like to thank Associate Professor Mikael Nybacka and pProffesor Annika Stensson
+Trigell for overseeing the project and its development, as well as the KTH Formula
+Student representatives Ravi Kumar and Eshwar Sondi for their very patient and helpful
+guiding.
+My deepest gratitude goes to my mother and sister for their endless encouragement
+and support without which this report would not have been finished.
+
+i
+
+Abstract
+The Formula Student team participates in a competition every year where the car they
+build gets tested and rated according to strict rules and regulations. The more empirical
+testings are done in order to validate the data used to design various parts of the car, the
+higher the score in the competition. Until now the students have only had the opportunity
+to test the cars performance in general and not been able to go into detail with the forces
+acting on links and other parts during specific load scenarios.
+This project is aimed at discerning the most suitable intruments to empirically measure the forces acting upon the suspension system as well as learning to use the ADAMS
+software in order to calculate the said forces on the suspension links of a Formula Student Team car. The collected data from the empirical tests will be used to validate the
+team’s Matlab code and ADAMS model, as well as to decide if the links included in the
+suspension system are designed properly. Due to some technical difficulties, the empirical
+testing was not perfomed in time to be included in the report. However, a full vehicle
+assembly was created using ADAMS model and the Matlab code was validated.
+
+ii
+
+Sammanfattning
+Formula Student laget på KTH deltar i en tävling varje år där de bygger en bil som
+testas och betygsätts enligt strikta regler och förordningar. Ju fler empiriska tester som
+genomförs för att validera den data som används under framtagningsprocessen av bilens
+olika delar, desto högre poäng får laget i tävlingen. Hittills har studenterna endast haft
+möjligheten att testa bilens prestanda i allmänhet och inte kunnat i detalj studera de
+krafter som verkar på länkar och andra delar under tävlingens olika belastningstester.
+Målet med detta projekt är att dels att utröna vilka de lämpligaste mätinstrumenten
+för att mäta krafterna som verkar på bilens länkar fysiskt är, dels att använda ADAMS
+mjukvaran för att räkna ut de krafter som verkar på upphängningslänkarna med hjälp
+av simuleringar. De erhållna empiriska resultaten användes vidare för att validera lagets
+Matlab-kod och ADAMS modell, samt för att avgöra om länkarna som ingår i upphängningssystemet är korrekt dimensionerade.
+Till följd av vissa ekonomiska trångmål kunde inte de empiriska testerna utföras i tid
+för att inkluderas i rapporten. Däremot har en hel fordonssimulering skapats med hjälp
+av ADAMS mjukvaran och Matlab-koden validerades.
+
+iii
+
+Contents
+Acknowledgements
+
+i
+
+Abstract
+
+ii
+
+Sammanfattning
+
+iii
+
+1 Introduction
+1.1 Formula Student . . . . . .
+1.2 KTH Formula Student . . .
+1.3 Steering System Overview .
+1.3.1 Race Track Scenarios
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+4
+4
+4
+5
+6
+
+2 Methods to Measure the Forces Acting on the Links
+2.1 Measuring Equipment . . . . . . . . . . . . . . . . . .
+2.1.1 Construction of Strain Gauges . . . . . . . . . .
+2.1.2 Construction of Load Cells . . . . . . . . . . . .
+2.1.3 Working of Strain Gages . . . . . . . . . . . . .
+2.1.4 Working of Load Cells . . . . . . . . . . . . . .
+2.2 Comparison of the Measuring Equipment . . . . . . . .
+2.3 Discussion and Deciding on the Measuring Equipment
+2.4 Tests and Results . . . . . . . . . . . . . . . . . . . . .
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+
+8
+8
+8
+9
+9
+10
+11
+12
+12
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+13
+13
+16
+16
+19
+19
+19
+22
+22
+22
+24
+
+. . . . . .
+. . . . . .
+. . . . . .
+to Study .
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+.
+.
+.
+.
+
+3 Multi Body Modeling
+3.1 Building a formula student car rigid body model in ADAMS-car
+3.2 Tests carried out using the model and Results . . . . . . . . . .
+3.2.1 Braking . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.2.2 Discussions . . . . . . . . . . . . . . . . . . . . . . . . .
+3.3 Flexible bodies . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.3.1 Method . . . . . . . . . . . . . . . . . . . . . . . . . . .
+3.4 Testing Full Vehicle Assembly with Flexible Links . . . . . . .
+3.5 Testing the Suspension Assemblies with Flexible Links . . . . .
+3.5.1 Results from the Flexible Body Analysis . . . . . . . . .
+3.6 Discussion and Conclusion . . . . . . . . . . . . . . . . . . . . .
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+
+4 Final Conclusions and Recommendations of Future Work
+
+25
+
+References
+
+26
+
+Chapter 1
+Introduction
+This chapter will give an overview of the Formula Student competition and the KTH
+team that participates in it. In addition, an introduction to the track load-scenarios that
+the car will undergo in the race will be given followed by the forces to be expected.
+
+1.1
+
+Formula Student
+
+Formula student is a worldwide design competition where teams consisting of only students, design, build and compete with a formula style car. The cars are designed according
+to a number of rules that are set to ensure track safety and to promote clever problem
+solving. During a yearly event the cars are evaluated based on a scoring system, the
+more points a car receives the higher up in the ranks it goes. See table 1.1 for the point
+distribution.
+Table 1.1: Points distribution on a formula student competition
+Static events - 325 points
+Cost and Manufacturing -100 points
+Business Presentation - 75 points
+Design Presentation - 150 points
+
+1.2
+
+Dynamic tests - 675 points
+Acceleration - 75 points
+Skidpad - 50 points
+Autocross - 150 points
+Efficiency - 100 points
+Endurance - 300 points
+
+KTH Formula Student
+
+KTH formula student team was started by a PhD student in the year of 2003. Since then,
+the team has competed with seven combustion engine powered cars before switching to
+electric engines. After three failed attempts to create an electric, track functioning car,
+the eV11 was made. eV11 was awarded the most energy efficient car in the competition
+the year of 2015.
+4
+
+1.3
+
+Steering System Overview
+
+In order to be able to correctly design the tests and interpret their results, a thorough
+understanding regarding the origin of the force is required. In this project the forces will
+be measured during five different load scenarios of interest; linear acceleration, braking,
+static and cornering with both braking and acceleration. This chapter will provide a
+demonstration of the forces on the links and their occurrences. The front and rear wheels
+are connected to the chassis with 6 links, see figures 1.1 and 1.2 as well as the figureexplaining table 1.2. The links consist of two control-arms, a pull/pushrod, an upright
+and a rocker/bellcrank.
+
+Figure 1.1: Front suspension links left half .
+
+Figure 1.2: Front suspension links right half .
+5
+
+Table 1.2: Links name as shown in figures 1.1 and 1.2
+Letter
+a
+b
+c
+d
+e
+i
+
+1.3.1
+
+Link
+Upper A/Control arm
+Lower A/Control arm
+Pullrod
+Upright
+Rocker/Bellcrank
+Pushrod
+
+Race Track Scenarios to Study
+
+The car will undergo many different load cases induced by different driving scenarios.
+It is important to measure the forces acting on the links during as many occasions as
+possible in order to minimize the error of the measurements. Additionally, the forces in
+all directions will be included and therefor considered when designing the arms. Following
+are the track scenarios that the car will undergo when measuring the forces. See figure
+1.3 for the directions of the forces and momenta.
+
+Figure 1.3: Coordinates used in this report to indicate the direction of forces [1] .
+
+Static
+While the car is not moving, the only forces that will be acting on the links are generated
+by the cars own weight. These forces, while not being the highest ones and therefore not
+interesting when designing the dimensions of the links, are the easiest to measure. This
+project aims to investigate how accurate the teams simulation results using the ADAMS
+model are compared to the forces measured physically. This is easiest achieved with the
+data from the static case.
+6
+
+Acceleration
+During acceleration the weight shift of the vehicle will result in a shift of the forces acting
+on it. Most of the weight will move towards the rear axle, with little remaining on the
+front axle. There will be no Fy forces since there is no cornering and Fx forces will be
+minimal. Forces in the z direction will be comprised of the static weight on wheels plus
+the dynamic weight transfer from front to rear during the acceleration. There will be a
+moment around the y-axis, i.e. pitch.
+Braking
+Opposite to acceleration the weight transfer in this case will generate more force on the
+front part of the car. The forces that will be operating on the links are Fz and Fx, with
+Fy equal to zero as there is no cornering. In all testings the driver will want to push the
+car to the limit and not avoid a ’lock-up’ condition. As with the linear acceleration case,
+there will be a pitch moment.
+Cornering and Accelerating
+This is the most likely load scenario in the competition. In this load case there will be
+forces that are larger than zero acting on the links in all three directions. Unlike the case
+with only acceleration, while cornering the weight shift will occur not only from front to
+back but from side to side as well, resulting in a roll moment.
+Cornering and Braking
+This is the most extreme of all load cases since the forces acting on the links will exist in
+all three directions, and their amplitudes will be higher than during acceleration since the
+braking force is larger. The weight shift of the car will result in the largest forces operating
+on the front part and in both pitch and roll moment. This is the most interesting case
+to study from a designing perspective.
+
+7
+
+Chapter 2
+Methods to Measure the Forces
+Acting on the Links
+In this chapter the overview of the task, methods, procedures and challenges that are
+expected will be discussed. Also, two different methods for measuring the forces are
+presented.
+
+2.1
+
+Measuring Equipment
+
+There are two different sorts of measuring equipment that are available and can be used
+for the purpose of the project; strain gages and strain gage load cells. The first is a
+device in which electric resistance varies in proportion to the compression and tension
+it experiences. By attaching it to the links it will be able to pick up the same forces
+that are causing them to bend and deform. The strain measurements typically involve
+very small variations in resistance, quantities in the order of millistrain. Meaning that
+the values giving by the gauges will first have to be amplified, filtered and then studied.
+More about the strain gage’s pros and cons will be discussed in the method section.
+The strain gage load cell are mounted into the links by first cutting the links into two
+pieces, preferably where the forces and tension is the highest, and then mounting them
+between the two parts. The load cell will then, as with the strain gages, give out small
+variations in resistance that will also have to be amplified and filtered.
+
+2.1.1
+
+Construction of Strain Gauges
+
+Strain gages are made up of two essential parts, an insulator and a supporting metallic
+thread laid in a special pattern, see figure 2.1. Due to the insulators physical conduction
+properties, its electrical charge will change in proportion to the strain on it. In order
+to measure the forces acting on the object studied, the strain gages are mounted on
+its surface and the electrical charge of the insulator is measured as it changes with the
+contractions and extension of the object. The data collected this way is then amplified
+and calibrated resulting in a force measurement. [3]
+
+Figure 2.1: Structure of a strain gage [3].
+
+2.1.2
+
+Construction of Load Cells
+
+Load cells are made by bonding strain gages to a spring material shaped as a beam or
+structural member that deforms when force is applied, see figure 2.2. The device usually
+uses two or four strain gages, one or two for compression and one or two for tension. With
+the deformation of the whole device, the strain gages mounted in it will duplicate the
+movement and hence change their voltage. The load cell is designed to give out voltage
+data coming from the gages. [8, 4]
+
+Figure 2.2: Structure of a strain gage load cell [4].
+
+2.1.3
+
+Working of Strain Gages
+
+The strain gages have to be mounted on the testing object in a specific way in order to
+ensure the correct voltage-reading, see figure 2.3. First, the position of the strain gage
+has to be decided and the placement should be where the forces are expected to be most
+9
+
+concentrated. Next comes the preparing of the surface which includes cleaning, abrading,
+conditioning and neutralizing the surface. After that, it is time to prepare the strain gage,
+transfer it to the object and apply the catalyst and adhesive. The last part is attaching
+the leadwires and applying a protective coat on the strain gage, [6, 7]
+
+Figure 2.3: Mounting of a strain gage [5].
+
+2.1.4
+
+Working of Load Cells
+
+Mounting the load cells in the perfectly correct way is crucial in order to get the correct
+readings of the forces and avoid damaging the device as well as the testing objects. A
+part of the link which has the same length as the load cell has to be cut out where the
+forces are expected to be the highest. The load cell is then mounted in between the two
+remaining parts of the link, parallel to the links horizontal and vertical axis. Two cables
+are then attached to the load cells and the amplifier in order to read the voltage changes
+of the strain gages. [8]
+
+Figure 2.4: Mounting of a load cell, provided by Load Indicator System AB [10] .
+10
+
+2.2
+
+Comparison of the Measuring Equipment
+
+The two methods will be compared by:
+The difficulty of installation i.e. if a student can do it by only reading about it or if
+the help of an expert is needed.
+• Load cells: Each link has to be cut in two parts that are put together with
+the load cell between them; the parts should be perfectly aligned in order to
+ensure that the load cell as well as the arm does not break. Pro: No need
+for external professional help since the method is used frequently in the ITRL
+(Integrated Transport Research Lab) at KTH and there are people that can
+help.
+• Strain gages: The area where they will be mounted should be properly cleaned
+during several different steps to ensure that they will not fall off. Con: Mounting the strain gages can be done without professional help, it is however not
+recommended since proper installation is crucial for the results.
+The cost of the whole package i.e. the strain gages or load cells plus the calibrating
+and installing instruments, see table 2.1
+Table 2.1: Cost comparison between the two available methods, in SEK.
+Load cells
+10320
+
+Strain gauges
+1471
+
+Note: There are two load cells currently in use at the ITRL which can be used for
+the purpose.
+The possibility of reusing them. It would be more beneficial for the formula student
+team to be able to reuse the gages or cells on future cars.
+• Load cells: Can be reused several times, however the parts that they are
+mounted on will have to be replaced.
+• Strain gages: Can only be used on one part but have a long lifetime.
+The quality of the measurements How sensitive the equipment are for the work environment and whether the inflicted error can be easily detected.
+• Load cells: Have to be perfectly in plane and centered with the control arm
+links, else there is risk of breaking the arm, load cell or both. They should
+also be handled carefully and according to its accompanying instructions.
+• Strain gages: Very sensitive for dirt and grease when being mounted and while
+in use. Have to be protected when taking measurements.
+11
+
+2.3
+
+Discussion and Deciding on the Measuring Equipment
+
+For the formula student team who are aiming to produce a car every year it is most beneficial to be able to reuse the equipment for future cars. Since the load cells are already
+available and are easier to maintain and reuse they are clearly the best alternative. From
+an economical point of view, the manufacturing cost of the links is not as high as the
+equipment and it is therefore more economical to use load cells.
+
+2.4
+
+Tests and Results
+
+Since the car was not running as scheduled, the implementation of the load cells was not
+possible. The chapter above can serve as a starting point for future operations.
+
+12
+
+Chapter 3
+Multi Body Modeling
+An alternative way to estimate the forces acting on the links is by modeling the car in a
+multi body system analysis program, such as ADAMS (Automated Dynamic Analysis of
+Mechanical Systems). Using ADAMS, one can quickly build and test virtual prototypes
+of complete vehicles and vehicle subsystems. This helps cut time, costs, and risks in
+vehicle development. Performing multiple analyses on the virtual prototype allows for
+assessment of how different subsystems and their parameters affect the overall vehicle
+dynamics.
+This chapter will be about how to make a rigid body model of the KTH formula student car as well as how to make some parts flexible using ADAMS-view. The results of
+several track-scenario tests using ADAMS-car will be discussed and compared to calculations using the teams Matlab code. The process of building the car in ADAMS will be
+briefly discussed, for more information and tutorials please find the KTH formula student
+report [2].
+
+3.1
+
+Building a formula student car rigid body model
+in ADAMS-car
+
+The main aim of this part of the project is to validate the force calculations performed
+in Matlab. The forces acting on the links and other car parts will be the same whether
+the parts used in the model are flexible or not. The deformation of the parts however is
+more accurately predicted using flexible bodies.
+In order to create the full vehicle assembly in ADAMS-car every part of the car should
+exist as its own subsystem. Meaning that a template will be designed to match the part
+in real life for it to then be made into a subsystem.
+Templates
+In ADAMS-Car, a template is a group of rigid body parts connected to each other using
+fixed joints and/or kinematic constraints. Built in the template builder they are meant
+to be used as a universal representation of the mechanic system. The geometry, the links,
+the joints and the communicators of the subcomponent of the vehicle are all defined,
+more information can be found in the KTH formula student team report [2]. Each
+template can be used as a base for several different subsystems by simply defining the
+
+design parameters. The templates that the KTH formula student team use are given by
+MSC Software Corp. The team then completes them with the correct communicators
+and modify them in order to fix some errors that come with the templates, for example
+change the template for the front suspension from a push rod into a pull rod unit.
+
+Subsystems
+The subsystems of the car components are made in Standard Interface mode based on
+their associated templates. The parametric data such as the hardpoints of the templates
+are changed to fit the actual parts design. In order to make a subsystem, the changes
+that should be made to the templates are:
+
+• Design data such as hardpoints and material properties.
+
+• References to property files.
+
+• Reference to a template.
+
+Assembly
+Assemblies are a group of subsystems that are connected with each other using input and
+output communicators. Two main assemblies are studied in this project, the suspension
+assembly and the full vehicle-assembly. Different tests can be made using each, such as
+bump travel on the suspension assembly and cornering or acceleration on the full vehicle
+assembly.
+
+Front Suspension Assembly
+The front suspension assembly, see figure 3.1, is made up of three subsystems; the suspension subsystem, the anti-roll bar and the steering subsystem. These three together
+contain all the links and arms that will be affected by the forces coming from the front
+part of the chassis as well as front tires. Studying the front suspension gives a valuable
+insight into how the parts behave when large forces are acting on them and what kind of
+deformations and angle changes are expected during some maneuvers.
+14
+
+Figure 3.1: Front suspension assembly
+
+Rear Suspension Assembly
+The rear suspension assembly, see figure 3.2, consist of the rear suspension subsystem
+and an anti-roll bar. From a designing point of view, the same can be said about the
+reasons to why it should be as thoroughly studied as the front suspension assembly.
+
+Figure 3.2: Rear suspension assembly
+
+Full Vehicle Assembly
+Analyzing the front and rear suspension assemblies gives a good insight into how the
+assemblies will behave individually. However, the main purpose of the study is to analyze
+the links when being exposed to forces arising from different maneuvers, and that can
+only be done with a full vehicle assembly, see figure 3.3.
+15
+
+Figure 3.3: Full vehicle suspension assembly
+
+3.2
+
+Tests carried out using the model and Results
+
+Two tests were made on the full vehicle assembly i.e. acceleration and braking. The tire
+forces from each case were then used as input to the Matlab code which was provided
+by the formula student team. The Matlab code uses the teams own calculations in order
+to estimate the forces acting on the links. The results are then compared with the ones
+given by ADAMS so that team gains better understanding of how accurate their model
+is.
+
+3.2.1
+
+Braking
+
+In this case the car was set to deaccelerate down from 80km/h with 100% of its braking
+capacity. The weight shift to the front following the maneuver will put most of the forces
+on the front suspension system, therefor the focus of the force-study in this case will be
+concerning the front links. Plots of the forces acting on the pull rod from both Matlab
+and ADAMS are plotted in figure 3.4. Figure 3.5 shows the Fz force on the system,
+meaning that the forces acting on all the links attached to the tire i.e. upper and lower
+control arm as well as the tierod are summed up with the gravity force giving the total
+force balance of the system. Figure 3.6 shows the same systems force balance, this time
+without adding the gravitational force.
+16
+
+Figure 3.4: The forces acting on the pull rod calculated using both Matlab and ADAMS
+
+Figure 3.5: The forces in the z-direction calculated on Matlab and ADAMS with added
+gravity correction
+17
+
+Figure 3.6: The forces in the z-direction calculated on Matlab and with ADAMS
+
+Acceleration
+The car was set to accelerate from 20 km/h with 100 of its accelerating capacity for 10
+seconds. The weight shift will result in a load shift to the back of the car, putting most of
+the forces on the rear suspension. The forces that will be discussed concerning this test
+will therefor be the ones on the rear suspension links. The forces acting on the pushrod
+given by both ADAMS and Matlab are plotted in figure 3.7. The systems force balance,
+calculated using the same method as with braking is plotted in figure 3.8.
+
+Figure 3.7: The forces in the push rod calculated using both Matlab and ADAMS
+18
+
+Figure 3.8: The forces in the push rod calculated using both Matlab and ADAMS with
+added gravity corrections
+
+3.2.2
+
+Discussions
+
+There seems to be a small deviation between the forces calculated in Matlab and the ones
+obtained in ADAMS. The deviation is not constant since ADAMS, unlike the Matlab code,
+does not take the cars hardpoint change in space into account. This can easily be fixed
+by having a varying position for the hard points in the code. The forces acting on the
+rest of the links were not obtained due to the fact that calculations in Matlab were not
+complete. Unit vectors derived from the hardpoints should be used to properly transfer
+the forces through each link. This method was not implemented in time for its results
+to be included in the project. The push and pull rod are the two parts that take up the
+largest forces acting on the suspension assemblies. Knowing the geometry of the system,
+the forces on the rest of the links can be calculated numerically.
+
+3.3
+
+Flexible bodies
+
+Generally in ADAMS car all the parts are modeled as rigid; in real life however, every
+material has a natural degree of flexibility. In order to replicate that flexibility, certain
+parts were made flexible to study their effects on the system compliance. The tires used
+by the Formula Student team are sensitive to camber change and a highly compliant
+system will lead to an undesirable change.
+The parts that are most necessary to test are therefor the ones whose deformation
+will affect the compliance. Those parts are the upper and lower control arms, the rocker
+and the upright. The chassis is not included in scope of this thesis but would be valuable
+to appraise.
+
+3.3.1
+
+Method
+
+In order to make the parts flexible the contact points between each part and the rest of
+the car has to be known, those will become the locked joints that will transfer the forces
+19
+
+from the chassis to the links and the other way around.
+Parasolid Files
+Parasolid files are geometric modeling kernel that communicate an object’s 3D surface
+and solid-data. The parasolid files used to make the parts flexible were extracted from
+the Formula Student’s CAD models of the parts.
+Modal Neutral Files
+MNF (Modal Neutral Files) are binary file format used by MSC ADAMS. The files contain
+information about the objects such as invariants of the inertia matrix, the mode shapes,
+frequencies of the modal base derived from fixed boundary eigen modes and constraint
+modes through orthonormalisation as well as it’s CB modes. The MNF:s describe the
+flexibility of the objects using the information mentioned above. They are therefor used
+to replace the rigid parts in the assemblies by the flexible ones.
+Creating MNF Files in ADAMS View
+Two things are needed in order to make an MNF file using ADAMS view. The first
+thing is the parasolid file of the object (or another geometric modeling kernel that are
+compatible with the program) and the second thing is the coordinates of the joint. The
+joints are the center points of where external forces will be acting on the object.
+In ADAMS view, choose new model and give a name and define the working directory
+as the one where the parasolid files are saved. Follow the steps below to create an MNF
+file.
+1. Click on File and choose import, select the file type that is being used. In this
+case it is parasolid.
+2. Browse to find the part.
+3. Right click on the model name field, go to model, guesses and select the one that
+appears.
+4. Go to settings, working grid and set the orientation that is perpendicular to the
+joints.
+5. Click on Connectors, choose fixed joints and define the position of the joints.
+6. Right click on the part and select make flexible.
+7. Select create new MNF file.
+8. Define the parts material and check Stress analysis to be able to get the stress
+contour in the postprocessor.
+9. Check Advanced settings. A new window will open see figure 3.9.
+20
+
+Figure 3.9: Mesh window, appears after choosing advanced settings
+10. Select Flexbody Type as Geometry.
+11. Change Element order to Quadratic, Element Specification to Size.
+12. Set Edge Shape to Mixed and turn on Curvature Based Scaling.
+13. Set 5mm and 1mm for Element Size and Minimum Size respectively.
+14. Click Mesh Preview, a window will open showing the number of the nodes elements created in the mesh.
+15. Click on Attachments. A new window will open, see figure 3.10.
+
+Figure 3.10: Attachments window, appears after choosing Attachments
+16. Click on Find Attachments see [3], the predefined joints and their markers will
+appear on the box marked [1] on figure 3.9.
+17. Define the Slave Nodes for Attachments on box [2].
+21
+
+Replacing the rigid part in ADAMS car
+To make the links flexible in the assemblies, right click on them and choose make flexible.
+Select the MNF that has been created for the part and align it in place using one of the
+three methods available.
+
+3.4
+
+Testing Full Vehicle Assembly with Flexible Links
+
+The full vehicle assembly with the links replaced by their corresponding flexible files
+did not work. The message that was shown is that some connectors are not connected
+properly. However, this problem only appears when using the flexible parts. This issue
+was not possible to solve in time to be included in the report. The Formula Student team
+is in contact with MSC and will work further on this problem in June 2016.
+
+3.5
+
+Testing the Suspension Assemblies with Flexible
+Links
+
+The tests that can be done on a suspension assembly in ADAMS are limited. Furthermore,
+the most useful one for the Formula Student team is the bump travel test, where the tires
+are set to undergo a bump travel of -35 to +35 mm.
+
+3.5.1
+
+Results from the Flexible Body Analysis
+
+The deformation in the links are shown in figures 3.11 and 3.12. The colors shown on the
+links are indicators to the amount of deformation, with yellow being the least deformed
+and red the highest.
+
+Figure 3.11: Deformation under bump travel [-35 35] mm, front.
+22
+
+Figure 3.12: Deformation under bump travel [-35 35] mm, rear.
+
+Using ADAMS post-processing window, the hotspots i.e. the point with highest stress
+concentration can be shown. The hotspots are marked with #1, see figures 3.13 and 3.14.
+
+Figure 3.13: Von mises stress concentration under bump travel [-35 35] mm, front
+23
+
+Figure 3.14: Von mises stress concentration under bump travel [-35 35] mm, rear.
+
+3.6
+
+Discussion and Conclusion
+
+The simulations using the flexible bodies showed no deformation in the links when undergoing a bump travel. That is however the least straining case and the only conclusion
+that can be made based on its results is that there is a unbalance in the A-arms. The
+unbalance is showed in the figures as a higher stress concentration on the rear part of the
+A-arms. Track-scenario tests have to be done on the model with the flexible bodies in
+order to be sure of the durability of the links.
+Since the full vehicle model is not working with the flexible parts no conclusion can be
+drawn regarding the design of the links i.e. if they are under- or oversized. The Matlab
+code however is validated, all that is left to do is fixing the connector errors that causes
+the flexible parts to misbehave and the forces to be transplanted wrong.
+
+24
+
+Chapter 4
+Final Conclusions and
+Recommendations of Future Work
+This report can be used as the base for further projects on the car concerning the suspension systems. The Formula Student team have ordered the load cells and will be testing
+the links on the eV12 in june 2016. The results will strengthen the case in validating the
+simulations done on both ADAMS and Matlab. Furthermore, the hardpoints file in the
+Matlab code can be changed to allow their position to vary in space, similar to ADAMS.
+Further improvements can be made on the Matlab code using the corrected and well
+functioning flexible full-vehicle assembly.
+The team can also proceed and make the rest of the vehicle flexible. The chassis for
+example undergoes a great deal of stress and deformation on the track. Most of which
+are bound to change the angles of the tires significantly. A thorough study of the chassis
+behavior is therefore a perfect way to carry on.
+
+Bibliography
+[1] the Society of Automotive Engineers. Gillespie, D. Thomas. Fundamentals of Vehicle
+Dynamics. Society of Automotive Engineers, Inc. 1992. Print.
+[2] SD2230 Final report KTHFS
+[3] http://www.showa-sokki.co.jp/english/products_e/Strain_Gage_e/strain_
+gage_config_e.html
+[4] http://nptel.ac.in/courses/112103174/module2/lec4/4.html
+[5] http://www.raetech.com/Instrumentation/Strain_Gage_Amplifier_
+Applications.php
+[6] http://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1038&
+context=mesp
+[7] http://www.efunda.com/designstandards/sensors/strain_gages/strain_
+gage_installation.cfm
+[8] http://www.vishaypg.com/docs/11866/vpg-01.pdf
+[9] https://www.ricelake.com/docs/prodinfo/Manuals/load-cells/lch_22054.
+pdf
+[10] http://lisab.se/
+
+

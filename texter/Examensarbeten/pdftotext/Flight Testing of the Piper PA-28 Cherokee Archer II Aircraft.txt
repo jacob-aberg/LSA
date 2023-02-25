@@ -1,0 +1,1396 @@
+Flight Testing of the
+Piper PA-28 Cherokee Archer II
+Aircraft
+Emil Johansson
+
+Fredrik Unell
+
+June 16, 2014
+Abstract
+It is sometimes easily assumed that an experimental measurement
+will closely mimic the results from an associated theoretical model.
+The purpose of this project is to determine how close to a theoretical
+model —involving the component buildup method and the quadratic
+drag polar assumption— a Piper Archer II will perform in an actual
+test flight.
+During the test flight, the Archer II showed a similar correlation
+between airspeed and performance as the model. The actual performance numbers were however consistently lower than their theoretical
+counterpart.
+
+Introduction
+The primary question this report seeks to answer is if an experimental
+measurement of an aircraft’s performance in the form of a test flight
+closely resembles the performance determined from a model consisting
+of a component buildup method and a quadratic drag polar assumption.
+The aircraft that we will be examining and test flying —the PA28-181— is a variant of the Piper PA-28 more commonly known as
+the Piper Cherokee Archer II. The Piper PA-28-181 will henceforth
+be referenced to as the Archer II.
+The Piper PA-28 aircraft has since its introduction in 1960, by the
+Piper Aircraft manufacturer, been one of the most iconic and widely
+used general aviation aircraft. There is still to this day variants of the
+PA-28 in production and the total number of aircraft that has been
+built is greater than 32,000.
+The Archer II variant is like the original PA-28 design a single
+engined, piston powered, low-wing aircraft with a conventional tricycle
+landing gear. The variant was certified in 1975 and is powered by a
+Lycoming O-360-A4A four-cylinder engine rated at 180 horsepower at
+2700 rpm and features a laminar airfoil semi-tapered wing.
+The performance of the Piper PA-28-181 aircraft will be experimentally analysed in terms of maximum climb rate, glide ratio and
+stall speed through a testflight in the Archer II conducted by ourselves. The result will be compared both to a theoretical model and
+the corresponding performance numbers given in the aircraft’s Pilot
+Operating Handbook.
+
+ii
+
+Contents
+1 Performance Analysis
+1.1 Estimate Drag coefficient . . . . . . . . . . . . . . . .
+1.1.1 Zero-lift drag coefficient . . . . . . . . . . . . .
+1.1.2 The component flat-plate skin friction coefficient
+1.1.3 The component form factor . . . . . . . . . . .
+1.1.4 Wetted area . . . . . . . . . . . . . . . . . . .
+1.1.5 Drag-due-to-lift factor . . . . . . . . . . . . . .
+1.1.6 Lift coefficient . . . . . . . . . . . . . . . . . .
+1.2 Glide ratio . . . . . . . . . . . . . . . . . . . . . . . . .
+1.3 Climb performance . . . . . . . . . . . . . . . . . . . .
+1.3.1 Rate of climb . . . . . . . . . . . . . . . . . . .
+1.3.2 Climb angle . . . . . . . . . . . . . . . . . . . .
+1.4 Stall speed . . . . . . . . . . . . . . . . . . . . . . . .
+
+2
+2
+3
+3
+3
+4
+4
+5
+5
+5
+5
+7
+7
+
+2 Flight test
+2.1 The Atmosphere . . . . . . . . . . . . . . . . . . . . .
+2.2 Testing Procedure . . . . . . . . . . . . . . . . . . . .
+2.3 Flight Data Analysis . . . . . . . . . . . . . . . . . . .
+
+8
+8
+10
+11
+
+3 Results
+3.1 Theoretical performance . . . . . . . . . . . . . . . . .
+3.2 Test flight performance . . . . . . . . . . . . . . . . . .
+
+12
+12
+14
+
+4 Discussion
+
+16
+
+5 Conclusions
+
+18
+
+iii
+
+Nomenclature
+Parameter
+CD
+CD0
+K
+CL
+CF
+Fc
+Qc
+Swet,c
+Re
+ρ
+V
+lc
+µ
+k
+f
+(x/c)
+ m
+t
+c
+
+Λm
+γ
+e0
+AR
+R/C
+W
+n
+D
+Peng
+ηpr
+
+Description
+Drag coefficient
+Zero-lift drag coefficient
+Drag-duo-to-lift ciefficient
+Lift coefficient
+Component flat-plate skin friction coefficient
+Component form factor
+component Interference factor
+Component wetted area
+Reynolds number
+Density
+Speed
+Component length
+Viscosity
+Skin roughness
+Relative thickness
+the chord-wise position of the maximum thickness
+Maximum thickness normalized chord
+Sweep of the wing
+Dihedral angle or climb angle
+Oswald efficiency factor
+Aspect Ratio
+Rate of Climb
+Aircraft weight
+Rotational speed [rpm]
+Propeller diameter
+Engine power
+Propeller efficiency
+Table 1: Nomenclature
+
+1
+
+Figure 1: Piper Archer II
+
+1
+
+Performance Analysis
+
+The first step when determining the performance of an aircraft is to
+calculate the drag coefficient as it is the base for all subsequent equations. The drag coefficient is based on the geometry of the aircraft,
+e.g. wing-areas and component lengths.
+
+1.1
+
+Estimate Drag coefficient
+
+The drag coefficient, CD , can be calculated with the use of the zero-lift
+drag coefficient, the drag-due-to-lift factor and the lift coefficient as
+follows.
+CD = CD0 + KCL2
+
+(1)
+
+The zero-lift drag coefficient is calculated based on the geometry
+of the aircraft, the drag-due-to-lift coefficient and the lift coefficient is
+given from the geometry of the wing.
+
+2
+
+1.1.1
+
+Zero-lift drag coefficient
+
+There are two different methods to estimate the zero-lift drag coefficient, CD0 . The most simple method is the equivalent skin-friction
+method which is based on the total wetted area and a skin-friction
+coefficient for different aircraft classes. The other method is the component buildup method which is a little more detailed as it is based on
+parameters that is calculated for the specific aircraft. In this project
+the component buildup method have been chosen due to the fact that
+the geometry of the aircraft is known [5].
+CD0 =
+
+1X
+[CF,c Fc Qc Swet,c ] + ∆CD,misc + ∆CD,L&P
+S c
+
+(2)
+
+The parameters CF,c , Fc , Qc and Swet,c is calculated according
+to given formulas [1] where the geometry of the aircraft is taken into
+consideration. ∆CD,misc is taken from a table of known features of the
+Archer II [4][p. 179].
+
+1.1.2
+
+The component flat-plate skin friction coefficient
+
+The flat-plate skin friction coefficient, CF,c , is based on the stream
+wise length of the component being studied and can be calculated
+according to equation (3).
+CF =
+
+0.455
+[log10 Relc ]2.58
+
+(3)
+
+where Relc can be calculated from equation (4) or (5) depending on
+which one is the lowest.
+ρV lc
+µ
+ 1.053
+lc
+= 38.21
+k
+
+Relc =
+
+Recutof f
+
+(4)
+
+(5)
+
+where k is the skin roughness of the surface.
+
+1.1.3
+
+The component form factor
+
+The component form factor, Fc , is calculated in different ways for
+different components. For components like the fuselage this factor is
+calculated according to equation (6)
+Fc = 1 +
+
+60
+f
++
+3
+f
+400
+
+3
+
+(6)
+
+where f is the relative thickness of the component
+f=
+
+lc
+d
+
+(7)
+
+while wings and stabilisers are calculated according to equation (8)
+"
+ 
+ 4 #
+
+
+t
+t
+0.6
++ 100
+1.34M a0.18 (cos Λm )0.28 (8)
+Fc = 1 +
+(x/c)m c
+c
+where t/c is the maximum thickness normalized chord, (x/c)m is the
+chord-wise position of the maximum thickness and Λm is the sweep of
+this line.
+
+1.1.4
+
+Wetted area
+
+The wetted area, Swet,c , is the area which is in contact with the external airflow. This area is calculated differently for different components.
+Wings are calculated according to equation (10) and the fuselage is
+calculated according to equation (9).
+1
+Swet,c = a (Atop + Aside )
+2
+
+(9)
+
+where a is a numeric constant, commonly used as 3.4 for common
+cross sections. Atop is the topside area of the fuselage and Aside is the
+side area of the fuselage.
+Swet,c = [1.977 + 0.52(t/c)] Sexposed
+
+(10)
+
+where Sexposed is the exposed wing area. If the wing have a dihedral
+angle the exposed area is calculated according to (11).
+Sexposed =
+
+1.1.5
+
+Snet
+cos γ
+
+(11)
+
+Drag-due-to-lift factor
+
+The drag-due-to-lift factor, K, is expressed as a function of the aspectratio, AR and Oswald efficiency factor, e0 .
+K=
+
+1
+πARe0
+
+(12)
+
+where e0 is calculated from (13)
+e0 = 1.78(1 − 0.045AR0.68 ) − 0.64
+
+4
+
+(13)
+
+1.1.6
+
+Lift coefficient
+
+To be able to calculate the lift coefficient for any given altitude and
+speed the following relation can be used.
+CL =
+
+mg
+
+(14)
+
+1
+2
+2 ρV S
+
+where ρ can be determined from the current altitude and temperature,
+V is the current speed and S is the area of the wing.
+
+1.2
+
+Glide ratio
+
+The glide ratio can be determined from the relation between the lift
+coefficient and the drag coefficient.
+glide ratio =
+
+CL
+CL
+=
+CD
+CD0 + KCL
+
+(15)
+
+With this relation where the lift coefficient is a changing parameter dependent on speed and altitude the glide performance can be
+determined for all possible scenarios.
+
+1.3
+
+Climb performance
+
+Climb performance is about more than just the maximum rate of
+climb, the climb angle also needs to be taken into consideration as
+they give different results. The speed for best climb angle does not
+have to be the speed for best for rate of climb1 .
+
+1.3.1
+
+Rate of climb
+
+The rate of climb parameter, R/C, is a parameter that depends on the
+current conditions. It is dependent on the current speed, air density
+and weight of the aircraft. It can be calculated according to [2] as
+ηpr (V )Peng (ρ)
+1
+R/C =
+− CD ρV 3
+W
+2
+
+
+
+W
+S
+
+−1
+−K
+
+2
+
+W
+S
+
+cos2 γ
+ρV
+
+
+(16)
+
+where ηpr is the propeller efficiency and Peng (ρ) is the engine power
+at the current altitude and is calculated according to equation (17).
+Peng (ρ) = Peng,M SL (1.13σ(ρ) − 0.13)
+1
+
+(17)
+
+They are in fact never the same speed except if the aircraft is flying at its absolute
+ceiling altitude
+
+5
+
+Propeller efficiency as a function of speed. (n = 2400 RPM)
+0.9
+0.85
+0.8
+0.75
+
+η
+
+0.7
+0.65
+0.6
+0.55
+0.5
+0.45
+0.4
+20
+
+40
+
+60
+
+80
+100
+Speed [kts]
+
+120
+
+140
+
+160
+
+Figure 2: Propeller efficiency curve of the Archer II at 2400 rpm.
+where σ is based on the relation between the density at the current
+altitude and the density at sea level as seen in equation (18).
+σ(ρ) =
+
+ρ
+ρM SL
+
+(18)
+
+The advance ratio, J, can be calculated from the airspeed, propeller diameter and rotational speed of the propeller according to
+equation (19).
+V∞
+J=
+(19)
+nD
+The relation between the propeller efficiency and advance ratio for
+the Archer II can be found in a table [4] where the propeller efficiency
+can be determined from a corresponding advance ratio. When assigning a rotational speed of 2400 rpm, the airspeed becomes the only
+unknown parameter. As the airspeed is the only unknown parameter
+the propeller efficiency can be plotted as a function of the airspeed as
+seen in figure 2.
+
+6
+
+1.3.2
+
+Climb angle
+
+The climb angle, γ, is the best angle of climb and can be calculated
+according to [2] as
+!
+
+ 
+2γ
+2 W
+cos
+ηpr (V )Peng (ρ)
+1 2 W −1
+S
+γ = arcsin
+−K
+− CD ρV
+WV
+2
+S
+ρV 2
+(20)
+
+1.4
+
+Stall speed
+
+The stall speed is the speed where the wings of the aircraft stall and
+looses its capacity to carry the weight of the aircraft. By rewriting
+equation (14) the stall speed can be determined as a function of CL.
+s
+2·L
+Vs =
+(21)
+CL,max · ρ · S
+
+7
+
+2
+
+Flight test
+
+In addition to the theoretical analysis of the performance of the Archer
+II, a test flight has been performed. The purpose of the test flight was
+to examine and compare the data from the flight with the corresponding analytically calculated data.
+The test flight included four elements; a maximum climb test, a
+glide test and a stall speed test.
+
+2.1
+
+The Atmosphere
+
+Our planets atmosphere is varying in terms of air density at different
+locations, altitudes and at different times. An aircraft’s performance
+is also affected by the air density in which it moves. In order to standardize and benchmark an aircraft’s performance, the International
+Standard Atmosphere –henceforth referenced to as the ISA– is therefore commonly used. The aircraft’s performance is generally presented
+as the performance it would have in this standard atmosphere.
+Ideally, the aircraft’s performance would be determined by test
+flying it in the ISA. The ISA is however a desk construction and it
+rarely –if ever– appears in the real world. Because of this, the aircraft’s
+performance needs to be converted to the corresponding values in the
+ISA from the values gathered in the actual atmosphere at the time of
+the test flight.
+The ISA specifies the standard pressure and temperature in the
+atmosphere. The altimeter inside the aircraft measures the static
+pressure on the outside and is calibrated in accordance with how the
+pressure varies with altitude in the ISA2 . In usual cases, the altimeter
+setting is set to the actual pressure at sea level but for our test flight it
+is set to the standard setting if 1013 hPa (or 29.92 inHg). This means
+that the altimeter will show the pressure altitude, which is the altitude
+in which the ISA altitude has the same pressure as exists outside of
+the aircraft. Note that this is not the actual altitude of the aircraft,
+except if it flies in an atmosphere with identical pressure variation as
+the ISA.
+Knowing the pressure altitude does not however mean that the
+density of the air is known because the density of the air does also
+depend on the temperature 3 . The compensate for any temperature
+deviations from the ISA and calculate the density altitude John T.
+2
+
+https://en.wikipedia.org/wiki/Altimeter#Use_in_aircraft
+The density of the air does in fact also depend on humidity. The more moist the air
+is, the less dense it is since the molecular weight of water is lighter than that of air. This
+effect is however negliable in our climate.
+3
+
+8
+
+Lowry suggests the following method, called the inchworm method [3].
+To derive the method one starts with the atmospheric hydrostatic
+differential equation
+dp = −ρgdh
+(22)
+combined with the ideal gas law,
+p = RgρT
+
+(23)
+
+−RT (p)dp
+= dh
+p
+
+(24)
+
+gives
+
+The pressure altitude, hp , can be defined as follows
+ αR !
+T0
+p
+hp =
+1−
+α
+p0
+
+(25)
+
+α —the temperature lapse rate— , p0 —the pressure at sea level—
+and T0 —the temperature at sea level— are all defined parameters in
+the ISA (α = 0.00650 C/m, p0 = 1013.25 hPa and T0 = 15 ◦ C).
+Differentiating (25) gives
+ 
+dhp
+T0 R p αR−1
+=−
+(26)
+dp
+p0
+p0
+and combining (26) and (24) results in the following expression
+ αR
+p0
+T (p)
+=
+dhp = dh
+(27)
+T0
+p
+.
+Using
+TS (h) ≡ T0 − ah,
+(28)
+where h is height in the ISA, it follows from the ideal gas law (23)
+that
+dp
+dh
+=−
+p
+R(T0 − αh)
+and by integration
+
+
+αh 1/αR
+pS (h) = p0 1 −
+T0
+
+(29)
+
+By division, (28) and (29) gives the relationship between sea level and
+another position in the standard atmosphere as
+ αR
+T0
+p0
+=
+(30)
+TS (hp )
+p
+
+9
+
+Combining (30) and (26) results in
+dh =
+
+T (p)
+dhp
+TS (hp )
+
+and after integration
+Z
+
+hp2
+
+∆h =
+hp1
+
+T (p)
+dhp
+TS (hp )
+
+(31)
+
+.
+With (31) it is possible to calculate the height difference in the
+standard atmosphere, ∆h, given the temperature at the various pressure altittudes, T (p) and the corresponding temperatures in ISA,
+T (hp ). It is however considerably easier and more practical to evaluate the integral in (31) by using the mean values at the ends of the
+interval:
+
+
+T (hp1 ) T (hp2 ) ∆hp
+∆h =
+.
+(32)
++
+·
+TS (hp1 TS (hp2
+2
+(32) is a good approximation since the temperature generally varies
+slowly and steadily at the pressure altitude ranges we will be concerned
+with.
+In practice, this means that only the temperature at the beginning
+of the pressure altitude range, T (hp1 ), and at the end of the range,
+T (hp2 ), would have to be recorded during the test flight, together with
+the pressure altitudes themselves.
+
+2.2
+
+Testing Procedure
+
+At the day and time of the test flight, ground temperature and gross
+weight of the airplane were noted and the altimeter was set to 1013 hPa
+as to read pressure altitude directly. Once the pre-flight checks and
+procedures were completed and the aircraft was airborne the testing
+could begin.
+The maximum climb test was conducted as follows; the aircraft’s
+throttle was kept fully open and the aircraft’s indicated airspeed was
+kept constant during the steady vertical climb. The time to climb
+between two altitudes and the temperature at those altitudes were
+noted as well as the propellers rpm. The glide test was conducted in
+a similar manner to the maximum climb test with the exception that
+the throttle was kept closed while the aircraft descended at idle power
+through the two altitudes.
+The maximum climb and glide procedures were repeated several
+times at various airspeeds, increasing with 10 kt increments.
+The stall speed was noted in a idle power, level stall.
+
+10
+
+The flight instruments , such as the speed-indicator and altimeter,
+were recorded with a video camera during the entire flight for further
+analysis of the data on the ground.
+
+2.3
+
+Flight Data Analysis
+
+Once on the ground again, the flight data were analysed. ∆h was
+calculated in accordance with (32) and divided with the recorded climb
+time to obtain the equivalen rate of climb in the standard atmosphere
+Rate of Climb =
+
+∆h
+.
+t
+
+The climb angles were obained by
+
+
+Rate of Climb
+−1
+Climb Angle = sin
+.
+Indicated Airspeed
+The sink rates in the glide tests were calculated in a similar manner
+to the rates of climb in the maximum climb tests. Additionally, to
+obatain the glide ratios, the following calculation was made
+Glide Ratio =
+
+Indicated Airspeed
+CL
+=
+CD
+Sink rate
+
+In order to compare our testflight values with the theoretically calculated ones, new theoretical calculations were made. This time with
+parameter values for air density and aircraft gross weight matching
+those of our flight test conditions.
+
+11
+
+3
+3.1
+
+Results
+Theoretical performance
+
+The equations 3-14 give the results for all components in table 2.
+
+FC
+CF
+Q
+Swet
+
+Fuselage
+1.2544
+0.0026
+1.000
+18.1607
+
+Main wing
+1.2762
+0.0033
+1.2000
+32.4690
+
+Vertical tail
+1.2100
+0.0031
+1.0500
+2.1710
+
+Horizontal tail
+1.2607
+0.0038
+1.0500
+5.0169
+
+Table 2: Component values
+Using these values into equation (2) results in the final sum for
+CD0 = 0.0296.
+From the theoretical analysis of the aircraft’s performance the following data were computed: The glide ratio as a function of the aircraft’s indicated airspeed is shown in figure 3. The maximum climb
+rate at various airspeeds is represented in figure 4 and figure 5 shows
+how the climb angle is varying with airspeed. The airspeed for best
+rate of climb, Vy , was calculated as 78.6 knots. The Pilot Operating Handbook does under the same conditions present a value of 76
+knots [6]. The Archer II will, according to the POH, climb at a maximum rate of 735 feet/min at sea level and maximum gross weight.
+The comparable value from the theoretical performance model is 1040
+feet/min.
+Vx , the airspeed for best climb angle is lower, 64 knots according
+to the POH and 55 knots according to our theoretical model.
+The best glide ratio for the Archer II is, with the theoretical model
+used 12.6, higher than the value provided by the POH, which is 10.1.
+The stall speed of the Archer II is 53 knots at a flaps-up configuration at sea level and MTOW according to the POH. Our calculations
+give a stall speed at the same circumstances of 59 knots.
+
+12
+
+Glide ratios as a function of indicated airspeed
+14
+
+12
+
+Glide Ratio (CL/CD)
+
+10
+
+8
+
+6
+
+4
+
+2
+
+0
+30
+
+40
+
+50
+
+60
+
+70
+80
+V [kts]
+
+90
+
+100
+
+110
+
+120
+
+Figure 3: The glide ratio as a function of indicated airspeed at sea level in
+ISA with MTOW (1156 kg).
+
+Rate of Climb as a function of indicated airspeed.
+1400
+
+Rate of Climb [feet/min]
+
+1200
+
+1000
+
+800
+
+600
+
+400
+
+200
+
+0
+30
+
+40
+
+50
+
+60
+
+70
+80
+V [kts]
+
+90
+
+100
+
+110
+
+120
+
+Figure 4: Rate of Climb as a function of indicated airspeed at sea level in
+ISA with MTOW.
+
+13
+
+Climb angle as a function of indicated airspeed.
+14
+
+12
+
+Climb angle
+
+10
+
+8
+
+6
+
+4
+
+2
+
+0
+30
+
+40
+
+50
+
+60
+
+70
+80
+V [kts]
+
+90
+
+100
+
+110
+
+120
+
+Figure 5: Climb angle as a function of indicated airspeed at sea level in ISA
+with MTOW.
+
+3.2
+
+Test flight performance
+
+The maximum climb and glide ratio tests during our test flight were
+all conducted between the pressure altitudes of 3000 and 4000 feet.
+The climb rates and glide ratios are therefore compared to the theoretical values with the average air density between those altitudes
+(corresponding to a density altitude of 3565 feet in this case). The
+actual weight of the aircraft at the time of the test flight was determined to be 924 kg so the theoretical values in the comparisons were
+calculated using that weight as well. The comparisons are presented
+in figure 6 for glide ratios, in figure 7 for climb rates and in figure 8
+for climb angles.
+The Archer II has a relatively unpronounced making it somewhat
+difficult to determine the exact stall speed during the test but the
+aircraft stalled at around 50 kts.
+
+14
+
+Glide ratios as a function of indicated airspeed
+14
+
+12
+
+Glide Ratio (CL/CD)
+
+10
+
+8
+
+6
+
+4
+
+Theoretical
+Max Glide Ratio
+Datapoints from testflight
+
+2
+
+0
+30
+
+40
+
+50
+
+60
+
+70
+80
+V [kts]
+
+90
+
+100
+
+110
+
+120
+
+Figure 6: Glide ratios as a function of indicated airspeed combined with
+datapoints from the test flight at 3500 feet in ISA and with an aircraft weight
+of 924 kg.
+
+Rate of Climb as a function of indicated airspeed.
+1400
+
+Rate of Climb [feet/min]
+
+1200
+
+1000
+
+800
+
+600
+
+400
+Theoretical
+Maximum Climb Rate
+Datapoints from testflight
+
+200
+
+0
+30
+
+40
+
+50
+
+60
+
+70
+80
+V [kts]
+
+90
+
+100
+
+110
+
+120
+
+Figure 7: Rate of Climb as a function of indicated airspeed combined with
+datapoints from the test flight at 3500 feet in ISA and with an aircraft weight
+of 924 kg.
+
+15
+
+Climb angle as a function of indicated airspeed.
+14
+Theoretical
+Datapoints from testflight
+
+12
+
+Climb angle
+
+10
+
+8
+
+6
+
+4
+
+2
+
+0
+30
+
+40
+
+50
+
+60
+
+70
+80
+V [kts]
+
+90
+
+100
+
+110
+
+120
+
+Figure 8: Climb angle as a function of indicated airspeed combined with
+datapoints from the test flight at 3500 feet in ISA and with an aircraft weight
+of 924 kg.
+
+4
+
+Discussion
+
+The first test flight that was conducted took place in an erratic and
+turbulent atmosphere which resultet in unconsistent and unreliable
+data. It was therefore decided that another test flight should be performed. The second test flight occured under much more favorable
+conditions with more consistent measurements as a result. The measurements from the second flight are the only ones that are included
+in this report.
+The distribution of the value from the glide ratio tests does resemble the theoretically calculated curve under the same conditions. The
+actual glide ratios are however all lower than their theoretical counterparts as seen in figure (6). The same tendency can be seen for the
+climb angles in figure 8 as well. The distribution is similar but the
+test flight performance numbers are lower.
+The systematic tendency of the practical values to be lower could
+be explained with factors making the aircraft perform worse such as a
+dirty fuselage, less than ideal maneuvering from the pilot and in the
+case of the climb test; an aged and underperforming engine and/or
+propeller.
+Other factors might include uncalibrated altimeter, thermometer,
+
+16
+
+stop watch and/or airspeed indicator as well as erratic pressure and
+temperature in our altitude range. These factor might as well though
+induce errors with the opposite tendency.
+The comparable values from the theoretical model at MTOW and
+the POH suggests that the theoretical model used gives an overestimation of the Archer II’s performance. That would imply a smaller
+difference between the aircraft’s optimal performance and the measured performance from our test flight than is shown in figure (6)-(8).
+There is however, one scenario where the measured data does not
+match the pattern from the theoretical model; the maximum rate of
+climb scenario. The measured data implies a relationship were the
+rate of climb increases with decreased airspeed unlike the theoretical
+curve which has a conversely quadratic shape. This might be due
+to the effect the propeller slipstream has on the other parts of the
+aircraft.
+When the propeller is turning at a high rate, a considerably air flow
+will be prodiced which blows past the inner section of the main wing.
+This effectively lowers the angle of attack of the inner part of the wing.
+This effect might give the impression of the aircraft performing better
+at lower airspeeds than expected, because the propeller slip stream in
+fact adds air flow over a big section of the wing making it perform as
+if the actual airspeed was higher. That would also explain why the
+aircraft seems to perform best at a higher airspeed during the glide
+test, in which the propeller slip stream effect is much smaller.
+
+17
+
+5
+
+Conclusions
+• The component buildup method gives an overestimation of the
+Archer II’s performance compared to the Pilot’s Operating Handbook
+• The data measured from the test flight have a similar distribution
+as the values derived from the theoretical model.
+• The measured data does consistently indicate lower performance
+than the theoretical model under the same circumstances
+• Favourable conditions during the test flight is beneficial to the
+gathered measurements.
+
+18
+
+References
+[1] Arne Karlsson. How to estimate CD0 and K in the simple parabolic
+drag polar CD = CD0 + KCL2 . 2013.
+[2] Arne Karlsson. Steady climb performance with propeller propulsion. 2013.
+[3] John T. Lowry. Performance of Light Aircraft. American Institute
+of Aeronautics and Astronautics, Inc, 1999.
+[4] Barnes W. McCormick. Aerodynamics, Aeronautics and Flight
+Mechanics. John Wiley & Sons, 2nd edition, 1995.
+[5] FRAeS Paul Jackson, editor. Jane’s All the World’s Aircraft.
+Jane’s Information Group, 1987.
+[6] Piper Aircraft Corporation.
+Cherokee Archer II.
+
+Pilot’s Operating Handbook Piper
+
+19
+
+Division of Labour
+Emil has been responsible for the planning and conducting of flight
+testing and the part attributed to that in the report. He has also
+written the discussion and introduction parts in the report.
+Fredrik has been responsible for the theoretical model and calculations and has written that part in the report as well.
+With that said, most of the project has been a shared commitment
+and we have helped each other on all parts of the project.
+
+20
+
+Sheet1
+
+Flight Test Data
+
+Description
+Speed
+
+Max Climb Max Climb Max Climb Max Climb Max Climb Max Climb Max Climb
+Max ClimbGlide
+
+Glide
+
+Glide
+
+Glide
+
+Glide
+
+Glide
+
+85
+
+90
+
+65
+
+70
+
+75
+
+100
+
+75
+
+80
+
+75
+
+80
+
+90
+
+65
+
+60
+
+75
+
+Start Level
+
+3000
+
+3000
+
+3000
+
+3000
+
+3000
+
+3000
+
+3000
+
+2500
+
+3000
+
+3000
+
+3000
+
+3000
+
+3000
+
+3000
+
+End Level
+
+4000
+
+4000
+
+4000
+
+4000
+
+4000
+
+4000
+
+4000
+
+3000
+
+2000
+
+2000
+
+2000
+
+2000
+
+2000
+
+2000
+
+Start Temp
+
+50
+
+50
+
+50
+
+50
+
+50
+
+50
+
+50
+
+53
+
+50
+
+50
+
+50
+
+50
+
+50
+
+50
+
+End Temp
+
+45
+
+45
+
+45
+
+45
+
+45
+
+45
+
+45
+
+50
+
+45
+
+45
+
+45
+
+45
+
+45
+
+45
+
+01:18
+
+01:23
+
+01:08
+
+01:10
+
+01:12
+
+01:51
+
+01:12
+
+00:34
+
+01:16
+
+01:10
+
+00:54
+
+01:27
+
+01:29
+
+1:21
+
+Time
+
+Page 1
+
+

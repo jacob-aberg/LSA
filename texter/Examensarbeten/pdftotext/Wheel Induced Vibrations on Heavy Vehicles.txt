@@ -1,0 +1,1623 @@
+5/172013
+
+Wheel Induced
+Vibrations on
+Heavy Vehicles
+
+Emma Smith and Hector Garcia
+SA105X DEGREE PROJECT IN VEHICLE ENGINEERING,
+FIRST LEVEL
+
+Abstract
+Some of the most significant comfort disturbances in heavy vehicles can often be related to
+the wheels. In those cases, the vibration of the vehicle is excited by for example force
+variations within the tire, ovality of the tire or imbalance in the wheel. The disturbances are
+dependent on vehicle speed and are often perceived as most unpleasant at cruising speed on a
+motorway, at around 90 km/h.
+Truck manufacturers want to increase the robustness against this type of disturbance, since
+this results in an improved operator comfort. But it also makes it possible to lower the
+requirements on the suppliers of tires and rims, and thereby there is a financial gain for both
+customer and manufacturer.
+The aim with this project is to increase the understanding of wheel induced vibrations. In
+order to achieve this a literature survey has been performed on the subject. Furthermore, the
+phenomenon has been studied analytically by using a quarter car model which includes a
+brush tire model. The model is scripted in MATLAB.
+Simulations have been performed to analyse the effect on the chassis when forces excited by
+mass imbalance and radial run out are introduced.
+When looking at the second harmonic radial run out imperfection the unsprung mass, i.e the
+wheel, starts to bounce during the settling time.
+Also when comparing two different weights of a mass imbalance the power increase of the
+vibration in the sprung mass is much larger than the power increase of the unsprung mass at
+the specific frequency. This implies that the excitation frequency, the wheel rotation
+frequency in this case, is a harmonic repetition of the sprung mass undamped natural
+frequency.
+To avoid this phenomenon the undamped natural frequency of the sprung mass must change
+either by adding a damper or by changing the weight or the spring stiffness. The simulation is
+run with a damper although without it the power increase would be much larger.
+
+Table of contents
+1.
+
+Introduction ................................................................................................................................. 1
+
+2.
+
+Tire/Wheel non-uniformities .................................................................................................... 2
+
+3.
+
+4.
+
+2.1
+
+Mass Imbalance .................................................................................................................. 2
+
+2.2
+
+Geometry variations .......................................................................................................... 2
+
+2.3
+
+Tire Stiffness ....................................................................................................................... 3
+
+Model, Method and Parameters.............................................................................................. 4
+3.1
+
+Quarter car model .............................................................................................................. 4
+
+3.2
+
+Physical tire model ............................................................................................................ 5
+
+3.3
+
+Flow chart of the MATLAB-model.................................................................................. 6
+
+3.4
+
+Method .................................................................................................................................. 7
+
+3.5
+
+Parameters ........................................................................................................................... 8
+
+Results and Conclusions ......................................................................................................... 8
+4.1
+
+Load case 1.......................................................................................................................... 9
+
+4.2
+
+Load case 2........................................................................................................................ 10
+
+4.3
+
+Load case 4........................................................................................................................ 12
+
+4.4
+
+Load case 8........................................................................................................................ 13
+
+5.
+
+Reflection, Discussion and Analysis .................................................................................. 15
+
+6.
+
+References ................................................................................................................................. 16
+
+7.
+
+Appendix A – Load cases ...................................................................................................... 17
+
+8.
+
+Appendix B – MATLAB-script ............................................................................................... 33
+
+1.
+
+Introduction
+
+The most significant discomfort felt by truck drivers is connected to vibrations caused by
+wheel and tire imperfections. Examples of these kind of imperfections are wheel imbalance,
+force variations and ovality of the tire. Since manufactures spend a lot of money on
+perfecting their vehicles for maximal comfort, finding better solutions for vibration isolation
+is essential. Solutions that are less complicated and time consuming will cheapen the process,
+improve comfort and lessen demands on suppliers.
+The aim of this report is to analyse and understand the emergence of vibrations induced by
+wheels and tires on trucks. In order to do this, a literature survey has been performed on the
+subject. To understand the phenomenon further, an analysis has been made of a truck model.
+The model consists of a quarter car model combined with a physical tire model, together
+representing the front axle dynamics of a truck. Figure 1 shows the front axle of a truck of the
+same dimensions as the one used in the model. Frequency and power spectral analysis are
+used to investigate the models behaviour during different load cases, connected to wheel/tire
+non-uniformities.
+When it comes to the model, a few assumptions and simplifications have been made. The
+road surface is assumed to be smooth, since the wheel forces caused by non-uniformities are
+usually only significant for relatively smooth roads, where they can be of the same magnitude
+as the forces generated by road excitation [1]. In the tire model, the amount of tread slices
+(the bristles of rubber on the tire surface) are kept constant. The tire model can interpret
+vibrations and force variations in all directions, but the study has been limited to simulations
+in the vertical direction. This tire damping is assumed to be zero.
+Our supervisor is Assistant Professor Jenny Jerrelind, and she has guided us through-out the
+whole process. The model was supplied and written by PhD-student Johannes Edrén, who has
+helped us with some add-ons and an explanatory introduction to the model itself.
+The outline of the report is as follows. Chapter 2 introduces tire and wheel imperfections,
+what causes them and the effects of their presence. Thereafter, in Chapter 3, the model and
+method are described. In Chapter 4, the results are presented and discussed. Thereafter
+Chapter 5 features a reflection and an analysis of the results. These chapters are followed by
+references, and appendixes including the MATLAB-script of the model and all load cases.
+
+Figure 1 – Scania r620 [1].
+
+1
+
+2.
+
+Tire/Wheel non-uniformities
+
+There are three directions of forces that are of interest when analysing tire vibrations. Lateral,
+tractive and radial forces. Lateral forces are perpendicular to the direction of motion and
+cause wobble, tractive forces are forces in the direction of travel, and radial forces are forces
+out from the centre of the wheel, i.e. centrifugal forces. The causes of the variation of these
+forces are divided into three groups; mass imbalance, geometry variations and stiffness.
+2.1 Mass Imbalance
+An unbalanced system is an asymmetric system, and an asymmetric system is a system which
+isn’t optimally behaved. There are two different kinds of mass imbalance in the front wheeltire-assembly, dynamic and static imbalance.
+A non-uniform and asymmetric mass along the axis of rotation is the cause of dynamic
+imbalance. This imperfection results in torque variations perpendicular to the rotational axis.
+Static imbalance is when there is asymmetry of mass along or about the axis of rotation. This
+kind of imbalance causes deviations of radial (centrifugal) and tangential forces.
+Both dynamic and static imbalance are functions of speed, and therefore higher speeds cause
+more vibrations. These two types of imperfections can exist together, but one can also exist
+while the other one doesn’t [2-3]. See Figure 2 for a closer understanding of forces acting
+during imbalance.
+
+Figure 2 – Mass imbalance on wheels in rotation [8].
+
+2.2 Geometry variations
+Variations in the geometry of a tire, usually due to manufacturing errors, have disruptive
+effects on the ride of a vehicle. Some of the effects are listed below;
+o
+
+Radial run-out affects the roundness of the wheel. Radial irregularity causes the
+tire to adopt an asymmetric shape; eccentric, oval, triangular or square, and
+therefore the wheel rolls irregularly [2]. Figure 3 shows the first four harmonics of
+radial run-out.
+
+2
+
+Figure 3 – Radial run-out, first four harmonics [8].
+
+o
+
+Lateral run-out is the deviation of the sidewalls, of the tire, from a perfect plane.
+This causes vibrations, like all other imperfections, but the contribution towards
+the overall ride is very small compared to radial run-out [3].
+
+o
+
+Belt run-out is when the belt ring is off centre from the centre of rotation. This
+kind of run-out is included in mass imbalance as well, seeing as the belt’s mass
+isn’t centred. The effect of belt run-out is the variation of tractive forces, causing a
+radius
+deviation
+of
+the
+wheel
+assembly
+[4].
+
+o
+
+Tread gauge variation indicates a difference in the thickness and/or length of the
+tires tread slices [4].
+
+2.3 Tire Stiffness
+The elasticity of a tire can be compared to that of springs, all pointing out from the centre of
+the wheel. The variation in stiffness of the elastic parts of the tire can be described with the
+theory of springs – the springs can have different lengths in their compressed state, which
+causes inconsistent stiffness. This analogy gives quite a good idea of how stiffness can be
+interpreted when discussing tires.
+Tires have a body of rubberised fabric underneath the tread for stability. The difference
+between bias tires and radial tires is the direction of the chords in the fore mentioned fabric
+body. Bias tires have two or more plies with cords in a 35 to 40 degrees angle to the
+circumference ([6], p. 69). Radial tires have parallel plies that are places in a 90 degree angle
+to the circumference. They also have a belt between the body and the tread, made up of fabric
+or steel wire, whose cords are roughly in a 20 degree angle to the tread. This belt helps
+keeping the tread flat on the road during cornering.
+Nowadays, as is the case for most vehicles, trucks have radial tires as steer tires. Variations of
+stiffness in radial tires are due to manufacturing errors, and since these are most certainly
+uncommon, only one tire will be affected. And even if two tires are affected, they will most
+certainly be a phase shift between the tires, and so the ride will be uneven – causing
+vibrations [2]. Figure 4 shows how the wheel rolls unevenly due to stiffness variation.
+
+Figure 4 – Uneven roll due to stiffness variations [8].
+
+3
+
+3.
+
+Model, Method and Parameters
+
+This chapter introduces the MATLAB-model, how it has been used and what parameters the
+simulations are based on.
+3.1 Quarter car model
+The tire non-uniformities excite movement in the truck through the spring and shock
+absorber. To simulate this, a quarter car model has been used together with a physical tire
+model. The quarter car model consists of two masses, two springs and two dampers, as seen
+in Figure 5. In this model, the tire’s spring and damper are embedded in the physical tire
+model. The index ´s´ being for sprung mass, ´u´ for un-sprung mass, and ´t´ for tire.
+
+Figure 5 – Quarter car model’s basic set-up.
+
+This two DOF system has two equations of motion;
+𝑚𝑠 𝑥̈ 𝑠 + 𝑏𝑠 (𝑥̇ 𝑠 − 𝑥̇ 𝑢 ) + 𝑘𝑠 (𝑥𝑠 − 𝑥𝑢 ) = −𝑚𝑠 g
+
+(1)
+
+̇ 𝑢𝑔
+𝑚𝑢 𝑥̈ 𝑢 − 𝑏𝑠 (𝑥̇ 𝑠 − 𝑥̇ 𝑢 ) − 𝑘𝑠 (𝑥𝑠 − 𝑥𝑢 ) + 𝑏𝑡 𝑥̇ 𝑢 + 𝑘𝑡 𝑥𝑢 = 𝑘𝑡 ℎ + 𝑏𝑡 ℎ − 𝑚
+
+(2)
+
+4
+
+Dividing both equations with the corresponding masses, the acceleration of each body can be
+calculated,
+which
+can
+be
+derived
+from
+Newton’s
+second
+law;
+𝑏𝑠 (𝑥̇ 𝑢 − 𝑥̇ 𝑠 ) + 𝑘𝑠 (𝑥𝑢 − 𝑥𝑠 )
+−𝑔
+𝑚𝑠
+
+(3)
+
+𝑘𝑡 ℎ + 𝑏𝑡 ℎ̇ + 𝑏𝑠 (𝑥̇ 𝑠 − 𝑥̇ 𝑢 ) + 𝑘𝑠 (𝑥𝑠 − 𝑥𝑢 ) − 𝑏𝑡 𝑥̇ 𝑢 − 𝑘𝑡 𝑥𝑢
+−𝑔
+𝑚𝑢
+
+(4)
+
+𝑥̈ 𝑠 =
+
+𝑥̈ 𝑢 =
+
+These accelerations are then transferred from time domain to frequency domain using Fourier
+transform. This makes it possible to produce a graph showing at which frequencies the
+vibrations cause the greatest accelerations within the different components.
+To simulate the mass imbalance in the tire and rim, a centrifugal force is added to the wheel
+centre. This force can then be phase shifted to move it around the circumference of the tire in
+the starting position. The phase shift is only varied when several non-uniformities are
+combined in one simulation so that the faults don’t end up at the same place in the wheel. The
+equation used to implement mass imbalance in the model is as follows;
+𝐹𝑖𝑚𝑏 = 𝑚𝑖𝑚𝑏 ∙ 𝑟𝑖𝑚𝑏 ∙ 𝜔2 ∙ sin⁡(𝜃 + 𝜑)
+
+(5)
+
+𝑚𝑖𝑚𝑏 is the mass of the imbalance, 𝑟𝑖𝑚𝑏 is the radius on which the mass is positioned, 𝜔 is
+the angular speed of the wheel, 𝜃 is the position of the mass, and 𝜑 is the phase shift. This
+force
+is
+then
+added
+to
+Equation
+(4)
+as
+follows;
+
+𝑥̈ 𝑢 =
+
+𝑘𝑡 ℎ + 𝑏𝑡 ℎ̇ + 𝑏𝑠 (𝑥̇ 𝑠 − 𝑥̇ 𝑢 ) + 𝑘𝑠 (𝑥𝑠 − 𝑥𝑢 ) − 𝑏𝑡 𝑥̇ 𝑢 − 𝑘𝑡 𝑥𝑢 + 𝐹𝑖𝑚𝑏
+−𝑔
+𝑚𝑢
+
+(6)
+
+For this specific problem, the undamped natural frequencies are of interest to visualise
+approximately where in the frequency spectrum resonance will occur. To calculate these
+frequencies
+the
+following
+formulas
+has
+been
+used.
+
+𝑓𝑢𝑛𝑠𝑝𝑟𝑢𝑛𝑔 =
+
+√𝑘𝑡 + 𝑘𝑠 1
+∙
+𝑚𝑢
+2𝜋
+
+𝑓𝑠𝑝𝑟𝑢𝑛𝑔 =
+
+√𝑘𝑠 1
+∙
+𝑚𝑠 2𝜋
+
+(7)
+
+(8)
+
+3.2 Physical tire model
+To simulate the tire physically, this part of the model is constructed using the idea of a brush
+with a user specified amount of bristles. The model is based on the brush tire model presented
+in Hans Pacejka’s book ´Tire and Vehicle Dynamics` [7]. The brush is spread around a part
+of the circumference of the tire. As the tire rotates the brush moves along the circumference 5
+
+this is to save computer power and to shorten the time it takes to complete the simulation,
+since the amount of bristles can be kept down without affecting the resolution of the results.
+The bristles are the only things that comes in contact with the road, hence the bristle data
+decides the deformation of the tire. To get good results from the tire model, the bristles are
+adjustable in both damping and spring stiffness in all directions. In this study however, the
+vertical direction is the only direction evaluated.
+To simulate radial run-out, the circumference of the tire is varied by adding a sinus curve,
+which in turn can be adjusted to obtain different harmonic repetitions of the run-out.
+The road surface is also adjustable to simulate road roughness, although for this project the
+road surface is set as perfectly smooth. This is to keep focus on the tire imperfections, and not
+confuse them with other discrepancies.
+
+3.3 Flow chart of the MATLAB-model
+The MATLAB-program consists of the tire model and a quarter car model. A flow chart has
+been made to illustrate the process of the simulation, see Figure 6. For a complete study of
+the MATLAB-program see Appendix B, together with all the function files.
+
+6
+Figure 6 – Flow chart illustrating the structure of the MATLAB-script and its different parts.
+
+3.4 Method
+To make an accurate evaluation of how the imperfections affect the chassis, the MATLABmodel is simulated for different load cases. These load case have been chosen in order to
+represent the disturbances caused by mass imbalance and radial run-out.
+The first kind of tire imperfection alternated in the model is mass imbalance. Load case 2, 7
+and 8 are affected by this. In load case 2, the wheel is affected only by mass imbalance,
+whereas in load case 7 the mass imbalance is combined with a 90 degree phase shift and a
+radial run-out of the first harmonic. In load cases 3 through 6 the wheel is subjected to radial
+run-out of the first four harmonics. Load case 8 is a combination of two cases, each with a
+different mass imbalance, 0.5 kg and 8 kg. Table 1 has all the information about the load
+cases. The radius 0.5 m used in the load cases with mass imbalance is the radius of the wheel,
+and so the mass imbalance is situated on the circumference.
+
+Table 1 – Load cases tested in MATLAB-model
+
+LOAD
+CASES
+
+1
+2
+3
+4
+5
+6
+7
+8
+
+MASS IMBALANCE
+Mass [kg]
+
+Radius [m]
+
+0
+2
+0
+0
+0
+0
+2
+0.5 and 8
+
+0
+0.5
+0
+0
+0
+0
+0.5
+0.5
+
+Phase shift
+[degree]
+0
+0
+0
+0
+0
+0
+90
+0
+
+RADIAL RUN-OUT
+Harmonic
+nr
+0
+0
+1
+2
+3
+4
+1
+0
+
+Difference
+[m]
+0
+0
+0.005
+0.005
+0.005
+0.005
+0.005
+0
+
+Stiffness is not varied in any of the load cases. This is because stiffness variations only affect
+the results homogenously and the difference, if noticeable, will only be in amplitude of the
+force or power peaks.
+According to Thomas D. Gillespie [2], higher order harmonics of radial run-out are
+unnecessary to include in a survey about ride perception, as they show similar information
+only in smaller magnitude at higher frequencies. Also, the magnitude of radial force
+variations is relatively independent of speed, only the frequency is changed. It is therefore
+sufficient to investigate the first four harmonics of radial run-out.
+In Deodhar, Rakheja and Bhat’s report about vibration and tire force transmissibility, it is
+mentioned that radial run-out is a much larger cause of vibrations than tangential and lateral
+geometry variations [5].
+Both reports state that radial run-out is an important, if not vital, part of vibration analysis.
+This has been taken into consideration when the load cases were chosen, hence the large
+percentage of load cases where radial run-out is included.
+
+7
+
+Furthermore, in Deodhar, Rakheja and Bhat’s report [5], a half car model is used to simulate
+load cases similar to the ones in this report. Their range of imbalance mass, for the front tirewheel assembly, is set to 0.5 kg – 2 kg. For all load cases in this report incorporating mass
+imbalance, except load case 8, a mass of 2 kg has been chosen. The reason for choosing the
+top end of the range given by Deodhar et al. is the conviction that a larger weight will cause
+larger fluctuations in vibration amplitudes. The conviction is also that this will produce
+graphs with clearer peaks and dips.
+In load case 8, the two masses have been chosen to 0.5 kg and 8 kg. This is because 0.5 kg
+seemed to be the lowest value still causing noticeable vibrations, and 8 kg was chosen to be
+unreasonably high, so as to see a striking difference in the results.
+
+3.5 Parameters
+In Table 2 the parameters for the model are specified. The vehicle model represents the front
+axle dynamics of a truck. The speed of the truck has been chosen to 89 km/h which is the
+average cruising speed of a Swedish motorway.
+Table 2 – Parameters used in MATLAB-model.
+
+Parameter
+Vehicle speed
+Sprung mass
+Un-sprung mass
+Suspension spring stiffness
+Suspension damper stiffness, compression
+Suspension damper stiffness, expansion
+Tire spring stiffness, vertical
+Tire damper stiffness, vertical
+Range of imbalance mass
+Radial run-out
+Phase angle
+
+4.
+
+Value
+89 km/h
+3 400 kg
+350 kg
+300 000 N/m
+2 000 Ns/m
+20 000 Ns/m
+800 000 N/m
+0 Ns/m
+0.5 – 8 kg
+5 mm
+90°
+
+Results and Conclusions
+
+This chapter discusses and evaluates the results of the tests simulated with the model. Due to
+limitations in report length, some load cases’ graphs are exclusively situated in Appendix A.
+Load case 1, 2, 4 and 8 show the most distinct results, and are therefore discussed more
+closely.
+Table 3 shows the calculated natural undamped frequencies and the wheel rotation frequency.
+Table 3 – Resonance frequencies.
+
+Frequency
+Wheel rotation frequency
+Undamped natural frequency, sprung mass
+Undamped natural frequency, unsprung mass
+
+Value [Hz]
+7.5406
+1.4950
+24.5090
+8
+
+4.1 Load case 1
+This load case reveals what forces and vibrations would be on a tire without any exterior
+forces or geometry variations. The tire is perfectly round and symmetrical, and the centre of
+the wheel is concentric with the axis of rotation. This load case is meant as a reference case to
+compare the other load cases to.
+In Figure 7, the settling forces that occur when the system is released from the starting
+position are visualised by fluctuations at low frequencies. These fluctuations will be present
+in all following graphs, in somewhat different shapes and forms.
+Since the tire and road are without imperfections, the forces of the sprung mass (chassis) and
+unsprung mass (tire) will be similar to each other. The amplitudes, shown by the green and
+blue lines, will therefore be co-linear.
+
+Figure 7 – Vertical force amplitude as a function of frequency.
+
+The power spectral density graph below, Figure 8, shows where in the frequency spectra the
+vibrations have the largest energy per second. This does not mean that the vibration
+amplitudes have to be very big, just that the transmitted effect is large and more difficult to
+cancel out.
+
+9
+
+Figure 8 – Power spectral density graph.
+
+4.2 Load case 2
+In this load case, the tire is laden with a mass imbalance of 2 kg, situated on the
+circumference.
+As expected, Figure 9 shows a peak in the force of both the sprung and unsprung masses at
+the wheel rotation frequency. This is due to having a single mass imbalance adding a
+centrifugal force to the wheel centre, and since the mass imbalance rotates at the same
+velocity as the wheel, their frequencies will coincide.
+The force amplitude is almost ten times higher for the unsprung mass than for the sprung
+mass. This is because the spring and damper in the strut absorb a lot of the forces caused by
+the mass imbalance in the tire.
+
+10
+
+Figure 9 – Vertical force amplitude as a function of frequency.
+
+Figure 10 shows that the relationship between tire and chassis is reversed when comparing
+power instead of force, at the wheel rotation frequency. The increase of power in the sprung
+mass is much greater, which implies that the wheel rotation frequency must coincide with a
+resonance frequency.
+
+Figure 10 – Power spectral density graph.
+
+11
+
+4.3 Load case 4
+Load case 4 presents a tire with a radial run-out of the 2nd harmonic. The difference in radius
+is 5 mm in two places opposite to each other, making the tire oval.
+Figure 11 shows that the first force amplitude peak occurs at around 14-15 Hz, which is very
+close to the second harmonic of the wheel rotation frequency. This was expected due to the
+fact that there are two “bumps” on opposite sides of the circumference. Compared to load
+case 2, there are now two excitation forces per revolution, thus the doubled frequency.
+The following peaks are the harmonic repetitions of the excited vibration. After these clear
+peaks, the simulation result seems to have a lot of noise, although this is not the case. It only
+appears so due to the logarithmic scale.
+
+Figure 11 – Vertical force amplitude as a function of frequency.
+
+The power spectral density of load case 4, visualised in figure 12, shows how a large power
+increase in the higher frequency spectra. The wheel, during this simulation, leaves the ground
+when bouncing immediately after being let go from the starting position. Therefore it is
+possible to see a large dip in the force-frequency graph, Figure 11, and a smaller first peak in
+Figure 12. The force at this point will decrease immensely in size, and the largest peak in the
+power spectral density graph will therefore come after this point, when the wheel regains
+contact with the road. The highest peak in Figure 12 is at a frequency of 30 Hz, and is the
+second harmonic of the vibration frequency. In Figure 12 we can also see that the power
+affecting the sprung mass grows larger than the power affecting the unsprung mass, which
+indicates that a radial run-out of the 2nd harmonic excites vibrations with a lot of power to the
+sprung mass, i.e. the chassis.
+12
+
+Figure 12 – Power spectral density graph.
+
+4.4 Load case 8
+This load case is made up of two different load cases, compared in the same graphs. They
+both consist of a tire with a mass imbalance; one of 8 kg and the other of 0.5 kg, both on the
+circumference.
+Figure 13 shows the amplitude spectrum of the forces affecting the chassis through the strut.
+The lower frequencies forces come from the settling of the truck after releasing it from the
+starting position. These forces will not be considered in the analysis. The peak close to the
+wheel rotational frequency is the force that repeatedly excites the chassis, causing vibration to
+the driver. The weight increase of the mass imbalance in the tire assembly does not affect
+where in the frequency spectra the forces act, although it does change the amount of force
+acting on the strut.
+
+13
+
+Figure 13 – Force amplitude over frequency spectra.
+
+By drastically changing the weight of the mass imbalance it is possible to visualize how the
+variation of mass of the imballance affect the chassis and the tire. Studying the the purple line
+in Figure 14, which represents the wheel rotational frequency of the tire which is 7.54 Hz at
+the rolling speed of 89 km/h, it is clear that there is a power increase for both the tire and
+chassis. Also visible in the figure are the undamped natural frequencies these were added for
+comparison with the power peaks.
+
+14
+
+Figure 14 – Power spectral density graph.
+
+5.
+
+Reflection, Discussion and Analysis
+
+When looking at the PSD graphs, comparing the undamped natural frequencies of the chassis
+to the wheel rotation frequency of the tire, it becomes clear that the power peaks coincide
+with these frequencies. It can also be seen that the power increase of the chassis’ vibrations is
+larger than the power increase of the tire’s vibrations. This suggests that a harmonic
+repetition of the natural frequency of the chassis is very close to the rolling frequency. When
+dividing the rolling frequency with the undamped natural frequency of the chassis, results
+show that the rolling frequency is almost equal to the 5th harmonic repetition of the chassis
+natural frequency.
+These results imply that vibrations excited to the chassis (from the wheels, through the strut)
+will multiply in amplitude due to the fact that the natural frequency coincides with a
+harmonic of the rolling frequency. The consequences are unnecessarily large vibrations, and
+there are ways to solve this. To overcome this problem the natural frequency of the chassis
+must be changed, either by changing the weight of the vehicle or the spring stiffness.
+Load case four should be a subject for future analysis since it is the load case which transfer
+most power to the sprung mass over a wide frequency spectrum.
+For further analysis of the model it should be expanded with to a half car model together with
+the cab and driver seat. This would show what type of imperfection will have the most effect
+on the driver.
+15
+
+6.
+
+References
+1. Handbook of Vehicle-Road Interaction
+David Cebon
+Swets & Zeitlinger B.V., 1999
+Chapter 7.4.10, page 121
+2. www.scania.se/lastiblar/lastbilsprogram/
+Scania-Bilar Sverige AB
+2013-05-03
+3. Fundamentals of Vehicle Dynamics
+Thomas D. Gillespie
+Society of Automotive Engineers Inc., 1992
+Chapter 5; Ride, Chapter 10; Tires.
+4. A study on the effect of different tyre imperfections on steering wheel vibration
+N. Balaramakrishna, R. Krishna Kumar
+Vehicle System Dynamics: International Journal of Vehicle Mechanics and Mobility,
+2009
+5. Tyre non-uniformities: comparison of analytical and numerical tyre models and
+correlation to experimentally measured data
+Hans R. Dorfi
+Vehicle System Dynamics: International Journal of Vehicle Mechanics and Mobility,
+2011
+6. Vibration and tyre force transmissibility of commercial vehicles owing to wheel
+unbalance and non-uniformity defects
+Deodhar, Rakheja, Bhat
+Vehicle System Dynamics: International Journal of Vehicle Mechanics and Mobility,
+2011
+7. Tires, Suspension and Handling
+John C. Dixon
+Society of Automotive Engineers Inc., 1996
+From page 44, Second Edition
+8. Tire and Vehicle Dynamics
+Hans Pacejka
+Elsevier Ltd., 2012
+Chapter 3
+
+16
+
+Appendix A – Load cases
+
+7.
+
+Here in Appendix A, all the results of the load case simulations are presented. There are five
+different plots presented for every load case;
+
+
+
+
+
+
+A graph showing forces in the vertical direction for tire and strut, over time
+A graph showing position in the vertical direction for sprung and unsprung mass, over
+time
+A single-sided amplitude spectrum graph showing the for mentioned forces as a
+function of frequency
+A power spectral density graph showing power as a function of frequency
+A graph showing forces on the bristles as a function of their position on the tire.
+
+7.1 Load case 1
+This load case reveals what forces and vibrations would be on a tire without any exterior
+forces or geometry variations. The tire is perfectly round and symmetrical, and the centre of
+the wheel is concentric with the axis of rotation. This load case is meant as a reference case to
+compare the other load cases to, and the results of this load case are shown in Figures 15-18.
+
+Figure 15 – Vertical forces and positions of sprung and unsprung masses, as a function of time.
+
+17
+
+Figure 16 – Vertical force amplitude as a function of frequency.
+
+Figure 17 – Power spectral density graph.
+
+18
+
+Figure 18 – Bristles forces as a function of their position on the tire.
+
+7.2 Load case 2
+In this load case, the tire is affected by a mass imbalance. The imbalance is 2 kg, on
+circumference. The results are shown in Figures 19-22.
+
+Figure 19 – Vertical forces and positions of sprung and unsprung masses, as a function of time.
+
+19
+
+Figure 20 – Vertical force amplitude as a function of frequency.
+
+Figure 21 – Power spectral density graph.
+
+20
+
+Figure 22 – Bristles forces as a function of their position on the tire.
+
+7.3 Load case 3
+Load case 3 shows a tire affected by radial run-out of the 1st harmonic, with a 0.005 m
+difference. The results are presented in Figures 23-26.
+
+Figure 23 – Vertical forces and positions of sprung and unsprung masses, as a function of time.
+
+21
+
+Figure 24 – Vertical force amplitude as a function of frequency.
+
+Figure 25 – Power spectral density graph.
+
+22
+
+Figure 26 – Bristles forces as a function of their position on the tire.
+
+7.4 Load case 4
+Load case 4 presents a tire with a radial run-out of the 2nd harmonic. The difference in radius
+is 5 mm in two places opposite to each other, making the tire oval. See results in Figures 2730.
+
+Figure 27 – Vertical forces and positions of sprung and unsprung masses, as a function of time.
+
+23
+
+Figure 28 – Vertical force amplitude as a function of frequency.
+
+Figure 29 – Power spectral density graph.
+
+24
+
+Figure 30 – Bristles forces as a function of their position on the tire.
+
+7.5 Load case 5
+Load case 5 presents a tire with a radial run-out of the 3rd harmonic. The difference in radius
+is 5 mm in three places along the circumference. Results are shown in Figures 31-34.
+
+Figure 31 – Vertical forces and positions of sprung and unsprung masses, as a function of time.
+
+25
+
+Figure 32 – Vertical force amplitude as a function of frequency.
+
+Figure 33 – Power spectral density graph.
+
+26
+
+Figure 34 – Bristles forces as a function of their position on the tire.
+
+7.6 Load case 6
+Load case 6 presents a tire with a radial run-out of the 4th harmonic. The difference in radius
+is 5 mm in four places evenly spaced along the circumference, making the tire seem square.
+For results, see Figures 35-38.
+
+Figure 35 – Vertical forces and positions of sprung and unsprung masses, as a function of time.
+
+27
+
+Figure 36 – Vertical force amplitude as a function of frequency.
+
+Figure 37 – Power spectral density graph.
+
+28
+
+Figure 38 – Bristles forces as a function of their position on the tire.
+
+7.7 Load case 7
+The tire in this load case is affected by a mass imbalance of 2 kg on circumference, a 90
+degrees phase shift, and a 1st harmonic radial run-out. Results are shown in Figures 39-42.
+
+Figure 39 – Vertical forces and positions of sprung and unsprung masses, as a function of time.
+
+29
+
+Figure 40 – Vertical force amplitude as a function of frequency.
+
+Figure 41 – Power spectral density graph.
+
+30
+
+Figure 42 – Bristles forces as a function of their position on the tire.
+
+7.8 Load case 8
+This load case is made up of two different load cases, both affected by a mass imbalance; one
+of 8 kg and the other of 0.5 kg, both on the circumference. Results are shown in Figures 4345.
+
+Figure 43 – Vertical forces and positions of sprung and unsprung masses, as a function of time.
+
+31
+
+Figure 44 – Vertical force amplitude as a function of frequency.
+
+Figure 45 – Power spectral density graph.
+
+32
+
+8.
+
+Appendix B – MATLAB-script
+
+%%%%% Main Script Wheel Induced Vibrations
+%%%%% Hector Garcia && Emma Smith
+%%%%% 2013-05-16
+clear all
+close all
+clc
+plotrate=0.0001; %How often visualisation
+%Quarter car init
+mass=3400;
+%Sprung mass
+mt=350;
+%Unsprung mass
+k=300000;
+%suspension spring stiffness
+d=3000;
+%suspension damping coefficient this is not
+the used value see function "damper"
+g=9.82;
+%Gravity
+my=1;
+mu = 2;
+%mass of mass imbalance
+radiu = 0.5;
+%Radius of mass imbalance
+rotoffcenter = -pi/2*0;
+%phasedifference of mass imbalance
+
+wheel_radius=1.0435/2;
+%% Init the brush model (create memory structure)
+[A,B]=init_Bm(wheel_radius);
+dt=0.005;
+time=0;
+tstop=3;
+j=1;
+l=0;
+
+%time step for simulation
+%Starting time
+%stoptime
+
+Wtlost(1)=0;
+
+%init
+az=[0];vz=[0];z=[wheel_radius];zt=[wheel_radius];vzt=[0];azt=[0];Vyc=3;pt=[0];ps=[0];
+Fx=0;Fy=0;Fz=0;Mx=0;My=0;Mz=0;Mz_x=0;Mz_y=0;Fs=0;
+x=0;
+roll_angle=0;
+jj=1;
+step = 1;
+aviobj = avifile('Monsters University AAAAAWWWWWWWW
+YEAH!!.avi','compression','none','fps',24,'quality',100);
+while time<=tstop
+Vxc=24.72;
+%Long velocity of wheel centre
+Vyc=0;
+%lat velocity of wheel centre
+yaw_rate=0;
+%affect lateral speed along contact line
+w=(Vxc*1.0172)/wheel_radius*1.0; %Rollong speed in rad/s of wheel
+
+33
+
+%% Call brush model
+[Fx(j+1),Fy(j+1),Fz(j+1),Mz(j+1),A,B,F]=brush(A,B,x(j),zt(j),Vxc,Vyc,vzt(j)
+,w,yaw_rate,my,dt,roll_angle(j));
+if jj>=plotrate;
+brushvisu(A,B,Fx(j),Fy(j),Fz(j),zt(j),Vxc,Vyc,x(j),F,roll_angle(j),time,z(j
+),wheel_radius);
+fig=figure(70);
+Fr=getframe(fig);
+aviobj=addframe(aviobj,Fr);
+jj=0;
+step = step+1;
+else
+jj=jj+1;
+end
+
+%% quarter car model
+Fs(j+1)=(k*(zt(j)-z(j))+damper(vzt(j)-vz(j)));
+%strut force from spring
+and damper
+%% motion of suspended mass (car body)
+az(j+1)=Fs(j+1)/mass-g; %Strut force acting on sprung mass
+vz(j+1)=vz(j)+az(j+1)*dt;
+z(j+1)=z(j)+vz(j+1)*dt;
+%% motion of unsuspended mass (wheel)
+Fb(j+1) = mu*radiu*(w^2)*sin(roll_angle(j)+rotoffcenter);
+azt(j+1)=(Fz(j+1)-Fs(j+1)+Fb(j+1))/mt-g; %Tyre pushing up strut pushing
+down
+vzt(j+1)=vzt(j)+azt(j+1)*dt;
+zt(j+1)=zt(j)+vzt(j+1)*dt;
+x(j+1)=x(j)+Vxc*dt;
+roll_angle(j+1)=roll_angle(j)+w*dt;
+time=time+dt;
+
+%% Power of suspended mass
+pt(j+1) = Fs(j+1)*(z(j+1)-z(j))/dt;
+ps(j+1) = (Fz(j+1)-Fs(j+1)+Fb(j+1))*(zt(j+1)-zt(j))/dt;
+
+%Unsprung mass
+%Sprung mass
+
+j=j+1;
+t(j)=time;
+end
+aviobj = close(aviobj);
+clear aviobj
+%
+%
+%
+%
+
+%%% Following part is used only when two mass imbalance imperfections is
+%%% simulated
+%% Init the brush model (create memory structure)
+mu2 = 0.5;
+%mass of massunbalance
+
+34
+
+% radiu = 0.5;
+%Radius of mass unbalance
+% rotoffcenter = -pi/2*0;
+%phasedifference of massunbalance
+%
+% [A,B]=init_Bm(wheel_radius);
+%
+% dt=0.0001;
+%time step for simulation
+% time=0;
+% tstop=5;
+%stoptime
+% j=1;
+% l=0;
+%
+%
+% Wtlost(1)=0;
+%
+%
+% %init
+%
+az2=[0];vz2=[0];z2=[wheel_radius];zt2=[wheel_radius];vzt2=[0];azt2=[0];Vyc2
+=-3;pt2=[0];ps2=[0];
+% Fx2=0;Fy2=0;Fz2=0;Mx2=0;My2=0;Mz2=0;Mz_x2=0;Mz_y2=0;Fs2=0;
+% x=0;
+% roll_angle=0;
+% jj=1;
+% while time<=tstop
+%
+% Vxc=24.72;
+%Long velocity of wheel centre
+% Vyc=0;
+%lat velocity of wheel centre
+% yaw_rate=0;
+%affect lateral speed along contact line
+% w=(Vxc*1.0172)/wheel_radius*1.0; %Rollong speed in rad/s of wheel
+%
+% %% Call brush model
+%
+[Fx2(j+1),Fy2(j+1),Fz2(j+1),Mz2(j+1),A,B,F]=brush2(A,B,x(j),zt2(j),Vxc,Vyc,
+vzt2(j),w,yaw_rate,my,dt,roll_angle(j));
+%
+% if jj>=plotrate;
+% %
+brushvisu(A,B,Fx(j),Fy(j),Fz(j),zt(j),Vxc,Vyc,x(j),F,roll_angle(j),time,z(j
+))
+%
+jj=0;
+% else
+%
+jj=jj+1;
+% end
+%
+%
+%
+%
+% %% quarter car model
+% Fs2(j+1)=(k*(zt2(j)-z2(j))+damper(vzt2(j)-vz2(j)));
+%strut force from
+spring and damper
+% %% motion of suspended mass (car body)
+% az2(j+1)=Fs2(j+1)/mass-g; %Strut force acting on sprung mass
+% vz2(j+1)=vz2(j)+az2(j+1)*dt;
+% z2(j+1)=z2(j)+vz2(j+1)*dt;
+% %% motion of unsuspended mass (wheel)
+% Fb2(j+1) = mu2*radiu*(w^2)*sin(roll_angle(j)+rotoffcenter);
+% azt2(j+1)=(Fz2(j+1)-Fs2(j+1)+Fb2(j+1))/mt-g; %Tyre pushing up strut
+pushing down
+% vzt2(j+1)=vzt2(j)+azt2(j+1)*dt;
+% zt2(j+1)=zt2(j)+vzt2(j+1)*dt;
+%
+
+35
+
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+%
+
+x(j+1)=x(j)+Vxc*dt;
+roll_angle(j+1)=roll_angle(j)+w*dt;
+time=time+dt;
+
+%% Power of suspended mass
+pt2(j+1) = Fs2(j+1)*(z2(j+1)-z2(j))/dt;
+ps2(j+1) = (Fz2(j+1)-Fs2(j+1)+Fb2(j+1))*(zt2(j+1)-zt2(j))/dt;
+j=j+1;
+t(j)=time;
+end
+
+%% Undamped Natural frequencies
+Tire_circumference = 2*pi*wheel_radius;
+rps = Vxc/Tire_circumference
+%Wheel rotation frequency
+nfreq_body = sqrt(k/mass)/(2*pi)
+%Undamped natural frequency of
+sprung mass
+nfreq_tire = sqrt((k+8000000)/mt)/(2*pi)
+%Undamped natural ferquency of
+unsprung mass
+%% Tire and Strut forces during the whole simulation together with vertical
+%% position of the tire and chassi
+figure(1)
+subplot(2,1,1)
+plot(t,Fs,t,Fz)%,t,Fs2,t,Fz2)%,t,Mz);
+legend('Fz_s_t_r_u_t','Fz_t_i_r_e')%,'Fz_s_t_r_u_t 0.5kg','Fz_t_i_r_e
+0.5kg')%,'Mz')
+title('Forces')
+ylabel('F [Nm]')
+xlabel('t (s)')
+subplot(2,1,2)
+plot(t,z,t,zt)%,t,z2,t,zt2);
+legend('z_s_p_r_u_n_g','z_u_n_s_p_r_u_n_g')%'z_s_p_r_u_n_g
+8kg','z_u_n_s_p_r_u_n_g 8kg','z_s_p_r_u_n_g 0.5kg','z_u_n_s_p_r_u_n_g
+0.5kg')
+title('Position')
+xlabel('t (s)')
+ylabel('Z [m]')
+%% Momentanius Forces in the bristles
+x_pos=sin(A(1,:))*wheel_radius;
+fx=F(1,:);
+fy=F(2,:);
+fz=F(3,:);
+figure(2)
+plot(x_pos,fx,'g*',x_pos,fy,'b*',x_pos,fz,'r*')
+legend('F_l_o_n_g','F_l_a_t','F_v_e_r')
+xlabel('Brush position on tyre')
+ylabel('F [N]')
+
+%% Fourier Analysis
+figure(3)
+% subplot(2,1,1)
+Fsamp = 1/plotrate; %Sampling frequency
+
+36
+
+L = length(az);
+NFFT = 2^nextpow2(L);
+YFt = fft(Fz,NFFT)/L;
+%Fast Fourier Transform
+YFs = fft(Fs,NFFT)/L;
+%Fast Fourier Transform
+f = Fsamp/2*linspace(0,1,NFFT/2+1);
+loglog(f,2*abs(YFs(1:NFFT/2+1)),f,2*abs(YFt(1:NFFT/2+1)),[rps rps],[1
+10^6])
+title('Single-Sided Amplitude Spectrum of F(t)')
+legend('Sprung Mass 8kg','Sprung Mass 0.5kg','Wheel rotation frequency')
+xlabel('Frequency (Hz)')
+ylabel('|Force (N)|')
+axis([0.1 1000 1 10^6])
+
+%% PSD Calculation
+figure(4)
+% subplot(2,1,2)
+% wh = hamming(L/40);
+% noverlap = NFFT/2;
+% [Pz2,wz2] = pwelch(ps2);
+% wz2 = wz2*10000/(2*pi);
+[Pz1,wz] = pwelch(ps);
+wz = wz*10000/(2*pi);
+% [Pzt2,wt2] = pwelch(pt2);
+% wt2 = wt2*10000/(2*pi);
+[Pzt1,wt] = pwelch(pt);
+wt = wt*10000/(2*pi);
+loglog(wz,Pz1,wt,Pzt1,[rps rps],[1 10^12])%,wz2,Pz2,wt2,Pzt2,[rps rps],[1
+10^12],[nfreq_body nfreq_body],[1 10^12])%,[nfreq_tire nfreq_tire],[1
+10^12])
+% loglog([rps rps],[1 10^12], 'k')
+%Rolling freq
+% loglog([nfreq_body nfreq_body],[1 10^12], 'k')%Body undamped natural
+frequency
+% loglog([nfreq_tire nfreq_tire],[1 10^12], 'k')%Tire undamped natural
+frequency
+legend('Sprung Mass 8kg','Unsprung Mass 8kg','Sprung Mass 0.5kg','Unsprung
+Mass 0.5kg','Wheel rotation frequency','Undamped Natural freq
+Body')%,'Undamped Natural freq tire')
+title('Power Spectral Density')
+xlabel('Frequency [Hz]')
+ylabel('[W^2/Hz]')
+axis([1 1000 1 10^12])
+% text(3,10^11,'Rolling frequency');
+
+37
+
+%%% Brush Model
+%%% Johannes Edrén
+function
+[Fx,Fy,Fz,Mz,Bristle_deflec,B,F]=brush(Bristle_deflec,B,x,zt,Vxc,Vyc,vzt,w,
+yaw_rate,my,dt,roll_angle)
+%Tyre_Data=[Rr,cpx,cpy,cpz,dpz,load_sensetivity,segment_angle,f_pz0];
+Rw=B(1);cpx=B(2);cpy=B(3);cpz=B(4);dpx=B(5);dpz=B(6);load_sensetivity=B(7);
+segment_angle=B(8);
+f_pz0=B(9);D_amp=B(10);D_periode=B(11);
+n=length(Bristle_deflec);
+phi_step=w*dt;
+for i =1:n;
+xpos=Rw*sin(Bristle_deflec(1,i));
+Bristle_deflec(1,i)=Bristle_deflec(1,i)-phi_step; %update rolling of
+bristles along the segment
+%move/update rolling of the bristles in and out of the segment of
+%bristles (move the last bristle to the front and vice versa)
+if Bristle_deflec(1,i)<-segment_angle/2
+Bristle_deflec(1,i)=Bristle_deflec(1,i)+segment_angle;
+Bristle_deflec(5,i)=1;
+end
+if Bristle_deflec(1,i)>segment_angle/2
+Bristle_deflec(1,i)=Bristle_deflec(1,i)-segment_angle;
+Bristle_deflec(5,i)=1;
+end
+%vertical displacement of the bristles
+%% z deflection
+%Bristle_deflec(4,i)=zt-Rw*cos(Bristle_deflec(1,i))-road(xpos+x);
+Bristle_deflec(4,i)=ztcos(Bristle_deflec(1,i))*(Rw+D_amp*sin((Bristle_deflec(1,i)+roll_angle)/D_p
+eriode*2*pi))-road(xpos+x);
+%dzdt(i)=Rw*sin(Bristle_deflec(1,i))*w;
+dzdt(i)=Rw*sin(Bristle_deflec(1,i))*w; % OBS not corret atm. Only
+sping forces are correct
+if Bristle_deflec(4,i)>=0
+the road
+Bristle_deflec(2,i)=0;
+Bristle_deflec(3,i)=0;
+Bristle_deflec(4,i)=0;
+in_contact(i)=0;
+
+%if the brush is not in contact with
+%no
+%no
+%no
+%if
+
+deflection
+deflection
+deflection
+a brush is
+
+in
+in
+in
+in
+
+x
+y
+z
+contact r not
+
+d_x(i)=0;
+d_y(i)=0;
+else% deflection of each bristle
+%d_x(i)=w*dt*Rw*cos(Bristle_deflec(1,i))-Vxc*dt;
+incremantal displacement of each bristle
+
+%Longitudinal
+
+d_x(i)=w*dt*(Rw+D_amp*sin((Bristle_deflec(1,i)+roll_angle)/D_periode*2*pi))
+*cos(Bristle_deflec(1,i))-Vxc*dt;
+old_deflecx(i)=Bristle_deflec(2,i);
+Bristle_deflec(2,i)=old_deflecx(i)+d_x(i);
+%Lateral incremental displacement of each bristle
+d_y(i)=-Vyc*dt + (Rw+D_amp*sin((Bristle_deflec(1,i)+roll_angle)/D_periode*2*pi))*sin(Bristle
+_deflec(1,i))*yaw_rate*dt;
+
+38
+
+old_deflecy(i)=Bristle_deflec(3,i);
+Bristle_deflec(3,i)=old_deflecy(i)+d_y(i);
+in_contact(i)=1;
+end
+%vertical force on each bristle
+fz(i)=-Bristle_deflec(4,i)*cpz+dzdt(i)*dpz*in_contact(i);
+%fz(i)=-Bristle_deflec(4,i)*cpz;
+if fz(i)<=0;
+fz(i)=0;
+end
+%total force of bristle in x and y
+fx(i)=Bristle_deflec(2,i)*cpx;
+fy(i)=Bristle_deflec(3,i)*cpy;
+total(i)=sqrt(fx(i)^2+fy(i)^2);
+%if deflection times stiffness larger than force
+fxprim(i)=fx(i);
+fyprim(i)=fy(i);
+
+Worg(i)=(fx(i)*Bristle_deflec(2,i)+fy(i)*Bristle_deflec(3,i))*in_contact(i)
+;
+if abs(total(i))>my*fz(i);
+pdf=0.05*10^(-2)*0.1; %power dissipation when slipping
+Bristle_deflec(5,i)=Bristle_deflec(5,i)sqrt(d_x(i)^2+d_y(i)^2)*my*fz(i)/dt*pdf;
+fyprim(i)=fy(i)*my*fz(i)/(total(i)+eps)*Bristle_deflec(5,i);
+fxprim(i)=fx(i)*my*fz(i)/(total(i)+eps)*Bristle_deflec(5,i);
+
+%% limit the force to friction
+Bristle_deflec(2,i)=fxprim(i)/cpx;
+Bristle_deflec(3,i)=fyprim(i)/cpy;
+fx(i)=Bristle_deflec(2,i)*cpx;
+fy(i)=Bristle_deflec(3,i)*cpy;
+%else
+%
+Bristle_deflec(5,i,id)=1;
+end
+eta(i)=sqrt(fx(i)^2+fy(i)^2)/fz(i);
+end
+dfz=(sum(fz)-f_pz0)/f_pz0;
+fx=fx*(1-load_sensetivity*dfz);
+fy=fy*(1-load_sensetivity*dfz);
+
+Mz=sum(fy.*sin(Bristle_deflec(1,:))*Rw);
+
+Fx= sum(fx);
+Fy= sum(fy);
+Fz= sum(fz); %tyre vertical force from ground
+F(1,:)=fx;
+
+39
+
+F(2,:)=fy;
+F(3,:)=fz;
+
+%%% Visualisation of Brush Model
+%%% Johannes Edrén with minor modifications by Hector Garcia
+%%% 2013-05-16
+function
+brushvisu(A,B,Fx,Fy,Fz,zt,Vxc,Vyc,x,F,roll_angle,t,bz,wheel_radius)
+Bristle_deflec=A;
+Rw=B(1);
+cpx=B(6);
+cpy=B(7);
+cpz=B(8);D_amp=B(10);D_periode=B(11);
+phi=linspace(-pi,pi,200);
+innerRx=sin((phi)).*(Rw+D_amp*sin((phi+roll_angle)/D_periode*2*pi));
+innerRz=-cos((phi)).*(Rw+D_amp*sin((phi+roll_angle)/D_periode*2*pi));
+inX=(Rw-D_amp)*sin((phi-roll_angle));
+inZ=(Rw-D_amp)*cos((phi-roll_angle));
+medX=(Rw)*sin((phi-roll_angle));
+medZ=(Rw)*cos((phi-roll_angle));
+outX=(Rw+D_amp)*sin((phi-roll_angle));
+outZ=(Rw+D_amp)*cos((phi-roll_angle));
+
+sf=0.0001;%Scale factor for force visualisation
+X=linspace(-0.5,0.5,100);
+for i=1:length(X)
+Z(i)=road(X(i)+x);
+Y(i)=0;
+end
+scrsz = get(0,'ScreenSize');
+figure(70)
+hold off
+clf
+% figure('NextPlot','replacechildren','OuterPosition',[1 scrsz(4)/2
+scrsz(3)/2 scrsz(4)/2]) %'ColorSpec',[1 1 1],
+subplot(1,2,1)
+plot(innerRx,innerRz+zt,'-k');%tyre shape
+hold on
+plot(inX,inZ+zt,'-r');%inner diameter
+plot(outX,outZ+zt,'-r');%outerm diameter
+%plot(medX,medZ+zt,'-b');%median diameter
+for i=1:length(A)
+%z0=zt-Rw*cos(Bristle_deflec(1,i));
+z0=ztcos(Bristle_deflec(1,i))*(Rw+D_amp*sin((Bristle_deflec(1,i)+roll_angle)/D_p
+eriode*2*pi));
+z1=z0-Bristle_deflec(4,i);
+%z2=z1+F(3,i)*sf;
+%x0=Rw*sin(Bristle_deflec(1,i));
+
+40
+
+x0=sin(Bristle_deflec(1,i))*(Rw+D_amp*sin((Bristle_deflec(1,i)+roll_angle)/
+D_periode*2*pi));
+x1=x0+Bristle_deflec(2,i);
+%x2=x1+F(1,i)*sf;
+%y0=0;
+%y1=y0+Bristle_deflec(3,i);
+%y2=y1+F(2,i)*sf;
+%red color for slipping brisltle and blue color for sticking
+if Bristle_deflec(5,i)<0.995 && Bristle_deflec(4,i)~=0;
+plot([x0 x1],[z0 z1],'-r');
+else
+plot([x0 x1],[z0 z1],'-b');
+end
+plot([-0.5 0.5],[bz+1 bz+1],'r','LineWidth',3)
+end
+plot([0 Rw*sin(roll_angle)],[zt zt+Rw*cos(roll_angle)],'k');
+%Rotating Line
+plot([0 Fx*sf],[0 0],'r');
+plot([0 0],[0 Fz*sf],'r');
+plot([0 0],[0 Vxc/20],'b','LineWidth',2);
+plot(X,Z)
+text(0.05,0.275,num2str(t)); %plots time.
+axis equal
+grid on
+%axis([-0.5 0.5 -0.1 0.7]);
+axis([-1 1 -0.1 2]);
+
+subplot(1,2,2)
+x_pos=sin(A(1,:))*wheel_radius;
+fx=F(1,:);
+fy=F(2,:);
+fz=F(3,:);
+%figure(2)
+plot(x_pos,fx,'g*',x_pos,fy,'b*',x_pos,fz,'r*')
+legend('F_l_o_n_g','F_l_a_t','F_v_e_r')
+xlabel('Brush position on tyre')
+ylabel('F [N]')
+axis([-0.3 0.3 -500 2000]);
+
+drawnow
+
+41
+
+%%% Damper Function
+%%% Hector Garcia
+function F=damper(vz)
+dcomp=2000;
+dexp=20000;
+if vz <= 0
+F=vz*dcomp;
+else
+F=vz*dexp;
+end
+end
+
+%Damping constant in Compression
+%Damping constant in Expansion
+
+%%% Initialization of Brushmodel with Tire Imperfections
+%%% Johannes Edrén
+function [Bristle_deflec,Tyre_Data]=init_Bm(Wheel_radius)
+f_pz0=9.82*350;%nominal tyre load;
+%parameters
+n=100;
+[Parameter]
+segment_angle=pi/3;
+dpx=0;
+dpz=500/n*0;
+[parameter]
+
+%Number or bristles of the segment
+%segment angle [Parameter]
+
+%vertical bristle damping per unit length
+
+load_sensetivity=0.15;
+angle_between_segments=segment_angle/(n);
+Rr=Wheel_radius;
+cpy=1000000/(n/4);
+length [parameter]
+cpx=1000000/(n/4);
+unit length [parameter]
+cpz=2000000/(n/4);
+length
+
+%lateral bristle stiffness per unit
+%longitudinal bristle stiffness per
+%vertical bristle stiffness per unit
+
+%% un roundness of the tyre
+D_amp = 0.005*0; %[m]
+D_periode = 2*pi; %[rad] ; =2*pi for off centre tyre, should always be
+<=2*pi!!
+Tyre_Data=[Rr,cpx,cpy,cpz,dpx,dpz,load_sensetivity,segment_angle,f_pz0,D_am
+p,D_periode];
+%% init for brush tyre model
+%phi=linspace(-segment_angle/2,segment_angle/2,n+1);
+% only check
+brushes in contact from -segment_angle/2 to +segment_angle/2 degrees
+phi=[-segment_angle/2:angle_between_segments:segment_angle/2angle_between_segments];
+
+42
+
+Bristle_deflec=zeros(5,n);
+%History of
+deflections for the bristles [angle,dx,dy,dz] This structure needs to be
+know from previous time step
+Bristle_deflec(1,:)=phi;
+%Starting values of phi of all the
+bristles.
+Bristle_deflec(5,:)=ones(1,n);
+
+%%% Road Imperfections
+%%% Johannes Edrén
+function z=road(x)
+%Road disturbance z as function of long position x
+%% Flat
+z=0;
+Amp=0.05;
+%Amplitude of disturbance
+%% sine disturbance
+% z=Amp*sin(x*10);
+%Use for a sine disturbance
+%% step disturbance at 10
+% z=0;
+% if x>5
+%
+z=Amp;
+% end
+
+end
+
+%%% Brush Model for second calculation
+%%% Hector Garcia
+%%% 2013-05-16
+
+function
+[Fx2,Fy2,Fz2,Mz2,Bristle_deflec,B,F]=brush2(Bristle_deflec,B,x,zt2,Vxc,Vyc,
+vzt2,w,yaw_rate,my,dt,roll_angle)
+%Tyre_Data=[Rr,cpx,cpy,cpz,dpz,load_sensetivity,segment_angle,f_pz0];
+Rw=B(1);cpx=B(2);cpy=B(3);cpz=B(4);dpx=B(5);dpz=B(6);load_sensetivity=B(7);
+segment_angle=B(8);
+f_pz0=B(9);D_amp=B(10);D_periode=B(11);
+n=length(Bristle_deflec);
+phi_step=w*dt;
+for i =1:n;
+xpos=Rw*sin(Bristle_deflec(1,i));
+Bristle_deflec(1,i)=Bristle_deflec(1,i)-phi_step; %update rolling of
+bristles along the segment
+%move/update rolling of the bristles in and out of the segment of
+%bristles (move the last bristle to the front and vice versa)
+if Bristle_deflec(1,i)<-segment_angle/2
+Bristle_deflec(1,i)=Bristle_deflec(1,i)+segment_angle;
+Bristle_deflec(5,i)=1;
+end
+if Bristle_deflec(1,i)>segment_angle/2
+
+43
+
+Bristle_deflec(1,i)=Bristle_deflec(1,i)-segment_angle;
+Bristle_deflec(5,i)=1;
+end
+%vertical displacement of the bristles
+%% z deflection
+%Bristle_deflec(4,i)=zt-Rw*cos(Bristle_deflec(1,i))-road(xpos+x);
+Bristle_deflec(4,i)=zt2cos(Bristle_deflec(1,i))*(Rw+D_amp*sin((Bristle_deflec(1,i)+roll_angle)/D_p
+eriode*2*pi))-road(xpos+x);
+%dzdt(i)=Rw*sin(Bristle_deflec(1,i))*w;
+dzdt(i)=Rw*sin(Bristle_deflec(1,i))*w; % OBS not corret atm. Only
+sping forces are correct
+if Bristle_deflec(4,i)>=0
+the road
+Bristle_deflec(2,i)=0;
+Bristle_deflec(3,i)=0;
+Bristle_deflec(4,i)=0;
+in_contact(i)=0;
+
+%if the brush is not in contact with
+%no
+%no
+%no
+%if
+
+deflection
+deflection
+deflection
+a brush is
+
+in
+in
+in
+in
+
+x
+y
+z
+contact r not
+
+d_x(i)=0;
+d_y(i)=0;
+else% deflection of each bristle
+%d_x(i)=w*dt*Rw*cos(Bristle_deflec(1,i))-Vxc*dt;
+incremantal displacement of each bristle
+
+%Longitudinal
+
+d_x(i)=w*dt*(Rw+D_amp*sin((Bristle_deflec(1,i)+roll_angle)/D_periode*2*pi))
+*cos(Bristle_deflec(1,i))-Vxc*dt;
+old_deflecx(i)=Bristle_deflec(2,i);
+Bristle_deflec(2,i)=old_deflecx(i)+d_x(i);
+%Lateral incremental displacement of each bristle
+d_y(i)=-Vyc*dt + (Rw+D_amp*sin((Bristle_deflec(1,i)+roll_angle)/D_periode*2*pi))*sin(Bristle
+_deflec(1,i))*yaw_rate*dt;
+old_deflecy(i)=Bristle_deflec(3,i);
+Bristle_deflec(3,i)=old_deflecy(i)+d_y(i);
+in_contact(i)=1;
+end
+%vertical force on each bristle
+fz(i)=-Bristle_deflec(4,i)*cpz+dzdt(i)*dpz*in_contact(i);
+%fz(i)=-Bristle_deflec(4,i)*cpz;
+if fz(i)<=0;
+fz(i)=0;
+end
+%total force of bristle in x and y
+fx(i)=Bristle_deflec(2,i)*cpx;
+fy(i)=Bristle_deflec(3,i)*cpy;
+total(i)=sqrt(fx(i)^2+fy(i)^2);
+%if deflection times stiffness larger than force
+fxprim(i)=fx(i);
+fyprim(i)=fy(i);
+
+Worg(i)=(fx(i)*Bristle_deflec(2,i)+fy(i)*Bristle_deflec(3,i))*in_contact(i)
+;
+if abs(total(i))>my*fz(i);
+pdf=0.05*10^(-2)*0.1; %power dissipation when slipping
+
+44
+
+Bristle_deflec(5,i)=Bristle_deflec(5,i)sqrt(d_x(i)^2+d_y(i)^2)*my*fz(i)/dt*pdf;
+fyprim(i)=fy(i)*my*fz(i)/(total(i)+eps)*Bristle_deflec(5,i);
+fxprim(i)=fx(i)*my*fz(i)/(total(i)+eps)*Bristle_deflec(5,i);
+
+%% limit the force to friction
+Bristle_deflec(2,i)=fxprim(i)/cpx;
+Bristle_deflec(3,i)=fyprim(i)/cpy;
+fx(i)=Bristle_deflec(2,i)*cpx;
+fy(i)=Bristle_deflec(3,i)*cpy;
+%else
+%
+Bristle_deflec(5,i,id)=1;
+end
+eta(i)=sqrt(fx(i)^2+fy(i)^2)/fz(i);
+end
+dfz=(sum(fz)-f_pz0)/f_pz0;
+fx=fx*(1-load_sensetivity*dfz);
+fy=fy*(1-load_sensetivity*dfz);
+
+Mz2=sum(fy.*sin(Bristle_deflec(1,:))*Rw);
+
+Fx2= sum(fx);
+Fy2= sum(fy);
+Fz2= sum(fz); %tyre vertical force from ground
+F(1,:)=fx;
+F(2,:)=fy;
+F(3,:)=fz;
+
+45
+
+

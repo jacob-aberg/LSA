@@ -22,11 +22,6 @@ while ~endsWith(filnamn, '.txt') || ~exist(filnamn, 'file')
 end, clc
 
 
-
-
-
-
-
 %filnamn = 'Matriser\farkost2.txt';
 
 ordbok_fil = strcat(strrep(filnamn,'.txt',''),'_ordbok.txt');
@@ -54,125 +49,135 @@ end
 
 
 %%%%%%%%%%%%-HITTAR OCH VISAR ÄMNEN-%%%%%%%%%%%%%%%%%%%%%%%%%%5
-[~, ~, V] = svd(A);
+[~, S, VT] = svd(A);
 
 num_topics = 3;
-num_words = 10;
+num_words = size(A,2);
 
-V = V(:,1:1:num_topics);
+%VT = VT(:,1:1:num_topics);
+%bas_3D = VT(:,1:1:3);
+
 
 TOPICS = cell(num_words,2*num_topics);
 header = cell(1,num_topics*2);
 j=1;
 
 for i = 1:num_topics
-    TOPICS(:,j:1:j+1) = topic(V',i,num_words, Ord);
+    v = VT(:,i);
+    %v = bas_3D(:,i);
+    TOPICS(:,j:1:j+1) = topic(v,num_words, Ord);
     header{1,j}   =   ['Ämne ', char(string(i)), ':']; 
     header{1,j+1} =   ['(',char(string(i)),') Ordstyrka:' ];    %char( strcat(string(i),', Ordstyrka:') ) ; 
     j = j + 2;
-end, clear j, clear V
+end, clear j,
 
 %skapar tabell figure
 fig = uifigure;
-set(fig, 'Name', "Texternas huvudsakliga ämnen");
-fig.Position = [100 100 20+200*num_topics 20+30*num_words]; % [left bottom width height]
+set(fig, 'Name', "Texternas huvudsakliga ämnen; Principal Components; kolonnvektorer i VT");
+fig.Position = [100 100 20+200*num_topics 20+30*15]; % [left bottom width height]
 for i =1:1:num_topics
     Tabell = cell2table(TOPICS(:,2*i-1:2*i),"VariableNames",{['Ämne ', char(string(i))],'Ordstyrka:'});
     uit = uitable(fig,'Data',Tabell);
-    pos = [10+200*(i-1) 20 180 30*num_words];
+    pos = [10+200*(i-1) 20 180 30*15];
     uit.Position = pos;
 end,clear fig, clear pos, clear Tabell;
 
 
-tema123 = [ TOPICS(1,1),TOPICS(1,3),TOPICS(1,5)];
+tema1 = [char(TOPICS(1,1)) ', ' char(TOPICS(2,1)) ', ' char(TOPICS(3,1)) ];
+tema2 = [char(TOPICS(1,3)) ', ' char(TOPICS(2,3)) ', ' char(TOPICS(3,3)) ];
+tema3 = [char(TOPICS(1,5)) ', ' char(TOPICS(2,5)) ', ' char(TOPICS(3,5)) ];
+
+tema123 = [ string(tema1), string(tema2), string(tema3) ];
+
+
+%%%%%%%%%%%%%%%%%%%%  Projektion på delrum
+
+%skapar basvektorer
+bas_3D = VT(:,1:1:3);
+vt1 = bas_3D(:,1);
+vt2 = bas_3D(:,2);
+vt3 = bas_3D(:,3);
+
+fig = figure(5);
+set(fig, 'Name', 'Dokumentens ord i PC-rum');
+punkter = {'o', 'x','s','d','v', '+', '*', '.', '_', '|', '^', '<', '>', 'p', 'h'};
+
+for i = 1:size(A,1)
+    dokvek = A(i,:)';
+    x = dot(vt1, dokvek)*vt1;
+    y = dot(vt2, dokvek)*vt2;
+    z = dot(vt3, dokvek)*vt3;
+    scatter3(x,y,z,'filled','DisplayName',Doks{i})
+hold on
+end
+legend('Location','NorthEastOutside')
+title('Projektion av A:s radvektorer på ett 3D-delrum av col(VT) ')
+xlabel( 'Ämne 1: '), ylabel( 'Ämne 2: ' ), zlabel('Ämne 3: ')
+
+tabell = cell2table( [ TOPICS(1:6,1) TOPICS(1:6,3) TOPICS(1:6,5)], "VariableNames",[{'Ämne 1;'},{'Ämne 2;'},{'Ämne 3;'}]);
+tabell_cell = table2cell(tabell);
+p = uipanel(fig, 'Position', [0.7 0.1 0.5 0.2], 'Parent', fig); %[left bottom width height]
+table_handle = uitable(p, 'Data', tabell_cell, 'ColumnName', tabell.Properties.VariableNames, 'Position', [10 0 400 120]);
+
+
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%% PRINCIPIAL COMPONENT ANALYSIS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% STEG 1 (Skapa ny matris B=A-Aavg)
-
-Aavg = mean(A, 2);
-
-cLen = size(A, 2);
-B = A - Aavg * ones(1, cLen); % Subtraherar varje kolonnvektor i A (ordvektor) med alla radvektorer i A:s medelvärden.
-
-
-% STEG 2 (Hitta SVD av B)
-
-[U, S, V] = svd(B, 'econ');
-
-
 % STEG 3 (Skapa plot)
 
-x = V(:, 1)' * B';
-y = V(:, 2)' * B';
-z = V(:, 3)' * B';
+% if vt1(maxabs(vt1)) < 0, vt1 = -1*v;     end
+% if vt2(maxabs(vt2)) < 0, vt2 = -1*v;     end
+% if vt3(maxabs(vt3)) < 0, vt3 = -1*v;     end
 
+x = abs( vt1' * A(:,:)' );
+y = abs( vt2' * A(:,:)' );
+z = abs( vt3' * A(:,:)' );
 
-figure(1)
-subplot(1, 2, 1)
-plotta_med_legend(abs(x),abs(y),Doks,3)
-
-grid on, xlabel( ['Ämne 1: ', tema123(1)] ), ylabel( ['Ämne 2: ', tema123(2)] ), title('PCA 2D')
-axis equal
-
-
-
-subplot(1, 2, 2)
-
-semilogy(diag(S), 'k-o', 'LineWidth', 2.5) % Visar hur viktiga singulärvärdena är
-
-axis tight, xlabel('Singulärvärdets "ranking"'), ylabel('Singulärvärde'), title('Singulärvärdesrelevans')
-
-set(gcf, 'Name', 'PCA');
-
-figure(2)
-
-plotta_med_legend(abs(x),abs(y),Doks,3,abs(z))
-
-grid on, xlabel( ['Ämne 1: ', tema123(1)] )
-         ylabel( ['Ämne 2: ', tema123(2)] )
-         zlabel( ['Ämne 3: ', tema123(3)] )
-
+fig2 = figure(2);
+plotta_med_legend(x,y,Doks,3,z)
+grid on, xlabel( 'Ämne 1: ' ),   ylabel( 'Ämne 2: ' ), zlabel( 'Ämne 3: ' )
 title('PCA 3D')
+set(gcf, 'Name', 'Dokumenten i PC-rum');
+legend
 
-set(gcf, 'Name', 'PCA');
-
-
-
-[U, S, V] = svd(A);
-V2 = V(:, 1:2);
-Y = A * V2;
+p = uipanel(fig2, 'Position', [0.7 0.1 0.5 0.2], 'Parent', fig2); %[left bottom width height]
+table_handle = uitable(p, 'Data', tabell_cell, 'ColumnName', tabell.Properties.VariableNames, 'Position', [10 0 400 120]);
 
 
-% Find the indices of the non-zero entries in A
-[i, j, ~] = find(A);
 
-num_docs = length(unique(Doks));
-doc_colors = rand(num_docs,3);
+%figure(1)
+%subplot(1, 2, 1)
+%plotta_med_legend(x,y,Doks,3)
+%grid on, xlabel( ['Ämne 1: ', tema123(1)] ), ylabel( ['Ämne 2: ', tema123(2)] ), title('PCA 2D')
+%axis equal
 
-% Extract the vocabulary words that are present in A
-Ord_present = Ord(unique(j));
+%subplot(1, 2, 2)
+% semilogy(diag(S), 'k-o', 'LineWidth', 2.5) % Visar hur viktiga singulärvärdena är
+% axis tight, xlabel('Singulärvärdets "ranking"'), ylabel('Singulärvärde'), title('Singulärvärdesrelevans')
+% set(gcf, 'Name', 'Singulärvärden');
 
-scatter(Y(:,1), Y(:,2), [], colors);
 
-% Find the indices of the points corresponding to each document
-idxs = accumarray(doc_ids, 1:numel(doc_ids), [], @(x){x});
 
-% Create a separate text label for each document
-for i = 1:length(idxs)
-    text(Y(idxs{i},1), Y(idxs{i},2), Ord_present, 'HorizontalAlignment', 'center');
-end
+
+
+
+
 
 
 
 
 %---------FUNKTIONER-----------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function T = topic(VT,kolumn,num_words,ord) 
+function T = topic(VT1,num_words,ord) 
 
 % Lägger till rad-(*ord*-)index före vektorns element
-Tn = [ [1:1:length( VT(kolumn,:) )]' , VT(kolumn,:)'];
+Tn = [ [1:1:length( VT1 )]' , VT1];
 
 % sorterar efter absolutbelopp
 [~, idx] = sort(abs(Tn(:,2)));  % hämtar indexvektor för vektorn i storleksordning (minst-->störst)
@@ -183,6 +188,13 @@ Tn = Tn(1:num_words,:);         % hämtar de *antal* största elementen i vektor
 T = [ ord( Tn(:,1)) , num2cell( Tn(:,2) )] ; % hämtar motsvarande ord från ordvektorn och skapar cell-array; ord,värde
 
 end
+
+
+function idx = maxabs(v)
+%returnerar index för det element med största absolutvärdet i en vektor
+[~, idx] = max(abs(v(:)));
+end
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -234,25 +246,29 @@ end
 function  NaN = plotta_med_legend(x,y,namn,linewidth,z)
 
 punkter = {'o', 'x','s','d','v', '+', '*', '.', '_', '|', '^', '<', '>', 'p', 'h'};
-
+colors = [0, 0.4470, 0.7410;0.8500, 0.3250, 0.0980;0.9290, 0.6940, 0.1250;0.4940, 0.1840, 0.5560;0.4660, 0.6740, 0.1880;0.3010, 0.7450, 0.9330;0.6350, 0.0780, 0.1840];
+j = 1;
 %----om 2D--------------------------------------------
 if nargin == 4 % om 4 argument angavs (inget z)
     for i=1:length(x)
         if i < 105, punkt = punkter{ceil(i/7)}; end
-        plot(x(i), y(i),punkt,'LineWidth', linewidth,'DisplayName',namn{i})
+        if j > 7, j = 1; end,  color = colors(j,1:3); 
+        plot(x(i), y(i),punkt,'MarkerEdge',color,'LineWidth', linewidth,'DisplayName',namn{i})
         hold on
     end
-    legend
+    %legend
     hold off
 
 %---om 3D--------------------------------------------
 elseif nargin == 5 % om ett z-argument angavs
     for i=1:length(x)
         if i < 105, punkt = punkter{ceil(i/7)}; end
-        plot3(x(i), y(i), z(i), punkt, 'LineWidth', linewidth,'DisplayName',namn{i})
+        if j > 7, j = 1; end,  color = colors(j,1:3);
+        plot3(x(i), y(i), z(i), punkt, 'MarkerEdge',color,'LineWidth', linewidth,'DisplayName',namn{i})
         hold on
+        j = j + 1;
     end
-    legend
+    %legend
     hold off
 end
 

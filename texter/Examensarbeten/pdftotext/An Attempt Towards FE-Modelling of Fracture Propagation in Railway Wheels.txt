@@ -1,0 +1,1658 @@
+DEGREE PROJECT IN VEHICLE ENGINEERING,
+SECOND CYCLE, 30 CREDITS
+STOCKHOLM, SWEDEN 2018
+
+An Attempt Towards FE-Modelling
+of Fracture Propagation in Railway
+Wheels
+FRED ÖHNANDER
+
+KTH ROYAL INSTITUTE OF TECHNOLOGY
+SCHOOL OF ENGINEERING SCIENCES
+
+Preface
+This thesis is part of my Degree of Master of Science in Engineering in the field Vehicle
+Engineering and is performed at the Division of Railway Technology, Department of
+Aeronautical and Vehicle Engineering at the Royal Institute of Technology (KTH) in
+Stockholm. The thesis is part of the FR8RAIL project arranged by the European rail initiative
+Shift2Rail. The thesis has been carried out in cooperation with CAF MiiRA which is
+dedicated to the design and manufacture of rail vehicle components.
+Firstly, I would like to thank my supervisors Carlos Casanueva and Saeed Hossein-Nia for
+their guidance in the work. Especially I would like to thank Saeed for your enthusiasm for the
+project and for pushing me forward in the right direction. I also appreciate the literature
+suggestions given by both Carlos and Saeed.
+As a novice in Abaqus I have needed substantial help from people with experience with it.
+Here, I would like to thank Farshad Shafieian, CAE Engineer at Scania Group, Anton
+Shipsha, PhD student at KTH, and Per-Anders Jönsson, CEO for Tikab Strukturmekanik AB,
+for all their help with answering my questions regarding Abaqus. I would also like to thank
+Anton for your help in both explaining, as well as finding valuable information, about the
+fundamentals of fracture mechanics.
+I would also like to thank my master thesis colleagues for their feedback from the master
+thesis presentations as well as the rest of the people in the department for their company and
+discussions of both engineering subjects as well as various other discussions.
+Finally, I would like to thank the love of my life, Sara, for all the encouragement and
+positivity you bring when I am down. You are my best friend and you make me smile and
+laugh almost every single day.
+Fred Öhnander
+ohnander@kth.se
+Stockholm, June 2018
+
+Abstract
+The demand for higher velocities and heavier axle loads for freight trains leads to higher
+forces on the railway wheels which in turn lead to an increase in stresses on and below the
+surface of the wheel-rail contact. By time, this induces wear on the wheels which
+consequently lead to higher maintenance costs and in some cases accidents. The ability to
+predict the evolution of wheel profiles due to uniform wear has been demonstrated with a
+rather accurate precision in most operational conditions. These wear models are based on
+wear coefficients and since they are not usually valid for real operational conditions, the
+models are generally calibrated against real-life scenarios in order to adjust the coefficients
+from test conditions to real-life lubrication conditions. This engineering approach can be
+useful in prediction of wear in systems where the materials and contact conditions do not
+vary. However, when addressing material development focused on reducing specific damage
+modes, the approach is of limited use because the obtained wear coefficients are not directly
+related to material properties. Therefore, attempts towards developing physical fracture
+propagation models that relates to the contact conditions and material properties have been
+made. The purpose has been to retrieve vital information about where a fracture initiates and
+how it propagates. In the long run, it is of great interest to be able to attain information about
+how a material particle is removed from the contact surface. Studies for this type of model
+was done in the 70’s and 80’s mainly with pin-disk experiments but has not been utilized in
+the specific field of wheel-rail contact. The thesis is part of the FR8RAIL project arranged by
+the European rail initiative Shift2Rail. Literature studies have been the basis for the thesis in
+order to gain vital insights into fracture mechanics and other related fields. The physical
+fracture propagation models have been constructed in the FE software Abaqus with the
+implementation of the XFEM. For the 2D model, the fracture initiates at the top of the
+implanted inclusion when the friction coefficient is
+and propagates upwards a few
+elements. For
+, the fracture initiates at the right surface boundary where the pressure
+distribution and traction is applied. The fracture propagation angle increases relative to the
+surface as the friction coefficient value is increased. The fracture for the 3D model extends
+broader compared to the 2D model at the top of the inclusion in the case of
+. The
+fracture initiates at the same surface location as for the 2D model for
+. The fracture
+propagation is however non-existent due to convergence problems. The FE-models
+constructed are initial steps towards analysing the fracture propagation and closely related
+phenomena for a railway freight wheel in detail. At the end of the thesis, the simplified
+models give mainly information about the fracture initiation, propagation and its patterns.
+From this first phase, further adjustments and improvements can take place in order to
+eliminate the margins of error. In the long run, fully integrated models with further
+implementations such as detailed microstructure for the contact conditions, plastic behaviour
+for the material, and complete three-dimensional models can finally be employed.
+Keywords: railway wheel, wheel-rail contact, wear, fracture initiation, physical fracture
+propagation model, FE-model, fracture mechanics, XFEM, inclusion.
+
+ii
+
+Sammanfattning
+Efterfrågan på högre hastigheter och tyngre axelbelastningar för godståg leder till högre
+krafter på järnvägshjulen som i sin tur leder till ökade spänningar på och under ytan vid hjulräl-kontakten. Med tiden induceras slitage på hjulen som följaktligen leder till höga
+underhållskostnader och i vissa fall olyckor. Förmågan att förutse utvecklingen av hjulprofiler
+på grund av enhetligt slitage har visats kunna ske med en noggrann precision under de flesta
+driftsförhållanden. Dessa slitagemodeller bygger på slitagekoefficienter, och eftersom de
+vanligtvis inte är giltiga under realistiska driftsförhållanden är modellerna i allmänhet
+kalibrerade mot verkliga händelseförlopp för att justera koefficienterna från testförhållandena
+till realistiska smörjförhållanden. Detta tekniska tillvägagångssätt kan vara användbart vid
+prognos av slitage i system där material och kontaktförhållanden inte varierar. När man
+addresserar materialutveckling inriktad på att reducera specifika skadelägen är emellertid
+tillvägagångssättet av begränsad användning eftersom de erhållna slitagekoefficienterna inte
+är direkt relaterade till materialegenskaper. Därför har försök gjorts till att utveckla fysikaliska
+sprickbildningsmodeller som relateras till kontaktförhållanden och materialegenskaper. Syftet
+har varit att erhålla viktig information om var en spricka initieras och hur den fortskrider. I det
+långa loppet är det även av stor vikt att kunna erhålla information om hur en materialpartikel
+avlägsnas från kontaktytan. Studier för denna typ av modeller har gjorts på 70- och 80-talet i
+huvudsak med stift- och skivexperiment men har inte använts inom det specifika området för
+hjul-räl-kontakt. Avhandligen ingår i FR8RAIL-projektet som arrangeras av det europeiska
+järnvägsinitiativet Shift2Rail. Literaturstudier har varit grunden för avhandlingen för att få
+väsentlig insikt i frakturmekanik och andra relaterade områden. De fysiska
+sprickbildningsmodellerna har konstrueras i FE-mjukvaran Abaqus med XFEM som
+implementering. För 2D-modellen initieras sprickan överst vid den implanterade
+imperfektionen när friktionskoefficienten är
+och propagerar uppåt några få element.
+För
+initieras sprickan på högra ytgränsen där tryckfördelning och friktionskraft
+appliceras. Utbredningsvinkeln för sprickan ökar relativt till ytan då friktionskoefficienten
+ökar. Sprickan för 3D-modellen breder ut sig mer jämfört med 2D-modellen överst vid
+imperfektionen då
+. Sprickan initieras på samma ytplats som för 2D-modellen vid
+. Sprickbildningen är dock obefintlig på grund av konvergensproblem. De
+konstruerade FE-modellerna är initiala steg mot att analysera sprickutbredningen och
+närbesläktade fenomen för ett godstågs järnvägshjul i detalj. I slutet av avhandlingen ger de
+förenklade modellerna huvudsakligen information om sprickinitiering, utbredning och dess
+mönster. Ytterligare justeringar och förbättringar kan ske efter denna första fas i syfte att
+eliminera felmarginalerna. På lång sikt kan slutligen helt integrerande modeller med
+ytterligare implementeringar såsom detaljerad mikrostruktur för kontaktförhållandena,
+oelastiskt materialbeteende och kompletta tredimensionella modeller användas.
+Nyckelord:
+järnvägshjul,
+hjul-räl-kontakt,
+slitage,
+sprickinitiering,
+sprickbildningsmodell, FE-modell, frakturmekanik, XFEM, imperfektion.
+
+iii
+
+fysisk
+
+Table of Contents
+PREFACE ..................................................................................................................................I
+ABSTRACT ............................................................................................................................. II
+SAMMANFATTNING ......................................................................................................... III
+1
+
+INTRODUCTION............................................................................................................. 1
+
+2
+
+WEAR ................................................................................................................................ 3
+
+2.1
+
+Introduction ..................................................................................................................... 3
+
+2.2
+
+Adhesive Wear Mechanisms ........................................................................................... 4
+
+2.3
+
+Wear-Regime Map for Metals......................................................................................... 5
+
+2.4
+
+Delamination Wear ......................................................................................................... 7
+
+3
+3.1
+4
+
+CONTACT MECHANICS ............................................................................................... 9
+Hertzian Line Contact in Full-Slip .................................................................................. 9
+FRACTURE MECHANICS .......................................................................................... 13
+
+4.1
+
+Crack Initiation .............................................................................................................. 13
+
+4.2
+
+The Stress Intensity Approach ...................................................................................... 14
+
+4.3
+
+Effect of Specimen Geometry ....................................................................................... 17
+
+4.4
+
+Linear Elastic Fracture Mechanics (LEFM) .................................................................. 20
+
+4.5
+
+Elasto-Plastic Fracture Mechanics (EPFM) .................................................................. 20
+
+4.6
+
+Extended Finite Element Method (XFEM) ................................................................... 21
+
+5
+
+FE-MODELLING ........................................................................................................... 24
+
+5.1
+
+2D Model....................................................................................................................... 25
+
+5.2
+
+3D Model....................................................................................................................... 27
+
+6
+
+RESULTS AND DISCUSSIONS ................................................................................... 29
+iv
+
+6.1
+
+2D Model....................................................................................................................... 29
+
+6.2
+
+3D Model....................................................................................................................... 34
+
+6.3
+
+General .......................................................................................................................... 35
+
+7
+
+CONCLUSIONS ............................................................................................................. 37
+
+8
+
+FUTURE WORK AND RESEARCH ........................................................................... 38
+
+REFERENCES ....................................................................................................................... 40
+
+v
+
+1 Introduction
+The demand for higher velocities and heavier axle loads for freight trains leads to higher
+forces on the railway wheels. The increase of forces leads in turn to an increase in stresses on
+the surface and below the surface of the wheel-rail contact. By time, this induces wear on the
+wheels which consequently lead to higher maintenance costs and in some cases accidents.
+Thus, for the safety aspect as well as for the future prospect of freight trains and its
+competitiveness, there is a desire to reduce the maintenance required.
+Nowadays, models that predict the wheel profile evolution have been demonstrated the ability
+to predict with a rather accurate precision the evolution of wheel and rail profiles due to
+uniform wear in most operational conditions. These wear models are based on wear
+coefficients, where removal of material in the wheel-rail contact is related to a coefficient
+which depends on a set of contact conditions. In order to obtain the wear coefficients
+experimentally, various laboratory tests have been carried out. Yet, analyses of these
+coefficients demonstrate their invalidity for real operational conditions. Thus, the models are
+generally calibrated against real-life scenarios in order to adjust the coefficients from test
+conditions to real-life lubrication conditions. This engineering approach can be useful in
+prediction of wear in systems where the materials and contact conditions do not vary.
+However, when addressing material development in the focus on reducing specific damage
+modes, the approach is of limited use. This is because the obtained wear coefficients are not
+directly related to material properties.
+In the pursuance of solving this kind of problem, it is of great necessity to develop physical
+fracture propagation models that relates to the contact conditions and material properties. The
+aim is to utilize the models for the sake of retrieving vital information about where a fracture
+initiates and how it propagates. Specifically, different propagation patterns alongside with
+typical positions on the railway wheel where cracks usually initiate is of great importance. In
+the long run, it is of great interest to be able to attain information about how a material
+particle is removed from the contact surface. Additionally, valuable results such as wear in
+form of loss of material volume or dissipation of energy per distance travelled are of great
+significance alongside with knowledge about how the pressure distribution and friction force
+in the contact surface relates to certain phenomena. Studies for this type of model was done in
+the 70’s and 80’s mainly with pin-disk experiments but has not been utilized in the specific
+field of wheel-rail contact.
+The thesis is part of the FR8RAIL project arranged by the European rail initiative Shift2Rail.
+Shift2Rail aims at accelerating the integration of new and advanced technologies into
+innovative rail product solutions. The initiatives’ ambitions in the long run is to double the
+capacity of the European rail system, increase its reliability and service quality by 50% while
+at the same time reducing the life-cycle costs by also 50% [1]. The FR8RAIL project is about
+the development of functional requirements for sustainable and attractive European rail
+freight. The project aims at developing track friendly and low maintenance freight waggons.
+The development of new types of running gear concepts that will reduce wheel-rail contact
+1
+
+forces is one strategy to achieve this. The specific goals of the FR8RAIL project are to reduce
+the cost of freight transport measured by tonnes per km by 10%, reduce the time variations
+during dwelling by 20%, and increase attractiveness of logistic chains by making available
+100% of the rail freight transport information to logistic chain information systems [2].
+It is of great necessity and importance to streamline the fracture propagation model in order
+for it to work properly and for it to be flexible to different input data. There is also of great
+significance to make simplifications in order to be able to achieve the desired result in the
+given time frame. A relatively large block which encompasses the contact patch will be used
+in order to reduce the influence of reaction forces from the boundaries. The rails will be seen
+as being idealized with smooth surface roughness which will imply that no asperities are
+related to the material surface of the rails. This simplification makes the application process of
+the pressure distribution and friction force to the wheel contact surface under study much
+more straightforward. The distribution and traction are based on Hertzian theory where only
+full-slip condition for the sliding is assumed. Only the tread of the wheel will be taking into
+account, disregarding flange contact. The location of the wheel-rail contact stresses is the
+same for every load cycle. The plastic behaviour of the material is neglected and therefore the
+behaviour of the material is only elastic.
+Literature studies will start off the project in order to gain vital insights of for instance the
+fundamentals of wear, fracture mechanics and software techniques and strategies. The
+physical fracture propagation models will be constructed in the finite element and computeraided engineering software called Abaqus. For the fracture analyses, the extended finite
+element method (XFEM) which is implemented into Abaqus, is utilized.
+The project can be divided into two larger sections; theory and simulation. The theory will
+start off with a chapter of wear which will include adhesive wear mechanisms, wear-regime
+map for metals and delamination wear. This is followed up with a chapter about contact
+mechanics which go into detail about the Hertzian line contact in full-slip. Thereafter, an
+extensive chapter about the fundamentals of fracture mechanics will be presented. In this
+chapter, the reason for cracks to initiate will be discussed alongside with the energy-balance
+approach, the stress intensity approach, the effect of specimen geometry as well as methods to
+analyse fracture growth together with the XFEM. The pre-processing of the simulations will
+then be described in the chapter FE-modelling. Here, the processes of constructing the
+physical fracture propagation models of a simplified railway wheel in ABAQUS will be
+explained. The results of the simulations are presented and interpreted in the upcoming results
+and discussions chapter. From the discussions, some conclusions have been made and are
+explained in the chapter conclusions. Finally, what should be done in order to further improve
+the fracture propagation models created is discussed in the future work and research chapter.
+
+2
+
+2 Wear
+The goal of this thesis is to create fracture propagation models that can relate to contact
+conditions and material properties. In the future however, in order to gain vital insights about
+the removal of the material, the models need to account for wear related phenomena.
+Furthermore, adhesive wear is of great importance when considering the detailed
+microstructure of the wheel surface. The wear-regime map is useful for depicting the various
+regimes in which different modes of wear dominate. Therefore, the fundamentals of wear are
+presented in this chapter followed by adhesive wear mechanisms and wear-regime map for
+metals. Finally, due to its relation to adhesive wear and its great influence on wheel and rail
+wear, delamination wear will conclude this chapter.
+
+2.1 Introduction
+Railway vehicles use friction to transfer forces in the wheel-rail contact surface. Pressure and
+friction forces are making it possible for the wheel-sets to follow a certain track and be able to
+accelerate and brake. There is however creep forces that are arising from sliding motions
+between the wheel and the rail as the wheels are running along the track. The main two
+phenomena that causes changes in the geometrical shape of the wheel is material removal and
+material subjected to plastic deformation. Flange wear is caused mainly by curve negotiation
+alongside with stiff wheel-sets that contribute to higher yaw angles relative to the track. The
+tread wear however is caused by the normal forces from the wheel-rail contact combined with
+creepages and creep forces but also traction and braking forces [3].
+Wear can from a tribology point of view be defined as the damage to a solid surface involving
+continuous loss of material and repositioning of material in the case of two surfaces
+interacting through a relative motion. There are many different influences to material wear
+and it lies not only in the sole properties of the material but also in the geometry of the bodies
+in contact, surface roughness, loading, lubrication and environment. There are usually
+complicated mechanisms that causes these wear damages and many times they are
+indistinguishable from one another. However, the main mechanisms that are wheel-rail related
+are [4]:
+There are mainly four different mechanical wear types:
+ Abrasive wear – Is the cutting on the surface by hard particles or hard asperities
+against each other.
+ Adhesive wear – Is the removal of material due to adhesion between the wheel and rail
+surfaces.
+ Corrosive wear – Corrosive wear occurs when there is abrasive and adhesive wear in a
+corrosive environment.
+ Rolling contact fatigue (RCF) – Occurs when continuous and repeated application of a
+load (cyclic loading) on a material eventually degrades it and finally leads to fatigue.
+To be more specific, the cyclic loading can induce surface or subsurface cracks [3] [4].
+
+3
+
+The rolling contact fatigue of the wheels is often categorized based on the distance of where
+the cracks are initiated compared to the surface of the wheel. These are:
+ Surface initiated fatigue
+ Sub-surface initiated fatigue (3-10 mm from the surface)
+ Deep-surface initiated fatigue (10-25 mm from the surface)
+The sub-surface and deep-surface cracks are quite rare, yet these two are the most dangerous
+ones when compared to the surface cracks and might cause derailments. Where there exist a
+low fatigue resistance of the material such as microscopic manganese sulphide inclusions
+(sub-surface) and voids (deep-surface), there are great risks for both of the phenomena to
+occur. Surface initiated cracks are conversely often harmless and easy to cope with and
+oftentimes dealt with through reprofiling of the wheel profiles or even by regular natural
+wear. However, reprofiling is costly, especially when it interrupts the operation of the trains.
+It may also escalate the track degradation that is caused by high impact forces [4].
+
+2.2 Adhesive Wear Mechanisms
+This section is mainly based on Wear Analysis for Engineers by Raymond G. Bayer [5].
+The rudimentary concept for adhesive mechanisms is that the contact between the surfaces
+occurs at discrete points within the apparent area of contact. These points, that are called
+junctions, are bonding between the surface asperities. If the two surfaces move in relation to
+each other, the junctions get broken and new ones are formed. Where the bond is strong
+enough the fracture will occur within the weaker asperity. Otherwise the separation will take
+place at the interface between the asperities. The transferred material may as a result of stored
+elastic energy detach itself once the separation has occurred. Or it might even become
+detached as a result of subsequent contact which forms loose particle-like wear debris.
+Usually, large quantities of plastic deformation are associated with these mechanisms.
+Regarding these types of mechanisms, the primary wear scar feature that is indicative is the
+presence of transferred material. This transferred material is usually in the form of attached
+and highly deformed chunks. The wear debris is the secondary feature form. It should be
+highly deformed and particle-like, rather than platelets or flakes, for adhesive mechanisms.
+However, in all cases of adhesive wear, these features may not be observed since the material
+that is transferred can be detached from surfaces and the shape of wear debris can be altered
+after it is formed. The specific form of Archard’s wear equation that is commonly used for
+adhesive wear is the following:
+(2.1)
+Where V is the volume of wear, P is the load, S is the distance of sliding, and p is the
+penetration hardness of the softer material. The probability of transfer at junction is defined as
+K.
+
+4
+
+The tendency for which adhesive wear to occur can be associated with the properties of the
+two materials in contact and the state of their surfaces. Generally, it can be noted that
+properties or conditions that ensures that the formation of strong bonds are enhanced between
+the two surfaces will increase the probability of adhesive wear. Correspondingly, certain
+conditions that tend to inhibit the bonding between surfaces decrease the probability of
+adhesive wear. Factors that tend to increase the probability of adhesive wear are high surface
+energy, similar crystal structure, chemical affinity and mutual solubility. Surface
+contamination, oxides and lubricants often tend to reduce the probability of adhesive wear.
+The contact pressure has also an impact on the tendency for adhesive wear and the value of K
+apart from the material factors mentioned earlier. A reduced contact pressure has a tendency
+to also reduce K. For transfer to occur a minimum contact pressure is needed. Adhesive
+mechanisms may or may not be significant in different tribosystems, it all depends on the
+influence of different factors such as material properties, surface conditions and contact stress.
+Bonding is the distinguishing feature of adhesive wear mechanisms. It is however not the
+necessarily the only phenomenon that can be involved. For adhesive wear the probability of
+transfer is mainly affected by the relative strength of the bond to the strength of the asperity or
+surface. The transfer does not occur if the bond is weaker. Therefore, possible factors in
+adhesive wear behaviour are processes that affect the strength of either the bond or the
+asperity. In different tribosystems, some different examples of phenomena that may affect the
+significance of adhesive wear are oxide formation, work hardening, crack formation and
+thermal softening. The stronger the bond is, the more force it takes to separate the junction.
+Severe adhesive wear is possible for conditions like unlubricated sliding between self-mated
+metals and unlubricated sliding between different metals. Generally the tendency for adhesive
+wear is considered to be the highest among these conditions. For metal-non-metal pairs, nonmetal pairs and lubricated pairs the tendency is substantially reduced. Any adhesive wear
+mechanism is likely to fall under the mild category for these combinations. The common
+engineering tool for reducing adhesive wear between materials is lubrication.
+
+2.3 Wear-Regime Map for Metals
+The foundation of this subchapter has been retrieved from Tribology – Friction and Wear of
+Engineering Materials by I. M. Hutchings [6].
+The wear-regime map is a useful means of depicting the various regimes in which different
+modes of wear dominate. For steels sliding in air in the common pin-on-disc geometry, see
+Figure 1. Unlubricated sliding of most metals in air will fall under the general form even
+though the details of the map are specific for steels. The wear map is plotted with
+dimensionless variables. These variables are the normalized contact pressure (the normal load
+on the specimen pin divided by the nominal contact area times the indentation hardness of the
+softer material), and a normalized velocity (which is the sliding velocity divided by the
+velocity of heat flow).
+
+5
+
+Figure 1: The wear-regime map for metals [6].
+
+There are eight distinct regimes that can be identified in the wear-regime map. Regime I is
+associated with very high contact pressure where gross seizure of the surfaces occurs. This
+regime corresponds to the catastrophic growth of asperity junctions. The consequence is that
+the real area of contact becomes equal to the apparent area.
+For regime II where relative low sliding velocities and high loads are occurring, the thin
+surface oxide film on the steel is penetrated at asperity contacts. This is a regime of severe
+wear which includes high surface tractions and the formation of metallic wear debris. Since
+the sliding velocity is low, the thermal effects are negligible.
+In regime III the oxide is not being penetrated since there are lower loads compared to the II
+regime. Since the wear is mild there is formation of only oxide debris.
+For regime IV high loads and sliding speeds are occurring. Since frictional power dissipation
+is high and thermal conduction is ineffective at removing heat from the interface, melting
+occurs. This regime incorporates high wear rate which lead to metal being removed as
+metallic droplets.
+Regime V has low contact pressure but high sliding speed where the interface temperature is
+still high. The temperature is however below melting point which means that surface
+oxidation occurs rapidly. For this regime, the debris is oxide which consequently means that
+the wear is mild.
+In regime VI local oxide growth is caused due to occurring hot-spots at asperity contacts.
+From this oxide layer the wear debris is spalling.
+6
+
+Metallic contact occurs at asperities for regime VII, which leads to severe wear through the
+formation of metallic debris.
+For regime VIII, formation of martensite arises at the interface through local heating of
+asperities. This is followed by quenching through heat conduction into the bulk. Since
+martensite has a high strength it provides local mechanical support of the oxide film, which
+aids to reduce the amount of wear. Subsequently, the formation of oxide debris is the reason
+for wear to occur.
+
+2.4 Delamination Wear
+The delamination wear, or delaminative wear, is a wear type related to the adhesive wear
+mechanism that has large influence on the wheel and rail wear. This is the type of wear which
+has been specifically focused on when attempts for the simulation has been done. This
+subchapter is mainly based on An overview of the delamination theory of wear by Nam P. Suh
+[7].
+There are five processes that are involved in delamination wear: transmission of forces,
+deformation, crack nucleation, crack propagation, and wear sheet separation. These sequential
+events which lead to wear particle formation for the delamination theory of wear are
+thoroughly described below. However, the events may be more independent if there are preexisting subsurface cracks.
+1. Via adhesive and plowing actions, the pressure and friction forces are transmitted
+through the contact points when two sliding surfaces come into contact. Softer surface
+asperities are easily deformed and some are even fractured by the repeated loading
+action. Either when these asperities are deformed or when they are removed, a
+relatively smooth surface is generated. The contact is not just an asperity-to-asperity
+contact once the surface becomes smooth. Now, the contact is rather an asperity-plane
+contact where each point along the softer surface experiences cyclic loading as the
+asperities of the harder surface plow it.
+2. Plastic shear deformation is induced due to that the surface traction is utilized by the
+harder asperities on the softer surface. This plastic deformation accumulates with
+repeated loading.
+3. As a result of the continuous subsurface deformation, cracks are nucleated below the
+surface. Because of a triaxial state of highly compressive stress that exists right below
+the contact regions, nucleation of cracks exceedingly close to the surface is not
+favoured.
+4. Additional loading and deformation causes cracks to extend and propagate once they
+are present. This can lead to a network of cracks when the cracks are joining
+neighbouring ones. The cracks tend to propagate parallel to the surface at a depth that
+is governed by material properties and the coefficient of friction. The nucleation of the
+crack is the rate controlling mechanism in the case when cracks cannot propagate as a
+consequence of either limited deformation or a tangential traction at the asperity
+contact which is extremely small.
+7
+
+5. At certain weak positions, the cracks finally shear to the surface and create long and
+thin delaminating wear sheets. The location of the subsurface crack growth controls
+the thickness of a wear sheet. Though, the subsurface crack growth is in turn governed
+by the pressure and friction forces at the surface.
+To some extent the surfaces created by the delamination wear process, but mainly all
+machined surfaces, have asperities. In the occurrence of harder surfaces sliding over softer
+surfaces, the softer asperities either deform or fracture immediately. By the sliding process
+and the mechanism of removal, the rate at which these asperities are removed depend on the
+initial surface roughness, the applied load and the mechanical properties of the asperities.
+Generation of wear particles occur when a subsurface crack breaks through to the surface. The
+crack reaches the surface after the asperity moves over the crack since the propagating end of
+the crack always is located behind the moving asperity. Here, the propagating end of the crack
+is usually the crack tip where the stress is maximal. As a result of this, the particle is elevated
+from the surface so that the underside of the wear particle is facing the direction opposite to
+the slider motion, see Figure 2. Compared to similar flat particles that are formed by the
+deformed asperities, this direction is opposite to that. Thus, this enables a distinction between
+particles formed by deformed asperities and from those formed by subsurface crack
+propagation.
+
+Figure 2: Wear sheet formation in an iron solid solution. The sheet is lifting up opposite to the sliding direction
+which in this figure is from right to left [7].
+
+In the next chapter, the fundamentals of contact mechanics will be presented including Hertz
+theory along with the Hertzian line contact with rolling or sliding in full-slip.
+8
+
+3 Contact Mechanics
+The area of contact mechanics is important to consider for both a wear phenomenon aspect as
+well as for a fracture mechanics point of view. Of especially great interest for a fracture
+mechanics aspect is the resulting shear stresses on and below the surface. Hence, this chapter
+contain an introduction to Hertz theory and its assumptions together with a subchapter about
+Hertzian line contact with rolling or sliding in full-slip. This contact mechanics chapter is
+mainly based on the information given by Hossein-Nia, On Heavy-Haul Wheel Damages
+using Vehicle Dynamics Simulation [4].
+The researcher at the University of Berlin, Heinrich Hertz, published a paper called On the
+contact of elastic solids in 1882. This can be seen as the start of the knowledge of contact
+mechanics as the theory in Hertz’s paper provides a closed-form solution to the normal
+contact problem. The assumptions that are the basis for the Hertz theory are:
+ Displacements and strains are small.
+ The bodies in contact are homogeneous, isotropic and linearly elastic.
+ Smooth surfaces where the surface roughness is neglected (frictionless contact)
+ The dimensions of the contact patch are significantly smaller than the dimensions of
+the bodies in contact. The dimensions of the patch are furthermore also smaller than
+the relative radii of the bodies in contact. Due to an assumption where the contact
+partners are semi-infinite bodies limited by a straight plane, the stresses can from this
+be approximately calculated. This is the so called half-space assumption.
+ The curvature of the bodies in contact is constant.
+ The materials of the bodies are quasi-identical.
+The Hertz theory can often be used in many railway applications since the assumptions of the
+theory are here generally valid. Some of the assumptions could however be violated in a few
+cases. For instance, in case of high loads that are above the elastic shakedown and where
+some plastic flow could appear, linear elasticity is not valid. The size and shape of the patch is
+affected by this. Furthermore, where wheel and rail have a conformal contact, the half-space
+assumption is uncertain. This can occur due to wheel profile wear or flange contact.
+
+3.1 Hertzian Line Contact in Full-Slip
+For a cylinder with radius R that is rolling and/or sliding in full-slip condition over an elastic
+half space, the interface patch will be modelled as a line of contact with the half-length of a,
+see Figure 3. The normal pressure is then according to Hertz:
+( )
+
+(
+
+)
+
+where,
+
+(
+
+)
+9
+
+(3.1)
+
+Here,
+
+is the equivalent modulus of elasticity and
+
+the point of contact.
+
+Figure 3: Cylinder in rolling-sliding contact with an elastic half-space [4].
+
+The tangential traction, ( ), will in the presence of friction be:
+( )
+
+(
+
+)
+
+(3.2)
+
+As can be noted in the equation for the normal pressure is the similarity to the equation for the
+tangential traction where the only difference is the friction coefficient for the latter. When
+the stresses in longitudinal and vertical directions are retrieved along with the shear stress
+(which will not be derived here), the principal shear stress can be expressed as:
+((
+
+)
+
+)
+
+(3.3)
+
+In Figure 4, the contours of the normalised principal shear stress
+is visualised at surface
+and sub-surface under rolling with different friction coefficients. This is achieved with help
+from a Matlab script retrieved from Saeed Hossein-Nia where equation (3.3) is utilized. The
+friction coefficients range from
+to
+with an increment of
+from top left to
+bottom right. For the case of
+it can be seen that the maximum shear stress is located
+below the surface at
+where
+is the symmetry line.
+
+10
+
+left),
+
+Figure 4: The normalised principal shear stress with
+(
+)
+(
+)
+(
+)
+(
+
+(top
+(
+
+)
+).
+
+Under a sliding contact however, the condition is different both at the surface and below the
+surface. Due to tangential traction ( ), the longitudinal stress
+reaches its maximum
+compressive stress at the surface (
+) with the value
+at the leading edge of the
+contact area (
+). At the trailing edge (
+), the maximum tension
+is reached. The
+normal pressure applied at the surface leads to an equal stress at the surface. In Figure 5 the
+surface stresses due to the frictional traction ( ) is visualized.
+
+11
+
+Figure 5: Surface stresses for sliding contact with friction [4].
+
+An increased magnitude of the maximum principal shear stress occurs when the tangential
+traction ( ) is increased. Moreover, higher friction values tend to move it closer to the
+surface. For example, the growth of the maximum value of the principal shear stress for the
+case with friction value
+to the case with
+is roughly 13%. This location moves
+towards the trailing edge (
+) of the contact patch at the surface.
+In the upcoming chapter, theory about fracture mechanics will be presented which
+specifically include crack initiation, the stress intensity approach, effect of specimen
+geometry, linear elastic fracture mechanics (LEFM), elasto-plastic fracture mechanics and
+extended finite element method (XFEM).
+
+12
+
+4 Fracture Mechanics
+Failure due to fracture creates high costs and can lead to many casualties and injuries. There
+are many different reasons for which failures have occurred historically. Among these reasons
+include uncertainties in the loading or environment, inadequacies in design, deficiencies in
+construction or maintenance as well as defects in the materials. It is of great necessity to
+consider as many factors as possible that could lead to failure when life is at risk. The
+information provided in this chapter is predominantly based on Introduction to Fracture
+Mechanics, by David Roylance [8].
+By manipulation of the microstructure so as to inhibit dislocation motion, the strength of
+structural metals like steel can be increased to very high levels. This unfortunately renders the
+material increasingly brittle. This can lead to the risks of cracks forming and propagating
+catastrophically with very little warning. Engineering disasters that are related directly to this
+phenomenon are an unfortunate number. Since there are procedures available that can
+safeguard against brittle fractures, engineers must be aware of these measures.
+In high-strength materials the central difficulty in designing against fracture is that the local
+stresses can be modified by the presence of cracks to such an extent that the elastic stress
+analyses are insufficient even though the evaluation by the designers is carefully employed. A
+crack can propagate catastrophically through the structure when it reaches a certain critical
+length. This can occur even though the gross stress is much less than what would normally
+cause yield or failure in a tensile specimen. Fracture mechanics is the area of study which
+refers to a vital specialization within solid mechanics in which the presence of a crack is
+assumed. For the crack, one aspires to find some quantitative relations between its length and
+the material’s inherent resistance to crack growth as well as the stress at which the crack
+propagates at high speed to cause structural failure.
+
+4.1 Crack Initiation
+Research around the initiation of fractures is extremely vital in the prevention of early failures
+in machine equipment, vehicles or its components. The safety aspects of evaluating the
+behaviour of crack initiation are quite indisputable. There is however additional incentives
+such as to increase the efficiency and reliability in for instance the train services while
+concurrently reducing the maintenance costs.
+Nucleation of fractures is a complex process that is controlled both by the repartition of flaws
+in matter and by mechanical controls that make nuclei active or not, according to Davy et al.
+[9]. Here, flaws in matter can be pores, grain boundaries, cleavage planes, etc. The result of
+this is damage in the form of a micro crack that leads to the formation of faults or joints. The
+term nuclei can be used when describing the flaws that can be considered as growing cracks
+and the term flaws can be considered the imperfections in the material which has not been
+activated as of yet or grows considerably slower than cracks of the same characteristics. It
+seems that the main likely reason why nuclei forms is that it is related to stress redistribution
+by growing cracks, stress increase, thermal activation, chemical corrosion etc. There is a
+13
+
+feedback loop between the fracture nucleation and growth due to stress redistribution which
+can, depending on the initial distribution of weak and strong area defects, result in strikingly
+different geometries of the eventual fracture pattern.
+Oliveira et al. [10] suggests that most of the studies of contact fracture have considered the
+behaviour of uncoated brittle solids where the analyses of fracture under sliding contact are of
+particular interest. Calculations show that cracks initiate at the surface immediately behind the
+contact where the tensile stress is the greatest when an indenter slides over the surface of a
+homogeneous solid. One usually observes an array of cracks in the wake of the indenter since
+several adjacent cracks might propagate in this way. The coefficient of sliding friction seems
+to be particularly significant for the fracture load. The fracture load is furthermore sensitive to
+the initial flaw size in the solid.
+According to Spriestersbach et al. [11], cracks are often induced from so called non-metallic
+inclusions. An inclusion is any material that is trapped inside another material or just air
+bubbles inside a material. Around these inclusions the stresses tend to be much higher than in
+the rest of the material and this is one reason for the initiation of cracks in these regions.
+Fatigue properties in the high cycle fatigue regime are strongly affected by flaws inside the
+material like non-metallic inclusions.
+There is a higher potency of crack initiation in materials where there is a case of serious
+property mismatching between matrix and defects. Also, higher strength materials seem to be
+more sensitive to soft inclusions, where the elastic modulus is lower than the matrix, as stated
+by Zhu et al. [12].
+According to Ekberg [13], pores seem to be one of the most dangerous types of material
+imperfections in railway wheels and according to the theory of elasticity; the shape of the
+defect will have a major influence. In reality, it is however not certain that this influence is
+equally severe for the loaded component. This is because a defect will be entrenched in a
+smoothly shaped volume of plastically deformed material. According to the theory of
+plasticity, the defect size has no influence. The defect will nevertheless have an effect in
+reality where the estimation of the magnitude can be made using a model based on a criterion
+that was originally proposed by Murakami [14] [15].
+
+4.2 The Stress Intensity Approach
+Even though the energy-balance approach can provide some insights to the fracture process
+(study [8] for more information), an alternative method that examines the stress state near the
+tip of a sharp crack directly has in engineering practices been proven more useful. This
+method is called the stress intensity approach. It is common to treat three types of cracks in
+fracture mechanics that is termed as mode I, II, and III as visualised in Figure 6. Mode I is the
+tensile-opening mode and is especially emphasized in this section while mode II and III are
+different shear sliding modes; in-plane shear and out-of-plane shear respectively.
+
+14
+
+Figure 6: The three types of cracks in fracture mechanics are mode I (Opening), II (In-plane shear), and III
+(Out-of-plane shear) [16].
+
+The opening-mode stress equations which are based on the semi-inverse method developed by
+Westergaard are shown below:
+
+√
+
+√
+
+√
+
+( ){
+
+( )
+
+(
+
+)}
+
+(4.1)
+
+( ){
+
+( )
+
+(
+
+)}
+
+(4.2)
+
+( )
+
+(
+
+)
+
+( )
+
+(4.3)
+
+The second and higher order terms that are indicated by dots may be neglected for distances
+close to the crack tip (
+). These relations cease to apply at large distances from the
+crack tip where the stresses approach their far-field values that would be obtained where the
+crack is not present. A very important parameter that is present in the equations above is the
+stress intensity factor (SIF), . Here, the subscript I refer to the crack opening mode.
+However, similar relations apply in the modes II and III. Three factors are shown in the
+equations that taken together depict the stress near the crack tip; the denominator factor
+(
+)
+acts as the stress distribution’s singular nature; σ is approaching infinity as the
+crack tip is approached, with a dependency of
+. The angular dependency is separable as
+another factor; e.g.
+
+( )(
+
+( )
+
+( ))
+
+The stress intensity factor,
+
+,
+
+contains the dependence on applied stress
+, the specimen geometry, and the crack length a.
+It gives the overall intensity of the stress distribution, henceforth its name.
+In a large sheet for the specific case of a central crack of width 2a or and edge crack of length
+2a, the SIF can be expressed as:
+√
+For an edge crack of length a in the edge of a large sheet the SIF can be expressed as:
+15
+
+(4.4)
+
+√
+In Table 1, some expressions for
+
+(4.5)
+
+for some several geometries are given.
+
+Table 1: Stress intensity factors for different types of cracks and common geometries [8].
+
+It is in the design and analysis that the SIFs are used by arguing that the material can
+withstand crack tip stresses up to a critical value of stress intensity that is termed
+. Beyond
+this critical value of stress intensity, the crack propagates rapidly. This critical stress intensity
+factor can then be explained as being a measure of material toughness. Related to the crack
+length a, and the fracture toughness is the failure stress which is expressed as:
+
+√
+
+(4.6)
+
+where the geometrical parameter is equal to 1 for edge cracks and for other situations it is
+generally on the order of unity. For a wide variety of specimen and crack geometries there are
+tabulated expressions for and for new situations the finite element methods are available to
+compute it.
+The stress intensity and energy viewpoints are interrelated and for in plane stress the relation
+is:
+
+16
+
+√
+
+(4.7)
+
+⇒
+
+√
+
+For plane strain the relation can be expressed as:
+(
+
+)
+
+(4.8)
+
+)
+Metals with Poisson’s ratio of
+give the factor (
+which is not a big
+change. The numerical values of
+and
+are however very different from each other in
+plane stress and plane strain situations.
+The fracture toughness
+and
+for various materials is listed in Table 2. It can be noticed
+that they vary over a wide range from material to material. Among the most common
+materials, steel alloys are the best regarding absolute resistance to crack propagation.
+However, when rated on a per-pound base, some polymers can be very tough as well.
+Table 2: Fracture toughness of different materials [8].
+
+4.3 Effect of Specimen Geometry
+The material toughness, or in other words the resistance to crack growth in a material, is
+governed by the energy absorbed as the crack moves forward. This energy is, for an
+exceptionally brittle material like window glass, primarily just that of rupturing the chemical
+bonds along the plane of the crack. By far the largest part of the fracture energy is being
+associated with plastic flow near the crack tip. Yet, in regards of resistance to crack growth,
+bond rupture plays a relatively small role in tougher materials. There is a plastic zone near the
+crack tip of which the predicted stresses from equation (4.1-4.3) would be above the
+material’s yield stress . Since the stress can’t rise above , the stress in the crack tip zone
+17
+
+are actually
+rather than what was given in equation (4.1-4.3). By using equations (4.1-4.3),
+the distance this zone extends along the x-axis can be found. With
+, the distance at
+which the crack tip stress reduces to
+is retrieved as:
+
+(4.9)
+
+√
+where,
+
+Figure 7: Yield is the limiting factor of the stress within zone
+
+[8].
+
+In Figure 7, this relation is demonstrated. The plastic zone size will increase when the stress
+intensity is increased, either by raising the imposed stress or by crack lengthening. However,
+the material’s molecular or microstructural mobility is what the extent of the plastic flow is
+ultimately limited by. This means that the zone can become only so large. Unstable
+propagation follows when the zone can grow no larger and therefore the crack can no longer
+be constrained. It can be considered that the value of , at which this occurs, is a material
+property named
+.
+The plastic zone size should not be too large as to interact with the specimen’s free
+boundaries or to destroy the rudimentary nature of the singular stress distribution in order for
+the measured value of
+to be valid. The specimen geometry for the ASTM specification for
+fracture toughness testing [17] is specified to insure that the specimen is large compared to the
+crack length and the plastic zone size;
+(
+
+)
+
+18
+
+(
+
+)
+
+(4.10)
+
+where a is the crack length, B is the breadth and W is the depth of the specimen. It can be
+impossible to satisfy the above criteria in the case of when enough ductility exists. The view
+of the stress intensity must in these cases be abandoned in favour of alternative techniques
+such as the J-integral or the crack tip displacement (CTD) method (see subchapter 4.5 Elastoplastic fracture mechanics (EPFM) for further information).
+Essentially, the measured fracture toughness
+or
+is a measure of the extent of plastic
+deformation that is associated with crack propagation. When reducing the thickness of the
+specimen in half, it will naturally cut the volume of plastically deformed material roughly in
+half as well, and thus it is expected that the quantity of plastic flow scale linearly with the
+specimen thickness. Consequently, the toughness rises linearly initially with the specimen
+thickness as can be seen in Figure 8. What can also be seen is that eventually the toughness
+reaches a maximum which is followed up with a fall to a lower value. The toughness reaches
+a maximum at the critical thickness, . The loss of toughness beyond this value is extremely
+important in the design against fracture since unrealistically optimistic values for
+is yielded
+when using too thin of a specimen in measuring toughness. For valid fracture toughness
+testing, the specimen size requirements are such that the most conservative value is measured.
+
+Figure 8: The influence of specimen thickness on toughness [8].
+
+It is the critical thickness that causes the specimen to be dominated by a state of plane strain,
+as opposed to plane stress. Since no traction is applied at the sides of the specimen the stress
+in the through-thickness z direction must become zero. Furthermore, the stress will not have
+room to rise to considerable values within the material for a thin specimen. The specimen will
+experience a Poisson contraction that is given by
+(
+) and the strain in the z
+direction is not zero. However, material near the centre will be unable to contract laterally
+when the specimen is thicker which is due to the constraint of adjacent material. As the
+material now tries to contract but is prevented from doing so, the z-direction strain is zero and
+thus a tensile stress will ascend. At the outer surface the value of
+rises from zero where it
+reaches a maximum value that is given by
+(
+) at the critical thickness
+as
+shown in Figure 9. It is important that the specimen thickness t must be such that
+in
+order to guarantee that the plane strain conditions will dominate.
+
+19
+
+Figure 9: Transverse stress at crack tip [8].
+
+4.4 Linear Elastic Fracture Mechanics (LEFM)
+The local stresses in the vicinity of a crack tip are analysed according to the theory of
+elasticity in linear elastic fracture mechanics. The stress field around the crack tip will exhibit
+a singularity if the tip is considered to be infinitely sharp. This singularity can be quantified
+by the stress intensity factor, K. The prediction of crack propagation can be done with Paris’
+law that includes, among other variables, the range of stress intensity factor during a load
+cycle,
+;
+(
+
+)
+
+(4.11)
+
+Here, da/dN is the crack growth per load cycle while C and m are material parameters. In
+order for the LEFM to be valid, the crack length must be large compared to the plastic zone
+size. Materials that sustain large zones of plasticity or other type of damage before failure will
+violate the small-scale yielding criterion [13].
+
+4.5 Elasto-Plastic Fracture Mechanics (EPFM)
+The stress intensity factors can only be used for quantifying the state of stress in the vicinity
+of the crack tip as long as the plastic zone of the crack tip is regarded as small compared to
+the distinguishing dimensions of the crack. Other measures for the local state of stress at the
+crack tip needs to be implemented when this is no longer the case. One of these measures are
+the J-integral which allow for a larger plastic zone but at the same time carries the limitation
+of which strains are assumed to be small. Since the J-integral is an energy measure it will
+always be positive and therefore this may lead to predicaments when defining stress cycles in
+fatigue analysis. Also, since the J-integral was originally intended for non-linear elastic
+behaviour, one must take special care. For instance, one needs to take precaution in studies of
+which elasto-plastic loading is followed by elastic unloading. The fatigue impact can similarly
+be assumed to relate to the relative displacement of certain material points across the crack
+and adjacent to the crack tip. Crack tip displacement (CTD) is the title for this measure. One
+20
+
+of the main drawbacks with this approach is that it will be a challenge to define the CTD in a
+distinctive manner [13].
+
+4.6 Extended Finite Element Method (XFEM)
+This subchapter is mainly based on the paper Crack growth simulation of stiffened fuselage
+panels using XFEM techniques by Krishna Lok Singh, Kamal Keswani and Mallikarjun
+Vaggar [21].
+When dealing with continuous field problems the standard finite element method (FEM)
+provides substantial advantages. It is however computationally expensive to retrieve accurate
+solutions with polynomial approximations for discontinuous field problems. When treating
+problems with evolving discontinuities, difficulties occur with mesh alignment with
+discontinuity since the mesh needs to be regenerated at each step. Furthermore, the singularity
+of the crack tip needs to be accurately represented by the approximation. The standard finite
+element methods are based on the piecewise differentiable polynomial approximations.
+Therefore, these methods are not well suited to problems with discontinuous rendering
+singular solutions. In non-homogeneous materials the order of singularity of stress field near a
+crack tip is same as that of the homogeneous materials. As the crack grows, there is a
+significant need to re-mesh or mesh in order for it to conform to the features provided in the
+traditional finite element methods. The introduction of the extended finite element method
+(XFEM) is an answer to the deficiency of the standard finite element methods in this regard
+and was created by Belytschko and Black [18].
+The XFEM was developed to ease the difficulties in solving problems with localized features
+that by mesh refinement are not efficiently resolved. Hence, the XFEM is used extensively in
+many fields such as composites and fracture mechanics. To allow the presence of
+discontinuities in an element, the method enriches degrees of freedom with special
+displacement functions. The XFEM approximation is comprised of standard finite elements
+and enriched elements. The standard finite elements are used in the major part of the domain
+whereas the enriched elements are used in the enriched sub-domain. The enriched elements
+are applied in order to capture special solution properties like discontinuities and singularities.
+The main reason for adding enriched elements is to be able to expand the approximation space
+function of standard FEM that consequently gives a more accurate solution closer to the
+reality for the enriched approximation. XFEM is a very effective and versatile method to
+simulate initiation and growth of a discrete crack along a definite path in contrast to finite
+elements where continuous re-meshing is required.
+The shape functions at node i can be denoted by
+( ) and the corresponding nodal
+displacement values of the dependent variable by . For the approximation of the standard
+XFEM, a term for the standard finite element is used together with an enriched term that can
+capture discontinuous characteristics (heavy-side functions, crack tip singularity) in the
+domain k. The standard XFEM approximation ( ) can be expressed as:
+
+21
+
+( )
+
+( )
+
+∑
+
+( ) ( )
+
+∑
+
+(4.12)
+
+Where the classical standard finite element part is represented by the first term and the
+enrichments based on the idea of the partition of unity approach is represented by the second
+term. Here,
+is the set of the enriched nodes,
+is the unknown displacement of the
+standard FEM at node i,
+is the unknown enrichment at node i and ( ) is the local
+enrichment function of node i. Any enrichment function ( ) holds
+
+∑
+
+( ) ( )
+
+(4.13)
+
+( )
+
+based on the idea of the partition of unity. For capturing discontinuous characteristics in the
+domain, the discontinuous function ( ) is utilized. The major key property of the standard
+XFEM is that any function ( ) can be reproduced in the domain by local basis function
+( ) ( ) in order to solve discontinuous problems.
+The representation of the crack away from the tip can be simplified by the Heaviside
+enrichment function, which is given by Jiang and Ying [19]. Two enrichment functions are
+generally incorporated into the XFEM displacement approximation in order to represent a
+crack. To represent the crack away from the tip, a Heaviside step function is used whereas for
+representation of the crack tip asymptotic displacement field, a more complex set of functions
+is utilized. The Heaviside step function can be expressed as:
+( )
+
+{
+
+(4.14)
+
+This enrichment given by the Heaviside step function introduces a discontinuity in
+displacement across the crack. Four enrichment functions are given below for a linear elastic
+crack tip. These are used to incorporate the crack tip displacement field into elements
+containing the crack tip. From the asymptotic displacement field below, the crack-tip
+enrichment functions can be obtained:
+√
+(
+
+)
+
+{
+√
+
+( )
+
+√
+
+( )
+}
+
+( )
+
+√
+
+(4.15)
+
+( )
+
+Here, and r are the polar coordinates in the local crack tip coordinate system. The crack tip
+works as the origin and
+is parallel to the crack. The first enrichment function acts as the
+Heaviside enrichment due to being discontinuous across the crack behind the tip in the
+element containing the crack tip. An example of a node being enriched by both the Heaviside
+function and crack tip enrichment features can be seen in Figure 10.
+22
+
+Figure 10: Enrichments in the XFEM. Circles: nodes with 2 additional DOFs. Squares: nodes with 8 additional
+DOFs [20].
+
+A very important parameter for estimating the severity of a crack in cracked structures is the
+stress intensity factor. In case of an edge-cracked rectangular plate under tensile loading, the
+analytical solution for the stress intensity factor (SIF) is given by:
+( )
+
+√
+
+(4.16)
+
+The upcoming chapter FE-modelling is about the pre-processing of the fracture propagation
+models. Here, the construction of the models is made where for instance the mesh, boundary
+conditions, pressure distribution and traction is defined.
+
+23
+
+5 FE-Modelling
+The main objective with the thesis has been to create one or several fracture propagation
+models that can be utilized to predict crack growth and in the long run predict the failure of
+the material. This chapter is therefore dedicated to describe the most essential and relevant
+processes of designing the models in Abaqus together with clarifications of certain physical
+properties. The results will be presented in the results and discussion chapter in addition to
+analyses and interpretations of the results. The conclusions are gathered in the chapter with
+the same name.
+The simulation is done through Abaqus which is a software suite that was originally released
+in 1978 and is used for its finite element analyses and computer-aided engineering. The
+product suite that is used in this work is the Abaqus/CAE which is a software application that
+can be used for both the modelling and analysis of mechanical components and assemblies
+(pre-processing) and visualising the finite element analysis result (post-processing) [22].
+It is important to mention that the damage initiation criterion and the pressure distribution
+among other settings selected in Abaqus are not necessarily realistic values. Many different
+settings and values have been tested (not all presented here though) for the main reason of
+enhancing the understanding of different kinds of phenomena.
+Before the simulation process can be explained, some simplifications and assumptions made
+needs to be mentioned first. Firstly, when surface traction is applied apart from the pressure
+distribution, sliding in full-slip is assumed. Only the tread is considered as the wheel contact
+and it can be perceived as the interface of the models are visualised upside-down (since it’s
+the wheel that is simulated, not the rail). The location of the wheel-rail contact stresses is the
+same for every load cycle. For real circumstances though, the distribution of the pressure
+would differ depending on the time period of which a certain section of the wheel is in
+contact. For instance, the distribution would be different if the contact is in the beginning,
+middle or end, and you could say that the load is moving on the contact patch.
+A Matlab-script has been received from Saeed Hossein-Nia in order to understand where the
+maximum principal shear stress is located (as can be read in chapter 3 about contact
+mechanics). Therefore, the inclusion has been placed at the maximum principal shear stress
+location for the case when the friction coefficient is
+. This is done in order to increase
+the chance of crack initiation and propagation. However, when the friction force is applied
+and increased, even though the maximum principal shear stress will be shifted towards the
+surface, the location of the inclusion has still been placed at the same point due to time
+restrictions.
+The fracture mechanics method used in Abaqus is XFEM, as mentioned and thoroughly
+explained in the fracture mechanics chapter. Within the XFEM framework there are two
+different approaches; the cohesive segment approach and the LEFM-based approach. The
+cohesive segment approach follows the general framework for surface based cohesive
+24
+
+behaviour. It uses traction-separation laws and the damage properties are specified as part of
+the bulk material definition. This is the approach used in this work. The LEFM-based
+approach uses the virtual crack closure technique, VCCT, where the damage properties are
+specified via an interaction property assigned to the XFEM crack. There is an option in the
+interaction module in Abaqus that allow for selection of crack location. If this is not selected,
+the crack initiates automatically wherever certain damage initiation criteria in the tractionseparation laws are exceeded. Automatic crack growth has been selected here for the two
+different models. The type of damage can for instance be defined as maximum principal strain
+or stress. The latter type of damage is used for all the models.
+
+5.1 2D Model
+The first model was designed in two dimensions with a so called 2D deformable shell element
+for the sake of simplicity. Even though the depth dimension is neglected here, it can still give
+some indications of some fracture phenomena (for more details, see chapter 4.3 about the
+effect of specimen geometry). The precision of the results (stresses, crack extension, etc.)
+depend on the resolution of the mesh. A fine mesh gives for instance often higher and more
+precise stress distribution in the model. The downside with a fine mesh is that it is more
+computationally expensive. The mesh element type used for this two-dimensional model is
+called CPS4R and is a 4-node bilinear plane stress quadrilateral type of element with reduced
+integration and hourglass control. The number of elements used in the model is 39351. The
+mesh for the whole plate model is shown in Figure 11.
+
+Figure 11: The mesh distribution for the 2D model.
+
+One can notice that the mesh resolution is quite coarse away from the placed circle inclusion
+below the origin of the coordinate system. Yet, it has been designed in a way so that the closer
+one gets to the inclusion, the finer the mesh, as can be seen in Figure 12. This is deliberately
+
+25
+
+designed this way since the areas around the inclusion are the most vital regions in the study
+of fracture.
+
+Figure 12: Finer mesh closer to the inclusion.
+
+Non-linear geometry is activated in order to achieve higher accuracy since the strains can be
+quite substantial around the surface area of contact and around the inclusion. The material
+properties for this model are,
+and
+. The maxps
+value is the maximum principal stress that an element needs to exceed in order for a crack to
+nucleate and/or propagate. The radius of the inclusion is in this model
+, the
+contact radius is
+and the inclusion is placed in a depth of
+. This is
+the depth of which the principal shear stresses are maximum in the case of
+, for the
+Hertzian theory of line contact. The pressure distribution applied at the surface contact is
+equal to equation (3.1), where
+and x is defined on the interval:
+. The traction is directed to the left and applied in the surface contact that is equal to
+equation (3.2). Both the pressure distribution and the traction can be seen applied in the model
+in Figure 13. The amplitude chosen for the simulation is shown in Figure 14 and is comprised
+of 5 peaks. The boundary conditions are defined as being free in y-direction, with all the other
+DOFs fixed for the two top corners. For the two bottom corners, all the DOFs are fixed.
+
+26
+
+Figure 13: The pressure distribution and traction applied at the contact surface.
+
+Figure 14: Amplitude function used in order to simulate 5 cycles.
+
+5.2 3D Model
+The thin three-dimensional model is created with certain fracture mechanics theories in mind.
+Especially the effect the thickness of the block model has on the fracture toughness, see
+chapter 4.3 Effect of specimen geometry. This applies however mainly when plasticity is
+considered. Consequently, material properties that consider plastic behaviour can
+conveniently be implemented in the future.
+This model’s material properties are also
+. The
+radius of the inclusion is in this model larger with
+, the contact radius is
+and the cylinder inclusion is placed in a depth of
+. The pressure
+distribution applied at the surface contact is equal to the equation (3.1), where
+and
+x is defined on the interval:
+. The traction applied in the surface contact is
+equal to equation (3.2). The thickness of the model is 2 mm. Both the pressure distribution
+and the traction are for this 3D model constant in the z-direction (the through-thickness
+direction) for the reason of simplifying the problem. The number of elements used in the
+27
+
+model is 17888. The mesh around the inclusion is shown in Figure 15. The pressure
+distribution and traction are presented in Figure 16.
+
+Figure 15: The mesh for the 3D model near the inclusion.
+
+Figure 16: The pressure distribution and traction for the 3D model.
+
+The next chapter visualises the results of the simulations along with interpretations of them.
+28
+
+6 Results and Discussions
+Here follows the results for both the 2D and 3D model in regards to the Von Mises stress,
+different tensile stresses, and crack propagation below the surface around the inclusion and at
+the surface. The main focus of this chapter has been directed towards the 2D model.
+Discussions and interpretations that are more general and revolve around both the 2D and 3D
+model will be concentrated in chapter 6.3 General.
+
+6.1 2D Model
+The Von Mises stress distribution around the inclusion are shown in Figure 17, for a friction
+coefficient of
+. The stress near to the contact surface is approximately half of what the
+maximum is and this maximum is retrieved at the sides of the inclusion.
+
+Figure 17: The Von Mises stress distribution around the inclusion for
+
+(no traction applied).
+
+It seems though that the cracks are nucleating at the top of the inclusion for low friction
+coefficients of 0.2 and below. This occurs even though the highest Von Mises stress is located
+at the sides of the inclusion. This is because the maximum stress at the sides of the inclusion
+is compressive stresses, and therefore a fracture is not able to open up. However, because of
+tensile stresses at the top of the inclusion, fractures tend to extend, as can be seen in Figure 18
+and 19 for the
+and
+stresses respectively. In these figures, the stresses are shown near
+the inclusion as well as on the surface above the inclusion for three different friction values. It
+can be seen that the maximum positive value for
+and
+is located at the top and bottom
+of the inclusion and
+is higher for the three tested friction values. This means that there is a
+strong tensile stress that tends to open up the fracture. The maximum negative value for
+is
+located at the contact patch surface whereas it is located at the sides of the inclusion for the
+. This signifies that there are compressive stresses near the surface in the longitudinal
+direction and that the sides of the inclusion are exposed to compressive stresses in the vertical
+direction.
+
+29
+
+Figure 18: The
+
+stress distribution for different friction values.
+
+30
+
+Figure 19: The
+
+stress distribution for different friction values.
+
+When crack tips were placed on the sides of the inclusion and were allocated as a crack
+(manual crack location) the crack did not propagate further than what was assigned. As
+explained earlier, this happens most likely because of compressive stresses and the crack will
+not further propagate.
+One way to effectively visualise the patterns of the fractures is to use the field output request
+function STATUSXFEM, which is a scalar variable that shows the extent of damage inside an
+
+31
+
+element. Another function called PHILSM represents the level set value
+define the location of cracks inside a body.
+
+Figure 20: Crack initiations near the inclusion (
+) and at the surface (
+propagation.
+
+that is used to
+
+) with follow up
+
+In Figure 20, crack propagation for the friction coefficient
+and
+respectively,
+is shown. A friction coefficient between these values is the critical point for when the crack
+starts to initiate at the surface. For all friction coefficient values
+, the crack initiates at
+the top of the inclusion. Here, it seems that the crack only propagates a few elements towards
+the surface for friction coefficients in the range of
+to
+. There are a few reasons
+for why the propagation stops. It is presumably because of different options in Abaqus for
+instance the type of pressure distribution and magnitude selected, along with how the load is
+being applied, and obviously the properties of the material. Convergence difficulties of the
+simulations have also been a problem and one of the reasons why the propagation stops after a
+while.
+When the friction coefficient is increased above 0.2, interesting things start to happen. Firstly,
+it seems that Abaqus predicts longer extensions of the crack after around
+before
+sometimes stumbling upon convergence problems, which makes the simulation stop.
+Attempts to reduce the convergence problems have been made through implementing
+automatic stabilization as well as discontinuous analysis for the time increments for the static
+step in order to allow for additional number of attempts when a solution is converging poorly.
+Nonetheless, the most interesting phenomenon that follows is that the angle of which the
+propagation pursues increases relative to the surface as the friction coefficient is increased
+above 0.2, as can be seen in Figure 21. All the surface cracks seem to all initiate just outside
+to the right of the contact surface where the pressure distribution and traction are being
+applied. The reason for this initiation location can be because of a phenomenon called tearing,
+which occurs due to a discontinuous application of traction. Just outside to the right of the
+contact surface there is no pressure or traction being applied. However, just inside the contact
+patch on the right side there is both a pressure distribution as well as traction with direction to
+32
+
+the left. This coaction is a discontinuity which induces a tearing effect that appears right at the
+end of the contact surface to the right. What would be expected from the theory given in
+chapter 3.1 Hertzian line contact in full-slip, is that the fracture would emerge at the surface
+from the centre of the contact patch, at least for friction values equal to and above 0.4. The
+reason being, the maximum principal shear stress is located at the surface very close to the
+middle of the contact patch for friction values of 0.4 and above, see chapter 3.1.
+
+Figure 21: Cracks initiated at the surface and propagated with different friction coefficients.
+
+When the friction coefficient reaches
+can be seen in Figure 22.
+
+, the angle is relatively close to 90 degrees, as
+
+33
+
+(
+
+Figure 22: Crack propagation in the case of pressure distribution and traction being of equal magnitude
+), which result in a fracture pattern with a very steep angle. Left: the XFEM output function. Right: the
+PHILSM output function.
+
+6.2 3D Model
+The situation of the crack propagation for the 3D model is quite similar to the 2D model
+where the crack propagates just a few elements (at the top of the inclusion) in height for
+friction coefficients up to 0.2. However, a broader region of several elements in x-direction is
+propagated here compared to the 2D model’s only one element in the same direction. Figure
+23 illustrates the crack propagation at the top of the inclusion for
+. The difference
+between the 2D and 3D model in this aspect might be due to the difference in fracture
+toughness (which in turn is due to higher thickness for the 3D model).
+
+Figure 23: Crack propagation at the top of the inclusion for
+
+34
+
+.
+
+Figure 24: Crack propagation at the surface for
+
+in the form of STATUSXFEM (left) and PHILSM
+(right).
+
+When the friction coefficient is raised above 0.2, the crack start to initiate at the surface, just
+like for the 2D model. In Figure 24, an example of a small propagation of a crack at the
+surface is visualised for
+. Even though the surface crack seems to initiate at the same
+location in general, the extension is nevertheless just one element. The main reason for this is
+that the simulation got into convergence problems and stopped unexpectedly.
+
+6.3 General
+The fracture mechanics method that has been used here in Abaqus is a cohesive segment
+approach based on XFEM. The other alternative is to use the LEFM method with VCCT for
+fracture analysis. This linear elastic fracture method is only valid when crack lengths are
+larger compared to the plastic zone size. Since no inelastic behaviours of the material has
+been considered, both the methods should be reasonable to use with decent accuracy.
+However, an elasto-plastic fracture mechanics method (EPFM) would most likely have better
+accuracy in the case when plastic behaviour of the material wants to be considered into the
+fracture analysis.
+The location of the inclusion has been constant for all different friction values for both the 2D
+and 3D model. The location for the inclusion has been where the maximum principal shear
+stress is located with no applied traction (
+). This has been employed deliberately in
+order to reduce the time needed to model but also the time for the simulations. Though, this is
+a problem when interpreting the results of the fracture patterns etc. since the inclusions are not
+placed at the coordinates where the maximum principal shear stress is located for higher
+friction values than zero. This means that the initiation and propagation of the fracture might
+be altered depending on where the inclusions have been placed.
+There are several more potential margins of error in the simulation process apart from the
+ones described above. Firstly, the mesh density has certainly an impact on the quality and
+accuracy of the post-processing results such as stresses and patterns of a crack. The mesh
+35
+
+element type also definitely has an influence on the results and the higher number of nodes
+that the mesh type contains; generally the higher accuracy is achieved. The mesh for the 3D
+model is very coarse away from the inclusion and this might be the reason why the surface
+cracks are not propagating longer than one element. Also, the simulation increment size has
+been selected to 0.01 and can also affect the results if increased or reduced. It is especially
+undesirable to have an increment size that is too large since the resolution of the simulation
+and its animation will be curtailed in the form of stutter and omitted frames.
+The difference in fracture toughness for the 2D model compared to the 3D model might have
+an impact on the propagation patterns since the propagation extends broader for the 3D
+model. However, it might be other explanations for this effect to occur and the difference in
+fracture toughness between the models would most likely be higher in the case of plastic
+behaviour of the material used in the simulation.
+The cohesive segment approach and the LEFM VCCT method assume different procedures in
+order to analyse crack growth. Thus, the different XFEM methods probably give a slight
+difference in the results from the post-processing since the two methods are a bit different in
+the fundamental basis. Furthermore, the actual premise for crack initiation and further growth
+is specified in the damage properties of the material in the form of maximum principal stress.
+This chosen maximum principal stress value needs to be experimentally retrieved for different
+materials in different conditions and environments in order to achieve correct crack initiation
+and propagation.
+Both the pressure distribution and the traction have without doubt large influence on the
+outcome in the post-process. Especially important are the assigned magnitudes of the pressure
+and traction. Likewise, the material properties are of paramount significance for the fracture
+process.
+It is of great importance to solve the problems and reduce the margins of error that are
+mentioned in this chapter. This is further discussed in chapter 8 future work and research.
+
+36
+
+7 Conclusions
+There are several conclusions that can be made from the simplified FE-models that have been
+constructed in this thesis and they are furthermore presented in this chapter.
+For the 2D model, compressive stresses at the sides of the inclusion inhibit initiation of
+fractures, and tensile stresses at the top and bottom of the inclusion facilitates the opening of
+the fracture at the top. The fracture initiates at the inclusion, specifically at the top, when
+friction coefficients are equal to or below the value 0.2. The fracture propagates a few
+elements upwards in the first static cycle. For friction coefficients above the value 0.2, the
+fracture initiates at the surface. This occurs specifically at the boundary where the pressure
+distribution and traction is applied at the right side, when the traction direction is to the left.
+The likely cause of this fracture initiation at this surface location is tearing. The fracture
+propagates downwards with an angle and along a certain well-defined line. The pattern of the
+fracture propagation for a surface crack depends on the friction coefficient value. Specifically,
+the angle of a surface crack increases relative to the surface as the friction coefficient value is
+increased.
+Compared to the 2D model, the fracture for the 3D model extends broader at the top of the
+inclusion in the case of friction coefficient values equal to or below 0.2. At friction coefficient
+values above 0.2, the fracture initiates at the same location as for the 2D model. However, the
+propagation is non-existent due to convergence problems.
+The FE-models constructed are initial steps towards analysing the fracture propagation and
+closely related phenomena for a railway freight wheel in detail. This thesis can therefore be
+seen as a contribution to the research in the area and to reduce the accidents as well as the
+maintenance for railway wheels. These motives have direct positive association to the society
+and its economy as a whole. The potential reduction of the rate of wear of railway wheel steel
+is additionally less harmful for the environment. At the current stage, the simplified models
+give mainly information about the fracture initiation, propagation and its patterns. From this
+first phase, further adjustments and improvements can take place in order to eliminate the
+margins of error. In the long run, fully integrated models with further implementations such as
+detailed microstructure for the contact conditions, plastic behaviour for the material, and
+complete three-dimensional models can finally be employed.
+
+37
+
+8 Future Work and Research
+The FE-models that have been designed in this thesis are initial work before they can be fully
+utilized with relation to the wear rate with contact conditions and material properties etc.
+Many simplifications have been made in order to achieve certain results and make progress in
+the given tight time frame. Most of the options that have been neglected for the time being are
+in Abaqus thus reasonably straightforward to implement in the case of further work and
+research being put into this area. From this background, it has been important to keep a
+balance for what is presented in this work which has inevitably lead to plenty of future
+potential improvements in several areas.
+Firstly, by studying many sources of fracture mechanics, some state that cyclic loading can in
+some cases be necessary in order for the fracture to further propagate. Also, the number of
+load cycles has definitely an impact on the extension of a crack. The main limitation of
+implementing these measures are that it is time consuming but can also create problems where
+the errors can be more difficult to solve.
+Simplifications has been made for the wheel contact in form of the Hertzian theory as well as
+full-slip condition. This has made the implementation of the loads in Abaqus substantially
+more straightforward. However, stresses, wear and fractures depends greatly on the
+methodologies and assumptions used, since their accuracies vary. In this case, the Hertzian
+theory for the normal contact problem has been shown to be not very accurate in the
+estimation of the shear stresses. Moreover, the full-slip condition used in this work is not
+realistic in all situations and therefore partial slip could be implemented and further
+researched in the context of creating a fracture propagation model. When speaking of reality,
+instead of applying a static load (or continuous cyclic loads) at the same location over and
+over, a moving contact pressure distribution could be applied instead, in order to simulate the
+wheel rolling over its inclusion or crack. This could give more detailed and accurate results in
+regards to for instance nucleation locations and fracture patterns. What could also change the
+patterns of the crack and the premises of which the cracks initiate is the depth of the
+inclusions or voids. Therefore, for future analyses, the determined depth of an inclusion could
+be varied as well as shifted in longitudinal direction in order to place the inclusions over the
+areas of where the principal shear stress is maximum for when the friction coefficient
+.
+It can be difficult to generate a failure of the material in form of a delamination process if
+only one crack initiates at the top of the inclusion and then propagates to the surface.
+Therefore, for the sake of trying to simulate a removal of a particle from the surface,
+deliberate and manual placements of cracks can be done, for instance two above of the
+inclusion with a certain angle that separate them.
+Again, because of streamlining the work in order to be able to get some initial results in time,
+only elastic material properties has been used. This has been especially effective due to the
+adoption of XFEM in Abaqus for the crack propagation approach since it uses linear elastic
+fracture mechanics methods. However, to be able to account for the plasticity of a material,
+
+38
+
+especially around the crack tips, an elasto-plastic fracture mechanics method is needed.
+Though, this method is not as well implemented into FE-software as the LEFM is.
+There are improvements that can be made for the boundary conditions applied in the models.
+More accurate solutions are most likely for instance absorbing boundary conditions or infinite
+boundaries that will absorb the energy at the boundaries which the pressure applied at the
+contact patch releases.
+For all the different models constructed in this work, from two dimensions to three, finer
+mesh is needed in order to increase the accuracy of the stresses calculated in the bulk of the
+material, especially near the inclusions or the crack tips. Yet, for three dimension models, this
+is notably more computationally expensive compared to two dimension models. This creates
+the demand of powerful computers in order to reduce the simulation time. Aside from
+increasing the resolution of the mesh, a mesh element type with many nodes is also very
+important to select in order to achieve a higher precision in the stresses.
+In order to for instance change direction of traction and propagate cracks in a 3D domain, a
+full 3D model can be constructed. This would open up to more complex results as well as
+more possibilities for alterations of different settings in Abaqus.
+A large step towards developing the models is to take the asperities and the surface roughness
+into account in the contact of the wheel and rail. This can be done through the microstructural
+analysis of different wear mechanisms done by CAF MiiRA. The fracture propagation models
+should be able to be utilized in companies and for future research if further development is
+ensued adhering to the above.
+
+39
+
+References
+[1] https://shift2rail.org/about-shift2rail/, last visited 2018-08-03.
+[2] http://projects.shift2rail.org/s2r_ip5_n.aspx?p=FR8RAIL, last visited 2018-08-03.
+[3] B. Dirks, Vehicle dynamics simulation of wheel wear for Swedish high-speed train
+X2000, 2003.
+[4] S. Hossein-Nia, On Heavy-Haul Wheel Damages using Vehicle Dynamics Simulation,
+2018.
+[5] R. G. Bayer, Wear Analysis for Engineers, 2002.
+[6] I. M. Hutchings, Tribology – Friction and Wear of Engineering Materials, 1992.
+[7] N. P. Suh, An overview of the delamination theory of wear, Wear, Volume 44, Issue 1,
+1977, Pages 1-16.
+[8] D. Roylance, Introduction to Fracture Mechanics, 2001.
+[9] P. Davy, R. L. Goc and C. Darcel, A model of fracture nucleation growth and arrest and
+consequences for fracture density and scaling, Journal of Geophysical Research: Solid Earth,
+Volume 118, Issue 4, 2013.
+[10] S. A. G. Oliveira and A. F. Bower, An analysis of fracture and delamination in thin
+coatings subjected to contact loading, Wear, Volume 198, Issues 1-2, 1996, Pages 15-32.
+[11] Spriestersbach et al, Crack initiation mechanisms and threshold values of very high cycle
+fatigue failure of high strength steels, Procedia Engineering, Volume 74, 2014, Pages 84-91.
+[12] M. Zhu and F. Xuan, Fatigue Crack Initiation Potential from Defects in terms of Local
+Stress Analysis, Chinese Journal of Mechanical Engineering, Volume 27, Issue 3, 2014, Pages
+496-503.
+[13] A. Ekberg, Rolling contact fatigue on railway wheels, 2000.
+[14] Y. Murakami and M. Endo, Effects of defects, inclusions and inhomogeneities on fatigue
+strength, International Journal of Fatigue, Volume 16, Pages 163-182, 1994.
+[15] Y. Murakami, S. Kodama and S Konuma, Quantitative evaluation of effects of nonmetallic inclusions on fatigue strength of high strength steels. I: basic fatigue mechanism and
+evaluation of correlation between the fatigue fracture stress and the size and location of nonmetallic inclusions, International Journal of Fatigue, Volume 11, Pages 291-298, 1989.
+[16] https://en.wikipedia.org/wiki/Fracture_mechanics, last visited 2018-08-03.
+[17] E 399-83, Standard Test Method for Plane-Strain Fracture Toughness of Metallic
+Materials, ASTM, 1983.
+[18] T. Belytschko and T. Black, Elastic Crack Growth in Finite Elements with Minimal
+Remeshing, International Journal for Numerical Methods in Engineering, 45, 1999, Pages
+601-620.
+[19] S. Jiang, Z. Ying and C. Du, The optimal XFEM approximation for fracture analysis,
+IOP Conference Series: Materials Science and Engineering, Volume 10, Number 1, 2010.
+[20] E. Giner, N. Sukumar, J. E. Tarancón and F. J. Fuenmayor, An Abaqus implementation
+of the extended finite element method, Engineering Fracture Mechanics, 76, 2009, Pages 347368.
+[21] K. L. Singh, K. Keswani and M. Vaggar, Crack growth simulation of stiffened fuselage
+panels using XFEM techniques, Indian Journal of Engineering & Materials Sciences, Volume
+21, 2014, Pages 418-428.
+[22] https://www.3ds.com/products-services/simulia/products/, last visited 2018-08-03.
+40
+
+TRITA-SCI-GRU 2018:321
+ISBN 978-91-7729-905-9
+
+TRITA 2018:321
+
+www.kth.se
+
+

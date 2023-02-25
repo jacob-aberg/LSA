@@ -104,6 +104,7 @@ def rensa_vanliga_ord(ordbok, språk ='sv',siffror=True):
 
     if språk == 'sv': fil = 'vanliga_ord.txt'
     elif språk == 'eng': fil = 'common_words.txt'
+    elif språk == 'sveng': fil = 'vanliga_words.txt'
 
     fil = os.path.join( os.getcwd(),fil)
     vanliga_ord = text_till_ordlista( fil, siffror=siffror )

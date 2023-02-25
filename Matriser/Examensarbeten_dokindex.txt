@@ -1,0 +1,8 @@
+An Attempt Towards FE-Modelling of Fracture Propagation in Railway Wheels
+Analysis of Link Forces on a Formula Student Suspension System
+Directivity of sound from wind turbines
+Flight Testing of the Piper PA-28 Cherokee Archer II Aircraft
+Improvement of finite element spot weld models for structural dynamics
+System architectural interfaces for autonomous trucks
+Wheel Induced Vibrations on Heavy Vehicles
+Winglet Effect on Induced Drag for a Cessna 172 Wing

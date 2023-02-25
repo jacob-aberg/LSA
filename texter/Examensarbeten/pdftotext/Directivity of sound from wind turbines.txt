@@ -1,0 +1,2772 @@
+Directivity of sound from wind turbines
+A study on the horizontal sound radiation pattern from a wind turbine
+
+Manne Friman
+
+Stockholm, 2011
+Thesis for the degree of Master of Science, 30 Hp
+Department of Aeronautical and Vehicle Engineering
+The Marcus Wallenberg Laboratory for Sound and Vibration Research
+
+Supervisor:
+Karl Bolin, KTH, Department of Aeronautical and Vehicle Engineering
+Assistant supervisor:
+Martin Almgren, ÅF-Sound and Vibration
+Paul Appleqvist, ÅF-Sound and Vibration
+Examiner:
+Hans Bodén, KTH, Department of Aeronautical and Vehicle Engineering
+
+Abstract
+In the present paper, a study on the directivity of sound from a wind turbine has been conducted.
+The aim of the study is to investigate the horizontal sound radiation pattern through a field study
+compared to a noise prediction. The benefit of the results may be used to optimize the output effect
+from the wind turbine while the guidelines for noise levels at nearby residential areas still are met.
+The complete directivity pattern around the wind turbine was investigated by performing emission
+measurements around the wind turbine from a method described in IEC 61400-11 Wind turbine
+generator systems – Part 11: Acoustic noise measurement technique.
+Furthermore, the dominant sound source from the wind turbine, the turbulent boundary layer
+trailing edge noise, and the frequency range where it is dominating has also been scrutinized.
+The results show that the dipole character of the trailing edge noise has an impact on the entire
+horizontal radiation pattern from the wind turbine.
+From a field study it was found that there was a distinguishable directivity of the sound.
+On a distance of 125 m from the wind turbine the sound pressure level in the crosswind direction of
+the wind turbine is close to 3 dBA less than the sound pressure level in the downwind direction of the
+wind turbine when the wind speed is 8 m/s at a height of 10 m. The difference between other
+directions compared to the downwind direction is less significant.
+This could be utilized to optimize the power output, however the difference in sound level is
+relatively small but the advantage for power output have to be quantified before a conclusion of the
+benefits can be made.
+Keywords
+Directivity, wind, turbine, noise
+
+ii
+
+Sammanfattning
+I föreliggande rapport, har en studie om ljudets direktivitet från vindkraftverk utförts.
+Syftet med studien är att undersöka den horisontella ljudutstrålningen genom en fältstudie som
+jämförs med en prediktion av bullernivån. Resultatet kan möjligtvis användas för att optimera den
+producerade effekten från vindkraftverk samtidigt som riktlinjerna för bullernivåerna vid närliggande
+bostadsområden hålls uppfyllda.
+Ljudets direktivitet runt vindkraftverket undersöktes genom att utföra emissionsmätningar runt
+vindkraftverket med en metod som beskrivs i IEC 61400-11 Wind turbine generator systems – Part
+11: Acoustic noise measurement technique.
+Den dominerande ljudkällan från vindkraftverket är ljudet som uppstår nära rotorbladets spets när
+turbulens som uppstår längs med rotorbladet rör sig över bladets bakkant (Turbulent boundary layer
+trailing edge noise). Frekvensområdet där det ljudet dominerar har undersökts noggrant på grund av
+ljudets starka direktivitet och att det är den dominerande ljudkällan från moderna vindkraftverk.
+Resultaten visar en direktivitet av dipolär karaktär vilket tyder på att ljudet som uppstår vid bladets
+bakkant har en inverkan på hela det horisontella ljudutstrålningsmönstret från vindkraftverket.
+Från en fältstudie fann man att det fanns en tydlig direktivitet på ljudet.
+På ett avstånd av 125 m från vindkraftverket var ljudtrycksnivån i sidvinds riktning av vindkraftverket
+nära 3 dBA lägre, när vindhastigheten var 8 m/s på 10 meters höjd, än ljudtrycksnivån var nedströms
+om vindkraftverket i vindriktningen.
+Skillnader mellan andra riktningar jämfört med nedströms om vindkraftverket är mindre signifikanta.
+Detta skulle kunna användas för att optimera effekten, dock är skillnaden i ljudnivån relativt liten
+men fördelen som kan göras i uteffekt kan inte uteslutas innan den blivit kvantifierad.
+Sökord
+Direktivitet, vindkraft, buller
+
+iii
+
+Acknowledgements
+During the spring 2011, the present thesis was performed and I would like to thank techn. Dr. Martin
+Almgren for the opportunity to conduct the thesis at ÅF - Sound and vibration.
+I would like to extend a special thanks to my supervisor techn. Dr. Karl Bolin at the Department of
+Aeronautical and vehicle engineering at the Royal technical high school. I am grateful for his guidance
+and support.
+I would also like to give special thanks to my supervisor Paul Appelqvist at ÅF- Sound and vibration.
+Your help and consultancy have been much appreciated in the pursuit of this thesis.
+The field study was conducted in collaboration with Hans Klingberg, another student that was
+performing his master thesis at ÅF – Sound and vibration I would like to thank him for the discussions
+and conclusions we came to when facing problems in our thesis work and also his help with the noise
+prediction simulation.
+Finally, I would like to thank the rest of employees at ÅF - Sound and vibration, who have helped me
+with various matters during the spring and been very welcoming.
+
+Stockholm, May 2011-05-24
+
+Manne Friman
+
+iv
+
+1 Introduction ____________________________________________________________________ 1
+1.1
+
+Scope ___________________________________________________________________ 1
+
+1.2
+
+Objectives _______________________________________________________________ 1
+
+1.3
+
+Limitations ______________________________________________________________ 2
+
+1.4
+Text outline ______________________________________________________________ 2
+2 Theory ________________________________________________________________________ 3
+2.1 Fundamental acoustics ________________________________________________________ 3
+2.1.2 Sound power Level _________________________________________________________________ 3
+2.1.3 Sound propagation _________________________________________________________________ 4
+2.1.4 Directivity of sound _________________________________________________________________ 4
+2.1.5 Lighthill’s equation _________________________________________________________________ 5
+
+2.2 Noise from wind turbines ______________________________________________________ 5
+2.2.1 Aerodynamic noise _________________________________________________________________ 5
+2.2.2 Mechanical noise ___________________________________________________________________ 6
+
+2.3 Environmental effects ________________________________________________________ 6
+2.3.1 Refraction ________________________________________________________________________ 7
+2.3.2 Wind speed gradient ________________________________________________________________ 7
+2.3.3 Temperature gradient _______________________________________________________________ 8
+2.3.4 Air absorption _____________________________________________________________________ 8
+
+2.6 Background noise ____________________________________________________________ 8
+2.7 Measuring methods __________________________________________________________ 9
+2.7.1 Noise emission _____________________________________________________________________ 9
+2.7.2 Noise imission _____________________________________________________________________ 9
+
+2.8 Wind turbine structure ________________________________________________________ 9
+2.9 Wind turbine noise prediction _________________________________________________ 10
+2.10 Literature study ___________________________________________________________ 11
+2.10.1 Method for literature study ________________________________________________________ 11
+2.10.2 Conclusion of literature study _______________________________________________________ 11
+2.10.3 Prediction of wind turbine noise and validation against experiment, S.Oerlemans _____________ 12
+2.10.4 Low frequency noise-sound power measurement method, B. Søndergaaard _________________ 13
+2.10.5 Wind turbine noise prediction, Luís Filipe da Conceição Vargas ____________________________ 13
+
+3 Method _______________________________________________________________________ 14
+4 Field study ____________________________________________________________________ 15
+4.1 Site conditions _____________________________________________________________ 15
+4.1.1 Object description _________________________________________________________________ 15
+4.1.2 Environmental description __________________________________________________________ 15
+4.1.3 Site description ___________________________________________________________________ 15
+
+4.2 Instruments and equipment __________________________________________________ 16
+4.2.1 List of Instruments _________________________________________________________________ 16
+4.2.2 Ground board ____________________________________________________________________ 16
+4.2.3 Microphone ______________________________________________________________________ 17
+4.2.4 Sound level meter _________________________________________________________________ 17
+
+4.2.5 Windscreen ______________________________________________________________________ 17
+4.2.6 Wind mast _______________________________________________________________________ 17
+4.2.7 Distance meter ___________________________________________________________________ 17
+
+4.3 Measurement method _______________________________________________________ 18
+4.3.1 Measurement points _______________________________________________________________ 18
+4.3.2 Measurement interval and conditions _________________________________________________ 19
+4.3.3 Frequency range of the different measurements ________________________________________ 19
+4.3.6 Tonality _________________________________________________________________________ 19
+4.3.7 Wind speed ______________________________________________________________________ 20
+
+5 Analysis of field study ___________________________________________________________ 22
+5.1 Outline of analysis __________________________________________________________ 22
+5.2 Frequency analysis __________________________________________________________ 22
+5.3 Statistic analysis ____________________________________________________________ 23
+5.4 Regression analysis __________________________________________________________ 24
+5.4.1 Summary of the regression analysis ___________________________________________________ 24
+5.4.2 Corrections conducted in the regression analysis ________________________________________ 25
+
+5.5 Directivity of the sound ______________________________________________________ 26
+5.5.1 Description of the analysis of directivity _______________________________________________ 26
+5.5.2 Directivity Index ___________________________________________________________________ 27
+5.5.3 Directivity at frequency range of aerodynamic sound sources ______________________________ 28
+5.5.4 Directivity shown as polar plot _______________________________________________________ 29
+
+5.5 Uncertainty ________________________________________________________________ 30
+5.6 Method evaluation __________________________________________________________ 30
+6 Discussion _____________________________________________________________________ 31
+6.1 Concept of the study ________________________________________________________ 31
+6.2 Results of the literature study _________________________________________________ 31
+6.3 Results of the field study _____________________________________________________ 31
+6.4 Reflections about the analysis _________________________________________________ 32
+6.5 Query method ______________________________________________________________ 32
+6.6 Influence of the uncertainty ___________________________________________________ 32
+6.6 Sources of error ____________________________________________________________
+7 Conclusion ____________________________________________________________________
+8 Future work ___________________________________________________________________
+9 References ____________________________________________________________________
+
+33
+33
+34
+35
+
+Appendix A Regression analysis and Bin analysis _____________________________________ 36
+Appendix B Uncertainty calculation________________________________________________ 39
+Appendix C Calibration of Wind screens ____________________________________________ 40
+Appendix D Wind turbine noise prediction code (Matlab®) _____________________________ 41
+
+Introduction
+
+1 Introduction
+1.1 Scope
+Wind turbines are an environmentally friendly and renewable source of energy, which are two
+important factors for the future of energy production. But the noise from wind turbines is often
+perceived as annoying and affects residents in the vicinity.
+The guidelines for which sound pressure levels from wind turbines that are allowed varies between
+countries, but is a main concern for manufacturer, owner and people living nearby the wind turbine.
+A guideline issued by the Swedish National Environmental Protection Agency (Naturvårdsverket)
+states that the noise levels at the facades on buildings of nearby residential areas should be below 40
+dB(A) when the wind speed is 8 m/s at 10 meters height [1].
+Relevance: A way to ensure that this guideline is followed is to calculate a prediction on how the
+noise will affect the surrounding area around the wind farm before construction and then follow up
+by performing emission or imission measurements to investigate the sound power level that the
+wind farm emits. The results of these predictions and measurements can then be used to support the
+building permits or be used to determine how much the wind turbine will be allowed to be active.
+Therefore sound propagation is an important part when planning construction of wind turbines
+However, the sound from wind turbines is not radiating equally strong in all directions propagating
+away from the wind turbine. There are actually several sound sources with different characteristics
+of both tone and sound radiation pattern.
+When measurements of sound from wind turbines are performed, one of the most important
+parameters is the sound power level, which is the acoustic power radiated from the source.
+This is measured downwind of the wind turbine, assuming that the sound comes from an omnidirectional point source. This means that directivity is neglected.
+Sound power level is measured in accordance with standard IEC 61400-11 Wind turbine generator
+systems – Part 11: Acoustic noise measurement technique [2]. The standard includes an option to
+measure how the noise level varies in different directions from the sound source.
+This is performed to determine the sound radiation pattern also known as directivity of the sound.
+Benefits: By knowing how the sound radiates from a wind turbine, one can regulate the turbines
+setup depending on directivity and direction to nearby residential areas to optimize power output
+while still fulfilling the conditions in different guidelines.
+1.2 Objectives
+The objectives of this master thesis are to:
+ Investigate how the sound pressure level varies in different directions from the wind turbine
+and what the consequences may be.
+ Program a prediction code for the sound radiation pattern to compare with measurements.
+ Discuss how the sound radiation pattern can be used to optimize the power output from a
+wind turbine while keeping the sound level to the limit of 40 dB(A) at the facades on buildings
+of nearby residential areas.
+
+1
+
+Introduction
+1.3 Limitations
+The study has been limited to certain restrictions:
+ This thesis is focusing on horizontal directivity, which is according to the measurement
+method described in standard 61400-11 Wind turbine generator systems – Part 11: Acoustic
+noise measurement techniques. Vertical directivity is not included in the field study.
+ Results of the measurements will be limited to one wind turbine and to the parameters that
+apply in that specific time, such as turbine mode, angle of attack and rotation speeds,
+temperature, wind speed, surrounding environment, season specifics instead of a general
+view over the year.
+ The measurements are limited to a shorter time-span during daytime, thus variations during
+the day, such as stratification of temperature could not be observed. However a
+measurement during night was also performed so the comparison between day and night is
+conducted.
+ Directivity is frequency dependent and the perceived loudness of the sound source will vary
+with the distance between observer and blade. However, in this study the total noise will be
+investigated which means a minute average of the equivalent sound pressure level covering
+several revolutions of the rotor will be studied.
+ The wind turbine noise prediction is limited to turbulent boundary layer trailer edge noise
+which is the dominant sound source of a wind turbine and optionally separation stall noise.
+1.4 Text outline
+This is a brief description of the text outline of this master’s thesis report
+Chapter 2 Theory: Fundamentals of theory on sound and theory about acoustics from wind turbines.
+Chapter 3 Method: A description of the methods used for this study.
+Chapter 4 Field study: The measurement setup is described and the object investigated.
+Chapter 5 Analysis of field study: Analysis of data and a comparison between prediction and results.
+Chapter 6 Discussion: Reflections about the results, analysis and the methods used in this study.
+Chapter 7 Conclusion: Summary of the study and in short what could be concluded from the analysis
+Chapter 8 Future work: Implementation of the conclusion in future design of wind farms.
+Chapter 9 References: List of the sources of information that have been used in this study.
+
+2
+
+Theory
+
+2 Theory
+This chapter intends to give some perspective about sound from wind power. It describes the
+fundamental acoustic, sound sources, different parameters that can affect the sound, measurement
+methods used to observe sound and important information from the literature study.
+
+2.1 Fundamental acoustics
+The unit used to measure sound is called Bel. It is a value based on a ratio between a power and the
+reference value of that powers unit. In acoustics, Bel is too large of a unit and instead you use a tenth
+of a Bel called decibel according to och vibrationer (Sound and Vibrations) [3].
+The most common ways to measure sound is based on either changes of pressure in the air, the
+intensity of particles in the air or the total acoustic power.
+The human ear can hear frequencies between 4Hz and 20 kHz. In order to mimic the ear's perception
+capabilities, a filter that reduces the influence of low frequencies can be used. The most common
+filter to use is A-weighting, with the unit dB(A), but there are also B and C-weighting [4].
+2.1.2 Sound power Level
+Sound power level is a unit which is used to obtain the acoustic power radiated from a sound source.
+The instantaneous acoustic effect that propagates through a surface S with the normal vector n
+according to Ljud och vibrationer (Sound and Vibrations) [3] is defined as:
+[W]
+
+(2)
+
+Equation 2: Sound power level
+Where
+is instantaneous acoustic effect [W].
+is the sound pressure [Pa]
+is the particle velocity [m/s]
+From this basic mechanical formula the sound intensity and sound pressure level can be derived.
+Equation 2 and 3 are obtained from Ljud och vibrationer [3].
+[Pa]
+Equation 3: Sound pressure level
+Where
+is the reference density of air [kg/m3].
+c
+
+is the speed of the sound [m/s].
+is the time averaged sound effect level [W].
+is the distance between the sound sources to the observer [m].
+
+These units are the most common when quantifying sound.
+
+3
+
+(3)
+
+Theory
+2.1.3 Sound propagation
+The sound pressure level decrease when sound propagates through the atmosphere, because the
+sound energy is distributed in a wider area. This is known as geometric dispersion.
+The spherical spreading of the sound pressure level is reduced by 6 dB(A) as the distance is doubled.
+Sound propagation is affected by wind and air temperature which varies with height and the ground
+damping influence and roughness [3].
+2.1.4 Directivity of sound
+The directivity of sound means that the sound level emitted from a source varies in strength
+depending on the different directions from the sound source.
+Thus, the sound has a directional component and consequently a sound source can be considered as
+omni-directional or directional according to Vargas [5].
+If the sound is directional, the strength of the noise level may vary in different directions from the
+sound source, this can be represented as a pattern of sound radiation, also called the directivity of
+the sound. If it is omni-directional, the sound source radiates energy equally in all directions.
+Directivity is measured in either a Directivity index in decibels or as a dimensionless value Q.
+An example of an omni-directional source would be a balloon that pops, it emits sound equally in all
+directions. This represents a Q value of 1.
+Another example of directivity of sound is when you try to be heard at long distances outside and
+you cup your hands around your mouth to increase the directivity. This increases the Q value.
+In this study, aerodynamic sources from the rotor blades are mainly investigated and these sources
+which are induced by flow are expected to have a dipole character of directivity.
+In the standard IEC 61400-11 Wind turbine generator systems – Part 11: Acoustic noise measurement
+technique [2] a method to describe the directivity of the sound is the directivity index.
+This method evaluates the difference in sound pressure level between the measurement points by
+comparing the sound pressure levels with the reference point and accounting for different distance.
+(3)
+Equation 3: Directivity Index
+Where
+is the A-weighted sound pressure level at the positions 2, 3, 4, 5 or 6 corrected for
+background noise in the same position.
+is the A-weighted sound pressure level at reference position 1, measured
+simultaneously with
+
+and also corrected for background noise.
+
+Ri
+
+is the slant distance between the rotor centre and positions 2, 3, 4, 5 or 6 and
+
+R1
+
+is the slant distance between the rotor centre and reference position 1 [2]
+
+4
+
+Theory
+2.1.5 Lighthill’s equation
+To explain aerodynamic noise which is sound generated by flow a formula containing the classical
+wave equation (left hand side of eq.4) together with the flow induced source term (right hand side of
+eq.4) is used. This formula is better known as Lighthill’s equation according to Lighthill [6].
+(4)
+Equation 4: Lighthill’s equation
+Where
+c
+
+is the speed of the sound [m/s]
+is the nabla operator which in Cartesian system equals (
+
+x
+
+is a Cartesian co-ordinate
+
+u
+
+is the flow velocity for i,j=1, 2, 3. The factor between ui,uj is called
+Lighthill’s turbulence stress tensor which is important in the generation
+of noise that is dependent on the flow conditions considered. [6]
+
+For a wind turbine, which has rotating blades with solid surfaces and sharp trailing edges the source
+term can be modified according to reference [7]. Due to the motion of the rotor the sound
+generation will also be modified with a Doppler-shift that modifies the frequency and can also cause
+changes in the directivity according to Howe [8].
+
+2.2 Noise from wind turbines
+2.2.1 Aerodynamic noise
+Aerodynamic noise is generated when the rotor blade passes through the air according to Wagner [9]
+As the blade moves the sound source form a dipole characteristic of directivity around the blade.
+The sound is perceived as a swishing or hissing sound and is of broadband character [5].
+For the modern wind turbines it is normal that the aerodynamic noise generated at the blades is the
+dominant sound from the wind turbine and these sounds are described by Lighthill’s equation.
+The impact of noise characteristics is the angle of attack, blade shape, blade tip velocity and
+turbulence in the air [5]. The dominant aerodynamic noise from the blades is seen in Fig.1 from [10].
+
+Fig.1. The dominant sound source as pictured by an acoustic camera [10]
+
+5
+
+Theory
+2.2.1.1 Airfoil self-noise
+The dominating sound source from a wind turbine is the aerodynamic sound sources.
+The airfoil self-noise that is most prominent is the trailing edge noise pictured in Fig.2.
+The noise originates from the interaction between turbine blade and turbulence from its own
+boundary layer and wake, it is generated when the boundary layer moves over the trailing edge [4].
+As described in figure 2 [5], the scattering from the vortical disturbances on the boundary layer
+propagates (from left to right in fig.2) into acoustic waves at the trailing edge of an airfoil which
+causes turbulent boundary layer trailing-edge noise (TBL-TE) [5].
+
+Fig.2. Sources for aerodynamic noise at the airfoil [5]
+The TBL noise is also seen as a prominent source of noise by the acoustic camera in figure 1.
+The dominant sound originates close to the tip, but not at the very edge. According to Oerlemans
+[10, 19] practically all downward radiated blade noise is produced on the blades downward
+movement. There are several other aerodynamic sound sources that origin at different locations of
+the blade. Such as separation-stall noise, tip vortex formation noise and vortex shedding from the
+laminar boundary layer according to Vargas [5]. However, in this study the main focus is on trailing
+edge noise and in some extent separation-stall noise for high angles of attack of the blade.
+2.2.1.2 Inflow turbulence noise
+Low frequency noise due to inflow turbulence occurs because of modulations in the lifting force of
+the blade. The reason for this is the incoming turbulence which causes changes in flow speed and
+angle of attack. Inflow turbulence can also be the source of higher frequency noise if there is an
+interaction between turbulence and the leading edge according to Lowson [11].
+2.2.1.3 Low frequency noise from aerodynamic sources
+If the rotor is positioned downwind of the tower, it creates a strong low-frequency thumping sound
+when the blade passes the tower. Wind turbines with the rotor positioned downwind are very
+unusual in the current situation [11].
+2.2.2 Mechanical noise
+The mechanical noise is not as noticeable as the aerodynamic noise from modern wind turbines
+because the sound insulation of the mechanical components of the assembly is highly developed.
+However, there can be failure or wear of the gear and fittings which can cause a tonal sound [11].
+
+2.3 Environmental effects
+The environmental effects may have great influence on the results of a measurement.
+The right wind speeds, weather conditions and amount of background noise is required for a
+standardised measurement according to the standard [2].
+The measurements that have been performed for this study were emission measurements, as the
+distance between point of measurement and sound source is relatively short compared to an
+imission measurement. Therefore the environmental effect is not as prominent as it would have
+been for an imission measurement.
+
+6
+
+Theory
+2.3.1 Refraction
+The phenomenon that sound waves can change direction in different ways depending on
+environmental effects mentioned in 2.3.2 and 2.3.3 is called refraction. Refraction is affected by the
+speed of the sound which is influenced by both wind speed gradient and temperature gradient [12].
+The temperature gradients effect on the sound waves described in 2.3.2 are shown in figure 3 [13].
+
+Fig.3. The refraction of sound waves due to refraction at (a) positive temperature gradient and (b)
+negative temperature gradient [13].
+2.3.2 Wind speed gradient
+The wind speed gradient is the variation of wind speed depending on altitude.
+As the wind gets closer to the ground and gets reflected and absorbed by the ground surface, the
+wind speed is slowed down by the ground roughness. The wind speed may also increase in speed due
+to layers of air with relatively high temperature.
+For sound propagation downstream of the wind turbine, the wind speed will be added to the sound
+waves normal propagation speed.
+A high ground roughness will cause higher wind speed gradient. The increase of gradient will cause
+the sound waves to refract downward towards the ground when propagating downstream.
+Upstream of the wind turbine, the sound waves will refract up, which causes the sound waves to hit
+the ground surface with a flat angle, increasing the magnitude of the ground attenuation.
+Due to this, one can expect lower sound levels upstream than downstream.
+There might even be a sound shadow which damps the sound even further according to the report
+from Naturvårdsverket [13]. Examples of these two phenomena can also be seen in figure 4 [14].
+
+Fig. 4. The sound propagation around a wind turbine with the presence of a wind speed gradient [14]
+
+7
+
+Theory
+2.3.3 Temperature gradient
+Temperature varies with height over ground due to the suns height over the horizon and the amount
+of cloudiness. With increasing temperature the speed of sound is also increased [13].
+A negative temperature gradient is when the air temperature will decrease with height over ground.
+This occurs for example on clear days and will cause the sound waves to refract upwards which in
+turn causes decreased of the sound levels as one move away from the sound source.
+Furthermore a negative temperature gradient correlates to high wind speeds at ground level, high
+turbulence factor and low vertical wind gradient [13].
+A temperature inversion is when the air temperature increases with height over ground.
+This happens on a clear night when the wind is still and will cause the sound waves to refract
+downwards which in turn could cause the sound to be audible on long distances.
+Furthermore a temperature inversion causes low wind speeds at ground, low turbulence factor and
+high vertical wind gradient [13].
+At certain circumstances, there may be height inversion, where the temperature decreases with
+height at first, and then starts increasing through a higher air layer. If this occurs, sound waves can
+propagate over large distances with little damping [13].
+The wind is influencing the sound from wind turbines more than temperature, and the influence of
+the temperature gradient is mainly when the wind speed is low [13].
+2.3.4 Air absorption
+The air absorption is influenced by frequency, humidity, air pressure, distance between source and
+receiver and temperature. The air absorption has greater effect for sound with high frequency and
+long propagation distances according to the report by Naturvårdsverket [13].
+The air absorption is not accounted for in IEC 61400-11 Wind turbine generator systems – Part 11:
+Acoustic noise measurement technique [2]. This will cause the sound power level at frequencies over
+1 kHz to be underestimated. However, the difference is less than 1 dB for A-weighted sound power
+level [15].
+2.6 Background noise
+When measuring sound from wind turbines, it is required to separate the background noise from the
+wind turbines noise according to the standard [2]. This means all the wind turbines in the vicinity
+have to be parked to focus and measure the sounds that take place at the location in exception of
+the wind turbines.
+Background noise is divided into two subcategories, firstly natural background noise such as wind,
+animals, waves and noise from vegetation and secondly community noise such as traffic and
+industries according to Appelqvist [16].
+Background noise varies during the day and due to the temperature inversion in the evening the
+wind speed at ground is decreased which also decreases the background noise which in turn give rise
+to a more prominent wind turbine noise as it is less masked according to Appel [17].
+
+8
+
+Theory
+
+2.7 Measuring methods
+2.7.1 Noise emission
+To measure noise emission of a wind turbine, the method described in 61400-11 Wind turbine
+generator systems – Part 11: Acoustic noise measurement techniques [2] is the preferred course of
+action. [2]
+Measurements are performed at a distance from the base of the wind turbine which is equal to the
+height plus the radius of the rotor. The microphone is placed upon a measuring board lying on the
+ground. The reason is to minimize the wind induced noise and to create a uniform reflection from
+site to site due to the acoustically hard surface of the ground board.
+The reflections from the ground are also negligible so the ground effect is not taken to consideration.
+The measurement point should be downstream of the wind turbine in the direction of the wind and
+it is optional to add three more measurement points in other directions to determine directivity.
+By following this procedure the sound power level can be determined in relation to different wind
+speeds. [2]
+2.7.2 Noise imission
+Noise imission measurement should simulate the sound pressure level at the point of the receiver
+i.e. the facades of nearby buildings. When measuring noise imission, the wind turbine noise is
+treated as community background noise. Therefore measuring noise imission of a wind turbine is
+more complex than noise emission, because the natural background noise can be difficult to
+distinguish from the wind turbine noise. For both emission and imission there may be noise
+generated by wind at the microphone, sound induced from wind flowing through adjacent trees,
+traffic, aircrafts, industries, animal or human activities and streams or waves. [2]
+However, for imission measurements which are further away from the wind turbine, the sound
+pressure level from the wind turbine can be exceeded by the background noise.
+
+2.8 Wind turbine structure
+A wind turbine can be divided into five major parts according to Vargas [5]. This can be seen in fig. 5.
+1.
+2.
+3.
+4.
+5.
+
+Rotor blades: Usually there are 2-3 blades equally distributed over the rotor plane.
+Hub: The center of the rotor which connects the blades and the main shaft.
+Nacelle: Contains all the electrical apparatus where mechanical energy is converted to electrical.
+Tower: Supports the nacelle and the thus the blades.
+Ground foundation: A structure of reinforced cement built deeply into the ground. [5]
+
+Fig.5. Wind turbine structure
+
+9
+
+Theory
+
+2.9 Wind turbine noise prediction
+A wind turbine noise prediction for aerodynamic sound sources have been implemented to compare
+the experimental results with simulations performed in Matlab® (Appendix D). The sound sources
+that have been accounted for in the prediction code are the aerodynamic sources from the blades.
+The simulation is based on a code from the report Airfoil self-noise and prediction [18].
+The simulation is a simplified noise prediction where the directivity functions for the trailing
+boundary layer noise for high frequencies eq.5 and optionally low frequencies eq.6 have been
+calculated. The turbulent layer trailing edge noise and separation stall noise have identical scaling
+laws [5]. However, for separation stall noise eq.6 should be used for the directivity factor.
+In equation 5,
+corresponds to the observer positions around the wind turbine.
+The sound pressure levels for suction side and pressure side have been calculated according to
+equation 7, 8 and 9 over a revolution of the rotor for one blade and are then multiplied for the
+number of blades. The dimensions of the wind turbine, general environmental conditions and mean
+wind speed from the field study have been implemented in the simulation.
+Limitations:
+The noise prediction is theoretical and will over estimate the attenuation in crosswind plane.
+In reality, the sound pressure level will not decrease as much as predicted because other sound
+sources such as background noise and mechanical noise will still be present.
+In the reports described in 2.10.3 and 2.10.5 the theoretical decrease in the crosswind have been
+adjusted with and overridden, adjusting the observer position to a location not critical for eq.5 and 6.
+The simplification that has been included is a general background sound source that increases the
+overall sound pressure levels, causing the crosswind decrease to be more realistic seen in Fig. 6a, 6b
+The blades have been divided into segments, however the sound sources have not been applied to
+the actual segment where the sound source originates. Equations 5 to 10 are found in [5].
+(5)
+Eq. 5. Directivity function for high frequency TBL noise [5]
+(6)
+Eq. 6. Directivity function for low frequency TBL noise [5]
+(7)
+Eq. 7 Sound pressure level from TBL-TE noise from pressure side of blade [5]
+(8)
+Eq. 8 Sound pressure level from TBL-TE noise from suction side of blade [5]
+(9)
+Eq. 9 Sound pressure level from separation stall noise from suction side of blade [5]
+
+10
+
+Theory
+
+(10)
+Eq. 10 Total Sound pressure level combined from equation 7,8 and 9 [5]
+Where M is the Mach number, St is the Strouhal number,
+
+is the displacement thickness, A, B, K1,
+
+K2 are amplitude factors, re is the distance to the observer. For information and units see Appendix D
+
+Fig. 6a. Predicted directivity of a wind turbine
+
+Fig. 6b. Sound source added to Fig.6a
+
+2.10 Literature study
+2.10.1 Method for literature study
+In the beginning of this master thesis a literature study was performed to achieve the knowledge
+required. The focus of the literature study was on the sound propagation of noise from wind
+turbines, wind turbine noise predictions, directivity of different sound sources and measurement
+methods for wind turbines.
+The literature included relevant standards, project reports about the topic, reports including
+directivity and semi-empirical methods for evaluation of vertical directivity.
+2.10.1.1 Query method
+In search of literature in the field, material has been found through searches in technical databases.
+Particularly ScienceDirect, Scopus, ETDE, Web of Science, Compendex, NTIS and Inspec have been
+used. Even Internet-based search engines have been used to some extent.
+2.10.2 Conclusion of literature study
+The conclusion that can be drawn from earlier work about directivity of noise from wind turbines
+states that there is a reduction of sound radiation in the crosswind direction in comparison to the
+other directions from the wind turbine. Measurements upstream of the tower against the wind
+direction also tend to have lower sound levels compared to the downstream measurement point due
+to refraction.
+To give an insight on the problem the following chapters are summaries of earlier work in the field.
+
+11
+
+Theory
+2.10.3 Prediction of wind turbine noise and validation against experiment, S.Oerlemans
+In report [10] a semi-empirical prediction method for trailing edge noise from wind turbines has been
+tested. The prediction code that needs the blade geometry and the turbine operating conditions was
+compared to measurements by an acoustic array and directivity measurements and the prediction
+showed the same characteristics as the results of the measurements.
+The report shows that noise that is emitted to the ground was produced when the blade of the rotor
+was moving downward. This is due to trailing edge noise directivity and convective amplification.
+By applying the prediction code to calculate noise footprints, it is shown that for cross-wind
+directions the average level is lower than in upwind and downwind directions.
+
+Fig. 7. Measured and predicted directivity of a wind turbine [19]
+In figure 7 from Location and quantification of noise sources on a wind turbine [19] the directivity in
+the far field for a wind turbine is shown with sound pressure levels relative to the reference point as
+a function of observer location.
+The figure shows how the overall A-weighted sound pressure level summed between 250-800 Hz is
+different depending on the angle that one is facing the wind turbine.
+The frequency range is chosen to 250-800 Hz because the trailing edge noise is located in the same
+frequency range. This study shows that acoustic measurements on a circle around the turbine
+constitute a measurement of the complete trailing edge noise directivity function, including
+directions outside the plane normal to the trailing edge.
+There are eight clusters of experimental values with the angle depending on the angle between the
+measurement position and the direction that the wind turbine rotor is pointing.
+The yaw angles are clustered because measurement positions are fixed while the yaw angle changes
+to align the blades perpendicular to the wind direction.
+It is apparent that the experimental values are fitting the simulated values and that there is a
+difference of 8 dB depending on direction.
+The reason that the upwind sound levels are slightly higher is because of the convective factor in
+equation 7 (Chapter 5, p.10). This is because when the blade azimuth angle is 90° the inverted blade
+flow velocity points upwind.
+
+12
+
+Theory
+2.10.4 Low frequency noise-sound power measurement method, B. Søndergaaard
+In the report Noise Sound power measurement method from DELTA a measurement of directivity
+according to 61400-11 Wind turbine generator systems – Part 11: Acoustic noise measurement
+techniques have been performed.
+This report mentions vertical directivity on a 22 m high wind turbine from a measurement made by
+DELTA, where it was up to 5 dB difference in an octave band. The highest sound power levels were
+measured between 30° and 50° in angle of attack between measurement point and sound source.
+The report also states that air absorption may affect up to 1 dB on the A-weighted sound power level
+at frequencies over 1 kHz. [15]
+In the report it is concluded that directivity is calculated to be low at low frequencies on new wind
+turbines due to high wave length. If the purpose of the measurement is to investigate how the
+nearby residential areas are affected then measurement according to standard [2] are acceptable but
+a secondary wind screen should be included if the insertion loss is calculated. The report
+recommends that the reduction of sound power levels over 1 kHz due to air absorption should be
+included in the calculation [15]. The report also includes a method to calculate insertion loss for
+secondary wind screen in Appendix A of the report [15]. This method which simulates the inclination
+angle of a wind turbine have been used for the calibration of the secondary wind screens that were
+used in the field study of the present paper, with the exception of the reference measurement point.
+2.10.5 Wind turbine noise prediction, Luís Filipe da Conceição Vargas
+In this report [5], a wind turbine noise prediction method have been developed and compared to
+other predictions. A problem when developing a prediction code is that the directivity functions
+approach zero in the crosswind direction of a wind turbine. In order to overcome this unrealistic
+situation, this method adds a value of 0.2 m to the observer position at 90° and 270° This forces the
+directivity terms to have higher contribution in the over-predicted values in the rotor plane.
+Because the blades are twisted, the dipole pattern of directivity is shaped into a non-symmetric
+form. This is a consequence of the blade’s pitch which leads the trailing edge backward and the
+leading edge forward. Furthermore, because the trailing edge is positioned behind the rotor plane
+the upwind positions will suffer greater noise abatement compare to downwind positions.
+Figure 8.a and figure 8.b from reference [5] is an example on how this can change the directivity
+pattern.
+
+Fig. 8a. Non-symmetric dipole [5]
+
+Fig. 8b. Symmetric dipole [5]
+
+13
+
+Method
+
+3 Method
+To determine the directivity a method described in IEC 61400-11 Wind turbine generator systems –
+Part 11: Acoustic noise measurement technique is conducted by placing sound level meters in a circle
+on the ground around the wind turbine.
+By measuring the sound pressure levels at these measurement points at wind speeds in a range
+considered of interest, and then reducing those levels for the background noise and difference in
+distance from the sound source, the horizontal directivity can be determined as a comparison
+between different observer locations. [2]
+The measurement setup is according to the emission measurement method described in the
+standard [2]. An emission measurement is conducted by measuring a sound source on a relatively
+short distance. The microphone is place on a ground board to create a uniform reflection from site to
+site due to the acoustically hard surface of the ground board. A primary small wind screen and a
+secondary larger wind screen are placed upon the microphone to reduced wind induced sound at the
+microphone.
+In addition to the standard measurement setup, two measurement points have been included for the
+purpose to get higher resolution of measurement point separation in a quarter circles relative to a
+circle around the wind turbine. The decreased distance between the measurement points relative to
+the standard setup provides an increased resolution of the directivity pattern.
+The measurement points are synchronized with the wind turbine and then the sound pressure levels
+are recorded every second. These sound pressure levels are then averaged into equivalent sound
+pressure levels for every minute and then correlated to the wind speed measured with wind mast,
+anemometer at the wind turbines nacelle and calculation from the power curve of the output effect
+from the wind turbine. The wind speed is then calculated from the nacelle method and the K-factor
+method described in the standard [2]. The total noise of the wind turbine is measured with the rest
+of the wind turbines in the wind farm parked.
+The equivalent sound pressure levels are corrected for the background noise at equal wind speeds.
+To get the correct values at specific wind speed, a regression analysis for the total noise level and
+background noise is conducted. The background noise at the location is measured with all the wind
+turbines in the wind farm parked.
+During the regression analysis, abnormal sounds are excluded from the data series, such as animal
+activity, vehicles or other background noises which occurs only in short sessions.
+Due to the fact that the measurement points are spread out over a large area, some sound sources
+may be audible only for one measurement point. For a correct comparison, the third octave bands
+affected by such noise have been decreased by an amount that is calculated from an average
+difference between the affected measurement point and the reference measurement point.
+To establish the directivity pattern, a comparison between the results from the field study and the
+predicted values from a simulation is performed for verification.
+The simulation is based on a wind turbine noise prediction code from the report Airfoil self-noise and
+prediction [18] which is the basis of the prediction codes from the reports described in 2.9.3 and
+2.9.5. This prediction assumes only aerodynamic noise, which however is the dominating sound
+source. The simulation which is executed in Matlab® can be seen in Appendix D
+
+14
+
+Field study
+
+4 Field study
+To determine the sound radiation in different directions for a wind turbine, the measurement
+method from standard IEC 61400-11 Wind turbine generator systems – Part 11: Acoustic noise
+measurement technique [2] was followed.
+
+4.1 Site conditions
+4.1.1 Object description
+The measurements were performed in a wind farm with several wind turbines.
+The turbines that was not target for measurement was parked during the measurement.
+Power [MW]
+1.8
+Hub height [m]
+80
+Diameter of rotor [m] (D)
+90
+Wind turbine rotor axis
+Vertical
+Wind turbine rotor placement Upwind
+Number of blades
+3
+Table 1. Object description of the wind turbine studied in the field study
+4.1.2 Environmental description
+Environmental data measured at the time of the field study and roughness length of the ground
+Air pressure [hPa]
+Relative air humidity [%]
+Temperature [°C]
+
+1026
+49
+10-14
+
+Roughness length, z0 [m]
+
+0.05
+
+Table 2. Environmental description of weather conditions and ground roughness
+4.1.3 Site description
+Description of the location for the field study:
+Date of
+measurement
+Topography
+
+The measurements were performed 2011-03-22 between 14:00 and 16:00.
+
+Type of soil
+
+The ground in the measurement area consists of farmland without crops
+
+Reflecting
+surfaces
+
+There was no sound reflecting surface around the wind turbine except the ground.
+
+Other sound
+sources
+
+There were sounds from birds which may have some impact on the results.
+Sound from vehicles or other irrelevant sounds have been excluded from the results.
+Furthermore, there was wind induced sound.
+
+Flat farmland with small elevation changes in the terrain in the nearest 1 km.
+
+Table 3. Description of the surroundings at the site for the field study
+
+15
+
+Field study
+
+4.2 Instruments and equipment
+4.2.1 List of Instruments
+This is the list of the instruments that were used during the field study:
+Instrument term
+Product name
+Third octave band analyzer Norsonic 140 and Norsonic 118
+Acoustic calibrator, class 1
+Brüel & Kjær, type 4231
+Distance Meter
+Laser meter
+Wind and temperature
+Campbell Scentific CR850 logger, Windsonic wind meter 1405,
+logger
+temperature sensor with radiation screen
+Table 4. List of instruments used in the field study
+All the instruments have been calibrated according to SS-EN ISO/IEC 17025 the date of calibration
+can be seen in the instruments log from ÅF- Sound and vibration.
+4.2.2 Ground board
+On the measurement point a ground board is placed with the microphone placed in the center.
+The board should have a diameter of at least 1 m and a thickness of 12 mm according to [2].
+The setup can be seen from the field study in fig.9 and according to standard in fig.10 [2].
+With the measurement point on the ground, the effects of wind noise and interference phenomena
+are reduced, but it also means that the vertical directivity cannot be measured.
+The sound pressure level shall be adjusted by +6 dB because the surface is acoustically hard. [2]
+
+Fig.9. Measurement setup with ground board, secondary wind screen and sound level meter.
+
+Fig.10. Measurement setup with ground board according to standard. [2]
+
+16
+
+Field study
+
+Furthermore advantages of using a large board are:
+ A reduction of the influence of reflected sound from vertical surfaces behind the board.
+ Improved signal-to-noise ratio for the ambient sound sources behind the board.
+ Improved signal-to-noise ratio due to reduced influence of background noise from turbulent
+wind around the microphone.
+4.2.3 Microphone
+The microphone should have a maximum diaphragm diameter of 13 mm.
+The tilt angle between the ground board and direction of the microphone against the rotor hub
+should be between 25 ° - 40 °. This can be adjusted by the distance from the turbine. [2]
+These conditions were satisfied during the measurement.
+4.2.4 Sound level meter
+The sound level meters that were used, Norsonic 140 and Norsonic 118, fulfilled the requirements
+from the standard [2]. This includes the conditions on microphone membrane and third-octave
+analyzer.
+4.2.5 Windscreen
+The windscreen consisted of a half-transparent spherical cell of the foam with a diameter of about 90
+mm, which is centered on the diaphragm of the microphone.
+A secondary wind screen was placed symmetrically over the smaller windscreen.
+The dimensions should be at least a diameter of 450 mm, covered with a layer of open cell foam with
+a thickness of 13 mm to 25 mm and a porosity of 4 to 8 pores per 10 mm [2].
+These conditions were fulfilled for the wind screens used in the field study.
+The influence of the secondary wind screen is shown in Appendix C.
+4.2.6 Wind mast
+The wind mast that was used, Windsonic wind meter 1405, fulfilled the conditions in the standard [2]
+
+Fig.11. Allowed region for wind mast. [2]
+Figure 11 which is from the standard [2] shows the allowed region for the wind mast.
+The wind mast was placed in a direct position upwind of the wind turbine, with a distance three
+times the diameter of the wind turbine rotor away from the tower. This was in the allowed region.
+4.2.7 Distance meter
+To measure the distance from the measurement points to the wind turbine a binocular laser meter
+with accuracy according to standard [2]. Distance to base and hub of the wind turbine was measured.
+
+17
+
+Field study
+
+4.3 Measurement method
+According to standard [2] the procedure to determine the directivity is to investigate the sound
+pressure level as a function of wind speed in several measurement points.
+The measurement points are placed along a circle with the radius based on the wind turbines
+dimensions. This is seen in figure 12, which is obtained from the standard [2].
+The directivity is determined by measuring the A-weighted sound pressure level and the wind speed
+simultaneously and then correcting the value for background noise and difference in distance
+between measurement point and the hub of the rotor. These measurements are then compared with
+the measurements from the reference measurement point (M1 in Fig.13).
+4.3.1 Measurement points
+The horizontal distance between measurement point and tower of the wind turbine is recommended
+to be equal to the hub height plus the radius of the rotor with a tolerance of 20 %.
+The inclination angle φ between measurement point and hub shall be between 25°-40°. (Fig.14)
+The direction of the downwind measurement point should be within ±15° of the wind direction. [2]
+Two additional measurement points were included for this measurement, M5 and M6 in fig.13.
+
+Fig.12. Measurement points from IEC 61400-11 [2]
+Measurement points
+Point abbreviation
+M1
+M2
+M3
+M4
+M5
+M6
+
+Fig.13. Measurement points used
+
+Distance [m]
+Measurement point to hub (R1) Measurement point to base of tower (R0)
+149
+125
+132
+
+115
+
+136
+
+114
+
+136
+
+115
+
+137
+
+114
+
+132
+
+113
+
+Table 5. Distances to measurement points
+
+18
+
+Field study
+
+The distance between measurement point and wind turbine hub varies due to the slant of the
+farmland. Furthermore, the distance to reference point is equal to the distance from the ground to
+the hub plus the radius of the rotor. The other measurement points are closer to the wind turbine.
+The difference in distance is acceptable according to standard [2] and is corrected for in the results.
+The slant distance is described in figure 14 which is from the standard [2].
+
+Fig.14. Slant distance, measurement point to hub. [2]
+Where
+R0
+R1
+H
+D
+φ
+
+is the horizontal distance between measurement point and tower [m]
+is the slant distance between measurement point and hub [m]
+is the height of the tower [m]
+is the rotor diameter [m]
+is the inclination angle between measurement point and wind turbine hub.
+
+4.3.2 Measurement interval and conditions
+The measurements of sound pressure level were conducted for wind speeds 6-10 m/s, and the sound
+pressure level was clustered into integer values of the wind speed.
+At least 30 series of measurements with one minute per measurement was required, of these at
+least three of the measurements shall be within ± 0.5 m / s of each integer of the wind speed. [2]
+The background level is measured using the same method as the sound pressure level measurements
+but with the wind turbine parked. These conditions were satisfied during the measurement.
+4.3.3 Frequency range of the different measurements
+All measurements were performed with a frequency range of 20-20000 Hz.
+The frequency range required for the sound pressure level measurements, both narrowband and
+octave bands are 50 Hz - 10 kHz according to standard. [2]
+Frequency resolution for narrow-band analysis is 2-5 Hz in 2000 Hz and 2-12.5 Hz above 2000 Hz.
+Octave -band analysis shall be calculated as the average of the energy level of at least three spectra
+measured over a minute for each integer wind speed. [2]
+4.3.6 Tonality
+Tonality is the presence of tones in noise at various wind speeds. The tonality is determined by a
+narrow band analysis with critical bands according to standard. [2]
+This analysis has not been conducted however the term will be used as tones were existent.
+
+19
+
+Field study
+4.3.7 Wind speed
+Wind speed is measured using two methods. Method 1 calculated from the electrical power output
+of wind turbine which is directly dependent on wind speed. Method 1 also requires an anemometer
+at a reference height of 10 m to calculate the background noise. Method 2 is measured with an
+anemometer height between the base and hub height, and then corrected with respect to the
+reference height. It is also possible to measure only the hub height and then calculate the wind
+speed at reference height [2]. The power curve is not from the object studied it is an example of how
+a power curve for a wind turbine may look like, it is seen in fig. 15.
+
+Fig.15. An example of how a power curve may look. It shows the output effect from a wind turbine.
+4.3.7.1 Nacelle method
+To determine wind speed between 5 % and 95% of rated power, the wind speed measured at the
+nacelle Vn and the corrected wind speed VH at hug height which is determined from electrical power
+output is combined in a linear regression. For wind turbines with active power control VH is corrected
+for the current air density which is determined from:
+(11)
+Equation 11. Correction of the wind speed at hub for active power controlled turbines
+Where
+VD
+pref
+
+is the wind speed from the power output curve [m/s]
+is the reference air pressure 101.3 kPA
+
+Tref
+
+is the reference temperature in Kelvin 288 K
+
+The method to calculate the wind speed from the power curve is allowed to 95% of the maximum
+output effect of the wind turbine, a linear regression has to be used.
+
+20
+
+Field study
+
+The wind speed at nacelle height has been scaled to the wind speed at 10 m height assuming
+logarithmic wind speed gradient. Equation 12 is from the standard [2].
+
+(12)
+
+Equation 12. Correction of the wind speed at nacelle height to 10 m height
+Where
+VS
+VZ
+zref
+
+is the standardised wind speed [m/s]
+is the wind speed measured at anemometer height z [m/s]
+is the reference height of wind speed measurement 10 m
+
+z0ref
+z
+z0
+
+is the reference ground roughness length 0,05 m
+is the anemometer height [m]
+is the ground roughness length at the location [m]
+
+4.3.7.2 К-factor method
+Another method, which is not assuming a wind speed gradient, is the K-factor method.
+It is used for an output effect less than 95% of the wind turbines max output effect.
+(13)
+Equation 13. The equation for the K-factor method
+VZ in this method is the measured wind speed from the wind mast instead of the nacelle
+anemometer. The nacelle anemometer method is preferred because the correlation between the
+wind speed measured at the nacelle and the power curve effect output is better than for the wind
+speed measured with the wind mast. [2]
+However, for background measurements when there is no power curve the wind mast is required.
+4.3.7.3 Determination of wind speed with an anemometer
+For the field study, a wind mast was utilized in combination with the wind speed calculated from the
+power curve. The wind speed was corrected to the reference height and reference roughness length
+as described in eq. 12. During the background noise measurements, when the wind turbine is parked
+the wind mast is appropriate for wind speed measurement. The allowable height of the anemometer
+is seen in fig. 16 which is taken from the standard [2].
+
+Fig.16. The allowable range for the height of the anemometer [2]
+
+21
+
+Analysis of the field study
+
+5 Analysis of field study
+5.1 Outline of analysis
+The results have been analyzed according to the conditions from the standard [2]. To determine the
+directivity, the background corrected noise level and the distance is needed. The background
+corrected noise level should be an equivalent sound pressure level over a period of 1 minute.
+The sound pressure level was measured and stored every second in third octave bands, while the
+wind speed was stored every minute. Thus, the sound pressure levels were energy averaged into
+equivalent levels over 1 minute in MS Excel® to be matched with the wind speed at that period of
+time.
+The values were corrected for the insertion loss of the primary wind screen in the sound level meter
+and for secondary wind screens in MS Excel® (the calibration factors and method can be seen in
+Appendix C). The sound pressure levels were A-weighted and then analyzed by frequency analysis,
+regression analysis, statistical analysis and tonal analysis. These values could then be used to
+determine the directivity. In this chapter the analysis needed to determine directivity and the
+corrections that were conducted will be presented first, then the directivity will be presented in 5.5.
+5.2 Frequency analysis
+A frequency analysis is performed to determine how the sound pressure level is affected by the wind
+speed and if there is strong sound sources that seems particular such as strong tones.
+The analysis was performed in MS Excel® and presented in third octave band.
+Due to the high wind speed during the measurement, there was disturbance from wind noise at the
+microphone which can be seen at the low frequency third octave bands.
+It is difficult to extract the high frequency wind induced noise from the noise from the wind turbine
+when investigating sound pressure levels. Fig. 17 shows a frequency analysis of the reference point.
+
+Fig.17. Frequency analysis in third octave band of the reference point
+
+22
+
+Analysis of the field study
+5.3 Statistic analysis
+To determine if the results are normally distributed a statistical analysis is performed to determine if
+there are any abnormalities in the measurement.
+A simple method to investigate this is to perform a graphical test for normal distribution.
+This is performed by calculating the sound pressure level corresponding to a certain percentage of
+the overall sound level, this is presented as a line representing a threshold through a third octave
+band. This line is called for example LA90 which is the noise level exceeded for 90 % of the time
+considered. LA30 are the lower dotted lines and LA10 the upper dashed lines seen in fig.18 and fig. 19.
+
+Fig. 18. LA30 and LA10 for third octave band levels at 8 m/s wind speed
+
+Fig. 19. LA30 and LA10 for third octave band levels at 8, 9 and 10 m/s wind speed (zoomed in on fig.18)
+The spectrum analysis shows that there are tones at 125, 250, 630 and 2.5 kHz.
+The tones at 125, 250 and 2.5 kHz origins from mechanical noise, 630 Hz may be gearbox-noise.
+
+23
+
+Analysis of the field study
+
+5.4 Regression analysis
+5.4.1 Summary of the regression analysis
+According IEC 61400-11 [2] wind turbine noise is determined using the equivalent A-weighted sound
+pressure level. To analyze the data a 4th order regression analysis should be applied to get the
+apparent sound pressure level. A similar regression analysis should also be made for the background
+noise. If the correlation is greater than 0.8 the 4th order analysis should be used, if it is less a linear
+regression should be made dependent of the wind speed and divided into integer bins from it.
+
+Fig. 20. Regression analysis of sound pressure level at reference measurement point
+Fig.20 shows the regression analysis of the measurement point positioned crosswind in the reference
+point. The characteristics of the regression curve shows that the sound pressure level peaks at 7,5
+m/s and at higher wind speeds the noise level decreases until it reaches 9,5 m/s where it increases
+once more. Similar characteristics could be observed at all measurement points and the regression
+curves can be seen in Appendix A. The background noise increases with increasing wind speed.
+Due to the low coefficient of determination (R2=0.1145), a bin analysis were performed for each
+integer value of the wind speed between 6 and 10 m/s, which is according to standard.
+This is performed by separating the total noise and backgrounds noise to wind speed bins for 6, 7, 8,
+9 and 10 m/s and analyzing with linear regression.
+6
+7
+8
+10
+9
+LpA, eq,1min [dBA]
+52,8
+54,1
+54,3
+54,1
+54,5
+41,9
+45,0
+47,1
+47,1
+47,1
+Lbg [dBA]
+10,8
+9,1
+7,2
+7,0
+7,4
+Delta
+52,4
+53,5
+53,4
+53,1
+53,6
+Ls [dBA]
+Lw,A [dBA]
+100,8
+101,9
+101,9
+101,6
+102,0
+Table 6. Bin analysis of integer value of the wind speeds for the data from the reference point
+Wind Speed [m/s]
+
+24
+
+Analysis of the field study
+
+Where
+LpA eq
+Lbg
+Delta
+Ls
+
+is the equivalent sound pressure level energy averaged over 1 minute.
+is the background noise, the sound pressure level energy averaged over 1 minute
+is the difference between total noise level and background noise level.
+is the background corrected noise level
+
+LwA
+
+is the sound power level
+
+The bin analysis shows similar results as the regression curve for the reference point.
+However, for other measurement points a 4th order regression did not give a satisfying
+approximation for sound pressure levels at wind speeds between 6-7 m/s.
+Thus a bin analysis with linear regression for each wind speed was done for each measurement point
+and the data for the presentation of directivity is based upon that analysis.
+The sound power level for a wind speed of 8 m/s at 10 m height:
+Bin analysis with linear regression: 101,9 dBA.
+Regression analysis of 4th order: 101,9 dBA
+The 4th order regression analysis with corresponding sound power level is seen in figure 21.
+
+Fig. 21. Regression analysis of sound power level at reference measurement point
+5.4.2 Corrections conducted in the regression analysis
+The sound level meters at position M1, M2 and M6 (see fig.13) recorded sound for the possibility to
+locate abnormal sounds such as vehicles or animals.
+By listening to the different recordings a constant bird tweet was detected, the birds were close to
+measurement positions M2 and M6 and by comparing the background noise recordings when the
+birds were active and inactive it could be concluded that the third octave bands 5.3 kHz and 6.0 kHz
+were affected by the tweet. An average of the all the measured sound levels between the affected
+measurement points M2, M6 and M5 relative to M1 was performed and a correction were made for
+all sound levels in the affected third octave bands.
+M2 in relative to M1
+Average difference
+
+3.15 kHz
+0.82
+
+4.0 kHz
+1.68
+
+5.0 kHz
+3.33
+
+6.3 kHz
+2.56
+
+Table 7. Example of the average difference in third octave band levels between M2 and M1
+
+25
+
+Analysis of the field study
+
+5.5 Directivity of the sound
+5.5.1 Description of the analysis of directivity
+The sound pressure levels corrected for background noise retrieved from the bin analysis have been
+adjusted by the difference in distance for each measurement point according to equation 3.
+The comparison between the corrected values then constitutes a pattern for the horizontal
+directivity of the total noise emitted from the wind turbine.
+The directivity will be presented either as a polar plot with a circle representing the line on which the
+measurement points have been placed around the wind turbine seen in Fig. 6a.
+The circle will also be presented along a straight axis as in fig.22 with two ‘dips’ corresponding to the
+crosswind direction or as a directivity index, which is the sound pressure levels in the measurement
+points relative to the sound pressure level in the reference point Fig. 23.
+For the sake of presentation, some data from points have been used on the opposite side of the wind
+turbine to interpret the whole sound radiation pattern. This would be true if symmetry around the
+wind turbine could be assumed. This is not the case, the true sound radiation pattern is only at the
+measurement points, and the lines between two measurement points are only interpolation.
+(M1=0°, M5=30°, M2=60°, M6=90°, M3=180°, M1=300°)
+An example of a ‘mirrored’ measurement point is M6=90° which also is used as M6=270°
+
+Fig. 22. Wind turbine noise prediction of the horizontal plane presented as a point diagram
+In figure 22 a wind turbine noise prediction code from [5] has been used, it is apparent that there is a
+5 dB difference between the two dips. The reason is shown in fig.1 where an acoustic camera shows
+how the sound radiated towards the ground is louder when the rotor is revolving downwards in
+comparison as to when it is revolving upwards.
+This has not been implemented in the simulation used in this report. However, as the data used at
+270° is the same data as for the measurement point at 90° it is redundant.
+
+26
+
+Analysis of the field study
+5.5.2 Directivity Index
+According to the standard [2] a method of showing the directivity of a sound source is the directivity
+index. In fig.23 the directivity is shown according to equation 3 in chapter 2.1.4 Directivity of sound.
+The curves are based on the sound pressure levels corrected for background noise for all the
+measurement points. For a orientation on where the measurement positions are see fig.13.
+Additionally an assumption of the sound pressure level at 270° being the same as at 90 have been
+made. This is not essentially true because symmetry cannot be assumed. However, it gives a better
+insight of the overall directivity around the wind turbine as mentioned in 5.5.1.
+
+Fig. 23. The sound pressure level around the wind turbine relative to the reference point
+In figure 23 the directivity in the far field for a wind turbine is shown. It shows how the sound
+pressure level is different depending on the position of the observer and the wind speed.
+The angle 0° corresponds to the position downwind of the wind turbine which is reference point M1
+The angle 90° corresponds to the position in crosswind of the wind turbine, perpendicular to the
+wind direction (M6)
+The angle 180° corresponds to the position which is upwind of the wind turbine (M3).
+The measurement points at 30° (M5), 60° (M2) and 300° (M4) is also included in fig.24
+Notice that the curves are over determined due to interpolation for example at 301°-360° for 6 m/s
+Wind Speed [m/s]
+Directivity Index
+[dBA]
+-5
+
+(Rel. 2*10 Pa)
+
+6
+
+7
+
+8
+
+9
+
+10
+
+∆2
+∆3
+
+-0,35
+-2,13
+
+-0,26
+-2,50
+
+-0,63
+-2,77
+
+-0,77
+-3,20
+
+-0,26
+-2,12
+
+∆4
+
+0,12
+
+-0,49
+
+-0,46
+
+-0,72
+
+-0,83
+
+∆5
+
+-0,75
+
+-0,46
+
+-0,76
+
+-0,97
+
+-1,1
+
+∆6
+-3,05
+-2,78
+-2,82
+-2,99
+-2,37
+Table 8. The directivity index for all measurement points relative to the reference point.
+
+27
+
+Analysis of the field study
+5.5.3 Directivity at frequency range of aerodynamic sound sources
+It is determined that the aerodynamic sound sources from the blades are the dominating source of
+sound from modern wind turbines [19]. The directivity investigated in the simulation is aerodynamic
+sources which gives reason to investigate the frequency range where aerodynamic sound is
+apparent. This is conducted by summing the A-weighted sound pressure levels between 250 and 800
+Hz which is the frequency range dominated by turbulent boundary layer noise.
+There is a tendency for the measured values similar to the predicted but the difference in magnitude
+in the crosswind position between the measured and predicted values is distinct.
+In figure 7, where the predicted values are modified in the crosswind position to match a realistic
+case the magnitude at 90° and 270° is –6 dB relative to the reference point. According to the
+simulation used in this study, it is -14 dB relative to the reference point. In reality, according to the
+field study it is -3.5 dB relative to the reference point. The measured values are plotted as a function
+of the direction of the wind turbine and have been averaged when the angle is the same, thus the
+spread of the clusters seen in figure 24. In Figure 25 the directivity index is shown.
+
+Fig. 24. A comparison between measured and simulated sound level around the wind turbine
+
+Fig. 25. A comparison between measured values at different wind speeds between 250-800 Hz
+
+28
+
+Analysis of the field study
+5.5.4 Directivity shown as polar plot
+This chapter contains polar plots of the directivity with a comparison between prediction and
+measurement. It is seen in figure 26 that the measure sound levels between 250 and 800 Hz, where
+blade tip noise at 1 kHz is excluded, which is the frequency range of the trailing edge noise does not
+follow the predicted sound levels of trailing edge noise. There is a decrease in the measured values
+but due to background noise and other sources in the same frequency range the attenuation is not
+close to the predicted. The sound pressure level as a function of nacelle direction seen in fig. 24 is
+used as a polar plot in fig. 27. For orientation see Fig.13 in chapter 4.3.1.
+
+Fig. 26. Directivity shown as a polar plot for sound pressure levels between 250 and 800
+Hz
+
+Fig. 27. Directivity shown with point 240° interpolated from point 300° and same values as in fig.24
+
+29
+
+Analysis of the field study
+
+Fig. 28. Directivity shown as a polar plot sound pressure levels relative to reference point
+In figure 28 the sound pressure level corrected for background noise is shown for the frequency
+range 20 – 20000 Hz. The upwind measurement point has relatively low sound pressure levels and
+thus a symmetric view of the measurement points does not show a representative picture of the
+directivity. The upwind sound pressure levels are shown in dashed lines as it is unknown except for
+the measurement point at 180°. Even though the plot in figure 26 only shows the sound levels in the
+frequency range 250-800 Hz, similar results is seen for the whole frequency range as the attenuation
+in the crosswind direction is around 3 to 4 dBA relative to the reference point. However in the
+upwind direction the sound pressure levels are relatively high in comparison to the sound levels for
+the measured frequency range 20-20000 Hz.
+
+5.5 Uncertainty
+The uncertainty of the measurements have been evaluated according to standard [2] for each
+regression analysis. The method that have been implemented is shown in appendix B which explains
+what factors are considered for the uncertainty and an example of values from the measurement in
+reference position. The combined standard uncertainty is the individual standard measurement
+uncertainties associated with the input quantities and have to be considered when evaluating the
+results. The combined uncertainty for the regression analysis conducted for the reference point is
+±0,78 dBA. The value depends on site condition and is an acceptable value according to the author.
+
+5.6 Method evaluation
+In the field study, all sound sources are included while in the prediction, only trailing edge noise is
+accounted for. For a correct comparison, an integration contour that would separate the trailing
+edge noise from other noises would be preferred instead of summing the A-weighted sound levels
+between 250-800 Hz together. The reduction of the third octave band levels due to bird noise may be
+incorrect and a band-stop filter would have been preferred. Symmetry around the wind turbine
+cannot be assumed, the duplicated measurement points around the wind turbine may give an
+incorrect view of the directivity pattern. More measurement points to achieve higher resolution are
+recommended to determine directivity. However, the method is sufficient according to the author.
+
+30
+
+Discussion
+
+6 Discussion
+6.1 Concept of the study
+The aim of this study was to investigate how the directivity of the sound sources from a wind turbine
+influenced the sound radiation and how this could be applied to optimize the power output while still
+fulfilling the conditions of noise at nearby building from different guidelines.
+The turbulent boundary layer trailing edge noise was the sound source that was mainly focused on in
+this study due to it being the dominant sound source on modern wind turbines and because the
+aerodynamic sound is more likely to have a strong directivity compared to mechanical noise.
+The method used to investigate the directivity was based on a literature study and a following field
+study. From the literature study it is apparent that the international standard [2] which includes a
+method to investigate directivity from wind turbines has been tested with modifications in several
+studies. Furthermore, several wind turbine noise predictions have been created based on the
+simulation from Airfoil self noise and prediction [18]. Both field studies and simulations of the
+directivity from different reports come to the same conclusion mentioned in 7.2.
+
+6.2 Results of the literature study
+There is a decrease of sound level in the crosswind direction of the wind turbine due to the dipole
+character of the aerodynamic noise, especially due to the directivity of the trailing edge noise which
+is the dominant sound source. Furthermore, due to refraction more than the directivity of the source
+there tends to be lower sound levels upwind of the wind turbine in areas of ‘sound shadow’.
+
+6.3 Results of the field study
+The method used for the field study included emission measurements according to the setup for
+directivity measurement from the standard [2] with a modification of adding two measurement
+points to increase resolution in a quarter of a circle. The measurement positions covered important
+directions from the wind turbine, however when investigating the full sound radiation pattern the
+resolution was relatively low and a separation of 15° between each measurement point would have
+been preferred. The results from the field study did not comply with the predicted sound pressure
+levels. This was due to the fact that the prediction code only covered the dominant aerodynamic
+sound source, the trailing edge noise. The trailing edge noise which has a dipole characteristic of
+directivity and thus decreased rapidly in the crosswind direction due to the directivity function for
+trailing edge noise (eq. 5) could not be directly compared to a measurement of the total noise as
+other sources, both from the wind turbine and background noises becomes dominant in the area
+where the trailing edge noise is decreased.
+From the field study it is shown that the sound pressure level corrected for background noise in the
+crosswind direction is approximately 3-4 dBA less than the sound pressure level corrected for
+background noise at the reference point. According to prediction, it should be approximately 15 dB
+less. This is not realistic however. To compare the prediction with measured values an integration
+contour to separate the trailing edge noise from the measured values would have been required.
+The relatively low sound pressure level in the upwind direction is most likely due to refraction.
+It would have been optimal to measure wind speed at ground at each measurement point, however
+it was measured according to standard with a wind mast upwind of the wind turbine.
+Due to high wind speeds it is questionable if the wind screens managed to protect the microphone.
+The total noise level over the whole frequency range is however directional from the wind turbine,
+but the difference in sound pressure levels around the wind turbine are considered small.
+
+31
+
+Discussion
+
+6.4 Reflections about the analysis
+The concept of the analysis was to analyze each measurement point according to standard [2].
+This was conducted by relating the sound pressure levels of the total noise when the wind turbine
+was active to the wind speed at the moment of recording and then correcting the sound pressure
+levels of the total noise by the background noise at the related wind speeds.
+To achieve the correct values at certain wind speeds, a 4th order regression analysis for each
+measurement point were performed, and if the coefficient of determination was relatively low (less
+than 0.8 according to standard [2]) a bin analysis with linear regression for each value integer of the
+wind speed was performed instead. This is the standardised method for emission measurements of
+wind turbines conducted at present day and is an established method for sound level measurements
+of wind turbines in Europe. The presentation of directivity according to the standard [2] is the
+directivity index. The other methods of presenting directivity, such as assuming symmetry to give a
+better view of the whole pattern around the wind turbine, are created by the author and should be
+considered critically. For example, it is claimed that practically all downward radiated blade noise is
+produced on the blades downward movement [10, 19] still an assumption of symmetry in the
+crosswind direction have been made to give perspective of the directivity around the wind turbine.
+The correction for bird tweet is a quick solution to a complex problem and should be considered
+critically. Directivity is frequency dependent and should be investigated more thoroughly.
+The wind speed was higher during the background measurement compared to the total noise
+measurement, this causes the shift between the total noise data points and background data points
+in the regression analysis and for lower wind speeds (6-7 m/s) the regression trend have to be
+trusted. However, this increases the uncertainty as it is an assumption of the characteristic of wider
+span of wind speed than was actually measured.
+
+6.5 Query method
+The query method used for the literature study was focused on directivity of sound from wind
+turbines and the databases used are from the database collection at the library of the Royal institute
+of technology. The reports used in the literature study and the information from them used in this
+paper are considered reliable according to the author of the present paper.
+
+6.6 Influence of the uncertainty
+The measurement period were one hour with the wind turbine active and half an hour with the wind
+turbine parked. The period satisfactory according to standard, however it only covers a limited range
+of wind speeds. Thus it is uncertain how representative the background noise and total noise actually
+are for regular noise levels at those wind speeds. This could perhaps be doubtful because the results
+from the analysis are restricted to daytime.
+The direction of the wind turbine was evaluated to be in the range of an angle ±15° relative to the
+reference point, this was however uncertain and was measured by the eye. The other measurement
+points were related to the reference point with distance meter.
+There are several factors of uncertainty which have been approximated and the combined factors
+have to be considered when evaluating the results. These factors are for example the standard error
+of equivalent sound pressure levels, calibration, instrumentation such as ground board, instrument
+chain, distance measurements, acoustic attenuation of air, meteorological variations, wind speed,
+wind direction and background. The calculation of the uncertainty can be seen in Appendix B.
+
+32
+
+Conclusion
+
+6.6 Sources of error
+Apart from the sources of error mentioned in the influence of the uncertainty it should be noted that
+the method for correction of bird noise is a matter of concern. The soil under the ground board was
+flattened out to avoid acoustic resonators due to cavities between ground and board, this was
+conducted quickly and small cavities may have influenced the measurement. The influence of the
+secondary wind screens at the relatively high wind speed at ground due to the flat land of the region
+is uncertain and the limit of the protection against wind induced noise at the microphone is not
+known. However, the wind screens were made according to standard and similar wind screens are
+approved fully in [15]. The results seem overall relatively reliable compared to what was expected
+before the field study according to the author.
+
+7 Conclusion
+This study have been conducted to investigate the directivity of sound from wind turbines in order to
+determined if it can be used to optimize the wind turbines output effect while still fulfilling the
+guidelines of the sound pressure levels outside of nearby buildings.
+In this study that is presented in this report the conclusions that could be made were:
+ There is an apparent directivity for the total noise of a wind turbine where there is lower
+sound levels in the crosswind direction compared to other points around the wind turbine
+with equal distance from the source.
+ The horizontal directivity pattern is of a dipole character due to the fact that the emitted
+sound from the dominant sound source is decreased in the crosswind direction.
+The aerodynamic sources which are also of a dipole character along the blade’s foil in the
+vertical plane constitute the directivity in the vertical plane as well as the horizontal.
+ The decrease of noise in the crosswind direction is not as prominent as suggested by the
+theoretical prediction of the dominant sound source, due to the fact that other sound
+sources contribute to the emitted sound in the crosswind direction and that the background
+noise influences the measurement in the field study.
+For a correct comparison an integration contour of the aerodynamic sound source is required
+to separate the dominant sound source from the total noise at the location of the field study.
+ The knowledge of the decrease of total noise in the crosswind direction could be used to
+optimize the output effect of the wind turbine. If the wind turbine is limited due to the sound
+it emits it could be regulated with the pitch angle of the blade when the crosswind direction
+is facing nearby buildings to optimize the output effect. The difference in total noise is
+relatively small and one have to consider the fact that the sound emitted may be louder at
+lower wind speeds than the wind speed where the wind turbine has optimized output effect.
+There is a horizontal directivity that can be observed from the measurements conducted in the field
+study. For the total noise, the sound pressure level measured at the point in the crosswind direction
+is 2-3 dBA less than the sound pressure level in the reference point depending on wind speed.
+For the frequency range of the trailing edge noise the difference is 3-4 dBA varying on wind speed.
+Combined with the other measurement points, the dipole character of the horizontal directivity is
+shown and by comparing the measurement to the noise prediction the dipole character trend is not
+verified but it appears that with modification the prediction could demonstrate the directivity. The
+difference of sound levels is relatively low. The application of directivity to optimize output effect
+could be utilized, but the advantage has to be quantified before a conclusion can be made.
+
+33
+
+Future work
+
+8 Future work
+Decreasing noise from wind turbines
+The newly built wind turbines are getting larger in both hub height and rotor diameter, due to this
+the problem of aerodynamic noise from the wind turbines will only increase if the blade design is not
+adjusted to decrease the noise. Thus the directivity of the aerodynamic sound might become more
+important in the future.
+The blades are designed aerodynamically to optimize the output effect. However, some research has
+been conducted to investigate the character of the aerodynamic sound sources for jagged edges on
+the suction side of the blade. Such design may be of interest to decrease the trailing edge noise even
+though the aerodynamic properties of the blade may be decreased at the cost.
+Modern wind turbines can be regulated to reduce the aerodynamic sound, this is done by adjusting
+the pitch angle of the blades. Another option is to reduce the number of revolutions or limit the time
+when the wind turbine is active. These options may be required at evenings and nights when the
+background noise is lower and nearby residents may be disturbed by the wind turbine noise.
+Other solutions, such as a quieter design of the blades or regulation of the wind turbine adjustment
+due to the sound radiation pattern may be preferred to sustain the wind turbine active as much as
+possible. By a more thorough study of the predicted and measured directivity of a wind turbine a
+standardised system to regulate the noise from wind turbines could be utilized to both optimize the
+power output and preserve a low noise level. These are both important factors for the expansion of
+wind energy in the energy market.
+Improvements of the field study
+A field study with a denser measurement point setup around the wind turbine to increase the
+resolution of the directivity pattern together with imission measurement at a nearby building should
+be performed to estimate if the wind turbine could be optimized in output effect due to directivity.
+To decrease the uncertainty, the measurement should be conducted during a longer period, covering
+more wind speeds and also a longer period during the night to investigate how the noise varies
+dependent on temperature inversion.
+This study is limited to the horizontal directivity. A field study of vertical directivity is a complex
+measurement where either measurement points at hub height or several measurement points on a
+row with different distance from the wind turbine is required. Assuming that horizontal directivity is
+the complete sound radiation pattern of a wind turbine is a simplification as the sound may
+propagate different at an altitude of hub height than it does at ground. Horizontal directivity
+considers observers on a close distance. It is however possible that the sound propagates further on
+a higher altitude and that the directivity pattern on longer distance is different.
+Improvements of the wind turbine noise prediction
+A more specific wind turbine noise prediction should be created. It should include the exact
+dimensions of the segments of the blade that are considered and the sound sources are associated
+with the segment where the source actually origin. A more accurate function that supersedes the
+extreme decrease of sound pressure level in the crosswind direction is required such as the
+prediction by Moriarty [20] or Oerlemans [19]. Furthermore, all sound sources from the wind turbine
+should be included if it should be compared to the total noise of a wind turbine.
+
+34
+
+9 References
+[1]. Riktvärden för ljud från vindkraft, www.naturvardsverket.se. Naturvårdsverket, (Environmental
+Protection Agency of Sweden), 2009.
+[2]. Wind turbine generator systems – Part 11:Acoustic noise measurement technique, IEC 61400-11
+[3]. H. Bodén, U. Carlsson, R. Glav, H.P. Wallin, M. Åbom, Ljud och vibrationer, KTH Marcus
+Wallenberg Laboratory, Department of Aeronautical and Vehicle engineering, 2001
+[4]. L, Johansson, Sound propagation around off-shore wind turbines –Long-Range Parabolic Equation
+Calculations for Baltic Sea Conditions. Division of building technology, ISSN 1651-5536, 2003.
+[5]. L. Vargas, Wind turbine noise prediction, Technical University of Lisbon, 2008
+[6]. M.J. Lighthill, Proceedings of the royal society A: On sound generated aerodynamically, 1953
+[7]. J.E. Ffowcs Williams, L.H. Hall, Aerodynamic sound generation by turbulent flow in the vicinity of a
+scattering half plane, Journal of Fluid Mechanics, 40, 657-670. 1970.
+[8]. M. Howe, Acoustics of fluid-structure interactions, Cambridge Univ. Press, 2008.
+[9]. G. Guidati, J. Ostertag, S. Wagner, Prediction and reduction of wind turbine noise: an overview of
+research activities in Europe, AIAA paper 2000-0042, 2000.
+[10]. S. Oerlemans, J.G. Schepers, Prediction of wind turbine noise and validation against experiment,
+Report National Aerospace Laboratory NLR-TP-2009-402, 2009
+[11]. M.V. Lowson, Design Prediction Model for Wind Turbine Noise. Flow Solutions Report 94/06,
+ETSU W/13/00317/REP, 1994.
+[12]. J. Kragh, Nordic Environmental Noise Prediction Methods, Nord2000 Summary Report, General
+Nordic Sound Propagation Model and Appliations in Source-Related Prediction Methods. Journal no.
+AV1719/01. DELTA 2001, Revised 2002
+[13] Naturvårdsverket (Environmental Protection Agency of Sweden), Ljud från vindkraftverk,
+reviderad utgåva av rapport 6241, Koncept 26 feb 2009. NV dnr 382-6897-07 Rv, 2009.
+[14]. H. Hubbard, K. Shepherd, Wind turbine acoustics. Paper 3057, NASA, 1990
+[15]. B. Søndergaaard, C. Ryom, Low frequency noise from large wind turbines. Sound power
+measurement method, DELTA, 2008.
+[16]. P. Appelqvist, Maskering av vindkraftsljud via naturligt bakgrundsljud – särskilt havsbrus,
+Master thesis, KTH The Marcus Wallenberg Laboratory,TRITA-AVE 2006:100, ISSN-1651-7660, 2006
+[17]. D. Appel, Kvantifiering av områden med lägre bakgrundsnivå än normalt vid
+vindkraftprojektering, Master thesis, KTH The Marcus Wallenberg Laboratory,TRITA-AVE 2008:47,
+ISSN-1651-7660, 2008
+[18]. T.F. Brooks, D. Stuart Pope, M. A. Marcolini. Airfoil Self-Noise and Prediction. NASA, 1989.
+[19]. S. Oerlemans, P. Sijtsma , B. Mendez López, Location and quantification of noise sources on a
+wind turbine, Journal of Sound and Vibration 299, 869-883, 2007.
+[20] P. Moriarty and P. Migliore. Semi-empirical aeroacoustic noise prediction code for wind turbines.
+Technical Report TP-500-34478, National Renewable Energy Laboratory, December 2003..
+
+35
+
+Appendix A Regression analysis and Bin analysis
+AL161 M3
+
+AL164 M5
+
+AL165 M4
+
+36
+
+Al172 M2
+
+AL196 M1
+
+AL197 M6
+
+37
+
+Bin Analysis
+
+M1
+
+Wind Speed [m/s]
+
+6
+
+7
+
+8
+
+9
+
+10
+
+6
+
+7
+
+8
+
+9
+
+10
+
+LpA,eq,1min [dBA]
+
+52,75
+
+54,06
+
+54,31
+
+54,11
+
+54,47
+
+52,75
+
+54,03
+
+54,22
+
+53,95
+
+54,11
+
+Lbg [dBA]
+
+41,91
+
+45,01
+
+47,07
+
+47,14
+
+47,10
+
+41,91
+
+45,01
+
+46,56
+
+47,10
+
+47,11
+
+Delta
+
+10,84
+
+9,05
+
+7,24
+
+6,97
+
+7,37
+
+10,84
+
+9,02
+
+7,66
+
+6,86
+
+7,00
+
+Ls [dBA]
+
+52,38
+
+53,48
+
+53,40
+
+53,14
+
+53,59
+
+52,38
+
+53,45
+
+53,40
+
+52,95
+
+53,14
+
+LwA [dBA]
+
+M2
+
+M4
+
+6
+
+7
+
+8
+
+9
+
+10
+
+6
+
+7
+
+8
+
+9
+
+10
+
+LpA,eq,1min [dBA]
+
+53,48
+
+54,78
+
+54,49
+
+54,16
+
+54,97
+
+55,48
+
+55,50
+
+55,03
+
+54,72
+
+54,98
+
+Lbg [dBA]
+
+43,36
+
+45,55
+
+46,31
+
+46,27
+
+46,28
+
+46,45
+
+46,75
+
+46,81
+
+46,65
+
+46,54
+
+Delta
+
+10,13
+
+9,23
+
+8,19
+
+7,89
+
+8,70
+
+9,03
+
+8,74
+
+8,22
+
+8,07
+
+8,44
+
+Ls [dBA]
+
+53,04
+
+54,23
+
+53,78
+
+53,38
+
+54,34
+
+54,90
+
+54,87
+
+54,32
+
+53,99
+
+54,31
+
+6
+
+7
+
+8
+
+9
+
+10
+
+6
+
+7
+
+8
+
+9
+
+10
+
+LpA,eq,1min [dBA]
+
+51,30
+
+52,23
+
+51,91
+
+51,64
+
+52,86
+
+57,53
+
+51,82
+
+51,41
+
+51,38
+
+52,20
+
+Lbg [dBA]
+
+39,21
+
+42,33
+
+42,30
+
+44,45
+
+44,12
+
+40,97
+
+42,41
+
+42,30
+
+42,75
+
+44,23
+
+Delta
+
+12,09
+
+9,90
+
+9,62
+
+7,19
+
+8,74
+
+16,57
+
+9,41
+
+9,11
+
+8,62
+
+7,97
+
+Ls [dBA]
+
+51,02
+
+51,76
+
+51,41
+
+50,72
+
+52,24
+
+57,44
+
+51,29
+
+50,84
+
+50,74
+
+51,44
+
+LwA [dBA]
+
+98,28
+
+99,02
+
+98,67
+
+97,98
+
+99,50 104,70 98,55
+
+98,10
+
+98,00
+
+98,71
+
+Wind Speed [m/s]
+
+6
+
+7
+
+8
+
+9
+
+10
+
+6
+
+7
+
+8
+
+9
+
+10
+
+LpA,eq,1min [dBA]
+
+54,03
+
+54,48
+
+54,45
+
+54,16
+
+54,39
+
+53,94
+
+54,48
+
+54,45
+
+54,48
+
+54,71
+
+Lbg [dBA]
+
+46,08
+
+46,29
+
+46,39
+
+47,14
+
+46,93
+
+46,08
+
+46,29
+
+46,47
+
+46,70
+
+46,99
+
+Delta
+
+7,95
+
+8,20
+
+8,06
+
+7,02
+
+7,46
+
+7,86
+
+8,19
+
+7,98
+
+7,78
+
+7,72
+
+Ls [dBA]
+
+53,27
+
+53,77
+
+53,72
+
+53,20
+
+53,53
+
+53,17
+
+53,76
+
+53,70
+
+53,69
+
+53,90
+
+100,95 101,45 101,39 100,88 101,21 100,85 101,44 101,38 101,37 101,58
+
+Wind Speed [m/s]
+
+6
+
+7
+
+8
+
+9
+
+10
+
+6
+
+7
+
+8
+
+9
+
+10
+
+LpA,eq,1min [dBA]
+
+53,05
+
+54,41
+
+54,20
+
+53,87
+
+54,14
+
+52,86
+
+54,33
+
+54,02
+
+53,64
+
+53,82
+
+Lbg [dBA]
+
+44,80
+
+45,94
+
+46,65
+
+46,89
+
+47,02
+
+44,80
+
+45,94
+
+46,65
+
+47,00
+
+47,06
+
+Delta
+
+8,24
+
+8,46
+
+7,55
+
+6,98
+
+7,13
+
+8,06
+
+8,38
+
+7,37
+
+6,64
+
+6,76
+
+Ls [dBA]
+
+52,34
+
+53,74
+
+53,36
+
+52,89
+
+53,21
+
+52,13
+
+53,64
+
+53,14
+
+52,58
+
+52,79
+
+LwA [dBA]
+
+M6
+
+100,48 101,67 101,22 100,83 101,78 102,34 102,32 101,76 101,43 101,75
+
+Wind Speed [m/s]
+
+LwA [dBA]
+
+M5
+
+100,83 101,94 101,85 101,60 102,04 100,83 101,91 101,86 101,40 101,60
+
+Wind Speed [m/s]
+
+LwA [dBA]
+
+M3
+
+Regression 4th order
+
+99,90 101,30 100,92 100,45 100,77 99,69 101,21 100,70 100,14 100,35
+
+Wind Speed [m/s]
+
+6
+
+7
+
+8
+
+9
+
+10
+
+6
+
+7
+
+8
+
+9
+
+10
+
+LpA,eq,1min [dBA]
+
+51,05
+
+52,40
+
+52,37
+
+51,99
+
+53,10
+
+50,97
+
+52,57
+
+52,58
+
+52,33
+
+52,86
+
+Lbg [dBA]
+
+42,50
+
+43,67
+
+44,19
+
+44,09
+
+45,37
+
+42,50
+
+43,67
+
+43,95
+
+44,07
+
+44,28
+
+Delta
+
+8,55
+
+8,73
+
+8,17
+
+7,91
+
+7,73
+
+8,47
+
+8,90
+
+8,63
+
+8,26
+
+8,58
+
+Ls [dBA]
+
+50,40
+
+51,77
+
+51,65
+
+51,22
+
+52,29
+
+50,30
+
+51,97
+
+51,94
+
+51,63
+
+52,21
+
+LwA [dBA]
+
+97,66
+
+99,03
+
+98,91
+
+98,49
+
+99,55
+
+97,56
+
+99,23
+
+99,20
+
+98,89
+
+99,47
+
+38
+
+Appendix B Uncertainty calculation
+
+y
+
+Sum
+
+6,0
+
+2
+
+yest
+
+55
+Amount
+
+Sum/(N-2)
+Standard error of Laeq
+(Sum/(N-2))^(1/2)
+
+y
+
+yest
+
+N
+
+2
+
+y
+
+yest
+
+N
+
+2
+
+2
+
+0,11
+2
+
+0,34
+
+0,9
+Max difference
+Table. 9 Example of the analysis of uncertainty conducted on the data from reference position.
+
+Total noise
+
+x4
+
+x3
+
+x2
+
+x
+
+C
+
+0,0104
+
+-0,2066
+
+0,7259
+
+6,5882
+
+18,237
+
+y
+
+y_est
+
+y
+
+yest
+
+2
+
+LAeq
+
+Wnd,
+
+Calculation
+
+difference2
+
+14:18:01
+
+54,43342
+
+7,88
+
+54,2
+
+0,039
+
+14:19:01
+
+54,37807
+
+7,07
+
+54,1
+
+0,094
+
+…..
+
+….
+
+….
+
+….
+
+….
+
+Table. 10 Example of how the calculation is performed
+Uncertainty
+[dB]
+
+Component
+Standard error of LAeq
+
+UA
+
+y
+
+yest
+
+N
+
+2
+
+2
+
+0,34
+
+Calibration
+
+UB1
+
+0,2
+
+Chain of measurement instruments
+
+UB2
+
+0,2
+
+Acoustically hard board
+
+UB3
+
+0,2
+
+Distance measurement
+
+UB4
+
+0,1
+
+Acoustic impedance of air
+
+UB5
+
+0,1
+
+Meteorological variations (including
+turbulence)
+
+UB6
+
+0,4
+
+Wind speed (both measured and derived)
+
+UB7
+
+0,3
+
+Wind direction
+
+UB8
+
+0,3
+
+Background
+
+UB9
+
+0,1
+
+Total of systematic errors
+
+UC
+
+Combined standard uncertainty
+
+U A2 U B21 U B2 2 ...
+
+0,70
+
+U A2 UC2
+
+0,78
+
+UC
+
+Table 11. Uncertainty according to Standard [2]
+
+39
+
+Appendix C Calibration of Wind screens
+The calibration of secondary wind screens was according to a method described in [15].
+This measurement of the insertion loss is conducted by simulating the inclination angle with an omnidirectional loudspeaker on a stand with the height that simulates the ratio of ±20 % of the reference
+length (R0) from the wind turbine. The measurements are conducted with pink noise from the
+loudspeaker which is then corrected for background noise by a measurement of background noise
+immediately after. The three cases that are used are based on the primary wind screen, a 90 mm
+foam wind screen in two different versions (a whole sphere and half a sphere) and finally a case
+without primary wind screen. The calibration for the last case is used as the sound level meters have
+an internal correction for the primary wind screen. Each case are repeated three times with
+background measurements in between and then averaged. The difference seen in fig.30 (excl. little
+ball) is used to calibrate the measurement data for the influence of the secondary wind screen.
+
+Figure 29. The average sound pressure level for the three cases and without secondary wind screen
+
+Figure 30. The difference with and without secondary wind screen incl. and excl. primary wind screen
+
+40
+
+Appendix D Wind turbine noise prediction code (Matlab®)
+%% ----------------- Wind Turbine Noise Prediction----------close all
+clear all
+clc;
+%% Constants
+WT=[80 45 1 0.33 3]; % Wind turbine data: Height [m]/ Blade length [m]/
+% Foil length [m]/ Rotational speed [Hz] / Angle of attack [º]
+Seg=[1:WT(2)];
+%Seperation of blade into segments [m]
+dSeg=WT(2)/(length(Seg)+1);
+%Width of blade [m]
+c=343;
+%Reference speed of sound [m/s]
+freq=[100:500:20000];
+%Frequency vector [Hz]
+u=(2*pi*WT(4)).*Seg;
+%Speed depending on segment [m/s]
+M=u./c;
+%Machnumber [-]
+Re=(u.*WT(3))./(1.78*10^-5);
+%Reynolds number [-]
+t=[(27.094*M+3.312) (23.43*M+4.651) (72.65*M+10.74) (-34.19*M-13.82)];
+%Constants used to derive amplitude correction factors
+St=0.02*(M.^(-0.6));
+%Strouhal number [-]
+Sig=(1.72*WT(3)./sqrt(Re));
+%Sig used to derive Strouhal dependent on freq and sound pressure functions
+pos=[0:(180/19):180];
+%Observer position [°]
+dK1=0;
+%DeltaK1 a correction factor in the sound pressure function for TE-noise
+%% Angle of attack dependency and Amplitude correction factors
+%(From reference [5])
+if Re<9.52*10^4 x=[0.57; 0.30; -4.31.*log10(Re)+156.3];
+elseif 9.52*10^4<=Re<=8.57*10^5 x=[(-9.57*10^(-13)).*(Re8.57*10^5).^2+1.13; (-4.48*10^(-13)).*(Re-8.57*10^5).^2+0.56; 9.*log10(Re)+181.6];
+else x=[1.13; 0.56; 128.5]; end;
+if Re<=5000 dK1=WT(5)*(1.43*Re-5.29); end;
+if WT(5)<t(2)-t(1); K2=-1000; elseif t(2)-t(1)<=WT(5)<=t(2)+t(1)
+K2=sqrt(t(3).^2-(t(3)./t(1)).^2 .*(WT(5)-t(2)).^2+t(4)); else K2=-12; end;
+if WT(5)<1.33 St_2=St; else St_2=St*10^(0.0054*(WT(5)-1.33)^2); end;
+%% Spectral shape functions (From reference [5])
+for m=1:length(freq)
+St_f(m,:) =(freq(m).*Sig)./u;%Strouhal definitions that are non-dimensional
+St_a(m,:)=abs(log10(St_f(m,:)./St)); %Describes oscillating flow mechanisms
+St_b(m,:)=abs(log10(St_f(m,:)./St_2));
+for n=1:length(Seg)
+ac=[St_a(m,n) x(1)]; %Spectral shape functions with boundaries from ref [5]
+bc=[St_b(m,n) x(2)];
+for o=1:2
+if ac(o)<0.204 ai(m,n,o)=sqrt(67.552-886.788*ac(o)^2)-8.219;
+bi(m,n,o)=sqrt(16.888-886.788*bc(o)^2)-4.109;
+elseif 0.204<=ac(o)<=0.244 ai(m,n,o)= -32.665*ac(o)+3.981;
+else ai(m,n,o)=-142.795*ac(o)^3+103.656*ac(o)^2-57.757*ac(o)+6.006;
+if 0.13<=ac(o)<=0.145 bi(m,n,o)= -83.607*bc(o)+8.138;
+else bi(m,n,o)=-817.81*bc(o)^3+355.210*bc(o)^2-135.024*bc(o)+10.619; end;
+end;
+if ac(o)<0.13 ax(m,n,o)=sqrt(67.552-886.788*ac(o)^2)-8.219;
+elseif 0.13<=ac(o)<=0.321 ax(m,n,o)= -15.901*ac(o)+1.098;
+else ax(m,n,o)=-4.669*ac(o)^3+3.491*ac(o)^2-16.699*ac(o)+1.149; end;
+if bc(o)<0.10 bx(m,n,o)=sqrt(16.888-886.788*bc(o)^2)-4.109;
+elseif 0.10<=bc<=0.187 bx(m,n,o)= -31.330*bc(o)+1.854;
+else bx(m,n,o)=-80.541*bc(o)^3+44.174*bc(o)^2-39.381*bc(o)+2.344; end; end;
+end; end;
+
+41
+
+for m=1:length(freq)
+for n=1:length(Seg)
+aInt(m,n)=(-20-ai(m,n,2))/(ax(m,n,2)-ai(m,n,2));
+bInt(m,n)=(-20-bi(m,n,2))/(bx(m,n,2)-bi(m,n,2));
+A(m,n)=ai(m,n,1)+aInt(m,n)*(ax(m,n,1)-ai(m,n,1));
+B(m,n)=bi(m,n,1)+bInt(m,n,1)*(bx(m,n,1)-bi(m,n,1));
+end; end;
+%% Relative observer location and Sound pressure calculation
+for i=1:length(pos)
+X=cos(deg2rad(pos(i)))*2*WT(2)*5;
+%Observer position as a spherical coordinate
+Y=sin(deg2rad(pos(i)))*2*WT(2)*5;
+for E=1:360;
+Azi=deg2rad(E);
+xyz=[X Y-Seg.*sin(Azi) -WT(1)-Seg.*cos(Azi)]; %Cartesian coordinate
+D=sqrt(xyz(1)^2+xyz(2)^2+xyz(3)^2); %Distance to observer
+Direc=(2.*(sin((piacos((Y.*cos(Azi)+WT(1).*sin(Azi))./D))./2)).^2.*(sin(atan(X./(SegY.*sin(Azi)+WT(1)*cos(Azi))))).^2)./((1+M.*cos((piacos((Y.*cos(Azi)+WT(1).*sin(Azi))./D)))).*(1+(M - 0.8.*M .* cos((piacos((Y.*cos(Azi)+WT(1).*sin(Azi))./D)))).^2));
+SPL_store_1=0;
+%Direc is the directivity function for trailing edge noise ref [5]
+SPL_store_2=0;
+%SPL_store, stores sound pressure levels every execution of the forloop
+for ii=1:length(freq)
+SPL_obs(ii,:)=10*log10(10.^((10*log10((Sig.*M.^5.*dSeg.*Direc)./D^2)+
+B(ii,:)+K2)./10) + 10.^((10*log10((Sig.*M.^5.*dSeg.*Direc)./D^2) +
+A(ii,:)+(x(3)-3) + dK1)./10) +
+10.^((10*log10((Sig.*M.^5.*dSeg.*Direc)./D^2) + A(ii,:)+(x(3)-3))./10));
+SPL_store_1=10.^(SPL_obs(ii,:)./10)+ SPL_store_1;
+%SPL_obs sound pressure at the observer from SPL functions given in ref [5]
+SPLeq=10*log10(SPL_store_1);
+if ii<=length(SPLeq)
+SPL_store_2 = 10.^(SPLeq(ii)./10)+ SPL_store_2;
+end
+end
+SPLeq_store(E)=10*log10(SPL_store_2);
+if E<121 SPL_1(E)=SPLeq_store(E);
+%Summing up the sound pressure level from all three blades to one SPL-value
+elseif ((120<E) && (E<241))
+SPL_2(E-120)=10*log10(10^(SPLeq_store(E-120)/10));
+elseif ((240d<E) && (E<361))
+SPL_3(E-240)=10*log10(10^(SPLeq_store(E-240)/10));
+end
+end
+for iii=1:(max(E)/3)
+SPL_Sum(iii)=10*log10(10^(SPL_1(iii)/10)+10^(SPL_2(iii)/10)+10^(SPL_3(iii)/
+10));
+end
+SPL_total(i)=Mean(SPL_Sum);
+SPL_total(2*length(pos)+1-i)=Mean(SPL_Sum);
+%Repeating half the directivity pattern for the other side,
+% assuming symmetry
+end
+plot_rad=deg2rad([0:(360/39):360]);
+polar(plot_rad,SPL_total);
+title('Directivty')
+
+42
+
+

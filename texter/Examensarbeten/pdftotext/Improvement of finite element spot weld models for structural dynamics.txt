@@ -1,0 +1,5490 @@
+Master Thesis
+
+Improvement of finite element spot
+weld models for structural dynamics
+
+Benjamin Krank
+Date of submission: 2011-12
+2011 12-31
+
+KTH Royal Institute of Technology
+and Volvo 3P
+
+II
+
+Improvement of finite element spot weld models for structural dynamics
+
+© 2012 Benjamin Krank. All rights reserved.
+Email: bkrank@kth.se
+
+III
+
+Abstract
+
+The ACM 2 spot weld model is the currently most widely used spot weld model in industry. It
+is designed to be tuned using parameters to represent the stiffness characteristics of a spot
+weld in a suitable way. The choice of these parameters is however often associated with
+uncertainties. Therefore, the set of parameters with best performance is determined by
+employing an updating algorithm. Further, the result is compared to a new category of
+models, the so called Spider models, which intend to overcome mesh dependence in the
+spot weld area by re-meshing the structures locally. The results are formulated as guidelines
+for the optimum implementation of these spot weld models for structural dynamics. The
+studies are performed using two cut-out parts from a Volvo FH truck cabin.
+In addition, a new analytical approach for updating material data of isotropic shell structures
+is derived and the equations are verified using the same test pieces.
+
+IV
+
+Acknowledgements
+
+I would like to express thankfulness to Ulrika Ohlsson at Volvo 3P for organizing and
+supporting this research project and her broad contribution to the thesis. I would also like to
+thank Anders Hedlund (Volvo 3P) for his contribution especially with organizing cut-out parts
+and during discussions of technical questions. Thanks also to Thomas Englund (Volvo
+Technology) and Lars Nordström (Volvo Technology) for their contributions in theoretical
+discussions and Anders Granhäll (Volvo 3P) for support with his expertise in vibrometer
+scanning.
+Finally, I would like to thank Peter Göransson (KTH) for his supervision, guidance and for
+making this thesis possible.
+
+V
+
+Table of contents
+
+Abstract ................................................................................................................................... III
+Acknowledgements .................................................................................................................IV
+Table of contents ......................................................................................................................V
+List of figures ...........................................................................................................................IX
+List of tables ...........................................................................................................................XII
+List of symbols.......................................................................................................................XIII
+1
+
+Introduction ................................................................................................................... 1
+1.1
+
+Context ........................................................................................................... 1
+
+1.2
+
+Spot welds in vehicle structures...................................................................... 1
+
+1.3
+
+Modeling spot welds in automotive finite element analysis for
+structural dynamics ......................................................................................... 2
+
+1.4
+
+Earlier investigations ....................................................................................... 3
+
+1.5
+
+Previous analyses at Volvo 3P ....................................................................... 4
+
+1.6
+
+Objectives and structure of the thesis ............................................................. 4
+
+2
+
+Spot weld models in literature....................................................................................... 6
+2.1
+
+Types of spot welds ........................................................................................ 6
+
+2.2
+
+Models for stress calculation........................................................................... 6
+
+2.3
+
+Simple models for stiffness calculation ........................................................... 7
+
+2.3.1
+
+Single bar or beam models ........................................................................ 7
+
+2.3.2
+
+Single brick models .................................................................................... 8
+
+2.3.3
+
+Umbrella and ACM 1 model ....................................................................... 8
+
+2.3.4
+
+Salvini and Vivio models ............................................................................ 8
+
+2.3.5
+
+ACM 2 model ............................................................................................. 9
+
+2.3.6
+
+CWELD model ......................................................................................... 10
+
+2.3.7
+
+Spider models .......................................................................................... 11
+
+2.4
+
+Selecting spot weld models for this analysis................................................. 12
+
+2.4.1
+
+Physical characteristics of spot welds ...................................................... 12
+
+2.4.2
+
+Divergence of point-to-point connections ................................................. 13
+
+VI
+
+2.4.3
+3
+
+Model selection ........................................................................................ 13
+
+Model updating ........................................................................................................... 14
+3.1
+
+Updating methods ......................................................................................... 14
+
+3.2
+
+Evaluation methods ...................................................................................... 14
+
+3.2.1
+
+Frequencies ............................................................................................. 15
+
+3.2.2
+
+Modal Assurance Criterion ....................................................................... 15
+
+3.2.3
+
+Frequency response functions ................................................................. 15
+
+3.3
+
+Nastran material updating algorithm ............................................................. 16
+
+3.4
+
+Deriving exact analytical equations for updating........................................... 17
+
+3.4.1
+
+Deriving a correlation to analytically update the Young’s modulus
+of an isotropic shell structure with measurements ................................... 17
+
+3.4.2
+
+Deriving a correlation to analytically update the density of an
+homogenous structure with measurements ............................................. 19
+
+3.4.3
+
+Deriving a correlation to analytically update the Young’s modulus
+and density of an isotropic shell structure with measurements ................ 21
+
+4
+
+Benchmark structures ................................................................................................. 23
+4.1
+
+Requirements ............................................................................................... 23
+
+4.2
+
+Preliminary analyses ..................................................................................... 24
+
+4.3
+
+Geometries ................................................................................................... 24
+
+4.4
+
+FEM model ................................................................................................... 26
+
+4.4.1
+
+FEM representation .................................................................................. 26
+
+4.4.2
+
+Influence of sheet thinning ....................................................................... 26
+
+4.4.3
+
+Weight comparison .................................................................................. 27
+
+4.4.4
+
+Convergence ............................................................................................ 28
+
+4.5
+5
+
+Updating material data .................................................................................. 29
+Measurements ............................................................................................................ 30
+
+5.1
+
+Measurement setup ...................................................................................... 30
+
+5.1.1
+
+Boundary conditions ................................................................................. 30
+
+5.1.2
+
+Response measurement .......................................................................... 30
+
+5.1.3
+
+Excitation .................................................................................................. 31
+
+5.1.4
+
+Finding optimum measurement points using preliminary
+calculations .............................................................................................. 31
+
+VII
+5.1.5
+
+Signal processing ..................................................................................... 33
+
+5.1.6
+
+Compensating damping from the exponential window ............................. 34
+
+5.2
+
+Measurement results .................................................................................... 35
+
+5.2.1
+
+Frequencies ............................................................................................. 35
+
+5.2.2
+
+Damping ................................................................................................... 36
+
+5.2.3
+
+MAC comparison and mode correlation ................................................... 36
+
+5.3
+6
+
+Discussion and sources of error ................................................................... 38
+Results ........................................................................................................................ 39
+
+6.1
+
+Material data updating .................................................................................. 39
+
+6.1.1
+
+Nastran material updating ........................................................................ 39
+
+6.1.2
+
+Analytical material updating ..................................................................... 40
+
+6.1.3
+
+Results evaluation .................................................................................... 40
+
+6.2
+
+Optimizing the spot weld models .................................................................. 41
+
+6.2.1
+
+About parameter sensitivities and the stiffness of spot welds .................. 41
+
+6.2.2
+
+ACM 2 ...................................................................................................... 43
+
+6.2.2.1 Model description and parameters ............................................................... 43
+6.2.2.2 Towards optimum parameters and parameter sensitivities .......................... 43
+6.2.2.3 Optimizing parameters .................................................................................. 44
+6.2.2.4 Results evaluation ........................................................................................ 49
+6.2.3
+
+SPIDER 2 ................................................................................................. 51
+
+6.2.3.1 Model description and parameters ............................................................... 51
+6.2.3.2 Model implementation errors and instability.................................................. 51
+6.2.3.3 Parameter sensitivities .................................................................................. 52
+6.2.3.4 Optimizing parameters .................................................................................. 53
+6.2.3.5 Results evaluation ........................................................................................ 54
+6.3
+
+Comparison .................................................................................................. 56
+
+6.4
+
+Employing the ACM 2 model with a different diameter ................................. 57
+
+6.5
+
+Comparison with literature ............................................................................ 57
+
+6.6
+
+Physical discussion ....................................................................................... 57
+
+7
+
+Modeling guidelines, recommendations and outlook .................................................. 59
+7.1
+7.1.1
+
+Findings ........................................................................................................ 59
+Achievements ........................................................................................... 59
+
+VIII
+
+7.1.2
+7.2
+
+Modeling guidelines ................................................................................. 60
+Discussion and recommendations ................................................................ 60
+
+7.2.1
+
+Methodological recommendations for future analysis .............................. 60
+
+7.2.2
+
+Discussing influences of modeling errors ................................................. 61
+
+7.2.3
+
+Suggestions for further studies ................................................................ 61
+
+Appendix A Nastran source code ........................................................................................... 63
+Appendix B Measuring equipment ......................................................................................... 66
+Appendix C FEM mode shapes.............................................................................................. 67
+3.1
+
+Single parts ................................................................................................... 67
+
+3.2
+
+Welded parts ................................................................................................. 71
+
+Appendix D References ......................................................................................................... 73
+
+IX
+
+List of figures
+
+Figure 1
+
+Spot weld surface print of one of the benchmark structures and cut
+through a spot weld showing the changing Vickers hardness distribution
+through the heat affected areas [4]. ................................................................ 2
+
+Figure 2
+
+Example of a simple spot weld model. Shell elements are displayed in
+green and the spot weld nugget is represented as red solid bricks. ............... 3
+
+Figure 3
+
+Example for a highly detailed spot weld model using solid elements. The
+spot weld model accounts for three different types of materials: Spot
+weld (SW), heat affected zone (HAZ) and base material (BM) [4]. ................. 7
+
+Figure 4
+
+Example of a single bar connection of two sheets [5]. .................................... 7
+
+Figure 5
+
+Umbrella spot weld model [14]........................................................................ 8
+
+Figure 6
+
+Schematic of the creation of the spot weld element using angular
+sections of a circular plate represented by beams [17]................................... 9
+
+Figure 7
+
+ACM 2 model including the solid brick element, the connected shell
+elements of the patch as well as the RBE3 elements displayed as
+dashed lines [6]. .............................................................................................. 9
+
+Figure 8
+
+CWELD model including the associated patches [11]. ................................. 10
+
+Figure 9
+
+Spider 2 models featuring RBE2 and solid nuggets. Many options
+regarding number of mesh elements, mesh generation and nugget
+characteristics are available [20]................................................................... 11
+
+Figure 10
+
+Convergence and divergence of surficial and punctual spot weld
+connections for one mode [5]. ...................................................................... 13
+
+Figure 11
+
+Simplified flow chart for the Nastran SOL200 algorithm. .............................. 16
+
+Figure 12
+
+Difference for the two objective function definitions for the Panel
+updating. On the x-axis, the density is changed and the y-axis
+represents the objective function. ................................................................. 20
+
+Figure 13
+
+Surface plot (left) and contour plot (right) of the optimum of the objective
+function. The optimum is an infinite number of minimum values which is
+displayed in both plots. For the contour plot, lines represent constant
+values and the optimum is located in the middle of the white area. The
+lowest values of the surface plot are shaded dark blue. ............................... 22
+
+Figure 14
+
+Frequency distribution for the two test structures. The modes are well
+separated and the frequency ranges from about 60 to 400Hz...................... 24
+
+X
+
+Figure 15
+
+FEM models of the test pieces. In each column, the single parts and the
+welded assembly are shown. ........................................................................ 25
+
+Figure 16
+
+Sheet thickness distribution on all parts in [mm]. .......................................... 27
+
+Figure 17
+
+Influence of sheet thickness on the welded structures. ................................ 27
+
+Figure 18
+
+Convergence study of the Roof Member cut-out. ......................................... 28
+
+Figure 19
+
+Boundary conditions for the Roof Panel part. ............................................... 30
+
+Figure 20
+
+Excitation hammer. ....................................................................................... 31
+
+Figure 21
+
+Mesh for laser scanning for the Topbeam. ................................................... 33
+
+Figure 22
+
+Contribution to the fraction of critical damping from the exponential
+velocity window. ............................................................................................ 34
+
+Figure 23
+
+Fraction of critical damping for all parts for which a modal analysis was
+performed. .................................................................................................... 36
+
+Figure 24
+
+MAC plot for the Roof Panel parts for the first 9 modes (left) and the
+Roof Member part for the first 11 modes (right). ........................................... 37
+
+Figure 25
+
+MAC plot for the Topbeam (left) and the Crossfire part (right). Both are
+depicting the first 10 modes. In the Crossfire structure, the 6th mode is
+missing, probably due to a lacking excitation................................................ 37
+
+Figure 26
+
+Results of the Nastran material updating optimization. Consider the
+varying scale on the y-axis. .......................................................................... 41
+
+Figure 27
+
+Sensitivity of the Young’s modulus for one frequency. ................................. 42
+
+Figure 28
+
+Change of one frequency with the area scale factor..................................... 42
+
+Figure 29
+
+ACM 2 model with a red solid brick and blue RBE3 interpolation
+elements. ...................................................................................................... 43
+
+Figure 30
+
+Young’s modulus distribution corresponding to the optimization in Figure
+33 and Figure 34 for the closest node patch. The optimization is
+constrained by the upper limit of 900GPa. .................................................... 45
+
+Figure 31
+
+Young’s modulus distribution corresponding to the optimization in Figure
+33 and Figure 34 for the 10mm patch. The optimization is constrained by
+the upper limit of 900GPa. ............................................................................ 45
+
+Figure 32
+
+Young’s modulus distribution corresponding to the optimization in Figure
+33 and Figure 34 for the 16mm patch. The optimization is constrained by
+the upper limit of 900GPa. ............................................................................ 46
+
+Figure 33
+
+Result of the optimization of the Topbeam structure with respect to the
+ACM 2 model for the parameters patch diameter, Young’s modulus as
+well as area scale factor. The area scale factor and patch diameter were
+changed manually and the optimum Young’s modulus was calculated
+
+XI
+using the optimization, thus this is not shown in the graph. The values
+for the Young’s modulus are shown above in separate graphs. The
+lowest curve has an unconstrained Young’s modulus leading to very
+high values, which gives the optimum result with a practically rigid
+nugget. .......................................................................................................... 47
+Figure 34
+
+Result of the optimization of the Crossfire structure with respect to the
+ACM 2 model for the parameters patch diameter, Young’s modulus as
+well as area scale factor. The area scale factor and patch diameter were
+changed manually and the optimum Young’s modulus was calculated
+using the optimization, thus this is not shown in the graph. The values
+for the Young’s modulus are shown above in separate graphs. The
+lowest curve has an unconstrained Young’s modulus leading to very
+high values, which gives the optimum result with a practically rigid
+nugget. .......................................................................................................... 48
+
+Figure 35
+
+Evaluation of the new model for the Topbeam structure. ............................. 50
+
+Figure 36
+
+Evaluation of the new model for the Crossfire structure. .............................. 50
+
+Figure 37
+
+Spider model with open and filled hole. ........................................................ 51
+
+Figure 38
+
+Three different cores. Left: solid nugget, middle: RBE2-bar-RBE2 nugget
+and right: RBE2 nugget. ............................................................................... 51
+
+Figure 39
+
+Instability of the RBE2-bar-RBE2 nugget. The bar has a light blue color
+and should connect the parts without leaving a gap. Here the instability
+causes a strain of the bar that should not be possible if the element is
+implemented correctly. .................................................................................. 52
+
+Figure 40
+
+Comparing the RBE2 and RBE2-bar-RBE2 nugget. .................................... 52
+
+Figure 41
+
+Sensitivity of Young’s and shear modulus for changes of 10%. The
+shear modulus is almost not sensitive and the Young’s modulus shows a
+small sensitivity. ............................................................................................ 53
+
+Figure 42
+
+Objective function for different diameters and cores..................................... 54
+
+Figure 43
+
+Evaluation of the Spider 2 model for the Topbeam with different
+diameters and a rigid nugget. ....................................................................... 55
+
+Figure 44
+
+Evaluation of the Spider 2 model for the Crossfire with different
+diameters and a rigid nugget. ....................................................................... 55
+
+Figure 45
+
+Results of the new models for the Topbeam. ............................................... 56
+
+Figure 46
+
+Results of the new models for the Crossfire test piece. ................................ 56
+
+Figure 47
+
+Plates are overlapping on the contact surfaces. ........................................... 58
+
+XII
+
+List of tables
+
+Table 4-1
+
+Number of shell elements in the FEM models. ............................................. 26
+
+Table 4-2
+
+Weight of the FE model and measured weight. ............................................ 28
+
+Table 5-1
+
+Optimum excitation positions. The selected positions are marked with a
+red square. .................................................................................................... 32
+
+Table 5-2
+
+Signal processing settings. ........................................................................... 33
+
+Table 5-3
+
+The first ten measured frequencies of the single and welded parts. All
+values are in [Hz] and the frequencies that are used in the objective
+function for model optimization are shaded. ................................................. 35
+
+Table 6-1
+
+Results of the material updating optimization. The constrained values
+are shaded. ................................................................................................... 39
+
+Table 6-2
+
+Results of the analytical solution with a Poisson’s ratio of 0.3 and a
+density 7.853 for all calculations.......................................................... 40
+
+Table 6-3
+
+Optimization settings. ................................................................................... 44
+
+Table 6-4
+
+Optimization results and recommendation.................................................... 49
+
+Table 7-1
+
+Matrix showing the number of spot weld connections for different sheet
+metal thicknesses from 0.8mm to 3mm in an FH truck cabin. The highest
+values are colored green. The most common spot weld connects one
+sheet metal with 0.8mm thickness and one with 1.2mm thickness. The
+whole body-in-white contains 4038 spot welds. ............................................ 62
+
+XIII
+
+List of symbols
+
+Symbol
+
+Description
+
+Obj
+
+Objective function
+
+ω
+
+Frequency
+
+f
+
+Frequency
+
+Unit
+
+
+
+MAC
+
+Modal assurance criteria matrix
+
+ρ
+
+Eigenvector
+
+-
+
+Element of an eigenvector
+
+-
+
+ϕ
+
+M
+
+Mass matrix
+
+E
+
+Young’s modulus
+
+
+
+Time constant
+
+K
+
+Stiffness matrix
+
+ρ
+
+
+ζ
+
+
+
+Density
+
+!"#
+
+Sample time
+Fraction of critical damping, η = 2( with the loss factor η
+
+Exponent
+
+-
+
+
+
+N
+m
+
+
+
+
+
+
+
+
+%
+1
+
+
+XIV
+
+1 Introduction
+
+1
+
+1 Introduction
+
+1.1 Context
+Ever increasing material, energy and salary costs in a modern globalized world stress the
+importance of improving and optimizing product design in the automotive industry.
+Computational tools are required for this optimization process [1].
+The finite element method is a versatile computation technique that can be applied to various
+problems in engineering applications in order to understand and enhance product behavior
+under various loads and boundary conditions. Using the finite element method, powerful
+computers make it nowadays possible to analyze the vibrations of large structures such as
+whole body-in-whites more than one million degrees of freedom [2].
+Aiming at decreasing the product time to market, this capability can be used to manually or
+even automatically improve product designs by computational algorithms. As prediction
+errors can be costly if detected at a late development stage, this requires accurate and
+reliable prediction methods and implies the necessity of minimizing model errors.
+Within finite element modeling, the area of noise and vibrations has become increasingly
+important during the last decades as low levels of for example car and truck cabin noise and
+vibrations contribute to the definition of the high quality and comfort of a product. Moreover,
+models that are capable of determining the vibrational behavior of a mechanical structure
+can be used to analyze durability, which often is an important design criterion.
+In the course of this thesis, currently available computer models for structural dynamics are
+evaluated and further developed considering the example of spot welds in vehicle structures.
+
+1.2 Spot welds in vehicle structures
+In mass production of automotive structures, spot welds are used extensively to join thin
+metal sheets and beams; a car or truck body-in-white commonly contains several thousand
+spot welds. In a fully automated process, spot welds are formed when two sheet metals are
+pressed together by two electrodes and an electric current locally heats up the material such
+that the connection is established [3]. Thus, no material is added during the welding process.
+Spot weld electrodes typically have a diameter of about four to seven millimeters while the
+diameter of the actual connection between the sheets can differ from that value, as can be
+seen in Figure 1 where a cut through a spot weld is displayed. This figure also shows that
+both the geometry of the sheets and the material properties are changed locally during the
+
+2
+
+Figure 1
+
+1 Introduction
+
+Spot weld surface print of one of the benchmark structures and cut through a spot weld
+showing the changing Vickers hardness distribution through the heat affected areas [4].
+
+welding process. The electrodes can leave a surface print making the local geometry
+complex. In addition, the temperature change during welding carries along a hardening of the
+metal as the Vickers hardness almost doubles in the center of the spot weld. Therefore, the
+material properties subdivide the spot weld into three different zones, a base material zone
+(BM), a heat affected zone (HAZ) as well as the area of the spot weld nugget (SW). Residual
+stresses and defects due to the welding process can complicate the characteristics of the
+connection even further.
+
+1.3 Modeling spot welds in automotive finite element analysis
+for structural dynamics
+Modeling such a complex connection for a finite element analysis is demanding. For
+automotive structures, such as a whole body-in-white, the accuracy of calculated modes at
+frequencies above 80Hz is limited by model errors such as structural joints and metal sheet
+thickness variations [1]. As spot welds are by far the most common connector in a body-inwhite, it can be assumed that errors in modeling spot welds are significant. Moreover, major
+sources of error within the spot weld models are false assumptions for parameters
+characterizing and influencing the characteristics of the models [2].
+In order to model spot welds accurately, many models have been developed aiming at
+different applications such as durability, structural dynamics, stress analysis and crash
+simulation. Each of these areas has different requirements on the models, for example a
+model for stress analysis requires a sufficient number of elements to be able to predict the
+stress distribution and result in sufficiently smooth stress curves.
+Considering structural dynamics analysis, it is possible to define two basic requirements that
+a suitable model should be able to fulfill. These requirements are (1) the model is as
+accurate as possible within the important characteristics for structural dynamics and (2) it is
+practical to use, i.e. automating connector implementation is feasible [5].
+
+3
+
+1 Introduction
+
+Unfortunately, these two requirements aim at different directions. On the one hand, the
+above mentioned high complexity of spot welds makes it necessary to use a large number of
+finite elements to resolve all local effects. On the other hand,
+hand the high numb
+number
+er of spot welds
+in a body-in-white
+body white necessitates the use of coarse meshes featuring only a few elements to
+
+Figure 2
+
+Example of a simple spot weld model. Shell elements are
+displayed in green and the spot weld nugget is represented as red
+solid bricks.
+
+model the spot weld as modeling each of them in detail would require a major computational
+and implementation effort.. Therefore, the first models thatt were introduced about twenty
+years ago were indeed very simple.
+simple. They used, for example,
+example one single bar connecting one
+node of each part, accepting larger modeling errors but facilitating implementation [2]. This
+conflict between a high number of degrees of freedom in the model and accurac
+accuracy
+y has to be
+balanced by all models.
+A possibility to overcome this problem is to use models that feature parameters allowing for
+tuning them to their real characteristics. In addition, compared
+compared to
+to stress analysis, structural
+dynamics has the advantage that the spot weld models
+model only need to represent the stiffness
+of the joints
+joint in a correct way while internal stresses are not important.
+One of the models that fulfills these requirements is shown in Figure 2.. The metal plates are
+commonly modeled with coarse meshes with approximately 10mm shell edge length and the
+spot weld nugget is here modeled with eight solid bricks. Moreover, its characteristics can be
+tuned by parameters
+parameters such as nugget Young’s modulus and nugget diameter.
+
+1.4 Earlier investigations
+During the past twenty years, many spot weld models have been developed and extensive
+research has been done with the aim of finding an easy to implement and yet accurate
+model. As a consequence, about 30 connector models are available in Ansa, a preprocessor
+that is widely used in industry for structural modeling and that is currently also used at Volvo
+3P. Some of these models have been reviewed and compared in literature, most importantly
+by Palmonella et al. [2, 6 and 7]] in 2003 to 2005. Despite of this effort, a model that fulfills all
+requirements in a perfect way has not been found yet. In addition, new tools in preprocessors
+
+4
+
+1 Introduction
+
+make it nowadays possible to re-mesh the finite element meshes locally in the area of the
+spot weld automatically, which led to the development of a new category of models that are
+known as the Spider models. One of the objectives of this thesis is therefore to review and
+evaluate these new models.
+
+1.5 Previous analyses at Volvo 3P
+At Volvo 3P, two investigations with regard to spot weld models were carried out in 2007 [8]
+and 2011 [9]. The former analyzed a cut-out of the rear wall of an FH truck cabin and
+included a parameter study for the currently used spot weld model. The latter was part of the
+European MID-MOD project [10] where an FH cab floor was measured and calculations
+including seven different spot weld models were analyzed and compared.
+However, the results of both of these investigations did not provide clear recommendations
+for future models. Among the most accurate models was a model similar to the layout shown
+in Figure 2, called the Spider 2 model, but using different elements for the core of the nugget.
+The investigations concluded that other errors and uncertainties in the models of the whole
+structure were larger than the ones introduced by errors of the spot weld models. Therefore,
+it was recommended that “one should have full control of the physical geometry, material
+properties for different steel grades and also include stamping information in the model” in
+future investigations [9]. By the latter, it is referred to the effect that during stamping of cab
+panels and structural members, the sheet metal thickness decreases due to stretching of the
+material. In the same study, the desire of using a model that is more controlled by direct and
+natural parameters such as diameter and depending less on abstract values and the mesh in
+the vicinity of the spot weld was expressed [9].
+At Volvo 3P, a model that is in literature known as the ACM 2 model is currently used for
+structural modeling. This model is designed to be tuned using parameters. Yet, the current
+choice of these parameters is associated with uncertainties. The parameter for the diameter
+of the spot weld nugget was for example determined to fit results from fatigue calculations
+[8]. Apart from this choice and the above mentioned parameter study (see [8]), no efforts
+have been done to optimize the models with regard to their parameters.
+
+1.6 Objectives and structure of the thesis
+This thesis aims at evaluating and improving the currently available computer models for
+structural dynamics in order to contribute to future high quality designs of automotive
+structures. Three questions are addressed in the course of this research:
+1.
+
+As described above, new tools in preprocessors allow for re-meshing the finite element
+meshes locally in the area of the spot weld automatically which led to the development
+of a new category of models that are known as the Spider models. The first objective of
+this thesis is to review and evaluate these new models since literature is lacking such an
+evaluation so far.
+
+1 Introduction
+
+2.
+
+3.
+
+5
+
+In addition to the comparison of different spot weld models, individual models are
+optimized in order to represent the characteristics of a real spot weld in the best possible
+way. This is done by comparing calculation results with measurements and applying
+optimization algorithms that automatically calculate optimum sets of parameters. These
+algorithms can also be applied for the optimization of other connectors such as glue or
+sealings. They can further shed light on the influence of paint in the course of research
+projects or assist in finding better product designs.
+Finally, the question of whether a model can be used that is less dependent on abstract
+parameters and that is more controlled by natural parameters such as diameter and
+sheet thickness and that can be derived from the geometry can be found is addressed.
+
+The layout of this thesis starts with a literature review on different spot weld models. Chapter
+3 describes relevant theory with regard to updating FEM models, calculations and
+comparison methods. Chapter 4 gives an overview on the criteria for the selection of
+benchmark structures from an FH truck cabin. The results of measurements and calculations
+are presented in Chapters 5 and 6. Finally, guidelines for modeling spot welds are presented,
+methods are discussed and conclusions from the study are drawn (Chapter 7).
+
+6
+
+2 Spot weld models in literature
+
+2 Spot weld models in literature
+
+Many different kinds of spot weld models have been developed for different fields of analysis.
+With regard to structural analysis, the preprocessor Ansa provides about 30 different spot
+weld models that are suitable for vibration calculations. Because of this large number of
+models, an overview on the different models is given in this chapter and the basic
+approaches of the most common ones are described.
+
+2.1 Types of spot welds
+In general, two main types of spot welds exist, those that allow calculating the stress within
+the spot weld and those that do not [7]. The first case requires very detailed models with
+numerous elements in order to be able to calculate a smooth stress field within and in the
+surrounding of the spot weld.
+In the latter case, where only a correct representation of the mass- and stiffness distribution
+is necessary, simple models with few elements can be applied. However, these elements are
+often dependent on parameters and only result in correct characteristics if the parameters
+are chosen in a correct way.
+Many of the following spot welds were described by Palmonella et al. [2, 6 and 7] between
+2003 and 2005 and three of them were reviewed in detail in their studies. In addition, new
+developments in preprocessors during the past years nowadays allow an automatic
+implementation of more advanced models. These tools are able to re-mesh the geometry
+locally in the surrounding of the spot weld such that the meshes on both metal sheets
+coincide, i.e. that nodes on opposite geometries are facing each other. Before these
+techniques were introduced around 2005, these models could only be realized by re-meshing
+the whole sheets which was time consuming and often involved manual procedures [11].
+
+2.2 Models for stress calculation
+Models that are used for stress calculations commonly consist of a fine brick or plate element
+mesh modeling the nugget. The high number of elements is necessary in order to produce
+smooth stress fields that could, for example, be used for fatigue life estimation. A detailed
+model representing this category was developed by Seeger et al. [4] and is shown in Figure
+3. This model uses a detailed model to analyze the dynamic behavior of spot welds aiming at
+the replacement of experimental testing in crash simulations. It takes into account the
+changes of material properties described in the introduction and displayed in Figure 1. A
+similar model is used by Deng et al. [12] to analyze stress fields in the spot welds.
+
+7
+
+2 Spot weld models in literature
+
+The implementation of these spot weld
+models requires a major effort and they
+are usually used where characteristics of
+spot welds are analyzed instead of whole
+structures.
+ures. Using these models in a whole
+body-in--white
+white would result in very high
+numbers of degrees of freedom.
+Moreover, they cannot be directly
+connected to shell elements which
+commonly are used to model sheet metal
+structures. In addition, these models do
+Figure 3
+Example for a highly detailed spot weld
+not
+ot necessarily model the stiffness in a
+model using solid elements. The spot
+weld model accounts for three different
+correct way [7]] and numerical problems
+types of materials: Spot weld (SW),
+can arise between fine solids and the rest
+heat affected zone (HAZ) and base
+material (BM) [4].
+of the structure if the metal sheets are
+modeled
+deled using coarse shell meshes. Thus,
+Thus this type of model is
+is not considered further in this
+thesis.
+
+2.3 Simple
+Simple models
+models for stiffness calculation
+Instead of using such detailed models,
+models, simple models requiring only few elements were
+developed. These models focus on practical connector creation and the first models were
+therefore
+re models using only one single element to describe the connection. With the
+development of more advanced preprocessing software,
+software the models have become more
+detailed being able to describe the real spot weld characteristics in a better way.
+Simple models can be categorized in several ways; there are,
+are for example
+example, models that
+require congruent meshes on both parts and others that do not.
+not Further
+Further,, there are models
+that put much effort in modeling flexibility of the surrounding of the spot weld while others
+model
+odel the stiffness mainly focusing on the nugget element.
+element
+Many of the following models have been reviewed by Palmonella et al. [2,, 6 and 7].
+7 The
+models are ordered to reflect the development history beginning with the oldest and most
+m
+simple ones.
+
+2.3.1 Single bar or beam models
+The first spot weld models consisted of
+elastic models, rigid bar models, beam
+models or coincident nodes that connect
+one node on each plate and thus require a
+congruent mesh [5].. The connection Figure 4
+element can be rigid or flexible; in the latter
+
+Example of a single bar connection of
+two sheets [5].
+
+8
+
+2 Spot weld models in literature
+
+case the characteristics of the spot weld can be influenced by changing the Young’s modulus
+or the diameter of the bar or beam. It was shown that this kind of spot weld model tends to
+underestimate the stiffness [7] and does not represent the spot welds in an appropriate way.
+
+2.3.2 Single brick models
+Pal and Cronin [13] suggested to model spot welds with a single brick element connecting
+two panels. Here, all eight corner points are connected to plate shell elements. Thus the
+model requires congruent meshes. Again the Young’s modulus of the brick nugget and its
+dimensions can be used to tune the characteristics of the model. In their analysis they
+showed that this kind of model gives acceptable results [13].
+
+2.3.3 Umbrella and ACM 1 model
+The so-called Umbrella spot weld model
+displayed in Figure 5 was developed for
+the purpose of fatigue life analysis and
+stiffness predictions and consists of 16
+beams in each plate with one beam
+joining the sheets while the sheets
+themselves are modeled with shell
+elements [14]. A modification of this model
+that is known as Area Contact Model 1
+(ACM1) in literature uses rigid bar
+elements instead of beams and is
+intended to be used for fatigue life
+predictions [7].
+
+Figure 5
+
+Umbrella spot weld model [14].
+
+2.3.4 Salvini and Vivio models
+Salvini et al. and Vivio et al. [15-17] developed three different models for fatigue life
+estimations that are all based on an analytical solution of a circular plate using the same
+principal approach. Since fatigue failure commonly occurs outside the nugget, the models
+consider the center to be rigid and the shell elements in the surrounding of the spot weld are
+replaced by radial beams that are connected to the nodes of shell elements lying further
+away. As can be seen in Figure 6, the stiffness of each of the radial beams is calculated by
+evaluating analytical equations that describe an angular sector of the circular plate. Since the
+beams in Figure 6 are all connected in one central point, the nugget itself is modeled through
+a rigid offset inside the radial beams. The nugget connection between the two plates consists
+of a central beam with six degrees of freedom per node.
+
+9
+
+2 Spot weld models in literature
+
+Figure 6
+
+Schematic of the creation of the spot weld element
+using angular sections of a circular plate
+represented by beams [17].
+
+The first of these models was reviewed by Palmonella [7] and showed good results for
+structural dynamics analysis.
+
+2.3.5 ACM 2 model
+In 1999, Heiserer et al. [19] proposed a
+new modeling approach that is today the
+most widely used spot weld model for
+structural vibrations in industry [6] and is
+currently also used at Volvo 3P. This
+model uses a solid element as nugget at
+the position of the spot weld. Its node
+points are not directly integrated in the
+shell mesh but are interpolated on close
+mesh points using RBE3 elements that
+interpolate the loads on the nodes using
+weight factors assigned to each node Figure 7
+throughout the patch [6]. As the brick
+
+ACM 2 model including the solid brick
+element, the connected shell elements
+of the patch as well as the RBE3
+elements displayed as dashed lines [6].
+
+element does not have rotational degrees
+of freedom, the moments acting on these degrees of freedom of the shell elements are
+transferred as forces on the brick element [6]. The model is shown in Figure 7 where the
+corner points of the solid are connected to shell mesh points with dashed lines which
+represent the RBE3 interpolation element. The name Area Contact Model 2 (ACM 2) stems
+from the characteristic that the connection is not realized through one single node point but
+by several shell mesh points, which are called the patch area.
+
+The creation of this element is fully automated and used for example in the preprocessing
+software Ansa. The welded plates are allowed to be meshed independently and the spot
+weld connection is implemented afterwards using the existing shell mesh points, thus no re-
+
+10
+
+2 Spot weld models in literature
+
+meshing is required. This model has a number of different parameters that can be changed
+in order to fit the characteristics:
+•
+
+Patch diameter
+
+•
+
+Area scale factor changing the area of the solid element as a fraction of the real spot
+weld area
+
+•
+
+Solid Young’s modulus
+
+•
+
+Shear modulus of the solid
+
+•
+
+Solid density
+
+•
+
+Young’s modulus of the underlying shell elements in the patch area, both sides can
+be adjusted separately requiring two parameters
+
+•
+
+Thickness of the shell elements in the patch area
+
+•
+
+Shear modulus of the patch shell elements
+
+Not all of these parameters can be changed easily in preprocessing softwares, however. In
+Ansa, only the first five of the above parameters can be implemented automatically by the
+model. This model was already reviewed in Palmonella et al. [2, 6 and 7] and modeling
+guidelines for some of the parameters were defined.
+
+2.3.6 CWELD model
+The CWELD model was proposed by
+Fang et al. [11] in 2000 and follows a
+similar idea as the ACM 2 model using a
+patch including an interpolation method.
+Thus, the meshes do not have to be
+congruent. The nugget itself is modeled as
+a special shear flexible beam with six
+degrees of freedom per node. A schematic
+of the model is shown in Figure 8. The
+model was developed for MSC Nastran
+with the aim of creating a general purpose
+connector. It used to be one of the most
+popular spot weld models as it can be
+Figure 8
+implemented fully automatically [6].
+
+CWELD model including the associated
+patches [11].
+
+Since the model is included in Nastran’s element library, it is more difficult to change
+parameters of the model. For example, in Ansa, the patch area cannot be changed which
+only leaves three parameters:
+•
+
+Patch Young’s modulus
+
+•
+
+Area moment of inertia of the beam which is equal to changing the area of the spot
+weld
+
+11
+
+2 Spot weld models in literature
+
+•
+
+Young’s modulus of
+of the beam
+
+This model was reviewed by Palmonella together with the ACM 2 model [6
+6].
+
+2.3.7 Spider models
+model
+Since the ACM 2 and CWELD models have been
+proposed, new developments in preprocessors
+have made it possible to create other types
+type of
+spot welds with more advanced meshes
+automatically. During the creation of these spot
+weld
+eld connections the meshes of the parts are
+reconstructed
+constructed locally in the area of the spot welds.
+Knowing that especially the shell mesh in the
+vicinity of the spot welds has great influence on its
+characteristics [15],
+], a new kind of model has been
+developed using circles of shell elements around
+the spot weld nugget. Figure 9 shows two of these
+models which are known
+known as the Spider models
+referring to their cobweb like shape. In Ansa, the
+spot weld is created by opening a hole at the Figure 9
+position of the spot weld which can be filled with
+different kinds of nugget elements such as RBE2
+elements using a beam to connect the plates and
+
+Spider 2 models featuring
+RBE2 and solid nuggets. Many
+options regarding number of
+mesh
+elem
+elements,
+ents,
+mesh
+
+solid elements (Figure
+Figure 9). The model
+model with an RBE2 spider nugget thus follows a similar idea
+as the Umbrella model. As presented in Figure 9,, it is possible to create one or two shell
+element zones around the spot weld nugget with varying number of circle elements
+elements.
+Similarly to the other models, the
+the characteristics of these models can be tuned to fit the
+stiffness of a real spot weld. Depending on the nugget material, the following parameters are
+ar
+available:
+•
+
+Nugget Young’s modulus
+
+•
+
+Nugget shear modulus
+
+•
+
+Nugget density
+
+•
+
+Young’s modulus of the zones 1 and 2 around the spot weld
+
+•
+
+Shear modulus of the zones around the spot weld
+
+•
+
+Spot weld diameter
+
+With regard to reconstructing the mesh, many parameters can be set to influence
+influenc the
+generation of the mesh such as the number of zones, zone width, number of elements in
+each zone and minimum distance from perimeter. Despite of the fact that mesh generation
+has been improved since the model
+model has been introduced,
+introduced mesh
+mesh generation can still cause
+problems in specific cases.
+
+12
+
+2 Spot weld models in literature
+
+2.4 Selecting spot weld models for this analysis
+Given the large amount of available models, it is necessary to select a limited number of spot
+weld models for consideration in this study. The selection of models considers the model’s
+performance and practicability.
+
+2.4.1 Physical characteristics of spot welds
+Not all of the characteristics outlined in Chapter 1.2 have to be taken into account for the
+application this thesis aims at. In the present context, mainly the stiffness characteristics of
+the spot weld are important in order to calculate the modal behavior of the structure while
+changes in hardness of the material are less significant as they only need to be taken into
+account in crash simulations and durability analysis. Moreover, the elastic characteristics of
+the material such as Young’s modulus do not change to the same extend since the Young’s
+modulus of steel is in general close to the value of 210GPa. Therefore, the variation of
+material data has not to be taken into account by models for structural dynamics.
+Palmonella [2] found that spot welds with different physical diameters do not change the
+dynamic characteristics of the structure significantly. Considering spot weld diameters of 5, 6
+and 7mm which are used in his study, the area of the spot weld nugget almost doubles from
+a 5 to 7mm spot weld resulting in a significantly stiffer nugget. Thus, it can be concluded that
+the flexibility of the spot weld connection is greatly influenced by the surrounding area while
+the nugget itself can almost be considered rigid.
+Similarly, Deng [12] found in his numerical studies that stress, and thus deformation being
+directly related to stress according to Hooke’s law, is often concentrated near the nugget
+boundary, This suggests that a model that allows for a realistic modeling of the surrounding
+might be favorable. Models focusing on modeling this effect are the Salvini and Vivio models
+in which analytical descriptions of the plate are used to describe the spot weld stiffness. The
+Spider models follow a similar idea accounting for good modeling of the neighboring zones
+by using fine and good quality mesh.
+The ACM 2 and CWELD models are abstract models that do not represent the flexibility of
+the structure in a physical sense as stiffness is tuned by setting parameters of the nugget.
+However, Kaltenböck et al. [18] describes that the size, distribution and quality of shell
+elements in the patch area for these models have great influence on their stiffness as well.
+They propose a Spider model to overcome this mesh dependence as it is possible to assure
+constantly good mesh quality at the nugget boundary by reconstructing the mesh. Moreover,
+through the finer mesh close to the spot weld, the flexibility of the plate can be modeled in a
+more realistic way.
+
+2 Spot weld models in literature
+
+13
+
+2.4.2 Divergence of point-to-point connections
+Lardeur et al. [5] have shown that point-topoint spot weld models such as rigid bar,
+flexible bar or beam connections diverge
+with mesh refinement. This effect is
+presented in Figure 10 where two of the
+analyzed models converge and two
+diverge for small shell mesh sizes.
+According to this, punctual models are too
+soft when very small shell elements are
+used to model the structure. In contrast,
+models that use several shell mesh points
+to connect the plates result in constant
+values for structural stiffness and
+eigenfrequencies. This suggests to
+exclude simple point-to-point models from Figure 10 Convergence and divergence of
+surficial and punctual spot weld
+the following studies as such a
+connections for one mode [5].
+dependence on mesh size is not desirable. Instead, models featuring an area contact should
+be used.
+
+2.4.3 Model selection
+In order to preselect models for the following analysis, the above described physical and
+numerical effects should be accounted for. With respect to the requirement of easy
+implementation only models that are already implemented in Ansa are considered, leaving
+out the Salvini and Vivio models. To allow for comparison with the model currently in use at
+Volvo 3P and due to its popularity in industry, the ACM 2 model is included.
+The most promising new model to be considered is the Spider 2 model. This model is
+available in Ansa and seems to be able to model the stiffness of a real spot weld in a natural
+way being less dependent on parameters than the other models, which was formulated as a
+desire in the set-up of the study. Further, the Spider 2 model showed the best results in a
+previous study at Volvo 3P [9].
+
+14
+
+3 Model updating
+
+3 Model updating
+
+This chapter covers basic theory in model updating which will be used to find optimum
+parameters for spot weld models.
+
+3.1 Updating methods
+According to Friswell and Mottershead [1], there are in principal two different methods of
+updating finite element models. The direct method updates mass and stiffness matrices
+directly without using physical parameters. Other methods are reliant on physical parameters
+in order to update the models. The first, direct approach has the disadvantage that no insight
+– and thus no understanding – of the modeling errors is gained, thus this method is not
+considered in this thesis.
+Instead, methods using physical parameters, such as spot weld diameter or Young’s
+modulus, are employed. By observing differences to the original model, findings can be
+implemented in future models and other structures.
+The updating procedure is commonly formulated as an optimization problem where an
+objective function describing the quality of the models is minimized iteratively. This objective
+function could, for example, use one of the comparison methods between the FEM model
+and measurements that are described below.
+The choice of physical parameters has significant importance for this kind of model updating.
+For example, the parameters can adjust the shape of the mesh or account for local effects
+that cannot be taken into account by the model. These effects can include local deformation
+of the metal sheets in the spot weld area caused by the electrodes during welding. In
+addition, changing the value of a parameter should influence the model characteristics, i.e.
+the model should be sensitive to the parameter.
+In order to update the models, different comparison methods of calculations and
+measurements are conceivable, as described in the following section.
+
+3.2 Evaluation methods
+Aiming at comparing calculations and measurements, it becomes important to dispose of a
+comparison method easy to use. It ideally describes the model quality compared to the
+measurements in one variable and can be implemented in optimization algorithms. In
+general, there are three different methods available.
+
+15
+
+3 Model updating
+
+3.2.1 Frequencies
+A simple and yet practicable approach is the comparison of calculated and measured
+frequencies. A function such as equation (3-1) could be used to define the accuracy of the
+model and to describe this in a single variable. In general, different parameters do not have
+the same influence on all modes [2]. In order to find the right set of parameters, several
+natural frequencies such as the first five or ten frequencies should be used.
+(3-1)
+
+*+, = ∑789: .
+
+/0
+
+123
+/0
+
+− 15
+
+6
+
+However, this approach is not sufficient for model verification alone as it has to be assured
+that right frequencies in measurements and calculations are correlated. Especially for
+frequency ranges with high modal density, modes can change their sequence which would
+result in wrong correlation. In addition, it should be considered that the point of excitation or
+response measurement can be a node of one of the modes and thus this particular mode
+cannot be measured. In consequence, the above objective function can be used if it can be
+assured that the corresponding frequencies are correlated.
+
+3.2.2 Modal Assurance Criterion
+The Modal Assurance Criterion (MAC) allows a comparison of mode shapes of calculated
+and measured modes using a single value for each pair of mode shapes. This criterion can
+especially be used to prove correlation between different modes, i.e. if a measured frequency
+is correlated to the correct calculated mode. It is defined as the normalized scalar product of
+two mode shape vectors, a measured vector ;8 and a calculated vector ;< :
+(3-2)
+
+=>?8< = |@ |D@
+
+@0 ∙@B
+0
+
+BD
+
+=>? matrix that has values approaching one for corresponding mode shapes and values
+
+Applying this equation to all combinations of measured and calculated modes results in a
+close to zero for non-matching modes. If measurement and calculations correspond ideally
+the result is the unity matrix.
+
+3.2.3 Frequency response functions
+A third comparison method is a direct comparison of frequency response functions (FRF).
+This approach can especially be used if a modal analysis of the experimental data is not
+possible, for example for the middle frequency range or high modal density. One method of
+comparing frequency response functions is called the frequency response assurance criteria
+(FRAC) which is available at Volvo 3P as a Matlab script [9]. Here, the comparison can be
+manipulated through a smear factor and a frequency shift factor. The smear factor intends to
+improve correlation and the frequency shift factor shifts the FRFs on the frequency axis with
+respect to each other in a certain range and takes the value with the highest correlation.
+
+16
+
+3 Model updating
+
+However, one problem can be the use of an exponential window if impact excitation is used
+during measurement as this window especially influences the damping of the measurement
+result and thus the frequency response functions.
+
+3.3 Nastran material updating algorithm
+Nastran allows defining optimization
+algorithms using an objective function that
+can evaluate the results of any kind of
+analysis and solve optimization problems
+iteratively with the SOL200 function. The
+updating method that is described in the
+following is using this ability to solve an
+objective function in the form of equation
+(3-1) that is minimized to obtain the best fit
+between
+the
+FE
+model
+and
+measurements. Here, modal values such
+as frequencies are directly calculated for
+the set of parameters of each iteration
+step and the objective function can be
+evaluated using these values, which can
+be seen in the principal structure of the
+code shown in Figure 11.
+Before starting the optimization, the modes
+of measurements and calculations are
+correlated using the MAC method. In order
+to assure that the results remain correct
+when modes change their order, mode
+tracking is used in the algorithm. In
+addition, the test pieces were chosen such
+that the first ten modes are well separated.
+In Chapter 2, it was outlined that, in
+principal, there are two different types of
+parameters of spot weld models, material
+parameters and shape parameters. Figure 11 Simplified flow chart for the Nastran
+SOL200 algorithm.
+Material
+parameters
+change
+characteristics of the material in the spot weld area and shape parameters vary the mesh
+and thus the geometry. In Nastran, it is comparatively easy to define an optimization for the
+first of these types while the second one is connected with significant effort. Therefore, this
+algorithm is limited to update material data and reduces the effort and number of calculations
+
+17
+
+3 Model updating
+
+significantly. All three relevant material characteristics can be optimized – Young’s modulus,
+Poisson’s ration and density. Therefore, the great advantage of this method is that it is exact
+and gives the optimum result of these parameters with low effort; the disadvantage is that
+parameters such as spot weld- or patch diameter have to be changed manually. Shape
+optimization is not implemented due to its effort in implementation.
+The code of the optimization in Nastran is shown in 0.
+
+3.4 Deriving exact analytical equations for updating
+If single parts consisting only of shell elements of the same Young’s modulus and density are
+updated, there is no need for performing a finite element analysis. For this case, simple
+analytical correlations can be derived. The equations will be used to verify the Nastran
+algorithm when results of the analytical solution and the finite element method are compared.
+
+3.4.1 Deriving a correlation to analytically update the Young’s
+modulus of an isotropic shell structure with measurements
+
+A shell structure consisting of an isotropic material with the Young’s modulus F is
+
+shell elements and the stiffness matrix is named G and the mass matrix = and the damping
+considered. It is assumed that the structure is described with triangular and quadrilateral
+
+can be neglected. The latter assumption does not have significant influence on structures
+with very low damping which is the case for the plates analyzed in this thesis.
+For such a structure, the equation of motion for free vibrations becomes [21]
+H−I6 = + GK; = 0.
+
+The solution of this eigenvalue problem is in general described with eigenfrequencies I and
+(3-3)
+
+eigenvectors ;.
+
+that each entry in the stiffness matrix is proportional to the Young’s modulus F of the
+For a structure that consists of one isotropic material of shell elements, it can be observed
+
+structure. Therefore, a matrix G N can be defined such that
+G = F G′
+
+(3-4)
+
+where G′ no longer is a function of the Young’s modulus. Inserting this correlation in the
+
+equation of motion from above, it becomes
+(3-5)
+
+H−I6 = + F G′K; = 0.
+
+Moreover, this equation is equal to
+(3-6)
+
+P−
+
+QR
+S
+
+= + G′T ; = 0.
+
+Finally, a new normalized frequency can be defined as
+(3-7)
+
+IN6 =
+
+QR
+S
+
+18
+
+3 Model updating
+
+and thus the equation of motion results in
+
+H−IN6 = + G′K; = 0.
+
+From this equation, it can be observed, that both G′ and = are independent of the Young’s
+(3-8)
+
+modulus which indicates that the results of I′ always are the same – independent of the
+Young’s modulus of the structure. Moreover, the mode shapes ; generally do not depend on
+
+N
+the Young’s modulus for such structures. Considering this, I878U8"
+of a structure with the
+
+N
+initial Young’s modulus and IV!WU#W
+of a structure with updated Young’s modulus are the
+
+same:
+
+N6
+N6
+IV!WU#W
+= I878U8"
+
+(3-9)
+
+Consequently, the relation between the physical frequencies and Young’s modulus is
+R
+QX3YZ[1Y
+
+SX3YZ[1Y
+
+(3-10)
+or
+
+=
+
+R
+Q0\0[0Z]
+
+S0\0[0Z]
+
+IV!WU#W = I878U8" ^
+
+SX3YZ[1Y
+
+(3-11)
+and equally
+
+_V!WU#W = _878U8" ^
+
+S0\0[0Z]
+
+SX3YZ[1Y
+
+(3-12)
+
+S0\0[0Z]
+
+with the frequencies in [Hz]. It is stressed again that this correlation is only valid for structures
+that consist of isotropic material and for which the Young’s modulus is the same in all
+elements.
+Now, this correlation is inserted in the objective function (3-1) that can be used to find
+optimum material parameters from above:
+*+, =
+
+(3-13)
+
+b
+∑789: a
+
+/0,0\0[0Z] d
+
+`
+
+eX3YZ[1Y
+e0\0[0Z]
+
+123
+/0
+
+h
+− 1g
+
+6
+
+f
+
+Here, the calculated frequencies fi are compared to the experimental frequencies fi
+equation is easily expanded to
+(3-14)
+
+*+, = ∑789: .
+
+R
+/0,0\0[0Z]
+SX3YZ[1Y
+R 123
+
+/0
+
+S0\0[0Z]
+
+−2
+
+/0,0\0[0Z] mSX3YZ[1Y
+123
+
+/0
+
+mS0\0[0Z]
+
+jkl
+
++ 15.
+
+. This
+
+In order to find the optimum Young’s modulus Enlopqjo that minimizes the equation, it is in the
+
+following derived and the derivation is set to zero:
+(3-15)
+
+Wrs<
+
+WSX3YZ[1Y
+
+= 0 = ∑789: .
+
+A simple transformation leads to
+
+R
+/0,0\0[0Z]
+R 123
+/0
+S0\0[0Z]
+
+−
+
+123
+
+6/0
+
+6/0,0\0[0Z]
+
+mSX3YZ[1Y S0\0[0Z]
+
+5
+
+19
+
+3 Model updating
+
+(3-16)
+and
+(3-17)
+
+∑789: .
+
+R
+/0,0\0[0Z]
+R 123
+/0
+S0\0[0Z]
+
+∑789: .
+
+5 = ∑789: .
+
+123
+
+/0
+
+R
+/0,0\0[0Z]
+R 123
+/0
+mS0\0[0Z]
+
+5=
+
+:
+
+/0,0\0[0Z]
+
+mSX3YZ[1Y S0\0[0Z]
+
+mSX3YZ[1Y
+
+∑789: .
+
+/0,0\0[0Z]
+123
+
+/0
+
+as the Young’s modulus is not dependent on the mode number.
+The final equation is thus
+
+(3-18)
+
+FV!WU#W = F878U8" t
+
+v0,0\0[0Z]
+∑\
+123 w
+0xyu
+
+v
+0
+R
+v0,0\0[0Z]
+∑\
+0xyz R 123 {
+v
+0
+
+5
+
+5
+
+6
+
+|
+
+The Young’s modulus found with this equation has to be the minimum of the objective
+function; from the quadratic character of the function it becomes clear that it only has one
+extremum which has to be a minimum.
+As can be seen, the Young’s modulus can be updated using experimental frequencies by
+using one initial finite element analysis with known Young’s modulus. After that, the updated
+Young’s modulus can easily be calculated using a pocket calculator, independently of the
+size of the structure. If the spot welds in a whole body-in-white are modeled with multi point
+constraints, such as RBE2 connections, the equation is even valid for a whole body-in-white
+that is welded with spot welds if it does not feature significant amounts of glue. Thus, such a
+structure can be updated and the exact results can be obtained in two minutes using a
+pocket calculator instead of running a simulation lasting several hours.
+
+3.4.2 Deriving a correlation to analytically update the density of an
+homogenous structure with measurements
+is considered again. Now, it is taken advantage of the proportionality of the density } with the
+In order to derive a similar equation to update the density alone, the equation of motion (3-3)
+
+mass matrix M. All elements of the mass matrix are proportional to the density, therefore a
+new matrix M′ can be defined such that
+
+= = } =N .
+
+(3-19)
+
+Inserting this correlation in the equation of motion results in
+H−I6 } =′ + GK; = 0
+
+and similar to the procedure above, a new frequency ω′ is defined that fulfills
+
+(3-20)
+
+and the equation of motion becomes
+(3-22)
+
+INN = I6 }
+6
+
+(3-21)
+
+H−I′′6 =′ + GK; = 0.
+
+20
+
+3 Model updating
+
+In the latter equation, non of the parameters is dependent on the density and thus the
+normalized frequency is independent of the density. Thus it can be used that
+(3-23)
+resulting in
+(3-24)
+
+I′N 878U8" = INN V!WU#W
+6
+
+6
+
+6
+6
+I878U8"
+}878U8" = IV!WU#W
+}V!WU#W .
+
+The final correlation between the frequency and the density is therefore
+(3-25)
+
+_V!WU#W = _878U8" ^
+
+~0\0[0Z]
+
+~X3YZ[1Y
+
+It can be noticed that the density has a
+reciprocal influence on the frequency
+compared to the Young’s modulus in
+equation (3-12).
+
+Now, this equation is inserted in the
+objective function. In order to do that, this
+function is defined using the reciprocal
+relation of frequencies which facilitates
+Figure 12 Difference for the two objective function
+derivation in the subsequent step. This
+definitions for the Panel updating. On
+the x-axis, the density is changed and
+results in an objective function that has the
+the y-axis represents the objective
+same extremum and its behavior is similar.
+function.
+The difference of these two objective
+functions can be observed in Figure 12. The objective function is thus
+(3-26)
+
+123
+
+*+, = ∑789: .
+
+/0
+
+/0
+
+and with the inserted frequency correlation
+
+(3-27)
+
+*+, = ∑789: 
+
+− 15
+
+123
+
+/0
+
+/0,0\0[0Z] ^
+
+6
+
+0\0[0Z]
+X3YZ[1Y
+
+6
+
+− 1 .
+
+solved for }V!WU#W exactly as for the Young’s modulus. The final result is
+
+In the following, this equation is derived, the derivation is set to zero and the equation is
+
+(3-28)
+
+123
+0
+w
+v0,0\0[0Z]
+R 123
+v
+0
+∑\
+{
+0xyzvR
+0,0\0[0Z]
+
+}V!WU#W = }878U8" t
+
+∑\
+0xyu
+
+v
+
+6
+
+| .
+
+Similarities of this equation to the updating of the Young’s modulus can be observed. With
+this result, the density of a part with homogenous density for which an initial FE calculation is
+available, can be updated exactly. This does not have such an importance for practical
+problems as the density commonly can be measured dividing the mass of a part by its
+
+21
+
+3 Model updating
+
+volume and both entities can be measured easily. The advantage compared to updating the
+Young’s modulus is that non-isotropic structures can be updated.
+
+3.4.3 Deriving a correlation to analytically update the Young’s
+modulus and density of an isotropic shell structure with
+measurements
+The previous example was most importantly shown because equations that are valid for both
+variables are derived in the following. This will give an important insight in the possibilities of
+updating material properties of homogenous and isotropic shell structures.
+Now, both the normalized mass matrix M N and normalized stiffness matrix K′ are inserted in
+
+the equation of motion (3-3) resulting in
+
+H−I6 } =′ + F G′K; = 0.
+
+(3-29)
+
+This correlation can be transformed to
+P−
+
+(3-30)
+
+QR ~
+
+where the new normalized frequency
+
+S
+
+(3-31)
+
+=′ + G′T ; = 0
+
+INNN6 =
+
+QR ~
+S
+
+is introduced. With this definition and the same arguments as above, for the initial and
+updated frequency the following applies:
+(3-32)
+
+R
+Q0\0[0Z]
+~0\0[0Z]
+
+S0\0[0Z]
+
+=
+
+R
+QX3YZ[1Y
+~X3YZ[1Y
+
+Consequently, the updated frequency becomes
+(3-33)
+
+SX3YZ[1Y
+
+_V!WU#W = _878U8" ^
+
+SX3YZ[1Y ~0\0[0Z]
+S0\0[0Z] ~X3YZ[1Y
+
+which basically is (3-12) extended by the influence of density.
+Now, this correlation is inserted into the objective function (3-1) and the result is
+
+(3-34)
+
+*+, =
+
+b
+∑789: a
+
+/0,0\0[0Z] d
+
+eX3YZ[1Y 0\0[0Z]
+e0\0[0Z] X3YZ[1Y
+123
+
+/0
+
+6
+
+h
+− 1g .
+
+`
+f
+Further, the objective function is derived with respect to both variables and the simplified
+result is:
+
+22
+
+(3-35)
+
+(3-36)
+
+3 Model updating
+rs<
+
+SX3YZ[1Y
+rs<
+
+~X3YZ[1Y
+
+= ∑789: .
+
+R
+/0,0\0[0Z]
+~0\0[0Z]
+
+R 123
+/0
+S0\0[0Z]
+
+= ∑789: −
+
+~X3YZ[1Y
+
+−
+
+6/0,0\0[0Z] m ~0\0[0Z]
+123
+6/0 mSX3YZ[1Y S0\0[0Z] ~X3YZ[1Y
+
+R
+/0,0\0[0Z]
+~0\0[0Z] SX3YZ[1Y
+R 123
+/0
+S0\0[0Z]
+
+R
+~X3YZ[1Y
+
++
+
+6/0,0\0[0Z] m SX3YZ[1Y ~0\0[0Z]
+123
+
+6/0
+
+
+
+R
+mS0\0[0Z] ~X3YZ[1Y
+
+5=0
+
+=0
+
+Trying to solve these equations it turns out however, that they are linear dependent.
+Therefore, the result of this system of equations is a line of an infinite number of extremum
+points. As the approach is exact, it can therefore be concluded that updating the Young’s
+modulus and density of an isotropic and homogenous plate at the same time does not result
+in one single possible solution but in many possible solutions of which all are equal and
+result in the same, optimum characteristics of the FE model. Therefore, it is sufficient to
+include one of these parameters during updating with Nastran. Further it is concluded that
+the change of Young’s modulus and density of a structure have the same influence on the
+model’s characteristics.
+
+Figure 13
+
+Surface plot (left) and contour plot (right) of the optimum of the objective function. The
+optimum is an infinite number of minimum values which is displayed in both plots. For the
+contour plot, lines represent constant values and the optimum is located in the middle of
+the white area. The lowest values of the surface plot are shaded dark blue.
+
+4 Benchmark structures
+
+23
+
+4 Benchmark structures
+
+The spot weld models should be verified using benchmark structures from a cut-out of an FH
+truck cabin. This chapter describes requirements and criteria for the selection of a suitable
+geometry as well as the characteristics of the selected models.
+
+4.1 Requirements
+A general guideline for selecting suitable geometries for testing was to reduce complexity
+and uncertainty in all influences. To reduce complexity, the size of the structures should not
+be too large but large enough to maintain the character of a real cabin part. A size of a
+structure containing around 20 spot welds was considered optimal.
+Previous analyses at Volvo 3P were conducted on test structures containing both glue and
+sprayed damping material. It was found that these extra materials introduced an additional
+uncertainty in the model [8]. Thus, the structures considered in this study are free of glue,
+paint and damping material.
+Further, a previous study concluded that thickness information from stamping is valuable in
+models [9]. In order to include this information in the present investigation, geometries have
+to be identified for which stamping simulation data is available.
+In addition, up-to-date geometry information must be available for all parts and the geometry
+is verified using geometry measurement data. The positions of the cuts and the spot welds
+are implemented in the models using these geometry measurements.
+Finally, the natural frequencies of the single parts are measured and compared with the FE
+models. This procedure provides both valuable information on the reliability of the FE model
+and the material data can be updated using the above Nastran optimization. The model
+uncertainties are thus reduced further. In addition, the material data of the single parts is
+updated before welding using the same Nastran optimization algorithm that is described
+above for spot weld model updating.
+With these precautions, it is supposed that good structural models can be obtained in which
+the error due to the spot weld models is isolated and the difference between the two models
+investigated becomes evident.
+
+24
+
+4 Benchmark structures
+
+4.2 Preliminary analyses
+In order to select and cut the geometries, preliminary analyses are carried out. They serve as
+tests to verify that the intended analysis can be accomplished.
+Crossfire
+
+450
+400
+350
+300
+250
+200
+150
+100
+50
+0
+
+Frequency
+
+Frequency
+
+Topbeam
+450
+400
+350
+300
+250
+200
+150
+100
+50
+0
+
+1 2 3 4 5 6 7 8 9 10
+Mode
+Figure 14
+
+1 2 3 4 5 6 7 8 9 10
+Mode
+
+Frequency distribution for the two test structures. The modes are well separated and the
+frequency ranges from about 60 to 400Hz.
+
+Here, especially the frequency range of the first 10 modes is considered as a criterion.
+Second, the modes have to be well-separated so that modal analyses can be performed with
+the experimental data and that correlation between the calculated and the experimental data
+is possible. A major limitation during the preliminary analyses is the availability of sheet
+thinning information.
+The resulting frequency distributions of the test structures are shown in Figure 14 while the
+corresponding geometries are displayed in Figure 15.
+
+4.3 Geometries
+The two test pieces that resulted from the preliminary analysis fulfill all the major
+requirements. They are presented in Figure 15.
+The first structure consists of cut-outs of the parts with the library names Roof Panel and
+Roof Member. As the assembly is a beam structure located just above the wind screen in the
+top of the cabin, it is referred to as Topbeam in the following. The Roof Panel has a thickness
+of 1.5mm and the Roof Member is 1.2mm thick. Both parts are stamped. The panels are
+welded with 28 spot welds on the flanges. The length of the beam is about 858mm.
+The second structure includes cut-outs of the Firewall, as well as Cross Member; therefore
+the structure is called Crossfire in the following. Both pieces are stamped and have a
+thickness of 1.5mm while the overall width is about 1042mm. They dispose of 31 spot welds
+situated at the flanges. Seven of these spot welds are located in the middle part in a row that
+is perpendicular to the main flange contact.
+
+25
+
+4 Benchmark structures
+
+Roof Panel
+
+Firewall
+
+Roof Member
+
+Cross Member
+
+Topbeam
+
+Crossfire
+
+Figure 15
+
+FEM models of the test pieces. In each column, the single parts and the welded assembly
+are shown.
+
+In production, the spot welds have a diameter of 5mm, however only 6mm spot welds can be
+welded in the work shop at Volvo 3P. Therefore, all spot welds considered in this study are
+6mm spot welds. The influence of spot weld diameter is discussed in Chapter 6 of this thesis.
+The actual metal connection between the parts was measured using paper stripes fitting in
+the gap between the metal plates. The measurement showed that the diameter of the actual
+connection is around 8.5mm. It is assumed that this diameter is dependent on the settings of
+the welding tool.
+
+26
+
+4 Benchmark structures
+
+4.4 FEM model
+The models are built and analyzed using the common softwares Ansa for meshing, MSC
+Nastran for performing the calculations and µEta for post processing. In addition, the student
+edition of Patran/Nastran is employed for analyses.
+
+4.4.1 FEM representation
+In NVH analysis, coarse meshes are commonly used. At Volvo, the target element length of
+shell meshes is 10mm and large parts of the mesh can be generated automatically using triand quadrangular elements. For the analysis the simple linear CTRIAR and CQUADR triand quadrangular elements available in the Nastran library are employed. The number of
+shell elements in the model is shown in Table 4-1. This low number of elements makes it
+possible to calculate all frequencies and mode shapes of the test pieces up to 800Hz in
+around 5 seconds on a usual personal computer.
+Number of elements
+
+Topbeam
+
+Crossfire
+
+Number of elements
+
+Roof Panel
+
+2240 Firewall
+
+Roof Member
+
+2110 Cross Member
+
+2744
+
+Sum
+
+4350 Sum
+
+3566
+
+Table 4-1
+
+822
+
+Number of shell elements in the FEM models.
+
+4.4.2 Influence of sheet thinning
+The result of earlier projects suggested including sheet thinning in future analyses. This has
+been realized in the models for this study. As presented in Figure 16, the thickness is
+especially influenced locally in the vicinity of bending radii and corners where the thickness is
+reduced up to approx. 20%. The influence of this thickness variation is shown in Figure 17
+where the error that is introduced without taking sheet thinning into account is displayed. It
+can be seen that the error in frequency is varying between different modes and amounts to
+approximately 1% in average. Further, models that include sheet thinning result generally in
+lower frequencies for the two test structures and the error seems to increase with frequency.
+
+27
+
+4 Benchmark structures
+
+Figure 16
+
+Sheet thickness distribution on all parts in [mm].
+
+2
+1.5
+1
+0.5
+0
+1 2 3 4 5 6 7 8 9 10
+
+Crossfire influence of thickness
+Frequency error without
+thickness in %
+
+Frequency error without
+thickness in %
+
+Topbeam influence of thickness
+
+3.5
+3
+2.5
+2
+1.5
+1
+0.5
+0
+
+Mode
+
+Figure 17
+
+1 2 3 4 5 6 7 8 9 10
+Mode
+
+Influence of sheet thickness on the welded structures.
+
+4.4.3 Weight comparison
+In order to estimate the error that stems from thickness variation of the plates and other
+geometrical errors, the weights of the FE model and the real structures are compared. The
+difference between the FE model and the measured weight is listed in Table 4-2. The value
+of the FE model of the Topbeam is highly precise which indicates that the geometry is cut at
+the right positions and that the thickness of the sheets is modeled correctly.
+However, for the Crossfire test piece, the difference is 65g which indicates an error in
+geometry or sheet thickness. A possible explanation is that the thickness of the steel coils
+can vary up to +/- 0.1mm from production. Considering a sheet thickness of 1.5mm, the
+effect can cause a variation in weight of up to approx. 230g for the Crossfire part or, in other
+words, the steel thickness of the whole part is on average 0.028mm too thin in comparison to
+the real structure. As will be shown later, the model for the Crossfire part is still very good.
+
+28
+
+4 Benchmark structures
+
+Topbeam
+
+Crossfire
+
+FE model
+
+4200g
+
+3435g
+
+Test piece
+
+4205g
+
+3500g
+
+Difference
+
+5g
+
+65g
+
+Table 4-2
+
+Weight of the FE model and measured weight.
+
+4.4.4 Convergence
+Besides sheet thickness, the question arises how large the differences between the relatively
+coarse mesh of 10mm element length and a converged mesh are and how good the quality
+of the FEM representation is. Therefore, a convergence study is carried out on one of the
+metal panels, the Roof Member part, considering element lengths of 10, 7, 3 and 1mm.
+The finding of this study is shown in Figure 18 where the results of the 1mm mesh are taken
+as reference and the differences to the other meshes are plotted. The frequency difference
+amounts up to around 2.5% considering the third mode of this structure. The other modes
+show less difference, however. Further, the slope of all curves decreases and thus a
+convergence for small element sizes can be assumed.
+Convergence
+
+Frequency difference in %
+
+3
+2.5
+
+Mode 1
+
+2
+
+Mode 2
+
+1.5
+
+Mode 3
+
+1
+
+Mode 4
+
+0.5
+
+Mode 5
+
+0
+
+Mode 6
+
+-0.5
+
+10mm
+
+7mm
+
+3mm
+
+1mm
+
+-1
+-1.5
+
+Figure 18
+
+Mode 7
+Mode 8
+
+Mesh size
+
+Mode 9
+
+Convergence study of the Roof Member cut-out.
+
+The result of this study is that the error introduced using a coarse 10mm mesh can be
+considerable and even be more important than sheet thinning. Comparing computation time,
+the CPU time to solve the 10mm coarse mesh amounted to 2.4s whereas the time to solve
+the 1mm mesh was 337.8s. Therefore, such fine meshes cannot be used on whole BIW
+structures but the coarse mesh has to be used.
+
+4 Benchmark structures
+
+29
+
+4.5 Updating material data
+Material data is associated with uncertainty especially after plastic deformation of sheet
+metal. Experimental studies show that deformed sheet metals can have a decreased
+Young’s modulus of significantly more than 10GPa reducing the Young’s modulus from the
+initial material of approximately 214GPa to around 198GPa after applying a strain of
+approximately 0.2 [22]. This influence changes for different metal alloys and steel grades and
+the resulting material characteristics can be anisotropic.
+As stamped sheet metal structures are employed in this thesis, a significant uncertainty in
+the FEM model is implied, although the initial material properties are known exactly.
+Therefore, the material properties of the single parts are updated using the optimization
+algorithm that is presented above. In order to update the single parts, their modal behavior
+was measured before welding. The result of the updating procedure is presented in Chapter
+6.
+
+30
+
+5 Measurements
+
+5 Measurements
+
+This section describes briefly the measurement setup and the measurement results of both
+single and welded parts. In the first part, the measurement setup including boundary
+conditions, the excitation as well as signal processing is summarized. In the second part, the
+results are presented and discussed. The creation of correct FE models is considered of high
+importance in order to isolate the error caused by the spot welds thoroughly, which allows for
+the assessment of different models. Since the models should be assessed using
+experimental data, it is equally important that the measurement errors are minor. Thus, the
+main focus is to minimize the error from all different kinds of sources.
+
+5.1 Measurement setup
+In addition to the description of the measurement setup, a list of the used measuring
+equipment is attached in Appendix B.
+
+5.1.1 Boundary conditions
+A free-free setup was used. Different ways
+of realizing these conditions were
+considered and the final choice was the
+suspension with two soft rubber bands
+using holes in the structure in combination
+with nylon strings. The nylon strings were
+attached directly to the part with the idea
+that nylon contributes less to the damping
+than rubber. The realization of this setup is
+shown in Figure 19 with white nylon strings
+and brown rubber bands.
+Figure 19
+
+5.1.2 Response measurement
+
+Boundary conditions for the Roof Panel
+part.
+
+Considering that the structures are relatively lightweight with thicknesses of 1.2 to 1.5 mm, a
+laser is employed in order to measure the response. This has the advantage that no
+additional mass is put on the structure as for measurements using an accelerometer. As a
+result, especially the response frequencies are very precise. The level of noise can yet be
+higher when a laser scanner is applied, especially if the laser signal is low in certain points.
+The signal becomes low mainly when the laser beam and the structure are not perpendicular
+in all points, for example when spherical geometries are measured. In this case, the structure
+
+5 Measurements
+
+31
+
+can be set up perpendicular to the laser beam in most of the measurement points and thus
+the signal is sufficient at all positions.
+
+5.1.3 Excitation
+Considering laser scanning for response
+measurement, it was initially intended to
+employ a shaker for excitation. It turned
+out however, that the natural frequencies
+could not be measured correctly using a
+shaker. A result of preliminary testing was,
+for example, that the first natural frequency
+of the Roof Panel was measured as
+18.8Hz which is differing significantly from
+the correct value of 27.5Hz. It is supposed
+that the dynamics of the shaker influence
+the overall structural behavior resulting in Figure 20 Excitation hammer.
+this large difference. An argument for this
+explanation is that the tested shaker is rather large and heavy. Thus, a heavy shaker cannot
+be used for such lightweight structures.
+Hammer excitation is used instead. This has the advantage that no external mass is attached
+to the structure ensuring that the frequencies are measured correctly. The hammer with a
+soft rubber tip is shown in Figure 20.
+
+5.1.4 Finding optimum measurement points using preliminary
+calculations
+The applied laser scanner has the possibility of defining a grid of measurement points
+changing measuring position automatically. The scanning position is changing while the
+position of excitation is the same for all points. This raises the question which excitation point
+is most suitable in order to excite all modes in the range of interest. These points are points
+with large displacement for all mode shapes, i.e. modes with small displacement at the
+excitation point has to be avoided.
+This question can be answered using preliminary calculations and the following concept.
+With the goal of measuring the first 10 modes, a function can be defined that takes the
+minimum value of the first ten mode shapes of preliminary FEM calculations for each grid
+point separately:
+
+32
+
+5 Measurements
+
+Roof Panel
+
+Roof Member
+
+Cross Member
+
+Firewall
+
+Topbeam (front)
+
+Topbeam (back)
+
+Crossfire (front)
+
+Crossfire (back)
+
+Table 5-1
+
+(5-1)
+;
+
+87,:
+
+  H:,: , 6,: , … , :,: K
+  H:,6 , 6,6 , … , :,6 K h
+=b
+⋮
+
+
+H
+,
+
+`
+:,
+6, , … , :, K f
+
+Optimum excitation positions. The selected positions are marked with a red square.
+
+;
+
+87,:
+
+is a vector with one value for each grid node and  is defined as one element of one
+
+mode shape vector where the first index is indicating the mode number and the second index
+
+33
+
+5 Measurements
+
+names the grid point number. The total
+number of grid points is k. Consequently,
+the result is a mode shape vector
+containing the minimum value of the first
+ten modes at all grid points.
+Applying this new defined vector, the
+contour plots in Table 5-1 are created. Red
+areas show promising excitation points and
+blue areas indicate that at least one node
+cannot be excited. With this information,
+excitation points were defined and
+Figure 21
+highlighted with red squares in the plots.
+
+Mesh for
+Topbeam.
+
+laser
+
+scanning
+
+for
+
+the
+
+For the response measurement, meshes were defined using between 17 and 44
+measurement points in order to cover the whole structure. The response of the welded parts
+is measured on one side of the structure only since the laser requires optical contact. The
+mesh for the measurement of the Topbeam part is shown in Figure 21.
+
+5.1.5 Signal processing
+The settings used for signal processing are displayed in Table 5-2. As acquisition system, a
+Polytec software is used.
+Bandwidth
+
+0-800Hz
+
+Sample frequency
+
+2048Hz
+
+Sample time
+
+8s
+
+Frequency resolution
+
+0.125Hz
+
+Number of FFT lines
+
+6400
+
+Number of averages
+
+10-40
+
+Force window
+
+Rectangle, value 1 until 3% of sample time, afterwards 0.
+
+Velocity window
+Filter
+Table 5-2
+
+Exponential,  =
+Tracking filter
+
+Signal processing settings.
+
+Z3]1
+
+
+34
+
+5 Measurements
+
+In order to measure the first 10 frequencies, the frequency bandwidth was selected from 0800Hz. As the structures are lowly damped, the sample time was increased to its maximum
+value of 8s considering the frequency bandwidth and limitations given by the software.
+Furthermore, an exponential window is used for the velocity signal to reduce leakage and a
+rectangle force window to reduce noise in the force signal. The number of averages is set to
+10 but the software increases this number automatically for points with low laser signal to up
+to 40. A significant improvement for noise reduction from the laser is a tracking filter that can
+be imagined as a fly wheel in the velocity signal suppressing unphysical high acceleration
+values.
+
+5.1.6 Compensating damping from the exponential window
+Through the use of an exponential window, the damping resulting from the measurement
+data is too high, i.e. an exponential window increases damping artificially. This effect can be
+compensated for with the following equation [23]:
+( = ( −
+
+(5-2)
+
+where (
+
+
+
+6/
+
+and ( represents the correct physical damping. _ is the respective natural frequency for
+is the fraction of critical damping extracted directly from the measurement data
+
+each mode and  is defined as
+
+=
+
+(5-3)
+
+:
+
+
+where  is the time constant. This value can be calculated using the sample time 
+
+the factor set in the acquisition system:
+
+!"#
+
+and
+
+Damping a/(2π
+πf0) in [%]
+
+Damping contribution from exponential window
+1
+0.8
+0.6
+0.4
+0.2
+0
+0
+
+50
+
+100
+
+150
+
+200
+
+250
+
+300
+
+350
+
+400
+
+Frequency [Hz]
+
+Figure 22
+
+(5-4)
+
+Contribution to the fraction of critical damping from the exponential
+velocity window.
+
+=
+
+Z3]1
+
+
+With these equations, the values for damping that are presented and discussed in the
+following section are already compensated for. The compensation value that is subtracted
+
+35
+
+5 Measurements
+
+from the measured value with the parameter setting in the acquisition system is plotted in
+Figure 22.
+
+5.2 Measurement results
+For the welded parts, mode shapes of measurements and calculations are compared to
+determine which measured frequency has to be correlated with which of the FEM
+calculations. The modes of structures with low modal density can often be correlated directly
+only applying frequency data. In contrast, for structures with high modal density, modes of
+measurements and calculations might be in different order.
+With that consideration, experimental modal analysis is performed for the welded structures
+and the single parts Roof Panel and Roof Member while only frequencies were measured for
+the Cross Member and Firewall.
+The modal analysis is carried out with the software vibratools and an additional code for the
+calculation of MAC values developed for this thesis.
+
+5.2.1 Frequencies
+The natural frequencies obtained from the measurements are listed in Table 5-3. The
+measurements were correlated with FEM data from preliminary calculations using MAC plots
+that allow correlating the modes. These MAC plots are included in section 5.2.3 and allow
+the conclusion that all frequencies were measured except for one frequency for the crossfire
+structure. Here it is assumed that the mode was not excited.
+Mode
+
+Roof Panel
+
+1
+
+27.5
+
+26.3
+
+41.6
+
+15.6
+
+165.1
+
+69.75
+
+2
+
+76.5
+
+68.8
+
+113.1
+
+43.1
+
+175.9
+
+124.0
+
+3
+
+113.5
+
+119.4
+
+137.2
+
+60.6
+
+314.9
+
+158.6
+
+4
+
+126.3
+
+121.9
+
+148.8
+
+75.6
+
+351.1
+
+230.8
+
+5
+
+135.0
+
+145.6
+
+172.8
+
+111.9
+
+369.6
+
+249.8
+
+6
+
+176.6
+
+149.4
+
+196.3
+
+148.1
+
+380.0
+
+-
+
+7
+
+183.5
+
+180.0
+
+246.1
+
+190.0
+
+395.1
+
+274.1
+
+8
+
+257.5
+
+244.4
+
+271.0
+
+223.1
+
+412.4
+
+322.7
+
+9
+
+344.8
+
+280.0
+
+305.3
+
+233.8
+
+441.8
+
+334.5
+
+10
+
+391.5
+
+330.6
+
+338.1
+
+268.8
+
+446.9
+
+360.5
+
+Table 5-3
+
+Roof
+Member
+
+Cross
+Member
+
+Firewall
+
+Topbeam
+
+Crossfire
+
+The first ten measured frequencies of the single and welded parts. All values are in [Hz]
+and the frequencies that are used in the objective function for model optimization are
+shaded.
+
+36
+
+5 Measurements
+
+5.2.2 Damping
+The damping is estimated using the vibratools software. The results including the exponential
+window compensation are shown in Figure 23. The values are in general quite low and range
+from about 0.02 to 0.4% with an average of 0.061% for the single parts and 0.12% for the
+welded parts.
+The plots show further that the spot weld connection seems to have a major influence on the
+modes 1 to 3 for the Topbeam and 6 to 8 for the Crossfire geometry. Especially mode 3 of
+the Topbeam is very interesting as the structure is excited and measured on the Roof Panel
+side of the part but the mode affects almost exclusively the Roof Member side with high
+displacements. This seems to result in very high values for damping. Even the FRFs show a
+highly damped mode.
+
+Damping ζ c in [%]
+
+Damping distribution
+0.45
+0.4
+0.35
+0.3
+0.25
+0.2
+0.15
+0.1
+0.05
+0
+
+Topbeam
+Crossfire
+Roof Panel
+Roof Member
+0
+
+2
+
+4
+
+6
+
+8
+
+10
+
+Mode
+
+Figure 23
+
+Fraction of critical damping for all parts for which a modal analysis
+was performed.
+
+Therefore, the conclusion is drawn that the spot welds can have significant influence on the
+damping but this can depend highly on the mode. On average, the damping is twice as high
+for the welded parts as for the single parts.
+
+5.2.3 MAC comparison and mode correlation
+In comparisons of measurements and calculations, the right frequencies need to be
+correlated. This can either be achieved if the structures have a low modal density, i.e. the
+frequencies are well separated, or by calculating MAC values. This is done for the two single
+parts Roof Panel and Roof Member (Figure 24) and for both welded parts together (Figure
+25). The node points of the measurement mesh are correlated with the calculations using the
+closest finite element node. The respective mesh points are found using a half-automated
+
+5 Measurements
+
+37
+
+function in Patran and the experimental mode shapes are determined with a curve fitting
+method available in vibratools.
+For the Roof Panel part, the modes can be correlated but it is observed that the modes 6 and
+7 cannot be separated in a good way during the modal analysis. This is due to the fact that
+the modes are close with a difference of only 6Hz. Therefore, the first 7 modes are used in
+the objective function for optimization as indicated with the shaded cells in Table 5-3.
+
+Figure 24
+
+MAC plot for the Roof Panel parts for the first 9 modes (left) and the Roof Member part
+for the first 11 modes (right).
+
+For the Roof Member part, the modes can be identified clearly but the sequence of the
+modes is not identical between measurements and calculations. The figure shows that
+modes are swapped in three cases. This complicates the definition of suitable modes for
+model correlation. As a consequence, only the modes 1, 2, 5, 6 and 7 were used for the
+evaluation of the model.
+
+Figure 25
+
+MAC plot for the Topbeam (left) and the Crossfire part (right). Both are depicting the first
+10 modes. In the Crossfire structure, the 6th mode is missing, probably due to a lacking
+excitation.
+
+For the Topbeam geometry, modal analysis is difficult for the first two modes which are quite
+close and feature high values of damping. Hence, the modes cannot be separated well
+during modal analysis but the result allows the assumption that the modes are in the same
+
+38
+
+5 Measurements
+
+sequence. In addition, these modes are verified by comparing the deformation in the
+acquisition system with the measurements. The first ten frequencies are used in the objective
+function.
+Finally, the plot for the Crossfire structure shows that the modes could be identified clearly
+but that one mode is missing in the measurement. This might be explained by a lacking
+excitation. This mode does only affect a small part of the structure and it is very similar to the
+neighboring mode 5 (see 0). Especially for the Crossfire geometry, the modes can be
+correlated significantly better using the new spot weld model that is described in the sections
+below than with the initial model. Thus, only the first four frequencies were used for
+correlation as it was difficult to find matching modes before a good spot weld model was
+available.
+As will be shown later, the frequencies for the Cross Member and Firewall are separated
+very well and can be correlated reliably without calculating MAC values.
+
+5.3 Discussion and sources of error
+All necessary frequencies and mode shapes were measured, except for one frequency of the
+Crossfire part. The reason might be that the structure was cut differently than intended. Thus,
+the method for identifying possible excitation points proved to be practical.
+The accuracy of the measured frequencies is considered high as potential influences are
+minimized. It was found that a shaker cannot be employed for such a structure and that a
+hammer can be used for excitation in combination with laser response scanning instead.
+Employing a hammer, it is necessary to consider that the structure moves as a consequence
+of excitation and thus the measurement point changes slightly. It is assumed that the laser
+moves up to 1cm in radius around the measurement position. This does not affect the
+measurement results with respect to natural frequencies – which is most important for this
+thesis – but the mode shapes are influenced slightly. As the wave length of the structures is
+significantly larger than 1cm, the error can be seen as relatively small.
+Another practical drawback of using a laser is that only one side of the welded structures can
+be measured in one measurement session. Yet, this is sufficient to determine the correlation
+to the calculations.
+The boundary conditions are considered suitable for this kind of structures.
+Finally, it is found that contact non-linearity can be of importance if the structures are excited
+with a strong impact. Noise indicating contact on the surfaces between the welded parts is
+observed.
+
+39
+
+6 Results
+
+6 Results
+
+This chapter represents the main part of this thesis since all of the above chapters come
+together and form the results. The first results concern updating of the single parts with
+respect to material data. In the subsequent step, different spot weld models are discussed
+separately and optimum parameters are found. These models are compared and the best
+model is identified.
+
+6.1 Material data updating
+The material data is updated using the Nastran algorithm and the analytical equations and
+differences are discussed. The experimental frequencies that are used for updating the
+models are listed in Table 5-3.
+
+6.1.1 Nastran material updating
+The results of the Nastran optimization SOL200 are displayed in Table 6-1. The largest
+variation from the initial Young’s modulus of 210GPa amounts to 5GPa for the Firewall cutout. This implies that all values are physically reasonable, being located within the
+boundaries of variations due to manufacturing.
+The Poisson’s ratio, however, does not appear to be very sensitive during updating. On the
+one hand, this resulted in large variations which were not physically reasonable. In general,
+large variations occur if a parameter is not sensitive while the characteristics of the model,
+such as frequencies, are hardly changed. Therefore, small errors in the models result in
+large, unphysical variations in the parameters. The Poisson’s ratio is consequently
+constrained for three structures close to the initial value of 0.3. For the Cross Member, the
+result for the Poisson’s ratio is reasonable which is due to the good quality of the FE model.
+Property/Part
+Young’s modulus
+
+Roof Panel
+
+Table 6-1
+
+Cross Member
+
+Firewall
+
+207.14
+
+205.79
+
+214.76
+
+215.00
+
+0.3
+
+0.31
+
+0.30034
+
+0.3
+
+Poisson’s ratio
+Density
+
+Roof Member
+
+7.851
+
+
+W 
+
+7.853
+
+
+W 
+
+7.852
+
+
+W 
+
+7.852
+
+
+W 
+
+Results of the material updating optimization. The constrained values are shaded.
+
+The density was also taken into account in this optimization although it was outlined in
+Chapter 3.4 that it is equal if only the Young’s modulus, only the density or both are updated.
+
+40
+
+6 Results
+
+The value is very stable for all parts and amounts to slightly higher values than the initial
+7.85
+
+
+.
+W 
+
+6.1.2 Analytical material updating
+The analytical solution that is presented in Chapter 3.4 gives similar results for the Young’s
+modulus. Here, the structures are updated in a simple excel sheet instead of running the
+Nastran optimization. Table 6-2 demonstrates that the results are almost identical with the
+results obtained for the Nastran routine. However, this method does not take into account
+variations of the Poisson’s ratio and the initial value for the density of 7.85
+which explains differences to the above results.
+
+
+W 
+
+was applied,
+
+The analytical results are exact for structures with low damping while variations to the
+Nastran approach can stem from numerical errors and the accuracy parameter set by the
+optimization algorithm.
+Property/Part
+Young’s modulus
+Table 6-2
+
+Roof Panel
+207.1447
+
+Roof Member
+204.7152
+
+Cross Member
+214.7356
+
+Firewall
+215.1532
+
+
+Results of the analytical solution with a Poisson’s ratio of 0.3 and a density 7.85
+W
+calculations.
+
+
+
+for all
+
+6.1.3 Results evaluation
+The frequencies of the models with the initial Young’s modulus of 210GPa, Poisson’s ratio of
+0.3 and a density of 7.85
+
+
+W 
+
+are compared to the updated frequencies. The results are
+
+shown in Figure 26. Calculations and measurements agree well, especially regarding the
+Cross Member. By updating the material, all models are improved; significant errors of more
+than 10% are only identified for the Roof Member.
+One possibility to explain these differences is a local deformation in the middle of the panel
+that results in geometrical deviation from the FE model.
+Evaluating the two geometries Topbeam and Crossfire, there are errors in both models,
+however, the Crossfire structure seems more reliable.
+
+41
+
+6 Results
+
+Error Roof Panel cut-out
+
+Error Roof Member cut-out
+20
+
+2
+1
+0
+-1
+
+initial
+1 2 3 4 5 6 7 8 9 10
+
+-2
+
+result
+
+-3
+-4
+
+Frequency error in %
+
+Frequency error in %
+
+3
+
+15
+10
+
+1 2 3 4 5 6 7 8 9 10
+Mode
+
+4
+
+0
+1 2 3 4 5 6 7 8 9 10
+
+initial
+result
+
+-2
+Mode
+
+Frequency error in %
+
+Frequency error in %
+
+result
+
+Error Firewall cut-out
+
+1
+
+Figure 26
+
+0
+
+-10
+
+Mode
+
+2
+
+-3
+
+initial
+
+-5
+
+Error Cross Member cut-out
+
+-1
+
+5
+
+2
+0
+-2
+
+1 2 3 4 5 6 7 8 9 10
+
+initial
+result
+
+-4
+-6
+
+Mode
+
+Results of the Nastran material updating optimization. Consider the varying scale on the
+y-axis.
+
+6.2 Optimizing the spot weld models
+In the first step, the optimum parameters are determined for each model separately. In the
+subsequent section, the models are compared and evaluated against each other.
+
+6.2.1 About parameter sensitivities and the stiffness of spot welds
+This first part is intended to describe sensitivity parameters qualitatively and how the stiffness
+of spot welds can be understood in general.
+In Figure 27, the change of the first frequency with respect to a varying nugget Young’s
+modulus of the ACM 2 model is shown. The frequency changes very quickly as long as the
+Young’s modulus is small and the area scale factor is low, while it changes less the stiffer the
+spot weld nugget gets. Thus, it is concluded that the frequency converges to a boundary
+value or, in other words, that the sensitivity of the Young’s modulus as a parameter
+converges to zero.
+Similarly, in Figure 28 the change of one frequency with the area scale factor is shown. For
+this parameter, sensitivity does not converge to zero but it becomes very small for large
+nugget sizes.
+
+42
+
+6 Results
+
+Frequency of the first mode [Hz]
+
+Young's modulus sensitivity of the topbeam structure
+180
+170
+160
+150
+140
+130
+120
+0
+
+1000
+
+2000
+
+3000
+
+4000
+
+5000
+
+Young's modulus [GPa]
+
+Figure 27
+
+Sensitivity of the Young’s modulus for one frequency.
+
+Frequency of the first mode [Hz]
+
+Area scale factor sensitivity of the topbeam structure
+180
+175
+170
+165
+160
+155
+150
+145
+
+Figure 28
+
+0
+
+0.5
+
+1
+
+1.5
+
+2
+
+2.5
+
+3
+
+3.5
+
+4
+
+Area scale factor
+Change of one frequency with the area scale factor.
+
+Therefore, the general rule can be formulated that the sensitivity of spot weld parameters is
+very high as long as the spot weld connection is soft. For increased nugget stiffness, the
+sensitivity decreases and finally converges to zero. It is assumed that this is due to the
+considerably softer surrounding of the spot weld in comparison to the nugget itself and that
+deformation takes place in these softer regions instead of the rigid core. The results of the
+optimizations are, that the stiffness of the nugget is located close to the boundary of getting
+rigid, i.e. the spot welds are very stiff and almost rigid. This leads to parameters high up in
+scale and the sensitivities are close to zero.
+This is also supported by the physical effect that the frequencies of a structure hardly change
+while the physical diameter of a weld spot is increased. Palmonella [2] welded parts with
+diameters of 5, 6 and 7mm and has found that a change in diameter hardly influences the
+frequencies. This can be explained by the concept that the nugget is almost rigid and that the
+surrounding of the spot weld is softer and important for the flexibility.
+
+43
+
+6 Results
+
+Further, as general guideline,
+guideline, spot welds should rather
+rather be modeled too stiff than too soft as
+the sensitivity of parameters increases when the spot welds
+welds become softer while the error
+introduced by a too stiff spot weld cannot be large.
+In his thesis, Palmonella [2]] states
+tes that the
+the sensitivity of the Young’s modulus of the spot
+weld is very low and thus he does not take it into account in his optimization. He evaluates a
+change of 10% from a reference value and does not take into account a wider range.
+However, the
+the influence of these
+these parameters is highly non-linear
+non linear and cannot be expressed
+essed in
+just one value.
+value The
+he sensitivity of the Young’s modulus is quite high for small area scale
+factors while it becomes small for large spot weld nuggets, therefore it is concluded that
+parameters influence
+influence each other significantly. In this thesis it is shown that the characteristics
+of the spot weld can be tuned using the nugget Young’s modulus as a parameter. Updating
+U
+structures with a non-sensitive
+non sensitive parameter results in a large variation of this par
+parameter
+ameter while
+the frequencies do not change significantly. This can lead to a wide scatter of this parameter
+for different test pieces.
+pieces
+
+6.2.2 ACM 2
+6.2.2.1 Model description and parameters
+As described in Chapter
+Chapter 2, the ACM 2 model
+consists of one solid brick element that models
+the connection between the metal sheets.
+sheets Each
+of the brick nodes is connected with the sheet
+meshes using RBE3 elements.
+The model has numerous parameters
+arameters that can
+be adjusted, however, not
+not all of them are simple
+Figure 29
+to implement in the preprocessor
+preprocessor Ansa. In the
+following, only parameters are considered that
+are easy to implement in practice with this software.
+
+ACM 2 model with a red solid
+brick and blue RBE3 interpolation
+elements.
+
+These parameters consist of two different categories, 3 material properties and two shape
+parameters. The material parameters are solid Young’s
+Young’s modulus, Poisson’s ratio a
+as
+s well as
+the solid density. The shape parameters are the area scale factor that scales the area of the
+solid in relation to the real spot weld area and the RBE3 diameter. The latter is the diameter
+under which all mesh nodes in the surrounding of the solid node are included in the
+connection.
+
+6.2.2.2 Towards optimum parameters and parameter sensitivities
+In the following, the searching for optimum parameters for this model is described. Before the
+optimization, it is discussed which of
+of the parameters are sensitive and which parameters
+need to be included in the optimization.
+
+44
+
+6 Results
+
+To start with, the density of the solid is set to a value close to zero for all calculations. During
+welding of spot welds no weight is added to the structure and the sheet metal elements
+already contain all the physical mass. Thus, it is not reasonable to add an extra mass with a
+solid. Depending on the size of the spot weld and the sheet thickness, this makes a
+difference of several kilos for a whole body-in-white. The difference is not considered very
+large but the mass distribution becomes physically correct.
+The second parameter that is discussed here is the Poisson’s ratio. It was found that this
+parameter could not be updated reasonably using the optimization as the models resulted in
+completely different values for preliminary calculations. This indicates that the parameter is
+not very sensitive and thus uncertainties in the model cause a large variation of the
+parameter. Therefore, it was set to the default value of 0.3 and not included in the
+optimization.
+This leaves three parameters that are optimized in the following – area scale factor, patch
+diameter and Young’s modulus.
+
+6.2.2.3 Optimizing parameters
+From these parameters, two are shape parameters and one is a material property. The
+shape parameters have to be changed manually while the optimum value for the Young’s
+modulus is found using the result from the Nastran calculation.
+Area scale factor
+
+0.1-4 in steps of 0.1
+
+Patch diameter
+
+closest node, 10 and 16mm
+
+Young’s modulus lower constraint
+
+100GPa
+
+Young’s modulus upper constraint
+
+900GPa
+
+Table 6-3
+
+Optimization settings.
+
+In Table 6-3 settings for the optimization are listed. The area scale factor was changed
+manually in steps of 0.1 from 0.1 to 4 and three different patch diameters were used. These
+diameters are 16mm, 10mm and the smallest one connecting the solid only to the closest
+nodes. The patch diameter of the resulting FE model cannot be changed arbitrarily because
+of the shell mesh size of 10mm. Therefore, the actual patch size is dependent on the location
+of the mesh nodes in relation to the corner nodes of the solid.
+The results are presented for both structures in five graphs, Figure 30 to Figure 34. Figure
+30, Figure 31 and Figure 32 present the results for the Young’s modulus for different patch
+sizes and with respect to the area scale factor. At first, the Young’s modulus is constrained
+with the upper value of 900GPa and decreases for large area scale factors from this value.
+The area scale factor at the beginning of the decrease changes from 0.8 to 3 for different
+patch sizes and shows a similar trend for both structures, especially for the 10mm patch.
+
+45
+
+6 Results
+
+Young's modulus [GPa]
+
+Optimization result: Young's modulus for closest node patch
+1000
+800
+600
+400
+200
+0
+0
+
+1
+
+2
+
+3
+
+4
+
+Area scale factor
+Topbeam: Young's modulus
+
+210 GPa
+
+Crossfire: Young's modulus
+
+Optimum Topbeam
+
+Optimum Crossfire
+
+Figure 30
+
+Young’s modulus distribution corresponding to the
+optimization in Figure 33 and Figure 34 for the closest node
+patch. The optimization is constrained by the upper limit of
+900GPa.
+
+Young's modulus [GPa]
+
+Optimization result: Young's modulus for 10mm patch
+1000
+800
+600
+400
+200
+0
+0
+
+1
+
+2
+
+3
+
+4
+
+Area scale factor
+Topbeam: Young's modulus
+
+210 GPa
+
+Crossfire: Young's modulus
+
+Optimum Topbeam
+
+Optimum Crossfire
+
+Figure 31
+
+Young’s modulus distribution corresponding to the
+optimization in Figure 33 and Figure 34 for the 10mm patch.
+The optimization is constrained by the upper limit of
+900GPa.
+
+The positions where the objective function reaches its lowest value, and thus optimum, for
+each patch size is also shown in the graphs and very similar results are achieved for both
+test pieces.
+
+46
+
+6 Results
+
+Young's modulus [GPa]
+
+Optimization result: Young's modulus for 16mm patch
+
+-0.4
+
+1000
+800
+600
+400
+200
+0
+0.1
+
+0.6
+
+1.1
+
+1.6
+
+Area scale factor
+Topbeam: Young's modulus
+
+210 GPa
+
+Crossfire: Young's modulus
+
+Optimum Topbeam
+
+Optimum Crossfire
+
+Figure 32
+
+Young’s modulus distribution corresponding to the
+optimization in Figure 33 and Figure 34 for the 16mm patch.
+The optimization is constrained by the upper limit of
+900GPa.
+
+However, this value lies in the region of the upper constraint indicating that an even higher
+Young’s modulus would be the optimum. Therefore, this upper constraint will be set to a
+higher value later.
+In the next step, the values for the objective functions are discussed and evaluated in order
+to assess which of the above sets of parameters gives the lowest value. Figure 33 and
+Figure 34 display the objective functions for the Topbeam and Crossfire, respectively. In
+general, the objective function diverges for very small values, reaches a minimum (which is
+the optimum value) and finally it increases slightly. In order to find the best model, only the
+lowest values of all three curves need be compared. Here, the model with a 16mm patch
+gives the highest and worst result for both structures while the model with the patch using
+only the closest node gives the best results. These parameters are an area scale factor of
+2.8 for the Topbeam and 2.2 for the Crossfire.
+However, as discussed above, the Young’s modulus is constrained for these curves with a
+value of 900GPa. Knowing that the closest node patch gives the best results, this curve was
+calculated again using an upper constraint of 10000GPa instead, which is approx. 10 times
+higher. With that new upper constraint, the optima are significantly lower and located at
+smaller area scale factors.
+
+47
+
+6 Results
+
+Topbeam optimization results
+0.025
+
+Objective function: final results in absolute values
+
+0.02
+
+0.015
+
+0.01
+
+0.005
+
+0
+0.1
+
+0.4
+
+0.7
+
+1
+
+1.3
+
+1.6
+
+1.9
+
+2.2
+
+2.5
+
+2.8
+
+3.1
+
+3.4
+
+3.7
+
+4
+
+Area scale factor
+
+Figure 33
+
+Objective function closest node patch
+
+Optimum closest node patch
+
+Objective function patch 16mm
+
+Optimum patch 16mm
+
+Objective function patch 10mm
+
+Optimum patch 10mm
+
+Overall optimum closest node patch
+
+Objective function closest node patch rigid
+
+Result of the optimization of the Topbeam structure with respect to the ACM 2 model for
+the parameters patch diameter, Young’s modulus as well as area scale factor. The area
+scale factor and patch diameter were changed manually and the optimum Young’s
+modulus was calculated using the optimization, thus this is not shown in the graph. The
+values for the Young’s modulus are shown above in separate graphs. The lowest curve
+has an unconstrained Young’s modulus leading to very high values, which gives the
+optimum result with a practically rigid nugget.
+
+48
+
+6 Results
+
+Crossfire optimization results
+0.018
+
+0.016
+
+Objective function: final results in absolute values
+
+0.014
+
+0.012
+
+0.01
+
+0.008
+
+0.006
+
+0.004
+
+0.002
+
+0
+0.1
+
+0.4
+
+0.7
+
+1
+
+1.3
+
+1.6
+
+1.9
+
+2.2
+
+2.5
+
+2.8
+
+3.1
+
+3.4
+
+3.7
+
+4
+
+Area scale factor
+
+Figure 34
+
+Objective function closest node patch
+
+Optimum closest node patch
+
+Objective function patch 16mm
+
+Optimum patch 16mm
+
+Objective function patch 10mm
+
+Optimum patch 10mm
+
+Overall optimum closest node patch rigid
+
+Objective function closest node patch rigid
+
+Result of the optimization of the Crossfire structure with respect to the ACM 2 model for
+the parameters patch diameter, Young’s modulus as well as area scale factor. The area
+scale factor and patch diameter were changed manually and the optimum Young’s
+modulus was calculated using the optimization, thus this is not shown in the graph. The
+values for the Young’s modulus are shown above in separate graphs. The lowest curve
+has an unconstrained Young’s modulus leading to very high values, which gives the
+optimum result with a practically rigid nugget.
+
+49
+
+6 Results
+
+The optimum is reached for both curves again at the maximum value for the Young’s
+modulus at the new constraint of 10000GPa but further improvement is not expected for
+larger values. The solid is rigid in a physical sense and changing this value would not result
+in a significant change of the model characteristics.
+The final results of the overall optima are listed in Table 6-4. The results are similar but there
+are differences for the area scale factor. This can be explained by the concept given in
+Chapter 6.2.1. When spot welds are close to rigid, the sensitivity converges to zero. This
+indicates that small differences result in large parameter variations. The objective function
+curves are so flat that it almost does not matter which set of parameters employed for the
+model.
+Parameter
+
+Topbeam
+
+Area scale factor
+Patch size
+Young’s modulus
+Density
+Table 6-4
+
+Crossfire
+
+Model recommencation
+
+2.2
+
+1.3
+
+2.0
+
+closest node
+
+closest node
+
+closest node
+
+10000GPa
+
+10000GPa
+
+10000GPa
+
+1E-9
+
+1E-9
+
+1E-9
+
+
+W 
+
+
+W 
+
+
+W 
+
+Optimization results and recommendation.
+
+The set of parameters recommended for the ACM 2 model consists of an area scale factor of
+2.0, a closest node patch, a solid Young’s modulus of 10000GPa, a Poisson’s ratio of 0.3
+and a density of 1E-9
+
+
+.
+W 
+
+It should be noted that the area scale factor of 2 is equal to a spot
+
+weld diameter of 8.5mm. In Chapter 4 it is described that the actual metal connection
+between the spot welds is 8.5mm although the spot weld diameter is 6mm on the surface.
+
+6.2.2.4 Results evaluation
+This section aims at evaluating the above model using the new parameters in comparison to
+the original model at Volvo 3P and with the parameters used at Volvo Cars.
+The first 10 frequencies of the Topbeam test piece are compared in Figure 35 and for the
+Crossfire in Figure 36. The original model is significantly too soft and the new model
+represents the stiffness of the spot weld more accurate. Especially the results for the
+Crossfire are very good with exception of one mode that has a local mode shape (see
+Appendix C) where a small geometry error of the model causes the difference.
+It is assumed that the differences in the Topbeam test piece arise especially from the Roof
+Member cut-out. This part showed errors for the single part comparison already.
+The model using the parameters from Volvo Cars features an area scale factor of 3, closest
+node patch and steel material properties [24]. For these calculations, the density was set to
+1E-9
+
+
+W 
+
+which may result in a small difference. Figure 35 and Figure 36 show that the
+
+50
+
+6 Results
+
+models are exactly equal for the Topbeam as the Volvo Cars model is worse for five
+frequencies and better for five frequencies. Yet, the new model performs better for the
+Crossfire for which five frequencies are closer to the measurement and the Volvo Cars model
+gives better results for four frequencies.
+Topbeam result evaluation
+6
+4
+Frequency error [%]
+
+2
+0
+-2
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+-4
+
+Original model
+New model
+
+-6
+
+Model Volvo Cars
+
+-8
+-10
+-12
+-14
+
+Figure 35
+
+Mode
+
+Evaluation of the new model for the Topbeam structure.
+
+Crossfire result evaluation
+20
+15
+Frequency error [%]
+
+10
+5
+0
+-5
+
+Original model
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+-10
+
+7
+
+8
+
+9
+
+10
+
+New model
+Model Volvo Cars
+
+-15
+-20
+-25
+-30
+
+Figure 36
+
+Mode
+
+Evaluation of the new model for the Crossfire structure.
+
+51
+
+6 Results
+
+6.2.3 SPIDER 2
+The second model that is optimized is the Spider 2 model available in Ansa.
+
+6.2.3.1 Model description and parameters
+Compared to the ACM 2 model, this spot weld features less parameters
+parameters but provides more
+possibilities of changing the shape of the model such as mesh and core elements. Different
+types of nugget elements are shown in Figure 38;; it can be of a solid or a RBE2
+RBE2-bar
+bar-RBE2
+type and a pure RBE2 connection
+connection is implemented manually for this thesis that is not
+available in Ansa. All models have the option of filling the hole of the nugget with shell
+elements
+ements or leaving the hole open; the difference is displayed in Figure 37
+37.
+
+Figure 37
+
+Spider model with open and filled hole.
+
+Figure 38
+
+Three different cores. Left: solid nugget, middle:
+middle RBE2-bar
+bar-RBE2
+RBE2 nugget and right:
+right RBE2
+nugget.
+
+Furthermore, the mesh around the spot weld can feature none, one or two circles of mesh
+elements and even the material properties can be changed for these elements separately.
+Besides the options for different nugget elements, the parameters are thus the diameter of
+the spot weld, the material properties
+properties of the core and the material properties of the
+circumferential zones.
+
+6.2.3.2 Model implementation errors and instability
+For one of the core types, a instability was observed which is shown in Figure 39.. Especially
+for large spot weld diameters, the RBE2-bar-RBE2
+RBE2
+RBE2 nugget element deforms non
+non-physically.
+physically.
+Even the RBE2 element can deform although it is a multi point constraint and thus is
+supposed to be rigid. It is observed that the results can nevertheless be correct and the
+instability
+lity occurs
+occur only for certain spot weld diameters. If they occur,
+occur the calculation gives
+
+52
+
+6 Results
+
+results as usual, however, the frequencies and mode shapes are wrong. It is assumed that
+the error either stems from a numerical error or a software implementation error in Ansa or
+Nastran. This error was not observed for other core types and occurred especially for
+Crossfire calculations.
+
+Figure 39
+
+Instability of the RBE2-bar-RBE2 nugget. The bar has a light blue color
+and should connect the parts without leaving a gap. Here the instability
+causes a strain of the bar that should not be possible if the element is
+implemented correctly.
+
+6.2.3.3 Parameter sensitivities
+Because of the instability of the RBE2-bar-RBE2 core, a pure RBE2 nugget was
+implemented that is stiff and does not allow any deformation. Figure 40 shows that the
+differences between these nugget types are very small. It is concluded that the center bar of
+the RBE2-bar-RBE2 approach is stiff and does not allow significant deformation with a bar
+Young’s modulus of 210GPa. As a consequence, the RBE2-bar-RBE2 model can be
+replaced by the rigid RBE2 element to study its behavior without significant error but avoiding
+the instability.
+Comparison RBE2-Bar-RBE2 and RBE2
+
+Error function
+
+0.025
+0.02
+0.015
+0.01
+0.005
+0
+6
+
+7
+
+8
+
+9
+
+10
+
+Diameter [mm]
+RBE2-Bar-RBE2 model
+
+Figure 40
+
+RBE2 spider
+
+Comparing the RBE2 and RBE2-bar-RBE2 nugget.
+
+11
+
+12
+
+53
+
+One of the main goals of using the Spider
+model is to achieve mesh independence.
+Therefore, it is not considered reasonable to
+change the Young’s modulus of one of the
+circumferential zones since this would make
+the behavior highly dependent on the size of
+this circumferential zone. The material
+properties of the mesh outside the spot weld
+were not considered as a parameter.
+This leaves only the material properties of
+
+Change of the first 10
+freuquencies on average in [%]
+
+6 Results
+
+Sensitivity of Young's and shear
+modulus
+0.04
+0.02
+0
+-0.02 90
+-0.04
+
+95
+
+105
+
+110
+
+Change in [%]
+
+Young's modulus
+
+the nugget for the solid core and the
+diameter for the solid and the RBE2 spot Figure 41
+weld.
+
+100
+
+Shear modulus
+
+Sensitivity of Young’s and shear
+modulus for changes of 10%. The
+shear modulus is almost not sensitive
+and the Young’s modulus shows a
+small sensitivity.
+
+The density of the elements in the spot weld
+zone is changed with the aim of not adding any extra weight for all spot weld models. With
+the results for the ACM 2 model in mind, the Poisson’s ratio was not considered either as it is
+not sensitive for the spot weld nugget and cannot be updated reasonably. This is due to the
+low sensitivity that is compared to the sensitivity of the Young’s modulus in Figure 41.
+The only parameters being suitable for updating are the diameter of the nugget and the
+Young’s modulus of the solid core. These are optimized in the next section.
+
+6.2.3.4 Optimizing parameters
+As for the ACM 2 model, the spot weld diameter is a shape parameter and has to be
+changed manually whereas the Young’s modulus can be optimized using the Nastran code.
+In Figure 42, the objective functions for both test pieces are plotted with respect to the
+diameter of the spot weld for different core types. Running the Young’s modulus optimization
+for the Topbeam resulted for all diameters up to 12mm in an optimum Young’s modulus
+reaching the upper constraint of 10000GPa. This indicates that the solid core is too soft and
+that a rigid connection might be favorable. Indeed, the rigid RBE2 core results in the lowest
+curve for the Topbeam. One reason for the soft behavior of the solid brick core might be the
+connection between the solid and shell elements. Shell elements feature rotational degrees
+of freedom at the edges while the solid does only have translational degrees of freedom. This
+causes a soft spot weld core especially when the spot weld hole is not filled. Because of the
+same reason, all holes are filled with the intention of increasing the stiffness and thus smaller
+diameters are necessary for the optimum stiffness.
+The objective function of the Crossfire reaches its minimum for 11mm with a rigid core while
+the values are larger for the Topbeam, here values of 12 or even 13mm might result in a
+minimum.
+
+54
+
+6 Results
+
+Larger diameters than 12mm are difficult to implement as the size of the spot weld becomes
+very large and the edges of the flanges do not allow these values for the diameter. This
+causes problems especially for the Crossfire, which is the reason why only a rigid core was
+tested. Here, the mesh has to be transformed locally to create space for the spot weld.
+Therefore, it is not practical to look for better models with larger diameters than 12mm and
+the optimum Spider 2 model is thus a rigid nugget with a diameter of around 11mm for the
+Crossfire part and 12mm for the Topbeam.
+Similarly as Figure 33 and Figure 34 for the ACM 2 model, the curves have a small slope
+near the optimum. It has to be considered that the area scale factor is proportional to the
+square root of the diameter. This indicates that the x-axis has to be stretched in Figure 42
+when the graphs are compared directly. Both diameters are used in the final evaluation part
+and compared to the initial model.
+Diameter dependence
+0.045
+0.04
+
+Error function
+
+0.035
+0.03
+0.025
+0.02
+0.015
+0.01
+0.005
+0
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+Diameter [mm]
+Crossfire RBE2
+Figure 42
+
+Topbeam RBE2
+
+Topbeam solid 210GPa
+
+Topbeam solid 1E4GPa
+
+Objective function for different diameters and cores.
+
+6.2.3.5 Results evaluation
+Finally, the results of the models with a diameter of 11 and 12mm are shown in Figure 44
+and Figure 43 and compared to the initial ACM 2 model at Volvo 3P. Both models show a
+significant improvement to the original ACM 2 model although the new models differ from
+each other as well. For the Spider model, it seems as if the model is more sensitive to
+changes in diameter than the ACM 2 model and thus its correct value is more important.
+It is recommended to use the 11mm model as it is easier to implement due to its smaller
+diameter. In addition, in the previous chapter where the single parts were evaluated, it turned
+
+55
+
+6 Results
+
+out that there are significant model errors in the Roof Member cut-out, thus the result from
+the Crossfire test piece is more reliable as both parts showed only small errors.
+Topbeam results evaluation
+6
+4
+Frequency error [%]
+
+2
+0
+-2
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+-4
+
+Diameter 11mm
+Diameter 12mm
+
+-6
+
+Original ACM2 model
+
+-8
+-10
+-12
+-14
+
+Figure 43
+
+Mode
+
+Evaluation of the Spider 2 model for the Topbeam with different
+diameters and a rigid nugget.
+
+Crossfire results evaluation
+20
+15
+Frequency error [%]
+
+10
+5
+0
+-5
+
+Diameter 11mm
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+-10
+
+7
+
+8
+
+9
+
+10
+
+Diameter 12mm
+Original ACM2 model
+
+-15
+-20
+-25
+-30
+
+Figure 44
+
+Mode
+
+Evaluation of the Spider 2 model for the Crossfire with different
+diameters and a rigid nugget.
+
+Therefore, the final result is an 11mm Spider model using a rigid core. As discussed above,
+the model that is currently available in Ansa is prone to instabilities and is therefore only
+recommended with great caution and the solid nugget is too soft to be used in practice with
+reasonable diameters. Thus, this model is only interesting if a rigid nugget modeled for
+example with an RBE2 element can be implemented with low effort in future softwares.
+
+56
+
+6 Results
+
+6.3 Comparison
+Finally, the two new models are compared with respect to their performance. The
+comparison aims at a decision which model should be used in future modeling. The
+frequency error is displayed in Figure 45 and Figure 46. Both models show a significantly
+improved performance compared to the original model. Yet, the ACM 2 model performs
+slightly better. Moreover, the ACM 2 model is more robust and does not suffer from bad
+quality mesh stemming from re-meshing during implementation like the Spider 2 model.
+Topbeam results evaluation
+6
+4
+Frequency error [%]
+
+2
+0
+-2
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+-4
+
+Original model
+New ACM2 model
+
+-6
+
+New Spider model
+
+-8
+-10
+-12
+-14
+
+Figure 45
+
+Mode
+
+Results of the new models for the Topbeam.
+
+Crossfire results evaluation
+15
+
+Frequency error [%]
+
+10
+5
+0
+-5
+
+1
+
+2
+
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+Original model
+
+-10
+
+New ACM2 model
+
+-15
+
+New Spider model
+
+-20
+-25
+-30
+
+Figure 46
+
+Mode
+
+Results of the new models for the Crossfire test piece.
+
+6 Results
+
+57
+
+The principal idea of the Spider 2 model is considered promising as it is an efficient way of
+gaining mesh independence. If the mesh size is changed for the ACM 2 models, it might be
+that another set of parameters gives optimum results. However, the currently available
+Spider 2 model seems to be not fully developed and suffers from basic implementation errors
+and problems with connectivities between different element types. Therefore it is
+recommended to develop the Spider model further with regard to these defects.
+
+6.4 Employing the ACM 2 model with a different diameter
+In the course of this thesis, spot welds of 6mm diameter were studied while 5mm spot welds
+are applied on the FH cabin. This raises the question which parameters should be employed
+on the cabin model.
+Palmonella found, that different spot weld sizes hardly changed the physical characteristics
+of his test pieces [2]. Therefore, he recommended to model all spot weld sizes with the same
+set of parameters. Further, the ACM 2 model showed low sensitivity for the area scale factor
+that is equal to changing the diameter. As both the physical size of the spot weld is not
+sensitive and the sensitivity of the spot weld parameter is low, it is recommended to use the
+same sets of parameters for other spot weld sizes.
+
+6.5 Comparison with literature
+Palmonella et al. [2, 6 and 7] formulate modeling guidelines for the ACM 2 model and Schatz
+and Eppler [24] describe the model in use at Volvo Cars.
+Palmonella updated the ACM 2 using the patch size and patch Young’s modulus as main
+parameters while the area scale factor and solid Young’s modulus remained unchanged.
+Therefore, a direct comparison of results is not possible. Yet, one of his recommendations is
+that thick plates require a softer Young’s modulus resulting in a softer connection while thin
+plates require a stiffer spot weld model. The latter can also be observed for the structure in
+this study. The Topbeam consists of parts with thicknesses of 1.2 and 1.5mm while the
+Crossfire consists of two plates with a thickness of 1.5mm. Further, optimization in this study
+resulted in parameters that are stiffer for the Topbeam than for the Crossfire. The results of
+this study are thus in line with the trend reported by Palmonella.
+The study by Schatz and Eppler found a good performance for the ACM 2 model with an
+area scale factor of 3, closest node patch and steel material properties [24]. This model is
+employed as comparison in Chapter 6.2.2.4 and referred to as Volvo Cars model. Its
+characteristics are similar to the one proposed in the present study and the larger area scale
+factor is compensated by a softer Young’s modulus of the solid.
+
+6.6 Physical discussion
+
+58
+
+6 Results
+
+It can be observed that the stiffness of real
+spot welds is significantly higher than
+expected, especially with respect to the
+diameter of the Spider nugget of 11mm
+instead of the physical spot weld diameter
+of 6mm.
+Two physical arguments can be given for
+Overlap of
+the explanation of this effect. As indicated
+the flanges
+above, the physical metal connection of
+the spot welds is 8.5mm instead of the tool Figure 47 Plates are overlapping on the contact
+surfaces.
+diameter of 6mm. This explains the high
+stiffness of the spot weld nugget partly but it is assumed that another physical effect
+contributes to the high stiffness, as well.
+
+Since analyses in structural dynamics are commonly linear, non-linear contacts are not
+included. Therefore, different parts of the model can overlap. This is shown in Figure 47
+where the flanges of the Topbeam cross for the first mode. In reality, this is not possible but
+the flanges would support each other and thus the stiffness is higher than the model
+proposes due to contact of the surfaces.
+
+7 Modeling guidelines, recommendations and outlook
+
+59
+
+7 Modeling guidelines, recommendations and outlook
+
+7.1 Findings
+7.1.1 Achievements
+In this thesis the ACM 2 and Spider 2 models have been analyzed and compared. The ACM
+2 model is the most widely used model in industry and the Spider 2 is a new model with
+promising characteristics. The latter is an approach to overcome mesh dependence.
+These models were compared and evaluated against measurements using two cut-out parts
+of an FH Volvo truck cabin. Importance was given to isolating the error that is introduced by
+the spot weld models in the assembled parts as good as possible.
+A step in assuring good model quality was updating the material data of the single parts. This
+was done using frequencies from measurements and applying a Nastran optimization
+algorithm.
+The spot weld models were optimized with respect to several parameters for both structures
+and the optimum spot weld model was identified. In the optimization procedure, the Young’s
+modulus of the spot weld nugget was optimized using the numerical algorithm.
+Three major findings could be derived from the study:
+First, the ACM 2 model provided better results than the Spider 2 models. This model is
+recommended for future structural dynamics analysis.
+Second, this study found that the diameter of the spot weld using the Spider 2 model with a
+rigid core has to be approximately 11mm for best results. The solid nugget is too soft to
+model the spot weld with reasonable spot weld diameters. However, the model suffers from
+instability for some of the implementation options.
+Finally, a new approach of updating isotropic plates analytically has been derived and
+verified on the models. This approach uses an initial FE calculation and utilizes basic
+physical characteristics of isotropic FE shell structures. It is considered very powerful as it is
+exact and yet large structures with millions of elements can be updated using a pocket
+calculator. Therefore, the method helps saving time and effort. In addition, it was derived
+analytically that updating the Young’s modulus and density of an isotropic shell structure
+simultaneously does not lead to one unique solution but many equal combinations are
+possible.
+
+60
+
+7 Modeling guidelines, recommendations and outlook
+
+7.1.2 Modeling guidelines
+In this study, the ACM 2 model showed the best performance. It is thus recommended for
+modeling spot welds in structural dynamics. Optimum parameters were found as an area
+scale factor of 2, a patch diameter using the closest shell mesh nodes, a Young’s modulus of
+
+W 
+
+10000GPa resulting in a rigid nugget and a density of 1E-9
+added by the spot weld brick element.
+
+such that no extra mass is
+
+These recommendations are valid for a shell mesh size of 10mm. For refined meshes, it is
+recommended to set the RBE3 diameter to approx. 5mm as this is the average diameter for
+a closest node patch. Otherwise the model is at risk of becoming too soft. (see [24])
+
+7.2 Discussion and recommendations
+7.2.1 Methodological recommendations for future analysis
+A result of this study is that it is very valuable to use an optimization in order to improve
+models, especially for updating material properties. For the ACM 2 model, several hundred
+calculations were conducted with varying shape parameters for which the optimum Young’s
+modulus was found automatically. If the optimum Young’s modulus had to be found by
+changing the value manually it is estimated that the number of calculations would have been
+ten times higher. Thus this approach is reducing time and effort significantly.
+Further, for single parts with an isotropic Young’s modulus, analytical equations can be
+applied that are exact and contribute to reducing effort and time. In order to update FE
+models analytically, one FE calculation is necessary and the equations find the optimum
+values using experimental frequencies and the ones from the reference FE calculation. From
+analytical derivations, conclusions can be drawn that it is not possible to update the Young’s
+modulus and density of a structure simultaneously as they influence the characteristics of the
+FE model in the same way. This results in an infinite number of optima of the objective
+function which implies that an infinite number of combinations of Young’s modulus and
+density result in the same optimum model characteristics.
+The comparison method of defining an objective function comparing the first frequencies
+proved to give good results. In addition, it is necessary to assure correct mode correlation of
+experimental and calculated modes applying the modal assurance criterion. The advantage
+of this method is that modes can be correlated if their does not align between experiments
+and calculations. If FRF functions are compared directly, it is not possible to correlate modes
+correctly if their order does not match. Therefore, it is recommended to compare frequencies
+if experimental modal analysis is possible.
+Considering the measurement setup, the combination of laser scanning and impulse hammer
+excitation gives optimum results considering frequencies. Higher levels of noise are accepted
+that stem from the laser vibrometer and are due to low signal quality in some points. It was
+
+7 Modeling guidelines, recommendations and outlook
+
+61
+
+concluded that a shaker cannot be used for such lightweight structures as influence on the
+structures’ dynamics is significant.
+
+7.2.2 Discussing influences of modeling errors
+Noticeable errors for some of the models raise questions about sources of errors. Six main
+sources of differences between calculations and measurements can be found for the studies
+conducted in this thesis:
+•
+
+Differences between CAD geometry and physical geometry
+
+•
+
+Mesh convergence
+
+•
+
+Material data uncertainty
+
+•
+
+Sheet thickness including sheet thinning and thickness of steel coils
+
+•
+
+Measurement errors
+
+•
+
+Connector (spot weld model)
+
+Out of these types of errors, five are related to the computer model and one is related to the
+measurements.
+The errors resulting from measurements are considered minor as the geometries were
+suspended freely vibrating without significant influence of other structures and the
+frequencies of this structure could be identified clearly.
+Further, the material data was updated reducing the level of uncertainty. Remaining
+questions concern possible anisotropy of the steel material.
+The sheet thickness was included in the models and, in addition, it was shown that its
+influence amounts only to approx. 1% of the frequencies.
+These considerations leave three major sources of uncertainty.
+The Roof Member part showed noticeable differences between measurements and
+calculations. For this part even the connector uncertainty can be excluded as it is a single
+panel. A convergence study was carried out for this part resulting in differences of maximum
+3%. Hence, the small errors in geometry have to be the reason for these errors.
+This allows drawing the conclusion that the geometrical complexity of the employed test
+pieces is assumed to be a major source of error in the present study. The size of the parts
+and number of spot welds are considered adequate but the complex three dimensional
+shape of the parts causes difficulties. A possible improvement for future studies could be
+using geometries where the shape is controlled more easily such as profiles with straight
+edges.
+
+7.2.3 Suggestions for further studies
+During the course of this study, new questions emerged concerning spot weld models. A first
+question addresses the Spider 2 model and possibilities of improving it. The characteristics
+
+62
+
+7 Modeling guidelines, recommendations and outlook
+
+of the ACM 2 model are influenced by the mesh size and shape of the patch [6], therefore
+the Spider model represents a promising approach to overcome this problem. The thesis
+found that the current implementation suffers from errors and that there is a potential of
+improving the model by implementing other types of core elements such as a pure RBE2
+nugget. Therefore it is suggested to develop this idea further in a similar project.
+Another question concerns the influence of different sheet metal thicknesses on the spot
+weld models. Palmonella [6] recommends to model the spot weld connecting thin plates
+stiffer than thicker plates. Today, all connections of parts with different sheet thicknesses are
+however modeled using the same model for all thicknesses. In addition, in practice sheets
+with different thicknesses are welded together. Table 7-1 shows the number of spot welds
+with respect to different sheet metal thickness combinations in one spot weld in an FH cabin.
+The most common spot weld in this cabin is, according to the table, a spot weld connecting a
+0.8 and 1.2mm thick metal sheet. Thus, the influence of different sheet metal thicknesses on
+the stiffness of spot welds is another possible topic for future studies.
+Thicknesses [mm]
+0.8
+0.9
+1
+1.2
+1.5
+2
+3
+Table 7-1
+
+0.8
+10.70%
+
+0.9
+1.63%
+0.00%
+
+1
+5.23%
+0.00%
+0.62%
+
+1.2
+15.03%
+2.48%
+0.74%
+2.90%
+
+1.5
+10.57%
+1.56%
+1.04%
+14.19%
+5.55%
+
+2
+2.25%
+4.46%
+0.00%
+0.67%
+0.20%
+2.77%
+
+3
+0.00%
+1.93%
+0.00%
+0.00%
+1.93%
+1.68%
+0.20%
+
+Matrix showing the number of spot weld connections for different sheet metal thicknesses
+from 0.8mm to 3mm in percent of the total number of spot welds in an FH truck cabin.
+The highest values are colored green. The most common spot weld connects one sheet
+metal with 0.8mm thickness and one with 1.2mm thickness. The whole body-in-white
+contains approximately 4000 spot welds.
+
+63
+
+Appendix A Nastran source code
+
+In Nastran, two different source codes were used, SOL103 that calculates frequencies and
+mode shapes and SOL200 that was used to perform the optimization. As the first code was
+developed at Volvo, it is not printed here; the second code is an important part of this thesis
+and is therefore shown below.
+The following code allows material data to be optimized such that eigenfrequencies fit
+experimental value as close as possible. The material data is given as Young’s modulus,
+Poisson’s ratio and density and their nominal value has to be set to the same value as in the
+.bdf file. These values are marked in green. Moreover, the material value has to be adjusted
+to the value of the material definition in the .bdf file; these values are marked in red. The first
+three (or even more) experimental frequencies should also be included at the blue positions.
+Finally, the file containing the model data is included at the position that is marked in yellow.
+
+$--------- SYSTEM PARAMETERS -------------------------------------------NASTRAN SYSTEM(151) = 1
+NASTRAN SYSTEM(303) = 1
+NASTRAN Q4TAPER = 0.99
+NASTRAN Q4SKEW = 10.0
+NASTRAN T3SKEW = 5.0
+NASTRAN QRMETH=5
+TIME 10
+SOL 200 $ OPTIMIZATION
+CEND
+TITLE = Material updating
+SUBTITLE = Optimization
+ECHO = NONE
+DISP = NONE
+STRESS = NONE
+METHOD = 15
+MODTRAK = 77
+ANALYSIS = MODES
+DESOBJ(MIN) = 11 $ OBJECTIVE FUNCTION DEFINITION
+$
+$
+BEGIN BULK
+$
+EIGRL
+
+15
+
+0.
+
+500.
+
+64
+
+MODTRAK 77
+
+7
+
+$
+$-----------------------------------------------------------------------$ ANALYSIS MODEL:
+$-----------------------------------------------------------------------$
+INCLUDE 'Topbeam_ASF_1.bdf'
+$
+$-----------------------------------------------------------------------$ DESIGN MODEL:
+$-----------------------------------------------------------------------$
+DTABLE
+
+FEXP1
+
+165.1
+
+FEXP2
+
+175.200 FEXP3
+
+351.1
+
+$...Define the design variables
+$DESVAR ID LABEL XINIT XLB XUB DELXV
+$
+DESVAR
+
+1
+
+YOUNGS
+
+210000. 100000. 500000.
+
+DESVAR
+
+2
+
+QUERKO
+
+0.30000 0.20000 0.50000
+
+DESVAR
+
+3
+
+DICHTE
+
+7.85-6
+
+7.650-6 8.050-6
+
+$
+$...Relate the design variables to analysis model properties
+$DVPREL1 ID TYPE PID FID PMIN PMAX C0 +
+$+ DVIDD1 COEF1 DVID2 COEF2 ...
+$
+DVMREL1 1
+
+MAT1
+
+1
+
+90
+
+E
+
+100000. 500000.
+
+90
+
+NU
+
+0.20000 0.50000
+
+90
+
+RHO
+
+7.-6
+
+1.
+
+DVMREL1 2
+
+MAT1
+
+2
+
+1.
+
+DVMREL1 3
+
+MAT1
+
+3
+
+8.050-6
+
+1.
+
+$
+$...Identify the analysis responses to be used in the design model
+$+ ATT2 ...
+$
+DRESP1
+
+1
+
+F1
+
+FREQ
+
+7
+
+DRESP1
+
+2
+
+F2
+
+FREQ
+
+8
+
+DRESP1
+
+3
+
+F3
+
+FREQ
+
+9
+
+$
+DRESP2
+
+DEQATN
+
+11
+
+RESU
+
+100
+
+DTABLE
+
+FEXP1
+
+FEXP2
+
+FEXP3
+
+DRESP1
+
+1
+
+2
+
+3
+
+100
+
+RESUL(WE1,WE2,WE5,WC1,WC2,WC5)
+
+65
+
+=SSQ(WC1/WE1-1.,WC2/WE2-1.,
+WC5/WE5-1.)
+$
+DOPTPRM
+
+IPRINT 1
+P2
+
+15
+
+$
+PARAM,AUTOSPC,YES
+PARAM,PRGPST,NO
+PARAM,GRDPNT,0
+PARAM,POST,-1
+PARAM,COUPMASS,-1
+PARAM,MAXRATIO,1.E10
+PARAM,G,0.01
+PARAM,WTMASS,1.0E-3
+ENDDATA
+
+DESMAX
+
+10
+
+DELP
+
+0.5
+
+P1
+
+1
+
+66
+
+Appendix B Measuring equipment
+
+Test system:
+
+Polytec scanning laser, type PSV 300, VIB 47004,
+consisting of:
+•
+
+laser head OFV 055
+
+•
+
+control unit OFV 3001S
+
+•
+
+front-end VIB-Z-016
+
+Acquisition software:
+
+Polytec PSV version 7.4
+
+Impulse hammer:
+
+PCB Piezotronics Model 086C04, rubber tip
+
+Curve fitting software:
+
+Vibratools (Matlab scripts)
+
+67
+
+Appendix C FEM mode shapes
+
+3.1 Single parts
+Roof Panel
+Mode 1
+
+Mode 2
+
+Mode 3
+
+Mode 4
+
+Mode 5
+
+Mode 6
+
+Mode 7
+
+Mode 8
+
+Mode 9
+
+Mode 10
+
+68
+
+Roof Member
+Mode 1
+
+Mode 2
+
+Mode 3
+
+Mode 4
+
+Mode 5
+
+Mode 6
+
+Mode 7
+
+Mode 8
+
+Mode 9
+
+Mode 10
+
+69
+
+Cross Member
+Mode 1
+
+Mode 2
+
+Mode 3
+
+Mode 4
+
+Mode 5
+
+Mode 6
+
+Mode 7
+
+Mode 8
+
+Mode 9
+
+Mode 10
+
+70
+
+Firewall
+Mode 1
+
+Mode 2
+
+Mode 3
+
+Mode 4
+
+Mode 5
+
+Mode 6
+
+Mode 7
+
+Mode 8
+
+Mode 9
+
+Mode 10
+
+71
+
+3.2 Welded parts
+Topbeam
+Mode 1
+
+Mode 2
+
+Mode 3
+
+Mode 4
+
+Mode 5
+
+Mode 6
+
+Mode 7
+
+Mode 8
+
+Mode 9
+
+Mode 10
+
+72
+
+Crossfire
+Mode 1
+
+Mode 2
+
+Mode 3
+
+Mode 4
+
+Mode 5
+
+Mode 6
+
+Mode 7
+
+Mode 8
+
+Mode 9
+
+Mode 10
+
+73
+
+Appendix D References
+
+[1]
+
+Friswell M. I., Mottershead J. E., “Finite Element Model Updating in Structural
+Dynamics”, Kluwer Academic Publishers, 1995, ISBN:978-90-481-4535-5
+
+[2]
+
+Palmonella M., “Improving Finite Element Models of Spot Welds in Structural
+Dynamics”, University of Wales Swansea, School of Engineering, 2003
+
+[3]
+
+Xu S., Deng X., “An evaluation of simplified finite element models for spot-welded
+joints”, Finite Elements in Analysis and Design, 40, pp. 1175-1194, 2004
+
+[4]
+
+Seeger F., Michel G., Blanquet M., “Investigation of Spot Weld Behavior Using
+Detailed Modeling Technique”, 7. LS-DYNA Anwenderforum, Bamberg, 2008
+
+[5]
+
+Lardeur P., Lacouture E., Blain E., “Spot weld modeling techniques and
+performances of finite element models for the vibrational behavior of automotive
+structures”, Proceedings of ISMA vol. 25, pp. 387-394, 2000
+
+[6]
+
+Palmonella, Friswell M. I., Mottershead J. E., Lees A. W., “Guidelines for the
+implementation of the CWELD and ACM 2 spot weld models in structural dynamics”,
+Finite Elements in Analysis and Design, 41 (2), pp. 193-210, 2004
+
+[7]
+
+Palmonella M., Friswell M. I., Mottershead J. E., Lees A. W., “Finite element models
+of spot welds in structural dynamics: review and updating”, Computers and
+Structures, 83 (8-9), pp. 648-661, 2005
+
+[8]
+
+Ohlsson U., Koponen, M., “Correlation of FRFs for a Dummy wall – a cut-out of the
+rear wall of an FH L2H3”, Volvo Engineering Report, 2007
+
+[9]
+
+Hedlund A., Ohlsson U., “AE Calculation report NVH: Modelling technique for spot
+welds.”, Volvo Engineering Report, 2011.
+
+[10]
+
+MID-MOD project: http://www.mid-mod.eu/
+
+[11]
+
+Fang J., Hoff C., Holman B., Müller F., Wallerstein D., “Weld modelling with
+MSC.Nastran”, Second MSC Worldwide Automotive User Conference, Dearborn,
+MI, USA, 2000
+
+[12]
+
+Deng X., Chen W., Shi G., “Three-dimensional finite element analysis of the
+mechanical behavior of spot welds”, Finite Elements in Analysis and Design, 35, pp.
+17-39, 2000
+
+[13]
+
+Pal K., Cronin D. L., “Static and Dynamic Characteristics of Spot Welded Sheet
+Metal Beems”, Transactions of the ASME, 117 (3), pp. 316-322, 1995
+
+74
+
+[14]
+
+Zhang Y., Taylor D., “Optimization of spot welded structures”, Finite Elements in
+Analysis and Design, 37, pp. 1013-1022, 2001
+
+[15]
+
+Salvini P., Vivio F., Vullo V.,”A spot weld finite element for structural modelling”,
+International Journal of Fatique, 22, pp. 645-656, 2000
+
+[16]
+
+Vivio F., Ferrari G., Salvini P., Vullo V., “Enforcing of en analytical solution of spot
+welds into finite element analysis for fatigue-life estimation”, International Journal of
+Computer Applications in Technology vol. 15, 4/5, pp. 218-229, 2002
+
+[17]
+
+Vivio F., “A new theoretical approach for structural modelling of riveted and spot
+welded multi-spot structures”, International Journal of Solids and Structures, 45, pp.
+4006-4024, 2009
+
+[18]
+
+Kaltenböck M., Dannbauer H., Hübsch W., Puchner K., Fischmeister S., “How to
+assess BIW structures from the fatigue point of view”, 4th Ansa & µEta International
+Conference, Magna Powertrain, 2011
+
+[19]
+
+Heiserer D., Charging M. Sielaft J., “High performance, process oriented, weld spot
+approach”, First MSC Worldwide Automotive User Converence, Munich, Germany,
+1999
+
+[20]
+
+Sällström Å, “Fatigue Analysis at VCC Using DesignLife”, Volvo Car Corporation,
+2010
+
+[21]
+
+Baier H., “Skriptum zur Vorlesung Leichtbau”, Technical University of Munich,
+Institute of Lightweight Structures, 2009
+
+[22]
+
+Yamaguchi K., Adachi H., Takakura N., “Effects of plastic strain and strain path on
+Young’s modulus of sheet metals”, Metals and Materials, Vol. 4, No. 3, pp. 420-425,
+1998.
+
+[23]
+
+Brandt A., “Ljud- och vibrationsanalys”, Saven EduTech, 2000
+
+[24]
+
+Schatz R., Eppler T., “Modelling of spot welds for NVH simulations in view of refined
+panel meshes”, Chalmers University of Technology,Department of Civil and
+Environmental Engineering,Division of Applied Acoustics, Master Thesis, 2007
+
+

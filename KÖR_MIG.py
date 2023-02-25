@@ -87,11 +87,16 @@ def main():
     om_TDIDF = False#prompt_bool()
 
     utan_vanliga_ord = False
+    sv = False
+    eng = False
     print('\nVill du rensa bort vanliga svenska ord? ',end=' ')
-    if prompt_bool(): utan_vanliga_ord = 'sv'
+    sv = prompt_bool()
 
     print('\nVill du rensa bort vanliga engelska ord? ',end=' ')
-    if prompt_bool(): utan_vanliga_ord = 'eng'
+    eng = prompt_bool()
+    if sv and eng:        utan_vanliga_ord = 'sveng'
+    elif sv:              utan_vanliga_ord = 'sv'
+    elif eng:             utan_vanliga_ord = 'eng'
 
     print('\nVill du rensa bort siffror i texten? ',end=' ')
     siffror = not prompt_bool()
