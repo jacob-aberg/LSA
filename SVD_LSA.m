@@ -37,15 +37,26 @@ Doks = ordbok( dok_fil );
 
 JaNej = '';
 while ~strcmp(JaNej, 'j') && ~strcmp(JaNej, 'n')
+    JaNej = input('Vill du göra TF-normalisering? j/n >> ','s');
+end
+Ja = strcmp(JaNej, 'j');
+
+%-- gör TF-normalisering
+if Ja
+    A = TF(A);
+end
+
+
+JaNej = '';
+while ~strcmp(JaNej, 'j') && ~strcmp(JaNej, 'n')
     JaNej = input('Vill du göra IDF-normalisering? j/n >> ','s');
 end
 Ja = strcmp(JaNej, 'j');
-clc
 
 %-- gör IDF-normalisering
 if Ja
     A = IDF(A);
-end
+end, clc
 
 
 
@@ -112,6 +123,7 @@ for i = 1:size(A,1)
     scatter3(x,y,z,punkt,'DisplayName',Doks{i},'LineWidth',3)
 hold on
 end
+
 legend('Location','NorthEastOutside')
 title('Projektion av A:s radvektorer på ett 3D-delrum av col(VT) ')
 xlabel( 'Ämne 1: '), ylabel( 'Ämne 2: ' ), zlabel('Ämne 3: ')
@@ -226,6 +238,19 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+function A = TF(A)
+%term-frequency
+%dividerar elementen med antal ord, normaliserar långa-korta texter
+
+[n, ~] = size(A);
+for j = 1:n
+    antal_ord = sum(A(j,:)~= 0);
+    A(j,:) = A(j,:)*(1/antal_ord) ;
+end 
+
+end
+
+
 function A = IDF(A)
 % IDF - Inverse Document Frequency
 % denna funktion skrev jag med gpt på mobilen i sängen kl.0157 :)
@@ -235,7 +260,7 @@ function A = IDF(A)
 for j = 1:m
     frek = sum(A(:,j) ~= 0);
     if frek ~= 0
-        A(:,j) = A(:,j) * log(n / frek);
+        A(:,j) = A(:,j) * log10(n / frek);
     end
 end
 

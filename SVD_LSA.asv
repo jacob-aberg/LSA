@@ -1,4 +1,5 @@
-clear all, clc, close all, close all hidden
+clear all, 
+clc, close all, close all hidden
 format short g
 
 
@@ -40,6 +41,16 @@ while ~strcmp(JaNej, 'j') && ~strcmp(JaNej, 'n')
 end
 Ja = strcmp(JaNej, 'j');
 clc
+
+
+JaNej = '';
+while ~strcmp(JaNej, 'j') && ~strcmp(JaNej, 'n')
+    JaNej = input('Vill du göra IDF-normalisering? j/n >> ','s');
+end
+Ja = strcmp(JaNej, 'j');
+clc
+
+
 
 %-- gör IDF-normalisering
 if Ja
@@ -100,16 +111,18 @@ vt3 = bas_3D(:,3);
 
 fig = figure(5);
 set(fig, 'Name', 'Dokumentens ord i PC-rum');
-punkter = {'o', 'x','s','d','v', '+', '*', '.', '_', '|', '^', '<', '>', 'p', 'h'};
+punkter = {'o', 's','x','d','v', '+', '*', '.', '_', '|', '^', '<', '>', 'p', 'h'};
 
 for i = 1:size(A,1)
     dokvek = A(i,:)';
     x = dot(vt1, dokvek)*vt1;
     y = dot(vt2, dokvek)*vt2;
     z = dot(vt3, dokvek)*vt3;
-    scatter3(x,y,z,'filled','DisplayName',Doks{i})
+    if i < 105, punkt = punkter{ceil(i/7)}; end
+    scatter3(x,y,z,punkt,'DisplayName',Doks{i},'LineWidth',3)
 hold on
 end
+
 legend('Location','NorthEastOutside')
 title('Projektion av A:s radvektorer på ett 3D-delrum av col(VT) ')
 xlabel( 'Ämne 1: '), ylabel( 'Ämne 2: ' ), zlabel('Ämne 3: ')
@@ -224,6 +237,19 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+function A = TF(A)
+%term-frequency
+%dividerar elementen med antal ord, normaliserar långa-korta texter
+
+[n, ~] = size(A);
+for j = 1:n
+    antal_ord = sum(A(j,:)~= 0);
+    A(j,:) = A(j,:)*(1/antal_ord) ;
+end 
+
+end
+
+
 function A = IDF(A)
 % IDF - Inverse Document Frequency
 % denna funktion skrev jag med gpt på mobilen i sängen kl.0157 :)
@@ -233,7 +259,7 @@ function A = IDF(A)
 for j = 1:m
     frek = sum(A(:,j) ~= 0);
     if frek ~= 0
-        A(:,j) = A(:,j) * log(n / frek);
+        A(:,j) = A(:,j) * log10(n / frek);
     end
 end
 
